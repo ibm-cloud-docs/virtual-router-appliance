@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-12"
+lastupdated: "2017-10-15"
 
 ---
 
@@ -54,9 +54,6 @@ In the ruleset, `ALLOW_LEGACY`, there are two rules defined. The first rule drop
 
 ## Allowing Data Center Access
 IBM offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the datac enters in this [article](http://knowledgelayer.softlayer.com/faq/what-ip-ranges-do-i-allow-through-firewall).
-
-^^ We need to change that link .. KnowledgeLayer will go away ^^
-^^ Only when same king info be in bluemix doc or other place. We can fix this later ^^
 
 You can allow data center access by placing the proper `SERVICE-ALLOW` rules at the beginning of the firewall rule sets with an action of `accept`. Where the rule set must be applied depends on the routing and firewall design being implemented.
 
@@ -117,11 +114,10 @@ It is important to understand that this assignment from zone DEPARTMENTC going i
 
 ## Session and Packet Logging
 The VRA supports two types of logging:
-
-1. Session logging.  Use ```security firewall session-log``` command to configure firewall session logging.
-
+1. Session logging.  Use ``security firewall session-log`` command to configure firewall session logging.
+  
   For UDP, ICMP, and all non-TCP flows, a session transitions to four states over the lifetime of the flow. For each transition, you can configure the VRA to log a message. TCP has a larger number of state transitions, each of which can be configured to log.  
 
-*	Per packet logging. Include keyword ```log``` in firewall or NAT rule to log every network packet that matches the rule.
+*	Per packet logging. Include keyword ``log`` in firewall or NAT rule to log every network packet that matches the rule.
 
   Per-packet logging occurs in the packet forwarding paths and generates large amounts of output. It can greatly reduce the throughput of the VRA and dramatically increase the disk space used for the log files. We recommend use per packet logging ONLY for debugging purpose. For all operational purposes, stateful session logging should be used.
