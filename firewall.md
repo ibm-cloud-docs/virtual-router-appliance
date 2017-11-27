@@ -83,7 +83,7 @@ The VRA provides a basic CPP rule set as template. You can merge it into its you
 
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 
-After this rule set is merged, a new firewall rule set named `CPP` is added and applied to the lookback interface. It is recommend that you modify this rule set to suit your environment.
+After this rule set is merged, a new firewall rule set named `CPP` is added and applied to the loopback interface. It is recommend that you modify this rule set to suit your environment.
 
 ## Zone Firewalling
 Another firewall concept within the Virtual Router Appliance is zone based firewalls. In zone-based firewall operation an interface is assigned to a zone (only one zone per interface) and firewall rule sets are assigned to the boundaries between zones with the idea that all interfaces within a zone have the same security level and are allowed to route freely. Traffic is only scrutinized when it is passing from one zone to another. Zones drop any traffic coming into them which is not explicitly allowed.
