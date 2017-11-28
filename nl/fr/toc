@@ -1,0 +1,37 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="virtual-router-appliance" audience="network" href="/docs/infrastructure/virtual-router-appliance/about.html"}
+IBM Virtual Router Appliance
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about.md
+    vra-basics.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    access-gateway-appliances.md
+    access-gateway-details.md
+    rename-gateway.md
+    manage-vlans.md 
+    services.md
+    firewall.md
+    vrrp.md
+    configuration-synchronization.md
+    configuration-backups.md
+    upgrade-os.md
+    osreload-configuration.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    apis.md
+    [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faqs.md
+    vra-docs.md
+    legacy-5400.md
+    getting-help.md
+    {: .navgroup-end}
