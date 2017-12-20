@@ -25,9 +25,9 @@ It is important to test firewall rules after creation to ensure the rules work a
 While manipulating rules on the `dp0bond1` interface, it is advised to connect to the device using `dp0bond0`. Connecting to the console using the Intelligent Platform Management Interface (IPMI) is also an option.
 
 ## Stateless vs Stateful
-By default, the firewall is stateless, but it can be configured as stateful if needed. A stateless firewall will need rules for traffic in both directions, while stateful firewalls are for connections where only inbound traffic rules are required. To configure a stateful firewall, you must specify related or established connections for outbound traffic.
+By default, the firewall is stateless, but it can be configured as stateful if needed. A stateless firewall will need rules for traffic in both directions. Stateful firewalls allow for managing bi-directional connections by specifying a rule only for one flow direction, and the corresponding return traffic is tracked and automatically allowed. To configure a stateful firewall, you must dictate which rules you want to operate statefully.
 
-To make all firewalls 'stateful', run the following commands:
+To make all firewall rules 'stateful', run the following commands:
 
 ```
 set security firewall global-state-policy icmp
@@ -35,19 +35,42 @@ set security firewall global-state-policy tcp
 set security firewall global-state-policy udp
 ```
 
-To make individual firewalls 'stateful':
+Note that the `global-state-policy` commands will only track the state of traffic that has matched a firewall rule which explicitly sets the corresponding protocol. For example:
+
+```
+set security firewall name GLOBAL_STATELESS rule 1 action accept
+```
+
+As `GLOBAL_STATELESS` does not specify `protocol tcp`, the `global-state-policy tcp` command would not enable statefulness of this rule. 
+
+```
+set security firewall name GLOBAL_STATEFUL_TCP rule 1 action accept
+set security firewall name GLOBAL_STATEFUL_TCP rule 1 protocol tcp
+```
+
+In this case `protocol tcp` is explicitly defined. The `global-state-policy tcp` command would enable stateful tracking of traffic that matches rule 1 of `GLOBAL_STATEFUL_TCP`
+
+
+To make individual firewall rules 'stateful':
 
 ```
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
+This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands.
+
 
 ## Firewall Rule Sets
-Firewall rules are grouped together into named sets to make applying rules to multiple interfaces easier. Each rule set has a default action associated with it. Consider the following example: 
+Firewall rules are grouped together into named sets to make applying rules to multiple interfaces easier. Each rule set has a default action associated with it. Consider the following example:
 ```
 set security firewall name ALLOW_LEGACY default-action accept
 set security firewall name ALLOW_LEGACY rule 1 action drop
-set security firewall name ALLOW_LEGACY rule 1 source address network-group1 set security firewall name ALLOW_LEGACY rule 2 action drop set security firewall name ALLOW_LEGACY rule 2 destination port 23 set security firewall name ALLOW_LEGACY rule 2 log set security firewall name ALLOW_LEGACY rule 2 protocol tcp set security firewall name ALLOW_LEGACY rule 2 source address network-group2
+set security firewall name ALLOW_LEGACY rule 1 source address network-group1
+set security firewall name ALLOW_LEGACY rule 2 action drop
+set security firewall name ALLOW_LEGACY rule 2 destination port 23
+set security firewall name ALLOW_LEGACY rule 2 log
+set security firewall name ALLOW_LEGACY rule 2 protocol tcp
+set security firewall name ALLOW_LEGACY rule 2 source address network-group2
 ```
 
 In the ruleset, `ALLOW_LEGACY`, there are two rules defined. The first rule drops any traffic sourced from an address group named `network-group1`. The second rule discards and logs any traffic destined for the telnet port (`tcp/23`) from the address group named `network-group2`. The default-action indicates that anything else is accepted.
