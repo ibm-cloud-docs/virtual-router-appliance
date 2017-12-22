@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-15"
+lastupdated: "2017-12-22"
 
 ---
 
@@ -98,7 +98,7 @@ As an example, to assign the `ALLOW_LEGACY` rule set to the `in` option for the 
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## Control Plane Policing (CPP)
-Control plane policing (CPP) provides protection against attacks on the Virtual Router Appliance by allowing you to configure firewall policies that are assigned to desired interfaces and applying these policies to packets both entering and leaving the VRA.
+Control plane policing (CPP) provides protection against attacks on the Virtual Router Appliance by allowing you to configure firewall policies that are assigned to desired interfaces and applying these policies to packets both entering the VRA.
 
 CPP is implemented when the `local` keyword is used in firewall policies that are assigned to any type of VRA interface, such as data plane interfaces or loopback. Unlike the firewall rules applied for packets traversing through VRA, the default action of firewall rules for traffic entering or leaving control plane is `Allow`.  Users must add explicit drop rules if the default behavior is not desired.
 
@@ -107,6 +107,7 @@ The VRA provides a basic CPP rule set as template. You can merge it into its you
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 
 After this rule set is merged, a new firewall rule set named `CPP` is added and applied to the loopback interface. It is recommend that you modify this rule set to suit your environment.
+Please note that CPP rules cannot be stateful, and will only apply on ingress traffic.
 
 ## Zone Firewalling
 Another firewall concept within the Virtual Router Appliance is zone based firewalls. In zone-based firewall operation an interface is assigned to a zone (only one zone per interface) and firewall rule sets are assigned to the boundaries between zones with the idea that all interfaces within a zone have the same security level and are allowed to route freely. Traffic is only scrutinized when it is passing from one zone to another. Zones drop any traffic coming into them which is not explicitly allowed.
@@ -122,18 +123,23 @@ Imagine the following office scenario with three departments, each department wi
 A zone can be created for each department and the interfaces for that department can be added to the zone. The following example illustrates this: 
 ```
 set security zone-policy zone DEPARTMENTA interface dp0bond1.10
-set security zone-policy zone DEPARTMENTA interface dp0bond1.20  set security zone-policy zone DEPARTMENTB interface dp0bond1.30  set security zone-policy zone DEPARTMENTB interface dp0bond1.40  set security zone-policy zone DEPARTMENTC interface dp0bond1.50
+set security zone-policy zone DEPARTMENTA interface dp0bond1.20 
+set security zone-policy zone DEPARTMENTB interface dp0bond1.30 
+set security zone-policy zone DEPARTMENTB interface dp0bond1.40 
+set security zone-policy zone DEPARTMENTC interface dp0bond1.50
 ```
 
 The `commit` command populates each zone as an interface and the default drop rules discard any traffic trying to enter the zone from the outside. In the example, VLAN 10 and 20 can pass traffic since they are in the same zone (`DEPARTMENTA`) but VLAN 10 and VLAN 30 cannot pass traffic because VLAN 30 is in a different zone (`DEPARTMENTB`).
 
 The interfaces within each zone can pass traffic freely and rules can be defined for interaction between the zones. A rule set is configured from the point of view of leaving one zone to another zone. The following command shows an example of how to configure a rule:
 
-`set security zone-policy zone DEPARTMENTC to DEPARTMENTB firewall ALLOW_PING `
+`set security zone-policy zone DEPARTMENTC to DEPARTMENTB firewall ALLOW_PING`
 
 This command associates the transition from DEPARTMENTC to DEPARTMENTB with the rule set named `ALLOW_PING`. Traffic entering the DEPARTMENTB zone from the DEPARTMENTC zone would be checked against this rule set.
 
 It is important to understand that this assignment from zone DEPARTMENTC going into zone DEPARTMENTB does not make any statement about the inverse. If there are no rules allowing traffic from zone DEPARTMENTB into zone DEPARTMENTC, then traffic (ICMP replies) will not get back to the hosts in DEPARTMENTC.
+
+`ALLOW_PING` would be applied as an `out` firewall on the interfaces of DEPARTMENTB zone (dp0bond1.30 and dp0bond1.40). As this is installed by the zone policy, only traffic originating from the source zone's interfaces (dp0bond1.50) would be checked against the ruleset.
 
 ## Session and Packet Logging
 The VRA supports two types of logging:
