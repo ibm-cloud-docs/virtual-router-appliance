@@ -86,6 +86,52 @@ When two devices are in an HA pair, care must be taken on your master device tha
 
 For any VIF configuration with VRRP you will need a virtual IP address (the first usable IP in the subnet, the gateway IP to which everything in that subnet will route) and also a real interface IP address for the VIF on both devices. To conserve usable IPs, it is recommended that the real interface IPs use an out of band range such as 192.168.0.0/30, where one device has the .1 and the other device has the .2 address. You can have multiple VRRP virtual IPs, but you only need one real address on each vif.
 
+Here is an example of a VRRP configuration with two private vlans and three subnets:
+
+```
+set interfaces bonding dp0bond0 address '10.100.11.39/26'
+set interfaces bonding dp0bond0 mode 'lacp'
+set interfaces bonding dp0bond0 vif 10 address '192.168.255.81/30'
+set interfaces bonding dp0bond0 vif 10 description 'VLAN 10 - Two private subnets/VIPs'
+set interfaces bonding dp0bond0 vif 10 vrrp vrrp-group 10 advertise-interval '1'
+set interfaces bonding dp0bond0 vif 10 vrrp vrrp-group 10 preempt 'false'
+set interfaces bonding dp0bond0 vif 10 vrrp vrrp-group 10 priority '254'
+set interfaces bonding dp0bond0 vif 10 vrrp vrrp-group 10 sync-group 'vgroup1'
+set interfaces bonding dp0bond0 vif 10 vrrp vrrp-group 10 virtual-address '10.100.105.177/28'
+set interfaces bonding dp0bond0 vif 10 vrrp vrrp-group 10 virtual-address '10.100.38.1/26'
+set interfaces bonding dp0bond0 vif 11 address '192.168.255.89/30'
+set interfaces bonding dp0bond0 vif 11 description 'VLAN 11 - One private subnet/VIP'
+set interfaces bonding dp0bond0 vif 11 vrrp vrrp-group 11 advertise-interval '1'
+set interfaces bonding dp0bond0 vif 11 vrrp vrrp-group 11 preempt 'false'
+set interfaces bonding dp0bond0 vif 11 vrrp vrrp-group 11 priority '254'
+set interfaces bonding dp0bond0 vif 11 vrrp vrrp-group 11 sync-group 'vgroup1'
+set interfaces bonding dp0bond0 vif 11 vrrp vrrp-group 11 virtual-address '10.100.212.65/26'
+set interfaces bonding dp0bond0 vrrp vrrp-group 1 preempt 'false'
+set interfaces bonding dp0bond0 vrrp vrrp-group 1 priority '254'
+set interfaces bonding dp0bond0 vrrp vrrp-group 1 'rfc-compatibility'
+set interfaces bonding dp0bond0 vrrp vrrp-group 1 sync-group 'vgroup1'
+set interfaces bonding dp0bond0 vrrp vrrp-group 1 virtual-address '10.100.11.5/26'
+set interfaces bonding dp0bond1 address '169.110.20.28/29'
+set interfaces bonding dp0bond1 mode 'lacp'
+set interfaces bonding dp0bond1 vrrp vrrp-group 1 notify 'ipsec'
+set interfaces bonding dp0bond1 vrrp vrrp-group 1 preempt 'false'
+set interfaces bonding dp0bond1 vrrp vrrp-group 1 priority '254'
+set interfaces bonding dp0bond1 vrrp vrrp-group 1 'rfc-compatibility'
+set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'vgroup1'
+set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
+```
+
+* A vrrp sync-group is different than a vrrp group. When an interface that belongs in a sync-group changes state, all other members of the same sync-group will transition to the same state. 
+* The vrrp-group number of the VLAN interfaces (VIFs) do not have to be the same as one of the native interfaces, or of the other vlans. However, it is strongly suggested to keep all virtual addresses of the same vlan in one vrrp-group, as seen in VLAN 10.
+* The real interface addresses on the native vlans (e.g. dp0bond1: 169.110.20.28/29) are not always in the same subnet as their VIPs (169.110.21.26/29). 
+
+## Manual VRRP failover
+If you need to force a vrrp failover, it can be achieved by running the following on the device that currently is VRRP master:
+
+`vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
+
+The group ID is the vrrp group ID of the native interfaces, and, se mentioned above, could be different in your pair.
+
 ## Connection synchronization
 When two VRA devices are in an HA pair, it may be useful to track stateful connections between the two devices so that if a failover happens, the current state of all connections that are on the failed device are replicated to the backup device, so that it isn't necessary for any current active sessions (like SSL connections) to be rebuilt from scratch, which can result in a disrupted user experience.
 
