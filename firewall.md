@@ -59,6 +59,20 @@ set security firewall name TEST rule 1 state enable
 ```
 This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands. 
 
+## ALG for assisted stateful tracking
+A few protocols such as FTP utilise more complex sessions that the normal stateful firewall operation can track. 
+There are preconfigured modules that enable these protocols to be stetfully managed.
+It is suggested to disable these ALG modules, unless they are required for the successful use of the respective protocols.
+
+```
+set system alg ftp 'disable'
+set system alg icmp 'disable'
+set system alg pptp 'disable'
+set system alg rpc 'disable'
+set system alg rsh 'disable'
+set system alg sip 'disable'
+set system alg tftp 'disable'
+```
 
 ## Firewall Rule Sets
 Firewall rules are grouped together into named sets to make applying rules to multiple interfaces easier. Each rule set has a default action associated with it. Consider the following example:
