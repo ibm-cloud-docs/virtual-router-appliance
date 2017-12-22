@@ -17,7 +17,7 @@ lastupdated: "2017-12-22"
 # Synchronize HA Configuration
 Two Virtual Router Appliances (VRA) in an HA pair must have their configurations synchronized sufficiently so that both devices behave in a similar manner. This is done through `configuration sync-maps` and you can choose which portion of the configuration will be synchronized. If you make a change on one machine, it will push the marked config over to the other device.
 
-**NOTE:** This synchronises and saves the running configuration of the local device on the remote device. However, as a step of the commit process it would not save the configuration on the local device.
+**NOTE:** This synchronises and saves the running configuration of the local device on the remote device. However, as a step of the commit process it would not save the configuration on the local device. 
 
 Configuration that is unique to one system should not be synced to the other. Real IP addresses and MACs should not be synchronized, for instance. The `system config-sync` configuration node itself and the `service https` node cannot be synchronized at all.
 
