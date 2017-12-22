@@ -25,9 +25,9 @@ It is important to test firewall rules after creation to ensure the rules work a
 While manipulating rules on the `dp0bond1` interface, it is advised to connect to the device using `dp0bond0`. Connecting to the console using the Intelligent Platform Management Interface (IPMI) is also an option.
 
 ## Stateless vs Stateful
-By default, the firewall is stateless, but it can be configured as stateful if needed. A stateless firewall will need rules for traffic in both directions. Stateful firewalls allow for managing bi-directional connections by specifying a rule only for one flow direction, and the corresponding return traffic is tracked and automatically allowed. To configure a stateful firewall, you must dictate which rules you want to operate statefully.
+By default, the firewall is stateless, but it can be configured as stateful if needed. A stateless firewall will need rules for traffic in both directions, while stateful firewalls track connections and automatically allow the returning traffic of accepted flows. To configure a stateful firewall, you must dictate which rules you want to operate statefully.
 
-To make all firewall rules 'stateful', run the following commands:
+To enable 'stateful' tracking of `tcp`, `udp`, or `icmp` traffic, run the following commands:
 
 ```
 set security firewall global-state-policy icmp
@@ -41,7 +41,7 @@ Note that the `global-state-policy` commands will only track the state of traffi
 set security firewall name GLOBAL_STATELESS rule 1 action accept
 ```
 
-As `GLOBAL_STATELESS` does not specify `protocol tcp`, the `global-state-policy tcp` command would not enable statefulness of this rule. 
+As `GLOBAL_STATELESS` does not specify `protocol tcp`, the `global-state-policy tcp` command would not apply on this rule. 
 
 ```
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 action accept
@@ -57,7 +57,7 @@ To make individual firewall rules 'stateful':
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
-This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands.
+This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands. 
 
 
 ## Firewall Rule Sets
