@@ -79,7 +79,7 @@ Control plane policing (CPP) provides protection against attacks on the Virtual 
 
 CPP is implemented when the `local` keyword is used in firewall policies that are assigned to any type of VRA interface, such as data plane interfaces or loopback. Unlike the firewall rules applied for packets traversing through VRA, the default action of firewall rules for traffic entering or leaving control plane is `Allow`.  Users must add explicit drop rules if the default behavior is not desired.
 
-The VRA provides a basic CPP rule set as template. You can merge it into its your configuration by running:  
+The VRA provides a basic CPP rule set as template. You can merge it into its your configuration by running: 
 
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 

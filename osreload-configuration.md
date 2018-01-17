@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Reload OS
+# Reload the OS
 The OS reload process, when initiated in the Customer Portal, will wipe away all configurations present on the device and restore it to its original configuration. Any changes made since the last load of the system will be erased. As a result, if you have made changes, for example to the VRRP group on another machine, the reloaded machine will likely have a conflict when it comes back online.
 
 To reload your OS, perform the following procedure:
