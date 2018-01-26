@@ -51,7 +51,6 @@ Perform the following procedure to configure IPSec site-to-site.
 
 	`set vpn ipsec esp-group TestESP proposal 1 hash sha1۪`
 
-
 4. Setup the IPSec site-to-site encryption parameters.
 
 	Specify that both the remote side IP and the IPSec will be using 'pre-shared secret':

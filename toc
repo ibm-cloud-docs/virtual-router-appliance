@@ -8,6 +8,7 @@ IBM Virtual Router Appliance
     getting-started.md
     about.md
     vra-basics.md
+    [Explore Firewalls](https://console.bluemix.net/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
