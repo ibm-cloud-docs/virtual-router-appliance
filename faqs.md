@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2017-12-22"
 
 ---
 
@@ -118,3 +118,7 @@ To enable root access through SSH, run the following command:
 
 `set service ssh allow-root`
 
+Note that allowing root access via SSH is considered unsafe. 
+Another way of accessing a root shell is to either login as another user and elevate to root locally with `su -`, or by allowing `sudo` commands to 'superusers'. For example, to configure the vyatta as a superuser:
+
+`set system login vyatta level superuser`
