@@ -20,7 +20,7 @@ VLAN association is the linking of an eligible VLAN to a Network Gateway so that
 
 VLANs may be associated to only one Gateway at a time and must not have a firewall. Perform the following procedure to associate a VLAN to a Network Gateway.
 
-1. Access the [Gateway Appliance Details screen](access-gateway-screen) in the Customer Portal. 
+1. Access the [Gateway Appliance Details screen](access-gateway-screen.html) in the Customer Portal. 
 2. Select the desired VLAN from the **Associate a VLAN** drop down list.
 3. Click the **Associate** button to associate the VLAN.
 
