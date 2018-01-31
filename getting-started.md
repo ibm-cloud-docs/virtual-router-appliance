@@ -23,7 +23,7 @@ To get started with the IBM Virtual Router Appliance (VRA), navigate to the orde
 3. From the **Gateway Appliances** list page, click **Order Gateway**.
 4. From the **Order** page, select your desired data center from dropdown menu, then choose the desired type of server hardware.
 
-    **NOTE:** VRA minimum server requirements call for 8 GB of RAM and one CPU core for every 10 Gbps of network capacity. For example, a system with dual 10 Gbps public and private uplinks requires at least four cores. Reserve more than the default setting disk if you plan to run network diagnostics that generate detailed logs. Finally, additional cores beyond the minimum can increase VPN performance
+    **NOTE:** VRA minimum server requirements call for 8 GB of RAM and one CPU core for every 10 Gbps of network capacity. For example, a system with dual 10 Gbps public and private uplinks requires at least four cores. Reserve more than the default disk setting if you plan to run network diagnostics that generate detailed logs. Finally, if your intent is to setup VPN services with encryption, you may want to add additional cores. Adding additional cores for VPN Services will ensure the VRA will not get bogged down by heavy load when routing and simultaneously encrypting/decrypting data.
 
 5. In the **Configure your Network Gateway Appliance** page, select **High Availability Pair** option if desired, the VRA version, and the network uplink speeds.
 6. Review your selections then click **Add to Order**, and the order will be verified automatically.

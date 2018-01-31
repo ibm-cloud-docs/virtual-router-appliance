@@ -25,10 +25,15 @@ The IBM Virtual Router Appliance provides the latest Vyatta 5600 operating syste
 To protect your environment from external threats, the Virtual Router Appliance can be leveraged as a firewall. You can add firewall rules to allow or deny inbound or outbound network traffic to the ports your application runs on, and you can filter the traffic within your own networks. The Virtual Router Appliance can also be configured to perform stateful IPv4 and IPv6 filtering to protect your critical data.
 
 ## Virtual Private Network (VPN) Gateway
-Connect your on-site data center to the IBM Cloud using VPN tunneling by provisioning your Virtual Router Appliance as a network gateway device. You can use an IPsec site-to-site VPN tunnel for secure communication from your enterprise data center to your IBM Cloud network.
+Connect your on-site data center or office to the IBM Cloud using VPN tunneling by provisioning your Virtual Router Appliance as a network gateway device. You can use an IPsec site-to-site VPN tunnel for secure communication from your enterprise data center or office to your IBM Cloud network. Other VPN options are; Remote access IPsec VPN (client-to-site), OpenVPN, GRE, L2TP and DMVPN.
+
+Have a look at the Brocade VPN Configurations guides in our [Supplemental VRA documentation section](https://console.bluemix.net/docs/infrastructure/virtual-router-appliance/vra-docs.html#supplemental-vra-documentation)
 
 ## Network Address Translation (NAT)
 With the Virtual Router Appliance, you can provision application and database servers without public network interfaces while still allowing your servers to access the Internet using Source NAT. You can also hide your servers behind the gateway device with Destination NAT for enhanced security.
 
 ## Enterprise-grade Routing
-For multi-tiered applications on different isolated networks, the Virtual Router Appliance enables you to build connectivity between these networks with greater flexibility.
+
+For multi-tiered applications on different isolated networks, the Virtual Router Appliance enables you to build connectivity between these networks with greater flexibility. You will be able to setup dynamic routing using BGP, which will allow you to announce your own public IP space on the IBM Cloud routers. BGP will also offer more flexibility for custom private network configurations when using various tunnels and direct link solutions.
+
+Have a look at the Brocade BGP Configurations guides in our [Supplemental VRA documentation section](https://console.bluemix.net/docs/infrastructure/virtual-router-appliance/vra-docs.html#supplemental-vra-documentation)

@@ -22,7 +22,7 @@ The VRA can be configured using a remote console session through SSH or by loggi
 ## Accessing the Device Using SSH
 Most UNIX-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients included with their default installations. Windows users can download an SSH client, such as PuTTy.
 
-It is recommended that SSH connections to the public IP be disabled and that only SSH connections to the private IP be allowed. Connections to private IPs require you to be on the same VPN.
+It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs requires your client to be connected private network. You can login using one of the default VPN options (PPTP, SSL-VPN and IPsec) offered in the customer portal, or using a custom VPN solution configured on the VRA.
 
 Use the Vyatta account from the **Device Details** page to login through SSH. The root password is also provided, but root login is disabled by default for security reasons.
 

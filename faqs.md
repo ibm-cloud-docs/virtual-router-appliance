@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2017-12-22"
 
 ---
 
@@ -123,4 +123,3 @@ Note that allowing root access using SSH is considered unsafe. An alternative to
 For example, to configure the vyatta as a superuser:
 
 `set system login vyatta level superuser`
-
