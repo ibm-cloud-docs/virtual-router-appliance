@@ -36,6 +36,7 @@ IBM Virtual Router Appliance
 
     {: .navgroup id="help"}
     faqs.md
+    technical-faqs.md
     vra-docs.md
     legacy-5400.md
     getting-help.md
