@@ -15,16 +15,16 @@ lastupdated: "2017-10-30"
 {:download: .download}
 
 # VRA Basics
-The VRA can be configured through a remote console session through SSH or by logging in to the web GUI. By default, the web GUI is not available from the public internet. To enable the web GUI, log in through SSH first.
+The VRA can be configured using a remote console session through SSH or by logging into the web GUI. By default, the web GUI is not available from the public internet. To enable the web GUI, log in through SSH first.
 
 **NOTE:** Configuring the VRA outside of its shell and interface may produce unexpected results and thus it is not recommended.
 
-## Accessing the device via SSH
-Most Unix-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients included with their default installations. Windows users can download an SSH client, such as PuTTy.
+## Accessing the Device Using SSH
+Most UNIX-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients included with their default installations. Windows users can download an SSH client, such as PuTTy.
 
-It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs require you to be on the same VPN.
+It is recommended that SSH connections to the public IP be disabled and that only SSH connections to the private IP be allowed. Connections to private IPs require you to be on the same VPN.
 
-Use the Vyatta account from the **Device Details** page to login through SSH. The root password is also provided but root login is disabled by default for security reasons.
+Use the Vyatta account from the **Device Details** page to login through SSH. The root password is also provided, but root login is disabled by default for security reasons.
 
 `ssh vyatta@[IP address] `
 
@@ -39,9 +39,9 @@ $ configure
 # save
 ```
 
-## Accessing the device via the web GUI
+## Accessing the Device Using the Web GUI
 
-Log in to the VRA using SSH instructions above, then run the following commands to enable the HTTPS service:
+Log into the VRA using the SSH instructions above, then run the following commands to enable the HTTPS service:
 
 ```
 $ configure
@@ -50,7 +50,7 @@ $ configure
 # save
 ```
 
-After these commands complete, enter https://<ip.address> in your browser's address bar, replacing the IP address with your VRA's. You may be asked to accept the VRA's self-issued certificate. Do so, then log into the Web interface with your 'vyatta' credentials when prompted.
+After these commands complete, enter `https://<ip.address>` in your browser's address bar, replacing the IP address with your VRA's. You may be asked to accept the VRA's self-issued certificate. Do so, then log into the Web interface with your Vyatta credentials when prompted.
 
 ## Modes
 **Configuration mode:** Invoked with the use of the `configure` command, this mode is where configuration of the VRA system is performed.
@@ -121,7 +121,7 @@ User accounts can be configured with three levels of access:
 
 * Admin
 * Operator
-* Superuser.
+* Superuser
 
 Operator level users can run `show` commands to view the running status of the system and issue `reset` commands to restart services on the device. Operator level permissions do not imply read-only access.
 
@@ -130,7 +130,6 @@ Admin level users have full access to all configurations and operations for the 
 Superuser level users are able to execute commands with root privileges through the `sudo` command in addition to having admin level privileges.
 
 Users can be configured for password or public key authentication styles or both. Public key authentication is used with SSH and allows users to login using a key file on their system. To create an operator user with a password:
-
 
 ```
 set system login user [account] authentication plaintext-password [password]
@@ -223,4 +222,4 @@ set system acm ruleset rule 9999 operation '*'
 set system acm ruleset rule 9999 path '*'
 ```
 
-Refer to supplemental [documentation](vra-docs.html) before attempting to enable ACM rules. Inaccurate ACM rule settings can cause device access denials or system inoperability errors.
+Refer to the supplemental [documentation](vra-docs.html) before attempting to enable ACM rules. Inaccurate ACM rule settings can cause device access denials or system inoperability errors.

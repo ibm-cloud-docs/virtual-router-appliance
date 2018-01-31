@@ -18,7 +18,7 @@ lastupdated: "2017-10-30"
 # Getting Started
 To get started with the IBM Virtual Router Appliance (VRA), navigate to the order page in the Customer Portal:
 
-1. From your browser, open  [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} and log into your account.
+1. From your browser, open the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} and log into your account.
 2. In the Customer Portal navigation, select **Network > Gateway Appliances**.
 3. From the **Gateway Appliances** list page, click **Order Gateway**.
 4. From the **Order** page, select your desired data center from dropdown menu, then choose the desired type of server hardware.
@@ -34,7 +34,7 @@ After your order is approved, the provisioning of your VRA starts automatically.
 ## VLANs and the Gateway Appliance's role
 A VLAN (virtual LAN) is a mechanism that segregates a physical network into many virtual segments. For convenience, traffic from multiple selected VLANs can be delivered through a single network cable, a process commonly called "trunking."
 
-VRA is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. Servers in an associated VLAN can only be reached from other VLANs by going through your VRA; it's not possible to circumvent the VRA unless you bypass or disassociate the VLAN.
+VRA is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. The Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. Servers in an associated VLAN can only be reached from other VLANs by going through your VRA; it is not possible to circumvent the VRA unless you bypass or disassociate the VLAN.
 
 By default, a new Gateway Appliance is associated with two non-removable "transit" VLANs, one each for public and private. These are typically used for administration and can be separately secured by VRA commands.
 

@@ -15,7 +15,7 @@ lastupdated: "2017-10-30"
 {:download: .download}
 
 # How to configure IPSec on Vyatta
-Perform the following procedure to configure IPSec site-to-site. 
+Perform the following procedure to configure IPSec site-to-site:
 
 **NOTE:** This example of IPSec site-to-site demonstrates the tunnel on IBM Cloud's public network; use `bond0` for private IPSec site-to-site connections.
 
@@ -25,7 +25,7 @@ Perform the following procedure to configure IPSec site-to-site.
 
 2. Set up the first phase of the two phase tunnel.
 
-	Create a new 'ike' group called test and use dh-group as the key exchange type:
+	First, create a new 'ike' group called test and use dh-group as the key exchange type:
 	
 	`set vpn ipsec ike-group TestIKE proposal 1 dh-group '2'`
 
@@ -39,7 +39,7 @@ Perform the following procedure to configure IPSec site-to-site.
 	
 3. Setup the second phase of the two phase tunnel. 
 
-	Disable perfect forward secrecy (PFS), because not all devices can use it. The 'esp' in the command is the second part of the encryption:
+	First, disable perfect forward secrecy (PFS), because not all devices can use it. The 'esp' in the command is the second part of the encryption:
 	
 	`set vpn ipsec esp-group TestESP pfs disabl`
 
@@ -53,7 +53,7 @@ Perform the following procedure to configure IPSec site-to-site.
 
 4. Setup the IPSec site-to-site encryption parameters.
 
-	Specify that both the remote side IP and the IPSec will be using 'pre-shared secret':
+	First, specify that both the remote side IP and the IPSec will be using 'pre-shared secret':
 
 	`set vpn ipsec site-to-site peer 169.54.254.117 	authentication mode pre-shared-secret`
 	
@@ -71,7 +71,7 @@ Perform the following procedure to configure IPSec site-to-site.
 
 5. Create the mapping for the IPSec tunnel. 
 
-	Tell the tunnel to map the remote IP of 169.54.254.117 to the local IP address of bond1, 50.97.240.219:
+	First, tell the tunnel to map the remote IP of 169.54.254.117 to the local IP address of bond1, 50.97.240.219:
 
 	`set vpn ipsec site-to-site peer 169.54.254.117 local-address ۪50.97.240.219`
 	
@@ -85,7 +85,7 @@ Perform the following procedure to configure IPSec site-to-site.
 
 6. Set up the remote-side device, which is a Brocade 5400 vRouter 6.6.5 R.
 
-	Use the newly configured device to enter the command `show configuration commands`. A list of commands used to set up the device will display.
+	First, use the newly configured device to enter the command `show configuration commands`. A list of commands used to set up the device will display.
 
 	Copy the commands to a text editor. The commands used to set up the local device will be used to set up the remote server with modifications to the IP to point the Brocade 5400 vRouter 6.6.5R device on IBM Cloud.
 

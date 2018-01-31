@@ -14,19 +14,22 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Add firewall functions to Vyatta (stateless and stateful)
-Applying firewall rule sets to each interface is one method of firewalling when using Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall intances - In, Out, and Local - and eahc instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall will apply the specific action of the matching rule.
+# Add firewall functions to Virtual Router Appliance (stateless and stateful)
+Applying firewall rule sets to each interface is one method of firewalling when using the Virtual Router Appliance (VRA). Each interface has three possible firewall intances - In, Out, and Local - and each instance has rules that can be applied to it. 
+
+The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall will apply the specific action of the matching rule.
 
 For any of the three firewall instances below, only one can be applied.
 
-**IN:** The firewall filters packets entering the interface and traversing the Brocade system. You will need to permit certain SoftLayer IP ranges to have access to the front-end and back-end for management (ping, monitoring, and so on).
+**IN:** The firewall filters packets entering the interface and traversing the system. You will need to permit certain IP ranges to have access to the front-end and back-end for management (ping, monitoring, and so on).
 
-**OUT:** The firewall filters packets leaving the interface. These packets can be traversing the Brocade system or originating on the system.
+**OUT:** The firewall filters packets leaving the interface. These packets can traverse the VRA system or originate on the system.
 
-**LOCAL:** The firewall filters packets destined fro the Brocade vRouter system itself via the system interface. You should establish restrictions on access ports coming into the Brocade vRouter device from external IP addresses that are not restricted.2
-Use the following steps to set an example firewall rule to turn off Internet Control Message Protocol (ICMP) (ping - IPv4 echo reply message) to your Brocade 5400 vRouter's interfaces (this is a stateless action; a stateful action will be reviewed later):
+**LOCAL:** The firewall filters packets destined for the VRA system itself using the system interface. You should establish restrictions on access ports coming into the device from external IP addresses that are not restricted.
 
-1. Type `show configuration commands` in the command prompt to see which configurations are set. You will see a list of all the commands that you have set on your device (which can be handy if you decide to migrate and want to see all your configurations). Notice the command set firewall all-ping 'enable', which tells that ICMP is still enabled for your Device.
+Use the following steps to set an example firewall rule to turn off Internet Control Message Protocol (ICMP) (ping - IPv4 echo reply message) to your Virtual Router Appliance's interfaces (this is a stateless action; a stateful action will be reviewed later):
+
+1. Type `show configuration commands` in the command prompt to see which configurations are set. You will see a list of all the commands that you have set on your device (which can be handy if you decide to migrate and want to see all your configurations). Notice the command `set firewall all-ping enable`, which indicates that ICMP is still enabled for your Device.
 
 2. Type `configure`.
 
@@ -34,9 +37,9 @@ Use the following steps to set an example firewall rule to turn off Internet Con
 
 4. Type `commit`.
 
-If you now try to ping your Brocade 5400 vRouter device, you will no longer receive a response.
+If you now try to ping your VRA device, you will no longer receive a response.
 
-In order to assign firewall rules to routed traffic, rules must be applied to the Brocade 5400 vRouter's interfaces or create zones, then applied to the zones.
+In order to assign firewall rules to routed traffic, rules must be applied to the VRA's interfaces or create zones, then applied to the zones.
 
 For this example, zones will be created for the VLANs that have been used thus far.
 
@@ -53,12 +56,12 @@ Before the zones are actually created, it is a good idea to create the firewall 
 
 The following commands will:
 
-* Create a firewall rules named dmz2private with the default action to drop any packet
-* Enable logging of accepted and denied traffic for the rule named dmz2private
+* Create a firewall rule named `dmz2private` with the default action to drop any packet.
+* Enable logging of accepted and denied traffic for the rule named `dmz2private`.
 
 1. Type `configure` in the command prompt.
 
-2. Enter the following commands in the prompt:
+2. Enter the following commands:
 
 	~~~
 	set firewall name dmz2private default-action drop
@@ -108,10 +111,10 @@ The following commands will:
 Zones are logical represenations of an interface. In this section, you will:
 
 * Create a zone and a policy named dmz with a default action to drop packets destined for this zone
-* Set the dmz policy to use the bond1 interface
-* Set the prod policy to use the bond1.2007 interface
-* Create a zone policy named private with a default action to drop packets destined for this zone
-* Set the policy named private to use theåÊ bond0.2254 interface
+* Set the dmz policy to use the `bond1` interface
+* Set the prod policy to use the `bond1.2007` interface
+* Create a zone policy named `private` with a default action to drop packets destined for this zone
+* Set the policy named `private` to use the `bond0.2254` interface
 
 1. Enter the Following commands in the prompt:
 

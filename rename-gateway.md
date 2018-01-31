@@ -18,7 +18,7 @@ lastupdated: "2017-10-30"
 
 Network Gateways are given unique names that assist users in their identification. At any time, a Gateway name may be changed. It is recommended that you use a consistent naming convention to more easily identify Gateways.
 
-Perform the following procedure to rename a Network Gateway.
+Perform the following procedure to rename a Network Gateway:
 
 1. [Access the Gateway Appliance Details screen](access-gateway-details.html) in the Customer Portal. 
 2. Click the **Actions** dropdown menu and select **Rename Gateway**.

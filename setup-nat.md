@@ -30,11 +30,15 @@ set nat source rule 1000 translation address 'masquerade'
 commit
 ~~~
 
-Connection request from machines in the `10.xxx.xxx.xxx` network are mapped to the IP on bond1 and receive an associated ephemeral port when going outbound. An idea is to assign one-to-many masquerade rule numbers higher so that they do not conflict with lower NAT rules that you may have.
+Connection request from machines in the `10.xxx.xxx.xxx` network are mapped to the IP on bond1 and receive an associated ephemeral port when going outbound. The intention is to assign one-to-many masquerade rule numbers higher so that they do not conflict with lower NAT rules that you may have.
 
-**NOTE:** You must configure the server to pass its internet traffic through the Brocade 5400 vRouter so that its default gateway is the Private IP address of the managed virtual LAN (VLAN). For example, for `bond0.2254` the gateway is `10.52.69.201`. This should be the gateway address for the server passing Internet traffic.
+**NOTE:** You must configure the server to pass its internet traffic through the VRA so that its default gateway is the Private IP address of the managed virtual LAN (VLAN). For example, for `bond0.2254` the gateway is `10.52.69.201`. This should be the gateway address for the server passing Internet traffic.
 
-**NOTE:** Use the following command to help troubleshoot NAT: run show nat source translations detail.
+**NOTE:** Use the following command to help troubleshoot NAT: 
+
+'''
+run show nat source translations detail 
+'''
 
 ## One-to-one NAT rule
 
@@ -64,11 +68,11 @@ If traffic comes in on IP `50.97.203.227` on bond1, that IP will be mapped to IP
 
 **NOTE:** Use the following command to help troubleshoot NAT: `run show nat source translations detail`.
 
-## Adding IP ranges through your Brocade 5400 vRouter (Vyatta)
+## Adding IP ranges through your VRA
 
-Depending on your Brocade 5400 vRouter configuration, you may want to accept specific SoftLayer IP addresses. 
+Depending on your VRA configuration, you may want to accept specific IBM Cloud IP addresses. 
 
-Newer Brocade 5400 vRouter deployments come with IBM Cloud's services network IP addresses defined in a firewall rule called `SERVICE-ALLOW`.
+New vRouter deployments come with IBM Cloud's services network IP addresses defined in a firewall rule called `SERVICE-ALLOW`.
 
 The following is an example of `SERVICE-ALLOW`. This is not a complete private IP rule set.
 
@@ -91,12 +95,9 @@ Applying to a bond interface:
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
 
-Notes:
+**NOTES:**
 
+* IP addresses that are mapped one-to-one cannot be masqueraded. If you translate an IP inbound, you must translate that same IP outbound in order for its traffic to go both ways.
 
+* Use the following command to help troubleshoot NAT: `run show nat source translations detail`
 
-2IP addresses that are mapped one-to-one cannot also be masqueraded. If you translate۝ an IP inbound, you must translate۝ that IP outbound in order for traffic to go both ways.
-
-3Use the following command to help troubleshoot NAT: run show nat source translations detail.
-
-4Use the following command to help troubleshoot NAT: run show nat source translations detail.

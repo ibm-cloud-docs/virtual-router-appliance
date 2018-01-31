@@ -29,7 +29,7 @@ To upgrade the VRA, perform the following procedure.
 4. Choose whether to save the SSH host keys from your current configuration.
 5. Hit **Enter** to accept the default system console, or enter your own.
 6. Hit **Enter** to accept the default console speed, or enter your own.
-7. Enter the command ``reboot`` and then enter Yes to reboot the machine.
+7. Enter the command ``reboot`` and then enter `Yes` to reboot the machine.
 8. If you are using VRA in a high availability mode, run step 1 to step 7 again on the second machine.
 
 The below example illustrates the upgrade process.

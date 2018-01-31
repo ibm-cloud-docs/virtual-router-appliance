@@ -31,6 +31,7 @@ IBM Virtual Router Appliance
     {: .navgroup id="reference"}
     apis.md
     [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
+    ips.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

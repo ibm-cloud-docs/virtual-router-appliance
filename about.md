@@ -22,7 +22,7 @@ The IBM Virtual Router Appliance provides the latest Vyatta 5600 operating syste
 **NOTE:** The FortiGate Security Appliance (FSA) 10Gbps is a single tenant (dedicated), high throughput (10Gbps) hardware firewall with next generation features, such as AntiVirus (AV), Intrusion Prevention (IPS) and web filtering. It may be an alternative to VRA for achieving similar goals. For more information, refer to the [FSA documentation](https://console.bluemix.net/docs/infrastructure/fortigate-10g/getting-started.html#getting-started).
 
 ## Firewall
-To protect your environment from external threats, the Virtual Router Appliance can be leveraged as a firewall. You can add firewall rules to allow or deny inbound or outbound network traffic to the ports on which your application is running. You can filter the traffic within your own networks. The Virtual Router Appliance can also be configured to perform stateful IPv4 and IPv6 filtering to protect your critical data.
+To protect your environment from external threats, the Virtual Router Appliance can be leveraged as a firewall. You can add firewall rules to allow or deny inbound or outbound network traffic to the ports your application runs on, and you can filter the traffic within your own networks. The Virtual Router Appliance can also be configured to perform stateful IPv4 and IPv6 filtering to protect your critical data.
 
 ## Virtual Private Network (VPN) Gateway
 Connect your on-site data center to the IBM Cloud using VPN tunneling by provisioning your Virtual Router Appliance as a network gateway device. You can use an IPsec site-to-site VPN tunnel for secure communication from your enterprise data center to your IBM Cloud network.

@@ -41,4 +41,4 @@ Possible completions include:
  > twamp           Two-Way Active Measurement Protocol
 ```
 
-Noticeably, `nat` is configured as part of the service, and `https` controls access to the Web GUI and the APIs. `connsync` defines how two VRAs can share connection tracking synchronization for things like stateful firewall failover.
+`nat` is configured as part of the service, and `https` controls access to the Web GUI and the APIs. `connsync` defines how two VRAs can share connection tracking synchronization for things like stateful firewall failover.
