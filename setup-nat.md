@@ -15,7 +15,7 @@ lastupdated: "2017-10-30"
 {:download: .download}
 
 # Setup NAT Rules on Vyatta
-This topic contains examples of the Network Addres Translation (NAT) rules used on a Vyatta.
+This topic contains examples of the Network Address Translation (NAT) rules used on a Vyatta.
 
 ## One-to-many NAT rule (masquerade)
 

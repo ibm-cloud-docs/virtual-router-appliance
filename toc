@@ -15,7 +15,8 @@ IBM Virtual Router Appliance
     access-gateway-appliances.md
     access-gateway-details.md
     rename-gateway.md
-    manage-vlans.md 
+    manage-vlans.md
+    vlans.md
     services.md
     firewall.md
     vrrp.md
@@ -29,15 +30,26 @@ IBM Virtual Router Appliance
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    upgrade-issues.md
     apis.md
     [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
     [IBM Cloud IP Ranges](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html)
+
+    {: .topicgroup}
+	Legacy Vyatta 5400
+		legacy-5400.md
+		how-login-vyatta.md
+		how-view-vyatta-portal.md
+		basic-configuration-vyatta.md
+		how-configure-ipsec-vyatta.md
+		how-add-firewall-functions-vyatta-stateless-and-stateful.md
+		setup-nat.md
+		vyatta-high-availability-configuration.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     faqs.md
     technical-faqs.md
     vra-docs.md
-    legacy-5400.md
     getting-help.md
     {: .navgroup-end}
