@@ -120,5 +120,6 @@ HW UUID:      00000000-0000-0000-0000-0CC47A07EF22
 Uptime:       12:57:47 up 59 min,  1 user,  load average: 0.35, 0.27, 0.26
 vyatta@acs-jmat-vyatta01:~$
 ```
-
 All your commands will work again, and you can proceed normally.
+
+**NOTE:** The HTTPS certificate `/etc/lighttpd/server.pem` may also fail to copy during the OS upgrade process, which can cause High Availability (HA) configurations to fail to synchronize. To fix this problem, copy over the old `server.pem` file in addition to the files listed above (issue `su -` to reach root level, then issue the `copy` command), then issue `restart https` to restart the HTTPS `demon.m` file (and the files listed above).
