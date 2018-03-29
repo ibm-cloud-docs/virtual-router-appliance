@@ -7,13 +7,13 @@ IBM Virtual Router Appliance
     {: .navgroup id="learn"}
     getting-started.md
     about.md
-    vra-basics.md
-    [Explore Firewalls](https://console.bluemix.net/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls)
+    [Explore Firewalls](../fortigate-10g/explore-firewalls.html)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     access-gateway-appliances.md
     access-gateway-details.md
+    vra-basics.md
     rename-gateway.md
     manage-vlans.md
     vlans.md
@@ -25,7 +25,6 @@ IBM Virtual Router Appliance
     upgrade-os.md
     osreload-configuration.md
     configure-ipsec.md
-    setup-nat.md
     add-firewall-functions.md
     {: .navgroup-end}
 
@@ -38,8 +37,6 @@ IBM Virtual Router Appliance
     {: .topicgroup}
 	Legacy Vyatta 5400
 		legacy-5400.md
-		how-login-vyatta.md
-		how-view-vyatta-portal.md
 		basic-configuration-vyatta.md
 		how-configure-ipsec-vyatta.md
 		how-add-firewall-functions-vyatta-stateless-and-stateful.md
