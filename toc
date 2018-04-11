@@ -32,7 +32,7 @@ IBM Virtual Router Appliance
     upgrade-issues.md
     apis.md
     [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
-    [IBM Cloud IP Ranges](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html)
+    [IBM Cloud IP Ranges](../hardware-firewall-dedicated/ips.html)
 
     {: .topicgroup}
 	Legacy Vyatta 5400
