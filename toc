@@ -29,6 +29,8 @@ IBM Virtual Router Appliance
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    [Vyatta 5400 Migration Guide](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)    
+    migration-issues.md
     upgrade-issues.md
     apis.md
     [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
