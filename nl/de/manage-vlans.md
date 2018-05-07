@@ -33,7 +33,7 @@ Nachdem ein VLAN der Gateway-Appliance zugeordnet wurde, wird es im Abschnitt 'Z
 
 Die zugehörigen VLANs sind mit einer Gateway-Appliance verknüpft, aber der ankommende und abgehende Datenverkehr für das VLAN erreicht das Gateway erst, nachdem das VLAN weitergeleitet wurde. Nach dem Weiterleiten eines zugehörigen VLANs wird der gesamte Front-End- und Back-End-Datenverkehr über die Gateway-Appliance weitergeleitet anstatt über die Router des Kunden. 
 
-Gehen Sie wie folgt vor, um ein zugehöriges VLAN weiterzuleiten.
+Gehen Sie wie folgt vor, um ein zugehöriges VLAN weiterzuleiten:
 
 1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](access-gateway-details.html). 
 2. Lokalisieren Sie das gewünschte VLAN im Bereich 'Zugehörige VLANs'.
@@ -65,7 +65,7 @@ Gehen Sie wie folgt vor, um die Zuordnung eines VLANs zu einer Gateway-Appliance
 
 1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](access-gateway-details.html). 
 2. Lokalisieren Sie das gewünschte VLAN im Bereich 'Zugehörige VLANs'.
-3. Wählen Sie im Dropdown-Menü 'Aktionen' die Option **Zuordnung aufheben** aus. 
+3. Wählen Sie im Dropdown-Menü **Aktionen** die Option **Zuordnung aufheben** aus.  
 4. Klicken Sie auf **Ja**, um die Zuordnung des VLANs aufzuheben. 
 
 Nachdem die Zuordnung eines VLANs zu einer Gateway-Appliance aufgehoben wurde, kann das VLAN einem anderen Gateway zugeordnet werden. Das VLAN kann jederzeit erneut der Gateway-Appliance zugeordnet werden. Nachdem die Zuordnung eines VLANs zu einer Gateway-Appliance aufgehoben wurde, kann der Datenverkehr des VLANs nicht mehr über das Gateway geleitet werden. VLANs können erst weitergeleitet werden, wenn eine Zuordnung zu einer Gateway-Appliance besteht.

@@ -40,7 +40,7 @@ Pour router un VLAN associé, procédez comme suit :
 3. Sélectionnez **Router le VLAN** dans le menu déroulant Actions.
 4. Cliquez sur **Oui** pour procéder au routage du VLAN. 
 
-Après avoir routé un VLAN, tout le trafic frontal et dorsal passe des routeurs client à la passerelle réseau. D'autres commandes liées au trafic et au dispositif de passerelle même peuvent être exécutées en accédant à l'outil de gestion de la passerelle. Le routage via la passerelle réseau peut être interrompu à tout moment en [contournant le dispositif de passerelle](#bypass-gateway-appliance-routing-for-a-vlan).
+Après le routage d'un VLAN, tout le trafic frontal et dorsal passe des routeurs client à la passerelle réseau. D'autres commandes liées au trafic et au dispositif de passerelle même peuvent être exécutées en accédant à l'outil de gestion de la passerelle. Le routage via la passerelle réseau peut être interrompu à tout moment en [contournant le dispositif de passerelle](#bypass-gateway-appliance-routing-for-a-vlan).
 
 ## Contourner le routage du dispositif de passerelle d'un VLAN
 
@@ -55,7 +55,7 @@ Pour ignorer le routage de la passerelle d'un VLAN, procédez comme suit :
 3. Sélectionnez **Contourner le VLAN** dans le menu déroulant Actions.
 4. Cliquez sur **Oui** pour contourner la passerelle. 
 
-Après avoir contourné la passerelle réseau, tout le trafic frontal et dorsal circule via les routeurs FCR et BCR associés au VLAN. Le VLAN reste associé au dispositif de passerelle et peut être rerouté vers ce dispositif à tout moment.
+Après le contournement de la passerelle réseau, tout le trafic frontal et dorsal circule via les routeurs FCR et BCR associés au VLAN. Le VLAN reste associé au dispositif de passerelle et peut être rerouté vers ce dispositif à tout moment.
 
 ## Dissocier un VLAN d'un dispositif de passerelle
 
@@ -65,7 +65,7 @@ Pour dissocier un VLAN d'un dispositif de passerelle, procédez comme suit :
 
 1. [Accédez à l'écran des détails du dispositif de passerelle](access-gateway-details.html) dans le portail client. 
 2. Localisez le VLAN désiré dans la section VLAN associés.
-3. Sélectionnez **Dissocier** dans le menu déroulant Actions. 
+3. Sélectionnez **Dissocier** dans le menu déroulant **Actions**.  
 4. Cliquez sur **Oui** pour dissocier le VLAN. 
 
 Après avoir dissocié un VLAN d'un dispositif de passerelle, le VLAN peut être associé à une autre passerelle. Le VLAN peut également être réassocié au dispositif de passerelle à tout moment. Après avoir dissocié un VLAN d'un dispositif de passerelle, le trafic du VLAN ne peut pas être routé via la passerelle. Les VLAN doivent être associés à un dispositif de passerelle pour pouvoir être routés.

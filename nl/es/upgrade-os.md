@@ -14,25 +14,25 @@ lastupdated: "2017-10-12"
 {:tip: .tip}
 {:download: .download}
 
-# Actualice el SO 
-Se puede realizar la actualización del sistema operativo VRA con el mandato ``add system image`` en un archivo ISO local cargado por nuestro equipo de soporte. Se puede obtener una lista de las versiones de actualización de Vyatta disponibles mediante el sistema de incidencia de soporte de IBM. 
+# Actualice el SO
+Se puede realizar la actualización del sistema operativo VRA con el mandato ``add system image`` en un archivo ISO local cargado por nuestro equipo de soporte. Se puede obtener una lista de las versiones de actualización de Vyatta disponibles mediante el sistema de incidencia de soporte de IBM.
 
 Para empezar el proceso de actualización, abra una incidencia con el sistema de incidencia de soporte de IBM solicitando una actualización y que se cargue al sistema una nueva imagen ISO. Recibirá un correo electrónico de soporte de IBM indicando el lugar en el que se ha cargado el archivo ISO. En el ejemplo, se encuentra en el directorio ``tmp``.
 
-**NOTA:** El proceso de actualización que se muestra a continuación es un VRA único. Si está utilizando VRA en modo de alta disponibilidad, debe ejecutar el mismo mandato de actualización en ambos sistemas. Además, se recomienda que actualice primero la máquina `BACKUP`, y verifique que funciona correctamente. A continuación, acceda a la máquina `MASTER` rechácela utilizando el mandato `reset vrrp`. Finalmente, actualice el `MASTER` original cuando `BACKUP` haya tomado el control. 
+**NOTA:** El proceso de actualización que se muestra a continuación es un VRA único. Si está utilizando VRA en modo de alta disponibilidad, debe ejecutar el mismo mandato de actualización en ambos sistemas. Además, se recomienda que actualice primero la máquina `BACKUP`, y verifique que funciona correctamente. A continuación, acceda a la máquina `MASTER` rechácela utilizando el mandato `reset vrrp`. Finalmente, actualice el `MASTER` original cuando `BACKUP` haya tomado el control.
 
-Para actualizar el VRA, realice el procedimiento siguiente. 
+Para actualizar el VRA, realice el procedimiento siguiente.
 
 1. Ejecute el mandato ``add system image <Local ISO File>``.
-2. Pulse **Intro** para aceptar el nombre predeterminado de la imagen ISO, o especifique uno propio. 
-3. Elija si desea guardar el directorio de configuración y el archivo de configuración actuales. 
-4. Elija si desea guardar las claves de host SSH de la configuración actual. 
-5. Pulse **Intro** para aceptar la consola del sistema predeterminada o especifique una propia. 
+2. Pulse **Intro** para aceptar el nombre predeterminado de la imagen ISO, o especifique uno propio.
+3. Elija si desea guardar el directorio de configuración y el archivo de configuración actuales.
+4. Elija si desea guardar las claves de host SSH de la configuración actual.
+5. Pulse **Intro** para aceptar la consola del sistema predeterminada o especifique una propia.
 6. Pulse **Intro** para aceptar la velocidad de la consola predeterminada o especifique una propia.
-7. Especifique el mandato ``reboot`` y escriba Sí para rearrancar la máquina. 
+7. Especifique el mandato `reboot` y escriba `Sí` para rearrancar la máquina.
 8. Si está utilizando VRA en modo de alta disponibilidad, ejecute los pasos del 1 al 7 de nuevo en la segunda máquina.
 
-El ejemplo siguiente ilustra el proceso de actualización. 
+El ejemplo siguiente ilustra el proceso de actualización.
 
 ```
 vyatta@vra01:~$ show version | grep Version

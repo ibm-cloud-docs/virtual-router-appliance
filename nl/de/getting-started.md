@@ -18,12 +18,12 @@ lastupdated: "2017-10-30"
 # Einführung
 Navigieren Sie für den Einstieg in IBM Virtual Router Appliance (VRA) zur Bestellseite im Kundenportal:
 
-1. Rufen Sie in Ihrem Browser das [Kundenportal ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link icon")](https://control.softlayer.com/){: new_window} auf und melden Sie sich bei Ihrem Konto an.
+1. Rufen Sie in Ihrem Browser das [Kundenportal ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){: new_window} auf und melden Sie sich bei Ihrem Konto an.
 2. Wählen Sie im Navigationsbereich des Kundenportals **Netz > Gateway-Appliances** aus.
 3. Klicken Sie auf der Listenseite **Gateway-Appliances** auf **Gateway bestellen**.
 4. Wählen Sie auf der Seite **Bestellung** im Dropdown-Menü das gewünschte Rechenzentrum aus und wählen Sie anschließend den gewünschten Typ der Server-Hardware aus.
 
-    **HINWEIS:** Die Server-Mindestanforderungen für VRA sind 8 GB RAM und ein CPU-Kern für jeweils 10 Gb/s Netzkapazität. Beispiel: Für ein System mit jeweils 10 Gb/s für öffentliche und private Uplinks sind mindestens 4 Kerne erforderlich. Reservieren Sie mehr als die Standardeinstellung für den Plattenspeicher, wenn Sie Netzdiagnosen ausführen möchten, die detaillierte Protokolle erstellen. Außerdem können zusätzliche Kerne (über die Mindestvoraussetzungen hinaus) die VPN-Leistung erhöhen.
+    **HINWEIS:** Die Server-Mindestanforderungen für VRA sind 8 GB RAM und ein CPU-Kern für jeweils 10 Gb/s Netzkapazität. Beispiel: Für ein System mit jeweils 10 Gb/s für öffentliche und private Uplinks sind mindestens 4 Kerne erforderlich. Reservieren Sie mehr als die Standardeinstellung für den Plattenspeicher, wenn Sie Netzdiagnosen ausführen möchten, die detaillierte Protokolle erstellen. Wenn Sie beabsichtigen, VPN-Services mit Verschlüsselung einzurichten, wollen Sie möglicherweise weitere zentraler Bestandteile hinzufügen. Das Hinzufügen weiterer zentraler Bestandteile für VPN-Services garantiert, dass die VRA nicht durch eine hohe Auslastung und gleichzeitige Ver- bzw. Entschlüsselung von Daten zum Erliegen kommt. 
 
 5. Wählen Sie auf der Seite **Netzgateway-Appliance konfigurieren** bei Bedarf die Option **HA-Paar**, die VRA-Version und die Uplink-Geschwindigkeiten für das Netz aus.
 6. Überprüfen Sie die von Ihnen getroffenen Auswahlen und klicken Sie anschließend auf **Zur Bestellung hinzufügen**. Die Bestellung wird automatisch geprüft.

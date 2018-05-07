@@ -15,7 +15,7 @@ lastupdated: "2017-10-30"
 {:download: .download}
 
 # Rechargement du système d'exploitation
-Le processus de rechargement du système d'exploitation, lorsqu'il est lancé sur le portail client, efface complètement toutes les configurations présentes sur l'unité et restaure la configuration d'origine sur l'unité. Tout changement effectué depuis le dernier chargement du système sera effacé. Par conséquent, si vous avez effectué des modifications, par exemple pour le groupe VRRP sur une autre machine, il y aura sans doute un conflit sur la machine rechargée lorsqu'elle sera à nouveau en ligne.
+Le processus de rechargement du système d'exploitation, lorsqu'il est lancé sur le portail client, efface complètement toutes les configurations présentes sur l'unité et restaure la configuration d'origine sur l'unité. Tout changement effectué depuis le dernier chargement du système sera effacé. Par conséquent, si vous avez effectué des modifications (par exemple, pour le groupe VRRP sur une autre machine), il y aura sans doute un conflit sur la machine rechargée lorsqu'elle sera à nouveau en ligne.
 
 Pour recharger votre système d'exploitation, procédez comme suit :
 

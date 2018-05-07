@@ -26,3 +26,5 @@ Pour renommer une passerelle réseau, procédez comme suit :
 4. Cliquez sur **OK** pour sauvegarder la modification. 
 
 Après avoir modifié le nom d'un dispositif de passerelle, le nom changera immédiatement en haut de l'écran des détails du dispositif de passerelle. Le nom de la passerelle peut être à nouveau modifié à tout moment en répétant les étapes ci-dessus.
+
+**Remarque :** la modification du nom du dispositif VRA dans le portail client n'entraîne pas automatiquement la modification du nom d'hôte dans le dispositif de routeur virtuel ou les éventuelles entrées DNS dont vous disposez. Cela nécessite une intervention manuelle. 

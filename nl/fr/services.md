@@ -41,4 +41,4 @@ Les possibilités d'achèvement sont les suivantes :
  > twamp           Two-Way Active Measurement Protocol
 ```
 
-Manifestement, `nat` est configuré comme une composante du service et `https` contrôle l'accès à l'interface graphique Web et aux API. `connsync` définit comment deux unités VRA peuvent partager la synchronisation du suivi des connexions pour des actions telles que le basculement d'un pare-feu avec état.
+`nat` est configuré comme une composante du service et `https` contrôle l'accès à l'interface graphique Web et aux API. `connsync` définit comment deux unités VRA peuvent partager la synchronisation du suivi des connexions pour des actions telles que le basculement d'un pare-feu avec état.

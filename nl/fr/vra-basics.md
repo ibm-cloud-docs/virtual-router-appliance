@@ -14,17 +14,17 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# VRA - Notions de base
-VRA peut être configuré via une session de console distante via SSH ou en se connectant à l'interface graphique Web. Par défaut, l'interface graphique Web n'est pas disponible depuis l'Internet public. Pour activer cette interface, connectez-vous d'abord via SSH.
+# Accès et configuration
+Le dispositif peut être configuré à l'aide d'une session de console distante via SSH ou en se connectant à l'interface graphique Web. Par défaut, l'interface graphique Web n'est pas disponible depuis l'Internet public. Pour activer cette interface, connectez-vous d'abord via SSH.
 
 **REMARQUE :** La configuration de VRA hors de son interpréteur de commandes et de son interface peut engendrer des résultats imprévisibles et n'est donc pas recommandée.
 
 ## Accès à l'unité via SSH
-La plupart des systèmes fonctionnant avec Unix, tels que Linux, BSD et Mac OSX, ont des clients OpenSSH inclus dans leurs installations par défaut. Les utilisateurs Windows peuvent télécharger un client SSH, par exemple PuTTy.
+La plupart des systèmes fonctionnant sous UNIX, tels que Linux, BSD et Mac OSX, ont des clients OpenSSH inclus dans leurs installations par défaut. Les utilisateurs Windows peuvent télécharger un client SSH, par exemple PuTTy.
 
-Il est recommandé que la connexion SSH à l'adresse IP publique soit désactivée et que seule la connexion SSH à l'adresse IP privée soit autorisée. Les connexions aux adresses IP privées nécessitent que vous soyez sur le même réseau privé virtuel (VPN).
+Il est recommandé que la connexion SSH à l'adresse IP publique soit désactivée et que seule la connexion SSH à l'adresse IP privée soit autorisée. Les connexions à des adresses IP privées nécessitent que votre client soit connecté à un réseau privé. Vous pouvez vous connecter à l'aide de l'une des options VPN par défaut (PPTP, SSL-VPN et IPsec) offertes dans le portail client ou à l'aide d'une solution VPN personnalisée configurée sur le dispositif VRA. 
 
-Utilisez le compte Vyatta indiqué à la page **Détails de l'unité** pour vous connecter via SSH. Le mot de passe root est également fourni mais la connexion root est désactivée pour des raisons de sécurité.
+Utilisez le compte Vyatta indiqué à la page **Détails de l'unité** pour vous connecter via SSH. Le mot de passe root est également fourni, mais la connexion root est désactivée par défaut pour des raisons de sécurité.
 
 `ssh vyatta@[IP address] `
 
@@ -39,7 +39,7 @@ $ configure
 # save
 ```
 
-## Accès à l'unité via l'interface graphique Web
+## Accès à l'unité à l'aide de l'interface graphique Web
 
 Connectez-vous à VRA à l'aide des instructions SSH ci-dessus, puis exécutez les commandes suivantes pour activer le service HTTPS :
 
@@ -50,7 +50,7 @@ $ configure
 # save
 ```
 
-Une fois ces commandes exécutées, entrez https://<adresse.ip> dans la barre d'adresse de votre navigateur, en remplaçant l'adresse IP par celle de votre VRA. Vous serez peut-être invité à accepter le certificat auto-émis par VRA. Pour cela, à l'invite, connectez-vous à l'interface Web avec vos données d'identification 'vyatta'.
+Une fois ces commandes terminées, entrez `https://<ip.address>` dans la barre d'adresse de votre navigateur, en remplaçant l'adresse IP par celle de votre VRA. Vous serez peut-être invité à accepter le certificat auto-émis par VRA. Pour cela, à l'invite, connectez-vous à l'interface Web avec vos données d'identification 'vyatta'.
 
 ## Modes
 **Mode configuration :** Appelé avec la commande `configure`, ce mode est utilisé pour effectuer la configuration du système VRA.
@@ -130,7 +130,6 @@ Les utilisateurs avec le niveau Administrateur ont l'accès complet à toutes le
 Les utilisateurs avec le niveau Superutilisateur sont en mesure d'exécuter des commandes avec des privilèges de superutilisateur (root) via la commande `sudo` et en plus des privilèges de niveau admin.
 
 Les utilisateurs peuvent être configurés pour les styles d'authentification par mot de passe et/ou clé publique. L'authentification par clé publique est utilisée avec SSH et permet aux utilisateurs de se connecter à l'aide d'un fichier de clés sur leur système. Pour créer un utilisateur de niveau Opérateur avec un mot de passe :
-
 
 ```
 set system login user [account] authentication plaintext-password [password]

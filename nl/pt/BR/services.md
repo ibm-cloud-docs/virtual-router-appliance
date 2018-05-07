@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  anos: 2017
-última atualização: "12-10-2017"
+  years: 2017
+lastupdated: "2017-10-12"
 
 ---
 
@@ -41,4 +41,4 @@ Conclusões possíveis incluem:
  > twamp           Two-Way Active Measurement Protocol
 ```
 
-Visivelmente, `nat` é configurado como parte do serviço e `https` controla o acesso à GUI da Web e às APIs. `connsync` define como dois VRAs podem compartilhar a sincronização de rastreamento de conexão para coisas como failover de firewall stateful.
+`nat` é configurado como parte do serviço e `https` controla o acesso à GUI da web e às APIs. `connsync` define como dois VRAs podem compartilhar a sincronização de rastreamento de conexão para coisas como failover de firewall stateful.

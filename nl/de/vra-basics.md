@@ -14,15 +14,15 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Grundlegende Informationen zu VRA
-VRA kann in einer fernen Konsolensitzung über SSH oder per Anmeldung bei der Web-GUI konfiguriert werden. Die Web-GUI ist standardmäßig nicht im öffentlichen Internet verfügbar. Melden Sie sich über SSH an, um die Web-GUI zu aktivieren.
+# Zugreifen und Konfigurieren
+Die VRA kann mithilfe einer fernen Konsolensitzung über SSH oder durch Anmelden bei der Web-GUI konfiguriert werden. Die Web-GUI ist standardmäßig nicht im öffentlichen Internet verfügbar. Melden Sie sich über SSH an, um die Web-GUI zu aktivieren.
 
 **HINWEIS:** Das Konfigurieren von VRA außerhalb der zugehörigen Shell oder Schnittstelle kann zu unerwarteten Ergebnissen führen und wird daher nicht empfohlen.
 
 ## Über SSH auf die Einheit zugreifen
-Die Standardinstallationen der meisten UNIX-basierten Betriebssysteme (z. B. Linux, BSD und Mac OSX) beinhalten OpenSSH-Clients. Windows-Benutzer können einen SSH-Client (z. B. PuTTy) herunterladen. 
+Die Mehrzahl der UNIX-basierten Betriebssysteme wie Linux, BSD und Mac OSX verfügen über OpenSSH-Clients, die in ihre jeweilige Standardinstallation integriert sind. Windows-Benutzer können einen SSH-Client (z. B. PuTTy) herunterladen.
 
-Es wird empfohlen, SSH-Verbindungen zur öffentlichen IP zu inaktivieren und nur SSH-Verbindungen zur privaten IP zuzulassen. Verbindungen zu privaten IP-Adressen können nur von Benutzern im selben VPN hergestellt werden.
+Es wird empfohlen, SSH-Verbindungen zur öffentlichen IP zu inaktivieren und nur SSH-Verbindungen zur privaten IP zuzulassen. Verbindungen zu privaten IPs erfordern eine Verbindung Ihres Client zum privaten Netz. Sie können sich mit einer der VPN-Standardoptionen (PPTP, SSL-VPN und IPsec) anmelden, die im Kundenportal zur Verfügung stehen. Sie können auch eine angepasste VPN-Lösung verwenden, die in der VRA konfiguriert ist. 
 
 Melden Sie sich mit dem auf der Seite **Einheitendetails** angegebenen Vyatta-Konto über SSH an. Das Rootkennwort wird ebenfalls bereitgestellt, aber die Rootanmeldung ist aus Sicherheitsgründen standardmäßig inaktiviert.
 
@@ -30,7 +30,7 @@ Melden Sie sich mit dem auf der Seite **Einheitendetails** angegebenen Vyatta-Ko
 
 **HINWEIS:** Es wird empfohlen, die Rootanmeldung nicht zu aktivieren. Melden Sie sich mit dem Vyatta-Konto an und verwenden Sie die Rootebene nur bei Bedarf.
 
-SSH-Schlüssel können auch bei der Bereitstellung angegeben werden, um die Anmeldung mit dem Vyatta-Konto zu vermeiden. Nachdem überprüft wurde, dass der Zugriff auf Ihre VRA mit Ihrem SSH-Schlüssel möglich ist, können Sie die Standardanmeldung mit Benutzername und Kennwort inaktivierten, indem Sie die folgenden Befehle ausführen: 
+SSH-Schlüssel können auch bei der Bereitstellung angegeben werden, um die Anmeldung mit dem Vyatta-Konto zu vermeiden. Nachdem überprüft wurde, dass der Zugriff auf Ihre VRA mit Ihrem SSH-Schlüssel möglich ist, können Sie die Standardanmeldung mit Benutzername und Kennwort inaktivierten, indem Sie die folgenden Befehle ausführen:
 
 ```
 $ configure
@@ -50,7 +50,7 @@ $ configure
 # save
 ```
 
-Geben Sie nach Beendigung dieser Befehle in der Adressleiste Ihres Browsers Folgendes ein: https://<ip.address>. Geben Sie dabei IP-Adresse Ihrer VRA an. Sie werden gegebenenfalls aufgefordert, das selbst ausgegebene Zertifikat der VRA zu akzeptieren. Akzeptieren Sie das Zertifikat und melden Sie sich nach Aufforderung mit Ihren Vyatta-Berechtigungsnachweisen bei der Webschnittstelle an.
+Geben Sie nach Beendigung dieser Befehle in der Adressleiste Ihres Browsers Folgendes ein: `https://<ip.address>`. Ersetzen Sie dabei die IP-Adresse durch die IP-Adresse Ihrer VRA. Sie werden gegebenenfalls aufgefordert, das selbst ausgegebene Zertifikat der VRA zu akzeptieren. Akzeptieren Sie das Zertifikat und melden Sie sich nach Aufforderung mit Ihren Vyatta-Berechtigungsnachweisen bei der Webschnittstelle an.
 
 ## Modi
 **Konfigurationsmodus:** Dieser Modus wird mit dem Befehl `configure` aufgerufen und ermöglicht das Konfigurieren des VRA-Systems.
@@ -63,7 +63,7 @@ Der Befehl `configure` aktiviert den Modus **Konfiguration** für Benutzer, der 
 
 Um Befehle permanent zu speichern, führen Sie den Befehl `save` nach dem Befehl `commit` aus.
 
-Befehle für den Betriebsmodus können im Konfigurationsmodus ausgeführt werden, indem der Befehl `run` vorangestellt wird. Beispiel: 
+Befehle für den Betriebsmodus können im Konfigurationsmodus ausgeführt werden, indem der Befehl `run` vorangestellt wird. Beispiel:
 
 
 ```
@@ -76,7 +76,7 @@ Das Hashzeichen (`#`) bezeichnet den Konfigurationsmodus. Wenn der Befehl mit `r
 
 ## Befehlsübersicht aufrufen
 
-Die VRA-Befehlsshell enthält Funktionen zum Vervollständigen mithilfe der Tabulatortaste. Wenn Sie wissen möchten, welche Befehle verfügbar sind, drücken Sie die Tabulatortaste, um eine Liste und eine kurze Erläuterung aufzurufen. Diese Funktion steht sowohl in der Shelleingabeaufforderung als auch bei der Befehlseingabe zur Verfügung. Beispiel: 
+Die VRA-Befehlsshell enthält Funktionen zum Vervollständigen mithilfe der Tabulatortaste. Wenn Sie wissen möchten, welche Befehle verfügbar sind, drücken Sie die Tabulatortaste, um eine Liste und eine kurze Erläuterung aufzurufen. Diese Funktion steht sowohl in der Shelleingabeaufforderung als auch bei der Befehlseingabe zur Verfügung. Beispiel:
 
 ```
 $show log dns [Press tab]
@@ -121,7 +121,7 @@ Für Benutzerkonten können drei verschiedene Zugriffsebenen konfiguriert werden
 
 * admin
 * operator
-* superuser
+* Superuser
 
 Benutzer mit der Zugriffsebene 'operator' können `show`-Befehle ausführen, um den Ausführungsstatus des Systems anzuzeigen, und `reset`-Befehle, um Services auf der Einheit erneut zu starten. Die Zugriffsebene 'operator' impliziert nicht den Lesezugriff.
 
@@ -130,7 +130,6 @@ Benutzer mit der Zugriffsebene 'admin' haben uneingeschränkten Zugriff auf alle
 Benutzer mit der Zugriffsebene 'superuser' können Befehle mit Rootberechtigung (über den Befehl `sudo`) ausführen und verfügen zudem über die Berechtigungen der Zugriffsebene 'admin'.
 
 Für Benutzer kann die Kennwortauthentifizierung und/oder die Public-Key-Authentifizierung konfiguriert werden. Die Public-Key-Authentifizierung wird mit SSH verwendet und ermöglicht Benutzern die Anmeldung über eine Schlüsseldatei in ihrem System. So erstellen Sie einen Benutzer mit der Zugriffsebene 'operator' und mit einem Kennwort:
-
 
 ```
 set system login user [konto] authentication plaintext-password [kennwort]
@@ -144,7 +143,7 @@ Die rollenbasierte Zugriffssteuerung (Role-based Access Control, RBAC) ist ein V
 
 Bei Verwendung von RBAC wird eine Gruppe erstellt, die dem ACM-Regelsatz (ACM = Access Control Management) zugeordnet ist. In dieser Gruppe wird ein Benutzer hinzugefügt und es wird ein Regelsatz erstellt, der die Gruppe mit den Pfaden im System abgleicht. Schließlich wird das System so konfiguriert, dass die für die Gruppe angelegten Pfade entweder gesperrt oder freigegeben werden.
 
-In der Standardeinstellung ist in Virtual Router Appliance kein ACM-Regelsatz definiert und ACM ist inaktiviert. Wenn Sie mit RBAC eine differenzierte Zugriffssteuerung einrichten möchten, müssen Sie ACM aktivieren und zusätzlich zu den von Ihnen definierten Regeln die folgenden ACM-Standardregeln hinzufügen: 
+In der Standardeinstellung ist in Virtual Router Appliance kein ACM-Regelsatz definiert und ACM ist inaktiviert. Wenn Sie mit RBAC eine differenzierte Zugriffssteuerung einrichten möchten, müssen Sie ACM aktivieren und zusätzlich zu den von Ihnen definierten Regeln die folgenden ACM-Standardregeln hinzufügen:
 
 ```
 set system acm 'enable'

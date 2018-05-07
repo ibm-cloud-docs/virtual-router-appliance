@@ -18,12 +18,12 @@ lastupdated: "2017-10-30"
 # Guia de Introdução
 Para iniciar o uso do IBM Virtual Router Appliance (VRA), navegue para a página de pedido no Portal do Cliente:
 
-1. Em seu navegador, abra [Portal do Cliente ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){: new_window} e efetue login em sua conta.
+1. Em seu navegador, abra o [Portal do cliente ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){: new_window} e efetue login em sua conta.
 2. Na navegação do Portal do Cliente, selecione **Rede > Dispositivo de Gateways**.
 3. Na página de lista **Dispositivo de Gateways**, clique em **Pedir Gateway**.
 4. Na página **Pedido**, selecione seu data center desejado no menu suspenso, em seguida, escolha o tipo desejado de hardware do servidor.
 
-    **NOTA:** os requisitos mínimos de servidor do VRA demandam 8 GB de RAM e um núcleo de CPU para cada 10 Gbps de capacidade de rede. Por exemplo, um sistema com uplinks duais públicos e privados de 10 Gbps requer pelo menos quatro núcleos. Reserve mais do que o disco de configuração padrão se você planeja executar os diagnósticos de rede que geram logs detalhados. Finalmente, núcleos adicionais além do mínimo podem aumentar o desempenho da VPN
+    **NOTA:** os requisitos mínimos de servidor do VRA demandam 8 GB de RAM e um núcleo de CPU para cada 10 Gbps de capacidade de rede. Por exemplo, um sistema com uplinks duais públicos e privados de 10 Gbps requer pelo menos quatro núcleos. Reserve mais do que a configuração de disco padrão se planeja executar diagnósticos de rede que gerem logs detalhados. Finalmente, se a sua intenção é configurar serviços VPN com criptografia, talvez você queira incluir núcleos adicionais. A inclusão de núcleos adicionais para Serviços VPN assegurará que o VRA não seja paralisado devido à carga pesada ao rotear e simultaneamente criptografar/decriptografar dados.
 
 5. Na página **Configurar seu Dispositivo de Gateway de Rede**, selecione a opção **Par de Alta Disponibilidade**, se desejado, a versão do VRA e as velocidades de uplink de rede.
 6. Revise suas seleções, em seguida, clique em **Incluir no Pedido** e o pedido será verificado automaticamente.
@@ -34,7 +34,7 @@ Depois que seu pedido é aprovado, o fornecimento de seu VRA inicia automaticame
 ## VLANs e a função do Dispositivo de Gateway
 Uma VLAN (LAN virtual) é um mecanismo que divide uma rede física em muitos segmentos virtuais. Por conveniência, o tráfego de várias VLANs selecionadas pode ser entregue por meio de um único cabo de rede, um processo comumente chamado de "entroncamento".
 
-O VRA é entregue em duas partes: o servidor do VRA e o acessório Dispositivo de Gateway. O Dispositivo de Gateway fornece a você uma interface (GUI e API) para selecionar as VLANs que deseja associar ao seu VRA. Associar uma VLAN a um Dispositivo de Gateway roteia novamente (ou "entronca") essa VLAN e todas as suas sub-redes para seu VRA, fornecendo-lhe controle sobre a filtragem, o encaminhamento e a proteção. Os servidores em uma VLAN associada podem ser acessados somente de outras VLANs passando por seu VRA; não é possível contornar o VRA, a menos que você efetue bypass ou desassocie a VLAN.
+O VRA é entregue em duas partes: o servidor do VRA e o acessório Dispositivo de Gateway. O Dispositivo de gateway fornece uma interface (GUI e API) para selecionar as VLANs que você deseja associar ao VRA. Associar uma VLAN a um Dispositivo de Gateway roteia novamente (ou "entronca") essa VLAN e todas as suas sub-redes para seu VRA, fornecendo-lhe controle sobre a filtragem, o encaminhamento e a proteção. Os servidores em uma VLAN associada só podem ser acessados por meio de outras VLANs passando por seu VRA; não é possível contornar o VRA, a menos que você efetue bypass ou desassocie a VLAN.
 
 Por padrão, um novo Dispositivo de Gateway está associado a duas VLANs de "trânsito" não removíveis, uma para público e outra para privado. Elas normalmente são usadas para administração e podem ser protegidas separadamente por comandos do VRA.
 

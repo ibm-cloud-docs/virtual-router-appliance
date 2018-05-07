@@ -33,14 +33,14 @@ Depois de associar uma VLAN ao Dispositivo de Gateway, ela aparece na seção VL
 
 VLANs associadas são vinculadas a um Dispositivo de Gateway, mas o tráfego dentro e fora da VLAN não atinge o Gateway até que a VLAN tenha sido roteada. Após uma VLAN associada ter sido roteada, todo o tráfego de front-end e backend será roteado por meio do Dispositivo de Gateway ao invés de para roteadores do cliente. 
 
-Execute o procedimento a seguir para rotear uma VLAN associada.
+Execute o procedimento a seguir para rotear uma VLAN associada:
 
 1. [Acesse a tela Detalhes do Dispositivo de Gateway](access-gateway-details.html) no Portal do Cliente. 
 2. Localize a VLAN desejada na seção VLANs Associadas.
 3. Selecione **Rotear VLAN** no menu suspenso Ações.
 4. Clique em **Sim** para rotear a VLAN. 
 
-Depois de rotear uma VLAN, todo o tráfego de front-end e de backend se move dos roteadores do cliente para o Gateway de Rede. Os controles adicionais relacionados ao trânsito e ao próprio Dispositivo de Gateway podem ser assumidos acessando a ferramenta de gerenciamento do Gateway. O roteamento por meio do Gateway de Rede pode ser descontinuado em qualquer momento [efetuando bypass no Dispositivo de Gateway](#bypass-gateway-appliance-routing-for-a-vlan).
+Depois de rotear uma VLAN, todo o tráfego de front-end e backend é movido de roteadores do cliente para o Network Gateway. Os controles adicionais relacionados ao trânsito e ao próprio Dispositivo de Gateway podem ser assumidos acessando a ferramenta de gerenciamento do Gateway. O roteamento por meio do Gateway de Rede pode ser descontinuado em qualquer momento [efetuando bypass no Dispositivo de Gateway](#bypass-gateway-appliance-routing-for-a-vlan).
 
 ## Efetuar Bypass do Roteamento do Dispositivo de Gateway para uma VLAN
 
@@ -55,7 +55,7 @@ Execute o procedimento a seguir para efetuar bypass do roteamento de Gateway par
 3. Selecione **Efetuar Bypass na VLAN** no menu suspenso Ações.
 4. Clique em **Sim** para efetuar bypass no Gateway. 
 
-Depois de efetuar bypass no Gateway de Rede, todo o tráfego de front-end e backend é roteado por meio do FCR e BCR associados à VLAN. A VLAN permanecerá associada ao Dispositivo de Gateway e poderá ser roteada de volta para o Dispositivo de Gateway a qualquer momento.
+Depois de efetuar bypass no Network Gateway, todo o tráfego de front-end e backend é roteado por meio do FCR e BCR associados à VLAN. A VLAN permanecerá associada ao Dispositivo de Gateway e poderá ser roteada de volta para o Dispositivo de Gateway a qualquer momento.
 
 ## Desassociar uma VLAN de um Dispositivo de Gateway
 
@@ -65,12 +65,12 @@ Execute o procedimento a seguir para desassociar uma VLAN de um Dispositivo de G
 
 1. [Acesse a tela Detalhes do Dispositivo de Gateway](access-gateway-details.html) no Portal do Cliente. 
 2. Localize a VLAN desejada na seção VLANs Associadas.
-3. Selecione **Desassociar** no menu suspenso Ações. 
+3. Selecione **Desassociar** no menu suspenso **Ações**. 
 4. Clique em **Sim** para desassociar a VLAN. 
 
 Depois de desassociar uma VLAN de um Dispositivo de Gateway, a VLAN pode ser associada a outro Gateway. A VLAN também pode ser associada de volta ao Dispositivo de Gateway a qualquer momento. Após desassociar uma VLAN de um Dispositivo de Gateway, o tráfego da VLAN não pode ser roteado por meio do Gateway. As VLANs devem estar associadas a um Dispositivo de Gateway antes de poderem ser roteadas.
 
-## Rotear Múltiplas VLANs na mesma Interface de Rede
+## Rotear múltiplas VLANs na mesma interface de rede
 O Virtual Router Appliance é capaz de rotear múltiplas VLANs na mesma interface de rede (por exemplo, `dp0bond0` ou `dp0bond1`). Isso é feito configurando a porta do comutador no modo de tronco e configurando interfaces virtuais (VIFs) no dispositivo.
 
 Por exemplo: 

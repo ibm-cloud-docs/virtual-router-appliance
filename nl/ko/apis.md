@@ -16,13 +16,13 @@ lastupdated: "2017-10-30"
 
 # API 참조
 
-SLAPI(SoftLayer® Application Programming Interface)는 개발자와 시스템 관리자가 IBM Cloud 백엔드 시스템과 직접 상호작용하는 개발 인터페이스입니다. 
+SLAPI(SoftLayer® Application Programming Interface)는 개발자와 시스템 관리자가 IBM Cloud 백엔드 시스템과 직접 상호작용하는 개발 인터페이스입니다.
 
-SLAPI는 고객 포털에서 많은 기능을 제공하며, 일반적으로 고객 포털에서 상호작용이 가능한 경우 API에서도 실행할 수 있음을 의미합니다. API 내에서 고객 포털 환경의 모든 부분과 프로그래밍 방식으로 상호작용할 수 있기 때문에 API를 사용하여 태스크를 자동화할 수 있습니다. 
+SLAPI는 고객 포털에서 많은 기능을 제공하며, 일반적으로 고객 포털에서 상호작용이 가능한 경우 API에서도 실행할 수 있음을 의미합니다. API 내에서 고객 포털 환경의 모든 부분과 프로그래밍 방식으로 상호작용할 수 있기 때문에 API를 사용하여 태스크를 자동화할 수 있습니다.
 
-SLAPI는 원격 프로시저 호출(RPC) 시스템입니다. 각 호출에는 API 엔드포인트로 데이터를 송신하고 구조화된 데이터를 수신하는 과정이 포함됩니다. SLAPI를 통해 데이터를 송수신할 때 사용되는 형식은 사용자가 선택한 API 구현에 따라 다릅니다. 현재 SLAPI에서는 데이터 전송에 SOAP, XML-RPC 또는 REST가 사용됩니다. 
+SLAPI는 원격 프로시저 호출(RPC) 시스템입니다. 각 호출에는 API 엔드포인트로 데이터를 송신하고 구조화된 데이터를 수신하는 과정이 포함됩니다. SLAPI를 통해 데이터를 송수신할 때 사용되는 형식은 사용자가 선택한 API 구현에 따라 다릅니다. 현재 SLAPI에서는 데이터 전송에 SOAP, XML-RPC 또는 REST가 사용됩니다.
 
-IBM Virtual Router Appliance API를 참조할 때 SLAPI에 대한 자세한 정보는 SLDN(SoftLayer Development Network)에서 다음 리소스를 참조하십시오. 
+IBM Virtual Router Appliance API를 참조할 때 SLAPI에 대한 자세한 정보는 SLDN(SoftLayer Development Network)에서 다음 리소스를 참조하십시오.
 
 - [SoftLayer API 개요 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/article/softlayer-api-overview?cm_mc_uid=71397258840814855542946&cm_mc_sid_50200000=1508536023){: new_window} 
 - [SoftLayer_Network_Gateway API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 

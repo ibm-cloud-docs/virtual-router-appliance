@@ -14,17 +14,17 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Informações básicas do VRA
-O VRA pode ser configurado por meio de uma sessão do console remoto por meio de SSH ou efetuando login na GUI da web. Por padrão, a GUI da web não está disponível da Internet pública. Para ativar a GUI da web, efetue login por meio de SSH primeiro.
+# Acessar e configurar
+O VRA pode ser configurado usando uma sessão de console remoto por meio de SSH ou efetuando login na GUI da web. Por padrão, a GUI da web não está disponível da Internet pública. Para ativar a GUI da web, efetue login por meio de SSH primeiro.
 
 **NOTA:** configurar o VRA fora de seu shell e interface pode produzir resultados inesperados e, portanto, não é recomendado.
 
-## Acessando o dispositivo por meio de SSH
-A maioria dos sistemas operacionais baseados em Unix, como Linux, BSD e Mac OSX, tem clientes OpenSSH incluídos com suas instalações padrão. Os usuários do Windows podem fazer download de um cliente SSH, tal como PuTTy.
+## Acessando o dispositivo usando SSH
+A maioria do sistemas operacionais baseados no UNIX, como Linux, BSD e Mac OSX, tem clientes OpenSSH incluídos em suas instalações padrão. Os usuários do Windows podem fazer download de um cliente SSH, tal como PuTTy.
 
-É recomendado que o SSH para o IP público seja desativado e apenas o SSH para o IP privado seja permitido. Conexões com IPs privados requerem que você esteja na mesma VPN.
+É recomendado que o SSH para o IP público seja desativado e apenas o SSH para o IP privado seja permitido. As conexões com IPs privados requerem que o cliente esteja conectado a uma rede privada. É possível efetuar login usando uma das opções de VPN padrão (PPTP, SSL-VPN e IPsec) oferecidas no portal do cliente ou usando uma solução VPN customizada configurada no VRA.
 
-Use a conta do Vyatta na página **Detalhes do Dispositivo** para efetuar login por meio de SSH. A senha raiz também é fornecida, mas o login raiz está desativado por padrão por motivos de segurança.
+Use a conta do Vyatta na página **Detalhes do Dispositivo** para efetuar login por meio de SSH. A senha raiz também é fornecida, mas o login raiz fica desativado por padrão por motivos de segurança.
 
 `ssh vyatta@[IP address] `
 
@@ -39,9 +39,9 @@ $ configure
 # save
 ```
 
-## Acessando o dispositivo por meio da GUI da web
+## Acessando o dispositivo usando a GUI da web
 
-Efetue login no VRA usando as instruções de SSH acima, em seguida, execute os comandos a seguir para ativar o serviço HTTPS:
+Efetue login no VRA usando as instruções de SSH acima e, em seguida, execute os comandos a seguir para ativar o serviço HTTPS:
 
 ```
 $ configure
@@ -50,7 +50,7 @@ $ configure
 # save
 ```
 
-Após esses comandos serem concluídos, insira https://<ip.address> na barra de endereço de seu navegador, substituindo o endereço IP pelo de seu VRA. Pode ser solicitado que você aceite o certificado autoemitido do VRA. Faça isso, em seguida, efetue login na interface da web com suas credenciais 'vyatta' quando solicitado.
+Após a conclusão desses comandos, insira `https://<ip.address>` na barra de endereço de seu navegador, substituindo o endereço IP por seus VRAs. Pode ser solicitado que você aceite o certificado autoemitido do VRA. Faça isso e, em seguida, efetue login na interface da web com suas credenciais do Vyatta, quando solicitado.
 
 ## Modos
 **Modo de configuração:** chamado com o uso do comando `configure`, esse modo é onde a configuração do sistema VRA é executada.
@@ -121,7 +121,7 @@ As contas do usuário podem ser configuradas com três níveis de acesso:
 
 * Administrador
 * Operador
-* Superusuário.
+* Superusuário
 
 Os usuários no nível de operador podem executar comandos `show` para visualizar o status da execução do sistema e emitir comandos `reset` para reiniciar os serviços no dispositivo. As permissões no nível de operador não implicam em acesso somente leitura.
 
@@ -130,7 +130,6 @@ Os usuários no nível de administrador têm acesso total a todas as configuraç
 Os usuários no nível de superusuário são capazes de executar comandos com privilégios de administrador por meio do comando `sudo`, além de ter privilégios no nível de administrador.
 
 Os usuários podem ser configurados para estilos de autenticação por senha ou de chave pública ou ambos. A autenticação de chave pública é usada com SSH e permite que os usuários efetuem login usando um arquivo de chave em seus sistemas. Para criar um usuário operador com uma senha:
-
 
 ```
 set system login user [account] authentication plaintext-password [password]

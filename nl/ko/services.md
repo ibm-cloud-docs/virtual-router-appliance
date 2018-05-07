@@ -15,11 +15,11 @@ lastupdated: "2017-10-12"
 {:download: .download}
 
 # 서비스 구성
-다음을 포함하여 VRA(Virtual Router Appliance)에서 실행되는 구성 가능한 여러 서비스가 있습니다. 
+다음을 포함하여 VRA(Virtual Router Appliance)에서 실행되는 구성 가능한 여러 서비스가 있습니다.
 
 `vyatta@vrouter# set service`
 
-가능한 완료는 다음과 같습니다. 
+가능한 완료는 다음과 같습니다.
 
 ```
  > connsync        Connection tracking synchronization (conn-sync) service
@@ -41,4 +41,4 @@ lastupdated: "2017-10-12"
  > twamp           Two-Way Active Measurement Protocol
 ```
 
-여기서 `nat`은 서비스의 일부로 구성되고 `https`는 웹 GUI 및 API에 대한 액세스를 제어합니다. `connsync`는 두 VRA가 상태 저장 방화벽 장애 복구와 같은 연결 추적 동기화를 공유하는 방법을 정의합니다. 
+`nat`는 서비스의 일부로 구성되고 `https`는 웹 GUI 및 API에 대한 액세스를 제어합니다. `connsync`는 두 VRA가 상태 저장 방화벽 장애 복구와 같은 연결 추적 동기화를 공유하는 방법을 정의합니다.

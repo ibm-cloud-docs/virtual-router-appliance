@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2017-12-22"
 
 ---
 
@@ -63,6 +63,9 @@ Il incombe au client de s'assurer que l'unité VRA ou le pare-feu est configuré
 
 De la même façon, si une unité VRA ou un pare-feu est ignoré une fois la commande effectuée, la commande risque de ne pas aboutir. Il peut y avoir un cours laps de temps au cours duquel le processus d'automatisation effectue une nouvelle tentative. Il est préférable que le processus complet de mise à disposition se poursuive sans perturbation du réseau.
 
+## Quels produits de pare-feu sont offerts par IBM ?
+Vous trouverez une comparaison détaillée de tous les produits de pare-feu offerts dans IBM Cloud en lisant la rubrique[ ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
+
 ## Une unité VRA peut-elle entraver le support client ? 
 Oui, pour les raisons décrites ci-dessus. VRA est une "boîte noire" : les VLAN entrent et sortent et IBM n'a aucune idée de ce que font les clients avec les paquets intermédiaires.
 
@@ -115,3 +118,8 @@ Pour activer l'accès des utilisateurs root via SSH, exécutez la commande suiva
 
 `set service ssh allow-root`
 
+Remarque : le fait d'accorder des droits d'accès root via SSH est considéré comme peu sûr. L'autre solution pour accéder à un shell root consiste à se connecter avec un autre ID utilisateur et à s'élever au niveau root localement avec `su -` ou à permettre aux superutilisateurs d'exécuter des commandes sudo.  
+
+Par exemple, pour configurer le dispositif vyatta en tant que superutilisateur :
+
+`set system login vyatta level superuser`

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  anos: 2017
-última atualização: "12-10-2017"
+  years: 2017
+lastupdated: "2017-10-12"
 
 ---
 
@@ -29,7 +29,7 @@ Para fazer upgrade do VRA, execute o procedimento a seguir.
 4. Escolha se deseja salvar as chaves do host SSH de sua configuração atual.
 5. Pressione **Enter** para aceitar o console do sistema padrão ou insira o seu próprio.
 6. Pressione **Enter** para aceitar a velocidade do console padrão ou insira a sua própria.
-7. Insira o comando ``reboot`` e, em seguida, insira Sim para reinicializar a máquina.
+7. Insira o comando `reboot` e, em seguida, insira `Yes` para reinicializar a máquina.
 8. Se você estiver usando o VRA em um modo de alta disponibilidade, execute as etapas 1 a 7 novamente na segunda máquina.
 
 O exemplo abaixo ilustra o processo de upgrade.

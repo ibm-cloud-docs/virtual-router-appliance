@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2017-12-22"
 
 ---
 
@@ -40,7 +40,7 @@ Vyatta 5600 bietet die folgenden funktionalen Erweiterungen gegenüber Vyatta 54
 - Aktualisierte Unterstützung für Standards, einschließlich Layer 2 Tunneling Protocol Version 3 (L2TPv3), Internet Key Exchange Version 2 (IKEv2), Secure Hash Algorithm 2 (SHA-2) und 802.1Q-Tunnelung (Q-in-Q) mit Kapselung
 
 ## Wie geht es mit dem Produktangebot AT&T vRouter 5600 weiter?
-AT&T (früher Brocade) hat das Ende des Lebenszyklus und das Ende der Unterstützung für das Produktangebot Brocade vRouter 5600 angekündigt. Obwohl Brocade vRouter 5600 die Basistechnologie für IBM Virtual Router Appliance bereitstellt, gilt diese Ankündigung nicht für IBM Kunden. Für IBM Kunden wird die Verwendung dieses neuen Produktangebots weiterhin unterstützt. 
+AT&T (früher Brocade) hat das Ende des Lebenszyklus und das Ende der Unterstützung für das Produktangebot Brocade vRouter 5600 angekündigt. Obwohl Brocade vRouter 5600 die Basistechnologie für IBM Virtual Router Appliance bereitstellt, gilt diese Ankündigung nicht für IBM Kunden. Für IBM Kunden wird die Verwendung dieses neuen Produktangebots weiterhin unterstützt.
 
 ## Auf welchem Vertriebsweg wird VRA bereitgestellt? 
 Sie erhalten VRA, wenn Sie ein Netzgateway bestellen. Im Rahmen dieses optimierten Prozesses können Sie ein Rechenzentrum sowie einen geeigneten VRA-Server auswählen und angeben, ob Sie ein HA-Paar aus zwei VRAs implementieren möchten. Dabei werden die Server, die Betriebssysteme und die Gateway-Appliance-Komponente automatisch bereitgestellt. Nach Abschluss der Bereitstellung können Sie die Gateway-Appliance-Schnittstelle verwenden, um VLANs über die VRA zu steuern. Sie können Ihren VRA-Server mit den Kennwörtern, die im Abschnitt für Hardwaredetails des Kundenportals bereitgestellt werden, direkt über SSH (Secure Shell) konfigurieren.
@@ -52,7 +52,7 @@ Ja. Allen VRAs werden automatisch generierte Kennwörter zugewiesen, die nur fü
 Ja. In diesem Fall kann mit VRA jedoch nur der Datenverkehr zwischen den öffentlichen und privaten VRA-Schnittstellen gesteuert werden. Für VLANs und HA ist die Gateway-Appliance-Komponente erforderlich.
 
 ## Wird der gesamte Netzverkehr über die VRA geleitet? 
-Nein. Mit der Gateway-Appliance können Sie die privaten und öffentlichen Neztsegmente (VLANs) auswählen, deren Datenverkehr über die VRA geleitet werden soll. Dabei können Sie die VLAN-Auswahl jederzeit ändern und umgehen. Außerdem können Sie mit VRA IP-basierte Regeln definieren, die auf Teilnetze oder IP-Bereiche angewendet werden. Solche Regeln funktionieren nur, wenn der Datenverkehr der VLANs, die diese Teilnetze enthalten, über die VRA geleitet wird.
+Nein. Mit der Gateway-Appliance können Sie die privaten und öffentlichen Netzsegmente (VLANs) auswählen, deren Datenverkehr über die VRA geleitet werden soll. Dabei können Sie die VLAN-Auswahl jederzeit ändern und umgehen. Außerdem können Sie mit VRA IP-basierte Regeln definieren, die auf Teilnetze oder IP-Bereiche angewendet werden. Solche Regeln funktionieren nur, wenn der Datenverkehr der VLANs, die diese Teilnetze enthalten, über die VRA geleitet wird.
 
 ## Kann eine VRA oder eine dedizierte Firewall die Bereitstellung neuer Server verhindern? 
 Ja. Falls irgend möglich, sollten Sie Ihr Netz erst sperren, nachdem es mit den Servern bestückt wurde, die Sie verwenden möchten.
@@ -62,6 +62,9 @@ Der IBM Support darf laut den geltenden Richtlinien die Konfiguration der VRA od
 Es ist Aufgabe des Kunden, vor dem Bestellen eines Servers sicherzustellen, dass die Konfiguration der VRA oder der Firewall automatisierte Serverbereitstellungen zulässt. Wenn Bereitstellungen durch eine vom Kunden verwaltete VRA oder Firewall blockiert werden, muss der Kunde dafür sorgen, dass diese Blockierung aufgehoben wird. Verzögerte Bereitstellungen durch solche Blockierungen werden nicht vom Service-Level-Agreement (SLA) abgedeckt und nicht rückvergütet. Bestellte Systeme können gegebenenfalls (nach Löschen der Kundendaten) in den Lagerbestand zurückgeführt werden, wenn der Kunde nicht zeitnah antwortet.
 
 Ebenso ist damit zu rechnen, dass eine Bestellung fehlschlägt, wenn nach dem Einsenden einer Bestellung eine VRA oder Firewall umgangen wird. Möglicherweise werden in einem begrenzten Zeitfenster Wiederholungsversuche für die automatische Bereitstellung durchgeführt. Der gesamte Bereitstellungsprozess sollte möglichst ohne netzbedingte Unterbrechungen ablaufen.
+
+## Welche Firewallprodukte bietet IBM an?
+Einen ausführlichen Vergleich aller in der IBM Cloud angebotenen Firewallprodukte finden Sie unter [Abschnitt ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
 
 ## Kann eine VRA die unterstützenden Support-Maßnahmen wirkungslos machen? 
 Ja, aus den oben genannten Gründen. VRA ist eine "Blackbox", d. h. eine Funktionseinheit mit eingehendem und ausgehendem VLAN-Datenverkehr. IBM hat keine Kenntnis darüber, was im System des Kunden mit den Datenpaketen geschieht.
@@ -115,3 +118,8 @@ Führen Sie den folgenden Befehl aus, um den Rootzugriff über SSH zu aktivieren
 
 `set service ssh allow-root`
 
+Beachten Sie, dass es als unsicher angesehen wird, Rootzugriff über SSH zu ermöglichen. Eine Alternative für den Zugriff auf eine Root-Shell besteht entweder darin, sich als ein anderer Benutzer anzumelden und mithilfe von `su -` lokal zum Root zu erweitern, oder darin, sudo-Befehle für 'superuser' zuzulassen. 
+
+Gehen Sie wie folgt vor, um Vyatta als Superuser zu konfigurieren: 
+
+`set system login vyatta level superuser`

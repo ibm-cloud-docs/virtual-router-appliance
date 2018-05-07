@@ -14,10 +14,10 @@ lastupdated: "2017-10-18"
 {:tip: .tip}
 {:download: .download}
 
-# Konfiguration sichern
+# Backup einer Konfiguration durchführen
 Die Konfigurationsbefehle müssen gesichert werden, wenn eine Änderung am System vorgenommen wird. Dies kann durch Ausführen des Betriebsmodusbefehls `show configuration commands` und anschließendes Speichern der Ausgabe (z. B. durch Kopieren und Einfügen aus der SSH-Sitzung) erreicht werden. Das Ergebnis ist ein minimales Backup der Konfiguration.
 
-Für ein ausführlicheres Backup muss ein Technical Support-Archiv des Systems wie folgt erstellt werden:
+Für ein ausführlicheres Backup muss ein Technical Support-Archiv des Systems wie folgt erstellt werden: 
 
 ```
 $ generate tech-support archive
@@ -26,7 +26,9 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-Die erstellte Archivdatei kann anschließend aus der Virtual Router Appliance in eine Speichereinheit Ihrer Wahl kopiert werden. Das Archiv enthält Backups der Konfigurationsdaten, Ausgangsverzeichnisse und Protokolldaten. Es beinhaltet ein viel umfassenderes Backup des Systems. Beispiel:
+Die erstellte Archivdatei kann anschließend aus der Virtual Router Appliance in eine Speichereinheit Ihrer Wahl kopiert werden. Das Archiv enthält Backups der Konfigurationsdaten, Ausgangsverzeichnisse und Protokolldaten. Es beinhaltet ein viel umfassenderes Backup des Systems. 
+
+Beispiel:
 
 ```
 -rw-r--r--  1 michael  michael    7863 Aug 22 12:46 config.tgz

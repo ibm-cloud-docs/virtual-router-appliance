@@ -29,7 +29,7 @@ Pour mettre à niveau l'unité VRA, procédez comme suit :
 4. Choisissez si vous voulez sauvegarder les clés d'hôte SSH de votre configuration en cours.
 5. Appuyez sur la touche **Entrée** pour accepter la console système par défaut, ou choisissez la console de votre choix.
 6. Appuyez sur la touche **Entrée** pour accepter la valeur par défaut de la vitesse de la console, ou entrez une valeur de votre choix.
-7. Entrez la commande ``reboot``, puis Yes pour redémarrer la machine.
+7. Entrez la commande `reboot`, puis tapez `Yes` pour redémarrer la machine.
 8. Si vous utilisez VRA en mode haute disponibilité, exécutez à nouveau les étapes 1 à 7 sur la deuxième machine.
 
 L'exemple ci-dessous illustre le processus de mise à niveau.

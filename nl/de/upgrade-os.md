@@ -19,17 +19,17 @@ Das Betriebssystem der VRA kann mit dem Befehl ``add system image`` und einer lo
 
 Um den Upgradeprozess zu starten, öffnen Sie ein IBM Support-Ticket, um ein Upgrade und das Hochladen eines neuen ISO-Images auf Ihr System anzufordern. In einer E-Mail-Nachricht vom IBM Support werden Sie darüber informiert, an welche Speicherposition die ISO-Datei hochgeladen wurde. Im nachfolgenden Beispiel wird das Verzeichnis ``tmp`` verwendet.
 
-**HINWEIS:** Der unten dargestellte Upgradeprozess gilt für eine einzelne VRA. Wenn Sie VRA im Hochverfügbarkeitsmodus verwenden, müssen Sie denselben Upgrade-Befehl auf beiden Systemen des HA-Paars ausführen. Außerdem wird empfohlen, zuerst das Sicherungssystem (`BACKUP`) zu aktualisieren und zu überprüfen, ob es ordnungsgemäß funktioniert. Greifen Sie anschließend auf das Mastersystem (`MASTER`) zu und starten Sie die Funktionsübernahme mit dem Befehl `reset vrrp`. Führen Sie schließlich das Upgrade des ursprünglichen Masterystems (`MASTER`) durch, nachdem das Sicherungssystem (`BACKUP`) die Steuerung übernommen hat.
+**HINWEIS:** Der unten dargestellte Upgradeprozess gilt für eine einzelne VRA. Wenn Sie VRA im Hochverfügbarkeitsmodus verwenden, müssen Sie denselben Upgrade-Befehl auf beiden Systemen des HA-Paars ausführen. Außerdem wird empfohlen, zuerst das Sicherungssystem (`BACKUP`) zu aktualisieren und zu überprüfen, ob es ordnungsgemäß funktioniert. Greifen Sie anschließend auf das Mastersystem (`MASTER`) zu und starten Sie die Funktionsübernahme mit dem Befehl `reset vrrp`. Führen Sie schließlich das Upgrade des ursprünglichen Mastersystems (`MASTER`) durch, nachdem das Sicherungssystem (`BACKUP`) die Steuerung übernommen hat.
 
 Gehen Sie wie folgt vor, um ein Upgrade für das VRA durchzuführen.
 
-1. Führen Sie den Befehl ``add system image <Local ISO File>`` aus.
+1. Führen Sie den Befehl ``add system image <Local ISO File>``.
 2. Drücken Sie die **Eingabetaste**, um den Standardnamen für das ISO-Image beizubehalten, oder geben Sie einen anderen Namen ein.
 3. Wählen Sie aus, ob das aktuelle Konfigurationsverzeichnis und die Konfigurationsdatei gespeichert werden sollen.
 4. Wählen Sie aus, ob die SSH-Hostschlüssel aus Ihrer aktuellen Konfiguration gespeichert werden sollen.
 5. Drücken Sie die **Eingabetaste**, um die Standardsystemkonsole beizubehalten, oder geben Sie eine andere Konsole ein.
 6. Drücken Sie die **Eingabetaste**, um die Standardgeschwindigkeit für die Konsole beizubehalten, oder geben Sie eine andere Geschwindigkeit ein.
-7. Geben Sie den Befehl ``reboot`` und anschließend 'Yes' ein, um die Maschine erneut zu starten.
+7. Geben Sie den Befehl `reboot` und anschließend `Yes` ein, um die Maschine erneut zu starten. 
 8. Wenn Sie VRA im Hochverfügbarkeitsmodus verwenden, wiederholen Sie die Schritte 1 bis 7 für die zweite Maschine.
 
 Das nachfolgende Beispiel veranschaulicht den Ugradeprozess.

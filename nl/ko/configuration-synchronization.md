@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-18"
+lastupdated: "2017-12-22"
 
 ---
 
@@ -14,14 +14,14 @@ lastupdated: "2017-10-18"
 {:tip: .tip}
 {:download: .download}
 
-# HA 구성 동기화
-HA 쌍의 두 VRA(Virtual Router Appliance)는 두 디바이스가 유사한 방식으로 작동하도록 구성을 충분히 동기화해야 합니다. 이는 `configuration sync-maps`를 통해 수행되고 동기화할 구성의 부분을 선택할 수 있습니다. 한 시스템에서 변경하면 표시된 구성을 다른 디바이스로 푸시합니다. 
+# 고가용성 구성 동기화
+고가용성(HA) 쌍의 두 VRA(Virtual Router Appliance)는 두 디바이스가 유사한 방식으로 작동하도록 구성을 충분히 동기화해야 합니다. 이는 `configuration sync-maps`를 통해 수행되고 동기화할 구성의 부분을 선택할 수 있습니다. 한 시스템에서 변경하면 표시된 구성을 다른 디바이스로 푸시합니다.
 
-**참고:** 이는 다른 디바이스에 구성이 저장되었음을 의미하지는 않습니다. 실행 중인 구성 변경만 수행됩니다. 
+**참고:** 이는 원격 디바이스에서 로컬 디바이스의 실행 구성을 동기화하고 저장합니다. 그러나 커미트 프로세스의 한 단계로 로컬 디바이스에 구성을 저장하지 않습니다.  
 
-한 시스템에 고유한 구성은 다른 시스템에 동기화하면 안 됩니다. 예를 들어 실제 IP 주소와 MAC은 동기화하면 안 됩니다. `system config-sync` 구성 노드와 `service https` 노드는 동기화할 수 없습니다.
+한 시스템에 고유한 구성을 다른 시스템에 동기화하지 않아야 합니다. 예를 들어 실제 IP 주소와 MAC을 동기화하지 않아야 합니다. `system config-sync` 구성 노드와 `service https` 노드는 동기화할 수 없습니다.
 
-다음 예에서는 config-sync를 보여줍니다. 
+다음 예에서는 config-sync를 보여줍니다.
 
 ```
 set system config-sync sync-map TEST rule 2 action include
@@ -35,6 +35,6 @@ set system config-sync remote-router 192.168.1.22 sync-map TEST
 
 다음 세 행은 원격 라우터의 `config-sync` 사용자와 비밀번호, IP 및 푸시할 sync-map을 지정합니다. `TEST`의 규칙과 일치하는 변경사항은 이 로그인 정보를 사용하여 `remote-router 192.168.1.22`로 이동합니다. `REST` 호출은 VRA API를 사용하여 수행되므로 HTTPS 서버가 원격 라우터에서 실행 중(차단 해제)이어야 합니다. 
 
-Config-sync는 변경사항을 커미트할 때마다 발생하므로 원격 디바이스에서 오는 오류 메시지를 확인하십시오. 구성이 동기화되지 않은 경우 이를 다시 작동하도록 원격 디바이스에서 수정해야 합니다.
+Config-sync는 변경사항을 커미트할 때마다 발생합니다. 원격 디바이스의 오류 메시지를 확인하십시오. 구성이 동기화되지 않은 경우 이를 다시 작동하도록 원격 디바이스에서 수정해야 합니다.
 
-또한 `show config-sync difference` 명령을 사용하여 구성의 차이점을 확인할 수도 있습니다. 
+또한 `show config-sync difference` 명령을 사용하여 구성의 차이점을 확인할 수도 있습니다.

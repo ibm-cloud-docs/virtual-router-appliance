@@ -15,7 +15,7 @@ lastupdated: "2017-10-30"
 {:download: .download}
 
 # Recarregar o OS
-O processo de recarregamento do SO, quando iniciado no Portal do Cliente, limpará todas as configurações presentes no dispositivo e o restaurará para sua configuração original. Quaisquer mudanças feitas desde o último carregamento do sistema serão apagadas. Como resultado, se você tiver feito mudanças, por exemplo, no grupo do VRRP em outra máquina, a máquina recarregada provavelmente terá um conflito quando ficar on-line novamente.
+O processo de recarregamento do SO, quando iniciado no Portal do Cliente, limpará todas as configurações presentes no dispositivo e o restaurará para sua configuração original. Quaisquer mudanças feitas desde o último carregamento do sistema serão apagadas. Como resultado, se você tiver feito mudanças (por exemplo, no grupo do VRRP em outra máquina), a máquina recarregada provavelmente terá um conflito quando voltar a ficar on-line.
 
 Para recarregar seu SO, execute o procedimento a seguir:
 

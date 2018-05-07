@@ -15,11 +15,11 @@ lastupdated: "2017-10-12"
 {:download: .download}
 
 # Configurar servicios
-Hay variedad de servicios que se ejecutan en Virtual Router Appliance (VRA) que se pueden configurar, incluidos: 
+Hay variedad de servicios que se ejecutan en Virtual Router Appliance (VRA) que se pueden configurar, incluidos:
 
 `vyatta@vrouter# set service`
 
-Entre las finalizaciones posibles se encuentran: 
+Entre las finalizaciones posibles se encuentran:
 
 ```
  > connsync        Connection tracking synchronization (conn-sync) service
@@ -41,4 +41,4 @@ Entre las finalizaciones posibles se encuentran:
  > twamp           Two-Way Active Measurement Protocol
 ```
 
-Notablemente, `nat` se configura como parte del servicio y `https` controla el acceso a web GUI y a las API. `connsync` define cómo dos VRA pueden compartir la sincronización de seguimiento en situaciones como la migración del cortafuegos con estado, por ejemplo.
+`nat` se configura como parte del servicio y `https` controla el acceso a web GUI y a las API. `connsync` define cómo dos VRA pueden compartir la sincronización de seguimiento en situaciones como la migración del cortafuegos con estado, por ejemplo.

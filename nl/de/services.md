@@ -19,7 +19,7 @@ Eine Reihe von Services in Virtual Router Appliance (VRA) können mit dem folgen
 
 `vyatta@vrouter# set service`
 
-Dies schließt die folgenden Einstellungen ein: 
+Dies schließt die folgenden Einstellungen ein:
 
 ```
  > connsync        Synchronisationsservice für die Verbindungsüberwachung (conn-sync)
@@ -41,4 +41,4 @@ Dies schließt die folgenden Einstellungen ein:
  > twamp           Two-Way Active Measurement Protocol (Protokoll für bidirektionale aktive Messungen)
 ```
 
-Dabei ist zu beachten, dass `nat` als Teil des Service konfiguriert wird und `https` den Zugriff auf die Web-GUI und die APIs steuert. `connsync` definiert, wie zwei VRAs die Synchronisation der Verbindungsüberwachung gemeinsam nutzen können, um zum Beispiel die Funktionsübernahme für statusabhängige Firewalls zu ermöglichen.
+`nat` wird als Teil des Service konfiguriert und `https` steuert den Zugriff auf die Web-GUI und die APIs. `connsync` definiert, wie zwei VRAs die Synchronisation der Verbindungsüberwachung gemeinsam nutzen können, um zum Beispiel die Funktionsübernahme für statusabhängige Firewalls zu ermöglichen.

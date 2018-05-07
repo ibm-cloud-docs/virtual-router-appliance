@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2017-12-22"
 
 ---
 
@@ -63,6 +63,9 @@ O suporte IBM está proibido pela política de examinar ou alterar a configuraç
 
 Da mesma forma, se um VRA/firewall tiver bypass efetuado após um pedido ser efetuado, ainda é provável que o pedido falhe. Poderá haver uma janela de limitação durante a qual as novas tentativas de automação serão feitas. É melhor que o processo de provisão inteiro continue sem interferência de rede.
 
+## Quais produtos de firewall a IBM oferece?
+É possível localizar uma comparação detalhada de todos os produtos de firewall oferecidos no IBM Cloud revisando este [tópico ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
+
 ## Um VRA pode confundir os esforços de suporte ao cliente? 
 Sim, pelos motivos descritos acima. O VRA é uma "caixa preta": VLANs entram, VLANs saem e a IBM não tem ideia do que os clientes estão fazendo com pacotes nesse ínterim.
 
@@ -115,3 +118,8 @@ Para ativar o acesso raiz por meio de SSH, execute o comando a seguir:
 
 `set service ssh allow-root`
 
+Observe que permitir acesso raiz usando SSH é considerado inseguro. Uma alternativa para acessar um shell raiz é efetuar login como outro usuário e elevar a raiz localmente com `su -` ou permitindo comandos sudo para 'superusuários'. 
+
+Por exemplo, para configurar o vyatta como um superusuário:
+
+`set system login vyatta level superuser`

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-18"
+lastupdated: "2017-12-22"
 
 ---
 
@@ -14,12 +14,12 @@ lastupdated: "2017-10-18"
 {:tip: .tip}
 {:download: .download}
 
-# HA-Konfiguration synchronisieren
-Die Konfiguration von zwei Virtual Router Appliances (VRAs), die ein HA-Paar bilden, müssen so weit synchronisiert werden, dass beide Einheiten das gleiche Verhalten zeigen. Hierfür werden Zuordnungen für die Konfigurationssynchronisation (`configuration sync-maps`) verwendet, und Sie können auswählen, welche Teile der Konfiguration synchronisiert werden. Wenn Sie auf einer Maschine eine Änderung vornehmen, wird die markierte Konfiguration mit einer Push-Operation auf die andere Einheit übertragen.
+# Hochverfügbarkeitskonfigurationen synchronisieren
+Die Konfiguration von zwei Virtual Router Appliances (VRAs), die ein HA-Paar (High Availability) bilden, müssen so weit synchronisiert werden, dass beide Einheiten das gleiche Verhalten zeigen. Hierfür werden Zuordnungen für die Konfigurationssynchronisation (`configuration sync-maps`) verwendet, und Sie können auswählen, welche Teile der Konfiguration synchronisiert werden. Wenn Sie auf einer Maschine eine Änderung vornehmen, wird die markierte Konfiguration mit einer Push-Operation auf die andere Einheit übertragen.
 
-**HINWEIS:** Dies bedeutet nicht, dass die Konfiguration der anderen Einheit ebenfalls gesichert wurde. Es bedeutet lediglich, dass die aktive Konfiguration geändert wird.
+**HINWEIS:** Die aktive Konfiguration der lokalen Einheit auf der fernen Einheit wird synchronisiert und gespeichert. Als ein Schritt des Commitprozesses würde die Konfiguration auf der lokalen Einheit nicht gespeichert werden.  
 
-Eine spezifische Konfiguration für ein bestimmtes System sollte nicht auf eine andere Einheit übertragen werden. Beispielsweise sollten konkrete IP-Adressen und MACs nicht synchronisiert werden. Der Konfigurationsknoten `system config-sync` und der Knoten `service https` können nicht synchronisiert werden.
+Spezifische Konfigurationen für ein bestimmtes System sollten nicht auf eine andere Einheit übertragen werden. Beispielsweise sollten konkrete IP-Adressen und MACs nicht synchronisiert werden. Der Konfigurationsknoten `system config-sync` und der Knoten `service https` können nicht synchronisiert werden.
 
 Das folgende Beispiel veranschaulicht den Befehl 'config-sync':
 
