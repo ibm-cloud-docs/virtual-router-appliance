@@ -8,6 +8,7 @@ IBM Virtual Router Appliance
     getting-started.md
     about.md
     [Explore Firewalls](../fortigate-10g/explore-firewalls.html)
+    vyatta-patch-notes.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
