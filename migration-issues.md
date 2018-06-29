@@ -25,8 +25,7 @@ THe behavior when setting "State of State-policy" for stateful firewalls from re
 In release 5.1 and later you must add an `Allow` rule setting on the Virtual Router Appliance. The stateful setting works per interfaces on Vyatta 5400 devices, and per protocol on VRA devices.
 
 ### Workarounds
-If the `firewall-in` rule is applied on an Ingress/Inside interface then the `Firewall-out` rule must be 
-applied on the Egress/Outside interface. Otherwise, return traffic will be dropped at the Egress/Outside interface.                                                                                                                                                                                                                                   
+If the `firewall-in` rule is applied on an Ingress/Inside interface then the `Firewall-out` rule must be applied on the Egress/Outside interface. Otherwise, return traffic will be dropped at the Egress/Outside interface.                                                                                                                                                                                                                                   
 
 ## State-Enable in Firewall Rules 
 
@@ -44,7 +43,6 @@ There is no "local-zone" pseudo-interface to assign to the zone-policy.
 This behavior can be simulated by applying a zone-based firewall to physical interfaces, and an interface-firewall to the loopback interface. The firewall in the loopback interface filters everything that ingress and egress from the router. 
 
 For example:
-
 ```
 set security zone-policy zone external default-action 'drop'
 set security zone-policy zone external description 'Internet zone'
