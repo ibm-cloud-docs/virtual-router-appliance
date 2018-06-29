@@ -25,12 +25,13 @@ To get started with the IBM Virtual Router Appliance (VRA), navigate to the orde
 
     **NOTE:** VRA minimum server requirements call for 8 GB of RAM and one CPU core for every 10 Gbps of network capacity. For example, a system with dual 10 Gbps public and private uplinks requires at least four cores. Reserve more than the default disk setting if you plan to run network diagnostics that generate detailed logs. Finally, if your intent is to setup VPN services with encryption, you may want to add additional cores. Adding additional cores for VPN Services will ensure the VRA will not get bogged down by heavy load when routing and simultaneously encrypting/decrypting data.
 
-5. In the **Configure your Network Gateway Appliance** page, select **High Availability Pair** option if desired, the VRA version, and the network uplink speeds.
+5. On the Order page select **High Availability Pair** option if desired, select Memory size, select appropriate version of VRA Operating System, and then select network uplink speed.
+
 6. Review your selections then click **Add to Order**, and the order will be verified automatically.
 7. On the **CHECKOUT** page, if you already own VLANs in the selected data center, select the backend VLANs which need to be protected. Give a hostname and domain name for your VRA. Check all boxes for the IBM Cloud service terms and Third Party Service Agreement. Then click **Submit Order**.
 
-After your order is approved, the provisioning of your VRA starts automatically. When the provisioning process is complete, the new VRA displays in the **Gateway Appliances** list page in the Customer Portal. Click the gateway name to open the **Gateway Details** page, then click on each gateway member to open the **Device Details** page. You will find the IP addresses, login username, and password for the device.  
- 
+After your order is approved, the provisioning of your VRA starts automatically. When the provisioning process is complete, the new VRA will appear in the **Gateway Appliances** list page. Click the gateway name to open the **Gateway Details** page, then click on each gateway member to open the **Device Details** page. You will find the IP addresses, login username, and password for the device.  
+
 ## VLANs and the Gateway Appliance's role
 A VLAN (virtual LAN) is a mechanism that segregates a physical network into many virtual segments. For convenience, traffic from multiple selected VLANs can be delivered through a single network cable, a process commonly called "trunking."
 
