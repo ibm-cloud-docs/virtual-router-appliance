@@ -22,7 +22,7 @@ The following table illustrates common issues or behaior changes you may encount
 ### Issues
 THe behavior when setting "State of State-policy" for stateful firewalls from release 5.1 has been changed. In versions prior to release 5.1, if you set `state - global -state -policy` of a stateful firewall, the vRouter automatically added an implicit `Allow` rule for return communication of the session Automatically.
 
-In release 5.1 and later you must add an `Allow` rule setting on the Virtual Router Appliance. The stateful setting works per interfaces on Vyatta 5400 devices, and per protocol on VRA devices.
+In release 5.1 and later you must add an `Allow` rule setting on the Virtual Router Appliance. The stateful setting works for interfaces on Vyatta 5400 devices, and for protocols on VRA devices.
 
 ### Workarounds
 If the `firewall-in` rule is applied on an Ingress/Inside interface then the `Firewall-out` rule must be applied on the Egress/Outside interface. Otherwise, return traffic will be dropped at the Egress/Outside interface.        
@@ -44,6 +44,7 @@ This behavior can be simulated by applying a zone-based firewall to physical int
 
 For example:
 
+```
 set security zone-policy zone internal default-action 'drop'
 set security zone-policy zone internal description 'Private zone'
 set security zone-policy zone internal interface 'dp0bond0'
@@ -297,13 +298,14 @@ set firewall name localGateway rule 300 protocol 'tcp'
 set firewall name localGateway rule 300 recent count '3'
 set firewall name localGateway rule 300 recent time '30'
 set firewall name localGateway rule 300 state new 'enable'
+
 ```
 
 On the IBM Virtual Router Appliance, this rule has the following issues:
 
 * The option for recent count and recent time has been deprecated.
 
-* Due to the previous issue, the rule cannot function as expected and will block all SSH connections to the interface applied.
+* Due to the previous issue, the rule cannot function as expected and will block all SSH connections to the applied interface.
 
 ### Workarounds
 Use CPP instead.
@@ -311,6 +313,7 @@ Use CPP instead.
 ## Set system conntrack issues
 
 ### Issues
+
 ```
 set system conntrack expect-table-size '8192'
 set system conntrack hash-size '375000'
@@ -404,7 +407,7 @@ There is a significant change in logging behavior between the Vyatta 5400 device
 
 * Session logging: Records stateful session state transitions
 
-* Packet logging: Record all packets that match the rule. Since packet logging is recorded in the log file in "packet units", there is a a marked decrease in throughput and the pressure of the disk capacity.
+* Packet logging: Record all packets that match the rule. Since packet logging is recorded in the log file in "packet units", there is a marked decrease in throughput and the pressure of the disk capacity.
 
 * The logging capability of the vRouter can be used to capture firewall activity. Like any logging function, you should only enable this if you are troubleshooting a particular problem, and disable the logging as soon as you can.
 
