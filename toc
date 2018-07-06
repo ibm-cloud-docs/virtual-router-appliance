@@ -46,6 +46,8 @@ IBM Virtual Router Appliance
 		how-add-firewall-functions-vyatta-stateless-and-stateful.md
 		setup-nat.md
 		vyatta-high-availability-configuration.md
+
+    external-resources.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
