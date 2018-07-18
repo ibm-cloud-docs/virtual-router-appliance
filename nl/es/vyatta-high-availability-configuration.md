@@ -7,7 +7,7 @@ lastupdated: "2017-07-26"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Configuración de alta disponibilidad de Vyatta 5400
+# Configuración de alta disponibilidad de Vyatta
 
 La alta disponibilidad de Vyatta se admite mediante el uso de VRRP, Virtual Routing Redundancy Protocol. Cada grupo de pasarela tendrá dos direcciones VRRP IP primarias, una para la parte privada y una para la parte pública de las redes. 
 

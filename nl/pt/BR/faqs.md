@@ -106,7 +106,7 @@ Se houver acesso utilizando IPMI, será possível executar as ações a seguir p
 2. Desconectar o conjunto de regras nomeado inteiro da interface necessária executando:
 
 	```
-	delete interfaces dataplane [interface] firewall [type] [firewall name]
+	delete interfaces dataplane [interface] firewall [type][firewall name]
 	commit
 	```
 

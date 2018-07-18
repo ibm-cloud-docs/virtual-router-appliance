@@ -7,7 +7,7 @@ lastupdated: "2017-07-25"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# 在 Vyatta 5400 上配置 IPSec
+# 如何在 Vyatta 上配置 IPSec
 
 对于因特网安全协议 (IPSec) 隧道，Brocade 5400 vRouter (Vyatta) 设备将被当作“本地”设备。以下每个命令都将执行不同的功能来配置 IPSec 站点到站点连接。请注意，此 IPSec 站点到站点示例演示的是 SoftLayer 公用网络上的隧道；对于专用 IPSec 站点到站点连接，请使用 **bond0**。
 

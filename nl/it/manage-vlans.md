@@ -33,7 +33,7 @@ Dopo aver associato una VLAN all'applicazione gateway, viene visualizzata la sez
 
 Le VLAN associate sono collegate a un'applicazione gateway, ma il traffico in entrata ed uscita della VLAN non riguarda il gateway finché non è stata instradata la VLAN. Dopo l'instradamento di una VLAN associata, tutto il traffico di frontend e backend viene instradato tramite l'applicazione gateway invece che mediante i router del cliente. 
 
-Esegui la seguente procedura per instradare una VLAN associata: 
+Esegui la seguente procedura per instradare una VLAN associata:
 
 1. [Accedi alla schermata Gateway Appliance Details](access-gateway-details.html) nel portale del cliente. 
 2. Individua la VLAN desiderata nella sezione delle VLAN associate.
@@ -70,7 +70,7 @@ Esegui la seguente procedura per annullare l'associazione di una VLAN a un'appli
 
 Dopo aver annullato l'associazione alla VLAN da un'applicazione gateway, la VLAN deve essere associata a un altro gateway. La VLAN può anche essere associata nuovamente all'applicazione gateway in qualsiasi momento. Dopo aver annullato l'associazione alla VLAN da un'applicazione gateway, il traffico della VLAN non può essere instradato al gateway. Le VLAN devono essere associate a un'applicazione gateway prima di poter essere instradate.
 
-## Instrada più VLAN nella stessa interfaccia di rete 
+## Instrada più VLAN nella stessa interfaccia di rete
 VRA (Virtual Router Appliance) è in grado di instradare più VLAN nella stessa interfaccia di rete (ad esempio, `dp0bond0` o `dp0bond1`). Questo è possibile impostando la porta switch nella modalità trunk e configurando le interfacce virtuali (VIF) sul dispositivo.
 
 Ad esempio: 

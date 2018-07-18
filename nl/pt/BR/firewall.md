@@ -20,7 +20,7 @@ O Virtual Router Appliance (VRA) tem a capacidade de processar regras de firewal
 1. Definindo um ou mais conjuntos de regras.
 2. Aplicando um conjunto de regras em uma interface ou uma zona. Uma zona consiste em uma ou mais interfaces de rede.
 
-É importante testar regras de firewall após a criação para assegurar que as regras funcionem conforme pretendido e que as novas regras não restrinjam o acesso administrativo ao dispositivo.
+É importante testar regras de firewall após a criação para assegurar que as regras funcionem conforme desejado e que as novas regras não restrinjam o acesso administrativo ao dispositivo.
 
 Ao manipular as regras na interface `dp0bond1`, é aconselhável se conectar ao dispositivo usando o `dp0bond0`. Conectar-se ao console usando o Intelligent Platform Management Interface (IPMI) também é uma opção.
 
@@ -60,7 +60,7 @@ set security firewall name TEST rule 1 state enable
 Isso ativaria o rastreamento stateful de todo o tráfego que pudesse ser rastreado como stateful e que correspondesse à regra 1 de `TEST`, independentemente da existência de comandos `global-state-policy`. 
 
 ## ALG para rastreamento stateful assistido
-Alguns protocolos, como FTP, utilizam sessões mais complexas que a operação de firewall stateful normal pode rastrear.
+Alguns protocolos, como FTP, utilizam sessões mais complexas que a operação de firewall stateful normal pode rastrear. 
 Há módulos pré-configurados que permitem que esses protocolos sejam gerenciados como stateful.
 Sugere-se desativar esses módulos ALG, a menos que eles sejam necessários para o uso bem-sucedido dos respectivos protocolos.
 

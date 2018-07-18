@@ -27,7 +27,7 @@ Per ognuna delle seguenti tre istanze firewall, può esserne applicata solo una.
 
 **LOCAL:** il firewall filtra i pacchetti destinati al sistema VRA stesso utilizzando l'interfaccia del sistema. Dovresti stabilire delle limitazioni nelle porte di accesso nel dispositivo dagli indirizzi IP esterni che non sono limitati.
 
-Utilizza la seguente procedura per configurare una regola del firewall di esempio per disattivare ICMP (Internet Control Message Protocol) (ping - messaggio di risposta echo IPv4) alle tue interfacce del VRA (Virtual Router Appliance) (questa è un'azione senza stato; un'azione con stato sarà esaminata successivamente):
+Utilizza la seguente procedura per configurare una regola del firewall di esempio per disattivare ICMP (Internet Control Message Protocol) (ping - messaggio di risposta echo IPv4) alle tue interfacce della VRA (Virtual Router Appliance) (questa è un'azione senza stato; un'azione con stato sarà esaminata successivamente):
 
 1. Immetti `show configuration commands` nel prompt dei comandi per visualizzare quali configurazioni sono impostate. Visualizzerai un elenco di tutti i comandi che hai impostato sul tuo dispositivo (che può essere utile se decidi di migrare e vuoi visualizzare tutte le tue configurazioni). Nota il comando `set firewall all-ping enable`, che indica che ICMP è ancora abilitato per il tuo dispositivo.
 
@@ -39,7 +39,7 @@ Utilizza la seguente procedura per configurare una regola del firewall di esempi
 
 Se ora provi ad eseguire il ping del tuo dispositivo VRA, non riceverai più una risposta.
 
-Per poter assegnare le regole del firewall al traffico instradato, le regole devono essere applicate alle interfacce del VRA o devono essere create delle zone e quindi applicate ad esse.
+Per poter assegnare le regole del firewall al traffico instradato, le regole devono essere applicate alle interfacce della VRA o devono essere create delle zone e quindi applicate ad esse.
 
 In questo esempio, saranno create le zone per le VLAN che sono state utilizzate finora.
 
@@ -52,7 +52,7 @@ bond1.1280 | riservata per utilizzo futuro
 bond1.1894 | riservata per utilizzo futuro
 
 ## Crea le regole del firewall
-Prima della creazione effettiva delle zone, è una buona idea creare le regole del firewall che devono venire applicate alle zone. La creazione delle regole prima delle zone ti consente di applicarle immediatamente, rispetto alla creazione della zona e quindi delle regole, ritornando alla zona per l'applicazione della regola.
+Prima della creazione effettiva delle zone, è una buona idea creare le regole del firewall che devono venire applicate alle zone. La creazione delle regole prima delle zone ti consente di applicarle immediatamente, rispetto al creare la zona e poi le regole e ritornare quindi alla zona per l'applicazione della regola.
 
 I seguenti comandi effettueranno queste azioni:
 
@@ -111,10 +111,10 @@ I seguenti comandi effettueranno queste azioni:
 Le zone sono rappresentazioni logiche di un'interfaccia. In questa sezione, effettuerai le seguenti azioni:
 
 * Crea una zona e una politica denominate dmz con un'azione predefinita di rilascio dei pacchetti destinati a questa zona.
-* Imposta la politica dmz in modo che utilizzi l'interfaccia `bond1` 
-* Imposta la politica prod in modo che utilizzi l'interfaccia `bond1.2007` 
+* Imposta la politica dmz in modo che utilizzi l'interfaccia `bond1`
+* Imposta la politica prod in modo che utilizzi l'interfaccia `bond1.2007`
 * Crea una politica della zona denominata `private` con un'azione predefinita di rilascio dei pacchetti destinati a questa zona
-* Imposta la politica denominata `private` in modo che utilizzi l'interfaccia `bond0.2254` 
+* Imposta la politica denominata `private` in modo che utilizzi l'interfaccia `bond0.2254`
 
 1. Immetti i seguenti comandi nel prompt:
 

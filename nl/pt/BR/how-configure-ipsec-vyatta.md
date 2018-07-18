@@ -7,7 +7,7 @@ lastupdated: "2017-07-25"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Configurar o IPSec no Vyatta 5400
+# Como configurar o IPSec no Vyatta
 
 O dispositivo Brocade 5400 vRouter (Vyatta) será referido como "local" em relação ao túnel Internet Security Protocol (IPSec). Cada um dos comandos a seguir executará funções diferentes para configurar o site para site do IPSec. Observe que este exemplo de site para site do IPSec demonstra o túnel na rede pública do SoftLayer; use **bond0** para conexões privadas de site para site do IPSec.
 

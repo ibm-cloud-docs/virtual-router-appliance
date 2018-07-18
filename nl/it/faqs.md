@@ -18,12 +18,12 @@ lastupdated: "2017-12-22"
 Le seguenti sono le FAQ (frequently asked question) quando si utilizza IBM Virtual Router Appliance (VRA).
 
 ## Cosa è VRA? 
-Un Virtual Router Appliance (VRA) consente a un cliente IBM Cloud di instradare selettivamente il traffico di rete pubblico e privato tramite un router aziendale completo con firewall, modellamento del traffico, instradamento basato sulla politica, VPN e un host di altre funzioni. Tutte le funzioni VRA sono gestite dal cliente. VRA fornisce a un cliente IBM Cloud un grado di controllo riservato normalmente alle reti in loco.
+Una VRA (Virtual Router Appliance) consente a un cliente IBM Cloud di instradare selettivamente il traffico di rete pubblico e privato tramite un router aziendale completo con firewall, modellamento del traffico, instradamento basato sulla politica, VPN e un host di altre funzioni. Tutte le funzioni VRA sono gestite dal cliente. VRA fornisce a un cliente IBM Cloud un grado di controllo riservato normalmente alle reti in loco.
 
 ## Cosa è un'applicazione gateway? 
-Un'apparecchiatura Applicazione gateway ti consente di utilizzare il portale web o l'API per scegliere i segmenti di rete (VLAN) per l'instradamento tramite un VRA. Puoi modificare le selezioni VLAN in qualsiasi momento. L'applicazione gateway gestisce inoltre l'elevata disponibilità (HA) del VRA, configurando un secondo VRA da utilizzare se il primo ha un malfunzionamento.
+Un'apparecchiatura Applicazione gateway ti consente di utilizzare il portale web o l'API per scegliere i segmenti di rete (VLAN) per l'instradamento tramite una VRA. Puoi modificare le selezioni VLAN in qualsiasi momento. L'applicazione gateway gestisce inoltre l'alta disponibilità (HA) della VRA, configurando una seconda VRA da utilizzare se si verifica un malfunzionamento della prima.
 
-## Alcune volte vedo dei riferimenti a termini come "Vyatta" e "vRouter." Come si correlano al VRA?
+## Alcune volte vedo dei riferimenti a termini come "Vyatta" e "vRouter." Come si correlano alla VRA?
 Vyatta era un software basato sul PC open source, che è stato completamente acquisito e passato a un'origine chiusa. Oggi, "Vyatta" e "Vyatta OS" descrivono gli adeguamenti del software commerciali da tale progetto di origine chiuso. IBM VRA incorpora elementi di Vyatta OS, insieme a un notevole miglioramento del servizio e della funzione disponibile esclusivamente tramite IBM Cloud.
 
 "vRouter" era un cambiamento di marchio di breve durata di Vyatta e di sua proprietà. Quando visto nella documentazione, può essere considerato un sinonimo di Vyatta.
@@ -42,31 +42,31 @@ Vyatta 5600 offre i seguenti miglioramenti rispetto a Vyatta 5400:
 ## Come è l'offerta AT&T vRouter 5600?
 AT&T (precedentemente Brocade) ha annunciato la fine del ciclo di vita e del supporto della loro offerta Brocade vRouter 5600. Mentre Brocade vRouter 5600 fornisce la capacità tecnologica sottostante per IBM Virtual Router Appliance, questo annuncio non si applica ai clienti IBM. I clienti IBM continueranno ad avere supporto utilizzando questa nuova offerta.
 
-## Come viene fornito VRA? 
-Ottieni un VRA ordinando un gateway di rete. Questo semplice processo di permette di scegliere un data center e un server VRA adatto, così come se volessi distribuire una coppia HA di VRA. I server, i sistemi operativi e l'apparecchiatura Applicazione gateway sono tutti forniti automaticamente. Quando il provisioning è completo, puoi utilizzare l'interfaccia dell'applicazione gateway per instradare le VLAN tramite il VRA. Puoi configurare il tuo server VRA direttamente utilizzando SSH (shell sicura) con le password fornite nella sezione dei dettagli hardware del portale del cliente.
+## Come viene fornita la VRA? 
+Ottieni una VRA ordinando un gateway di rete. Questo semplice processo di permette di scegliere un data center e un server VRA adatto, così come se volessi distribuire una coppia HA di VRA. I server, i sistemi operativi e l'apparecchiatura Applicazione gateway sono tutti forniti automaticamente. Quando il provisioning è completo, puoi utilizzare l'interfaccia dell'applicazione gateway per instradare le VLAN tramite la VRA. Puoi configurare il tuo server VRA direttamente utilizzando SSH (shell sicura) con le password fornite nella sezione dei dettagli hardware del portale del cliente.
 
 ## È la mia password protetta? 
-Sì. A tutti i VRA sono assegnate password casuali visibili solo al titolare dell'account. Le password sono facilmente modificabili, perché sono chiavi pubbliche SSH e gestiscono le limitazioni dell'accesso all'IP.
+Sì. A tutte le VRA sono assegnate password casuali visibili solo al titolare dell'account. Le password sono facilmente modificabili, perché sono chiavi pubbliche SSH e gestiscono le limitazioni dell'accesso all'IP.
 
-## Posso ottenere un VRA senza un'applicazione gateway? 
-Sì, ma può gestire solo il traffico tra le interfacce privata e pubblica del VRA. Le VLAN e HA richiedono l'apparecchiatura Applicazione gateway.
+## Posso ottenere una VRA senza un'applicazione gateway? 
+Sì, ma può gestire solo il traffico tra le interfacce privata e pubblica della VRA. Le VLAN e HA richiedono l'apparecchiatura Applicazione gateway.
 
-## Tutto il traffico di rete viene inviato tramite il VRA? 
-No. L'applicazione gateway ti permette di selezionare i segmenti di rete pubblica e privata (VLAN) che desideri instradare tramite il VRA. Puoi modificare e tralasciare le selezioni VLAN in qualsiasi momento. VRA ti permette inoltre di definire le regole basate sull'IP che si applicano alle sottoreti o agli intervalli IP. Queste regole funzionano solo se le VLAN che contengono queste sottoreti sono instradate tramite il VRA.
+## Tutto il traffico di rete viene inviato tramite la VRA? 
+No. L'applicazione gateway ti permette di selezionare i segmenti di rete pubblica e privata (VLAN) che desideri instradare tramite la VRA. Puoi modificare e tralasciare le selezioni VLAN in qualsiasi momento. VRA ti permette inoltre di definire le regole basate sull'IP che si applicano alle sottoreti o agli intervalli IP. Queste regole funzionano solo se le VLAN che contengono queste sottoreti sono instradate tramite la VRA.
 
-## Può un VRA o un firewall dedicato impedire il provisioning di un nuovo server? 
+## Può una VRA o un firewall dedicato impedire il provisioning di un nuovo server? 
 Sì. Quando possibile, non dovresti bloccare la tua rete finché non l'hai popolata con i server che hai pianificato di utilizzare.
 
-Al supporto IBM è proibito dalla politica di esaminare o modificare il VRA o la configurazione del firewall dedicato senza un coinvolgimento esplicito del cliente, per cui in molti casi il supporto non può sapere che un VRA è responsabile di provisioning del server in stallo o non riusciti.
+Al supporto IBM è proibito dalla politica di esaminare o modificare la VRA o la configurazione del firewall dedicato senza un coinvolgimento esplicito del cliente, per cui in molti casi il supporto non può sapere che una VRA è responsabile di provisioning del server in stallo o non riusciti.
 
-È responsabilità del cliente assicurarsi che il VRA o il firewall siano configurati in modo da consentire i provisioning del server automatizzati prima di inserire l'ordine del server. I provisioning che sono bloccati da un VRA o un firewall gestito dal cliente, è responsabilità del cliente risolverli. Tali ritardi del provisioning non sono soggetti a SLA o crediti. I sistemi ordinati possono essere restituiti all'inventario (dopo che sono stati cancellati i dati del cliente) se il cliente non risponde velocemente.
+È responsabilità del cliente assicurarsi che la VRA o il firewall siano configurati in modo da consentire i provisioning del server automatizzati prima di inserire l'ordine del server. I provisioning che sono bloccati da una VRA o un firewall gestito dal cliente, è responsabilità del cliente risolverli. Tali ritardi del provisioning non sono soggetti a SLA o crediti. I sistemi ordinati possono essere restituiti all'inventario (dopo che sono stati cancellati i dati del cliente) se il cliente non risponde velocemente.
 
-Allo stesso modo, se un VRA/firewall viene tralasciato dopo l'inserimento di un ordine, è ancora probabile che l'ordine non riesca. Potrebbe esserci una finestra ridotta durante la quale saranno tentati i nuovi tentativi di automazione. È meglio che l'intero processo di provisioning proceda senza interferenze di rete.
+Allo stesso modo, se una VRA o un firewall vengono esclusi dopo l'inserimento di un ordine, è ancora probabile che l'ordine non riesca. Potrebbe esserci una finestra ridotta durante la quale saranno tentati i nuovi tentativi di automazione. È meglio che l'intero processo di provisioning proceda senza interferenze di rete.
 
 ## Quali prodotti firewall offre IBM?
 Puoi trovare un confronto dettagliato di tutti i prodotti firewall in IBM Cloud richiamando questo [argomento ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
 
-## Può un VRA confondere gli sforzi del supporto clienti? 
+## Può una VRA confondere gli sforzi del supporto clienti? 
 Sì, per i motivi descritti precedentemente. VRA è una "scatola nera:" in cui le VLAN entrano ed escono e IBM non ha idea di quali clienti stiano facendo cosa.
 
 Il supporto fa sempre del suo meglio, ma con VRA e il firewall dedicato: a) la privacy del cliente prevale sulla connettività e b) il nostro staff di supporto standard non è equipaggiato per analizzare le configurazioni VRA/firewall molto complesse o malformate.
@@ -74,7 +74,7 @@ Il supporto fa sempre del suo meglio, ma con VRA e il firewall dedicato: a) la p
 Come primo passo di diagnostica, potremmo aver bisogno che metti le tue VLAN VRA e firewall in bypass. Se, in questo stato, i provisioning che hanno avuto esito negativo iniziano a funzionare, dobbiamo assumere che il problema risiede nella tua configurazione VRA/firewall.
 
 ## Quale effetto avrà VRA sulle mie prestazioni di rete? 
-Tieni presente che anche se non possono vederti, un cloud pubblico condivide le reti con altri clienti. Nel migliore dei casi la velocità di trasmissione del VRA viene determinata dalla capacità di rete disponibile in punto nel tempo, con in più la distanza che devono percorrere i dati.
+Tieni presente che anche se non possono vederti, un cloud pubblico condivide le reti con altri clienti. Nel migliore dei casi la velocità di trasmissione della VRA viene determinata dalla capacità di rete disponibile in punto nel tempo, con in più la distanza che devono percorrere i dati.
 
 A parte queste variabili, VRA può inoltrare 80 Gbps di traffico non modificato tra più interfacce, utilizzando la formula approssimativa che ogni 10 Gbps di velocità di trasmissione richiedono un core del processore completo (non includendo l'hyperthreading). Dato che i server correnti escono al massimo di 40 Gbps (2 x 10 Gbps pubblici + 2 x 10 Gb privati), un server con 8 o più core dovrebbero avere abbastanza capacità di calcolo per gestire più funzioni VRA comuni approssimativamente al meglio delle loro prestazioni di rete.
 
@@ -106,13 +106,13 @@ Se puoi accedere utilizzando IPMI, puoi eseguire le seguenti azioni per ripristi
 2. Sgancia la regola denominata completa impostata dall'interfaccia necessaria eseguendo:
 
 	```
-	delete interfaces dataplane [interface] firewall [type] [firewall name]
+	delete interfaces dataplane [interface] firewall [type][firewall name]
 	commit
 	```
 
 **NOTA:** l'utilizzo non corretto di questi comandi può cancellare la tua configurazione dell'interfaccia.
 
-## Come posso abilitare gli accessi root per il VRA?
+## Come posso abilitare gli accessi root per la VRA?
 
 Per abilitare l'accesso root tramite SSH, esegui il seguente comando:
 

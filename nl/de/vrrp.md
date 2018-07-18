@@ -87,7 +87,7 @@ Wenn zwei Einheiten ein HA-Paar bilden, ist sorgfältig darauf zu achten, dass a
 
 Für die VIF-Konfiguration mit VRRP wird eine virtuelle IP-Adresse (die erste verwendbare IP im Teilnetz; die Gateway-IP an die jeglicher Datenverkehr in dem Teilnetz weitergeleitet wird) und eine echte Schnittstellen-IP-Adresse für die VIF auf beiden Einheiten benötigt. Um nicht zu viele verwendbare IP-Adressen zu belegen, sollte für die echten Schnittstellen-IPs ein Out-of-band-Adressbereich wie 192.168.0.0/30 (mit der Adresse .1 für die eine Einheit und der Adresse .2 für die andere Einheit) verwendet werden. Sie können mehrere virtuelle VRRP-IPs verwenden, jedoch wird nur eine echte Adresse auf jeder virtuellen Schnittstelle benötigt.
 
-Hier finden Sie ein Beispiel für eine VRRP-Konfiguration mit zwei privaten VLANs und drei Teilnetzen: 
+Hier finden Sie ein Beispiel für eine VRRP-Konfiguration mit zwei privaten VLANs und drei Teilnetzen:
 
 ```
 set interfaces bonding dp0bond0 address '10.100.11.39/26'
@@ -122,16 +122,16 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* Eine VRRP- Synchronisationsgruppe (vrrp sync-group) unterscheidet sich von einer VRRP-Gruppe (vrrp group). Wenn eine Schnittstelle, die zu einer Synchronisationsgruppe gehört, den Status ändert, werden alle anderen Mitglieder dieser Synchronisationsgruppe ebenfalls in denselben Status versetzt.  
-* Die Nummer der VRRP-Gruppe (vrrp-group) der VLAN-Schnittstellen (VIFs) muss nicht mit der Nummer der nativen Schnittstellen oder der anderen VLANs übereinstimmen. Es wird jedoch dringend empfohlen, alle virtuellen Adressen desselben VLANs in einer VRRP-Gruppe - wie in VLAN 10 dargestellt - beizubehalten. 
+* Eine VRRP- Synchronisationsgruppe (vrrp sync-group) unterscheidet sich von einer VRRP-Gruppe (vrrp group). Wenn eine Schnittstelle, die zu einer Synchronisationsgruppe gehört, den Status ändert, werden alle anderen Mitglieder dieser Synchronisationsgruppe ebenfalls in denselben Status versetzt. 
+* Die Nummer der VRRP-Gruppe (vrrp-group) der VLAN-Schnittstellen (VIFs) muss nicht mit der Nummer der nativen Schnittstellen oder der anderen VLANs übereinstimmen. Es wird jedoch dringend empfohlen, alle virtuellen Adressen desselben VLANs in einer VRRP-Gruppe - wie in VLAN 10 dargestellt - beizubehalten.
 * Die tatsächlichen Schnittstellenadressen auf den nativen VLANs (z.B. dp0bond1: 169.110.20.28/29) befinden sich nicht immer in demselben Teilnetz wie deren VIPs (169.110.21.26/29). 
 
 ## Manueller VRRP-Ausweichbetrieb
-Falls Sie einen VRRP-Ausweichbetrieb erzwingen müssen, kann dies durch die Ausführung des folgenden Befehls auf der Einheit, die gerade VRRP-Master ist, erreicht werden. 
+Falls Sie einen VRRP-Ausweichbetrieb erzwingen müssen, kann dies durch die Ausführung des folgenden Befehls auf der Einheit, die gerade VRRP-Master ist, erreicht werden.
 
 `vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
 
-Die Gruppen-ID ist die VRRP-Gruppen-ID der nativen Schnittstellen und kann - wie oben beschrieben - in Ihrem Paar anders lauten. 
+Die Gruppen-ID ist die VRRP-Gruppen-ID der nativen Schnittstellen und kann - wie oben beschrieben - in Ihrem Paar anders lauten.
 
 ## Verbindungssynchronisation
 Wenn zwei VRA-Einheiten ein HA-Paar bilden, kann es hilfreich sein, statusabhängige Verbindungen zwischen beiden Einheiten zu überwachen, damit im Falle einer Funktionsübernahme der aktuelle Status aller auf der ausgefallenen Einheit vorhandenen Verbindungen auf die Backupeinheit repliziert werden kann. Dadurch kann auf die vollständige Neuerstellung der aktiven Sitzungen (z. B. SSL-Verbindungen) verzichtet werden, die zu einer Funktionsunterbrechung für den Benutzer führen könnte.

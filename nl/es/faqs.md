@@ -43,7 +43,7 @@ Vyatta 5600 ofrece las mejoras siguientes respecto a Vyatta 5400:
 AT&T (anteriormente Brocade) ha anunciado la finalización de Brocade vRouter 5600. Si bien Brocade vRouter 5600 proporciona la capacidad de tecnología subyacente para IBM Virtual Router Appliance, este anuncio no se aplica a los clientes de IBM. Los clientes de IBM seguirán recibiendo soporte para poder utilizarlo.
 
 ## ¿Cómo se suministra VRA? 
-Puede obtener VRA solicitando una pasarela de red. Este proceso simplificado le permite eligir un centro de datos y un servidor VRA adecuados, así como si desea desplegar una alta disponibilidad de VRA. Los servidores, los sistemas operativos y el elemento fijo de dispositivos de pasarela se suministran de manera automática. Cuando se complete, puede utilizar la interfaz de un dispositivo de pasarela para direccionar VLAN mediante VRA. Puede configurar VRA directamente mediante SSH (Secure Shell) con las contraseñas proporcionadas en la sección Detalles de hardware del portal del cliente.
+Puede obtener VRA solicitando una pasarela de red. Este proceso simplificado le permite eligir un centro de datos y un servidor VRA adecuados, así como si desea desplegar una alta disponibilidad de VRA. Los servidores, los sistemas operativos y el elemento fijo de dispositivos de pasarela se suministran de manera automática. Cuando se complete, puede utilizar la interfaz de un dispositivo de pasarela para direccionar VLAN mediante VRA. Puede configurar VRA directamente mediante SSH (Secure Shell) con las contraseñas proporcionadas en la sección Detalles de hardware del Portal de clientes.
 
 ## ¿Es segura mi contraseña? 
 Sí. Se asignan contraseñas aleatorias a todos los VRA que son visibles solo para el titular de la cuenta. Las contraseñas se pueden cambiar fácilmente, de igual forma que las claves públicas SSH y las restricciones de acceso IP de administrador.
@@ -106,7 +106,7 @@ Si hay acceso mediante IPMI, puede realizar las acciones siguientes para recuper
 2. Separe el conjunto de reglas con nombre de la interfaz necesaria ejecutando:
 
 	```
-	delete interfaces dataplane [interface] firewall [type] [firewall name]
+	delete interfaces dataplane [interface] firewall [type][firewall name]
 	commit
 	```
 

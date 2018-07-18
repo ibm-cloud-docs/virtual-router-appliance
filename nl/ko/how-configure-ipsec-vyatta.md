@@ -7,36 +7,36 @@ lastupdated: "2017-07-25"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Vyatta 5400에서 IPSec 구성
+# Vyatta에서 IPSec을 구성하는 방법
 
-Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) 터널에 대해 "로컬"이라고도 합니다. 다음 각 명령은 서로 다른 기능을 수행하여 IPsec 사이트-투-사이트를 구성합니다. IPsec 사이트-투-사이트의 이 예제는 SoftLayer의 공용 네트워크의 터널을 설명하며, 사설 IPSec 사이트-투-사이트 연결에 **bond0**을 사용합니다. 
+Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) 터널에 대해 "로컬"이라고도 합니다. 다음 각 명령은 서로 다른 기능을 수행하여 IPsec 사이트-투-사이트를 구성합니다. IPsec 사이트-투-사이트의 이 예제는 SoftLayer의 공용 네트워크의 터널을 설명하며, 사설 IPSec 사이트-투-사이트 연결에 **bond0**을 사용합니다.
 
-1. 터널에 **interface bond1:**의 목적을 "알리십시오." 
+1. 터널에 **interface bond1:**의 목적을 "알리십시오."
 
   * *set vpn ipsec ipsec-interfaces interface bond1*
 
-2. 두 단계 터널 중 첫 번째 단계를 설정하십시오. 명령은 다음을 수행합니다. 
+2. 두 단계 터널 중 첫 번째 단계를 설정하십시오. 명령은 다음을 수행합니다.
 
   * **test**라고 하는 새 **ike** 그룹을 작성하고 키 교환 유형으로 **dh-group**을 사용합니다.
-  * 사용할 암호화 유형을 지정합니다. 설정되지 않으면 디바이스에서는 기본값으로 **aes128**을 사용합니다. 
+  * 사용할 암호화 유형을 지정합니다. 설정되지 않으면 디바이스에서는 기본값으로 **aes128**을 사용합니다.
   * **sha-1** 해시 기능을 사용합니다.<br/><br/>
   1\. *set vpn ipsec ike-group TestIKE proposal 1 dh-group '2'*<br/>
   2\. *set vpn ipsec ike-group TestIKE proposal 1 encryption 'aes128'*<br/>
   3\. *set vpn ipsec ike-group TestIKE proposal 1 hash 'sha1'*<br/>
 
-3. 두 단계 터널 중 두 번째 단계를 설정하십시오. 명령은 다음을 수행합니다. 
+3. 두 단계 터널 중 두 번째 단계를 설정하십시오. 명령은 다음을 수행합니다.
 
   * 모든 디바이스가 PFS(Perfect Forward Secrecy)를 사용할 수 없으므로 이를 사용 안함으로 설정합니다. (명령의 esp는 암호화의 두 번째 파트입니다.)
-  * 사용할 암호화 유형을 지정합니다. 설정되지 않으면 디바이스에서는 기본값으로 **aes128**을 사용합니다. 
+  * 사용할 암호화 유형을 지정합니다. 설정되지 않으면 디바이스에서는 기본값으로 **aes128**을 사용합니다.
   * **sha-1** 해시 기능을 사용합니다.<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
 
-4. IPSec 사이트-투-사이트 암호화 매개변수를 설정하십시오. 명령은 다음을 수행합니다. 
+4. IPSec 사이트-투-사이트 암호화 매개변수를 설정하십시오. 명령은 다음을 수행합니다.
 
-  * 원격 측 IP를 지정하면 IPSec은 사전 공유 시크릿을 사용합니다. 
-  * 원격 IP 및 시크릿 키 TestPSK를 사용합니다. 
+  * 원격 측 IP를 지정하면 IPSec은 사전 공유 시크릿을 사용합니다.
+  * 원격 IP 및 시크릿 키 TestPSK를 사용합니다.
   * 터널의 기본 **esp** 그룹을 TestESP로 설정합니다.
   * IPSec에 이전에 정의된 ike-group TestIKE를 사용할 것을 알립니다.<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
@@ -56,9 +56,9 @@ Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) �
 다음 단계는 Brocade 5400 vRouter 6.6.5 R인 원격 측 디바이스를 설정하는 것입니다.
 
   * 방금 구성된 디바이스(운영 모드에서 구성됨)를 사용하여 show configuration commands 명령을 입력하십시오. 디바이스를 설정하는 데 사용된 명령의 목록이 표시됩니다.
-  * 명령을 텍스트 편집기에 복사하십시오. 로컬 디바이스를 설정하기 위한 명령 사용은 SoftLayer의 Brocade 5400 vRouter 6.6.5R 디바이스를 가리키기 위해 IP를 수정하여 원격 서버를 설정하는 데 사용됩니다. 
+  * 명령을 텍스트 편집기에 복사하십시오. 로컬 디바이스를 설정하기 위한 명령 사용은 SoftLayer의 Brocade 5400 vRouter 6.6.5R 디바이스를 가리키기 위해 IP를 수정하여 원격 서버를 설정하는 데 사용됩니다.
 
-이전에 사용된 원격 측 구성은 다음과 같습니다. 로컬 측 구성에 필요한 변경사항은 굵게 표시됩니다. 
+이전에 사용된 원격 측 구성은 다음과 같습니다. 로컬 측 구성에 필요한 변경사항은 굵게 표시됩니다.
 
 원격 측 구성:
 

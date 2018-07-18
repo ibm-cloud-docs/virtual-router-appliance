@@ -15,11 +15,11 @@ lastupdated: "2017-10-30"
 {:download: .download}
 
 # Recarga del SO
-Al iniciarse en el portal del cliente, el proceso de recarga del SO borrará todas las configuraciones presentes en el dispositivo y lo restaurará a su configuración original. Cualquier cambio realizado desde la última carga del sistema se borrará. Como resultado, si ha realizado cambios (por ejemplo en el grupo de VRRP de otra máquina), es probable que la máquina cargada tenga un conflicto cuando vuelva a estar en línea.
+Al iniciarse en el Portal de clientes, el proceso de recarga del SO borrará todas las configuraciones presentes en el dispositivo y lo restaurará a su configuración original. Cualquier cambio realizado desde la última carga del sistema se borrará. Como resultado, si ha realizado cambios (por ejemplo en el grupo de VRRP de otra máquina), es probable que la máquina cargada tenga un conflicto cuando vuelva a estar en línea.
 
 Para volver a cargar el SO, realice el procedimiento siguiente:
 
-1. Inicie sesión en el [portal del cliente ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){: new_window} utilizando las credenciales exclusivas.
+1. Inicie sesión en el [Portal de clientes ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){: new_window} utilizando las credenciales exclusivas.
 2. Seleccione **Lista de dispositivos** de la lista desplegable Dispositivos.
 3. Pulse en el servidor que desea volver a cargar.
 4. Seleccione **Recarga de SO** del menú desplegable **Acciones** en la parte superior izquierda de la página.

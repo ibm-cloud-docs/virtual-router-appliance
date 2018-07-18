@@ -122,4 +122,4 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 Tutti i tuoi comandi rifunzioneranno e puoi continuare normalmente.
 
-**NOTA:** può anche non riuscire la copia del certificato HTTPS `/etc/lighttpd/server.pem` durante il processo di upgrade del SO, che può causare un malfunzionamento nella sincronizzazione delle configurazioni dell'elevata disponibilità (HA). Per correggere questo problema, sovrascrivi il vecchio file `server.pem` in aggiunta ai file sopra elencati (immetti `su -` per passare al livello della root, quindi immetti il comando `copy`), quindi immetti `restart https` per riavviare il file `demon.m` HTTPS (e i file sopra elencati).
+**NOTA:** può anche non riuscire la copia del certificato HTTPS `/etc/lighttpd/server.pem` durante il processo di upgrade del SO, che può causare un malfunzionamento nella sincronizzazione delle configurazioni dell'alta disponibilità (HA). Per correggere questo problema, sovrascrivi il vecchio file `server.pem` in aggiunta ai file sopra elencati (immetti `su -` per passare al livello della root, quindi immetti il comando `copy`), quindi immetti `restart https` per riavviare il file `demon.m` HTTPS (e i file sopra elencati).

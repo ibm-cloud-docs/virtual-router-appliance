@@ -21,7 +21,7 @@ VRRP non è la parte più importante della configurazione durante il provisionin
 
 ## Indirizzi VIP (VRRP virtual IP)
 
-VRRP virtual IP o VIP, è l'indirizzo IP mobile modificato dal dispositivo master al backup quando si verifica il failover. Quando un VRA esegue la distribuzione, avrà una connessione di rete associata privata e pubblica e IP reali assegnati ad ogni interfaccia. Un VIP viene assegnato ad entrambe le interfacce, sia se il dispositivo è autonomo che se è in una coppia HA. Il traffico con un IP di destinazione nelle sottoreti nelle VLAN associate al VRA sarà inviato direttamente a questi VIP VRRP.
+VRRP virtual IP o VIP, è l'indirizzo IP mobile modificato dal dispositivo master al backup quando si verifica il failover. Quando una VRA esegue la distribuzione, avrà una connessione di rete associata privata e pubblica e IP reali assegnati ad ogni interfaccia. Un VIP viene assegnato ad entrambe le interfacce, sia se il dispositivo è autonomo che se è in una coppia HA. Il traffico con un IP di destinazione nelle sottoreti nelle VLAN associate alla VRA sarà inviato direttamente a questi VIP VRRP.
 
 Gli indirizzi VIP (VRRP virtual IP) per tutti i gruppi di gateway non dovrebbero essere modificati e l'interfaccia non dovrebbe essere disabilitata. Questi indirizzi IP sono il metodo con cui il traffico viene instradato al gateway quando viene associata una VLAN. Se l'indirizzo IP non è presente, il traffico non può essere inoltrato da softLayer BCR/FCR al gateway stesso.
 
@@ -67,19 +67,19 @@ Allo stesso modo, non puoi eliminare la password VRRP senza anche eliminare il t
 IETF ha deciso che tale autenticazione non deve essere utilizzata per VRRP versione 3. Per ulteriori informazioni, fai riferimento a RFC 5798 VRRP.
 
 ## Supporto versione 2/3
-Il VRA supporta sia i protocolli VRRP versione 2 (predefinito) che versione 3. Nella versione 2, non puoi avere IPv4 e IPv6 insieme. Ma nella versione 3, puoi avere IPv4 e IPv6 contemporaneamente.
+La VRA supporta sia i protocolli VRRP versione 2 (predefinito) che versione 3. Nella versione 2, non puoi avere IPv4 e IPv6 insieme. Ma nella versione 3, puoi avere IPv4 e IPv6 contemporaneamente.
 
-## VPN ad elevata disponibilità con VRRP
-Il VRA fornisce la possibilità di mantenere la connettività tramite un tunnel IPsec utilizzando una coppia di VRA (Virtual Router Appliance) con VRRP. Quando un router riscontra un errore o viene chiuso per manutenzione, il nuovo router master VRRP ripristina la connettività IPsec tra le reti remota e locale.
+## VPN ad alta disponibilità con VRRP
+La VRA fornisce la possibilità di mantenere la connettività tramite un tunnel IPsec utilizzando una coppia di VRA (Virtual Router Appliance) con VRRP. Quando un router riscontra un errore o viene chiuso per manutenzione, il nuovo router master VRRP ripristina la connettività IPsec tra le reti remota e locale.
 
-Quando configuri la VPN ad elevata disponibilità con VRRP, se viene aggiunto un indirizzo IP virtuale VRRP a un'interfaccia VRA, devi reinizializzare il daemon IPsec perché il servizio IPsec sia in ascolto solo per le connessioni all'indirizzo presenti nel VRA quando viene inizializzato il daemon del servizio Internet Key Exchange (IKE).
+Quando configuri la VPN ad alta disponibilità con VRRP, se viene aggiunto un indirizzo IP virtuale VRRP a un'interfaccia VRA, devi reinizializzare il daemon IPsec perché il servizio IPsec sia in ascolto solo per le connessioni all'indirizzo presenti nella VRA quando viene inizializzato il daemon del servizio Internet Key Exchange (IKE).
 
 Immetti il seguente comando nei router master e di backup, in modo che quando si verifica un failover, i daemon IPsec vengano riavviati in un un nuovo dispositivo master dopo la transizione del VIP, come illustrato nel seguente esempio:
 
 `vyatta@vrouter# set interfaces bonding dp0bond1 vrrp vrrp-group 1 notify ipsec
 `
 
-## Firewall ad elevata disponibilità con VRRP
+## Firewall ad alta disponibilità con VRRP
 
 Quando due dispositivi sono in una coppia HA, devi prestare attenzione al tuo dispositivo master perché non ne devi bloccare l'accesso da altri dispositivi. La porta 443 deve essere consentita per entrambi i dispositivi perché la sincronizzazione di configurazione funzioni e VRRP deve poter essere inviato e ricevuto, incluso l'intervallo multicast di 224.0.0.0/24.
 
@@ -146,6 +146,6 @@ set service connsync interface dp0bond0
 set service connsync remote-peer 10.124.10.4
 ```
 
-L'altro VRA avrà la stessa configurazione, ma un diverso `remote-peer`.
+L'altra VRA avrà la stessa configurazione, ma un diverso `remote-peer`.
 
 Tieni presente che questo può saturare un link se è presente un elevato numero di connessioni in entrata nelle altre interfacce e sarà in competizione con tutto il traffico nel link dichiarato.

@@ -41,4 +41,4 @@ lastupdated: "2017-10-12"
  > twamp           Two-Way Active Measurement Protocol
 ```
 
-`nat` はサービスの一部として構成され、`https` は Web GUI および API へのアクセスを制御します。`connsync` は、ステートフル・ファイアウォール・フェイルオーバーなどのために 2 つの VRA が接続トラッキング同期を共有する方法を定義します。
+`nat` はサービスの一部として構成され、`https` は Web GUI および API へのアクセスを制御します。 `connsync` は、ステートフル・ファイアウォール・フェイルオーバーなどのために 2 つの VRA が接続トラッキング同期を共有する方法を定義します。

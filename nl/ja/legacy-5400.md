@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-30"
+  years: 2017, 2018
+lastupdated: "2018-06-15"
 
 ---
 
@@ -14,7 +14,8 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Vyatta 5400 のサポート
+# 従来の Vyatta 5400
+念のために、以下のVyatta 5400 文書を提供しています。 
 
 Vyatta 5400 は、2018 年 4 月にサポートを終了するため、従来の Vyatta 5400 のお客様は、できるだけ早く IBM 仮想ルーター・アプライアンス (Virtual Router Appliance: VRA) にアップグレードする必要があります。
 

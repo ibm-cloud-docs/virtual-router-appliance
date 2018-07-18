@@ -14,9 +14,9 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Visualizza tutti i VRA
+# Visualizza tutte le VRA
 
-La schermata delle applicazioni di rete nel portale del cliente è dove puoi visualizzare e accedere alle applicazioni del gateway di rete che includono VRA (Virtual Router Appliances).  
+La schermata delle applicazioni di rete nel portale del cliente è dove puoi visualizzare e accedere alle applicazioni del gateway di rete che includono le VRA (Virtual Router Appliance).  
 
 Esegui la seguente procedura per accedere alla schermata delle applicazioni gateway nel portale del cliente.
 

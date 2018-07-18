@@ -55,7 +55,7 @@ AT&T（原名为 Brocade）已声明其 Brocade vRouter 5600 产品寿命终止�
 不是。网关设备支持您选择要通过 VRA 路由的专用和公用网络分段 (VLAN)。您可以随时更改和绕过选择的 VLAN。VRA 还支持定义应用于子网或 IP 范围的基于 IP 的规则。仅当包含这些子网的 VLAN 通过 VRA 进行路由时，这些规则才起作用。
 
 ## VRA 或专用防火墙是否会阻止新的服务器供应？ 
-会。所以只要有可能，在将您计划使用的服务器填充进网络之前，您都不应当锁定网络。
+会阻止。所以只要有可能，在将您计划使用的服务器填充进网络之前，您都不应当锁定网络。
 
 策略禁止 IBM 支持人员在没有客户明确参与的情况下检查或更改 VRA 或专用防火墙配置，因此在大多数情况下，支持人员无法知道某个 VRA 是否对已停止或失败的服务器供应负有责任。
 
@@ -106,7 +106,7 @@ set system login user [account] authentication plaintext-password [password]  
 2. 通过运行以下命令，解除整个指定规则集与必要接口的关联：
 
 	```
-	delete interfaces dataplane [interface] firewall [type] [firewall name]
+	delete interfaces dataplane [interface] firewall [type][firewall name]
 	commit
 	```
 

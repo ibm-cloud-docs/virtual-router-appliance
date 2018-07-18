@@ -122,7 +122,7 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* Un élément sync-group VRRP est différent d'un groupe VRRP. Lorsqu'une interface qui appartient à un élément sync-group change d'état, tous les autres membres du même élément sync-group prennent le même état.  
+* Un élément sync-group VRRP est différent d'un groupe VRRP. Lorsqu'une interface qui appartient à un élément sync-group change d'état, tous les autres membres du même élément sync-group prennent le même état. 
 * Il n'est pas nécessaire que le nombre d'éléments vrrp-group des interfaces VLAN (VIF) soit identique à celui de l'une des interfaces natives ou des autres réseaux locaux virtuels. Toutefois, il est fortement recommandé de conserver toutes les adresses virtuelles du même réseau local virtuel dans un seul élément vrrp-group, comme dans VLAN 10.
 * Les adresses d'interface réelles sur les réseaux locaux virtuels natifs (par exemple, dp0bond1: 169.110.20.28/29) ne figurent pas toujours dans le même sous-réseau que leur VIP (169.110.21.26/29). 
 
@@ -131,7 +131,7 @@ Si vous devez forcer un basculement VRRP, vous pouvez le faire en exécutant la 
 
 `vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
 
-L'ID de groupe est l'ID de groupe VRRP des interfaces natives, et, comme indiqué ci-dessus, peut être différent dans votre paire. 
+L'ID de groupe est l'ID de groupe VRRP des interfaces natives, et, comme indiqué ci-dessus, peut être différent dans votre paire.
 
 ## Synchronisation des connexions
 Lorsque deux unités VRA figurent dans une paire HA, il peut s'avérer utile de suivre les connexions avec état entre ces deux unités de sorte qu'en cas de basculement, l'état actuel de toutes les connexions sur l'unité défaillante soit répliqué sur l'unité de secours, pour ne pas avoir à régénérer complètement les sessions actives en cours (telles que SSL), ce qui pourrait supprimer des acquis utilisateur.

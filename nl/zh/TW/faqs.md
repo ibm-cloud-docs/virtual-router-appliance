@@ -106,7 +106,7 @@ set system login user [account] authentication plaintext-password [password]  
 2. 透過執行下列指令，從必要的介面取消連結整個具名規則集：
 
 	```
-	delete interfaces dataplane [interface] firewall [type] [firewall name]
+	delete interfaces dataplane [interface] firewall [type][firewall name]
 	commit
 	```
 

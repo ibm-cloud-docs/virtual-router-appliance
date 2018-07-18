@@ -15,7 +15,7 @@ lastupdated: "2017-10-30"
 {:download: .download}
 
 # Betriebssystem erneut laden
-Beim Ausführen des Prozesses zum erneuten Laden des Betriebssystems im Kundenportal werden alle auf der betreffenden Einheit vorhandenen Konfigurationen gelöscht und die ursprüngliche Konfiguration wiederhergestellt. Alle Änderungen, die seit dem letzten Laden des Betriebssystems vorgenommen wurden, gehen verloren. Dies kann beispielsweise zu einem Konflikt auf der Maschine mit dem erneut geladenen Betriebssystem führen, wenn Änderungen beispielsweise an der VRRP-Gruppe auf einer anderen Maschine vorgenommen wurden und die Maschine wieder online geht. 
+Beim Ausführen des Prozesses zum erneuten Laden des Betriebssystems im Kundenportal werden alle auf der betreffenden Einheit vorhandenen Konfigurationen gelöscht und die ursprüngliche Konfiguration wiederhergestellt. Alle Änderungen, die seit dem letzten Laden des Betriebssystems vorgenommen wurden, gehen verloren. Dies kann beispielsweise zu einem Konflikt auf der Maschine mit dem erneut geladenen Betriebssystem führen, wenn Änderungen beispielsweise an der VRRP-Gruppe auf einer anderen Maschine vorgenommen wurden und die Maschine wieder online geht.
 
 Gehen Sie wie folgt vor, um Ihr Betriebssystem erneut zu laden:
 

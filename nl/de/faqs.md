@@ -106,7 +106,7 @@ Wenn Zugriff über IPMI besteht, können Sie die folgenden Aktionen ausführen, 
 2. Entnehmen Sie den ganzen Regelsatz aus der erforderlichen Schnittstelle, indem Sie den folgenden Befehl ausführen:
 
 	```
-	delete interfaces dataplane [schnittstelle] firewall [typ] [firewallname]
+	delete interfaces dataplane [schnittstelle] firewall [typ][firewall name]
 	commit
 	```
 
@@ -120,6 +120,6 @@ Führen Sie den folgenden Befehl aus, um den Rootzugriff über SSH zu aktivieren
 
 Beachten Sie, dass es als unsicher angesehen wird, Rootzugriff über SSH zu ermöglichen. Eine Alternative für den Zugriff auf eine Root-Shell besteht entweder darin, sich als ein anderer Benutzer anzumelden und mithilfe von `su -` lokal zum Root zu erweitern, oder darin, sudo-Befehle für 'superuser' zuzulassen. 
 
-Gehen Sie wie folgt vor, um Vyatta als Superuser zu konfigurieren: 
+Gehen Sie wie folgt vor, um Vyatta als Superuser zu konfigurieren:
 
 `set system login vyatta level superuser`

@@ -27,13 +27,13 @@ IBM Virtual Router Appliance는 x86 베어메탈 서버용 최신 Vyatta 5600 �
 ## 가상 사설망(VPN) 게이트웨이
 Virtual Router Appliance를 네트워크 게이트웨이 디바이스로 프로비저닝하여 VPN 터널링을 통해 현장의 데이터 센터 또는 오피스를 IBM Cloud에 연결하십시오. 엔터프라이즈 데이터 센터 또는 오피스에서 IBM Cloud 네트워크로의 통신을 보호하기 위해 IPsec 사이트-투-사이트 VPN 터널을 사용할 수 있습니다. 기타 VPN 옵션은 원격 액세스 IPsec VPN(클라이언트-투-사이트), OpenVPN, GRE, L2TP 및 DMVPN입니다.
 
-[Supplemental VRA documentation 섹션](https://console.bluemix.net/docs/infrastructure/virtual-router-appliance/vra-docs.html#supplemental-vra-documentation)에서 Brocade VPN Configurations 안내서를 참조하십시오. 
+[Supplemental VRA documentation 섹션](https://console.bluemix.net/docs/infrastructure/virtual-router-appliance/vra-docs.html#supplemental-vra-documentation)에서 Brocade VPN Configurations 안내서를 참조하십시오.
 
 ## 네트워크 주소 변환(NAT)
 Virtual Router Appliance에서는 소스 NAT를 사용하여 서버가 인터넷에 액세스할 수 있는 동안 공용 네트워크 인터페이스 없이 애플리케이션과 데이터베이스 서버를 프로비저닝할 수 있습니다. 또한 보안 향상을 위해 대상 NAT를 사용하여 서버를 게이트웨이 장치 뒤로 숨길 수도 있습니다.
 
 ## 엔터프라이즈급 라우팅
 
-서로 다른 격리된 네트워크에 있는 다중 계층 애플리케이션의 경우 Virtual Router Appliance를 사용하면 이러한 네트워크 간의 연결을 보다 유연하게 구축할 수 있습니다. BGP를 사용하여 동적 라우팅을 설정할 수 있으며, 이를 통해 IBM Cloud 라우터의 고유한 공용 IP 공간을 나타낼 수 있습니다. 또한 BGP는 여러 터널 및 직접 링크 솔루션을 사용할 때 사용자 정의 사설 네트워크 구성을 위한 추가 유연성도 제공합니다. 
+서로 다른 격리된 네트워크에 있는 다중 계층 애플리케이션의 경우 Virtual Router Appliance를 사용하면 이러한 네트워크 간의 연결을 보다 유연하게 구축할 수 있습니다. BGP를 사용하여 동적 라우팅을 설정할 수 있으며, 이를 통해 IBM Cloud 라우터의 고유한 공인 IP 공간을 나타낼 수 있습니다. 또한 BGP는 여러 터널 및 직접 링크 솔루션을 사용할 때 사용자 정의 사설 네트워크 구성을 위한 추가 유연성도 제공합니다.
 
-[Supplemental VRA documentation 섹션](https://console.bluemix.net/docs/infrastructure/virtual-router-appliance/vra-docs.html#supplemental-vra-documentation)에서 Brocade BGP Configurations 안내서를 참조하십시오. 
+[Supplemental VRA documentation 섹션](https://console.bluemix.net/docs/infrastructure/virtual-router-appliance/vra-docs.html#supplemental-vra-documentation)에서 Brocade BGP Configurations 안내서를 참조하십시오.

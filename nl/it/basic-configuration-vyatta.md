@@ -7,14 +7,14 @@ lastupdated: "2017-07-25"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Configurazione di base di Vyatta 5400 
+# Configurazione di base di Vyatta 5400
 
 Esegui la seguente procedura per configurare il tuo Vyatta 5400.
 
 La LAN virtuale pubblica (VLAN) 1224, che è ora associata e instradata, deve essere configurata prima che possa trasmettere il traffico. Sono necessarie due informazioni per completare la configurazione:
 
   * Il vincolo del lato pubblico dell'applicazione Brocade 5400 vRouter
-  * Il gateway predefinito di 1224 
+  * Il gateway predefinito di 1224
 
 Tieni presente che è la VLAN del lato pubblico dove si trova l'opzione di calcolo - non la VLAN pubblica dell'applicazione Brocade 5400 vRouter.
 
@@ -40,9 +40,7 @@ Tieni presente che è la VLAN del lato pubblico dove si trova l'opzione di calco
 
 9\. Fai clic sul pulsante **Set** e su **Commit**.
 
-10\. Fai clic su **Save** nella barra del menu centrale altrimenti la configurazione esegue il rollback alle sue impostazioni predefinite la prossima volta che viene riavviato il sistema.
-
-**NOTA:** il rollback della configurazione può essere una funzione molto utile se interrompi la tua configurazione mentre verifichi le modifiche. Finché le modifiche non vengono salvate puoi riavviare il server dal portale web e ripristinare la tua configurazione precedente.
+10\. Fai clic su **Save** nella barra del menu centrale altrimenti la configurazione esegue il rollback alle sue impostazioni predefinite la prossima volta che viene riavviato il sistema.<sup>1</sup>
 
 11\. Fai clic sulla scheda delle statistiche e apri la nuova interfaccia per verificare e monitorare il traffico.
 
@@ -64,12 +62,10 @@ La configurazione fornisce l'accesso ai comandi per:
   * Modifica
   * Eliminazione
   * Commit
-  * Visualizzazione delle informazioni di configurazione 
-  * Navigazione tramite la gerarchia di configurazione 
+  * Visualizzazione delle informazioni di configurazione
+  * Navigazione tramite la gerarchia di configurazione
 
-Quando accedi al sistema, questo è nella modalità operativa; dovrai passare alla configurazione per i comandi.
-
-**NOTA:** puoi vedere in quale modalità sei, operativa o configurazione, in base al prompt. Sei nella modalità operativa se il prompt è # e nella configurazione se il prompt è $.
+Quando accedi al sistema, questo è in modalità operativa; dovrai passare alla configurazione per i comandi.<sup>2</sup>
 
 Utilizza la seguente procedura per configurare la VLAN privata utilizzando la CLI. Ricorda che i valori necessari per configurare le VLAN sono:
 
@@ -77,11 +73,9 @@ Utilizza la seguente procedura per configurare la VLAN privata utilizzando la CL
   * Il gateway e la maschera (formato CIDR) della VLAN che deve essere instradata (10.52.69.201/29)
   * Il nome del vincolo privato del dispositivo Brocade 5400 vRouter (bond0)
 
-1. Accedi tramite SSH al tuo Brocade 5400 vRouter (indirizzo IP pubblico o privato) utilizzando **vyatta** come **Username**; fornisci la password quando richiesta.
+1\. Accedi tramite SSH al tuo Brocade 5400 vRouter (indirizzo IP pubblico o privato) utilizzando **vyatta**<sup>3</sup> come **Username**; fornisci la password quando richiesta.
 
-   **NOTA:** devi creare un nuovo utente in Brocade 5400 vRouter e disabilitare l'utente iniziale predefinito `vyatta`.
-
-2. Configura il vif:
+2\. Configura il vif:
 
   * Immetti *configure* nel prompt dei comandi per entrare nella modalità di configurazione.
   * Immetti *set interfaces bonding bond0 vif 2254 address 10.52.69.201/29* nel prompt dei comandi per configurare il vif.
@@ -92,3 +86,11 @@ Utilizza la seguente procedura per configurare la VLAN privata utilizzando la CL
 3\. Immetti *show interfaces* per controllare le impostazioni di cui hai appena eseguito il commit.
 
 4\. Instrada ogni VLAN rimanente tramite il dispositivo Brocade 5400 vRouter.
+
+**Note:**
+
+<sup>1</sup> Il rollback della configurazione può essere una funzione molto utile se interrompi la tua configurazione mentre verifichi le modifiche. Finché le modifiche non vengono salvate puoi riavviare il server dal portale web e ripristinare la tua configurazione precedente.
+
+<sup>2</sup> Puoi vedere in quale modalità sei, operativa o configurazione, in base al prompt. Sei in modalità operativa se il prompt è # e nella configurazione se il prompt è $.
+
+<sup>3</sup> Devi creare un nuovo utente in Brocade 5400 vRouter e disabilitare l'utente iniziale predefinito `vyatta`.

@@ -14,7 +14,7 @@ lastupdated: "2017-12-22"
 {:tip: .tip}
 {:download: .download}
 
-# Sincronizza le configurazioni dell'alta disponibilità 
+# Sincronizza le configurazioni dell'alta disponibilità
 Due VRA (Virtual Router Appliances) in una coppia HA (alta disponibilità) devono avere le loro configurazioni sufficientemente sincronizzate in modo che i dispositivi si comportino in modo simile. Questo viene eseguito tramite `configuration sync-maps` e puoi scegliere quale parte della configurazione sarà sincronizzata. Se effettui una modifica in una macchina, trasmetterà la configurazione contrassegnata all'altro dispositivo.
 
 **NOTA:** questo sincronizza e salva la configurazione in esecuzione del dispositivo locale sul dispositivo remoto. Tuttavia, come parte del processo di commit non salva la configurazione sul dispositivo locale. 
@@ -33,7 +33,7 @@ set system config-sync remote-router 192.168.1.22 sync-map TEST
 
 Le prime due righe creano lo stesso sync-map reale. Qui, la stanza di configurazione per `security firewall` sarà impostata su `sync-map`. Di conseguenza, tutte le modifiche effettuate nel nodo di configurazione saranno trasmesse al dispositivo remoto. Tuttavia, le modifiche effettuate a `security user` non saranno inviate, perché non corrispondono alla regola. Puoi eseguire `sync-map` come specifico o generale a tua scelta.
 
-Le successive tre righe designano la password e l'utente, l'IP e quale sync-map da trasmettere `config-sync` del router remoto. Tutte le modifiche che corrispondo alle regole per `TEST`, andranno a `remote-router 192.168.1.22`, utilizzando queste informazioni di accesso. Tieni presente che viene effettuata una chiamata `REST` per eseguire questa operazione utilizzando l'API VRA, in modo che il server HTTPS debba essere in esecuzione (e sbloccato) nel router remoto. 
+Le successive tre righe designano la password e l'utente, l'IP e quale sync-map da trasmettere `config-sync` del router remoto. Tutte le modifiche che corrispondo alle regole per `TEST`, andranno a `remote-router 192.168.1.22`, utilizzando queste informazioni di accesso. Tieni presente che viene effettuata una chiamata `REST` per eseguire questa operazione utilizzando l'API VRA, in modo che il server HTTPS debba essere in esecuzione (e sbloccato) nel router remoto.
 
 Config-sync si verifica se esegui il commit di una modifica. Controlla se sono presenti messaggi di errore che provengono dal dispositivo remoto. Se la configurazione non è sincronizzata, dovrai correggerla nel dispositivo remoto per renderlo nuovamente operativo.
 

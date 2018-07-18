@@ -7,7 +7,7 @@ lastupdated: "2017-07-26"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Vyatta 5400 高可用性配置
+# Vyatta 高可用性配置
 
 Vyatta 高可用性通过使用 VRRP、虚拟路由冗余协议进行支持。每个网关组会有两个主 VRRP IP 地址，一个用于网络的专用端，一个用于公用端。 
 

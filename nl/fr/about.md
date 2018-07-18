@@ -34,6 +34,6 @@ Avec Virtual Router Appliance, vous pouvez mettre à disposition des serveurs d'
 
 ## Routage au niveau de l'entreprise
 
-Pour les applications multiniveau sur différents réseaux isolés, Virtual Router Appliance vous permet d'établir la connectivité entre ces réseaux avec une plus grande flexibilité. Vous pourrez configurer le routage dynamique à l'aide de BGP, ce qui vous permettra d'annoncer votre propre espace IP public sur les routeurs IBM Cloud. BGP offrira également davantage de flexibilité pour des configurations de réseau privé personnalisées lors de l'utilisation de différents tunnels et de diverses solutions de lien direct. 
+Pour les applications multiniveau sur différents réseaux isolés, Virtual Router Appliance vous permet d'établir la connectivité entre ces réseaux avec une plus grande flexibilité. Vous pourrez configurer le routage dynamique à l'aide de BGP, ce qui vous permettra d'annoncer votre propre espace IP public sur les routeurs IBM Cloud. BGP offrira également davantage de flexibilité pour des configurations de réseau privé personnalisées lors de l'utilisation de différents tunnels et de diverses solutions de lien direct.
 
 Consultez les guides de configuration de Brocade BGP dans la section [Supplemental VRA documentation](https://console.bluemix.net/docs/infrastructure/virtual-router-appliance/vra-docs.html#supplemental-vra-documentation)

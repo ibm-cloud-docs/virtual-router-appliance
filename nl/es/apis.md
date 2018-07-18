@@ -18,7 +18,7 @@ lastupdated: "2017-10-30"
 
 La API de SoftLayer® (SLAPI) es la interfaz de desarrollo que proporciona a los desarrolladores y administradores de sistema interacción directa con el sistema de fondo de IBM Cloud.
 
-La SLAPI potencia muchas de las característica en el portal del cliente, lo que normalmente significa que si es posible una interacción en el portal del cliente, también puede ejecutarse en la API. Dado que puede interactuar mediante programación con todas las partes del entorno del portal del cliente de la API, puede utilizarla para automatizar tareas.
+La SLAPI potencia muchas de las característica en el Portal de clientes, lo que normalmente significa que si es posible una interacción en el Portal de clientes, también puede ejecutarse en la API. Dado que puede interactuar mediante programación con todas las partes del entorno del Portal de clientes de la API, puede utilizarla para automatizar tareas.
 
 La SLAPI es un sistema de llamada de procedimiento remoto (RPC). Cada llamada implica el envío de datos a un punto final de API a cambio de la recepción de datos estructurados. El formato utilizado para enviar y recibir datos con la SLAPI depende de qué implementación de la API utilice. La SLAPI utiliza actualmente SOAP, XML-RPC o REST para la transmisión de datos.
 

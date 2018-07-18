@@ -18,7 +18,7 @@ lastupdated: "2017-12-22"
 La foire aux questions suivante aborde la configuration de l'IBM Virtual Router Appliance (VRA) et la migration vers l'unité VRA à partir de Vyatta 5400.
 
 ## Comment puis-je autoriser le trafic lié par Internet à partir de systèmes hôte résidant sur un réseau local virtuel privé ?
-Ce trafic doit obtenir une adresse IP source publique, par conséquent, une conversion d'adresses réseau source doit usurper l'adresse IP privée avec l'adresse publique de l'unité VRA. 
+Ce trafic doit obtenir une adresse IP source publique, par conséquent, une conversion d'adresses réseau source doit usurper l'adresse IP privée avec l'adresse publique de l'unité VRA.
 
 ```
 set service nat source rule 1000 description 'SNAT traffic from private VLANs to Internet'
@@ -27,18 +27,18 @@ set service nat source rule 1000 source address '10.0.0.0/8'
 set service nat source rule 1000 translation address masquerade
 ```
 
-La configuration ci-dessus effectue uniquement une conversion d'adresses réseau sécurisée à partir du trafic provenant des serveurs du réseau `10.0.0.0/8` privé. 
+La configuration ci-dessus effectue uniquement une conversion d'adresses réseau sécurisée à partir du trafic provenant des serveurs du réseau `10.0.0.0/8` privé.
 
-Cela permet de garantir qu'elle n'interférera pas avec les paquets qui possèdent déjà une adresse source routable par Internet. 
+Cela permet de garantir qu'elle n'interférera pas avec les paquets qui possèdent déjà une adresse source routable par Internet.
 
 ## Comment puis-je filtrer le trafic lié par Internet et autoriser uniquement des protocoles/destinations spécifiques ?
-Il s'agit d'une question courante lorsque la conversion d'adresses réseau source et un pare-feu doivent être combinés. 
+Il s'agit d'une question courante lorsque la conversion d'adresses réseau source et un pare-feu doivent être combinés.
 
-Gardez à l'esprit l'ordre des opérations dans l'unité VRA lorsque vous concevez vos jeux de règles. 
+Gardez à l'esprit l'ordre des opérations dans l'unité VRA lorsque vous concevez vos jeux de règles.
 
-En résumé, les règles de pare-feu sont appliquées *après* la conversion d'adresses réseau sécurisée. 
+En résumé, les règles de pare-feu sont appliquées *après* la conversion d'adresses réseau sécurisée.
 
-Pour bloquer l'ensemble du trafic sortant dans un pare-feu, mais autoriser des flux SNAT spécifiques, vous devez déplacer la logique de filtrage vers votre conversion d'adresses réseau sécurisée. 
+Pour bloquer l'ensemble du trafic sortant dans un pare-feu, mais autoriser des flux SNAT spécifiques, vous devez déplacer la logique de filtrage vers votre conversion d'adresses réseau sécurisée.
 
 Par exemple, afin d'autoriser uniquement le trafic lié par Internet HTTPS pour un hôte, la règle SNAT doit être la suivante :
 
@@ -53,9 +53,9 @@ set service nat source rule 10 translation address '150.1.2.3'
 
 `150.1.2.3` serait une adresse publique pour l'unité VRA. 
 
-Il est fortement recommandé d'utiliser l'adresse publique VRRP de l'unité VRA, par conséquent, vous pouvez faire la différence entre le trafic public de l'hôte et de l'unité VRA. 
+Il est fortement recommandé d'utiliser l'adresse publique VRRP de l'unité VRA, par conséquent, vous pouvez faire la différence entre le trafic public de l'hôte et de l'unité VRA.
 
-Supposons que `150.1.2.3` corresponde à l'adresse VRA VRRP et que `150.1.2.5` soit l'adresse dp0bond1 réelle. 
+Supposons que `150.1.2.3` corresponde à l'adresse VRA VRRP et que `150.1.2.5` soit l'adresse dp0bond1 réelle.
 
 La pare-feu avec état appliqué sur `dp0bond1 out` serait le suivant :
 
@@ -71,16 +71,16 @@ set security firewall name TO_INTERNET rule 20 source address '150.1.2.5'
 set security firewall name TO_INTERNET rule 20 state 'enable'
 ```
 
-Notez que la combinaison de la conversion d'adresses réseau source et du pare-feu permet d'atteindre l'objectif de conception demandé.  
+Notez que la combinaison de la conversion d'adresses réseau source et du pare-feu permet d'atteindre l'objectif de conception demandé. 
 
-Assurez-vous que les règles sont adaptées à votre conception et qu'aucune autre règle ne peut autoriser le trafic qui doit être bloqué.  
+Assurez-vous que les règles sont adaptées à votre conception et qu'aucune autre règle ne peut autoriser le trafic qui doit être bloqué. 
 
 ## Comment puis-je protéger l'unité VRA proprement dite avec un pare-feu basé sur zone ?
 L'unité VRA ne possède pas de `zone locale`.
 
-A la place, vous pouvez utiliser la fonctionnalité CPP (Control Plane Policing) car elle est appliquée en tant que pare-feu `local` sur un bouclage. 
+A la place, vous pouvez utiliser la fonctionnalité CPP (Control Plane Policing) car elle est appliquée en tant que pare-feu `local` sur un bouclage.
 
-Notez qu'il s'agit d'un pare-feu sans état et que vous devrez autoriser explicitement le trafic en retour de sessions sortantes provenant de l'unité VRA proprement dite. 
+Notez qu'il s'agit d'un pare-feu sans état et que vous devrez autoriser explicitement le trafic en retour de sessions sortantes provenant de l'unité VRA proprement dite.
 
 ## Comment puis-je restreindre SSH et bloquer les connexions provenant d'Internet ?
 La meilleure pratique consiste à ne pas autoriser les connexions SSH provenant d'Internet et à utiliser d'autres moyens pour accéder à l'adresse privée, par exemple, SSL VPN.
@@ -92,4 +92,4 @@ Afin de mettre en place une écoute des connexions SSH uniquement sur l'interfac
 set service ssh listen-address '10.1.2.3'
 ```
 
-Gardez à l'esprit que l'adresse IP doit être remplacée par l'adresse appartenant à l'unité VRA. 
+Gardez à l'esprit que l'adresse IP doit être remplacée par l'adresse appartenant à l'unité VRA.

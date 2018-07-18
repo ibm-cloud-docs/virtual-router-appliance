@@ -29,7 +29,7 @@ Unter den unten aufgelisteten Firewallinstanzen kann nur jeweils eine angewendet
 
 Führen Sie die folgenden Schritte aus, um ein Beispiel für eine Firewallregel festzulegen, die ICMP (Internet Control Message Protocol) (ping - IPv4 Echo-Antwortnachricht) für Ihre Virtual Router Appliance-Schnittstellen ausschaltet (Dies ist eine statusunabhängige Aktion. Eine statusabhängige Aktion wird später betrachtet.):
 
-1. Geben Sie in der Eingabeaufforderung `show configuration commands` ein, um anzuzeigen, welche Konfigurationen definiert wurden. Sie sehen eine Liste aller Befehle, die Sie für Ihre Einheit definiert haben. (Das kann z.B. ein Handy sein, wenn Sie eine Migration durchführen möchten und alle Konfigurationen anzeigen wollen. Beachten Sie den Befehl `set firewall all-ping enable`, der angibt, dass ICMP immer noch für Ihre Einheit aktiviert ist. 
+1. Geben Sie in der Eingabeaufforderung `show configuration commands` ein, um anzuzeigen, welche Konfigurationen definiert wurden. Sie sehen eine Liste aller Befehle, die Sie für Ihre Einheit definiert haben. (Das kann z.B. ein Handy sein, wenn Sie eine Migration durchführen möchten und alle Konfigurationen anzeigen wollen. Beachten Sie den Befehl `set firewall all-ping enable`, der angibt, dass ICMP immer noch für Ihre Einheit aktiviert ist.
 
 2. Geben Sie `configure` ein.
 
@@ -37,11 +37,11 @@ Führen Sie die folgenden Schritte aus, um ein Beispiel für eine Firewallregel 
 
 4. Geben Sie `commit` ein.
 
-Wenn Sie jetzt versuchen, Ihre VRA-Einheit mit Ping zu überprüfen, erhalten Sie keine Antwort mehr. 
+Wenn Sie jetzt versuchen, Ihre VRA-Einheit mit Ping zu überprüfen, erhalten Sie keine Antwort mehr.
 
-Um weitergeleitetem Datenverkehr Firewallregeln zuzuordnen, müssen die Regeln auf die VRA-Schnittstellen angewendet werden oder es müssen Zonen erstellt und die Regeln müssen auf diese Zonen angewendet werden. 
+Um weitergeleitetem Datenverkehr Firewallregeln zuzuordnen, müssen die Regeln auf die VRA-Schnittstellen angewendet werden oder es müssen Zonen erstellt und die Regeln müssen auf diese Zonen angewendet werden.
 
-Zonen werden für die VLANs erstellt, die bisher verwendet worden sind. 
+Zonen werden für die VLANs erstellt, die bisher verwendet worden sind.
 
  VLAN | Zone 
  ---- | ---- 
@@ -52,23 +52,23 @@ bond1.1280 | reserviert für künftige Verwendung
 bond1.1894 | reserviert für künftige Verwendung
 
 ## Firewallregeln erstellen
-Es ist empfehlenswert, die Firewallregeln zu erstellen, die auf die Zonen angewendet werden sollen, bevor die Zonen tatsächlich erstellt werden. Wenn Sie zuerst die Regeln und dann die Zonen erstellen, können Sie diese sofort anwenden. Wenn Sie zuerst die Zone und dann die Regel erstellen, müssen Sie zur Zone zurückkehren, um die Regel anzuwenden. 
+Es ist empfehlenswert, die Firewallregeln zu erstellen, die auf die Zonen angewendet werden sollen, bevor die Zonen tatsächlich erstellt werden. Wenn Sie zuerst die Regeln und dann die Zonen erstellen, können Sie diese sofort anwenden. Wenn Sie zuerst die Zone und dann die Regel erstellen, müssen Sie zur Zone zurückkehren, um die Regel anzuwenden.
 
-Die folgenden Befehle dienen folgenden Zwecken: 
+Die folgenden Befehle dienen folgenden Zwecken:
 
-* Erstellen einer Firewallregel mit dem Namen `dmz2private` mit der Standardaktion zum Freigeben eines beliebigen Pakets. 
+* Erstellen einer Firewallregel mit dem Namen `dmz2private` mit der Standardaktion zum Freigeben eines beliebigen Pakets.
 * Zulassen der Protokollierung von akzeptiertem und verweigertem Datenverkehr für die Regel mit dem Namen `dmz2private`.
 
-1. Geben Sie `configure` in der Eingabeaufforderung ein. 
+1. Geben Sie `configure` in der Eingabeaufforderung ein.
 
-2. Geben Sie folgende Befehle ein: 
+2. Geben Sie folgende Befehle ein:
 
 	~~~
 	set firewall name dmz2private default-action drop
 	set firewall name dmz2private enable-default-log
 	~~~
 
-3. Geben Sie die nächste Gruppe von Befehlen ein, so dass IP-Tabellen (iptables) eine Rückgabe des Datenverkehrs für eingerichtete Sitzungen zulassen. Standardmäßig lassen IP-Tabellen (iptables) dies nicht zu. Daher ist eine explizite Regel erforderlich. 
+3. Geben Sie die nächste Gruppe von Befehlen ein, so dass IP-Tabellen (iptables) eine Rückgabe des Datenverkehrs für eingerichtete Sitzungen zulassen. Standardmäßig lassen IP-Tabellen (iptables) dies nicht zu. Daher ist eine explizite Regel erforderlich.
 
 	~~~
 	set firewall name dmz2private rule 1 action accept
@@ -92,11 +92,11 @@ Die folgenden Befehle dienen folgenden Zwecken:
 	set firewall name dmz2private rule 3 destination port 80
 	~~~
 
-6. Geben Sie `commit` ein, um sicherzustellen, dass alle Regeln nach der Fertigstellung verwendet werden. 
+6. Geben Sie `commit` ein, um sicherzustellen, dass alle Regeln nach der Fertigstellung verwendet werden.
 
-7. Zeigen Sie die neue Konfiguration an, indem Sie `show firewall name dmz2private` in der Eingabeaufforderung eingeben. 
+7. Zeigen Sie die neue Konfiguration an, indem Sie `show firewall name dmz2private` in der Eingabeaufforderung eingeben.
 
-8. Erstellen Sie eine Firewallregel, damit diese auf die dmz-Zone angewendet wird, indem Sie die folgenden Befehle in der Eingabeaufforderung eingeben. Die Regel wird 'public' genannt.  
+8. Erstellen Sie eine Firewallregel, damit diese auf die dmz-Zone angewendet wird, indem Sie die folgenden Befehle in der Eingabeaufforderung eingeben. Die Regel wird 'public' genannt. 
 
 	~~~
 	set firewall name public default-action drop
@@ -108,15 +108,15 @@ Die folgenden Befehle dienen folgenden Zwecken:
 	
 ## Erstellen Sie Zonen
 
-Zonen sind logische Darstellungen einer Schnittstelle. In diesem Abschnitt werden Sie folgendes tun: 
+Zonen sind logische Darstellungen einer Schnittstelle. In diesem Abschnitt werden Sie folgendes tun:
 
 * Eine Zone erstellen und eine Richtlinie mit dem Namen 'dmz' mit einer Standardaktion zum Ablehnen von Paketen, die für diese Zone bestimmt sind, erstellen.
 * Für die Richtlinie 'dmz' die Verwendung der Schnittstelle `bond1` festlegen.
-* Für die Richtlinie 'prod' die Verwendung der Schnittstelle `bond1.2007` festlegen. 
-* Eine Zonenrichtlinie mit dem Namen `private` mit einer Standardaktion zum Ablehnen von Paketen, die für diese Zone bestimmt sind, erstellen. 
-* Für eine Richtlinie mit dem Namen `private` die Verwendung der Schnittstelle `bond0.2254` festlegen. 
+* Für die Richtlinie 'prod' die Verwendung der Schnittstelle `bond1.2007` festlegen.
+* Eine Zonenrichtlinie mit dem Namen `private` mit einer Standardaktion zum Ablehnen von Paketen, die für diese Zone bestimmt sind, erstellen.
+* Für eine Richtlinie mit dem Namen `private` die Verwendung der Schnittstelle `bond0.2254` festlegen.
 
-1. Geben Sie die folgenden Befehle in der Eingabeaufforderung ein: 
+1. Geben Sie die folgenden Befehle in der Eingabeaufforderung ein:
 
 	~~~
 	configure
@@ -128,7 +128,7 @@ Zonen sind logische Darstellungen einer Schnittstelle. In diesem Abschnitt werde
 	set zone-policy zone private interface bond0.2254
 	~~~
 	
-2. Verwenden Sie die folgenden Befehle zum Festlegen der Firewallrichtlinie für die Zonen: 
+2. Verwenden Sie die folgenden Befehle zum Festlegen der Firewallrichtlinie für die Zonen:
 
 	~~~
 	set zone-policy zone private from dmz firewall name 	dmz2private
@@ -137,9 +137,9 @@ Zonen sind logische Darstellungen einer Schnittstelle. In diesem Abschnitt werde
 	commit
 	~~~
 	
-Sie können eine Firewallregel für eine bestimmte Schnittstelle anwenden, wenn Sie sie nicht auf eine Zonenrichtlinie anwenden möchten. Geben Sie die folgenden Befehle ein, um eine Regel auf eine Schnittstelle anzuwenden. 
+Sie können eine Firewallregel für eine bestimmte Schnittstelle anwenden, wenn Sie sie nicht auf eine Zonenrichtlinie anwenden möchten. Geben Sie die folgenden Befehle ein, um eine Regel auf eine Schnittstelle anzuwenden.
 
 ~~~
-set interfaces bonding bond1 fireawll local name public
+set interfaces bonding bond1 firewall local name public
 commit
 ~~~

@@ -60,9 +60,7 @@ set security firewall name TEST rule 1 state enable
 这将对所有可以进行有状态跟踪且与 `TEST` 的规则 1 相匹配的流量启用有状态跟踪，而不管 `global-state-policy` 命令是否存在。 
 
 ## 用于协助有状态跟踪的 ALG
-一些协议（如 FTP）利用正常有状态防火墙操作可以跟踪的更复杂会话。
-有预配置的模块支持对这些协议进行有状态管理。
-建议禁用这些 ALG 模块，除非必须使用这些模块才能成功使用相应协议。
+有些协议（如 FTP）所利用的会话要比一般的有状态防火墙操作可以跟踪的会话更复杂。有些预配置的模块支持对这些协议进行有状态管理。建议禁用这些 ALG 模块，除非必须使用这些模块才能成功使用相应协议。
 
 ```
 set system alg ftp 'disable'
@@ -75,21 +73,21 @@ set system alg tftp 'disable'
 ```
 
 ## 防火墙规则集
-防火墙规则可分组为命名的集，这样可更轻松地将规则应用于多个接口。每个规则集都有一个关联的缺省操作。请考虑以下示例：
+防火墙规则可分组为多个命名集，这样可更轻松地将规则应用于多个接口。每个规则集都有一个关联的缺省操作。请考虑以下示例：
 ```
 set security firewall name ALLOW_LEGACY default-action accept
 set security firewall name ALLOW_LEGACY rule 1 action drop
 set security firewall name ALLOW_LEGACY rule 1 source address network-group1 set security firewall name ALLOW_LEGACY rule 2 action drop set security firewall name ALLOW_LEGACY rule 2 destination port 23 set security firewall name ALLOW_LEGACY rule 2 log set security firewall name ALLOW_LEGACY rule 2 protocol tcp set security firewall name ALLOW_LEGACY rule 2 source address network-group2
 ```
 
-在规则集 `ALLOWLEGACY` 中，定义了两个规则。第一个规则用于删除源自名为 `network-group1` 的地址组的所有流量。第二个规则用于废弃并记录来自名为 `network-group2` 的地址组且以 telnet 端口 (`tcp/23`) 为目标的所有流量。缺省操作指示接受其他所有流量。
+在规则集 `ALLOW_LEGACY` 中，定义了两个规则。第一个规则用于丢弃源自名为 `network-group1` 的地址组的所有流量。第二个规则用于废弃并记录来自名为 `network-group2` 的地址组且以 telnet 端口 (`tcp/23`) 为目标的所有流量。缺省操作指示接受其他所有流量。
 
 ## 允许访问数据中心
 IBM 提供多个 IP 子网，用于为在数据中心内运行的系统提供服务和支持。例如，DNS 解析器服务在 `10.0.80.11` 和 `10.0.80.12` 上运行。在供应和支持期间会使用其他子网。可以在[此处](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html)找到数据中心内使用的 IP 范围。
 
-可以通过在带有 `accept` 操作的防火墙规则集的开头放置正确的 `SERVICE-ALLOW` 规则，以允许访问数据中心。必须应用该规则集的位置取决于实现的路由和防火墙设计。
+通过在防火墙规则集开头放置正确的 `SERVICE-ALLOW` 规则以及操作 `accept`，可允许访问数据中心。必须应用该规则集的位置取决于实现的路由和防火墙设计。
 
-建议将防火墙规则放入产生重复工作最少的位置。例如，允许后端子网在 `dp0bond0` 上入站所执行的工作将少于允许后端子网出站到每个 VLAN 虚拟接口的工作。
+建议将防火墙规则放入产生重复工作最少的位置。例如，在 `dp0bond0` 上允许后端子网入站流量所涉及的工作，要少于对每个 VLAN 虚拟接口允许后端子网出站流量。
 
 ### 逐个接口应用的防火墙规则
 在 VRA 上配置防火墙的一种方法是对每个接口应用防火墙规则集。在这种情况下，接口可以是数据平面接口 (`dp0s0`) 或虚拟接口 (`dp0bond0.303`)。每个接口有三种可能的防火墙分配：
@@ -148,14 +146,14 @@ set security zone-policy zone DEPARTMENTA interface dp0bond1.20  set security 
 
 请务必了解，这种从区域 DEPARTMENTC 进入到区域 DEPARTMENTB 的分配不会针对逆向情况做出任何规定。如果没有规则允许从区域 DEPARTMENTB 进入区域 DEPARTMENTC，那么流量（ICMP 应答）不会返回给 DEPARTMENTC 中的主机。
 
-`ALLOW_PING` 将作为 DEPARTMENTB 区域（dp0bond1.30 和 dp0bond1.40）中各接口上的 `out` 防火墙应用。由于这是由区域策略安装的，因此只会根据规则集来检查源自源区域的接口 (dp0bond1.50) 的流量。
+`ALLOW_PING` 将作为 DEPARTMENTB 区域中各接口（dp0bond1.30 和 dp0bond1.40）上的 `out` 防火墙应用。由于这是由区域策略安装的，因此只会根据规则集来检查源自源区域的接口 (dp0bond1.50) 的流量。
 
 ## 会话和包日志记录
 VRA 支持两种类型的日志记录：
 
 1. 会话日志记录。使用 ``security firewall session-log`` 命令可配置防火墙会话日志记录。
   
-	对于 UDP、ICMP 和所有非 TCP 流，会话在流的生命周期内会依次转换为四个状态。对于每个转换，可以配置 VRA 来记录消息。TCP 有更多个状态转换，其中每个转化都可以配置为进行记录。  
+	对于 UDP、ICMP 和所有非 TCP 流，会话在流的生命周期内会依次转换为四个状态。可以配置 VRA 对每次转换记录一条消息。TCP 有更多状态转换，可通过配置对每次转换都进行记录。  
 
 2. 逐个包应用的日志记录。在防火墙或 NAT 规则中包含关键字 ``log`` 可记录与规则匹配的每个网络包。
 

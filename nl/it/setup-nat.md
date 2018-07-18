@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Configurazione delle regole NAT su Vyatta 5400
+# Configurazione delle regole NAT su Vyatta
 Questo argomento contiene gli esempi delle regole NAT (Network Address Translation) utilizzate su Vyatta.
 
 ## Regola NAT one-to-many (mascheramento)
@@ -32,7 +32,7 @@ commit
 
 La richiesta di connessione dalle macchine nella rete `10.xxx.xxx.xxx` viene associata all'IP in bond1 e riceve una porta temporanea associata quando va in uscita. L'intenzione è di assegnare numeri superiori alla regola di mascheramento one-to-many in modo che non siano in conflitto con le regole NAT inferiori di cui puoi disporre.
 
-**NOTA:** devi configurare il server per passare il proprio traffico internet tramite il VRA in modo che il proprio gateway predefinito sia l'indirizzo IP privato della LAN virtuale gestita (VLAN). Ad esempio, per `bond0.2254` il gateway è `10.52.69.201`. Questo dovrebbe essere l'indirizzo del gateway per il server che sta passando il traffico internet.
+**NOTA:** devi configurare il server per passare il proprio traffico internet tramite la VRA in modo che il proprio gateway predefinito sia l'indirizzo IP privato della LAN virtuale gestita (VLAN). Ad esempio, per `bond0.2254` il gateway è `10.52.69.201`. Questo dovrebbe essere l'indirizzo del gateway per il server che sta passando il traffico internet.
 
 **NOTA:** utilizza il seguente comando per aiutarti nella risoluzione dei problemi NAT: 
 
@@ -40,17 +40,17 @@ La richiesta di connessione dalle macchine nella rete `10.xxx.xxx.xxx` viene ass
 run show nat source translations detail 
 '''
 
-## Regola NAT one-to-one
+## Regola NAT uno-a-uno
 
-I seguenti comandi illustrano come configurare una regola NAT one-to-one. Nota che i numeri della regola sono configurati in modo da essere inferiori a quelli della regola di mascheramento. Questo in modo che le regole one-to-one abbiano la precedenza sulle regole one-to-many.
+I seguenti comandi illustrano come configurare una regola NAT uno-a-uno. Nota che i numeri della regola sono configurati in modo da essere inferiori a quelli della regola di mascheramento. Questo in modo che le regole uno-a-uno abbiano la precedenza sulle regole one-to-many.
 
-**NOTA:** gli indirizzi IP associati a one-to-one non possono essere mascherati. Se traduci un IP in entrata, devi tradurre quell'IP in uscita in modo che il traffico vada in entrambe le direzioni.
+**NOTA:** gli indirizzi IP associati uno-a-uno non possono essere mascherati. Se traduci un IP in entrata, devi tradurre quell'IP in uscita in modo che il traffico vada in entrambe le direzioni.
 
 I seguenti comandi sono per una regola di origine e di destinazione. Immetti `show nat` nella modalità di configurazione per visualizzare il tipo di regola NAT.
 
 **NOTA:** utilizza il seguente comando per aiutarti nella risoluzione dei problemi NAT: `run show nat source translations detail`. 
 
-Immetti i seguenti comandi nel prompt dopo esserti assicurato di essere nella modalità di configurazione: 
+Immetti i seguenti comandi nel prompt dopo esserti assicurato di essere nella modalità di configurazione:
 
 ~~~
 set nat source rule 9 outbound-interface 'bond1'
@@ -66,10 +66,9 @@ commit
 
 Se il traffico arriva su un IP `50.97.203.227` su bond1, quell'IP sarà associato all'IP `10.52.69.202` (su ogni interfaccia definita). Se il traffico esce con l'IP di `10.52.69.202` (su ogni interfaccia definita), sarà tradotto con l'IP `50.97.203.227` e diretto all'esterno nell'interfaccia bond1.
 
-**NOTA:** gli indirizzi IP associati a one-to-one non possono essere mascherati. Se traduci un IP in entrata, devi tradurre quello stesso IP in uscita in modo che il suo traffico vada in entrambe le direzioni. 
+**NOTA:** utilizza il seguente comando per aiutarti nella risoluzione dei problemi NAT: `run show nat source translations detail`.
 
-
-## Aggiunta di intervalli di IP tramite il tuo VRA
+## Aggiunta di intervalli di IP tramite la tua VRA
 
 A seconda della tua configurazione VRA, potresti voler accettare indirizzi IP IBM Cloud specifici. 
 
@@ -95,3 +94,10 @@ Applicazione a una zona:
 Applicazione a un'interfaccia associata:
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
+
+**NOTE:**
+
+* Gli indirizzi IP associati uno-a-uno non possono essere mascherati. Se traduci un IP in entrata, devi tradurre quello stesso IP in uscita in modo che il suo traffico vada in entrambe le direzioni.
+
+* Utilizzare il seguente comando come ausilio nella risoluzione dei problemi NAT: `run show nat source translations detail`
+

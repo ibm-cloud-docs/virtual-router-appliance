@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-30"
+  years: 2017, 2018
+lastupdated: "2018-06-15"
 
 ---
 
@@ -14,7 +14,8 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Vyatta 5400 支持
+# 旧 Vyatta 5400
+出于好意，为 Vyatta 5400 提供了以下文档。 
 
 旧 Vyatta 5400 客户应尽快升级到 IBM 虚拟路由器设备 (VRA)，因为可能最快从 2018 年 4 月起，就不再支持 Vyatta 5400。
 

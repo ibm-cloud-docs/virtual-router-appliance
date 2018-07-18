@@ -106,7 +106,7 @@ IPMI を使用してアクセスできる場合は、以下のアクションを
 2. 以下を実行して、指定されたルール・セット全体を必要なインターフェースから除外します。
 
 	```
-	delete interfaces dataplane [interface] firewall [type] [firewall name]
+	delete interfaces dataplane [interface] firewall [type][firewall name]
 	commit
 	```
 

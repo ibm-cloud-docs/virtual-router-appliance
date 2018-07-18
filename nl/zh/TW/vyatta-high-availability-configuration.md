@@ -7,7 +7,7 @@ lastupdated: "2017-07-26"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Vyatta 5400 高可用性配置
+# Vyatta 高可用性配置
 
 透過使用 VRRP（虛擬遞送備援通訊協定）來支援 Vyatta 高可用性。每一個閘道群組都會有兩個主要 VRRP IP 位址：一個用於專用，另一個則用於網路的公用端。 
 

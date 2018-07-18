@@ -15,7 +15,7 @@ lastupdated: "2017-12-22"
 {:download: .download}
 
 # Problèmes liés à la mise à niveau
-Après une mise à niveau et un redémarrage d'une nouvelle version du système d'exploitation Vyatta, il se peut que vous ne puissiez pas exécuter des commandes utilisateur. 
+Après une mise à niveau et un redémarrage d'une nouvelle version du système d'exploitation Vyatta, il se peut que vous ne puissiez pas exécuter des commandes utilisateur.
 
 Par exemple :
 
@@ -45,7 +45,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
 
-Notez que trois fichiers ont une longueur égale à zéro, et par conséquent, ils n'ont aucune configuration. Sans les commandes d'initialisation de l'environnement pour l'utilisateur VRA lors de la connexion, l'interpréteur de commandes en cours ne peut pas interpréter les commandes Vyatta que vous émettez. Par conséquent, vous devez vous procurer les anciens fichiers "dotfile" à partir d'une autre source. 
+Notez que trois fichiers ont une longueur égale à zéro, et par conséquent, ils n'ont aucune configuration. Sans les commandes d'initialisation de l'environnement pour l'utilisateur VRA lors de la connexion, l'interpréteur de commandes en cours ne peut pas interpréter les commandes Vyatta que vous émettez. Par conséquent, vous devez vous procurer les anciens fichiers "dotfile" à partir d'une autre source.
 
 Heureusement, l'ancien répertoire `home` existe encore en tant que répertoire de persistance, ce qui vous permet de recopier les fichiers. Pour ce faire, accédez à `/lib/live/mount/persistence/sda2/boot` et répertoriez les répertoires :
 
@@ -59,9 +59,9 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-Les images ISO pour l'installation initiale et votre système d'exploitation en cours d'exécution sont présentés ici.  
+Les images ISO pour l'installation initiale et votre système d'exploitation en cours d'exécution sont présentés ici. 
 
-**REMARQUE :** si vous avez effectué plus d'une mise à niveau, ces mises à niveau apparaîtront également ici. 
+**REMARQUE :** si vous avez effectué plus d'une mise à niveau, ces mises à niveau apparaîtront également ici.
 
 Ensuite, changez de répertoire en utilisant le système d'exploitation précédemment chargé comme répertoire suivant, puis accédez au répertoire de base VRA :
 
@@ -120,6 +120,6 @@ HW UUID:      00000000-0000-0000-0000-0CC47A07EF22
 Uptime:       12:57:47 up 59 min,  1 user,  load average: 0.35, 0.27, 0.26
 vyatta@acs-jmat-vyatta01:~$
 ```
-Toutes vos commandes seront de nouveau opérationnelles et vous pourrez poursuivre normalement. 
+Toutes vos commandes seront de nouveau opérationnelles et vous pourrez poursuivre normalement.
 
-**REMARQUE :** la copie du certificat HTTPS `/etc/lighttpd/server.pem` peut également échouer durant le processus de mise à niveau de système d'exploitation et provoquer éventuellement l'échec de la synchronisation des configurations à haute disponibilité. Pour résoudre ce problème, recopiez l'ancien fichier `server.pem` en plus des fichiers répertoriés ci-dessus (exécutez `su -` pour atteindre le niveau racine, puis exécutez la commande `copy`), puis exécutez la commande `restart https` pour redémarrer le fichier `demon.m` HTTPS (et les fichiers répertoriés ci-dessus). 
+**REMARQUE :** la copie du certificat HTTPS `/etc/lighttpd/server.pem` peut également échouer durant le processus de mise à niveau de système d'exploitation et provoquer éventuellement l'échec de la synchronisation des configurations à haute disponibilité. Pour résoudre ce problème, recopiez l'ancien fichier `server.pem` en plus des fichiers répertoriés ci-dessus (exécutez `su -` pour atteindre le niveau racine, puis exécutez la commande `copy`), puis exécutez la commande `restart https` pour redémarrer le fichier `demon.m` HTTPS (et les fichiers répertoriés ci-dessus).

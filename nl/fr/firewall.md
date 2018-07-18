@@ -17,7 +17,7 @@ lastupdated: "2017-12-22"
 # Gérer les pare-feux
 Virtual Router Appliance (VRA) a la capacité de traiter les règles de pare-feu pour protéger les réseaux locaux virtuels (VLAN) routés via l'unité. Les pare-feux dans l'unité VRA peuvent être divisés en deux étapes :
 
-1. Définition d'un ou de plusieurs jeux de règles. 
+1. Définition d'un ou de plusieurs jeux de règles.
 2. Application d'un jeu de règles à une interface ou à une zone. Une zone consiste en une ou plusieurs interfaces réseau.
 
 Il est important de tester les règles de pare-feu après leur création pour s'assurer qu'elles fonctionnent comme prévu et que les nouvelles règles n'empêchent pas l'accès des administrateurs à l'unité.
@@ -25,7 +25,7 @@ Il est important de tester les règles de pare-feu après leur création pour s'
 Lors de la manipulation des règles sur l'interface `dp0bond1`, il est conseillé de se connecter à l'unité à l'aide de `dp0bond0`. La connexion à la console à l'aide de l'interface IMPI (Intelligent Platform Management Interface) est également possible.
 
 ## Sans et avec état
-Par défaut, le pare-feu est configuré sans état, mais il peut être configuré avec état si nécessaire. Un pare-feu sans état nécessitera des règles pour le trafic bidirectionnel, alors que les pare-feu avec état contrôlent les connexions et autorisent automatiquement le trafic en retour des flux acceptés. Pour configurer un pare-feu avec état, vous devez indiquer les règles qui doivent fonctionner avec état. 
+Par défaut, le pare-feu est configuré sans état, mais il peut être configuré avec état si nécessaire. Un pare-feu sans état nécessitera des règles pour le trafic bidirectionnel, alors que les pare-feu avec état contrôlent les connexions et autorisent automatiquement le trafic en retour des flux acceptés. Pour configurer un pare-feu avec état, vous devez indiquer les règles qui doivent fonctionner avec état.
 
 Pour activer un suivi 'avec état' du trafic `tcp`, `udp` ou `icmp`, exécutez les commandes suivantes :
 
@@ -41,7 +41,7 @@ Notez que les commandes `global-state-policy` suivront uniquement l'état du tra
 set security firewall name GLOBAL_STATELESS rule 1 action accept
 ```
 
-Dans la mesure où `GLOBAL_STATELESS` ne spécifie pas `protocol tcp`, la commande `global-state-policy tcp` ne s'applique pas à cette règle.  
+Dans la mesure où `GLOBAL_STATELESS` ne spécifie pas `protocol tcp`, la commande `global-state-policy tcp` ne s'applique pas à cette règle. 
 
 ```
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 action accept
@@ -57,12 +57,12 @@ Pour que les règles de pare-feu individuelles soient "avec état" :
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
-Cela permet d'activer le suivi avec état de tout le trafic qui peut être suivi avec état et qui correspond à la règle 1 de `TEST`, que les commandes `global-state-policy` existent ou non.  
+Cela permet d'activer le suivi avec état de tout le trafic qui peut être suivi avec état et qui correspond à la règle 1 de `TEST`, que les commandes `global-state-policy` existent ou non. 
 
 ## ALG pour le suivi avec état assisté
-Une poignée de protocoles, tels que FTP, utilisent des sessions plus complexes que celles qui peuvent être suivies par l'opération de pare-feu avec état normale.
+Une poignée de protocoles, tels que FTP, utilisent des sessions plus complexes que celles qui peuvent être suivies par l'opération de pare-feu avec état normale. 
 Il existe des modules préconfigurés qui permettent d'effectuer des opérations de gestion avec état de ces protocoles.
-Il est recommandé de désactiver ces modules ALG, sauf s'ils sont requis pour l'utilisation réussie des protocoles respectifs. 
+Il est recommandé de désactiver ces modules ALG, sauf s'ils sont requis pour l'utilisation réussie des protocoles respectifs.
 
 ```
 set system alg ftp 'disable'
@@ -109,7 +109,7 @@ Par exemple, pour affecter le jeu de règles `ALLOW_LEGACY` à l'option `in` pou
 ## Control Plane Policing (CPP)
 Control Plane Policing (CPP) fournit une protection contre les attaques sur l'unité VRA (Virtual Router Appliance) en vous autorisant à configurer des règles d'administration de pare-feu affectées aux interfaces désirées et en appliquant ces règles aux paquets entrant dans l'unité VRA.
 
-CPP est implémenté lorsque le mot-clé `local` est utilisé dans les règles d'administration de pare-feu affectées à n'importe quel type d'interface VRA, que ce soit des interfaces de plan de données ou de bouclage. Contrairement aux règles de pare-feu appliquées aux paquets qui transitent via l'unité VRA, l'action par défaut des règles de pare-feu pour le trafic entrant ou sortant du plan de contrôle est `Allow`.  Les utilisateurs doivent ajouter des règles de suppression explicites si le comportement par défaut n'est pas souhaité.
+CPP est implémenté lorsque le mot-clé `local` est utilisé dans les règles d'administration de pare-feu affectées à n'importe quel type d'interface VRA, que ce soit des interfaces de plan de données ou de bouclage. Contrairement aux règles de pare-feu appliquées aux paquets qui transitent via l'unité VRA, l'action par défaut des règles de pare-feu pour le trafic entrant ou sortant du plan de contrôle est `Allow`. Les utilisateurs doivent ajouter des règles de suppression explicites si le comportement par défaut n'est pas souhaité.
 
 L'unité VRA fournit une règle CPP de base comme modèle. Vous pouvez la fusionner dans votre configuration en exécutant la commande suivante :   
 
@@ -148,7 +148,7 @@ Cette commande associe la transition du service DEPARTMENTC vers le service DEPA
 
 Il est important de comprendre que cette affectation depuis la zone DEPARTMENTC ver la zone DEPARTMENTB n'implique pas l'inverse. S'il n'y a aucune règle autorisant le trafic de la zone DEPARTMENTB vers la zone DEPARTMENTC, le trafic (réponses ICMP) ne reviendra pas vers les hôtes situés dans la zone DEPARTMENTC.
 
-`ALLOW_PING` est appliqué en tant que pare-feu `out` sur les interfaces de la zone DEPARTMENTB (dp0bond1.30 and dp0bond1.40). Comme cette installation est effectuée par la règle de zone, seul le trafic provenant des interfaces de la zone source (dp0bond1.50) sera vérifié par rapport au jeu de règles. 
+`ALLOW_PING` est appliqué en tant que pare-feu `out` sur les interfaces de la zone DEPARTMENTB (dp0bond1.30 and dp0bond1.40). Comme cette installation est effectuée par la règle de zone, seul le trafic provenant des interfaces de la zone source (dp0bond1.50) sera vérifié par rapport au jeu de règles.
 
 ## Journalisation de session et par paquet
 VRA prend en charge deux types de journalisation :

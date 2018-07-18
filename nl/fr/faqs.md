@@ -106,7 +106,7 @@ Si l'accès est possible à l'aide de l'interface IPMI, vous pouvez effectuer le
 2. Détachez le jeu de règles nommé complet de l'interface nécessaire en exécutant :
 
 	```
-	delete interfaces dataplane [interface] firewall [type] [firewall name]
+	delete interfaces dataplane [interface] firewall [type][firewall name]
 	commit
 	```
 
@@ -118,7 +118,7 @@ Pour activer l'accès des utilisateurs root via SSH, exécutez la commande suiva
 
 `set service ssh allow-root`
 
-Remarque : le fait d'accorder des droits d'accès root via SSH est considéré comme peu sûr. L'autre solution pour accéder à un shell root consiste à se connecter avec un autre ID utilisateur et à s'élever au niveau root localement avec `su -` ou à permettre aux superutilisateurs d'exécuter des commandes sudo.  
+Remarque : le fait d'accorder des droits d'accès root via SSH est considéré comme peu sûr. L'autre solution pour accéder à un shell root consiste à se connecter avec un autre ID utilisateur et à s'élever au niveau root localement avec `su -` ou à permettre aux superutilisateurs d'exécuter des commandes sudo. 
 
 Par exemple, pour configurer le dispositif vyatta en tant que superutilisateur :
 

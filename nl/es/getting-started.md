@@ -16,10 +16,10 @@ lastupdated: "2017-10-30"
 
 
 # Guía de inicio
-Para empezar con IBM Virtual Router Appliance (VRA), navegue a la página en el portal del cliente:
+Para empezar con IBM Virtual Router Appliance (VRA), navegue a la página en el Portal de clientes:
 
-1. En el navegador, abra el [Portal del cliente ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){: new_window} e inicie sesión en su cuenta.
-2. En la navegación del portal del cliente, seleccione **Red > Dispositivos de pasarela**.
+1. En el navegador, abra el [Portal de clientes ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){: new_window} e inicie sesión en su cuenta.
+2. En la navegación del Portal de clientes, seleccione **Red > Dispositivos de pasarela**.
 3. En la página de lista **Dispositivos de pasarela**, pulse **Pasarela de orden**.
 4. En la página **Orden**, seleccione el centro de datos deseado desde el menú desplegable y elija el tipo de hardware de servidor deseado.
 
@@ -27,9 +27,9 @@ Para empezar con IBM Virtual Router Appliance (VRA), navegue a la página en el 
 
 5. En la página **Configurar el dispositivo de pasarela de red**, si lo desea, seleccione la opción **Par de alta disponibilidad**, la versión de VRA y la velocidad de los enlaces de red.
 6. Revise todas las selecciones y pulse **Añadir a pedido**, y el pedido se verificará automáticamente.
-7. En la página **PAGO**, si ya dispone de VLAN en el centro de datos seleccionado, seleccione las VLAN de back-end que deben protegerse. Proporcione un nombre de host y un nombre de dominio para VRA. Compruebe todos los recuadros de los términos de servicio de IBM Cloud y el acuerdo de servicio de terceros. Pulse **Enviar pedido**.
+7. En la página **PAGO**, si ya dispone de VLAN en el centro de datos seleccionado, seleccione las VLAN de fondo que deben protegerse. Proporcione un nombre de host y un nombre de dominio para VRA. Compruebe todos los recuadros de los términos de los servicios de IBM Cloud y el acuerdo de servicio de terceros. Pulse **Enviar pedido**.
 
-Cuando se haya aprobado el pedido, el suministro de VRA se inicia automáticamente. Cuando se completa el proceso de suministro, el nuevo VRA se muestra en la página de lista **Dispositivos de pasarela** del portal de cliente. Pulse en el nombre de pasarela para abrir la página **Detalles de pasarela** y, a continuación, en cada miembro de pasarela para abrir la página **Detalles de dispositivo**. Encontrará las direcciones IP, el nombre de usuario de inicio de sesión y la contraseña del dispositivo.  
+Cuando se haya aprobado el pedido, el suministro de VRA se inicia automáticamente. Cuando se completa el proceso de suministro, el nuevo VRA se muestra en la página de lista **Dispositivos de pasarela** del Portal de clientes. Pulse en el nombre de pasarela para abrir la página **Detalles de pasarela** y, a continuación, en cada miembro de pasarela para abrir la página **Detalles de dispositivo**. Encontrará las direcciones IP, el nombre de usuario de inicio de sesión y la contraseña del dispositivo.  
  
 ## Rol del dispositivo de pasarela y de VLAN
 Una VLAN (LAN virtual) es un mecanismo que segrega una red física en muchos segmentos virtuales. Por su comodidad, el tráfico de varias VLAN seleccionadas puede entregarse mediante un cable de red único, proceso comúnmente denominado "truncación".

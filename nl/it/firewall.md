@@ -15,7 +15,7 @@ lastupdated: "2017-12-22"
 {:download: .download}
 
 # Gestisci i firewall
-VRA (Virtual Router Appliance) ha la capacità di elaborare le regole del firewall per proteggere le VLAN instradate tramite il dispositivo. I firewall nel VRA possono essere suddivisi in due passi:
+VRA (Virtual Router Appliance) ha la capacità di elaborare le regole del firewall per proteggere le VLAN instradate tramite il dispositivo. I firewall nella VRA possono essere suddivisi in due passi:
 
 1. Definizione di una o più serie di regole.
 2. Applicazione di una serie di regole a un'interfaccia o zona. Una zona è formata da una o più interfacce di rete.
@@ -25,9 +25,9 @@ VRA (Virtual Router Appliance) ha la capacità di elaborare le regole del firewa
 Mentre modifichi le regole nell'interfaccia `dp0bond1`, ti consigliamo di collegarti al dispositivo utilizzando `dp0bond0`. Il collegamento alla console tramite IPMI (Intelligent Platform Management Interface) è anche un'opzione.
 
 ## Assenza di stato in confronto ad avere uno stato
-Per impostazione predefinita, il firewall è senza stato, ma può essere configurato con lo stato se necessario. Un firewall senza stato avrà bisogno delle regole per il traffico in entrambe le direzioni, mentre i firewall con lo stato tracciano le connessioni e automaticamente consentono il traffico dei flussi accettati. Per configurare un firewall con lo stato, devi determinare quali regole vuoi che operino con lo stato. 
+Per impostazione predefinita, il firewall è senza stato, ma può essere configurato come con stato, se necessario. Un firewall senza stato avrà bisogno delle regole per il traffico in entrambe le direzioni, mentre i firewall con stato tracciano le connessioni e automaticamente consentono il traffico dei flussi accettati. Per configurare un firewall con stato, devi determinare quali regole vuoi che operino con stato.
 
-Per abilitare il tracciamento 'con lo stato' del traffico `tcp`, `udp` o `icmp`, immetti i seguenti comandi:
+Per abilitare il tracciamento 'con stato' del traffico `tcp`, `udp` o `icmp`, immetti i seguenti comandi:
 
 ```
 set security firewall global-state-policy icmp
@@ -48,19 +48,19 @@ set security firewall name GLOBAL_STATEFUL_TCP rule 1 action accept
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 protocol tcp
 ```
 
-In questo caso `protocol tcp` è definito esplicitamente. Il comando `global-state-policy tcp` abilita il tracciamento con lo stato del traffico che corrisponde alla regola 1 di `GLOBAL_STATEFUL_TCP`
+In questo caso `protocol tcp` è definito esplicitamente. Il comando `global-state-policy tcp` abilita il tracciamento con stato del traffico che corrisponde alla regola 1 di `GLOBAL_STATEFUL_TCP`
 
 
-Per rendere le singole regole del firewall 'con lo stato': 
+Per rendere le singole regole del firewall 'con stato':
 
 ```
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
-Questo abilita il tracciamento con lo stato di tutto il traffico che può venire tracciato con lo stato e che corrisponde alla regola 1 di `TEST`, indipendentemente dall'esistenza dei comandi `global-state-policy`. 
+Questo abilita il tracciamento con stato di tutto il traffico che può venire tracciato con stato e che corrisponde alla regola 1 di `TEST`, indipendentemente dall'esistenza dei comandi `global-state-policy`. 
 
-## ALG per il tracciamento con lo stato assistito
-Alcuni protocolli come FTP utilizzano sessioni più complesse di quanto può tracciare la normale operazione firewall con lo stato.
+## ALG per il tracciamento con stato assistito
+Alcuni protocolli come FTP utilizzano sessioni più complesse di quanto può tracciare la normale operazione firewall con stato. 
 Esistono dei moduli preconfigurati che abilitano questi protocolli in modo da essere gestiti con lo stato.
 Si consiglia di disabilitare questi moduli ALG, a meno che non siano necessari per il corretto utilizzo dei rispettivi protocolli.
 
@@ -92,13 +92,13 @@ Puoi consentire l'accesso ai data center inserendo le regole `SERVICE-ALLOW` app
 Si consiglia di inserire le regole del firewall nell'ubicazione che causa la minima duplicazione del lavoro. Ad esempio, consentendo l'ingresso delle sottoreti di backend in `dp0bond0` dovrebbe comportare meno lavoro rispetto a consentire l'uscita delle sottoreti di backend verso ogni interfaccia virtuale della VLAN.
 
 ### Regole del firewall pre-interfaccia
-Un metodo di configurazione del firewall su un VRA è di applicare le serie di regole del firewall per ogni interfaccia. In questo caso un'interfaccia può essere un'interfaccia del piano di dati (`dp0s0`) o un'interfaccia virtuale (`dp0bond0.303`). Ogni interfaccia ha tre assegnazioni firewall possibili:
+Un metodo di configurazione del firewall su una VRA è di applicare le serie di regole del firewall per ogni interfaccia. In questo caso un'interfaccia può essere un'interfaccia del piano di dati (`dp0s0`) o un'interfaccia virtuale (`dp0bond0.303`). Ogni interfaccia ha tre assegnazioni firewall possibili:
 
-`in` - Il firewall è controllato con i pacchetti immessi tramite l'interfaccia. Questi pacchetti possono essere in attraversamento o destinati al VRA.
+`in` - Il firewall è controllato con i pacchetti immessi tramite l'interfaccia. Questi pacchetti possono essere in attraversamento o destinati alla VRA.
 
-`out` - Il firewall è controllato con i pacchetti in uscita tramite l'interfaccia. Questi pacchetti possono essere in attraversamento o originati dal VRA.
+`out` - Il firewall è controllato con i pacchetti in uscita tramite l'interfaccia. Questi pacchetti possono essere in attraversamento o originati dalla VRA.
 
-`local` - Il firewall è controllato con i pacchetti destinati direttamente al VRA.
+`local` - Il firewall è controllato con i pacchetti destinati direttamente alla VRA.
 
 Un'interfaccia può avere più serie di regole applicate in ogni direzione. Vengono applicate nell'ordine di configurazione. Tieni presente che non è possibile utilizzare il firewall per il traffico originato dal dispositivo VRA utilizzando i firewall pre-interfaccia.
 
@@ -107,17 +107,17 @@ Ad esempio, per assegnare la serie di regole `ALLOW_LEGACY` all'opzione `in` per
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## Control Plane Policing (CPP)
-Control plane policing (CPP) fornisce la protezione da attacchi al VRA (Virtual Router Appliance) permettendoti di configurare le politiche del firewall assegnate alle interfacce desiderate applicando queste politiche per i pacchetti in entrata nel VRA. 
+CPP (Control Plane Policing) fornisce la protezione da attacchi alla VRA (Virtual Router Appliance) permettendoti di configurare le politiche del firewall assegnate alle interfacce desiderate applicando queste politiche per i pacchetti in entrata nella VRA.
 
-CPP viene implementato quando la parola chiave `local` viene utilizzata nelle politiche del firewall assegnate a tutti i tipi di interfaccia VRA, come i loopback o le interfacce del piano di dati. Diversamente dalle regole del firewall applicate ai pacchetti in attraversamento nel VRA, l'azione predefinita delle regole del firewall per il piano di controllo del traffico in entrata o in uscita è `Allow`. Gli utenti devono aggiungere regole di rilascio esplicite se il comportamento predefinito non è desiderato.
+CPP viene implementato quando la parola chiave `local` viene utilizzata nelle politiche del firewall assegnate a tutti i tipi di interfaccia VRA, come i loopback o le interfacce del piano di dati. Diversamente dalle regole del firewall applicate ai pacchetti in attraversamento nella VRA, l'azione predefinita delle regole del firewall per il piano di controllo del traffico in entrata o in uscita è `Allow`. Gli utenti devono aggiungere regole di rilascio esplicite se il comportamento predefinito non è desiderato.
 
-Il VRA fornisce una serie di regole CPP di base come template. Puoi unirle nella tua configurazione eseguendo:  
+La VRA fornisce una serie di regole CPP di base come template. Puoi unirle nella tua configurazione eseguendo: 
 
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 
 Dopo che questa serie di regole è stata unita, viene aggiunta e applicata una nuova serie di regole denominata `CPP` all'interfaccia di loopback. Si consiglia di modificare questa serie di regole per soddisfare il tuo ambiente.
 
-Tieni presente che le regole CPP non possono essere con lo stato e saranno applicate solo al traffico in ingresso.
+Tieni presente che le regole CPP non possono essere con stato e saranno applicate solo al traffico in ingresso.
 
 ## Firewall zona
 Un altro concetto di firewall in VRA (Virtual Router Appliance) è il firewall basato sulla zona. Nell'operazione di firewall basato sulla zona, viene assegnata un'interfaccia a una zona (solo una zona per interfaccia) e vengono assegnate le serie di regole del firewall ai limiti tra le zone con l'idea che tutte le interfacce all'interno di una zona abbiano lo stesso livello di sicurezza e possono instradare liberamente. Il traffico viene soltanto analizzato quando passa da una zona a un'altra. Le zone rilasciano tutto il traffico in entrata che non è consentito esplicitamente.
@@ -151,12 +151,12 @@ Questo comando associa la transizione da DEPARTMENTC a DEPARTMENTB alla serie di
 `ALLOW_PING` sarà applicato come un firewall `out` nelle interfacce della zona DEPARTMENTB (dp0bond1.30 e dp0bond1.40). Come viene installato dalla politica della zona, solo il traffico originato dalle interfacce della zona di origine (dp0bond1.50) viene controllato con la serie di regole.
 
 ## Registrazione pacchetto e sessione
-Il VRA supporta due tipi di registrazione:
+La VRA supporta due tipi di registrazione:
 
 1. Registrazione sessione.  Utilizza il comando ``security firewall session-log`` per configurare la registrazione della sessione del firewall.
   
-	Per UDP, ICMP e tutti i flussi non TCP, una sessione transita tra quattro stati durante la durata del flusso. Per ogni transizione, puoi configurare il VRA per registrare un messaggio. TCP ha molte transizioni di stato, ognuna che può essere configurata per la registrazione.  
+	Per UDP, ICMP e tutti i flussi non TCP, una sessione transita tra quattro stati durante la durata del flusso. Per ogni transizione, puoi configurare la VRA per registrare un messaggio. TCP ha molte transizioni di stato, ognuna che può essere configurata per la registrazione.  
 
 2. Registrazione per pacchetto. Includi la parola chiave ``log`` nel firewall o nella regola NAT per registrare ogni pacchetto di rete che corrisponde alla regola.
 
-	La registrazione per pacchetto si verifica nei percorsi di inoltro del pacchetto e genera una grande quantità di output. Può ridurre enormemente la velocità di trasmissione del VRA e notevolmente aumentare lo spazio disco utilizzato per i file di log. Consigliamo di utilizzare la registrazione per pacchetto solo per scopi di debug. Per tutti gli scopi operativi, dovrebbe essere utilizzata la registrazione della sessione con stato.
+	La registrazione per pacchetto si verifica nei percorsi di inoltro del pacchetto e genera una grande quantità di output. Può ridurre enormemente la velocità di trasmissione della VRA e notevolmente aumentare lo spazio disco utilizzato per i file di log. Consigliamo di utilizzare la registrazione per pacchetto solo per scopi di debug. Per tutti gli scopi operativi, dovrebbe essere utilizzata la registrazione della sessione con stato.

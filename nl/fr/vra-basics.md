@@ -14,15 +14,15 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Accès et configuration
-Le dispositif peut être configuré à l'aide d'une session de console distante via SSH ou en se connectant à l'interface graphique Web. Par défaut, l'interface graphique Web n'est pas disponible depuis l'Internet public. Pour activer cette interface, connectez-vous d'abord via SSH.
+# Concepts de base de VRA
+Le dispositif VRA peut être configuré à l'aide d'une session de console distante via SSH ou en se connectant à l'interface graphique Web. Par défaut, l'interface graphique Web n'est pas disponible depuis l'Internet public. Pour activer cette interface, connectez-vous d'abord via SSH.
 
 **REMARQUE :** La configuration de VRA hors de son interpréteur de commandes et de son interface peut engendrer des résultats imprévisibles et n'est donc pas recommandée.
 
 ## Accès à l'unité via SSH
 La plupart des systèmes fonctionnant sous UNIX, tels que Linux, BSD et Mac OSX, ont des clients OpenSSH inclus dans leurs installations par défaut. Les utilisateurs Windows peuvent télécharger un client SSH, par exemple PuTTy.
 
-Il est recommandé que la connexion SSH à l'adresse IP publique soit désactivée et que seule la connexion SSH à l'adresse IP privée soit autorisée. Les connexions à des adresses IP privées nécessitent que votre client soit connecté à un réseau privé. Vous pouvez vous connecter à l'aide de l'une des options VPN par défaut (PPTP, SSL-VPN et IPsec) offertes dans le portail client ou à l'aide d'une solution VPN personnalisée configurée sur le dispositif VRA. 
+Il est recommandé que la connexion SSH à l'adresse IP publique soit désactivée et que seule la connexion SSH à l'adresse IP privée soit autorisée. Les connexions à des adresses IP privées nécessitent que votre client soit connecté à un réseau privé. Vous pouvez vous connecter à l'aide de l'une des options VPN par défaut (PPTP, SSL-VPN et IPsec) offertes dans le portail client ou à l'aide d'une solution VPN personnalisée configurée sur le dispositif VRA.
 
 Utilisez le compte Vyatta indiqué à la page **Détails de l'unité** pour vous connecter via SSH. Le mot de passe root est également fourni, mais la connexion root est désactivée par défaut pour des raisons de sécurité.
 

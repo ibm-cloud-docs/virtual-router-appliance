@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-30"
+  years: 2017, 2018
+lastupdated: "2018-06-15"
 
 ---
 
@@ -14,10 +14,11 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Suporte ao Vyatta 5400
+# Legacy Vyatta 5400
+A documentação a seguir para o Vyatta 5400 é fornecida como cortesia. 
 
-Os clientes anteriores do Vyatta 5400 devem fazer upgrade para o IBM Virtual Router Appliance (VRA) assim que possível, pois o Vyatta 5400 poderá não ser mais suportado já em abril de 2018.
+Os clientes do Legacy Vyatta 5400 devem fazer upgrade para o IBM Virtual Router Appliance (VRA) o mais rápido possível, já que o Vyatta 5400 pode não ser mais suportado desde o início de abril de 2018.
 
-Um guia de migração está disponível [aqui](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf).
+Um guia de Migração está disponível [aqui](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf).
 
 Para obter uma lista detalhada das melhorias que o VRA traz em comparação com o Vyatta 5400, consulte as [FAQs](faqs.html#what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-). 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-12"
+  years: 2017,2018
+lastupdated: "2018-02-28"
 
 ---
 
@@ -20,9 +20,9 @@ lastupdated: "2017-10-12"
 
 使用论坛提问时，请对问题进行标记，以便 IBM Cloud 开发团队可以看到该问题。
 
-* 如果您对 IBM 虚拟路由器设备存有技术问题，请将您的问题发布在 [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-bluemix) 上，并使用“vra”和“ibm-bluemix”来标记您的问题。
-* 有关服务的问题和入门指示信息，请使用 [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=bluemix) 论坛。请包含“vra”和“bluemix”标记。
+* 如果您对 IBM 虚拟路由器设备存有技术问题，请将您的问题发布在 [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) 上，并使用“vra”和“ibm-cloud”来标记您的问题。
+* 有关服务的问题和入门指示信息，请使用 [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud) 论坛。请包含“vra”和“ibm-cloud”标记。
 
-请参阅[获取帮助](https://console.bluemix.net/docs/support/index.html#getting-help)以了解有关如何使用论坛的更多详细信息。
+有关如何使用论坛的更多详细信息，请参阅[获取帮助](https://console.bluemix.net/docs/support/index.html#getting-help)。
 
 有关开具 IBM 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[联系支持人员](https://console.bluemix.net/docs/support/index.html#contacting-support)。

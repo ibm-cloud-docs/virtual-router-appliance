@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-12"
+  years: 2017,2018
+lastupdated: "2018-02-28"
 
 ---
 
@@ -14,15 +14,15 @@ lastupdated: "2017-10-12"
 {:tip: .tip}
 {:download: .download}
 
-# Obtendo ajuda e suporte
+# Obtendo Ajuda e Suporte
 
 Se você tiver problemas ou dúvidas ao usar o IBM Virtual Router Appliance, poderá obter ajuda procurando por informações ou fazendo perguntas por meio de um dos fóruns listados abaixo. Também é possível abrir um chamado de
 suporte.
 
 Ao usar os fóruns para fazer uma pergunta, marque a sua pergunta para que ela seja vista pelas equipes de desenvolvimento do IBM Cloud.
 
-* Se você tem questões técnicas sobre o IBM Virtual Router Appliance, poste sua pergunta no [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-bluemix) e identifique-a com "vra" e "ibm-bluemix".
-* Para perguntas sobre o serviço e instruções de introdução, use o fórum do [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=bluemix). Inclua as identificações "vra" e "bluemix".
+* Se você tiver questões técnicas sobre o IBM Virtual Router Appliance, poste a sua pergunta no [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) e identifique-a com "vra" e "ibm-cloud".
+* Para perguntas sobre o serviço e instruções de introdução, use o fórum do [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud). Inclua as identificações "vra" e "ibm-cloud".
 
 Consulte
 [Obtendo

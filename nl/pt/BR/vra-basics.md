@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Acessar e configurar
+# Informações básicas do VRA
 O VRA pode ser configurado usando uma sessão de console remoto por meio de SSH ou efetuando login na GUI da web. Por padrão, a GUI da web não está disponível da Internet pública. Para ativar a GUI da web, efetue login por meio de SSH primeiro.
 
 **NOTA:** configurar o VRA fora de seu shell e interface pode produzir resultados inesperados e, portanto, não é recomendado.

@@ -29,7 +29,7 @@ Gehen Sie wie folgt vor, um ein Upgrade für das VRA durchzuführen.
 4. Wählen Sie aus, ob die SSH-Hostschlüssel aus Ihrer aktuellen Konfiguration gespeichert werden sollen.
 5. Drücken Sie die **Eingabetaste**, um die Standardsystemkonsole beizubehalten, oder geben Sie eine andere Konsole ein.
 6. Drücken Sie die **Eingabetaste**, um die Standardgeschwindigkeit für die Konsole beizubehalten, oder geben Sie eine andere Geschwindigkeit ein.
-7. Geben Sie den Befehl `reboot` und anschließend `Yes` ein, um die Maschine erneut zu starten. 
+7. Geben Sie den Befehl `reboot` und anschließend `Yes` ein, um die Maschine erneut zu starten.
 8. Wenn Sie VRA im Hochverfügbarkeitsmodus verwenden, wiederholen Sie die Schritte 1 bis 7 für die zweite Maschine.
 
 Das nachfolgende Beispiel veranschaulicht den Ugradeprozess.

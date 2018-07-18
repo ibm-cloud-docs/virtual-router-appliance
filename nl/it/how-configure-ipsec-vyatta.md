@@ -7,7 +7,7 @@ lastupdated: "2017-07-25"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Configura IPSec su Vyatta 5400 
+# Modalità di configurazione di IPSec su Vyatta
 
 Si farà riferimento al dispositivo Brocade 5400 vRouter (Vyatta) come a "locale" in considerazione al tunnel IPSec (Internet Security Protocol). Ognuno dei seguenti comandi eseguirà funzioni differenti per configurare site-to-site IPsec. Nota questo esempio di site-to-site IPsec illustra il tunnel sulla rete pubblica di SoftLayer; utilizza **bond0** per le connessioni site-to-site IPsec private.
 
@@ -55,7 +55,7 @@ Si farà riferimento al dispositivo Brocade 5400 vRouter (Vyatta) come a "locale
 
 Il prossimo passo è di configurare il dispositivo lato remoto, che è un Brocade 5400 vRouter 6.6.5 R
 
-  * Utilizza il dispositivo appena configurato (che è stato configurato nella modalità operativa) per immettere il comando show configuration commands. Sarà presentato un elenco di comandi per configurare il dispositivo.
+  * Utilizza il dispositivo appena configurato (che è stato configurato in modalità operativa) per immettere il comando show configuration commands. Sarà presentato un elenco di comandi per configurare il dispositivo.
   * Copia i comandi in un editor di testo. I comandi utilizzati per configurare il dispositivo locale saranno utilizzati per configurare il server remoto con le modifiche all'IP in modo che punti al dispositivo Brocade 5400 vRouter 6.6.5R in SoftLayer.
 
 La configurazione lato remoto utilizzata precedentemente è la seguente. Le modifiche necessarie per la configurazione lato locale sono in grassetto.

@@ -87,7 +87,7 @@ VRRP를 사용한 고가용성 VPN을 구성하는 경우 VRRP 가상 주소가 
 
 VRRP를 사용한 VIF 구성에는 가상 IP 주소(서브넷에서 첫 번째로 사용 가능한 IP, 해당 서브넷의 모든 항목이 라우트되는 게이트웨이 IP) 및 두 디바이스의 VIF에 대한 실제 인터페이스 IP 주소가 필요합니다. 사용 가능한 IP를 유지하려면 실제 인터페이스 IP가 192.168.0.0/30과 같은 대역 외 범위를 사용하는 것이 좋습니다. 여기서 한 디바이스는 .1의 주소를 가지며 다른 디바이스는 .2의 주소를 가지게 됩니다. 다중 VRRP 가상 IP를 가질 수 있지만 각 VIF에 하나의 실제 주소만 필요합니다.
 
-다음은 두 개의 사설 VLAN 및 세 개의 서브넷이 포함된 VRRP 구성의 예제입니다. 
+다음은 두 개의 사설 VLAN 및 세 개의 서브넷이 포함된 VRRP 구성의 예제입니다.
 
 ```
 set interfaces bonding dp0bond0 address '10.100.11.39/26'
@@ -122,16 +122,16 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* vrrp sync-group은 vrrp 그룹과 다릅니다. sync-group에 속하는 인터페이스가 상태를 변경하면 동일한 sync-group의 기타 모든 멤버가 동일한 상태로 전이됩니다.  
-* VLAN 인터페이스(VIF)의 vrrp-group 수는 원시 인터페이스 또는 기타 VLAN의 vrrp-group 수와 같을 필요가 없습니다. 그러나 VLAN 10에서와 같이 하나의 vrrp-group에서 동일한 VLAN의 모든 가상 주소를 유지하는 것이 좋습니다. 
+* vrrp sync-group은 vrrp 그룹과 다릅니다. sync-group에 속하는 인터페이스가 상태를 변경하면 동일한 sync-group의 기타 모든 멤버가 동일한 상태로 전이됩니다. 
+* VLAN 인터페이스(VIF)의 vrrp-group 수는 원시 인터페이스 또는 기타 VLAN의 vrrp-group 수와 같을 필요가 없습니다. 그러나 VLAN 10에서와 같이 하나의 vrrp-group에서 동일한 VLAN의 모든 가상 주소를 유지하는 것이 좋습니다.
 * 원시 VLAN의 실제 인터페이스 주소(예: dp0bond1: 169.110.20.28/29)는 항상 VIP와 동일한 서브넷에 있지 않습니다(169.110.21.26/29). 
 
 ## 수동 VRRP 장애 복구
-vrrp 장애 복구를 강제 실행해야 하는 경우 현재 VRRP 마스터인 디바이스에서 다음을 실행하여 수행할 수 있습니다. 
+vrrp 장애 복구를 강제 실행해야 하는 경우 현재 VRRP 마스터인 디바이스에서 다음을 실행하여 수행할 수 있습니다.
 
 `vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
 
-그룹 ID는 원시 인터페이스의 vrrp 그룹 ID이고, 위에 언급된 대로 쌍에서 다를 수 있습니다. 
+그룹 ID는 원시 인터페이스의 vrrp 그룹 ID이고, 위에 언급된 대로 쌍에서 다를 수 있습니다.
 
 ## 연결 동기화
 두 개의 VRA 디바이스가 HA 쌍인 경우 두 디바이스 간의 상태 저장 연결을 추적하는 것이 유용할 수 있습니다. 이렇게 하면 장애 복구가 발생하는 경우 실패한 디바이스에 있는 모든 연결의 현재 상태가 백업 디바이스로 복제되므로 현재 활성 세션(예: SSL 연결)을 처음부터 다시 빌드할 필요가 없습니다. 처음부터 다시 빌드하는 경우 사용자에게 혼란을 줄 수 있습니다.

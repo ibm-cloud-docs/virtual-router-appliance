@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# 存取及配置
+# VRA 基本觀念
 VRA 可以透過 SSH 使用遠端主控台階段作業來配置，或透過登入 Web GUI 來配置。依預設，無法從公用網際網路取得 Web GUI。若要啟用 Web GUI，請先透過 SSH 登入。
 
 **附註：**在 Shell 和介面外配置 VRA 可能會產生非預期的結果，因此不建議這樣做。

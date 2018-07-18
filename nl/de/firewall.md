@@ -25,9 +25,9 @@ Erstellte Firewallregeln sollten unbedingt getestet werden, um sicherzustellen, 
 Es wird empfohlen, beim Bearbeiten von Regeln in der Schnittstelle `dp0bond1` die Verbindung zu der Einheit mit `dp0bond0` herzustellen. Die Verbindung zur Konsole kann auch über IPMI (Intelligent Platform Management Interface) hergestellt werden.
 
 ## Statusunabhängig oder statusabhängig
-Die Firewall ist standardmäßig vom Status unabhängig, aber Sie kann bei Bedarf auch statusabhängig konfiguriert werden. Eine statusunabhängige Firewall erfordert Regeln für den Datenverkehr in beide Richtungen. Statusabhängige Firewalls dagegen verfolgen Verbindungen und ermöglichen automatisch den Rückfluss des akzeptierten Datenverkehrs. Zum Konfigurieren einer statusabhängigen Firewall müssen Sie festlegen, welche Regeln statusabhängig befolgt werden sollen. 
+Die Firewall ist standardmäßig vom Status unabhängig, aber Sie kann bei Bedarf auch statusabhängig konfiguriert werden. Eine statusunabhängige Firewall erfordert Regeln für den Datenverkehr in beide Richtungen. Statusabhängige Firewalls dagegen verfolgen Verbindungen und ermöglichen automatisch den Rückfluss des akzeptierten Datenverkehrs. Zum Konfigurieren einer statusabhängigen Firewall müssen Sie festlegen, welche Regeln statusabhängig befolgt werden sollen.
 
-Führen Sie die folgenden Befehle aus, um eine statusabhängige Verfolgung von `TCP`-, `UPD`- oder `ICMP`-Datenverkehr zu aktivieren. 
+Führen Sie die folgenden Befehle aus, um eine statusabhängige Verfolgung von `TCP`-, `UPD`- oder `ICMP`-Datenverkehr zu aktivieren.
 
 ```
 set security firewall global-state-policy icmp
@@ -51,18 +51,18 @@ set security firewall name GLOBAL_STATEFUL_TCP rule 1 protocol tcp
 In diesem Fall wird `protocol tcp` explizit definiert. Der Befehl `global-state-policy tcp` aktiviert die statusabhängige Verfolgung von Datenverkehr, der mit Regel 1 von `GLOBAL_STATEFUL_TCP` übereinstimmt.
 
 
-Führen Sie folgende Befehle aus, um einzelne Firewallregeln als statusabhängig zu definieren: 
+Führen Sie folgende Befehle aus, um einzelne Firewallregeln als statusabhängig zu definieren:
 
 ```
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
-Mit diesen Befehlen wird die statusabhängige Verfolgung des gesamten Datenverkehrs aktiviert, der statusabhängig verfolgt werden kann und mit Regel 1 von `TEST` übereinstimmt. Die Verfolgung geschieht unabhängig davon, ob der Befehl `global-state-policy` vorhanden ist.  
+Mit diesen Befehlen wird die statusabhängige Verfolgung des gesamten Datenverkehrs aktiviert, der statusabhängig verfolgt werden kann und mit Regel 1 von `TEST` übereinstimmt. Die Verfolgung geschieht unabhängig davon, ob der Befehl `global-state-policy` vorhanden ist. 
 
 ## ALG für unterstützte statusabhängige Verfolgung
-Einige wenige Protokolle wie zum Beispiel FTP verwenden komplexere Sitzungen, die bei normalem statusabhängigen Firewallbetrieb verfolgt werden können.
+Einige wenige Protokolle wie zum Beispiel FTP verwenden komplexere Sitzungen, die bei normalem statusabhängigen Firewallbetrieb verfolgt werden können. 
 Es gibt vorkonfigurierte Module, die diese Protokolle aktivieren, so dass sie statusabhängig verwaltet werden können.
-Es wird empfohlen, diese ALG-Module zu inaktivieren, solange sie nicht für die erfolgreiche Verwendung der jeweiligen Protokolle erforderlich sind. 
+Es wird empfohlen, diese ALG-Module zu inaktivieren, solange sie nicht für die erfolgreiche Verwendung der jeweiligen Protokolle erforderlich sind.
 
 ```
 set system alg ftp 'disable'
@@ -98,7 +98,7 @@ Eine Methode zum Konfigurieren der Firewall in einer VRA besteht darin, Firewall
 
 `out` - Die Firewall wird auf abgehende Pakete überprüft, die über die Schnittstelle geleitet werden. Diese Pakete können durchgeleitet werden oder von der VRA stammen.
 
-`local` - Die Firewall wird auf Pakete überprüft, die direkt für die VRA bestimmt sind. 
+`local` - Die Firewall wird auf Pakete überprüft, die direkt für die VRA bestimmt sind.
 
 Eine Schnittstelle kann über mehrere Regelsätze verfügen, die in jeder Richtung angewendet werden. Sie werden in der Reihenfolge der Konfiguration angewendet. Beachten Sie, dass dies nicht für Firewalldatenverkehr gilt, der von der VRA-Einheit mit Firewalls für einzelne Schnittstellen stammt.
 
@@ -111,13 +111,13 @@ Die Steuerebenenvorgabe (Control Plane Policing, CPP) bietet Schutz vor Angriffe
 
 CPP wird implementiert, wenn das Schlüsselwort `local` in Firewallrichtlinien verwendet wird, die einem beliebigen VRA-Schnittstellentyp zugewiesen sind (z. B. Datenebenen- oder Loopback-Schnittstellen). Im Unterschied zu Firewallregeln für durch die VRA durchgeleitete Datenpakete verwenden Firewallregeln für ankommenden oder abgehenden Datenverkehr auf der Steuerebene die Standardaktion `Allow`. Wenn dieses Standardverhalten nicht erwünscht ist, muss der Benutzer explizite Löschregeln hinzufügen.
 
-Die VRA stellt einen CPP-Basisregelsatz als Vorlage bereit. Führen Sie den folgenden Befehl aus, um diese Vorlage mit Ihrer Konfiguration zusammenzuführen:  
+Die VRA stellt einen CPP-Basisregelsatz als Vorlage bereit. Führen Sie den folgenden Befehl aus, um diese Vorlage mit Ihrer Konfiguration zusammenzuführen: 
 
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 
 Nachdem der Regelsatz mit der Konfiguration zusammengeführt wurde, wird ein neuer Firewallregelsatz mit dem Namen `CPP` hinzugefügt und auf die Loopback-Schnittstelle angewendet. Es wird empfohlen, diesen Regelsatz an Ihre Umgebung anzupassen.
 
-Bitte beachten Sie, dass CPP-Regeln nicht statusabhängig sein können und nur für eingehenden Datenverkehr gelten. 
+Bitte beachten Sie, dass CPP-Regeln nicht statusabhängig sein können und nur für eingehenden Datenverkehr gelten.
 
 ## Zonenbasierte Firewalls
 Ein anderes Firewallkonzept in Virtual Router Appliance sind zonenbasierte Firewalls. Dabei wird eine Schnittstelle einer Zone zugewiesen (nur eine Zone pro Schnittstelle) und Firewallregelsätze werden auf die Grenzen zwischen den Zonen angewendet, um für alle Schnittstellen in einer Zone dieselbe Sicherheitsebene festzulegen und die freie Weiterleitung zu ermöglichen. Der Datenverkehr wird nur beim Übergang von einer Zone in eine andere überprüft. In jeder Zone wird der ankommende Datenverkehr gelöscht, wenn er nicht explizit zugelassen wurde.
@@ -148,7 +148,7 @@ Dieser Befehl weist dem Übergang von ABTEILUNGC zu ABTEILUNGB den Regelsatz nam
 
 Dabei ist zu beachten, dass diese Zuweisung der Datenweiterleitung aus der Zone ABTEILUNGC in die Zone ABTEILUNGB keine Festlegung für die umgekehrte Richtung beinhaltet. Wenn keine Regeln vorliegen, die den Datenverkehr aus der Zone ABTEILUNGB in die Zone ABTEILUNGC zulassen, fließt kein Datenverkehr (ICMP-Antworten) zurück zu den Hosts in ABTEILUNGC.
 
-`ALLOW_PING` wird als eine ausgehende Firewall (`out`) für Schnittstellen der Zone ABTEILUNG (dp0bond1.30 und dp0bond1.40) verwendet. Da diese über die Zonenrichtlinie installiert wird, wird nur der Verkehr mithilfe des Regelsatzes überprüft, der von den Schnittstellen der Quellenzone (dp0bond1.50) stammt. 
+`ALLOW_PING` wird als eine ausgehende Firewall (`out`) für Schnittstellen der Zone ABTEILUNG (dp0bond1.30 und dp0bond1.40) verwendet. Da diese über die Zonenrichtlinie installiert wird, wird nur der Verkehr mithilfe des Regelsatzes überprüft, der von den Schnittstellen der Quellenzone (dp0bond1.50) stammt.
 
 ## Sitzungs- und Paketprotokollierung
 VRA unterstützt zwei Protokollierungstypen:

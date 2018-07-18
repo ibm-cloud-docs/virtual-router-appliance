@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Zugreifen und Konfigurieren
+# VRA-Grundlagen
 Die VRA kann mithilfe einer fernen Konsolensitzung über SSH oder durch Anmelden bei der Web-GUI konfiguriert werden. Die Web-GUI ist standardmäßig nicht im öffentlichen Internet verfügbar. Melden Sie sich über SSH an, um die Web-GUI zu aktivieren.
 
 **HINWEIS:** Das Konfigurieren von VRA außerhalb der zugehörigen Shell oder Schnittstelle kann zu unerwarteten Ergebnissen führen und wird daher nicht empfohlen.
@@ -22,7 +22,7 @@ Die VRA kann mithilfe einer fernen Konsolensitzung über SSH oder durch Anmelden
 ## Über SSH auf die Einheit zugreifen
 Die Mehrzahl der UNIX-basierten Betriebssysteme wie Linux, BSD und Mac OSX verfügen über OpenSSH-Clients, die in ihre jeweilige Standardinstallation integriert sind. Windows-Benutzer können einen SSH-Client (z. B. PuTTy) herunterladen.
 
-Es wird empfohlen, SSH-Verbindungen zur öffentlichen IP zu inaktivieren und nur SSH-Verbindungen zur privaten IP zuzulassen. Verbindungen zu privaten IPs erfordern eine Verbindung Ihres Client zum privaten Netz. Sie können sich mit einer der VPN-Standardoptionen (PPTP, SSL-VPN und IPsec) anmelden, die im Kundenportal zur Verfügung stehen. Sie können auch eine angepasste VPN-Lösung verwenden, die in der VRA konfiguriert ist. 
+Es wird empfohlen, SSH-Verbindungen zur öffentlichen IP zu inaktivieren und nur SSH-Verbindungen zur privaten IP zuzulassen. Verbindungen zu privaten IPs erfordern eine Verbindung Ihres Client zum privaten Netz. Sie können sich mit einer der VPN-Standardoptionen (PPTP, SSL-VPN und IPsec) anmelden, die im Kundenportal zur Verfügung stehen. Sie können auch eine angepasste VPN-Lösung verwenden, die in der VRA konfiguriert ist.
 
 Melden Sie sich mit dem auf der Seite **Einheitendetails** angegebenen Vyatta-Konto über SSH an. Das Rootkennwort wird ebenfalls bereitgestellt, aber die Rootanmeldung ist aus Sicherheitsgründen standardmäßig inaktiviert.
 
@@ -41,7 +41,7 @@ $ configure
 
 ## Über die Web-GUI auf die Einheit zugreifen
 
-Melden Sie sich unter Verwendung der oben angegebenen SSH-Anweisungen bei VRA an und führen Sie die folgenden Befehle aus, um den HTTPS-Service zu aktivieren: 
+Melden Sie sich unter Verwendung der oben angegebenen SSH-Anweisungen bei VRA an und führen Sie die folgenden Befehle aus, um den HTTPS-Service zu aktivieren:
 
 ```
 $ configure

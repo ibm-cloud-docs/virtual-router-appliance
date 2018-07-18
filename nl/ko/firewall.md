@@ -27,7 +27,7 @@ VRA(Virtual Router Appliance)에는 디바이스를 통해 라우팅된 VLAN을 
 ## 상태 저장 대 상태 비저장
 기본적으로 방화벽은 상태 비저장으로 설정되지만 필요한 경우 상태 저장으로 구성할 수 있습니다. 상태 비저장 방화벽은 양방향 트래픽에 대한 규칙이 필요한 반면에 상태 저장 방화벽은 연결을 추적하고 허용된 플로우의 리턴 트래픽을 자동으로 허용합니다. 상태 저장 방화벽을 구성하려면 상태 저장으로 운영할 규칙을 지정해야 합니다.
 
-`tcp`, `udp` 또는 `icmp` 트래픽의 '상태 저장' 추적을 사용으로 설정하려면 다음 명령을 실행하십시오. 
+`tcp`, `udp` 또는 `icmp` 트래픽의 '상태 저장' 추적을 사용으로 설정하려면 다음 명령을 실행하십시오.
 
 ```
 set security firewall global-state-policy icmp
@@ -41,28 +41,28 @@ set security firewall global-state-policy udp
 set security firewall name GLOBAL_STATELESS rule 1 action accept
 ```
 
-`GLOBAL_STATELESS`가 `protocol tcp`를 지정하지 않으므로 `global-state-policy tcp` 명령은 이 규칙에 적용되지 않습니다.  
+`GLOBAL_STATELESS`가 `protocol tcp`를 지정하지 않으므로 `global-state-policy tcp` 명령은 이 규칙에 적용되지 않습니다. 
 
 ```
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 action accept
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 protocol tcp
 ```
 
-이 경우, `protocol tcp`가 명시적으로 정의됩니다. `global-state-policy tcp` 명령은 `GLOBAL_STATEFUL_TCP`의 규칙 1과 일치하는 트래픽의 상태 저장 추적을 사용합니다. 
+이 경우, `protocol tcp`가 명시적으로 정의됩니다. `global-state-policy tcp` 명령은 `GLOBAL_STATEFUL_TCP`의 규칙 1과 일치하는 트래픽의 상태 저장 추적을 사용합니다.
 
 
-개별 방화벽을 '상태 저장'으로 구성하려면 다음을 수행하십시오. 
+개별 방화벽을 '상태 저장'으로 구성하려면 다음을 수행하십시오.
 
 ```
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
-이를 통해 `global-state-policy` 명령의 존재와 상관 없이 상태 저장으로 추적될 수 있고 `TEST`의 규칙 1과 일치하는 모든 트래픽의 상태 저장 추적이 사용 가능합니다.  
+이를 통해 `global-state-policy` 명령의 존재와 상관 없이 상태 저장으로 추적될 수 있고 `TEST`의 규칙 1과 일치하는 모든 트래픽의 상태 저장 추적이 사용 가능합니다. 
 
 ## 지원된 상태 저장 추적용 ALG
-FTP와 같은 일부 프로토콜은 일반 상태 저장 방화벽 오퍼레이션이 추적할 수 있는 좀 더 복잡한 세션을 활용합니다.
+FTP와 같은 일부 프로토콜은 일반 상태 저장 방화벽 오퍼레이션이 추적할 수 있는 좀 더 복잡한 세션을 활용합니다. 
 상태 저장으로 관리될 이 프로토콜을 사용하는 사전 구성된 모듈이 있습니다.
-각 프로토콜의 성공적인 사용을 위해 ALG 모듈이 필요하지 않는 한 ALG 모듈을 사용하지 않는 것이 좋습니다. 
+각 프로토콜의 성공적인 사용을 위해 ALG 모듈이 필요하지 않는 한 ALG 모듈을 사용하지 않는 것이 좋습니다.
 
 ```
 set system alg ftp 'disable'
@@ -98,7 +98,7 @@ VRA에 방화벽을 구성하는 한 가지 방법은 각 인터페이스에 방
 
 `out` - 이 방화벽은 인터페이스를 통해 나가는 패킷에 대해 검사됩니다. 이러한 패킷은 VRA를 통과하거나 VRA에서 생성될 수 있습니다.
 
-`local` - 이 방화벽은 VRA의 직접적인 대상이 되는 패킷에 대해 검사됩니다. 
+`local` - 이 방화벽은 VRA의 직접적인 대상이 되는 패킷에 대해 검사됩니다.
 
 인터페이스는 각 방향에서 여러 규칙 세트를 적용할 수 있습니다. 규칙 세트는 구성 순서 대로 적용됩니다. 인터페이스별 방화벽을 사용하여 VRA 디바이스에서 생성된 트래픽을 방화벽으로 차단할 수는 없습니다.
 
@@ -107,17 +107,17 @@ VRA에 방화벽을 구성하는 한 가지 방법은 각 인터페이스에 방
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## CPP(Control Plane Policing)
-CPP(Control Plane Policing)는 원하는 인터페이스에 지정되는 방화벽 정책을 구성하도록 허용하고 VRA에 들어오는 패킷에 대해 이러한 정책을 적용하여 Virtual Router Appliance에 대한 공격으로부터 보호합니다. 
+CPP(Control Plane Policing)는 원하는 인터페이스에 지정되는 방화벽 정책을 구성하도록 허용하고 VRA에 들어오는 패킷에 대해 이러한 정책을 적용하여 Virtual Router Appliance에 대한 공격으로부터 보호합니다.
 
 CPP는 데이터플레인 인터페이스 또는 루프백 인터페이스와 같은 모든 유형의 VRA 인터페이스에 지정되는 방화벽 정책에 `local` 키워드가 사용될 때 구현됩니다. VRA를 통과하는 패킷에 적용되는 방화벽과 달리 제어 플레인을 나가고 들어오는 트래픽에 대한 방화벽 규칙의 기본 조치는 `Allow`입니다. 기본 동작을 원하지 않는 경우 명시적 삭제 규칙을 추가해야 합니다.
 
-VRA는 기본 CPP 규칙 세트를 템플리트로 제공합니다. 다음을 실행하여 이를 사용자 구성에 병합할 수 있습니다.  
+VRA는 기본 CPP 규칙 세트를 템플리트로 제공합니다. 다음을 실행하여 이를 사용자 구성에 병합할 수 있습니다. 
 
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 
 이 규칙 세트가 병합되면 `CPP`라는 이름의 새 방화벽 규칙 세트가 루프백 인터페이스에 추가되고 적용됩니다. 사용자 환경에 맞게 이 규칙 세트를 수정하는 것이 좋습니다.
 
-CPP 규칙이 상태 저장일 수 없으며 유입 트래픽에만 적용됩니다. 
+CPP 규칙이 상태 저장일 수 없으며 유입 트래픽에만 적용됩니다.
 
 ## 구역 방화벽
 Virtual Router Appliance의 다른 방화벽 개념은 구역 기반 방화벽입니다. 구역 기반 방화벽 조작에서는 인터페이스가 구역에 지정되고(인터페이스당 한 구역만 지정) 방화벽 규칙 세트는 구역 내의 모든 인터페이스가 동일한 보안 레벨을 가지고 자유롭게 라우팅할 수 있다는 개념으로 구역 간의 경계에 지정됩니다. 트래픽은 한 구역에서 다른 구역으로 전달될 때만 심사됩니다. 구역은 자기 구역으로 들어오는 명시적으로 허용되지 않는 트래픽을 삭제합니다.

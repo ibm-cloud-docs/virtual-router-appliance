@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-12"
+  years: 2017,2018
+lastupdated: "2018-02-28"
 
 ---
 
@@ -20,8 +20,8 @@ Bei Problemen oder Fragen zur Verwendung von IBM Virtual Router Appliance könne
 
 Versehen Sie Ihre Fragen in den Foren mit Tags, um sie für die Entwicklungsteams von IBM Cloud erkennbar zu machen.
 
-* Wenn Sie technische Fragen zu IBM Virtual Router Appliance haben, reichen Sie Ihre Frage bei [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-bluemix) ein und versehen Sie sie mit den Tags "vra" und "ibm-bluemix".
-* Verwenden Sie für Fragen zum Service und zu ersten Schritten das Forum [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=bluemix). Geben Sie die Tags "vra" und "bluemix" an.
+* Wenn Sie technische Fragen zu IBM Virtual Router Appliance haben, reichen Sie Ihre Frage bei [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) ein und versehen Sie sie mit den Tags "vra" und "ibm-cloud". 
+* Verwenden Sie für Fragen zum Service und zu ersten Schritten das Forum [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud). Geben Sie die Tags "vra" und "ibm-cloud" an.
 
 Weitere Details zur Verwendung der Foren finden Sie unter [Hilfe anfordern](https://console.bluemix.net/docs/support/index.html#getting-help).
 

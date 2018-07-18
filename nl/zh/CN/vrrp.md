@@ -122,7 +122,7 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* VRRP sync-group 与 VRRP 组不同。属于 sync-group 的接口的状态更改时，该 sync-group 的其他所有成员都会转换到相同的状态。 
+* VRRP sync-group 与 VRRP 组不同。属于 sync-group 的接口的状态更改时，该 sync-group 的其他所有成员都会转换为相同的状态。 
 * VLAN 接口 (VIF) 的 vrrp-group 编号不必与本机接口中的其中一个编号相同，也不必与其他 VLAN 的相同。但是，强烈建议使同一 VLAN 的所有虚拟地址保持在一个 vrrp-group 中，如 VLAN 10 中所示。
 * 本机 VLAN 上的真实接口地址（如 dp0bond1：169.110.20.28/29）并不一定与其 VIP（169.110.21.26/29）在同一子网中。 
 

@@ -89,7 +89,7 @@ IBM ofrece varias subredes IP para proporcionar servicios y soporte a los sistem
 
 Puede permite el acceso de centro de datos colocando las reglas `SERVICE-ALLOW` adecuadas al principio de los conjuntos de reglas de cortafuegos con la acción `accept`. El lugar en el que el conjunto de reglas debe aplicarse depende del diseño de cortafuegos y direccionamiento implementado.
 
-Se recomienda colocar reglas de cortafuegos en la ubicación que causa la duplicación de trabajo. Por ejemplo, permitir la entrada de subredes de back-end en `dp0bond0` será menos trabajo que permitir la salida de subredes de back-end en cada interfaz virtual de VLAN.
+Se recomienda colocar reglas de cortafuegos en la ubicación que causa la duplicación de trabajo. Por ejemplo, permitir la entrada de subredes de fondo en `dp0bond0` será menos trabajo que permitir la salida de subredes de fondo en cada interfaz virtual de VLAN.
 
 ### Reglas de cortafuegos por interfaz
 Un método para configurar el cortafuegos en VRA es aplicar conjuntos de reglas de cortafuegos en cada interfaz. En este caso, una interfaz puede ser de plano de datos (`dp0s0`) o virtual (`dp0bond0.303`). Cada interfaz tiene tres asignaciones de cortafuegos posibles:

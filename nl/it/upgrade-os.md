@@ -19,9 +19,9 @@ L'aggiornamento del sistema operativo VRA può essere eseguito con il comando ``
 
 Per avviare il processo di aggiornamento, apri un ticket con il sistema di ticket di supporto di IBM richiedendo un aggiornamento e che sia caricata una nuova immagine ISO nel tuo sistema. Riceverai un'email dal supporto IBM che indica dove il file ISO è stato caricato. Nel seguente esempio, è nella directory ``tmp``.
 
-**NOTA:** il processo di aggiornamento di seguito illustrato è per un solo VRA. Se stai utilizzando il VRA nella modalità ad elevata disponibilità, devi eseguire lo stesso comando di aggiornamento su entrambi i sistemi. Inoltre, si consiglia di aggiornare prima la macchina `BACKUP` e verificare che funzioni correttamente. Quindi accedi alla macchina `MASTER` ed effettua il failover utilizzando il comando `reset vrrp`. Infine, aggiorna la macchina originale `MASTER` una volta che `BACKUP` ha preso il controllo.
+**NOTA:** il processo di aggiornamento di seguito illustrato è per una sola VRA. Se stai utilizzando la VRA nella modalità ad alta disponibilità, devi eseguire lo stesso comando di aggiornamento su entrambi i sistemi. Inoltre, si consiglia di aggiornare prima la macchina `BACKUP` e verificare che funzioni correttamente. Quindi accedi alla macchina `MASTER` ed effettua il failover utilizzando il comando `reset vrrp`. Infine, aggiorna la macchina originale `MASTER` una volta che `BACKUP` ha preso il controllo.
 
-Per aggiornare il VRA, esegui la seguente procedura.
+Per aggiornare la VRA, esegui la seguente procedura.
 
 1. Esegui il comando ``add system image <Local ISO File>``.
 2. Premi **Invio** per accettare il nome predefinito dell'immagine ISO o immettine uno tuo.
@@ -30,7 +30,7 @@ Per aggiornare il VRA, esegui la seguente procedura.
 5. Premi **Invio** per accettare la console di sistema predefinita, o immettine una tua.
 6. Premi **Invio** per accettare la velocità della console predefinita, o immettine una tua.
 7. Immetti il comando `reboot` e quindi `Yes` per riavviare la macchina.
-8. Se stai utilizzando il VRA in una modalità ad elevata disponibilità, riesegui dal passo 1 al 7 nella seconda macchina.
+8. Se stai utilizzando la VRA in una modalità ad alta disponibilità, riesegui dal passo 1 al 7 nella seconda macchina.
 
 Il seguente esempio illustra il processo di aggiornamento.
 

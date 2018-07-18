@@ -14,11 +14,11 @@ lastupdated: "2017-12-22"
 {:tip: .tip}
 {:download: .download}
 
-# Domande frequenti (FAQ) tecniche 
-Le seguenti domande frequenti affrontano la configurazione del VRA (Virtual Router Appliance) di IBM e la migrazione a VRA da Vyatta 5400.
+# Domande frequenti (FAQ) tecniche
+Le seguenti domande frequenti affrontano la configurazione di IBM VRA (Virtual Router Appliance) e la migrazione a VRA da Vyatta 5400.
 
 ## Come consento il traffico associato a internet dagli host che si trovano su una VLAN privata?
-Questo traffico deve ottenere un IP di origine pubblico, quindi un NAT di origine deve mascherare l'IP privato con quello pubblico del VRA.
+Questo traffico deve ottenere un IP di origine pubblico, quindi un NAT di origine deve mascherare l'IP privato con quello pubblico della VRA.
 
 ```
 set service nat source rule 1000 description 'SNAT traffic from private VLANs to Internet'
@@ -34,7 +34,7 @@ Questo assicura che non interferirà con i pacchetti che già dispongono di un i
 ## Come posso filtrare il traffico associato a internet e consentire solo protocolli/destinazioni specifici?
 Questa è una domanda comune quando devono essere combinati il NAT di origine e un firewall.
 
-Tieni a mente l'ordine delle operazioni nel VRA quando progetti le tue serie di regole.
+Tieni a mente l'ordine delle operazioni nella VRA quando progetti le tue serie di regole.
 
 In breve, le regole del firewall vengono applicate *dopo* SNAT.
 
@@ -51,9 +51,9 @@ set service nat source rule 10 source address '10.1.2.3'
 set service nat source rule 10 translation address '150.1.2.3'
 ```
 
-`150.1.2.3` potrebbe essere un indirizzo pubblico per il VRA. 
+`150.1.2.3` potrebbe essere un indirizzo pubblico per la VRA. 
 
-È fortemente consigliato di utilizzare l'indirizzo pubblico VRRP del VRA, in modo che puoi differenziare l'host e il traffico pubblico VRA.
+È fortemente consigliato di utilizzare l'indirizzo pubblico VRRP della VRA, in modo che puoi differenziare l'host e il traffico pubblico VRA.
 
 Supponiamo che `150.1.2.3` è l'indirizzo VRA VRRP e `150.1.2.5` è l'indirizzo dp0bond1 reale.
 
@@ -75,12 +75,12 @@ Nota che la combinazione del NAT di origine e del firewall raggiunge l'obiettivo
 
 Assicurati che le regole siano appropriate per la tua progettazione e che nessun'altra regola consenta il traffico che dovrebbe essere bloccato. 
 
-## Come proteggo il VRA stesso con un firewall basato sulla zona?
-Il VRA non ha una `local zone`.
+## Come proteggo la VRA stesso con un firewall basato sulla zona?
+La VRA non ha una `local zone`.
 
 Puoi invece utilizzare la funzionalità CPP (Control Plane Policing) poiché viene applicata come un firewall `local` su loopback.
 
-Nota che questo è un firewall senza stato e dovrai consentire esplicitamente il traffico in restituzione delle sessioni in uscita originate sul VRA stesso.
+Nota che questo è un firewall senza stato e dovrai consentire esplicitamente il traffico in restituzione delle sessioni in uscita originate sulla VRA stessa.
 
 ## Come limito SSH e blocco le connessioni provenienti da internet?
 È considerata una procedura consigliata non consentire le connessioni SSH da internet e di utilizzare altri modi di accesso all'indirizzo privato, come VPN SSL.
@@ -92,4 +92,4 @@ Per poter ascoltare solo le connessioni SSH sull'interfaccia privata, è necessa
 set service ssh listen-address '10.1.2.3'
 ```
 
-Tieni a mente che l'indirizzo IP deve essere sostituito con l'indirizzo che appartiene al VRA.
+Tieni a mente che l'indirizzo IP deve essere sostituito con l'indirizzo che appartiene alla VRA.

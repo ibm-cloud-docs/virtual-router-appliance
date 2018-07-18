@@ -15,7 +15,7 @@ lastupdated: "2017-10-12"
 {:download: .download}
 
 # Configura i servizi
-Esistono molti servizi in esecuzione sul VRA (Virtual Router Appliance) che possono essere associati, incluso:
+Esistono molti servizi in esecuzione sulla VRA (Virtual Router Appliance) che possono essere associati, incluso:
 
 `vyatta@vrouter# set service`
 

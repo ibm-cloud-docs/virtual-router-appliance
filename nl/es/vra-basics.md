@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Acceso y configuración
+# Aspectos básicos de VRA
 VRA puede configurarse con una sesión de consola remota mediante SSH o iniciando sesión en la GUI de web. De forma predeterminada, la web GUI no está disponible en la Internet pública. Para habilitar la web GUI, primero inicie sesión mediante SSH.
 
 **NOTA:** La configuración de VRA fuera de su shell e interfaz puede producir resultados inesperados y, por lo tanto, no se recomienda.
@@ -22,7 +22,7 @@ VRA puede configurarse con una sesión de consola remota mediante SSH o iniciand
 ## Acceso al dispositivo mediante SSH
 La mayoría de los sistemas operativos basados en Unix, como Linux, BSD y Mac OSX, incluyen clientes OpenSSH con las instalaciones predeterminadas. Los usuarios de Windows pueden descargar un cliente SSH, como PuTTy.
 
-Se recomienda inhabilitar el SSH en la IP pública y permitirlo solo en la IP privada. Las conexiones a las IP privadas requieren que el cliente esté conectado a la red privada. Puede iniciar sesión con una de las opciones de VPN predeterminadas (PPTP VPN, SSL-VPN e IPsec) ofrecidas en el portal del cliente, o utilizando una solución VPN personalizada configurada en VRA.
+Se recomienda inhabilitar el SSH en la IP pública y permitirlo solo en la IP privada. Las conexiones a las IP privadas requieren que el cliente esté conectado a la red privada. Puede iniciar sesión con una de las opciones de VPN predeterminadas (PPTP VPN, SSL-VPN e IPsec) ofrecidas en el portal de clientes, o utilizando una solución VPN personalizada configurada en VRA.
 
 Utilice la cuenta de Vyatta de la página **Detalles del dispositivo** para iniciar sesión mediante SSH. También se proporciona la contraseña de root, pero el inicio de sesión como root se inhabilita de forma predeterminada por razones de seguridad.
 

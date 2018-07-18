@@ -17,7 +17,7 @@ lastupdated: "2017-12-22"
 # Hochverfügbarkeitskonfigurationen synchronisieren
 Die Konfiguration von zwei Virtual Router Appliances (VRAs), die ein HA-Paar (High Availability) bilden, müssen so weit synchronisiert werden, dass beide Einheiten das gleiche Verhalten zeigen. Hierfür werden Zuordnungen für die Konfigurationssynchronisation (`configuration sync-maps`) verwendet, und Sie können auswählen, welche Teile der Konfiguration synchronisiert werden. Wenn Sie auf einer Maschine eine Änderung vornehmen, wird die markierte Konfiguration mit einer Push-Operation auf die andere Einheit übertragen.
 
-**HINWEIS:** Die aktive Konfiguration der lokalen Einheit auf der fernen Einheit wird synchronisiert und gespeichert. Als ein Schritt des Commitprozesses würde die Konfiguration auf der lokalen Einheit nicht gespeichert werden.  
+**HINWEIS:** Die aktive Konfiguration der lokalen Einheit auf der fernen Einheit wird synchronisiert und gespeichert. Als ein Schritt des Commitprozesses würde die Konfiguration auf der lokalen Einheit nicht gespeichert werden. 
 
 Spezifische Konfigurationen für ein bestimmtes System sollten nicht auf eine andere Einheit übertragen werden. Beispielsweise sollten konkrete IP-Adressen und MACs nicht synchronisiert werden. Der Konfigurationsknoten `system config-sync` und der Knoten `service https` können nicht synchronisiert werden.
 

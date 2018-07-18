@@ -20,7 +20,7 @@ A las pasarelas de red se les proporciona un nombre exclusivo que ayuda a los us
 
 Realice el procedimiento siguiente para renombrar una pasarela de red:
 
-1. [Acceda a la pantalla Detalles de dispositivo de pasarela](access-gateway-details.html) en el portal del cliente. 
+1. [Acceda a la pantalla Detalles de dispositivo de pasarela](access-gateway-details.html) en el Portal de clientes. 
 2. Pulse el menú desplegable **Acciones** y seleccione **Renombrar pasarela**.
 3. Especifique el nuevo nombre de pasarela en el campo **Nombre de pasarela**.
 4. Pulse **Aceptar** para guardar los cambios. 

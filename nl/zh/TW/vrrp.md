@@ -74,7 +74,7 @@ VRA 能夠藉由使用一對 Virtual Router Appliance 搭配 VRRP，而維護通
 
 配置高可用性 VPN 搭配 VRRP 時，只要新增 VRRP 虛擬位址至 VRA 介面，您就必須重新起始設定 IPsec 常駐程式，因為 IPsec 服務只會接聽對於起始設定「網際網路金鑰交換 (IKE)」服務常駐程式時，VRA 上存在之位址的連線。
 
-在主要和備份路由器上執行下列指令，以便在發生失效接手時，VIP 轉換之後，會在新的主要裝置上重新啟動 IPsec 常駐程式，如下列範例所示：
+在主要和備份路由器上執行下列指令，以便在發生失效接手時，VIP 轉移之後，會在新的主要裝置上重新啟動 IPsec 常駐程式，如下列範例所示：
 
 `vyatta@vrouter# set interfaces bonding dp0bond1 vrrp vrrp-group 1 notify ipsec
 `

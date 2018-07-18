@@ -14,23 +14,23 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Accesso e configurazione 
-Il VRA può essere configurato utilizzando una sessione della console remota tramite SSH o accedendo alla GUI web. Per impostazioni predefinita, la GUI web non è disponibile da internet pubblicamente. Per abilitare la GUI web, accedi prima tramite SSH.
+# Principi di base di VRA
+La VRA può essere configurata utilizzando una sessione della console remota tramite SSH o accedendo alla GUI web. Per impostazioni predefinita, la GUI web non è disponibile da internet pubblicamente. Per abilitare la GUI web, accedi prima tramite SSH.
 
 **NOTA:** la configurazione di VRA all'esterno della sua shell e interfaccia può produrre risultati non previsti e quindi non è consigliato.
 
-## Accesso al dispositivo utilizzando SSH 
+## Accesso al dispositivo utilizzando SSH
 Molti sistemi operativi basati su UNIX, come Linux, BSD e Mac OSX, hanno i client OpenSSH inclusi nelle loro installazioni predefinite. Gli utenti di Windows possono scaricare un client SSH, come ad esempio PuTTy.
 
-Si consiglia che l'SSH all'IP pubblico sia disabilitato e che sia consentito solo all'IP privato. Le connessioni agli IP privati richiedono che il tuo client sia collegato alla rete privata. Puoi accedere utilizzando una delle seguenti opzioni VPN predefinite (PPTP, SSL-VPN e IPsec) offerte nel portale del cliente o utilizzando una soluzione VPN personalizzata configurata nel VRA.
+Si consiglia che l'SSH all'IP pubblico sia disabilitato e che sia consentito solo all'IP privato. Le connessioni agli IP privati richiedono che il tuo client sia collegato alla rete privata. Puoi accedere utilizzando una delle seguenti opzioni VPN predefinite (PPTP, SSL-VPN e IPsec) offerte nel portale del cliente o utilizzando una soluzione VPN personalizzata configurata nella VRA.
 
-Utilizza l'account Vyatta dalla pagina **Device Details** per accedere tramite SSH. Viene anche fornita la password root ma l'accesso root viene disabilitato in modo predefinito per motivi di sicurezza. 
+Utilizza l'account Vyatta dalla pagina **Device Details** per accedere tramite SSH. Viene anche fornita la password root ma l'accesso root viene disabilitato in modo predefinito per motivi di sicurezza.
 
 `ssh vyatta@[IP address] `
 
 **NOTA:** si consiglia di lasciare gli accessi root disabilitati. Accedi tramite l'account Vyatta ed eleva a root quando necessario.
 
-Possono essere fornite anche le chiavi SSH durante la distribuzione per evitare il bisogno dell'accesso dell'account Vyatta. Dopo aver verificato la tua capacità di accedere al tuo VRA utilizzando la tua chiave SSH, puoi disabilitare gli accessi utente/password standard immettendo i seguenti comandi:
+Possono essere fornite anche le chiavi SSH durante la distribuzione per evitare il bisogno dell'accesso dell'account Vyatta. Dopo aver verificato la tua capacità di accedere alla tua VRA utilizzando la tua chiave SSH, puoi disabilitare gli accessi utente/password standard immettendo i seguenti comandi:
 
 ```
 $ configure
@@ -39,9 +39,9 @@ $ configure
 # save
 ```
 
-## Accesso al dispositivo utilizzando la GUI Web 
+## Accesso al dispositivo utilizzando la GUI Web
 
-Accedi al VRA utilizzando le precedenti istruzioni SSH, quindi immetti i seguenti comandi per abilitare il servizio HTTPS: 
+Accedi alla VRA utilizzando le precedenti istruzioni SSH, quindi immetti i seguenti comandi per abilitare il servizio HTTPS:
 
 ```
 $ configure
@@ -50,14 +50,14 @@ $ configure
 # save
 ```
 
-Dopo il completamento di questi comandi, immetti `https://<ip.address>` nella barra di indirizzi del tuo browser, sostituendo l'indirizzo IP con quello del tuo VRA. Ti potrebbe venire richiesto di accettare il certificato emesso in automatico di VRA. Accetta, quindi accedi all'interfaccia web con le tue credenziali Vyatta quando richiesto.
+Dopo il completamento di questi comandi, immetti `https://<ip.address>` nella barra di indirizzi del tuo browser, sostituendo l'indirizzo IP con quello della tua VRA. Ti potrebbe venire richiesto di accettare il certificato emesso in automatico di VRA. Accetta, quindi accedi all'interfaccia web con le tue credenziali Vyatta quando richiesto.
 
 ## Modalità
 **Modalità di configurazione:** richiamata con l'utilizzo del comando `configure`, questa modalità è dove viene eseguita la configurazione del sistema VRA.
 
 **Modalità operativa:** la modalità iniziale dopo l'accesso a un sistema VRA. In questa modalità, i comandi `show` possono essere immessi per eseguire query sullo stato del sistema. Il sistema può anche essere riavviato da questa modalità.
 
-La shell del VRA è un'interfaccia modale, con molte modalità operative. La modalità primaria/predefinita è **Operational** e sarà la modalità presentata all'accesso. Nella modalità **Operational**, puoi visualizzare le informazioni e immettere i comandi che influenzano l'esecuzione corrente del sistema, come l'impostazione di data/ora o il riavvio del dispositivo.
+La shell della VRA è un'interfaccia modale, con molte modalità operative. La modalità primaria/predefinita è **Operational** e sarà la modalità presentata all'accesso. Nella modalità **Operational**, puoi visualizzare le informazioni e immettere i comandi che influenzano l'esecuzione corrente del sistema, come l'impostazione di data/ora o il riavvio del dispositivo.
 
 Il comando `configure` colloca l'utente nella modalità **Configuration**, dove possono essere effettuate modifiche alla configurazione. Tieni presente che queste modifiche non avvengono immediatamente; ne deve essere eseguito il commit e il salvataggio. Come vengono immessi i comandi, vanno in un buffer di configurazione. Quando sono stati immessi tutti i comandi necessari, esegui il comando `commit` per rendere le modifiche effettive.
 

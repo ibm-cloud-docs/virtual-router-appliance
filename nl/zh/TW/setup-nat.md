@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# 在 Vyatta 5400 上設定 NAT 規則
+# 在 Vyatta 上設定 NAT 規則
 本主題包含 Vyatta 上所使用的「網址轉換 (NAT)」規則範例。
 
 ## 一對多 NAT 規則（假冒）
@@ -66,8 +66,7 @@ commit
 
 如果資料流量是從 bond1 的 IP `50.97.203.227` 流入，則會將該 IP 對映至 IP `10.52.69.202`（在定義的任何介面上）。如果資料流量使用 IP `10.52.69.202`（在定義的任何介面上）流出，則會將它轉換為 IP `50.97.203.227`，並繼續在介面 bond1 上往外流出。
 
-**附註：**無法假冒透過一對一對映的 IP 位址。如果您轉換 IP 入埠，則必須轉換這個相同的 IP 出埠，以接受其雙向資料流量。
-
+**附註：**使用下列指令，以協助疑難排解 NAT：`run show nat source translations detail`。
 
 ## 透過 VRA 新增 IP 範圍
 
@@ -95,3 +94,10 @@ set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 套用至結合介面：
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
+
+**附註：**
+
+* 無法假冒透過一對一對映的 IP 位址。如果您轉換 IP 入埠，則必須轉換這個相同的 IP 出埠，以接受其雙向資料流量。
+
+* 使用下列指令，以協助疑難排解 NAT：`run show nat source translations detail`
+
