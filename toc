@@ -7,9 +7,15 @@ IBM Virtual Router Appliance
     {: .navgroup id="learn"}
     getting-started.md
     about.md
+    whats-new-vra.md
     vyatta-patch-notes.md
+
+    {: .topicgroup}
+    Upgrade Guide
+        upgrade-os.md
+        upgrade-issues.md
+
     [Explore Firewalls](../fortigate-10g/explore-firewalls.html)
-    vyatta-patch-notes.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -22,30 +28,35 @@ IBM Virtual Router Appliance
     services.md
     firewall.md
     vrrp.md
+
+    {: .topicgroup}
+    Use IPsec and VFP Interfaces
+        vra-ipsec.md
+        vra-vfp.md
+        vra-nat.md
+
     configuration-synchronization.md
     configuration-backups.md
-    upgrade-os.md
     osreload-configuration.md
     configure-ipsec.md
     add-firewall-functions.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [Vyatta 5400 Migration Guide](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)    
-    migration-issues.md
-    upgrade-issues.md
+    [Vyatta 5400 Migration Guide](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
     apis.md
     [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
     [IBM Cloud IP Ranges](../hardware-firewall-dedicated/ips.html)
+    migration-issues.md
 
     {: .topicgroup}
-	Legacy Vyatta 5400
-		legacy-5400.md
-		basic-configuration-vyatta.md
-		how-configure-ipsec-vyatta.md
-		how-add-firewall-functions-vyatta-stateless-and-stateful.md
-		setup-nat.md
-		vyatta-high-availability-configuration.md
+    Legacy Vyatta 5400
+        legacy-5400.md
+        basic-configuration-vyatta.md
+        how-configure-ipsec-vyatta.md
+        how-add-firewall-functions-vyatta-stateless-and-stateful.md
+        setup-nat.md
+        vyatta-high-availability-configuration.md
 
     external-resources.md
     {: .navgroup-end}
