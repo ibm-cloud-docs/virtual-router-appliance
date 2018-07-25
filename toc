@@ -53,6 +53,7 @@ IBM Virtual Router Appliance
     {: .topicgroup}
     Legacy Vyatta 5400
         legacy-5400.md
+        Vyatta-5400-Security-Fixes.md
         basic-configuration-vyatta.md
         how-configure-ipsec-vyatta.md
         how-add-firewall-functions-vyatta-stateless-and-stateful.md
