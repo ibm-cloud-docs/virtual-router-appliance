@@ -34,6 +34,7 @@ IBM Virtual Router Appliance
         vra-ipsec.md
         vra-vfp.md
         vra-nat.md
+        vra-vfp-troubleshooting.md
 
     configuration-synchronization.md
     configuration-backups.md
