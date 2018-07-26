@@ -51,6 +51,7 @@ IBM Virtual Router Appliance
     migration-issues.md
 
     {: .topicgroup}
+    vyatta-5600-security-fixes.md
     Legacy Vyatta 5400
         legacy-5400.md
         Vyatta-5400-Security-Fixes.md
