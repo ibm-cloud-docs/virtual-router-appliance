@@ -6,7 +6,7 @@ This document lists the patches for the currently supported versions of the Vyat
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
-## 18001n
+## 1801n
 
 **Issues Resolved**
 
@@ -215,7 +215,10 @@ Released April 23, 2018
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR- 41512 | 9.8 | DSA-4172-1 | CVE-2018-6797, CVE-2018-6798, CVE-2018-6913: Debian DSA-4172-1: perl – security update || VRVDR- 41331 | 6.5 | DSA-4158-1 |CVE-2018-0739: Debian DSA-4158-1: openssl1.0 – security update| VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – security update || VRVDR- 41215 | 6.1 |CVE-2018-1059 | CVE-2018-1059 – DPDK vhost out of bound host memory access from VM guests |
+| VRVDR- 41512 | 9.8 | DSA-4172-1 | CVE-2018-6797, CVE-2018-6798, CVE-2018-6913: Debian DSA-4172-1: perl – security update |
+| VRVDR- 41331 | 6.5 | DSA-4158-1 |CVE-2018-0739: Debian DSA-4158-1: openssl1.0 – security update
+| VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – security update |
+| VRVDR- 41215 | 6.1 |CVE-2018-1059 | CVE-2018-1059 – DPDK vhost out of bound host memory access from VM guests |
 
 ##5.2R6S8
 Released April 16, 2018.
@@ -239,8 +242,13 @@ Released March 28, 2018.
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-39985 | Minor | TCP DF packets larger than GRE tunnel MTU are dropped with no ICMP fragmentation needed returned | | VRVDR-41088 | Critical | Extended (4 byte) ASN not represented internally as unsigned type || VRVDR-40988 | Critical | Vhost not starting when used with certain number of interfaces || VRVDR-40927 | Critical | DNAT: SDP in SIP 200 OK not translated when it follows a 183 response || VRVDR-40920 | Major | With 127.0.0.1 as listen-address snmpd does not start |
-| VRVDR-40920 | Critical | ARP doesn’t work over bonded SR-IOV interface || VRVDR-40294 | Major | Dataplane doesn’t restore previous queues after slave is removed from bonding group |
+| VRVDR-39985 | Minor | TCP DF packets larger than GRE tunnel MTU are dropped with no ICMP fragmentation needed returned | 
+| VRVDR-41088 | Critical | Extended (4 byte) ASN not represented internally as unsigned type |
+| VRVDR-40988 | Critical | Vhost not starting when used with certain number of interfaces |
+| VRVDR-40927 | Critical | DNAT: SDP in SIP 200 OK not translated when it follows a 183 response |
+| VRVDR-40920 | Major | With 127.0.0.1 as listen-address snmpd does not start |
+| VRVDR-40920 | Critical | ARP doesn’t work over bonded SR-IOV interface |
+| VRVDR-40294 | Major | Dataplane doesn’t restore previous queues after slave is removed from bonding group |
 
 **Security Vulnerabilities Resolved**
 
@@ -265,13 +273,16 @@ Released March 12, 2018.
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40281 | Major | After upgrading from 5.2 to more recent version error “vbash: show: command not found” in operation mode |
-| VRVDR-40135 | Major | Spanning tree packets are not received on a VIF interface bridge port || VRVDR-39991 | Major | Stateful firewall drops packets between two subnets on the same interface | | VRVDR-36481 | Major | Upgrade/downgrade from 5.2R4 to 17.1.0/5.2R3 shows /opt/vyatta/sbin/vyatta-install-image.functions: line 372: is_onie_boot: command not found |
+| VRVDR-40135 | Major | Spanning tree packets are not received on a VIF interface bridge port |
+| VRVDR-39991 | Major | Stateful firewall drops packets between two subnets on the same interface | 
+| VRVDR-36481 | Major | Upgrade/downgrade from 5.2R4 to 17.1.0/5.2R3 shows /opt/vyatta/sbin/vyatta-install-image.functions: line 372: is_onie_boot: command not found |
 
 **Security Vulnerabilities Resolved**
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR- 40019 | 8.8 | DSA-4086-1 | CVE-2017-15412: Debian DSA-4086-1: libxml2 – security update || VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5717 / Spectre, aka. Variant #2 |
+| VRVDR- 40019 | 8.8 | DSA-4086-1 | CVE-2017-15412: Debian DSA-4086-1: libxml2 – security update |
+| VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5717 / Spectre, aka. Variant #2 |
 
 ##1801d
 Released March 8, 2018.
@@ -280,13 +291,17 @@ Released March 8, 2018.
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-40940 | Major | Dataplane crash related to NAT/firewall || VRVDR-40886 | Major | Combining “icmp name <value>” with a number of other configuration for the rule will cause firewall to not load || VRVDR-39879 | Major | Configuring bonding for jumbo frames fails |
+| VRVDR-40940 | Major | Dataplane crash related to NAT/firewall |
+| VRVDR-40886 | Major | Combining “icmp name <value>” with a number of other configuration for the rule will cause firewall to not load |
+| VRVDR-39879 | Major | Configuring bonding for jumbo frames fails |
 
 **Security Vulnerabilities Resolved**
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR- 40327 | 9.8 | | DSA-4098-1CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security upate | | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5715 / Spectre, aka variant #2 |
+| VRVDR- 40327 | 9.8 | | DSA-4098-1
+CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security upate | 
+| VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5715 / Spectre, aka variant #2 |
 
 ##1801c
 Released March 7, 2018.
@@ -304,7 +319,9 @@ Released February 21, 2018.
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-40622 | Major | Cloud-init images fail to detect correctly if IP address has been obtained from DHCP server || VRVDR-40613 | Critical | Bond interface does not come up if one of the physical links are down || VRVDR-40328 | Major | Cloud-init images take a long time to boot |
+| VRVDR-40622 | Major | Cloud-init images fail to detect correctly if IP address has been obtained from DHCP server |
+| VRVDR-40613 | Critical | Bond interface does not come up if one of the physical links are down |
+| VRVDR-40328 | Major | Cloud-init images take a long time to boot |
 
 ##1801a
 Released February 7, 2018.
@@ -322,7 +339,8 @@ Released January 19, 2018.
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR- 39891 | 5.6 | DSA-4078-1 | CVE-2017-5754: Debian DSA-4078-1: linux – security update (Meltdown) || VRVDR- 38265 | 8.8 | DSA-3970-1 | CVE-2017-1 |
+| VRVDR- 39891 | 5.6 | DSA-4078-1 | CVE-2017-5754: Debian DSA-4078-1: linux – security update (Meltdown) |
+| VRVDR- 38265 | 8.8 | DSA-3970-1 | CVE-2017-1 |
 
 ##5.2R6S4
 Released December 15, 2017.
@@ -332,8 +350,13 @@ Released December 15, 2017.
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-39529 | Major | DHCP server failover is not synchronizing databases |
-| VRVDR-39399 | Critical | Vyatta dropped off network state FAULT in show vrrp/multiple interfaces flap/seg fault || VRVDR-39112 | Major | DNAT traffic that matches ZBF drops only first packet in flow || VRVDR-38075 | Minor | When “restart vpn” is issued from responder, initiator does not re- establish connection || VRVDR-37934 | Critical | BGPd crashed when aggregate-address summary-only is configured/static routes missing |
-| VRVDR-37717 | Minor | Rename hard-enf “Description” and “License” fields in version output || VRVDR-37689 | Major | High rate of NIC PF interrupts || VRVDR-37633 | Critical | Keepalived hanging |
+| VRVDR-39399 | Critical | Vyatta dropped off network state FAULT in show vrrp/multiple interfaces flap/seg fault |
+| VRVDR-39112 | Major | DNAT traffic that matches ZBF drops only first packet in flow |
+| VRVDR-38075 | Minor | When “restart vpn” is issued from responder, initiator does not re- establish connection |
+| VRVDR-37934 | Critical | BGPd crashed when aggregate-address summary-only is configured/static routes missing |
+| VRVDR-37717 | Minor | Rename hard-enf “Description” and “License” fields in version output |
+| VRVDR-37689 | Major | High rate of NIC PF interrupts |
+| VRVDR-37633 | Critical | Keepalived hanging |
 
 ## 5.2R6S3
 Released December 4, 2017.
@@ -352,7 +375,8 @@ Released November 2, 2017.
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-39177 | Major | OpenVPN server domain-name option not being applied with –push dhcp-option || VRVDR-39129 | Critical | OpenVPN server push-route parameter causes OpenVPN to fail to start |
+| VRVDR-39177 | Major | OpenVPN server domain-name option not being applied with –push dhcp-option |
+| VRVDR-39129 | Critical | OpenVPN server push-route parameter causes OpenVPN to fail to start |
 
 ##5.2R6S1
 Released October 12, 2017.
