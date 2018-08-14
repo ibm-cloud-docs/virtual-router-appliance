@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="virtual-router-appliance" audience="network" href="/docs/infrastructure/virtual-router-appliance/about.html"}
+{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance/about.html"}
 IBM Virtual Router Appliance
 
     {: .navgroup id="learn"}
@@ -19,15 +19,27 @@ IBM Virtual Router Appliance
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    access-gateway-appliances.md
-    access-gateway-details.md
-    vra-basics.md
-    rename-gateway.md
-    manage-vlans.md
-    vlans.md
-    services.md
+    step-by-step-pages.md
+
+    {: .topicgroup}
+    Perform VRA Basics
+        access-gateway-appliances.md
+        access-gateway-details.md
+        vra-basics.md
+        rename-gateway.md
+
+    {: .topicgroup}
+    Work with VLANs
+        manage-vlans.md
+        vlans.md
+
     firewall.md
-    vrrp.md
+    services.md
+
+    {: .topicgroup}
+    Work with High Availability Configurations
+        vrrp.md
+        configuration-synchronization.md 
 
     {: .topicgroup}
     Use IPsec and VFP Interfaces
@@ -36,20 +48,19 @@ IBM Virtual Router Appliance
         vra-nat.md
         vra-vfp-troubleshooting.md
 
-    configuration-synchronization.md
     configuration-backups.md
     osreload-configuration.md
-    configure-ipsec.md
-    add-firewall-functions.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     vyatta-5600-security-fixes.md
-    [Vyatta 5400 Migration Guide](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
-    apis.md
-    [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
+
+    {: .topicgroup}
+    Virtual Router Appliance API Information
+        apis.md
+        [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
+
     [IBM Cloud IP Ranges](../hardware-firewall-dedicated/ips.html)
-    migration-issues.md
 
     {: .topicgroup}
     Legacy Vyatta 5400
@@ -61,7 +72,12 @@ IBM Virtual Router Appliance
         setup-nat.md
         vyatta-high-availability-configuration.md
 
-    external-resources.md
+    {: .topicgroup}
+    Vyatta 5400 Migration
+        [Vyatta 5400 Migration Guide](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
+        migration-issues.md
+
+    external-resource.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
