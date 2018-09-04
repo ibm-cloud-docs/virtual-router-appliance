@@ -1,8 +1,20 @@
 # AT&T Vyatta 5400 vRouter Security Vulnerability Fixes
 
-**As of: July 16, 2018**
+**As of: August 30, 2018**
 
 This document lists the security vulnerability fixes for the Vyatta 5400 vRouter. When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed. 
+
+## 6.7R14S10
+
+Released August 30, 2018
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VSE-9911 | Major | 6.7R13S3 upgrade to 6.7R14S9 caused “rpc_scheddetected stalls on CPUs/tasks” and system crashed and frozen |
+
+Issues resolved in 6.7R14S10
 
 ## 6.7R14S9
 
