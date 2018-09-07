@@ -22,7 +22,7 @@ This information was developed in collaboration with [Wanclouds](www.wanclouds.n
 ## Interface Based Global-State Policy for StateFul Firewall
 
 ### Issues
-THe behavior when setting "State of State-policy" for stateful firewalls from release 5.1 has been changed. In versions prior to release 5.1, if you set `state - global -state -policy` of a stateful firewall, the vRouter automatically added an implicit `Allow` rule for return communication of the session Automatically.
+The behavior when setting "State of State-policy" for stateful firewalls from release 5.1 has been changed. In versions prior to release 5.1, if you set `state - global -state -policy` of a stateful firewall, the vRouter automatically added an implicit `Allow` rule for return communication of the session Automatically.
 
 In release 5.1 and later you must add an `Allow` rule setting on the Virtual Router Appliance. The stateful setting works for interfaces on Vyatta 5400 devices, and for protocols on VRA devices.
 
