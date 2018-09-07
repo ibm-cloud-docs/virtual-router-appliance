@@ -15,10 +15,10 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-43531 | Major |Boot on 1801p results in kernel panic within roughly 40 seconds |
 | VRVDR-43104 | Critical | Fake Gratuitous ARP over DHCP network when IPsec is enabled |
 | VRVDR-41531 | Major | IPsec continues to attempt to use VFP interface after unbinding it |
-| VRVDR-43157  | Minor | When tunnel bounces SNMP trap is not properly generated. |
+| VRVDR-43157 | Minor | When tunnel bounces SNMP trap is not properly generated. |
 | VRVDR-43114 | Critical | Upon reboot, a router in an HA pair with a higher priority than its peer does not honor its own “preempt false” configuration and becomes the master immediately following the boot |
 | VRVDR-42826 | Minor | With remote-id “0.0.0.0” peer negotiation fails due to pre-shared-key mismatch |
-| VRVDR-42774 Critical X710 (i40e) driver sending flow control frames at a very high rate |
+| VRVDR-42774 | Critical| X710 (i40e) driver sending flow control frames at a very high rate |
 | VRVDR-42635 | Minor | BGP redistribute route-map policy change does not take effect |
 | VRVDR-42620 | Minor | Vyatta-ike-sa-daemon throws error “Command failed: establishing CHILD_SA passthrough-peer” while tunnel appears to be up |
 | VRVDR-42483 | Minor | TACACS authentication failing |
