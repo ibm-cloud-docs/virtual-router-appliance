@@ -17,6 +17,8 @@ lastupdated: "2018-05-03"
 # Vyatta 5400 Common Migration Issues
 The following table illustrates common issues or behaior changes you may encounter after migrating from a Vyatta 5400 device to a IBM Virtual Router Appliance. In some cases, it includes workarounds to address the issues.
 
+This information was developed in collaboration with [Wanclouds](www.wanclouds.net), an IBM partner. For questions or more information on these issues, contact Wanclouds at info@wanclouds.net. 
+
 ## Interface Based Global-State Policy for StateFul Firewall
 
 ### Issues
