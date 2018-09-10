@@ -1,6 +1,22 @@
+---
+
+copyright:
+  years: 2017
+lastupdated: "2018-09-07"
+
+---
+
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
+{:download: .download}
+
 # AT&T Vyatta 5600 vRouter Software Patches
 
-**As of: July 9, 2018**
+**As of: September 7, 2018**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
