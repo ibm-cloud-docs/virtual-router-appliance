@@ -1,3 +1,19 @@
+---
+
+copyright:
+  years: 2017
+lastupdated: "2018-08-30"
+
+---
+
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
+{:download: .download}
+
 # AT&T Vyatta 5400 vRouter Security Vulnerability Fixes
 
 **As of: August 30, 2018**
