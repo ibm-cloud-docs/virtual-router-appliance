@@ -148,3 +148,53 @@ set service connsync remote-peer 10.124.10.4
 The other VRA will have the same configuration, but a different `remote-peer`.
 
 Note that this can saturate a link if there is a high number of connections coming in on other interfaces, and will compete with other traffic on the declared link.
+
+## VRRP Start Delay Feature
+Vyatta OS version 1801p and greater includes a new `vrrp` command. 
+
+`vrrp` specifies an election protocol that dynamically assigns responsibility for a virtual router to one of the VRRP routers on a LAN. The VRRP router controlling the IPv4 or IPv6 address(es) associated with a virtual router is called the Master, and it forwards packets sent to these IPv4 or IPv6 addresses. The election process provides dynamic failover in the forwarding responsibility should the Master become unavailable. All protocol messaging is performed using either IPv4 or IPv6 multicast datagrams; as a result, the protocol can operate over a variety of multiaccess LAN technologies supporting IPv4/IPv6 multicast. 
+
+To minimize network traffic, only the Master for each virtual router sends periodic VRRP Advertisement messages. A Backup router will not attempt to preempt the Master unless it has higher priority. This eliminates service disruption unless a more preferred path becomes available. It’s also possible to administratively prohibit all preemption attempts. If the Master becomes unavailable, then the highest-priority Backup will transition to Master after a short delay, providing a controlled transition of the virtual router responsibility with minimal service interruption.
+
+**NOTE:** In IBM Cloud provisioned deployments the start delay value is set to the default value. You may wish to alter this at your discretion as you test your failover and high availability methods.
+
+
+### Preemption vs. No Preemption
+
+The `vrrp` protocol defines logic that decides which VRRP peer on a network has the higher priority, and as such , the best peer to perform the role as Master. With a default configuration, VRRP will be enabled to perform preemption, which means that a new higher priority peer on the network will force failover of the Master role. 
+
+When preemption is disabled, a higher priority peer will only failover the Master role if the existing lower priority peer is no longer available on the network. Disabling preemption is sometimes useful in real world scenarios, as it copes better with situations where the higher priority peer may have started to periodically flap due to reliability issues with the peer itself or one of its network connections. It is also useful to prevent the premature failover to a new higher priority peer which has not completed network convergence.
+
+### Assumptions and limitations of preemption
+
+If the VRRP peers have been configured to disable preemption, then there are some cases where preemption may “appear” to occur, but in reality the scenario is just a standard VRRP failover. As described above, VRRP makes use of IP multicast datagrams as a means to confirm availability of the currently elected Master router. Since it is a layer 3 protocol that is detecting failure of a VRRP peer, it is important that failover detection in VRRP is delayed until VRRP and the layer 1 through 2 of the network stack is ready and converged. In some cases the network interface running VRRP may confirm to the protocol that the interface is up, but other underlying services like Spanning Tree, or Bonding may not have completed. As a result, IP connectivity between peers cannot be established. If this occurs, VRRP on a new higher peer will become Master, as it is unable to detect VRRP messages from the current Master peer on the network. After convergence, the brief period of time when there is two Master VRRP peers will result in the dual Master logic of VRRP being executed, the higher priority peer will remain Master, and the lower priority becoming Backup. This scenario may “appear” to demostrate a failure in the “no preemption” functionality.
+
+### Start Delay Feature
+
+In order to accomodate the issues associated with delay in convergence of the lower levels of the network stack during an interface up event, as well as other contributory factors, a new feature called “Startup Delay” is introduced in the 1801p patch. The feature causes the VRRP state on a machine that has been “reloaded” to remain in the INIT state until after a predefined delay, which can be configured by the network operator. Flexibility in this delay value allows the network operator to customize the characteristics of their network and devices under real world conditions.
+
+### Command details
+
+```
+vrrp {
+start-delay <0-600>
+}
+```
+
+`start-delay` can have a value between 0 (default) and 600 seconds.
+
+### Example Configuration
+
+```
+interfaces {
+  bonding dp0bond1 {
+address 161.202.101.206/29 mode balanced
+vrrp {
+      start-delay 120
+      vrrp-group 211 {
+preempt false
+priority 253
+virtual-address 161.202.101.204/29
+} }
+}
+```
