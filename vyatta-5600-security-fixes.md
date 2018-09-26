@@ -165,7 +165,7 @@ Released June 8, 2018.
 | VRVDR- 41946 | N/A | DSA-4202-1 | CVE-2018-1000301: Debian DSA-4202-1: curl – security update |
 | VRVDR- 41795 | 6.5 | DSA-4195-1 | CVE-2018-0494: Debian DSA-4195-1: wget – security update |
 
-## 18001j
+## 1801j
 
 Released May 18, 2018
 
@@ -237,7 +237,7 @@ Released May 4, 2018.
 | VRVDR-41620 | Major | vTI interface traffic stops sending traffic after new vIF is added |
 | VRVDR-40965 | Major | Bonding does not recover after a dataplane crash |
 
-## 1810f
+## 1801f
 
 Released April 23, 2018
 
