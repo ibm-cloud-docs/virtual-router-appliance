@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance/about.html"}
+{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance/about.html" path="infrastructure/virtual-router-appliance"}
 IBM Virtual Router Appliance
 
     {: .navgroup id="learn"}
