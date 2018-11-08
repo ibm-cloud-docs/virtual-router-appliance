@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-10-29"
+lastupdated: "2018-11-07"
 
 ---
 
@@ -16,11 +16,27 @@ lastupdated: "2018-10-29"
 
 # AT&T Vyatta 5600 vRouter Software Patches
 
-**As of: October 26, 2018**
+**As of: November 2, 2018**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+## 1801t
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-44172 | Blocker | Error “interfaces [openvpn] is not valid” reported in mss-clamp tests |
+| VRVDR-43969 | Minor | Vyatta 18.x GUI reporting wrong status check memory usage |
+| VRVDR-43847  | Major | Slow throughput for TCP conversations on bonding interface |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-43842 | N/A | DSA-4305-1 | CVE-2018-16151, CVE-2018-16152: Debian DSA4305-1: strongswan – security update |
 
 ## 1801s
 
