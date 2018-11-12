@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Setup NAT Rules on Vyatta
+# Setup NAT Rules on Vyatta 5400
 This topic contains examples of the Network Address Translation (NAT) rules used on a Vyatta.
 
 ## One-to-many NAT rule (masquerade)
@@ -66,7 +66,8 @@ commit
 
 If traffic comes in on IP `50.97.203.227` on bond1, that IP will be mapped to IP `10.52.69.202` (on any interface defined). If traffic goes outbound with the IP of `10.52.69.202` (on any interface defined), it will get translated to IP `50.97.203.227` and proceed out bound on interface bond1.
 
-**NOTE:** Use the following command to help troubleshoot NAT: `run show nat source translations detail`.
+**NOTE:** IP addresses that are mapped one-to-one cannot be masqueraded. If you translate an IP inbound, you must translate that same IP outbound in order for its traffic to go both ways.
+
 
 ## Adding IP ranges through your VRA
 
@@ -94,10 +95,3 @@ Applying to a zone:
 Applying to a bond interface:
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
-
-**NOTES:**
-
-* IP addresses that are mapped one-to-one cannot be masqueraded. If you translate an IP inbound, you must translate that same IP outbound in order for its traffic to go both ways.
-
-* Use the following command to help troubleshoot NAT: `run show nat source translations detail`
-

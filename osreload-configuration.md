@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -23,7 +23,7 @@ To reload your OS, perform the following procedure:
 2. Select **Device List** from the Devices dropdown list.
 3. Click on the server you want to reload.
 4. Select **OS Reload** from the **Actions** dropdown menu on the top left of the page.
-5. In the OS Reload screen, choose any features and options you would like to apply as part of the reload. 
+5. In the OS Reload screen, click **Edit** for the Category that requires an update. Select **AT&T** as the Vendor, and the OS version you wish to reload.
 6. Click the **Reload Above Configuration** button to proceed to the **Review** pop-up. Click **Cancel** to cancel the changes to the device and exit the screen.
 7. Verify that all details in the New Configuration section are correct. Click **Next** to advance to the Confirm pop-up.
 8. Click the **Confirm OS Reload** button to confirm and initiate the OS Reload. Click **Cancel** to cancel the action.

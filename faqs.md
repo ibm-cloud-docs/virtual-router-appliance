@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -64,7 +64,7 @@ It is the customer's responsibility to ensure that the VRA or firewall is config
 Likewise, if a VRA/firewall is bypassed after an order is placed, it's still likely that the order will fail. There may be a narrow window during which automation retries will be attempted. It is best that the entire provision process proceed without network interference.
 
 ## What firewall products does IBM offer?
-You can find a detailed comparison of all firewall products offered in the IBM Cloud by reviewing this [topic ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
+You can find a detailed comparison of all firewall products offered in the IBM Cloud by reviewing this [topic ![External link icon](../../icons/launch-glyph.svg "External link icon")](../../infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
 
 ## Can a VRA confound customer support efforts? 
 Yes, for the reasons described above. VRA is a "black box:" VLANs go in, VLANs come out and IBM has no idea what customers are doing with packets in-between.

@@ -1,21 +1,21 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-26"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# How to add firewall functions to Vyatta (stateless and stateful)
+# Add Firewall Functions to Vyatta 5400 (stateless and stateful)
 
-Applying firewall rule sets to each interface is one method of firewalling when using Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall intances - In, Out, and Local - and each eahc instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall will apply the specific action of the matching rule.
+Applying firewall rule sets to each interface is one method of firewalling when using Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall intances - In, Out, and Local - and each instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall will apply the specific action of the matching rule.
 
 For any of the three firewall instances below, **only one** can be applied.
 
 * **IN:** The firewall filters packets entering the interface and traversing the Brocade system. You will need to permit certain SoftLayer IP ranges to have access to the front-end and back-end for management (ping, monitoring, and so on).
 * **OUT:** The firewall filters packets leaving the interface. These packets can be traversing the Brocade system or originating on the system.
-* **LOCAL:** The firewall filters packets destined fro the Brocade vRouter system itself via the system interface. You should establish restrictions on access ports coming into the Brocade vRouter device from external IP addresses that are not restricted.<sup>1</sup>
+* **LOCAL:** The firewall filters packets destined for the Brocade vRouter system itself via the system interface. You should establish restrictions on access ports coming into the Brocade vRouter device from external IP addresses that are not restricted.
 
 Use the following steps to set an example firewall rule to turn off Internet Control Message Protocol (ICMP) *(ping - IPv4 echo reply message)* to your Brocade 5400 vRouter's interfaces (this is a stateless action; a stateful action will be reviewed later):
 
@@ -29,7 +29,7 @@ Use the following steps to set an example firewall rule to turn off Internet Con
 
 If you now try to ping your Brocade 5400 vRouter device, you will no longer receive a response.
 
-In order to assign firewall rules to routed traffic, rules must be applied to the Brocade 5400 vRouter's **interfaces** or **create zones**, the applied to the zones.
+In order to assign firewall rules to routed traffic, rules must be applied to the Brocade 5400 vRouter's **interfaces** or **create zones**, then applied to the zones.
 
 For this example, zones will be created for the VLANs that have been used thus far.
 
@@ -47,12 +47,14 @@ bond1.1894 = reservered for future use
 
 **Create firewall rules**
 
-Before the zones are actually created, it is a good idea to create the firewall rules that are to be applied to the zones. Creating the rules before the zones allows you to apply them immediately, versus creating the zone, then creating the rules, and having to go back to the zone for rule application.<sup>2</sup>
+Before the zones are actually created, it is a good idea to create the firewall rules that are to be applied to the zones. Creating the rules before the zones allows you to apply them immediately, versus creating the zone, then creating the rules, and having to go back to the zone for rule application.
+
+**NOTE:** Zones and Rulesets both have a default action statement. When using Zone-Policies, the default action is set by the zone-policy statement and is represented by rule 10,000. It is also important to remember that default action of a firewall rule set is to **drop** all traffic.
 
 The following commands will:
 
-* Create a firewall rule named **dmz2private** with the default action to drop any packet
-* Enable logging of accepted and denied traffic for the rule named **dmz2private**
+* Create a firewall rule named **dmz2private** with the default action to drop any packet.
+* Enable logging of accepted and denied traffic for the rule named **dmz2private**.
 
 
 1\. Type *configure* in the command prompt.
@@ -92,15 +94,17 @@ The next firewall rule we create will be applied to our **dmz** zone. The rule w
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
+**NOTE:** Firewall rules need to flow outbound through **prod** to **dmz**. Use the following command to help troubleshoot network flow: *sudo tcpdump -i any host 10.52.69.202*.
+
 **Create Zones**
 
 Zones are logical representation of an interface. The following commands will:
 
 * Create a zone and a policy named **dmz** with a default action to drop packets destined for this zone.
-* Set the **dmz** policy to use the **bond1** interface
-* Set the **prod** policy to use the **bond1.2007** interface
-* Create a zone policy named **private** with a default action to drop packets destined for this zone
-* Set the policy named **private** to use the **bond0.2254** interface
+* Set the **dmz** policy to use the **bond1** interface.
+* Set the **prod** policy to use the **bond1.2007** interface.
+* Create a zone policy named **private** with a default action to drop packets destined for this zone.
+* Set the policy named **private** to use the **bond0.2254** interface.
 
 1\. Enter the Following commands in the prompt:
 
@@ -124,9 +128,9 @@ Note that you can apply a firewall rule to a specific interface if you do not wa
 * *set interfaces bonding bond1 firewall local name public*
 * *commit*
 
-**Notes:**
+## Stateful Firewalls
 
-<sup>1</sup>A *stateful* firewall keeps a table of previously seen flows, and packets can be accepted or dropped according to their relation with previous packets. As a general rule, stateful firewalls are generally preferred where application traffic is prevalent. 
+A *stateful* firewall keeps a table of previously seen flows, and packets can be accepted or dropped according to their relation with previous packets. As a general rule, stateful firewalls are generally preferred where application traffic is prevalent. 
 
 <span style="text-decoration: underline">*The Brocade 5400 vRouter does not track the state of the connections with default configuration. The firewall is stateless until one of the following conditions has been met:*</span>
 
@@ -136,8 +140,6 @@ Note that you can apply a firewall rule to a specific interface if you do not wa
 * Enablement of the transparent web proxy service
 * Enablement of a WAN load-balancing configuration
 
+## Stateless Firewalls
+
 A *stateless* firewall considers every packet in isolation. Packets can be accepted or dropped according to only basic access control list (ACL) criteria such as the source and destination fields in the IP or Transmission Control Protocols/User Datagram Protocol (TCP/UDP) headers. A stateless Brocade 5400 vRouter does not store connection information and has no requirement to look up every packet's relation to previous flows, both of which consume small amounts of memory and CPU time. Raw forwarding performance is therefore best on a stateless system. Brocade recommends keeping the router stateless for best performance if you do not require the features specific to statefulness.
-
-<sup>2</sup>Zones and Rulesets both have a default action statement. When using Zone-Policies, the default action is set by the zone-policy statement and is represented by rule 10,000. It is also important to remember that default action of a firewall rule set is to **drop** all traffic.
-
-<sup>3</sup>Firewall rules need to flow outbound through **prod** to **dmz**. Use the following command to help troubleshoot network flow: *sudo tcpdump -i any host 10.52.69.202*

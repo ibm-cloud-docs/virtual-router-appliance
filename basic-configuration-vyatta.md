@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-25"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -40,7 +40,9 @@ Note that it is the public side VLAN where the compute option is located - not t
 
 9\. Click the **Set** button and click **Commit**.
 
-10\. Click **Save** in the middle menu bar otherwise the configuration rolls back to its' default the next time the system is rebooted.<sup>1</sup>
+10\. Click **Save** in the middle menu bar otherwise the configuration rolls back to its' default the next time the system is rebooted.
+
+**NOTE:** The configuration rollback can be a very useful feature if you break your configuration while testing changes. As long as the changes are not saved you can reboot the server from the Web Portal and restore your previous configuration.
 
 11\. Click on the Statistics tab and open the new interface to verify and monitor traffic.
 
@@ -65,7 +67,9 @@ Configuration provides access to commands for:
   * Showing configuration information
   * Navigating through the configuraiton heirarchy
 
-When you log onto the system, the system is in operational mode; you will need to switch to configuration for the commands.<sup>2</sup>
+When you log onto the system, the system is in operational mode; you will need to switch to configuration for the commands.
+
+**NOTE:** You can tell which mode you are in, operational or configuration, based on the prompt. You are in operational mode if the prompt is #, and configuration mode if the prompt is $.
 
 Use the following steps to configure the private VLAN using the CLI. Remember the values needed to configure the VLAN are:
 
@@ -73,24 +77,18 @@ Use the following steps to configure the private VLAN using the CLI. Remember th
   * Gateway and mask (CIDR format) of the VLAN to be routed (10.52.69.201/29)
   * Private bond name of the Brocade 5400 vRouter Device (bond0)
 
-1\. SSH into your Brocade 5400 vRouter (public or private IP address) using **vyatta**<sup>3</sup> as the **Username**; supply the password when prompted.
+1. SSH into your Brocade 5400 vRouter (public or private IP address) using **vyatta** as the **Username**; supply the password when prompted.
 
-2\. Configure the vif:
+   **NOTE:** You should create a new user within Brocade 5400 vRouter and disable the default initial user `vyatta`.
+
+2. Configure the vif:
 
   * Type *configure* at the command prompt to enter configuration mode.
   * Type *set interfaces bonding bond0 vif 2254 address 10.52.69.201/29* at the command prompt to set the vif.
   * Type *commit* at the command prompt to commit the settings.
   * Type *save* to save the settings.
-  * Type *exit* to switch back out of operation mode.
+  * Type *exit* to switch back to operation mode.
 
 3\. Type *show interfaces* to check the settings you just committed.
 
 4\. Route any remaining VLANs through the Brocade 5400 vRouter device.
-
-**Notes:**
-
-<sup>1</sup> The configuration rollback can be a very useful feature if you break your configuration while testing changes. As long as the changes are not saved you can reboot the server from the Web Portal and restore your previous configuration.
-
-<sup>2</sup> You can tell which mode you are in, operational or configuration, based on the prompt. You are in operational mode if the prompt is #, and configuration mode if the prompt is $.
-
-<sup>3</sup> You should create a new user within Brocade 5400 vRouter and disable the default initial user `vyatta`.

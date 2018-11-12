@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-05-23"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -15,9 +15,13 @@ lastupdated: "2018-05-23"
 {:tip: .tip}
 {:download: .download}
 
-# External Resources
+# Other Resources
 
 These resources are created by IBM and some of our partners and customers.
+
+* [**Product Brief: AT&T Vyatta vRouter: Agile Networking and High Performance**](https://ibm.box.com/s/v1kp0nhfa8eqmnj0klosc8zkgixzcis2)
+
+    *"As the first virtual router for carrier-class networks, the AT&T Vyatta vRouter is the highest-performing software router in the industry. Achieving 10+ Gbps performance per physical core, the AT&T Vyatta vRouter delivers advanced routing, stateful firewall, NAT, and VPN capabilities in software without sacrificing the reliability and carrier class performance of hardware networking solutions."*
 
 * [**Blog Post: Keep your cloud safe with IBM network security services**](https://www.ibm.com/blogs/bluemix/2017/09/keep-cloud-safe-ibm-network-security-services/)
 

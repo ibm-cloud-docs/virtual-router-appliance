@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -90,7 +90,7 @@ set security firewall name ALLOW_LEGACY rule 2 source address network-group2
 In the ruleset, `ALLOW_LEGACY`, there are two rules defined. The first rule drops any traffic sourced from an address group named `network-group1`. The second rule discards and logs any traffic destined for the telnet port (`tcp/23`) from the address group named `network-group2`. The default-action indicates that anything else is accepted.
 
 ## Allowing Data Center Access
-IBM offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the data centers [here](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+IBM offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the data centers [here](../../infrastructure/hardware-firewall-dedicated/ips.html).
 
 You can allow data center access by placing the proper `SERVICE-ALLOW` rules at the beginning of the firewall rule sets with an action of `accept`. Where the rule set must be applied depends on the routing and firewall design being implemented.
 
@@ -112,7 +112,7 @@ As an example, to assign the `ALLOW_LEGACY` rule set to the `in` option for the 
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## Control Plane Policing (CPP)
-Control plane policing (CPP) provides protection against attacks on the Virtual Router Appliance by allowing you to configure firewall policies that are assigned to desired interfaces and applying these policies to packets both entering the VRA.
+Control plane policing (CPP) provides protection against attacks on the Virtual Router Appliance by allowing you to configure firewall policies that are assigned to desired interfaces and applying these policies to packets entering the VRA.
 
 CPP is implemented when the `local` keyword is used in firewall policies that are assigned to any type of VRA interface, such as data plane interfaces or loopback. Unlike the firewall rules applied for packets traversing through the VRA, the default action of firewall rules for traffic entering or leaving the control plane is `Allow`. Users must add explicit drop rules if the default behavior is not desired.
 

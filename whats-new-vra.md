@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-04-23"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -33,6 +33,6 @@ If you are migrating from Vyatta 5400, the best way to upgrade to 18.x is throug
 
 Because there is no simple one-to-one mapping of functionality between Vyatta 5400 and the Virtual Router Appliance, creating a baseline configuration for the VRA is helpful. An IBM Partner, WanClouds, can help you with this process, and provide guidance on creating functionality similar to the Vyatta 5400 on your VRA.
 
-For more information about common issues encountered during this upgrade proces, please refer to our [additional documentation](https://console.stage1.bluemix.net/docs/infrastructure/virtual-router-appliance/migration-issues.html#vyatta-5400-common-migration-issues).
+For more information about common issues encountered during this upgrade proces, please refer to our [additional documentation](../../infrastructure/virtual-router-appliance/migration-issues.html#vyatta-5400-common-migration-issues).
 
 

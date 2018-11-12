@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2018-02-28"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -23,6 +23,6 @@ When using the forums to ask a question, tag your question so that it is seen by
 * If you have technical questions about the IBM Virtual Router Appliance, post your question on [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) and tag your question with "vra" and "ibm-cloud".
 * For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud) forum. Include the "vra" and "ibm-cloud" tags.
 
-See [Getting help](https://console.bluemix.net/docs/support/index.html#getting-help) for more details about using the forums.
+See [Getting help](../../../support/index.html#getting-help) for more details about using the forums.
 
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](https://console.bluemix.net/docs/support/index.html#contacting-support).
+For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](../../../support/index.html#contacting-support).

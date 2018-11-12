@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -32,12 +32,18 @@ To get started with the IBM Virtual Router Appliance (VRA), navigate to the orde
 
 After your order is approved, the provisioning of your VRA starts automatically. When the provisioning process is complete, the new VRA will appear in the **Gateway Appliances** list page. Click the gateway name to open the **Gateway Details** page, then click on each gateway member to open the **Device Details** page. You will find the IP addresses, login username, and password for the device.  
 
+**NOTE:** It is important to remember that once you order and configure your VRA from the IBM Cloud Customer Portal, you must also configure the device itself with the same settings.
+
 ## VLANs and the Gateway Appliance's role
 A VLAN (virtual LAN) is a mechanism that segregates a physical network into many virtual segments. For convenience, traffic from multiple selected VLANs can be delivered through a single network cable, a process commonly called "trunking."
 
 VRA is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. The Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. Servers in an associated VLAN can only be reached from other VLANs by going through your VRA; it is not possible to circumvent the VRA unless you bypass or disassociate the VLAN.
 
 By default, a new Gateway Appliance is associated with two non-removable "transit" VLANs, one each for public and private. These are typically used for administration and can be separately secured by VRA commands.
+
+Transit VLANs are for network devices like firewalls or load balancers so that they can route traffic while keeping other devices, such as servers or containers, isolated from the internet.
+
+In comparison, "gateway" VLANs are where devices, such as servers and containers, are hosted.
 
 The VRA can only manage VLANs that are associated with it through the Gateway Appliance.
 

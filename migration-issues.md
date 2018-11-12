@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-05-03"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -17,12 +16,10 @@ lastupdated: "2018-05-03"
 # Vyatta 5400 Common Migration Issues
 The following table illustrates common issues or behaior changes you may encounter after migrating from a Vyatta 5400 device to a IBM Virtual Router Appliance. In some cases, it includes workarounds to address the issues.
 
-This information was developed in collaboration with [Wanclouds](www.wanclouds.net), an IBM partner. For questions or more information on these issues, contact Wanclouds at info@wanclouds.net, or your IBM Cloud support team.. 
-
 ## Interface Based Global-State Policy for StateFul Firewall
 
 ### Issues
-The behavior when setting "State of State-policy" for stateful firewalls from release 5.1 has been changed. In versions prior to release 5.1, if you set `state - global -state -policy` of a stateful firewall, the vRouter automatically added an implicit `Allow` rule for return communication of the session Automatically.
+THe behavior when setting "State of State-policy" for stateful firewalls from release 5.1 has been changed. In versions prior to release 5.1, if you set `state - global -state -policy` of a stateful firewall, the vRouter automatically added an implicit `Allow` rule for return communication of the session Automatically.
 
 In release 5.1 and later you must add an `Allow` rule setting on the Virtual Router Appliance. The stateful setting works for interfaces on Vyatta 5400 devices, and for protocols on VRA devices.
 
