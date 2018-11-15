@@ -13,11 +13,14 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 # Technical FAQs
 The following frequently asked questions address the configuration of the IBM Virtual Router Appliance (VRA), and migrating to the VRA from Vyatta 5400.
 
 ## How do I allow Internet-bound traffic from hosts that are on a private vlan?
+{:faq}
+
 This traffic needs to obtain a public source IP, thus a Source NAT needs to masquerade the private IP with the public one of the VRA.
 
 ```
@@ -32,6 +35,8 @@ The configuration above only performs SNAT from traffic originating from servers
 This ensures it will not interfere with packets that already have an Internet-routeable source address.
 
 ## How can I filter Internet-bound traffic and only allow specifc protocols/destinations?
+{:faq}
+
 This is a common question when Source NAT and a firewall need to be combined.
 
 Please keep in mind the order of operations in the VRA when designing your rulesets.
@@ -76,6 +81,8 @@ Note that the combination of Source NAT and firewall achieves the required desig
 Ensure that the rules are appropriate for your design, and that no other rules would allow traffic that should be blocked. 
 
 ## How do I protect the VRA itself with a zone-based firewall?
+{:faq}
+
 The VRA does not have a `local zone`.
 
 You can utilise the Control Plane Policing (CPP) functionality instead as it is applied as a `local` firewall on loopback.
@@ -83,6 +90,8 @@ You can utilise the Control Plane Policing (CPP) functionality instead as it is 
 Note that this is a stateless firewall and you will need to explicitly allow the returning traffic of outbound sessions originating on the VRA itself.
 
 ## How do I restrict SSH and block connections coming from the internet?
+{:faq}
+
 It is considered a best practice to not allow SSH connections from the internet, and to use another means of accessing the private address, such as SSL VPN.
 
 By default, the VRA accepts SSH on all interfaces.
