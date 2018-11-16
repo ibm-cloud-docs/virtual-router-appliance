@@ -38,7 +38,7 @@ Vyatta was open source, PC-based router software that was acquired in full and t
 ## Is Vyatta 5400 still supported?
 {:faq}
 
-IBM will no longer support Vyatta 5400 as early as February 20, 2018.
+IBM will no longer support Vyatta 5400 as of March 31, 2019.
 
 ## What improvements does the Virtual Router Appliance (Vyatta 5600) have over the Vyatta 5400?
 {:faq}
