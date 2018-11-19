@@ -72,7 +72,7 @@ Use these comprehensive step-by-step guides to build and customize your Virtual 
 
 <div class = "solutionBox">
         <h3 id="scalable-webapp-kubernetes.html" class="solutionBoxTitle">
-            <a href = "../../../tutorials/secure-network-enclosure.html#isolate-workloads-with-a-secure-private-network">Isolate workloads with a secure private network</a>
+            <a href = "/docs/tutorials/secure-network-enclosure.html#isolate-workloads-with-a-secure-private-network">Isolate workloads with a secure private network</a>
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
@@ -87,7 +87,7 @@ Use these comprehensive step-by-step guides to build and customize your Virtual 
 
 <div class = "solutionBox">
         <h3 id="scalable-webapp-kubernetes.html" class="solutionBoxTitle">
-            <a href = "../../../tutorials/nat-config-private.html#configure-firewall-rules-for-internet-access-from-a-private-network">Configure firewall rules for Internet access from a private network</a>
+            <a href = "/docs/tutorials/nat-config-private.html#configure-firewall-rules-for-internet-access-from-a-private-network">Configure firewall rules for Internet access from a private network</a>
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
@@ -102,7 +102,7 @@ Use these comprehensive step-by-step guides to build and customize your Virtual 
 <div class = "solutionBoxContainer">
     <div class = "solutionBox">
         <h3 id="scalable-webapp-kubernetes.html" class="solutionBoxTitle">
-            <a href = "../../../tutorials/byoip.html#bring-your-own-ip-address">Bring Your Own IP Address</a>
+            <a href = "/docs/tutorials/byoip.html#bring-your-own-ip-address">Bring Your Own IP Address</a>
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
@@ -118,7 +118,7 @@ Use these comprehensive step-by-step guides to build and customize your Virtual 
  <div class = "solutionBoxContainer">
     <div class = "solutionBox">
         <h3 id="scalable-webapp-kubernetes.html" class="solutionBoxTitle">
-            <a href = "../../../tutorials/configuring-IPSEC-VPN.html#vpn-into-a-secure-private-network">VPN into a secure private network</a>
+            <a href = "/docs/tutorials/configuring-IPSEC-VPN.html#vpn-into-a-secure-private-network">VPN into a secure private network</a>
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">

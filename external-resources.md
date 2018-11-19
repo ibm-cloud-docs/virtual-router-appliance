@@ -30,7 +30,3 @@ These resources are created by IBM and some of our partners and customers.
 * [**Blog Post: Meet the Virtual Router Appliance**](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/)
 
     *"With the Virtual Router Appliance, you can turn your high-performance bare metal servers into enterprise-grade virtual routers, firewalls, and VPNs to fit your unique application requirements—all from a standalone appliance or a pair of high availability (HA) appliances."*
-    
-* [**White Paper: Securing Your Cloud Environment with Firewalls**](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=KUS12407USEN&)
-
-	*"Firewalls are essential to protecting your cloud infrastructure from external threats and supporting your compliance requirements. Security is a shared responsibility between IBM and our customers. It is critical to ensure that you have the right firewall in place to secure your workload in the cloud."*
