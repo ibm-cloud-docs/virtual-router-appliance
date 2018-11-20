@@ -36,10 +36,10 @@ Also, if you are using the `state enable` option in each rule instead of `global
 ## Zone-based policy: Local-zone handling
 
 ### Issues
-There is no "local-zone" pseudo-interface to assign to the zone-policy. 
+There is no "local-zone" pseudo-interface to assign to the zone-policy.
 
 ### Workaround
-This behavior can be simulated by applying a zone-based firewall to physical interfaces, and an interface-firewall to the loopback interface. The firewall in the loopback interface filters everything that ingress and egress from the router. 
+This behavior can be simulated by applying a zone-based firewall to physical interfaces, and an interface-firewall to the loopback interface. The firewall in the loopback interface filters everything that ingress and egress from the router.
 
 For example:
 
@@ -138,7 +138,7 @@ Use IPSec (VTI BASED).
 ### Issues
 With Vyatta 5400 devices, the following firewall rule is allowed:
 
-set firewall name allow rule 10 ipsec 
+set firewall name allow rule 10 ipsec
 
 However, with IBM Virtual Router appliance, there is no IPSec.
 
@@ -184,15 +184,15 @@ set security firewall name <name> rule <rule-no> protocol esp
 IPSec (Prefix-Based) does not work with DNAT.                                                                                                             
 
 ```
-server (10.71.68.245) -- vyatta 1 (11.0.0.1) 
-===S-S-IPsec=== (12.0.0.1) 
+server (10.71.68.245) -- vyatta 1 (11.0.0.1)
+===S-S-IPsec=== (12.0.0.1)
 vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
 The above snippet is a small setup example for DNAT translation after an IPSec packet has been decrypted in a Vyatta 5400. In the exmpale, there two vyattas, `vyatta1 (11.0.0.1)` and `vyatta2 (12.0.0.1)`. IPsec peering is established between `11.0.0.1` and `12.0.0.1`. In this case, the client is targeting `172.16.1.245` sourced from `10.103.0.1` end-to-end. The expected behavior of this scenario is that the destination address `172.16.1.245` will translate to `10.71.68.245` in the packet header.
 
-Initially, the Vyatta 5400 device was performing DNAT on the inbound IPSec, terminating the interface and returning traffic gracefully into the IPsec tunnel using the connection tracking table. 
+Initially, the Vyatta 5400 device was performing DNAT on the inbound IPSec, terminating the interface and returning traffic gracefully into the IPsec tunnel using the connection tracking table.
 
 On a Virtual Router Appliance, the configuration does not function the same. The session is created, however the return traffic bypasses the IPsec tunnel after the conntrack table reverses the DNAT change. The VRA then sends the packet on the wire without IPsec encryption.  The upstream device is not expecting this traffic and will most likely drop it. While end to end connectivity is broken, this is intended behavior.   
 
@@ -287,7 +287,7 @@ interfaces dataplane interface-name vrrp vrrp-group group-id notify
 
 ### Issues
 
-The intent of the following rule is to limit SSH connections to 3 every 30 seconds for SSH using any address: 
+The intent of the following rule is to limit SSH connections to 3 every 30 seconds for SSH using any address:
 
 ```
 set firewall name localGateway rule 300 action 'drop'
@@ -297,7 +297,6 @@ set firewall name localGateway rule 300 protocol 'tcp'
 set firewall name localGateway rule 300 recent count '3'
 set firewall name localGateway rule 300 recent time '30'
 set firewall name localGateway rule 300 state new 'enable'
-
 ```
 
 On the IBM Virtual Router Appliance, this rule has the following issues:
@@ -380,7 +379,7 @@ set policy route change-mss rule 1 tcp flags 'SYN
 ### Issues
 
 ```
-vyatta@v5600dallas09# set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote 
+vyatta@v5600dallas09# set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote
 Possible Completions:
    <Enter> Execute the current command
    port    Any TCP or UDP port
@@ -399,7 +398,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 local prefix '172.16.
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103.0.0/24'                                          set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote port 21 (ftp)
 ```
 
-## Significant change in logging behavior 
+## Significant change in logging behavior
 
 ### Issues
 There is a significant change in logging behavior between the Vyatta 5400 device and the IBM Virtual Router Appliance, from per-session to per-packet loging.
@@ -411,7 +410,7 @@ There is a significant change in logging behavior between the Vyatta 5400 device
 * The logging capability of the vRouter can be used to capture firewall activity. Like any logging function, you should only enable this if you are troubleshooting a particular problem, and disable the logging as soon as you can.
 
 The stateful firewall which manages Firewall / NAT sessions, writes in "session units". It is recommended to use session logging. Each setting example is described below:
- 
+
 **Session / logging**
 
 * `security firewall session-log <protocol>`
@@ -430,4 +429,4 @@ The stateful firewall which manages Firewall / NAT sessions, writes in "session 
 
 **QoS**
 
-* `policy qos name <policy-name> shaper class <class-id> match <rule-name>` 
+* `policy qos name <policy-name> shaper class <class-id> match <rule-name>`

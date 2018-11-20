@@ -114,7 +114,7 @@ Use these comprehensive step-by-step guides to build and customize your Virtual 
     </div>
  </div>
  </div>
- 
+
  <div class = "solutionBoxContainer">
     <div class = "solutionBox">
         <h3 id="scalable-webapp-kubernetes.html" class="solutionBoxTitle">
@@ -130,4 +130,5 @@ Use these comprehensive step-by-step guides to build and customize your Virtual 
     </div>
  </div>
  </div>
+    </div>
     </div>

@@ -120,9 +120,9 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* A vrrp sync-group is different than a vrrp group. When an interface that belongs in a sync-group changes state, all other members of the same sync-group will transition to the same state. 
+* A vrrp sync-group is different than a vrrp group. When an interface that belongs in a sync-group changes state, all other members of the same sync-group will transition to the same state.
 * The vrrp-group number of the VLAN interfaces (VIFs) do not have to be the same as one of the native interfaces, or of the other vlans. However, it is strongly suggested to keep all virtual addresses of the same vlan in one vrrp-group, as seen in VLAN 10.
-* The real interface addresses on the native vlans (e.g. dp0bond1: 169.110.20.28/29) are not always in the same subnet as their VIPs (169.110.21.26/29). 
+* The real interface addresses on the native vlans (e.g. dp0bond1: 169.110.20.28/29) are not always in the same subnet as their VIPs (169.110.21.26/29).
 
 ## Manual VRRP failover
 If you need to force a vrrp failover, it can be achieved by running the following on the device that currently is VRRP master:
@@ -149,9 +149,9 @@ The other VRA will have the same configuration, but a different `remote-peer`.
 Note that this can saturate a link if there is a high number of connections coming in on other interfaces, and will compete with other traffic on the declared link.
 
 ## VRRP Start Delay Feature
-Vyatta OS version 1801p and greater includes a new `vrrp` command. 
+Vyatta OS version 1801p and greater includes a new `vrrp` command.
 
-`vrrp` specifies an election protocol that dynamically assigns responsibility for a virtual router to one of the VRRP routers on a LAN. The VRRP router controlling the IPv4 or IPv6 address(es) associated with a virtual router is called the Master, and it forwards packets sent to these IPv4 or IPv6 addresses. The election process provides dynamic failover in the forwarding responsibility should the Master become unavailable. All protocol messaging is performed using either IPv4 or IPv6 multicast datagrams; as a result, the protocol can operate over a variety of multiaccess LAN technologies supporting IPv4/IPv6 multicast. 
+`vrrp` specifies an election protocol that dynamically assigns responsibility for a virtual router to one of the VRRP routers on a LAN. The VRRP router controlling the IPv4 or IPv6 address(es) associated with a virtual router is called the Master, and it forwards packets sent to these IPv4 or IPv6 addresses. The election process provides dynamic failover in the forwarding responsibility should the Master become unavailable. All protocol messaging is performed using either IPv4 or IPv6 multicast datagrams; as a result, the protocol can operate over a variety of multiaccess LAN technologies supporting IPv4/IPv6 multicast.
 
 To minimize network traffic, only the Master for each virtual router sends periodic VRRP Advertisement messages. A Backup router will not attempt to preempt the Master unless it has higher priority. This eliminates service disruption unless a more preferred path becomes available. It’s also possible to administratively prohibit all preemption attempts. If the Master becomes unavailable, then the highest-priority Backup will transition to Master after a short delay, providing a controlled transition of the virtual router responsibility with minimal service interruption.
 
@@ -160,7 +160,7 @@ To minimize network traffic, only the Master for each virtual router sends perio
 
 ### Preemption vs. No Preemption
 
-The `vrrp` protocol defines logic that decides which VRRP peer on a network has the higher priority, and as such , the best peer to perform the role as Master. With a default configuration, VRRP will be enabled to perform preemption, which means that a new higher priority peer on the network will force failover of the Master role. 
+The `vrrp` protocol defines logic that decides which VRRP peer on a network has the higher priority, and as such , the best peer to perform the role as Master. With a default configuration, VRRP will be enabled to perform preemption, which means that a new higher priority peer on the network will force failover of the Master role.
 
 When preemption is disabled, a higher priority peer will only failover the Master role if the existing lower priority peer is no longer available on the network. Disabling preemption is sometimes useful in real world scenarios, as it copes better with situations where the higher priority peer may have started to periodically flap due to reliability issues with the peer itself or one of its network connections. It is also useful to prevent the premature failover to a new higher priority peer which has not completed network convergence.
 
