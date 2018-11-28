@@ -36,7 +36,7 @@ The previous example is a standard bidirectional one-to-one source and destinati
 set protocols static interface-route 172.16.100.2/32 next-hop-interface 'vfp0'
 ```
 
-The reason for a static route is because the IPsec daemon has created a kernel route already for the remote prefix:
+The reason for using a static route is because the IPsec daemon has already created a kernel route for the remote prefix:
 
 ```
 K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
@@ -49,7 +49,7 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-This creates a more specific route for the traffic to take over `vfp0`. 
+This creates a more specific route for the traffic to take through `vfp0`. 
 
 At this point NAT will work as configured, and the traffic will travel through the tunnel. 
 
