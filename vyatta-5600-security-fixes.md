@@ -16,11 +16,27 @@ lastupdated: "2018-11-10"
 
 # AT&T Vyatta 5600 vRouter Software Patches
 
-**As of: November 2, 2018**
+**As of: November 20, 2018**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+## 1801u
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-44406 | Critical | With multiple subnet on same VIF low rate of transit traffic observed when compared to 5400 performance |
+| VRVDR-44253 | Minor | MSS clamping on bonding interface stops functioning after reboot |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-44277 | N/A | DSA-4332-1 | CVE-2018-16395, CVE-2018-16396: Debian DSA-4332-1 : ruby2.3 - security update |
+| VRVDR-44276 | N/A | DSA-4331-1 | CVE-2018-16839, CVE-2018-16842: Debian DSA-4331-1 : curl - security update |
 
 ## 1801t
 
