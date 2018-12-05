@@ -15,7 +15,7 @@ IBM Virtual Router Appliance
         upgrade-os.md
         upgrade-issues.md
 
-    [Explore Firewalls3](../docs/infrastructure/fortigate-10g/explore-firewalls.html)
+    [Explore Firewalls](../docs/infrastructure/fortigate-10g/explore-firewalls.html)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
