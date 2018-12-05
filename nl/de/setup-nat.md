@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# NAT-Regeln auf Vyatta konfigurieren
+# NAT-Regeln auf Vyatta 5400 konfigurieren
 Dieses Thema enthält Beispiele von NAT-Regeln (Network Address Translation), die auf Vyatta verwendet werden.
 
 ## Eins-zu-viele-NAT-Regel (Maskieren)
@@ -44,7 +44,7 @@ run show nat source translations detail
 
 Die Befehle unten zeigen, wie eine 1:1-NAT-Regel definiert wird. Beachten Sie, dass die Regelnummern niedriger sind als die der Maskierungsregel. Dadurch erhalten die 1-Regeln Vorrang vor den Eins-zu-viele-Regeln.
 
-**HINWEIS:** IP-Adressen, die 1:1-zugeordnet werden, können nicht maskiert werden. Wenn Sie eine eingehende IP übersetzen, müssen Sie die entsprechende ausgehende IP übersetzen, damit der Datenverkehr in beide Richtungen erfolgt.
+**HINWEIS:** IP-Adressen, die 1:1-zugeordnet werden, können nicht maskiert werden. Wenn Sie eine eingehende IP übersetzen, müssen Sie die entsprechende ausgehende IP übersetzen, damit der Datenverkehr in beide Richtungen erfolgen kann.
 
 Die folgenden Befehle sind für die Quellen- und Zielregel gedacht. Geben Sie im Konfigurationsmodus `show nat` ein, um die NAT-Regeltypen anzuzeigen.
 
@@ -66,7 +66,8 @@ commit
 
 Wenn der Datenverkehr an der IP `50.97.203.227` bei bond1 eintrifft, wird diese IP der IP `10.52.69.202` (in einer beliebigen definierten Schnittstelle) zugeordnet. Ausgehender Verkehr mit der IP `10.52.69.202` (in einer beliebigen definierten Schnittstelle) wird in die IP `50.97.203.227` übersetzt und an der Schnittstelle bond1 als ausgehender Verkehr fortgesetzt.
 
-**HINWEIS:** Verwenden Sie folgenden Befehl, um Fehler bei der NAT zu beheben: `run show nat source translations detail`.
+**HINWEIS:** IP-Adressen, die 1:1-zugeordnet werden, können nicht maskiert werden. Wenn Sie eine eingehende IP übersetzen, müssen Sie dieselbe ausgehende IP übersetzen, damit der Datenverkehr in beide Richtungen erfolgen kann.
+
 
 ## IP-Bereiche über Ihre VRA hinzufügen
 
@@ -94,10 +95,3 @@ Anwendung auf eine Zone:
 Anwendung auf eine bond-Schnittstelle:
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
-
-**HINWEISE:**
-
-* IP-Adressen, die 1:1 zugeordnet werden, können nicht maskiert werden. Wenn Sie eine eingehende IP übersetzen, müssen Sie dieselbe ausgehende IP übersetzen, damit der Datenverkehr in beide Richtungen erfolgen kann.
-
-* Verwenden Sie folgenden Befehl, um Fehler bei der NAT zu beheben: `run show nat source translations detail`. 
-

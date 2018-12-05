@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -13,11 +13,14 @@ lastupdated: "2017-12-22"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 # Häufig gestellte technische Fragen
 Die folgenden häufig gestellten Fragen betreffen die Konfiguration der IBM Virtual Router Appliance (VRA) und die Migration von Vyatta 5400 auf die VRA.
 
 ## Wie ermögliche ich Internetdatenverkehr von den Hosts in einem privaten VLAN?
+{:faq}
+
 Dieser Verkehr muss eine öffentliche Quellen-IP abrufen, da eine Source NAT die private IP mit der öffentlichen IP der VRA maskieren muss.
 
 ```
@@ -32,6 +35,8 @@ Die Konfiguration oben führt nur SNAT von dem Datenverkehr aus, der von den Ser
 Dadurch wird sichergestellt, dass Pakete, die bereits über eine Quellenadresse verfügen, die über das Internet weitergeleitet werden kann, nicht beeinträchtigt werden.
 
 ## Wie kann ich Internetdatenverkehr filtern und nur bestimmte Protokolle oder Ziele zulassen?
+{:faq}
+
 Dies ist eine allgemeine Frage, wenn Source NAT und eine Firewall kombiniert werden müssen.
 
 Bitte bedenken Sie die Reihenfolge der Operationen in der VRA, wenn Sie Ihren Regelsatz entwerfen.
@@ -76,6 +81,8 @@ Beachten Sie, dass die Kombination von Source NAT und Firewall das erforderliche
 Stellen Sie sicher, dass die Regeln Ihrem Design entsprechen und dass keine anderen Regeln Datenverkehr zulassen, der blockiert werden sollte. 
 
 ## Wie schütze ich die VRA selbst mit einer zonenbasierten Firewall?
+{:faq}
+
 Die VRA verfügt über keine `lokale Zone`.
 
 Sie können stattdessen die CPP-Funktion (Control Plane Policing) verwenden, da diese als eine `lokale` Firewall bei Loopback angewendet wird.
@@ -83,6 +90,8 @@ Sie können stattdessen die CPP-Funktion (Control Plane Policing) verwenden, da 
 Beachten Sie, dass dies eine statusunabhängige Firewall ist und dass Sie explizit die Rückgabe von Datenverkehr ausgehender Sitzungen, der von der VRA selbst stammt, zulassen müssen.
 
 ## Wie beschränke ich SSH und blockiere Verbindungen, die aus dem Internet kommen?
+{:faq}
+
 Ein bewährtes Verfahren ist es, keine SSH-Verbindungen vom Internet zuzulassen und andere Möglichkeiten für den Zugriff auf die private Adresse zu verwenden, zum Beispiel SSL VPN.
 
 Die VRA akzeptiert standardmäßig auf allen Schnittstelle SSH.

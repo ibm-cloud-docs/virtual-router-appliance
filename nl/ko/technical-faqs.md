@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -13,11 +13,14 @@ lastupdated: "2017-12-22"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 # 기술 FAQ
 다음 자주 묻는 질문은 IBM Virtual Router Appliance(VRA)의 구성과 Vyatta 5400에서 VRA로의 마이그레이션을 다룹니다.
 
 ## 사설 VLAN에 있는 호스트에서 인터넷 연결 트래픽을 허용할 수 있는 방법은 무엇입니까?
+{:faq}
+
 이 트래픽은 공용 소스 IP를 확보해야 하므로 소스 NAT는 공용 VRA가 포함된 사설 IP를 위장해야 합니다.
 
 ```
@@ -32,13 +35,15 @@ set service nat source rule 1000 translation address masquerade
 이를 통해 인터넷 라우트 가능 소스 주소가 이미 있는 패킷을 방해하지 않게 됩니다.
 
 ## 인터넷 연결 트래픽을 필터링하고 특정 프로토콜/대상만 허용하는 방법은 무엇입니까?
+{:faq}
+
 이는 소스 NAT와 방화벽을 결합해야 하는 경우의 일반적인 질문입니다.
 
 규칙 세트를 설계할 때 VRA의 오퍼레이션 순서에 유의하십시오.
 
 즉, 방화벽 규칙은 SNAT *뒤에* 적용됩니다.
 
-방화벽에서 특정 SNAT 플로우를 제외한 모든 출력 트래픽을 차단하기 위해 SNAT로 필터링 논리를 이동해야 할 수 있습니다.
+방화벽에서 특정 SNAT 플로우를 제외한 모든 출력 트래픽을 차단하기 위해 SNAT로 필터링 로직을 이동해야 할 수 있습니다.
 
 예를 들어, 호스트의 HTTPS 인터넷 연결 트래픽만 허용하기 위한 SNAT 규칙은 다음과 같습니다.
 
@@ -76,6 +81,8 @@ set security firewall name TO_INTERNET rule 20 state 'enable'
 규칙이 사용자의 설계에 적합하고 기타 규칙이 차단되어야 하는 트래픽을 허용하지 않는지 확인하십시오. 
 
 ## 구역 기반 방화벽을 통해 VRA 자체를 보호할 수 있는 방법은 무엇입니까?
+{:faq}
+
 VRA에는 `local zone`이 없습니다.
 
 loopback에서 `local` 방화벽으로 적용되므로 대신 CPP(Control Plane Policing) 기능을 활용할 수 있습니다.
@@ -83,6 +90,8 @@ loopback에서 `local` 방화벽으로 적용되므로 대신 CPP(Control Plane 
 이는 상태 비저장 방화벽이며 VRA 자체에서 생성된 아웃바운드 세션의 리턴하는 트래픽을 명시적으로 허용해야 합니다.
 
 ## SSH를 제한하고 인터넷에서 수신되는 연결을 제한하는 방법은 무엇입니까?
+{:faq}
+
 인터넷의 SSH 연결을 허용하지 않고 또 다른 사설 주소에 대한 액세스 수단(예: SSL VPN)을 사용하는 것이 우수 사례로 간주됩니다.
 
 기본적으로, 모든 인터페이스에서 VRA는 SSH를 허용합니다.

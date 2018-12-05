@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Renommer une unité VRA
+# Renommer un dispositif VRA
 
 Les passerelles réseau ont des noms uniques qui aident les utilisateurs à les identifier. A tout moment, un nom de passerelle peut être modifié. Il est recommandé d'utiliser une convention de dénomination cohérente pour identifier plus facilement les passerelles.
 

@@ -1,13 +1,13 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-26"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Vyatta 고가용성 구성
+# Vyatta 5400 고가용성 구성
 
 Vyatta 고가용성은 VRRP(Virtual Routing Redundancy Protocol)의 사용을 통해 지원됩니다. 각 게이트웨이 그룹에는 두 가지 기본 VRRP IP 주소(사설 및 네트워크의 공용 측)가 있습니다. 
 

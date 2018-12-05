@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -23,7 +23,7 @@ Gehen Sie wie folgt vor, um Ihr Betriebssystem erneut zu laden:
 2. Wählen Sie in der Dropdown-Liste den Eintrag **Einheitenliste** aus.
 3. Klicken Sie auf den Server, der erneut geladen werden soll.
 4. Wählen Sie im Dropdown-Menü **Aktionen** in der linken oberen Ecke der Seite die Option **Betriebssystem erneut laden** aus.
-5. Wählen Sie in der Anzeige für das erneute Laden des Betriebssystems alle Komponenten und Optionen aus, die beim erneuten Laden angewendet werden sollen. 
+5. Klicken Sie in der Anzeige zum erneuten Laden des Betriebssystems auf **Bearbeiten** für die Kategorie, für die eine Aktualisierung erforderlich ist. Wählen Sie als Anbieter **AT&T** aus und die Betriebssystemversion, die Sie erneut laden möchten. 
 6. Klicken Sie auf die Schaltfläche **Vorherige Konfiguration erneut laden**, um das Popup-Fenster **Überprüfen** zu öffnen. Klicken Sie auf **Abbrechen**, um die Änderungen zu verwerfen und das Fenster zu schließen.
 7. Überprüfen Sie, dass alle Details im Abschnitt 'Neue Konfiguration' korrekt sind. Klicken Sie auf **Weiter**, um das Popup-Fenster 'Bestätigen' zu öffnen.
 8. Klicken Sie auf die Schaltfläche **Erneutes Laden des Betriebssystems bestätigen**, um die Aktion zu bestätigen und das erneute Laden des Betriebssystems zu starten. Klicken Sie auf **Abbrechen**, um die Aktion abzubrechen.

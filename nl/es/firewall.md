@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -85,7 +85,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 En el conjunto de reglas, `ALLOW_LEGACY`, hay dos reglas definidas. La primera regla descarta cualquier tráfico que proviene de un grupo de dirección denominado `network-group1`. La segunda regla descarta y registra cualquier tráfico destinado para el puerto telnet (`tcp/23`) del grupo de dirección denominado `network-group2`. La acción predeterminada indica que se acepta cualquier otra acción.
 
 ## Cómo permitir el acceso de centro de datos
-IBM ofrece varias subredes IP para proporcionar servicios y soporte a los sistemas que se ejecutan en el centro de datos. Por ejemplo, los servicios de resolución de DNS se ejecutan en `10.0.80.11` y `10.0.80.12`. Otras subredes se utilizan durante el suministro y soporte. Encontrará los rangos de IP utilizados en los centros de datos [aquí](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+IBM ofrece varias subredes IP para proporcionar servicios y soporte a los sistemas que se ejecutan en el centro de datos. Por ejemplo, los servicios de resolución de DNS se ejecutan en `10.0.80.11` y `10.0.80.12`. Otras subredes se utilizan durante el suministro y soporte. Encontrará los rangos de IP utilizados en los centros de datos [aquí](/docs/infrastructure/hardware-firewall-dedicated/ips.html).
 
 Puede permite el acceso de centro de datos colocando las reglas `SERVICE-ALLOW` adecuadas al principio de los conjuntos de reglas de cortafuegos con la acción `accept`. El lugar en el que el conjunto de reglas debe aplicarse depende del diseño de cortafuegos y direccionamiento implementado.
 

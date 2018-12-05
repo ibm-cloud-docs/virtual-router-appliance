@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -83,7 +83,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 在规则集 `ALLOW_LEGACY` 中，定义了两个规则。第一个规则用于丢弃源自名为 `network-group1` 的地址组的所有流量。第二个规则用于废弃并记录来自名为 `network-group2` 的地址组且以 telnet 端口 (`tcp/23`) 为目标的所有流量。缺省操作指示接受其他所有流量。
 
 ## 允许访问数据中心
-IBM 提供多个 IP 子网，用于为在数据中心内运行的系统提供服务和支持。例如，DNS 解析器服务在 `10.0.80.11` 和 `10.0.80.12` 上运行。在供应和支持期间会使用其他子网。可以在[此处](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html)找到数据中心内使用的 IP 范围。
+IBM 提供多个 IP 子网，用于为在数据中心内运行的系统提供服务和支持。例如，DNS 解析器服务在 `10.0.80.11` 和 `10.0.80.12` 上运行。在供应和支持期间会使用其他子网。可以在[此处](/docs/infrastructure/hardware-firewall-dedicated/ips.html)找到数据中心内使用的 IP 范围。
 
 通过在防火墙规则集开头放置正确的 `SERVICE-ALLOW` 规则以及操作 `accept`，可允许访问数据中心。必须应用该规则集的位置取决于实现的路由和防火墙设计。
 

@@ -1,13 +1,13 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-25"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Vyatta での IPSec の構成方法
+# Vyatta 5400 上での IPSec の構成
 
 Brocade 5400 vRouter (Vyatta) デバイスは、インターネット・セキュリティー・プロトコル (IPSec) トンネルに関しては「ローカル」と見なされます。 以下の各コマンドがそれぞれ異なる機能を実行して IPSec サイト間が構成されます。 この IPSec サイト間の例は SoftLayer のパブリック・ネットワーク上のトンネルを示していることに注意してください。プライベート IPSec サイト間接続には **bond0** を使用してください。
 

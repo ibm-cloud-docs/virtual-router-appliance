@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -23,7 +23,7 @@ Pour recharger votre système d'exploitation, procédez comme suit :
 2. Sélectionnez **Liste des unités** dans la liste déroulante Unités.
 3. Cliquez sur le serveur que vous souhaitez recharger.
 4. Sélectionnez **Rechargement du système d'exploitation** dans le menu déroulant **Actions** situé en haut à gauche de la page.
-5. Dans l'écran Rechargement du système d'exploitation, sélectionnez les fonctions et options que vous voulez appliquer dans le cadre de ce rechargement. 
+5. Sur l'écran Rechargement du système d'exploitation, cliquez sur **Editer** pour la catégorie qui nécessite une mise à jour. Sélectionnez **AT&T** comme fournisseur et la version de système d'exploitation que vous souhaitez recharger. 
 6. Cliquez sur le bouton **Recharger configuration ci-dessus** pour accéder à la fenêtre contextuelle **Vérifier**. Cliquez sur **Annuler** pour annuler les modifications de l'unité et quitter l'écran.
 7. Vérifiez que les informations s'affichant dans la section Nouvelle configuration sont correctes. Cliquez sur **Suivant** pour passer à la fenêtre contextuelle de confirmation.
 8. Cliquez sur le bouton **Confirmer le rechargement du système d'exploitation** pour confirmer le rechargement et effectuer cette opération. Cliquez sur **Annuler** pour annuler l'action.

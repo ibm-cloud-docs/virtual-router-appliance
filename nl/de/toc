@@ -1,51 +1,83 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="virtual-router-appliance" audience="network" href="/docs/infrastructure/virtual-router-appliance/about.html"}
+{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance/about.html" path="infrastructure/virtual-router-appliance"}
 IBM Virtual Router Appliance
 
     {: .navgroup id="learn"}
     getting-started.md
     about.md
+    whats-new-vra.md
     vyatta-patch-notes.md
-    [Firewalls erkunden](../fortigate-10g/explore-firewalls.html)
-    vyatta-patch-notes.md
+
+    {: .topicgroup}
+    Handbuch zum Upgrade
+        upgrade-os.md
+        upgrade-issues.md
+
+    [Firewalls untersuchen](../fortigate-10g/explore-firewalls.html)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    access-gateway-appliances.md
-    access-gateway-details.md
-    vra-basics.md
-    rename-gateway.md
-    manage-vlans.md
-    vlans.md
-    services.md
+    step-by-step-pages.md
+
+    {: .topicgroup}
+    Allgemeine Schritte für VRA ausführen
+        access-gateway-appliances.md
+        access-gateway-details.md
+        vra-basics.md
+        rename-gateway.md
+
+    {: .topicgroup}
+    Mit VLANs arbeiten
+        manage-vlans.md
+        vlans.md
+
     firewall.md
-    vrrp.md
-    configuration-synchronization.md
+    services.md
+
+    {: .topicgroup}
+    Mit Hochverfügbarkeitskonfigurationen arbeiten
+        vrrp.md
+        configuration-synchronization.md 
+
+    {: .topicgroup}
+    IPsec- und VFP-Schnittstellen verwenden
+        vra-ipsec.md
+        vra-vfp.md
+        vra-nat.md
+        vra-vfp-troubleshooting.md
+
     configuration-backups.md
-    upgrade-os.md
     osreload-configuration.md
-    configure-ipsec.md
-    add-firewall-functions.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [Vyatta 5400 Migrationshandbuch](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)    
-    migration-issues.md
-    upgrade-issues.md
-    apis.md
-    [Virtual Router Appliance-API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
-    [IP-Bereiche von IBM Cloud](../hardware-firewall-dedicated/ips.html)
+    vyatta-5600-security-fixes.md
 
     {: .topicgroup}
-	Legacy Vyatta 5400
-		legacy-5400.md
-		basic-configuration-vyatta.md
-		how-configure-ipsec-vyatta.md
-		how-add-firewall-functions-vyatta-stateless-and-stateful.md
-		setup-nat.md
-		vyatta-high-availability-configuration.md
+    Informationen zur Virtual Router Appliance-API
+        apis.md
+        [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
+
+    [IBM Cloud-IP-Bereiche](../hardware-firewall-dedicated/ips.html)
+
+    {: .topicgroup}
+    Vorgängerprodukt Vyatta 5400
+        legacy-5400.md
+        Vyatta-5400-Security-Fixes.md
+        basic-configuration-vyatta.md
+        how-configure-ipsec-vyatta.md
+        how-add-firewall-functions-vyatta-stateless-and-stateful.md
+        setup-nat.md
+        vyatta-high-availability-configuration.md
+
+    {: .topicgroup}
+    Migration von Vyatta 5400
+        [Vyatta 5400 Migrationshandbuch](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
+        migration-issues.md
+
+    external-resource.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

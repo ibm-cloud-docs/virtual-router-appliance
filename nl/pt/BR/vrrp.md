@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-12"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -122,9 +121,9 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* Um grupo de sincronização VRRP é diferente de um grupo VRRP. Quando uma interface que pertence a um grupo de sincronização mudar de estado, todos os outros membros do mesmo grupo de sincronização serão transicionados para o mesmo estado. 
+* Um grupo de sincronização VRRP é diferente de um grupo VRRP. Quando uma interface que pertence a um grupo de sincronização mudar de estado, todos os outros membros do mesmo grupo de sincronização serão transicionados para o mesmo estado.
 * O número do grupo VRRP das interfaces VLAN (VIFs) não precisa ser o mesmo que uma das interfaces nativas ou das outras VLANs. No entanto, é altamente sugerido manter todos os endereços virtuais da mesma VLAN em um grupo VRRP, conforme visto na VLAN 10.
-* Os endereços da interface real nas VLANs nativas (por exemplo, dp0bond1: 169.110.20.28/29) nem sempre estão na mesma sub-rede que seus VIPs (169.110.21.26/29). 
+* Os endereços da interface real nas VLANs nativas (por exemplo, dp0bond1: 169.110.20.28/29) nem sempre estão na mesma sub-rede que seus VIPs (169.110.21.26/29).
 
 ## Failover manual do VRRP
 Se for necessário forçar um failover do VRRP, ele poderá ser obtido executando o seguinte no dispositivo que atualmente é o VRRP principal:
@@ -149,3 +148,53 @@ set service connsync remote-peer 10.124.10.4
 O outro VRA terá a mesma configuração, mas um `remote-peer` diferente.
 
 Observe que isso poderá saturar um link se houver um número alto de conexões entrando em outras interfaces e competirá com outro tráfego no link declarado.
+
+## Recurso de atraso de início do VRRP
+O S.O. Vyatta versão 1801p e superior inclui um novo comando `vrrp`.
+
+`vrrp` especifica um protocolo de eleição que designa dinamicamente a responsabilidade de um roteador virtual a um dos roteadores VRRP em uma LAN. O roteador VRRP que controla os endereços IPv4 ou IPv6 associados a um roteador virtual é chamado Principal e encaminha pacotes enviados para esses endereços IPv4 ou IPv6. O processo de eleição fornece failover dinâmico na responsabilidade de encaminhamento, caso o Principal se torne indisponível. Todo o sistema de mensagens de protocolo é executado usando datagramas multicast IPv4 ou IPv6; como resultado, o protocolo pode operar em uma variedade de tecnologias de LAN multiacesso que suportam multicast IPv4/IPv6.
+
+Para minimizar o tráfego de rede, apenas o Principal de cada roteador virtual envia mensagens periódicas de Propaganda de VRRP. Um roteador de Backup não tentará priorizar o Principal, a menos que ele tenha prioridade mais alta. Isso elimina a interrupção do serviço, a menos que um caminho mais preferencial se torne disponível. Também é possível proibir, administrativamente, todas as tentativas de preempção. Se o Principal se tornar indisponível, o Backup com prioridade mais alta será transicionado para Principal após um breve atraso, fornecendo uma transição controlada da responsabilidade do roteador virtual com interrupção mínima do serviço.
+
+**NOTA:** nas implementações provisionadas do IBM Cloud, o valor de atraso inicial é configurado para o valor padrão. Talvez você queira alterar isso a seu critério ao testar seus métodos de failover e de alta disponibilidade.
+
+
+### Preempção vs. sem preempção
+
+O protocolo `vrrp` define a lógica que decide qual peer do VRRP em uma rede tem a prioridade mais alta e, como tal, o melhor peer para executar a função como Principal. Com uma configuração padrão, o VRRP será ativado para executar preempção, o que significa que um novo peer de prioridade mais alta na rede forçará o failover da Função principal.
+
+Quando a preempção for desativada, um peer de prioridade mais alta só executará failover da função Principal se o peer de prioridade inferior existente não estiver mais disponível na rede. A desativação da preempção é, às vezes, útil em cenários do mundo real, já que é melhor lidar com situações em que o peer de prioridade mais alta pode ter começado a oscilar periodicamente devido a problemas de confiabilidade com o próprio peer ou uma de suas conexões de rede. Também é útil evitar o failover prematuro em um novo peer de prioridade mais alta que não tenha concluído a convergência de rede.
+
+### Suposições e limitações da preempção
+
+Se os peers do VRRP tiverem sido configurados para desativar a preempção, haverá alguns casos em que a preempção poderá “parecer” ocorrer, mas, na realidade, o cenário é apenas um failover padrão do VRRP. Conforme descrito acima, o VRRP usa datagramas IP multicast como um meio de confirmar a disponibilidade do roteador Principal atualmente selecionado. Como é um protocolo da camada 3 que está detectando falha de um peer VRRP, é importante que a detecção de failover no VRRP seja atrasada até que o VRRP e a camada 1 a 2 da pilha de rede estejam prontas e convergidas. Em alguns casos, a interface de rede que está executando o VRRP pode confirmar para o protocolo que a interface está ativa, mas outros serviços subjacentes, como a Árvore de amplitude ou a Ligação, podem não ter sido concluídos. Como resultado, a conectividade IP entre os peers não pode ser estabelecida. Se isso ocorrer, o VRRP em um novo peer mais alto se tornará Principal, já que não será possível detectar mensagens VRRP do peer principal atual na rede. Após a convergência, o breve período de tempo em que há dois peers VRRP Principais resultará na lógica dual do Principal de VRRP sendo executada, o peer de prioridade mais alta permanecerá o Principal e o de prioridade mais baixa se tornará o de Backup. Esse cenário pode “parecer” demonstrar uma falha na funcionalidade “sem preempção”.
+
+### Recurso de atraso de início
+
+Para acomodar os problemas associados a atraso na convergência dos níveis mais baixos da pilha de rede durante um evento de interface ativa, bem como outros fatores de contribuição, um novo recurso chamado “Atraso de inicialização” foi introduzido na correção 1801p. O recurso faz com que o estado do VRRP em uma máquina que foi “recarregada” permaneça no estado INIT até depois de um atraso predefinido, que pode ser configurado pelo operador de rede. A flexibilidade nesse valor de atraso permite que o operador de rede customize as características de sua rede e dispositivos em condições do mundo real.
+
+### Detalhes do comando
+
+```
+vrrp {
+start-delay <0-600>
+}
+```
+
+`start-delay` pode ter um valor entre 0 (padrão) e 600 segundos.
+
+### Configuração de exemplo
+
+```
+interfaces {
+  bonding dp0bond1 {
+address 161.202.101.206/29 mode balanced
+vrrp {
+      start-delay 120
+      vrrp-group 211 {
+preempt false
+priority 253
+virtual-address 161.202.101.204/29
+} }
+}
+```

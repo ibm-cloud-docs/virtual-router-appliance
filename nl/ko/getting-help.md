@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2018-02-28"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -23,6 +23,6 @@ IBM Virtual Router Appliance를 사용할 때 문제가 발생하거나 질문�
 * IBM Virtual Router Appliance에 대한 기술적인 질문이 있는 경우 [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud)에 질문을 게시하고 해당 질문에 "vra" 및 "ibm-cloud" 태그를 지정하십시오.
 * 서비스 및 시작하기 지시사항에 대한 질문이 있는 경우 [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud) 포럼을 사용하십시오. "vra" 및 "ibm-cloud" 태그를 포함시키십시오.
 
-포럼 사용에 대한 자세한 정보는 [도움 받기](https://console.bluemix.net/docs/support/index.html#getting-help)를 참조하십시오.
+포럼 사용에 대한 자세한 정보는 [도움 받기](/docs/support/index.html#getting-help)를 참조하십시오.
 
-IBM 지원 티켓 열기 또는 지원 레벨과 티켓 심각도에 대한 정보는 [지원 문의](https://console.bluemix.net/docs/support/index.html#contacting-support)를 참조하십시오.
+IBM 지원 티켓 열기 또는 지원 레벨과 티켓 심각도에 대한 정보는 [지원 문의](/docs/support/index.html#contacting-support)를 참조하십시오.

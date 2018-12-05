@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -13,11 +13,14 @@ lastupdated: "2017-12-22"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 # Preguntas técnicas más frecuentes (FAQ)
 Las siguientes preguntas frecuentes tratan sobre la configuración de IBM Virtual Router Appliance (VRA) y la migración a VRA desde Vyatta 5400.
 
 ## ¿Cómo permito el tráfico vinculado a Internet de hosts que están en una VLAN privada?
+{:faq}
+
 Este tráfico necesita obtener una dirección IP de origen público, por lo que se necesita un origen NAT para hacer pasar la IP privada por la IP pública de VRA.
 
 ```
@@ -32,6 +35,8 @@ La configuración anterior solo realiza SNAT de tráfico procedente de los servi
 De este modo, se garantiza que no interfiera con los paquetes que ya tienen una dirección de origen direccionable de Internet.
 
 ## ¿Cómo puedo filtrar el tráfico vinculado a Internet y permitir sólo protocolos/destinos específicos?
+{:faq}
+
 Esta es una pregunta habitual cuando se deben combinar un cortafuegos y NAT de origen.
 
 Tenga en cuenta el orden de las operaciones en VRA cuando diseñe los conjuntos de reglas.
@@ -76,6 +81,8 @@ Tenga en cuenta que la combinación de NAT de origen y cortafuegos logra el obje
 Asegúrese de que las reglas sean apropiadas para el diseño y de que no haya otras reglas que permitan el tráfico que se debe bloquear. 
 
 ## ¿Cómo protejo el propio VRA con un cortafuegos basado en zonas?
+{:faq}
+
 VRA no tiene `zona local`.
 
 En su lugar, puede utilizar la funcionalidad Control Plane Policing (CPP), ya que se aplica como cortafuegos `local` en bucle de retorno.
@@ -83,6 +90,8 @@ En su lugar, puede utilizar la funcionalidad Control Plane Policing (CPP), ya qu
 Tenga en cuenta que se trata de un cortafuegos sin estado y deberá permitir explícitamente el tráfico de retorno de sesiones de salida que se origina en VRA.
 
 ## ¿Cómo puedo restringir SSH y bloquear conexiones procedentes de Internet?
+{:faq}
+
 Se considera una práctica recomendada no permitir conexiones SSH de Internet y utilizar otros medios de acceso a la dirección privada, como VPN con SSL.
 
 De forma predeterminada, VRA acepta SSH en todas las interfaces.

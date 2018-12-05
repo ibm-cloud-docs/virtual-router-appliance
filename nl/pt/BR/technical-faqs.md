@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -13,11 +13,14 @@ lastupdated: "2017-12-22"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 # FAQs técnicas
 As perguntas mais frequentes a seguir tratam da configuração do IBM Virtual Router Appliance (VRA) e da migração do Vyatta 5400 para o VRA.
 
 ## Como permitir o tráfego ligado à Internet de hosts que estão em uma VLAN privada?
+{:faq}
+
 Esse tráfego precisa obter um IP de origem pública, portanto, um NAT de origem precisa mascarar o IP privado com aquele público do VRA.
 
 ```
@@ -32,6 +35,8 @@ A configuração acima só executa SNAT de tráfego originado de servidores na r
 Isso assegura que não haverá interferência com pacotes que já possuem um endereço de origem roteável pela Internet.
 
 ## Como posso filtrar o tráfego ligado à Internet e só permitir protocolos/destinos específicos?
+{:faq}
+
 Essa é uma pergunta comum quando o NAT de origem e um firewall precisam ser combinados.
 
 Lembre-se da ordem das operações no VRA quando projetar seus conjuntos de regras.
@@ -76,6 +81,8 @@ Observe que a combinação do NAT de origem e do firewall atinge o objetivo de d
 Assegure-se de que as regras sejam apropriadas para seu design e que nenhuma outra regra permita tráfego que deve ser bloqueado. 
 
 ## Como proteger o próprio VRA com um firewall baseado em zona?
+{:faq}
+
 O VRA não tem uma `local zone`.
 
 É possível utilizar a funcionalidade Control Plane Policing (CPP) como alternativa, uma vez que é aplicada como um firewall `local` no loopback.
@@ -83,6 +90,8 @@ O VRA não tem uma `local zone`.
 Observe que este é um firewall stateless e será necessário permitir explicitamente o tráfego de retorno de sessões de saída originadas no próprio VRA.
 
 ## Como restringir SSH e bloquear conexões provenientes da Internet?
+{:faq}
+
 Considera-se uma melhor prática não permitir conexões SSH da Internet e usar outro meio de acesso ao endereço privado, como SSL VPN.
 
 Por padrão, o VRA aceita SSH em todas as interfaces.

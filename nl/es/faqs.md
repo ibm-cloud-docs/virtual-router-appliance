@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -13,25 +13,36 @@ lastupdated: "2017-12-22"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 # Preguntas frecuentes
 Las siguientes son las preguntas más frecuentes cuando se trabaja con IBM Virtual Router Appliance (VRA).
 
-## ¿Qué es VRA? 
+## ¿Qué es un VRA? 
+{:faq}
+
 Virtual Router Appliance (VRA) le permite a un cliente de IBM Cloud direccionar de forma selectiva tráfico de red público y privado a través de un direccionador de empresa completo con cortafuegos, reforma de tráfico, direccionamiento basado en políticas, VPN y un host de otras funciones. Todas las características de VRA están gestionadas por el cliente. VRA le ofrece a un cliente de IBM Cloud un grado de control que normalmente se reserva para las redes sociales.
 
 ## ¿Qué es un dispositivo de pasarela? 
+{:faq}
+
 Un elemento fijo de dispositivo de pasarela le permite utilizar el portal web o la API para seleccionar los segmentos de red (VLAN) para direccionar un VRA. Puede cambiar las selecciones VLAN en cualquier momento. El dispositivo de pasarela también maneja la alta disponibilidad de VRA, configurando un segundo VRA como sustituto por si el primero falla.
 
 ## A veces veo referencias a término cómo "Vyatta" y "vRouter". ¿Cuál es la relación con VRA?
+{:faq}
+
 Vyatta era un software direccionador basado en PC de código abierto que se adquirió en su totalidad y se convirtió en un software de código cerrado. A día de hoy, "Vyatta" y "Vyatta OS" describen adaptaciones de software comercial derivado de ese proyecto de código cerrado. IBM VRA incorpora elementos de Vyatta OS, junto con importantes mejoras de características y servicio disponibles exclusivamente a través de IBM Cloud.
 
 "vRouter" fue un intento efímero de cambiar la imagen corporativa de Vyatta por parte del entonces propietario. Cuando aparece en la documentación, puede considerarse como sinónimo de Vyatta.
 
 ## ¿Todavía se ofrece soporte a Vyatta 5400?
-IBM dejará de ofrecer soporte a Vyatta 5400 a partir del 20 de febrero de 2018.
+{:faq}
+
+IBM dejará de ofrecer soporte a Vyatta 5400 a partir del 31 de marzo de 2019.
 
 ## ¿Qué mejoras tiene Virtual Router Appliance (Vyatta 5600) respecto a Vyatta 5400?
+{:faq}
+
 Vyatta 5600 ofrece las mejoras siguientes respecto a Vyatta 5400:
 
 - Un rendimiento más rápido, de hasta 10Gbps por núcleo de CPU
@@ -40,21 +51,33 @@ Vyatta 5600 ofrece las mejoras siguientes respecto a Vyatta 5400:
 - Soporte a las estándares soportados, incluida la encapsulación de Layer 2 Tunneling Protocol, versión 3 (L2TPv3), Internet Key Exchange, versión 2 (IKEv2), Secure Hash Algorithm 2 (SHA-2) y 802.1Q tunneling (Q-in-Q)
 
 ## ¿Qué ocurre con la oferta de vRouter 5600 AT&T?
+{:faq}
+
 AT&T (anteriormente Brocade) ha anunciado la finalización de Brocade vRouter 5600. Si bien Brocade vRouter 5600 proporciona la capacidad de tecnología subyacente para IBM Virtual Router Appliance, este anuncio no se aplica a los clientes de IBM. Los clientes de IBM seguirán recibiendo soporte para poder utilizarlo.
 
 ## ¿Cómo se suministra VRA? 
+{:faq}
+
 Puede obtener VRA solicitando una pasarela de red. Este proceso simplificado le permite eligir un centro de datos y un servidor VRA adecuados, así como si desea desplegar una alta disponibilidad de VRA. Los servidores, los sistemas operativos y el elemento fijo de dispositivos de pasarela se suministran de manera automática. Cuando se complete, puede utilizar la interfaz de un dispositivo de pasarela para direccionar VLAN mediante VRA. Puede configurar VRA directamente mediante SSH (Secure Shell) con las contraseñas proporcionadas en la sección Detalles de hardware del Portal de clientes.
 
 ## ¿Es segura mi contraseña? 
+{:faq}
+
 Sí. Se asignan contraseñas aleatorias a todos los VRA que son visibles solo para el titular de la cuenta. Las contraseñas se pueden cambiar fácilmente, de igual forma que las claves públicas SSH y las restricciones de acceso IP de administrador.
 
 ## ¿Puedo obtener VRA sin un dispositivo de pasarela? 
+{:faq}
+
 Sí, pero solo puede gestionar el tráfico entre las interfaces públicas y privadas de VRA. VLAN y la alta disponibilidad requieren el elemento fijo del dispositivo de pasarela.
 
 ## ¿Se envía todo el tráfico a través de VRA? 
+{:faq}
+
 No. El dispositivo de pasarela le permite seleccionar los segmentos de red pública y privada (VLAN) que desea direccionar mediante VRA. Puede cambiar e ignorar las selecciones VLAN en cualquier momento. VRA también le permite definir las reglas que se aplican a las subredes o rangos de IP. Las reglas funcionan solo si las VLAN que contienen dichas subredes se direccionan mediante VRA.
 
 ## ¿Puede VRA o un cortafuegos dedicado impedir nuevas provisiones de servidor? 
+{:faq}
+
 Sí. Siempre que sea posible, no debería cerrar la red hasta que la haya rellenado con los servidores que tiene pensado utilizar.
 
 El soporte de IBM tiene prohibido por política examinar o alterar VRA o la configuración del cortafuegos dedicado sin la participación explícita de un cliente, por lo que en la mayoría de los casos el soporte no puede saber si un VRA es responsable de provisiones de servidores detenidas o erróneas.
@@ -64,9 +87,13 @@ Es responsabilidad del cliente asegurarse de que VRA o el cortafuegos están con
 Del mismo modo, si un VRA/cortafuegos se ignora después de realizar un pedido, sigue siendo probable que el pedido falle. Es posible que haya una ventana estrecha durante la que se reintentará automatización. Es mejor que el todo el proceso de suministro proceda sin interferencias en la red.
 
 ## ¿Qué productos de cortafuegos ofrece IBM?
-Para ver una comparación detallada de todos los productos de cortafuegos que se ofrecen en IBM Cloud, consulte este [tema ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.bluemix.net/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
+{:faq}
+
+Para ver una comparación detallada de todos los productos de cortafuegos que se ofrecen en IBM Cloud, consulte este [tema ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
 
 ## ¿Puede confundir VRA la tarea del soporte al cliente? 
+{:faq}
+
 Sí, por las razones descritas anteriormente. VRA es una "caja negra": las VLAN están dentro y se pueden sacar, e IBM no tiene ni idea de qué están haciendo los clientes entre los paquetes.
 
 El soporte siempre hace todo lo posible, pero con VRA y el cortafuegos dedicado: a) la privacidad de cliente supera la conectividad y b) nuestro personal de soporte no está equipado para analizar las configuraciones de cortafuegos/VRA muy complejas o mal formadas.
@@ -74,11 +101,15 @@ El soporte siempre hace todo lo posible, pero con VRA y el cortafuegos dedicado:
 Como primer paso de diagnóstico, es posible que necesite poner su VRA o VLAN de cortafuegos en modo ignorar. Si, en este estado, las disposiciones que han fallado empiezan a funcionar, debemos suponer que el problema se encuentra en la configuración del cortafuegos/VRA.
 
 ## ¿Qué efecto tendrá VRA en mi rendimiento de red? 
+{:faq}
+
 Tenga en cuenta que aunque no pueden verlo, una nube pública comparte las redes con otros clientes. El mejor rendimiento de VRA se determina por la capacidad de red disponible en un momento determinado, además de la distancia que deben recorrer los datos.
 
 Dejando estas variables a un lado, VRA es capaz de reenviar 80 Gbps de tráfico no modificado en varias interfaces, utilizando la fórmula de modo que cada 10 Gbps de rendimiento requiere un núcleo de procesador completo (sin incluir hyper-thread). Dado que los servidores actuales alcanzan el máximo a los 40 Gbps (2 x 10 Gbps público + 2 x 10 Gb privado), un servidor con 8 núcleos o más tiene suficiente margen dinámico de cálculo para manejar varias características de VRA comunes en el mejor rendimiento de red
 
 ## ¿Qué debo hacer si pierdo la contraseña de VRA?
+{:faq}
+
 Si hay acceso al sistema, establezca una nueva contraseña ejecutando el mandato siguiente:
 
 ```
@@ -88,6 +119,8 @@ set system login user [account] authentication plaintext-password [password]  
 Si no hay acceso al sistema, puede rearrancar el dispositivo y utilizar la opción de recuperación de contraseña en el menú GRUB para restablecer la contraseña de usuario root.
 
 ## ¿Qué debo hacer si el cortafuegos se ha bloqueado?
+{:faq}
+
 La construcción `reboot at [time]` puede ser útil al probar reglas de cortafuegos potencialmente peligrosas.
 
 Si la regla funciona, utilice el mandato `reboot cancel` para cancelar el rearranque. Si la regla le bloquea el acceso, espere al próximo rearranque planificado..
@@ -113,6 +146,7 @@ Si hay acceso mediante IPMI, puede realizar las acciones siguientes para recuper
 **NOTA:** El uso incorrecto de estos mandatos puede borrar la configuración de la interfaz.
 
 ## ¿Cómo puedo inhabilitar los inicios de sesión como root para VRA?
+{:faq}
 
 Para habilitar el acceso como usuario root mediante SSH, ejecute el mandato siguiente:
 

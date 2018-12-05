@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -85,7 +85,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 No conjunto de regras, `ALLOW_LEGACY`, há duas regras definidas. A primeira regra elimina qualquer tráfego originado de um grupo de endereços denominado `network-group1`. A segunda regra descarta e registra qualquer tráfego destinado para a porta telnet (`tcp/23`) do grupo de endereços denominado `network-group2`. A ação padrão indica que qualquer outra coisa é aceita.
 
 ## Permitindo o Acesso ao Data Center
-A IBM oferece várias sub-redes IP para fornecer serviços e suporte para sistemas em execução dentro do data center. Por exemplo, os serviços do resolvedor de DNS estão em execução em `10.0.80.11` e `10.0.80.12`. Outras sub-redes são usadas durante o fornecimento e o suporte. É possível localizar os intervalos de IP usados nos data centers [aqui](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+A IBM oferece várias sub-redes IP para fornecer serviços e suporte para sistemas em execução dentro do data center. Por exemplo, os serviços do resolvedor de DNS estão em execução em `10.0.80.11` e `10.0.80.12`. Outras sub-redes são usadas durante o fornecimento e o suporte. É possível localizar os intervalos de IP usados nos data centers [aqui](/docs/infrastructure/hardware-firewall-dedicated/ips.html).
 
 É possível permitir acesso ao data center colocando as regras `SERVICE-ALLOW` adequadas no início dos conjuntos de regras de firewall com uma ação igual a `aceitar`. Onde o conjunto de regras deve ser aplicado depende do roteamento e do design de firewall que estão sendo implementados.
 
@@ -107,7 +107,7 @@ Como um exemplo, para designar o conjunto de regras `ALLOW_LEGACY` para a opçã
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## Policiamento de Plano de Controle (CPP)
-O Control plane policing (CPP) fornece proteção contra ataques no Virtual Router Appliance, permitindo a configuração de políticas de firewall designadas a interfaces desejadas e aplicando essas políticas aos pacotes que entram no VRA.
+O Policiamento de Plano de Controle (CPP) fornece proteção contra ataques no Virtual Router Appliance, permitindo configurar políticas de firewall designadas às interfaces desejadas e aplicando essas políticas aos pacotes que entram no VRA.
 
 O CPP é implementado quando a palavra-chave `local` é usada em políticas de firewall que são designadas a qualquer tipo de interface de VRA, tais como interfaces de plano de dados ou loopback. Ao contrário das regras de firewall aplicadas para pacotes que atravessam o VRA, a ação padrão de regras de firewall para o tráfego que entra ou sai do plano de controle é `Allow`. Os usuários deverão incluir regras de descarte explícitas se o comportamento padrão não será desejado.
 

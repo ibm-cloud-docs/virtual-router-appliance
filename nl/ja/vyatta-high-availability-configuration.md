@@ -1,13 +1,13 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-26"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Vyatta 高可用性構成
+# Vyatta 5400 高可用性構成
 
 Vyatta 高可用性は、VRRP (Virtual Routing Redundancy Protocol) の使用を介してサポートされます。 各ゲートウェイ・グループには 2 つのプライマリー VRRP IP アドレスがあります。1 つはプライベート用、もう 1 つはネットワークのパブリック・サイド用です。 
 

@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-12"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -122,9 +121,9 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* Un grupo de sincronización (sync-group) de vrrp es diferente a un grupo de vrrp. Cuando cambia el estado de una interfaz que pertenece a un grupo de sincronización, los demás miembros del mismo grupo de sincronización cambian al mismo estado. 
+* Un grupo de sincronización (sync-group) de vrrp es diferente a un grupo de vrrp. Cuando cambia el estado de una interfaz que pertenece a un grupo de sincronización, los demás miembros del mismo grupo de sincronización cambian al mismo estado.
 * El número de vrrp-group de las interfaces de VLAN (VIF) no tiene que ser el mismo que el de las interfaces nativas o que el de las demás vlan. Sin embargo, se recomienda mantener todas las direcciones virtuales de la misma VLAN en un vrrp-group, como se ve en VLAN 10.
-* Las direcciones de la interfaz real de las vlan nativas (por ejemplo dp0bond1: 169.110.20.28/29) no siempre están en la misma subred que sus VIP (169.110.21.26/29). 
+* Las direcciones de la interfaz real de las vlan nativas (por ejemplo dp0bond1: 169.110.20.28/29) no siempre están en la misma subred que sus VIP (169.110.21.26/29).
 
 ## Migración tras error de VRRP manual
 Si necesita forzar una migración tras error de vrrp, puede lograrlo mediante la ejecución del siguiente mandato en el dispositivo maestro de VRRP:
@@ -149,3 +148,53 @@ set service connsync remote-peer 10.124.10.4
 El otro VRA tendrá la misma configuración, pero un igual remoto `remote-peer` distinto.
 
 Tenga en cuenta que esto puede saturar un enlace si hay un gran número de conexiones que entran en otras interfaces, y competirá con otro tráfico en el enlace declarado.
+
+## Característica VRRP Start Delay
+Ahora el sistema operativo Vyatta versión 1801p y posteriores incluye un nuevo mandato `vrrp`.
+
+`vrrp` especifica un protocolo de elección que asigna dinámicamente la responsabilidad de un direccionador virtual a uno de los direccionadores VRRP de una LAN. El direccionador de VRRP que controla las direcciones IPv4 o IPv6 asociadas a un direccionador virtual se denomina el maestro y reenvía paquetes enviados a estas direcciones IPv4 o IPv6. El proceso de elección proporciona una migración tras error dinámica en cuanto a la responsabilidad del reenvío si el maestro deja de estar disponible. Toda la mensajería de protocolo se realiza utilizando datagramas de multidifusión de IPv4 o IPv6; como resultado, el protocolo puede operar a través de una variedad de tecnologías de LAN multiacceso que dan soporte a la multidifusión IPv4/IPv6.
+
+Para minimizar el tráfico en la red, solo el maestro de cada direccionador virtual envía mensajes periódicos de anuncio de VRRP. Un direccionador de copia de seguridad no intentará sustituir al maestro a menos que tenga una prioridad superior. Esto elimina la interrupción del servicio a menos que esté disponible una vía de acceso preferida. También es posible prohibir administrativamente todos los intentos de sustitución. Si el maestro deja de estar disponible, la copia de seguridad de prioridad más alta se convertirá en maestro después de un breve retardo, proporcionando una transición controlada de la responsabilidad de direccionador virtual con una interrupción de servicio mínima.
+
+**NOTA:** en los despliegues suministrados por IBM Cloud, el valor de retardo inicial está establecido en el valor predeterminado. Si lo desea puede modificarlo a medida que pruebe los métodos de migración tras error y de alta disponibilidad.
+
+
+### Preferencia frente a no preferencia
+
+El protocolo `vrrp` define la lógica que decide qué igual VRRP de una red tiene la prioridad más alta, y, como tal, es el mejor igual para adoptar el rol de maestro. Con una configuración predeterminada, VRRP se habilitará para realizar la sustitución, lo que significa que un nuevo igual con prioridad superior de la red forzará una migración tras error del rol de maestro.
+
+Cuando la preferencia está inhabilitada, un igual de prioridad superior solo tendrá que migrar tras error el rol de maestro si el igual de prioridad inferior existente ya no está disponible en la red. La inhabilitación de la preferencia resulta a veces útil en escenarios del mundo real, ya que gestiona mejor situaciones en las que el igual de prioridad superior puede haber empezado a comportarse de forma inestable periódicamente debido a problemas de fiabilidad con el propio igual o con una de sus conexiones de red. También resulta útil para evitar una migración tras error prematura a un nuevo igual de prioridad superior que no ha completado la convergencia de red.
+
+### Supuestos y limitaciones de la preferencia
+
+Si los iguales VRRP se han configurado de modo que inhabilitan la sustitución, hay algunos casos en los que puede "aparecer" que se produce la sustitución, pero en realidad el escenario es sólo una migración tras error de VRRP estándar. Tal como se ha descrito anteriormente, VRRP utiliza datagramas de multidifusión IP como medio para confirmar la disponibilidad del direccionador maestro actualmente elegido. Puesto que es un protocolo de capa 3 que detecta el error de un igual VRRP, es importante que la detección de la migración tras error en VRRP se retrase hasta que VRRP y la capa 1 a 2 de la pila de red estén listos y converjan. En algunos casos, la interfaz de red que ejecuta VRRP puede confirmar ante el protocolo que la interfaz está activa, pero puede que otros servicios subyacentes, como el árbol de expansión o Bonding, no se hayan completado. Como resultado, no se puede establecer la conectividad IP entre iguales. Si esto ocurre, VRRP en un nuevo igual superior se convertirá en maestro, ya que no puede detectar mensajes de VRRP del igual maestro actual en la red. Después de la convergencia, el breve periodo de tiempo en el que hay dos pares VRRP maestros dará como resultado que se ejecute la doble lógica maestra de VRRP, el igual de prioridad superior seguirá siendo maestro y el de prioridad inferior se convertirá en copia de seguridad. Este caso de ejemplo puede "aparecer" para demostrar una anomalía en la funcionalidad de "sin sustitución".
+
+### Característica Start Delay
+
+Para solucionar los problemas asociados al retraso en la convergencia de niveles inferiores de la pila de red durante un suceso de activación de interfaz, así como otros factores que contribuyen, se ha incorporado una nueva característica denominada “Startup Delay” en el parche 1801p. La característica hace que el estado de VRRP de una máquina que se ha "recargado" para permanecer en el estado INIT hasta después de un retraso predefinido pueda ser configurada por el operador de red. La flexibilidad en este valor de retardo permite al operador de red personalizar las características de su red y dispositivos en condiciones reales.
+
+### Detalles del mandato
+
+```
+vrrp {
+start-delay <0-600>
+}
+```
+
+`start-delay` puede tener un valor comprendido entre 0 (valor predeterminado) y 600 segundos.
+
+### Configuración de ejemplo
+
+```
+interfaces {
+  bonding dp0bond1 {
+address 161.202.101.206/29 mode balanced
+vrrp {
+      start-delay 120
+      vrrp-group 211 {
+preempt false
+priority 253
+virtual-address 161.202.101.204/29
+} }
+}
+```

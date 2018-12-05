@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-05-03"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,35 +14,36 @@ lastupdated: "2018-05-03"
 {:download: .download}
 
 # Problèmes de migration courants pour Vyatta 5400
-Le tableau ci-après illustre les problèmes ou les changements de comportement courants que vous pouvez rencontrer après la migration à partir d'un périphérique Vyatta 5400 vers un dispositif IBM Virtual Router Appliance. Dans certains cas, il propose des solutions de contournement. 
+Le tableau ci-après illustre les problèmes ou les changements de comportement courants que vous pouvez rencontrer après la migration à partir d'un périphérique Vyatta 5400 vers un dispositif IBM Virtual Router Appliance. Dans certains cas, il propose des solutions de contournement.
 
 ## Règle Global-State basée sur l'interface pour le pare-feu avec état
 
 ### Problèmes
-Le comportement lors de la définition de "State of State-policy" pour les pare-feu avec état à partir de l'édition 5.1 a changé. Dans les versions antérieures à l'édition 5.1, si vous définissiez `state - global -state -policy` pour un pare-feu avec état, le dispositif vRouter ajoutait automatiquement une règle `Allow` implicite pour la communication en retour de la session. 
+Le comportement lors de la définition de "State of State-policy" pour les pare-feu avec état à partir de l'édition 5.1 a changé. Dans les versions antérieures à l'édition 5.1, si vous définissiez `state - global -state -policy` pour un pare-feu avec état, le dispositif vRouter ajoutait automatiquement une règle `Allow` implicite pour la communication en retour de la session.
 
-A partir de l'édition 5.1, vous devez ajouter un paramètre de règle `Allow` sur le dispositif VRA (Virtual Router Appliance). Le paramètre avec état fonctionne par interface sur les périphériques Vyatta 5400 et par protocole sur les dispositifs VRA. 
+A partir de l'édition 5.1, vous devez ajouter un paramètre de règle `Allow` sur le dispositif VRA (Virtual Router Appliance). Le paramètre avec état fonctionne pour les interfaces sur les unités Vyatta 5400 et pour les protocoles sur les unités VRA. 
 
 ### Solutions de contournement
-Si la règle `firewall-in` est appliquée à une interface d'entrée/interne, la règle `Firewall-out` doit être appliquée sur l'interface de sortie/externe. Sinon, le trafic de retour sera supprimé au niveau de l'interface de sortie/externe.         
+Si la règle `firewall-in` est appliquée à une interface d'entrée/interne, la règle `Firewall-out` doit être appliquée sur l'interface de sortie/externe. Sinon, le trafic de retour sera supprimé au niveau de l'interface de sortie/externe.        
 
 ## Utilisation de State-Enable dans les règles de pare-feu
 
 ### Problèmes
-Si `global-state-policy` n'est pas configuré, ce changement de comportement n'est pas affecté. 
+Si `global-state-policy` n'est pas configuré, ce changement de comportement n'est pas affecté.
 
-De plus, si vous utilisez l'option `state enable` dans chaque règle au lieu de `global-state-policy`, le changement de comportement n'est pas affecté. 
+De plus, si vous utilisez l'option `state enable` dans chaque règle au lieu de `global-state-policy`, le changement de comportement n'est pas affecté.
 
 ## Règle basée sur une zone : traitement local-zone
 
 ### Problèmes
-Il n'existe aucune pseudo-interface "local-zone" à affecter à la règle basée sur une zone.  
+Il n'existe aucune pseudo-interface "local-zone" à affecter à la règle basée sur une zone.
 
 ### Solution de contournement
-Ce comportement peut être simulé en appliquant un pare-feu basé sur une zone à des interfaces physiques et un pare-feu d'interface à l'interface de bouclage. Le pare-feu situé dans l'interface de bouclage filtre tout ce qui rentre et sort à partir du routeur.  
+Ce comportement peut être simulé en appliquant un pare-feu basé sur une zone à des interfaces physiques et un pare-feu d'interface à l'interface de bouclage. Le pare-feu situé dans l'interface de bouclage filtre tout ce qui rentre et sort à partir du routeur.
 
 Par exemple :
 
+```
 set security zone-policy zone internal default-action 'drop'
 set security zone-policy zone internal description 'Private zone'
 set security zone-policy zone internal interface 'dp0bond0'
@@ -87,7 +87,7 @@ Un nouveau schéma de routage est requis pour le dispositif VRA :
 ## Table de routage basée sur une règle
 
 ### Problèmes
-Le mot "Table" dans les configurations est facultatif dans le routage basé sur la règle pour v5400, mais pour le dispositif VRA, si l'action est `accept` la zone **Table** est obligatoire. Si l'action est `drop` sur la configuration de dispositif VRA, la zone Table est facultative.
+Le mot "Table" dans les configurations est facultatif dans le routage basé sur la règle pour v5400, mais pour le dispositif VRA, si l'action est `accept`, la zone **Table** est obligatoire. Si l'action est `drop` sur la configuration VRA, la zone Table est facultative. 
 
 ### Solutions de contournement
 "Table Main" est une option disponible dans le routage basé sur la règle pour Vyatta 5400. L'équivalent dans le dispositif VRA est "routing-instance default".
@@ -97,29 +97,34 @@ Le mot "Table" dans les configurations est facultatif dans le routage basé sur 
 ### Problèmes
 Sur le dispositif VRA (Virtual Router Appliance), des règles PBR (Policy Based Routing) peuvent être appliquées aux interfaces de plan de données pour le trafic entrant, mais pas pour les interfaces non numérotée de bouclage, de tunnel, de pont, OpenVPN, VTI et d'adresse IP.
 
+
 ### Solutions de contournement
 Il n'existe actuellement aucune solution de contournement pour ce problème.
+
 
 ## TCP-MSS
 
 ### Problèmes
 IBM Virtual Router Appliance utilise nftables et ne prend pas en charge TCP-MSS.
 
+
 ### Solutions de contournement
 Il n'existe actuellement aucune solution de contournement pour ce problème.
+
 
 ## OpenVPN
 
 ### Problèmes
-OpenVPN ne se lance pas lorsque le paramètre `push-route` est utilisé sur le dispositif Virtual Router Appliance.
+OpenVPN ne se lance pas lorsque le paramètre `push-route` est utilisé sur le dispositif Virtual Router Appliance. 
 
 ### Solutions de contournement
-Utilisez le paramètre `openvpn-option` à la place de `push-route`.
+Utilisez le paramètre `openvpn-option` au lieu du paramètre `push-route`.
 
 ## GRE/VTI sur IPSEC + OSPF
 
 ### Problèmes
 * Lorsque plusieurs sous-réseaux sont configurés pour VIF, le trafic ne peut pas traverser ces sous-réseaux dans le dispositif VRA.
+                                             
 * InterVlan Routing ne fonctionne pas sur le dispositif VRA.
 
 ### Solutions de contournement
@@ -136,14 +141,14 @@ Utilisez IPSec (basé sur VTI).
 ## IPSEC 'match-none"
 
 ### Problèmes
-Avec des périphériques Vyatta 5400, la règle de pare-feu suivante est autorisée :
+Avec des unités Vyatta 5400, la règle de pare-feu suivante est autorisée :
 
-set firewall name allow rule 10 ipsec 
+set firewall name allow rule 10 ipsec
 
 Toutefois, avec IBM Virtual Router Appliance, il n'existe aucun IPSec.
 
 ### Solutions de contournement
-Les autres règles possibles pour les périphériques VRA sont les suivantes :
+Les autres règles possibles pour les périphériques VRA sont les suivantes : 
 
 ```
    match-ipsec  Inbound IPsec packets
@@ -153,7 +158,7 @@ Les autres règles possibles pour les périphériques VRA sont les suivantes :
 ## IPSEC 'match-ipsec"
 
 ### Problèmes
-Avec des périphériques Vyatta 5400, les règles de pare-feu suivantes sont autorisées :
+Avec des unités Vyatta 5400, les règles de pare-feu suivantes sont autorisées :
 
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
@@ -181,20 +186,20 @@ set security firewall name <name> rule <rule-no> protocol esp
 ## IPSEC de site à site avec DNAT
 
 ### Problèmes
-IPSec (basé sur le préfixe) ne fonctionne pas avec DNAT.
+IPSec (basé sur le préfixe) ne fonctionne pas avec DNAT.                                                                                                             
 
 ```
-server (10.71.68.245) -- vyatta 1 (11.0.0.1) 
-===S-S-IPsec=== (12.0.0.1) 
+server (10.71.68.245) -- vyatta 1 (11.0.0.1)
+===S-S-IPsec=== (12.0.0.1)
 vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
-Le fragment de code ci-dessus est un petit exemple d'installation et de configuration pour la conversion DNAT après qu'un paquet IPSec a été déchiffré dans un Vyatta 5400. L'exemple illustre deux vyattas, `vyatta1 (11.0.0.1)` et `vyatta2 (12.0.0.1)`. L'appairage IPsec est établi entre 11.0.0.1` et `12.0.0.1`. Dans ce cas, le client cible l'adresse '172.16.1.245' à partir de l'adresse source '10.103.0.1' de bout en bout. Le comportement attendu de ce scénario est que l'adresse de destination `172.16.1.245` est convertie en `10.71.68.245` dans l'en-tête de paquet.
+Le fragment de code ci-dessus est un petit exemple d'installation et de configuration pour la conversion DNAT après qu'un paquet IPSec a été déchiffré dans un Vyatta 5400. L'exemple illustre deux unités vyatta, `vyatta1 (11.0.0.1)` et `vyatta2 (12.0.0.1)`. L'appairage IPsec est établi entre `11.0.0.1` et `12.0.0.1`. Dans ce cas, le client cible l'adresse `172.16.1.245` à partir de l'adresse source `10.103.0.1` de bout en bout. Le comportement attendu de ce scénario est que l'adresse de destination `172.16.1.245` est convertie en `10.71.68.245` dans l'en-tête de paquet. 
 
 Initialement, le périphérique Vyatta 5400 effectuait une action DNAT sur l'IPSec entrant, en mettant fin à l'interface et en renvoyant gracieusement le trafic dans le tunnel IPsec à l'aide du tableau de suivi de connexion.
 
-Sur un dispositif VRA (Virtual Router Appliance), la configuration ne fonctionne pas de la même façon. La session est créée, mais, le trafic de retour ignore le tunnel IPsec après que la table conntrack inverse le changement DNAT. Le dispositif VRA envoie ensuite le paquet sur le réseau sans chiffrement IPsec. Le périphérique en amont ne s'attend pas à ce trafic et va probablement le supprimer. Tant que la connectivité de bout en bout est rompue, ce comportement est prévu.   
+Sur un dispositif VRA (Virtual Router Appliance), la configuration ne fonctionne pas de la même façon. La session est créée, mais, le trafic de retour ignore le tunnel IPsec après que la table conntrack inverse le changement DNAT.Le dispositif VRA envoie ensuite le paquet sur le réseau sans chiffrement IPsec. Le périphérique en amont ne s'attend pas à ce trafic et va probablement le supprimer.Tant que la connectivité de bout en bout est rompue, ce comportement est prévu.   
 
 ### Solutions de contournement
 Pour prendre en charge le scénario de mise en réseau ci-dessus, IBM a créé une RFE. 
@@ -214,7 +219,7 @@ set interfaces tunnel tun50 local-ip '169.254.1.1'
 set interfaces tunnel tun50 remote-ip '169.254.1.1'
 ```
 
-**Commandes de configuration de réseau privé virtuel**
+**Commandes de configuration VPN**
 
 ```
 set security vpn ipsec esp-group ESP lifetime '30000'
@@ -232,7 +237,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 local prefix '172.16.
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103.0.0/24'
 ```
 
-**Commandes de configuration de conversion d'adresses réseau**
+**Commandes de configuration NAT**
 
 ```
 set service nat destination rule 10 destination address '172.16.1.245'
@@ -246,14 +251,14 @@ set service nat source rule 10 source address '10.71.68.245'
 set service nat source rule 10 translation address '172.16.1.245'
 ```
 
-**Commandes de configuration des protocoles**
+**Commandes de configuration de protocoles**
 
 ```
 set protocols static interface-route 172.16.1.245/32 next-hop-interface 'tun50'
 .set protocols static table 50 interface-route 0.0.0.0/0 next-hop-interface 'tun50'
 ```
 
-**Commandes de configuration de routeur PBR**
+**Commandes de configuration PBR**
 
 ```
 set policy route pbr Backwards-DNAT description 'Get return traffic back to tunnel for DNAT'
@@ -267,12 +272,12 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ## PPTP
 
 ### Problèmes
-PPTP n'est plus pris en charge dans le dispositif Virtual Router Appliance.
+PPTP n'est plus pris en charge dans le dispositif Virtual Router Appliance.                                                                                                                                                   
 
 ### Solutions de contournement
-Utilisez le protocole L2TP à la place.
+Utilisez le protocole L2TP à la place. 
 
-## Script de redémarrage IPSec
+## Script de redémarrage IPSec 
 
 ### Problèmes
 Chaque fois qu'une adresse virtuelle VRRP est ajoutée à un IBM Virtual Router Appliance sur un réseau privé virtuel à haute disponibilité, vous devez réinitialiser le démon IPsec. En effet, le service IPsec écoute uniquement les connexions aux adresses qui sont présentes sur le dispositif VRA lorsque le démon de service IKE est initialisé.
@@ -283,7 +288,7 @@ Pour une paire de dispositifs VRA avec VRRP, le routeur de secours peut ne pas a
 interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
 
-## Comptage récent et période récente
+## Comptage récent et période récente 
 
 ### Problèmes
 
@@ -301,16 +306,17 @@ set firewall name localGateway rule 300 state new 'enable'
 
 Sur IBM Virtual Router Appliance, cette règle présente les problèmes suivants :
 
-* L'option de comptage récent et de période récente est devenue obsolète.
+* L'option de comptage récent et de période récente est devenue obsolète. 
 
 * En raison du problème précédent, la règle ne peut pas fonctionner comme prévu et elle bloque toutes les connexions SSH avec l'interface appliquée.
 
 ### Solutions de contournement
 Utilisez CPP à la place.
 
-## Problèmes liés à set system conntrack
+## Problèmes liés à set system conntrack 
 
 ### Problèmes
+
 ```
 set system conntrack expect-table-size '8192'
 set system conntrack hash-size '375000'
@@ -399,30 +405,30 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote port 21 (ftp)
 ```
 
-## Changement significatif de comportement de consignation
+## Changement significatif de comportement de journalisation
 
 ### Problèmes
-Il existe un changement de comportement significatif entre le périphérique Vyatta 5400 et IBM Virtual Router Appliance, qu'il s'agisse de la journalisation de session ou de la journalisation de paquet.
+Il existe un changement de comportement significatif entre le périphérique Vyatta 5400 et IBM Virtual Router Appliance, qu'il s'agisse de la journalisation de session ou de la journalisation de paquet. 
 
 * Journalisation de session : enregistrement des transitions d'état de session avec état
 
-* Journalisation de paquet : enregistrement de tous les paquets qui correspondent à la règle. Dans la mesure où la journalisation de paquet est enregistrée dans le fichier journal par "unités de paquet", l'on constate une baisse notable du débit et de la pression de la capacité disque.
+* Journalisation de paquet : enregistrement de tous les paquets qui correspondent à la règle. Dans la mesure où la journalisation de paquet est enregistrée dans le fichier journal par "unités de paquet", l'on constate une baisse notable du débit et de la pression de la capacité disque. 
 
 * La fonction de journalisation du routeur vRouter peut être utilisée pour capturer les activités de pare-feu. Comme pour toutes les fonctions de journalisation, vous ne devez l'activer que lorsque vous tentez d'identifier et de résoudre un problème spécifique, puis vous devez la désactiver dès que possible.
 
 Le pare-feu avec état qui gère les sessions de pare-feu/NAT écrit des données dans des "unités de session". Il est recommandé d'utiliser la journalisation de session. Chaque exemple de définition est décrit ci-dessous :
 
-**Session / logging**
+**Session/journalisation**
 
 * `security firewall session-log <protocol>`
 * `system syslog file <filename> facility <facility> level <level>`
 
-**Packet logging Firewall**
+**Pare-feu de journalisation de paquet**
 
 * `security firewall name <name> default-log <action>`
 * `security firewall name <name> rule <rule-number> log`
 
-**NAT**
+** NAT **
 
 * `service nat destination rule <rule-number> log`
 * `service nat source rule <rule-number> log PBR`
@@ -430,4 +436,4 @@ Le pare-feu avec état qui gère les sessions de pare-feu/NAT écrit des donnée
 
 **QoS**
 
-* `policy qos name <policy-name> shaper class <class-id> match <rule-name>` 
+* `policy qos name <policy-name> shaper class <class-id> match <rule-name>`

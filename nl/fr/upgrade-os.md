@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-12"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -19,9 +19,9 @@ La mise à niveau du système d'exploitation de VRA peut être effectuée avec l
 
 Pour commencer le processus de mise à niveau, ouvrez un ticket dans le système de tickets d'IBM support pour demander une mise à niveau et le téléchargement d'une nouvelle image ISO sur votre système. Vous recevrez un e-mail du support IBM indiquant que le fichier ISO a été téléchargé. Dans l'exemple ci-dessous, il se trouve dans le répertoire ``tmp``.
 
-**REMARQUE :** Le processus de mise à niveau illustré ci-dessous s'applique à une seule unité VRA. Si vous utilisez VRA en mode haute disponibilité, vous devez exécuter la même commande de mise à niveau sur les deux systèmes. En outre, nous vous recommandons de mettre d'abord à niveau la machine de secours (`BACKUP`) et de vérifier si elle fonctionne correctement. Accédez ensuite à la machine principale (`MASTER`) et faites-la basculer sur l'autre machine à l'aide de la commande `reset vrrp`. Mettez ensuite à niveau la machine `MASTER` d'origine lorsque la machine de secours `BACKUP` a pris la relève.
+**REMARQUE :** Le processus de mise à niveau illustré ci-dessous s'applique à un seul dispositif VRA. Si vous utilisez VRA en mode haute disponibilité, vous devez exécuter la même commande de mise à niveau sur les deux systèmes. En outre, nous vous recommandons de mettre d'abord à niveau la machine de secours (`BACKUP`) et de vérifier si elle fonctionne correctement. Accédez ensuite à la machine principale (`MASTER`) et faites-la basculer sur l'autre machine à l'aide de la commande `reset vrrp`. Mettez ensuite à niveau la machine `MASTER` d'origine lorsque la machine de secours `BACKUP` a pris la relève.
 
-Pour mettre à niveau l'unité VRA, procédez comme suit :
+Pour mettre à niveau le dispositif VRA, procédez comme suit :
 
 1. Exécutez la commande ``add system image <Local ISO File>``.
 2. Appuyez sur la touche **Entrée** pour accepter le nom par défaut de l'image ISO ou entrez le nom de votre choix.

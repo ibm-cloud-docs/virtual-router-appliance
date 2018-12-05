@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-05-03"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,7 +21,7 @@ lastupdated: "2018-05-03"
 ### 问题
 从 R5.1 开始，针对有状态防火墙设置“State of State-policy”时的行为发生了更改。在 R5.1 之前的版本中，如果为有状态防火墙设置 `state - global -state -policy`，那么 vRouter 针对自动返回会话通信自动添加暗含的 `Allow` 规则。
 
-在 R5.1 及更高发行版中，必须在虚拟路由器设备上添加 `Allow` 规则设置。有状态设置在 Vyatta 5400 设备上逐个接口生效，在 VRA 设备上逐个协议生效。
+在 R5.1 及更高发行版中，必须在虚拟路由器设备上添加 `Allow` 规则设置。有状态设置在 Vyatta 5400 设备上对接口生效，在 VRA 设备上对协议生效。
 
 ### 变通方法
 如果在 Ingress/Inside 接口上应用 `firewall-in` 规则，那么必须在 Egress/Outside 接口上应用 `Firewall-out` 规则。否则，将在 Egress/Outside 接口丢弃返回流量。        
@@ -37,13 +36,14 @@ lastupdated: "2018-05-03"
 ## 基于区域的策略：本地区域处理
 
 ### 问题
-不存在“local-zone”伪接口以分配给区域策略。 
+不存在“local-zone”伪接口以分配给区域策略。
 
 ### 变通方法
-可通过将基于区域的防火墙应用于物理接口并将接口防火墙应用于回送接口，从而模拟此行为。回送接口中的防火墙过滤流入和流出路由器的一切流量。 
+可通过将基于区域的防火墙应用于物理接口并将接口防火墙应用于回送接口，从而模拟此行为。回送接口中的防火墙过滤流入和流出路由器的一切流量。
 
 例如：
 
+```
 set security zone-policy zone internal default-action 'drop'
 set security zone-policy zone internal description 'Private zone'
 set security zone-policy zone internal interface 'dp0bond0'
@@ -82,20 +82,23 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 
 ### 变通方法
 VRA 需要新的路由方案：
-![routing dns](./images/routing-dns.png)
+![路由 DNS](./images/routing-dns.png)
 
 ## 基于策略的路由表
 
 ### 问题
-配置中的词“Table”在 v5400 基于策略的路由中为可选，但是对于 VRA，如果操作为“accept”，那么 **Table** 字段为必需。如果 VRA 配置中的操作为“drop”，那么 Table 字段为可选。
+配置中的词“Table”在 v5400 基于策略的路由中为可选，但是对于 VRA，如果操作为 `accept`，那么 **Table** 字段为必需。如果 VRA 配置中的操作为 `drop`，那么 Table 字段为可选。
 
 ### 变通方法
 “Table Main”是 Vyatta 5400 基于策略的路由中的可用选项。VRA 中的等效项为“routing-instance default”。
 
+
+
 ## 隧道接口上基于策略的路由
 
 ### 问题
-在虚拟路由器设备 PBR（基于策略的路由）上，策略可应用于入站流量的数据平面接口，但是不应用于回送、隧道、网桥、OpenVPN、VTI 和 IP 未编号接口。
+在虚拟路由器设备 PBR（基于策略的路由）上，策略可应用于处理入站流量的数据平面接口，但是不能应用于回送、隧道、网桥、OpenVPN、VTI 和 IP 未编号接口。
+
 ### 变通方法
 此问题当前无变通方法。
 
@@ -103,64 +106,74 @@ VRA 需要新的路由方案：
 
 ### 问题
 IBM 虚拟路由器设备使用 nftables 并且不支持 TCP-MSS。
+
 ### 变通方法
 此问题当前无变通方法。
 
 ## OpenVPN
 
 ### 问题
-在虚拟路由器设备上使用“push-route”参数时，OpenVPN 不会开始工作。
-### 变通方法
-使用“openvpn-option”参数代替“push-route”。
+在虚拟路由器设备上使用 `push-route` 参数时，OpenVPN 不会开始工作。
 
-## IPSEC + OSPF 上的 GRE/VTI
+### 变通方法
+使用 `openvpn-option` 参数，而不使用 `push-route`。
+
+## 基于 IPSEC + OSPF 的 GRE/VTI
 
 ### 问题
-* 如果 VIF 配置多个子网，那么流量无法穿过 VRA 中的这些子网。
+* 如果 VIF 配置了多个子网，那么流量无法穿过 VRA 中的这些子网。                                             
+* VLAN 间路由在 VRA 上无效。
 
-* InterVlan Routing 在 VRA 上无效。
 ### 变通方法
-使用 Implicit 允许规则以接受各 VIF 接口之间的流量。
+使用隐含的 allow 规则以接受各 VIF 接口之间的流量。
 
 ## IPSec
 
 ### 问题
-IPSec（基于前缀）不适用于 IN Filter。
+IPSec（基于前缀）不适用于 IN 过滤器。
 
 ### 变通方法
-使用 IPSec (VTI BASED)。
+使用 IPSec（基于 VTI）。
 
-## IPSEC 'match-none"
+## IPSEC“match-none”
 
 ### 问题
 使用 Vyatta 5400 设备时，允许以下防火墙规则：
 
 set firewall name allow rule 10 ipsec 
 
+
+
 但是，使用 IBM 虚拟路由器设备时，没有 IPSec。
+
+
 
 ### 变通方法
 VRA 设备的可行备用规则：
 
 ```
    match-ipsec  Inbound IPsec packets
-   match-none   Inbound non-IPsec packets                                                                                                                
+   match-none   Inbound non-IPsec packets                                                                                                    
 ```
 
-## IPSEC 'match-ipsec"
+## IPSEC“match-ipsec”
 
 ### 问题
-使用 Vyatta 5400 设备时，允许以下防火墙规则：
+利用 Vyatta 5400 设备，允许以下防火墙规则：
 
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 
+
+
 但是，使用 IBM 虚拟路由器设备时，没有 IPSec。
 
-### 变通方法
-添加协议“ESP”和“AH”（分别是 IP 协议 50 和 51）。
 
-“action”规则可以为“accept”或“drop”，如下所示：
+
+### 变通方法
+添加协议 `ESP` 和 `AH`（分别是 IP 协议 50 和 51）。
+
+`action` 规则可以为 `accept` 或 `drop`，如下所示：
 
 ```
 set security firewall name <name> rule <rule-no> action accept
@@ -175,24 +188,31 @@ set security firewall name <name> rule <rule-no> action accept
 set security firewall name <name> rule <rule-no> protocol esp
 ```
 
-## 使用 DNAT 的站点至站点 IPSEC
+## 使用 DNAT 的站点到站点 IPSEC
 
 ### 问题
-IPSec（基于前缀）不适用于 DNAT。                                                                                 
+IPSec（基于前缀）不适用于 DNAT。                                                                                                             
+
 ```
-server (10.71.68.245) -- vyatta 1 (11.0.0.1) 
-===S-S-IPsec=== (12.0.0.1) 
+server (10.71.68.245) -- vyatta 1 (11.0.0.1)===S-S-IPsec=== (12.0.0.1)
 vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
-以上片段是在 Vyatta 5400 中解密 IPSec 包后 DNAT 转换的小型设置示例。在示例中，有两个 vyatta，即“vyatta1 (11.0.0.1)”和“vyatta2 (12.0.0.1)”。在“11.0.0.1”和“12.0.0.1”之间建立了 IPsec 同级。在此情况下，客户机目标为“172.16.1.245”，源自“10.103.0.1”，两者之间为端到端。此场景的预期行为是，在包头中，目标地址“172.16.1.245”将转换为“10.71.68.245”。
+以上片段是在 Vyatta 5400 中解密 IPSec 包后 DNAT 转换的小型设置示例。在示例中，有两个 Vyatta，即 `vyatta1 (11.0.0.1)` 和 `vyatta2 (12.0.0.1)`。在 `11.0.0.1` 和 `12.0.0.1` 之间建立了 IPsec 对等连接。在本例中，客户机的目标为 `172.16.1.245`，源自 `10.103.0.1`，两者之间为端到端连接。此场景的预期行为是，在包头中，目标地址 `172.16.1.245` 将转换为 `10.71.68.245`。
+
 最初，Vyatta 5400 设备在入站 IPSec 上执行 DNAT，终止接口，并使用连接跟踪表将流量正常返回至 IPsec 隧道。
+
+
 在虚拟路由器设备上，配置的运行方式不同。会创建会话，但是在连接跟踪表撤销 DNAT 更改后，返回流量会绕过 IPsec 隧道。然后，VRA 在不使用 IPSec 加密的连线上发送包。上游设备预期没有此流量，很有可能将其丢弃。虽然端到端连接中断了，这是预期的行为。
+
+
 ### 变通方法
-为适用以上联网场景，IBM 创建了 RFE。 
+为适用以上联网场景，IBM 创建了 RFE。
 
 当前正在评估该 RFE，此时我们建议以下变通方法：
+
+
 
 **接口配置命令**
 
@@ -260,15 +280,20 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ## PPTP
 
 ### 问题
-虚拟路由器设备中不再支持 PPTP。
+虚拟路由器设备中不再支持 PPTP。                                                                                                                                                   
+
 ### 变通方法
 请改为使用 L2TP 协议。
 
 ## 用于 IPSec 重新启动的脚本
 
 ### 问题
-一旦将 VRRP 虚拟地址添加到高可用性 VPN 上的 IBM 虚拟路由器设备，必须重新初始化 IPsec 守护程序。这是因为在初始化 IKE 服务守护程序时，IPsec 服务仅侦听与 VRA 上提供的地址的连接。
+每次将 VRRP 虚拟地址添加到高可用性 VPN 上的 IBM 虚拟路由器设备后，就必须重新初始化 IPsec 守护程序。这是因为在初始化 IKE 服务守护程序时，IPsec 服务仅侦听与 VRA 上提供的地址的连接。
+
+
 对于一对具有 VRRP 的 VRA，如果主路由器没有提供初始化期间在设备上提供的 VRRP 虚拟地址，那么备用路由器可能没有此地址。因此，要在发生 VRRP 状态转换时重新初始化 IPSec 守护程序，请在主和备份路由器上运行以下命令：
+
+
 ```
 interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
@@ -278,6 +303,8 @@ interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ### 问题
 
 以下规则的目的是针对使用任何地址的 SSH，将 SSH 连接限制为每 30 秒 3 个：
+
+
 ```
 set firewall name localGateway rule 300 action 'drop'
 set firewall name localGateway rule 300 description 'Deter SSH brute force'
@@ -290,15 +317,19 @@ set firewall name localGateway rule 300 state new 'enable'
 
 在 IBM 虚拟路由器设备上，此规则有以下问题：
 
+
+
 * 最新计数和最新时间选项已弃用。
 
 * 由于先前的问题，规则无法按预期运行，并且将阻止与应用的接口的所有 SSH 连接。
+
 ### 变通方法
 请改为使用 CPP。
 
 ## 设置系统连接跟踪问题
 
 ### 问题
+
 ```
 set system conntrack expect-table-size '8192'
 set system conntrack hash-size '375000'
@@ -393,11 +424,15 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 
 * 会话日志记录：记录有状态会话状态转换
 
-* 包日志记录：记录匹配规则的所有包。由于包日志记录在日志文件的“packet units”内进行记录，因此吞吐量和磁盘容量压力显著下降。
+* 包日志记录：记录与规则匹配的所有包。由于包日志记录在日志文件中“以包为单位”进行记录，因此吞吐量和磁盘容量压力会显著下降。
 
 * vRouter 的日志记录功能可用于捕获防火墙活动。与任何日志记录功能类似，仅应在对特定问题进行故障诊断时启用此功能，并尽快禁用日志记录。
 
+
+
 管理防火墙/NAT 会话的有状态防火墙写入“session units”中。建议使用会话日志记录。以下描述了每个设置示例：
+
+
 
 **会话/日志记录**
 
@@ -417,4 +452,4 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 
 **QoS**
 
-* `policy qos name <policy-name> shaper class <class-id> match <rule-name>` 
+* `policy qos name <policy-name> shaper class <class-id> match <rule-name>`

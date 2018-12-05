@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-12"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,13 +14,13 @@ lastupdated: "2017-10-12"
 {:download: .download}
 
 # HA et VRRP
-L'unité VRA (Virtual Router Appliance) prend en charge le protocole VRRP (Virtual Router Redundancy Protocol) en tant que protocole de haute disponibilité. Le déploiement des unités s'effectue de manière active/passive, avec une machine principale et une autre machine de secours. Toutes les interfaces sur les deux machines seront membres du même groupe de synchronisation ("sync-group"), donc s'il y a une défaillance sur une interface, les autres interfaces du même groupe seront également défaillantes et l'unité cessera d'être l'unité principale. La machine de secours détectera que la machine principale ne diffuse plus les messages de type keepalive/heartbeat (conservation de connexion active/signal de présence), et prendra le contrôle des adresses IP virtuelles VRRP pour devenir la machine principale.
+Le dispositif VRA (Virtual Router Appliance) prend en charge le protocole VRRP (Virtual Router Redundancy Protocol) en tant que protocole de haute disponibilité. Le déploiement des unités s'effectue de manière active/passive, avec une machine principale et une autre machine de secours. Toutes les interfaces sur les deux machines seront membres du même groupe de synchronisation ("sync-group"), donc s'il y a une défaillance sur une interface, les autres interfaces du même groupe seront également défaillantes et l'unité cessera d'être l'unité principale. La machine de secours détectera que la machine principale ne diffuse plus les messages de type keepalive/heartbeat (conservation de connexion active/signal de présence), et prendra le contrôle des adresses IP virtuelles VRRP pour devenir la machine principale.
 
 VRRP est la partie la plus importante de la configuration lors de la mise à disposition de passerelles. La fonctionnalité de haute disponibilité (HA) dépend des messages de signal de présence, donc s'assurer qu'ils ne sont pas bloqués est essentiel.
 
 ## Adresses IP virtuelles (VIP) VRRP
 
-L'adresse IP virtuelle (ou VIP) VRRP est l'adresse IP flottante qui passe de l'unité principale à l'unité de secours lors du basculement. Lors du déploiement d'une unité VRA, cette unité aura une connexion réseau de liaisons publiques et privées et des adresses IP réelles affectées sur chaque interface. Une adresse VIP est également affectée sur les deux interfaces, que l'unité soit autonome ou fasse partie d'une paire HA. Le trafic ayant une adresse IP de destination dans des sous-réseaux au sein de réseaux locaux virtuels (VLAN) associés à l'unité VRA sera envoyé directement à ces adresses VIP VRRP.
+L'adresse IP virtuelle (ou VIP) VRRP est l'adresse IP flottante qui passe de l'unité principale à l'unité de secours lors du basculement. Lors du déploiement d'un dispositif VRA, celui-ci aura une connexion réseau de liaisons publiques et privées et des adresses IP réelles affectées sur chaque interface. Une adresse VIP est également affectée sur les deux interfaces, que l'unité soit autonome ou fasse partie d'une paire HA. Le trafic ayant une adresse IP de destination dans des sous-réseaux au sein de réseaux locaux virtuels (VLAN) associés au dispositif VRA sera envoyé directement à ces adresses VIP VRRP.
 
 Les adresses IP virtuelles VRRP d'un groupe de passerelles ne doivent pas être modifiées et l'interface VRRP ne doit pas être désactivée. Ces adresses IP constituent une méthode de routage du trafic aux passerelles lorsqu'un VLAN est associé. Si l'adresse IP n'est pas présente, le trafic ne peut pas être acheminé d'un routeur SoftLayer BCR/FCR à la passerelle même.
 
@@ -122,9 +121,9 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* Un élément sync-group VRRP est différent d'un groupe VRRP. Lorsqu'une interface qui appartient à un élément sync-group change d'état, tous les autres membres du même élément sync-group prennent le même état. 
+* Un élément sync-group VRRP est différent d'un groupe VRRP. Lorsqu'une interface qui appartient à un élément sync-group change d'état, tous les autres membres du même élément sync-group prennent le même état.
 * Il n'est pas nécessaire que le nombre d'éléments vrrp-group des interfaces VLAN (VIF) soit identique à celui de l'une des interfaces natives ou des autres réseaux locaux virtuels. Toutefois, il est fortement recommandé de conserver toutes les adresses virtuelles du même réseau local virtuel dans un seul élément vrrp-group, comme dans VLAN 10.
-* Les adresses d'interface réelles sur les réseaux locaux virtuels natifs (par exemple, dp0bond1: 169.110.20.28/29) ne figurent pas toujours dans le même sous-réseau que leur VIP (169.110.21.26/29). 
+* Les adresses d'interface réelles sur les réseaux locaux virtuels natifs (par exemple, dp0bond1: 169.110.20.28/29) ne figurent pas toujours dans le même sous-réseau que leur VIP (169.110.21.26/29).
 
 ## Basculement VRRP manuel
 Si vous devez forcer un basculement VRRP, vous pouvez le faire en exécutant la commande suivante sur l'unité qui est actuellement le maître VRRP :
@@ -146,6 +145,56 @@ set service connsync interface dp0bond0
 set service connsync remote-peer 10.124.10.4
 ```
 
-L'autre unité VRA aura la même configuration mais un homologue distant (`remote-peer`) différent.
+L'autre dispositif VRA aura la même configuration mais un homologue distant (`remote-peer`) différent.
 
 Notez que cette opération peut saturer une liaison s'il y a un nombre élevé de connexions entrantes sur d'autres interfaces et entrera en concurrence avec d'autre trafic sur la liaison déclarée.
+
+## Fonction Délai de démarrage VRRP
+La version 1801p et les versions ultérieures du système d'exploitation Vyatta comportent une nouvelle commande `vrrp`. 
+
+`vrrp` spécifie un protocole d'élection qui affecte de façon dynamique la responsabilité pour un routeur virtuel à l'un des routeurs VRRP sur un réseau local. Le routeur VRRP qui contrôle la ou les adresses IPv4 ou IPv6 associée(s) à un routeur virtuel est appelé le maître, et il achemine les paquets envoyés à ces adresses IPv4 ou IPv6. Le processus d'élection fournit un basculement dynamique dans la responsabilité d'acheminement si le maître devient indisponible. Toute la messagerie de protocole est effectuée via des datagrammes multidiffusion IPv4 ou IPv6, par conséquent, le protocole peut fonctionner sur une grande variété de technologies LAN multi-accès prenant en charge la multidiffusion IPv4/IPv6. 
+
+Pour réduire le trafic réseau, seul le maître de chaque routeur virtuel envoie régulièrement des messages d'annonce VRRP. Un routeur de sauvegarde ne tentera pas de préempter le maître sauf s'il est doté d'une priorité plus élevée. Cela élimine les interruptions de service sauf si un chemin préféré devient disponible. Il est également possible d'interdire de manière administrative toutes les tentatives de préemption. Si le maître devient indisponible, le routeur de sauvegarde doté d'une priorité plus élevée devient le maître après un court délai, fournissant une transition contrôlée de la responsabilité de routeur virtuel avec un minimum d'interruptions de service. 
+
+**Remarque :** dans les déploiements mis à disposition par IBM Cloud, la valeur de délai de démarrage prend la valeur par défaut. Vous souhaiterez peut-être modifier cela à votre gré lorsque vous testerez vos méthodes de basculement et de haute disponibilité. 
+
+
+### Préemption ou pas de préemption
+
+Le protocole `vrrp` définit une logique qui décide quelle paire VRRP sur un réseau est dotée de la priorité la plus élevée, et par conséquent, est la plus à même de porter le rôle de maître. Avec une configuration par défaut, VRRP est activé pour effectuer la préemption, ce qui signifie qu'une nouvelle paire ayant la priorité la plus élevée sur le réseau forcera la reprise du rôle de maître. 
+
+Lorsque la préemption est désactivée, une paire avec la priorité plus élevée reprendra le rôle de maître uniquement si la paire avec la priorité la moins élevée n'est plus disponible sur le réseau. Il est parfois utile de désactiver la préemption dans des scénarios du monde réel, car cela permet de mieux faire face aux situations où la paire avec la priorité plus élevée a commencé à bagoter régulièrement en raison de problèmes de fiabilité avec la paire proprement dite ou d'une de ses connexions réseau. Il est également utile d'empêcher le basculement prématuré vers une nouvelle paire avec une priorité plus élevée qui n'a pas terminé la convergence du réseau. 
+
+### Hypothèses et limitations de préemption
+
+Si les paires VRRP ont été configurées pour désactiver la préemption, il peut arriver que la préemption semble se produire, mais en réalité, le scénario est juste un basculement VRRP standard. Comme décrit précédemment, un protocole VRRP utilise des datagrammes de multidiffusion IP afin de confirmer la disponibilité du routeur maître élu. Dans la mesure où l'échec d'une paire VRRP est détecté par un protocole de couche 3, il est important que la détection de basculement dans VRRP soit retardée jusqu'à ce que VRRP et les couches 1 à 2 de la pile réseau soient prêts et convergés. Dans certains cas, l'interface réseau qui exécute VRRP peut confirmer au protocole que l'interface est active, mais il se peut que d'autres services sous-jacents, tels que l'arbre maximal ou la liaison n'aient pas abouti. Par conséquent, la connectivité IP entre les paires ne peut pas être établie. Si cela se produit, VRRP sur une nouvelle paire avec une priorité plus élevée devient le maître, car il ne peut pas détecter les messages VRRP émis par la paire maître actuelle sur le réseau. Après la convergence, pendant la courte période où il existe deux paires VRRP maître, la logique maître double de VRRP est exécutée, la paire avec la priorité plus élevée reste la paire maître et la paire avec la priorité moins élevée devient la paire de sauvegarde. Le scénario semble faire apparaître une faille dans la fonctionnalité "sans préemption". 
+
+### Fonction Délai de démarrage
+
+Pour traiter les problèmes liés au retard de convergence des niveaux inférieurs de la pile réseau durant un événement d'interface active, ainsi qu'à d'autres facteurs, une nouvelle fonction nommée "Délai de démarrage" est introduite dans le correctif 1801p. Avec cette fonction, l'état VRRP sur une machine qui a été rechargée demeure INIT pendant une période qui va au-delà d'un délai prédéfini, qui peut être configuré par l'opérateur réseau. La flexibilité de cette valeur de délai permet à l'opérateur réseau de personnaliser les caractéristiques de son réseau et de ses périphériques dans des conditions réelles. 
+
+### Détails de la commande
+
+```
+vrrp {
+start-delay <0-600>
+}
+```
+
+`start-delay` peut avoir une valeur comprise entre 0 (par défaut) et 600 secondes. 
+
+### Exemple de configuration
+
+```
+interfaces {
+  bonding dp0bond1 {
+address 161.202.101.206/29 mode balanced
+vrrp {
+      start-delay 120
+      vrrp-group 211 {
+preempt false
+priority 253
+virtual-address 161.202.101.204/29
+} }
+}
+```

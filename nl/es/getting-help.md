@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2018-02-28"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -23,8 +23,8 @@ Al utilizar los foros para formular una pregunta, etiquete la pregunta para que 
 * Si tiene preguntas técnicas acerca de IBM Virtual Router Appliance, publique su pregunta en [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) y etiquete la pregunta con "vra" e "ibm-cloud".
 * Para formular preguntas sobre el servicio y obtener instrucciones de iniciación, utilice el foro [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud). Incluya las etiquetas "vra" e "ibm-cloud".
 
-Consulte [Obtención de ayuda](https://console.bluemix.net/docs/support/index.html#getting-help) para obtener más detalles sobre el uso de los foros.
+Consulte [Obtención de ayuda](/docs/support/index.html#getting-help) para obtener más detalles sobre el uso de los foros.
 
 Para obtener información sobre cómo abrir un tíquet de soporte de IBM o sobre los niveles de
 soporte y la gravedad de los tíquets, consulte
-[Cómo obtener soporte](https://console.bluemix.net/docs/support/index.html#contacting-support).
+[Cómo obtener soporte](/docs/support/index.html#contacting-support).

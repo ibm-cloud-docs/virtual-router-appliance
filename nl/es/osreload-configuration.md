@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -23,7 +23,7 @@ Para volver a cargar el SO, realice el procedimiento siguiente:
 2. Seleccione **Lista de dispositivos** de la lista desplegable Dispositivos.
 3. Pulse en el servidor que desea volver a cargar.
 4. Seleccione **Recarga de SO** del menú desplegable **Acciones** en la parte superior izquierda de la página.
-5. En la pantalla Recarga de SO, elija las funciones y opciones que desea aplicar como parte de la recarga. 
+5. En la pantalla Recarga de SO, pulse **Editar** para la Categoría que requiere una actualización. Seleccione **AT&T** como proveedor y la versión de sistema operativo que desee volver a cargar.
 6. Pulse el botón **Recargar la configuración indicada** para proceder a la ventana emergente **Revisar**. Pulse **Cancelar** para cancelar los cambios en el dispositivo y salga de la pantalla.
 7. Verifique que todos los detalles de la sección Nueva configuración son correctos. Pulse **Siguiente** para avanzar a la pantalla emergente Confirmación.
 8. Pulse el botón **Confirmar recarga de SO** para confirmar e iniciar la recarga de SO. Pulse **Cancelar** para cancelar la acción.

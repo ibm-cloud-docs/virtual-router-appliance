@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Vyatta에서 NAT 규칙 설정
+# Vyatta 5400에 NAT 규칙 설정
 이 주제에는 Vyatta에 사용된 NAT(Network Address Translation) 규칙의 예제가 포함되어 있습니다.
 
 ## 일대다 NAT 규칙(masquerade)
@@ -66,7 +66,8 @@ commit
 
 트래픽이 bond1의 IP `50.97.203.227`에서 들어오는 경우, 해당 IP는 IP `10.52.69.202`(정의된 인터페이스에 있음)에 맵핑됩니다. 트래픽이 `10.52.69.202`(정의된 인터페이스에 있음)의 IP를 사용하여 아웃바운드로 이동하는 경우 이는 IP `50.97.203.227`로 변환되고 인터페이스 bond1에서 아웃바운드로 처리됩니다.
 
-**참고:** NAT에 대한 문제점을 해결하려면 `run show nat source translations detail` 명령을 사용하십시오.
+**참고:** 일대일로 맵핑된 IP 주소를 위장할 수 없습니다. IP 인바운드를 변환하는 경우 트래픽이 두 방향으로 이동하도록 같은 IP 아웃바운드를 변환해야 합니다.
+
 
 ## VRA를 통해 IP 범위 추가
 
@@ -94,10 +95,3 @@ set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 본딩 인터페이스에 적용:
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
-
-**참고:**
-
-* 일대일로 맵핑된 IP 주소를 위장할 수 없습니다. IP 인바운드를 변환하는 경우 트래픽이 두 방향으로 이동하도록 같은 IP 아웃바운드를 변환해야 합니다.
-
-* NAT에 대한 문제점을 해결하려면 `run show nat source translations detail` 명령을 사용하십시오.
-

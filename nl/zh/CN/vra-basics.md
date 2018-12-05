@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# VRA 基础知识
+# 访问和配置
 VRA 可以使用远程控制台会话通过 SSH 进行配置，也可以通过登录到 Web GUI 进行配置。缺省情况下，无法通过公共因特网来访问 Web GUI。要启用 Web GUI，请首先通过 SSH 登录。
 
 **注：**在 VRA 的 shell 和接口外部配置 VRA 可能会生成意外结果，因此建议不要这样做。

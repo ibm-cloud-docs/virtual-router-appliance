@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -85,7 +85,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 在規則集 `ALLOW_LEGACY` 中，定義了兩個規則。第一個規則會捨棄來自名為 `network-group1` 之位址群組的任何資料流量。第二個規則會捨棄並記載目的地為 telnet 埠 (`tcp/23`) 且來自名為 `network-group2` 之位址群組的任何資料流量。default-action 表示接受任何其他內容。
 
 ## 容許資料中心存取
-IBM 提供數個 IP 子網路，以提供服務及支援給資料中心內執行的系統。例如，DNS 解析器服務在 `10.0.80.11` 和 `10.0.80.12` 上執行。佈建和支援期間會使用其他子網路。您可以在[這裡](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html)找到資料中心內所使用的 IP 範圍。
+IBM 提供數個 IP 子網路，以提供服務及支援給資料中心內執行的系統。例如，DNS 解析器服務在 `10.0.80.11` 和 `10.0.80.12` 上執行。佈建和支援期間會使用其他子網路。您可以在[這裡](/docs/infrastructure/hardware-firewall-dedicated/ips.html)找到資料中心內所使用的 IP 範圍。
 
 您可以將適當的 `SERVICE-ALLOW` 規則放在防火牆規則集開頭，並搭配 `accept` 的動作來容許資料中心存取。規則集必須套用的位置，取決於要實作的遞送和防火牆設計。
 
@@ -107,7 +107,7 @@ IBM 提供數個 IP 子網路，以提供服務及支援給資料中心內執行
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## Control Plane Policing (CPP)
-Control Plane Policing (CPP) 提供對 Virtual Router Appliance 上之攻擊的抵禦，方法是容許您配置要指派給想要介面的防火牆原則，並且將這些原則套用至進入 VRA 的封包。
+Control Plane Policing (CPP) 提供對 Virtual Router Appliance 上之攻擊的抵禦，方法是容許您配置要指派給所需介面的防火牆原則，並且將這些原則套用至進入 VRA 的封包。
 
 CPP 的實作時機是在 `local` 關鍵字用於指派給任何類型 VRA 介面的防火牆原則時，例如資料平面介面或迴圈。與套用於遍訪 VRA 之封包的防火牆規則不同，對於進入或離開控制平面之資料流量的防火牆規則，其預設動作是 `Allow`。如果不想要預設行為，則使用者必須新增明確的捨棄規則。
 

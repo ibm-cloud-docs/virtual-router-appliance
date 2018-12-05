@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -85,7 +85,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 규칙 세트 `ALLOW_LEGACY`에 두 개의 규칙이 정의되어 있습니다. 첫 번째 규칙은 `network-group1`이라는 주소 그룹에서 오는 트래픽을 삭제합니다. 두 번째 규칙은 `network-group2`라는 주소 그룹의 Telnet 포트(`tcp/23`)를 대상으로 하는 트래픽을 버리고 로깅합니다. 기본 조치는 다른 모든 조치가 허용됨을 표시합니다.
 
 ## 데이터 센터 액세스 허용
-IBM은 데이터 센터에서 실행되는 시스템에 서비스와 지원을 제공하는 여러 IP 서브넷을 제공합니다. 예를 들어 DNS 분석기 서비스는 `10.0.80.11` 및 `10.0.80.12`에서 실행됩니다. 다른 서브넷은 프로비저닝 및 지원에 사용됩니다. 데이터 센터에서 사용되는 IP 범위는 [여기](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html)를 참조하십시오.
+IBM은 데이터 센터에서 실행되는 시스템에 서비스와 지원을 제공하는 여러 IP 서브넷을 제공합니다. 예를 들어 DNS 분석기 서비스는 `10.0.80.11` 및 `10.0.80.12`에서 실행됩니다. 다른 서브넷은 프로비저닝 및 지원에 사용됩니다. 데이터 센터에서 사용되는 IP 범위는 [여기](/docs/infrastructure/hardware-firewall-dedicated/ips.html)를 참조하십시오.
 
 `accept` 조치로 방화벽 규칙 세트를 시작할 때 적합한 `SERVICE-ALLOW` 규칙을 배치하여 데이터 센터 액세스를 허용할 수 있습니다. 규칙 세트를 적용해야 하는 위치는 구현되는 라우팅과 방화벽 설계에 따라 다릅니다.
 

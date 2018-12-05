@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-05-03"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,14 +14,14 @@ lastupdated: "2018-05-03"
 {:download: .download}
 
 # Vyatta 5400 일반 마이그레이션 문제
-다음 표에서는 Vyatta 5400 디바이스를 IBM Virtual Router Appliance로 마이그레이션한 후에 발생할 수 있는 일반적인 문제나 동작 변경사항에 대해 설명합니다. 어떤 경우에는 문제에 대한 임시 해결책도 있습니다. 
+다음 표에서는 Vyatta 5400 디바이스를 IBM Virtual Router Appliance로 마이그레이션한 후에 발생할 수 있는 일반적인 문제나 동작 변경사항에 대해 설명합니다. 어떤 경우에는 문제에 대한 임시 해결책도 있습니다.
 
 ## 상태 저장 방화벽에 대한 인터페이스 기반 글로벌 상태 정책
 
 ### 문제
 릴리스 5.1에서 stateful 방화벽에 대한 "상태 정책 상태"를 설정할 때의 동작이 변경되었습니다. 릴리스 5.1 이전 버전에서는 상태 저장 방화벽의 `state - global -state -policy`를 설정하는 경우 vRouter가 세션의 자동 반환 통신에 대한 암묵적인 `Allow` 규칙을 자동으로 추가했습니다.
 
-릴리스 5.1 이상에서는 `Allow` 규칙 설정을 Virtual Router Appliance에 추가해야 합니다. 상태 저장 설정은 Vyatta 5400 디바이스의 인터페이스별로 그리고 VRA 디바이스의 프로토콜별로 작동합니다.
+릴리스 5.1 이상에서는 `Allow` 규칙 설정을 Virtual Router Appliance에 추가해야 합니다. 상태 저장 설정은 Vyatta 5400 디바이스의 인터페이스에 대해 그리고 VRA 디바이스의 프로토콜에 대해 작동합니다.
 
 ### 임시 해결책
 `firewall-in` 규칙이 유입/내부 인터페이스에 적용되는 경우 `Firewall-out` 규칙이 유출/외부 인터페이스에 적용되어야 합니다. 그렇지 않으면 반환 트래픽이 유출/외부 인터페이스에서 삭제됩니다.        
@@ -32,18 +31,19 @@ lastupdated: "2018-05-03"
 ### 문제
 `global-state-policy`가 구성되지 않으면 이 동작 변경사항이 적용되지 않습니다.
 
-또한 각 규칙에서 `global-state-policy` 대신 `state enable` 옵션을 사용하는 경우 동작 변경사항이 적용되지 않습니다. 
+또한 각 규칙에서 `global-state-policy` 대신 `state enable` 옵션을 사용하는 경우 동작 변경사항이 적용되지 않습니다.
 
 ## 구역 기반 정책: 로컬 구역 처리
 
 ### 문제
-구역 정책에 지정할 "로컬 구역" 유사 인터페이스가 없습니다. 
+구역 정책에 지정할 "로컬 구역" 유사 인터페이스가 없습니다.
 
 ### 임시 해결책
-구역 기반 방화벽을 실제 인터페이스에 적용하고 인터페이스-방화벽을 루프백 인터페이스에 적용하여 이 동작을 시뮬레이션할 수 있습니다. 루프백 인터페이스의 방화벽은 라우터에서 유입되고 유출되는 모든 항목을 필터링합니다. 
+구역 기반 방화벽을 실제 인터페이스에 적용하고 인터페이스-방화벽을 루프백 인터페이스에 적용하여 이 동작을 시뮬레이션할 수 있습니다. 루프백 인터페이스의 방화벽은 라우터에서 유입되고 유출되는 모든 항목을 필터링합니다.
 
 예를 들어 다음과 같습니다.
 
+```
 set security zone-policy zone internal default-action 'drop'
 set security zone-policy zone internal description 'Private zone'
 set security zone-policy zone internal interface 'dp0bond0'
@@ -73,7 +73,7 @@ set security firewall name Local rule 10 action 'accept'
 set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp.conf" )
 ```
 
-## 방화벽, NAT, 라우팅 및 DNS에 대한 조작 순서
+## 방화벽, NAT, 라우팅 및 DNS에 대한 오퍼레이션 순서
 
 ### 문제
 Masquerade Source NAT가 IBM Virtual Router Appliance에 배치되는 시나리오에서는 방화벽을 사용하여 인터넷에 대한 호스트의 액세스를 판별할 수 없습니다. 이는 NAT 이후 주소가 같기 때문입니다.
@@ -81,54 +81,53 @@ Masquerade Source NAT가 IBM Virtual Router Appliance에 배치되는 시나리�
 Vyatta 5400 디바이스의 경우 방화벽이 NAT 전에 수행되었기 때문에 이 조작이 가능했으며, 이 조작을 통해 호스트가 인터넷에 액세스하는 것을 제한할 수 있습니다.
 
 ### 임시 해결책
-VRA에 대해 새 라우팅 체계가 필요합니다.
-![routing dns](./images/routing-dns.png)
+VRA에 새 라우팅 스킴이 필요합니다. ![라우팅 dns](./images/routing-dns.png)
 
 ## 정책 기반 라우팅 테이블
 
 ### 문제
-configs의 단어 "Table"은 v5400 정책 기반 라우팅에서 선택사항이지만 VRA의 경우 조치가 `승인`되면 **Table** 필드는 필수입니다. VRA config에서 조치가 '삭제'되면 Table 필드는 선택사항입니다.
+configs의 단어 "Table"은 v5400 정책 기반 라우팅에서 선택사항이지만 VRA의 경우 조치가 `승인`되면 **테이블** 필드는 필수입니다. 조치가 VRA config에서 `drop`되는 경우에는 테이블 필드는 선택사항입니다. 
 
 ### 임시 해결책
-"Table Main"은 Vyatta 5400 정책 기반 라우팅에서 사용 가능한 선택사항입니다. VRA에서는 "routing-instance default"와 같습니다.
+"Table Main"은 Vyatta 5400 정책 기반 라우팅에서 사용할 수 있는 옵션입니다. VRA에서는 "routing-instance default"와 같습니다.
 
 ## 터널 인터페이스의 정책 기반 라우팅
 
 ### 문제
-Virtual Router Appliance PBR(정책 기반 라우팅) 정책은 인바운드 트래픽을 위한 데이터 플레인 인터페이스에는 적용할 수 있지만 루프백, 터널, 브릿지, OpenVPN, VTI 및 IP 번호가 지정되지 않은 인터페이스에는 적용할 수 없습니다.
+Virtual Router Appliance PBR(정책 기반 라우팅)에서 정책을 인바운드 트래픽에 대한 데이터 플레인 인터페이스에 적용할 수 있지만, 루프백, 터널, 브릿지, OpenVPN, VTI 및 IP 번호가 지정되지 않은 인터페이스에는 적용할 수 없습니다. 
 
 ### 임시 해결책
-현재 이 문제에 대한 임시 해결책이 없습니다.
+현재 이 문제에 대한 임시 해결책은 없습니다. 
 
 ## TCP-MSS
 
 ### 문제
-IBM Virtual Router Appliance는 nftables를 사용하고 TCP-MSS를 지원하지 않습니다.
+IBM Virtual Router Appliance는 nftables를 사용하며 TCP-MSS는 지원하지 않습니다.
 
 ### 임시 해결책
-현재 이 문제에 대한 임시 해결책이 없습니다.
+현재 이 문제에 대한 임시 해결책은 없습니다. 
 
 ## OpenVPN
 
 ### 문제
-Virtual Router Appliance에서 `push-route` 매개변수를 사용하는 경우 OpenVPN이 작동하지 않습니다.
+Virtual Router Appliance에서 `push-route` 매개변수를 사용하는 경우 OpenVPN이 작동하지 않습니다. 
 
 ### 임시 해결책
-`push-route` 대신 `openvpn-option` 매개변수를 사용하십시오.
+`push-route` 대신에 `openvpn-option` 매개변수를 사용하십시오. 
 
 ## IPSEC + OSPF를 통한 GRE/VTI
 
 ### 문제
-* VIF에 여러 개의 서브넷이 구성된 경우 트래픽이 VRA의 해당 서브넷 간에 전달될 수 없습니다.
-* InterVlan 라우팅이 VRA에서 작동하지 않습니다.
+* VIF에 여러 서브넷이 구성되어 있는 경우 VRA의 해당 서브넷 간에 트래픽이 이동할 수 없습니다.                                              
+* InterVlan Routing이 VRA에서 작동하지 않습니다.
 
 ### 임시 해결책
-암시적 허용 규칙을 사용하여 VIF 인터페이스 간의 트래픽을 허용하십시오.
+Implicit 허용 규칙을 사용하여 VIF 인터페이스 간의 트래픽을 승인하십시오. 
 
 ## IPSec
 
 ### 문제
-IPSec(접두부 기반)이 IN 필터에서 작동하지 않습니다.
+IPSec(접두부 기반)이 IN 필터와 작동하지 않습니다. 
 
 ### 임시 해결책
 IPSec(VTI 기반)을 사용하십시오.
@@ -136,14 +135,14 @@ IPSec(VTI 기반)을 사용하십시오.
 ## IPSEC 'match-none"
 
 ### 문제
-Vyatta 5400 디바이스에서 다음 방화벽 규칙이 허용됩니다.
+Vyatta 5400 디바이스를 사용하면, 다음 방화벽 규칙이 허용됩니다. 
 
-set firewall name allow rule 10 ipsec 
+set firewall name allow rule 10 ipsec
 
 그러나 IBM Virtual Router Appliance에서는 IPSec이 없습니다.
 
 ### 임시 해결책
-VRA 디바이스에 사용할 수 있는 대체 규칙은 다음과 같습니다.
+VRA 디바이스에 대한 가능한 대체 규칙: 
 
 ```
    match-ipsec  Inbound IPsec packets
@@ -153,7 +152,7 @@ VRA 디바이스에 사용할 수 있는 대체 규칙은 다음과 같습니다
 ## IPSEC 'match-ipsec"
 
 ### 문제
-Vyatta 5400 디바이스에서 다음 방화벽 규칙이 허용됩니다.
+Vyatta 5400 디바이스를 사용하면, 다음 방화벽 규칙이 허용됩니다. 
 
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
@@ -161,9 +160,9 @@ set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 그러나 IBM Virtual Router Appliance에서는 IPSec이 없습니다.
 
 ### 임시 해결책
-프로토콜 `ESP` 및 `AH`(각각 IP 프로토콜 50 및 51)를 추가하십시오.
+프로토콜 `ESP` 및 `AH`를 추가하십시오(각각 IP 프로토콜 50 및 51).
 
-아래에 표시된 대로 `action` 규칙을 `승인` 또는 `삭제`할 수 있습니다.
+아래 표시된 대로 `action` 규칙은 `accept` 또는 `drop`일 수 있습니다. 
 
 ```
 set security firewall name <name> rule <rule-no> action accept
@@ -178,23 +177,23 @@ set security firewall name <name> rule <rule-no> action accept
 set security firewall name <name> rule <rule-no> protocol esp
 ```
 
-## DNAT에서의 사이트-투-사이트 IPSEC
+## DNAT으로 사이트-투-사이트 IPSEC
 
 ### 문제
-IPSec(접두부 기반)이 DNAT에서 작동하지 않습니다.
+IPSec(접두부 기반)이 DNAT와 작동하지 않습니다.                                                                                                             
 
 ```
-server (10.71.68.245) -- vyatta 1 (11.0.0.1) 
-===S-S-IPsec=== (12.0.0.1) 
+server (10.71.68.245) -- vyatta 1 (11.0.0.1)
+===S-S-IPsec=== (12.0.0.1)
 vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
-위의 스니펫은 IPSec 패킷이 Vyatta 5400에서 복호화된 후 DNAT 변환을 위한 간단한 설정 예입니다. 이 예제에는 두 개의 vyatta(`vyatta1(11.0.0.1)` 및 `vyatta2(12.0.0.1)`)가 있습니다. IPsec 피어링은 `11.0.0.1`과 `12.0.0.1` 사이에 구축됩니다. 이 예에서 클라이언트는 `10.103.0.1`부터 시작하여 `172.16.1.245`를 대상으로 합니다(엔드-투-엔드). 이 시나리오의 예상 동작은 목적지 주소 `172.16.1.245`가 패킷 헤더에서 `10.71.68.245`로 변환되는 것입니다.
+위의 스니펫은 IPSec 패킷이 Vyatta 5400에서 복호화된 후 DNAT 변환을 위한 간단한 설정 예입니다. 이 예제에는 `vyatta1 (11.0.0.1)` 및 `vyatta2 (12.0.0.1)`의 두 개의 vyatta가 있습니다. IPsec 피어링은 `11.0.0.1` 및 `12.0.0.1` 사이에 구축됩니다. 이 경우 클라이언트는 `10.103.0.1`에서 시작하여 `172.16.1.245`를 대상으로 합니다(엔드-투-엔드). 이 시나리오의 예상 동작은 목적지 주소 `172.16.1.245`가 패킷 헤더에서 `10.71.68.245`로 변환되는 것입니다. 
 
 초기에 Vyatta 5400 디바이스는 인바운드 IPSec에서 DNAT를 수행하여 인터페이스를 종료하고 연결 추적 테이블을 사용하여 트래픽을 IPsec 터널로 정상적으로 반환했습니다.
 
-Virtual Router Appliance에서는 이 구성이 동일하게 작동하지 않습니다. 세션은 작성되지만 conntrack 테이블이 DNAT 변경사항을 되돌린 후에는 반환 트래픽이 IPsec 터널을 우회합니다. 그런 다음 VRA는 IPsec 암호화 없이 유선으로 패킷을 전송합니다. 업스트림 디바이스는 이 트래픽을 예상하지 않으며 대부분 삭제합니다. 엔드-투-엔드 연결이 끊어진 상태에서 이는 의도된 동작입니다.
+Virtual Router Appliance에서는 이 구성이 동일하게 작동하지 않습니다. 세션은 작성되지만 conntrack 테이블이 DNAT 변경사항을 되돌린 후에는 반환 트래픽이 IPsec 터널을 우회합니다.그런 다음 VRA는 IPsec 암호화 없이 유선으로 패킷을 전송합니다. 업스트림 디바이스는 이 트래픽을 예상하지 않으며 대부분 삭제합니다.엔드-투-엔드 연결이 끊어진 상태에서 이는 의도된 동작입니다.
 
 ### 임시 해결책
 위의 네트워킹 시나리오를 수용하기 위해 IBM은 RFE를 작성했습니다. 
@@ -267,12 +266,12 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ## PPTP
 
 ### 문제
-PPTP가 더 이상 Virtual Router Appliance에서 지원되지 않습니다.
+PPTP는 더 이상 Virtual Router Appliance에서 지원되지 않습니다.                                                                                                                                                   
 
 ### 임시 해결책
-대신 L2TP 프로토콜을 사용하십시오.
+대신 L2TP 프로토콜을 사용하십시오. 
 
-## IPSec 재시작을 위한 스크립트
+## IPSec을 다시 시작하기 위한 스크립트
 
 ### 문제
 VRRP 가상 주소가 고가용성 VPN의 IBM Virtual Router Appliance에 추가될 때마다 IPsec 디먼을 다시 초기화해야 합니다. 이는 IPsec 서비스가 IKE 서비스 디먼이 초기화될 때 VRA에 표시되는 주소에 대한 연결만 청취하기 때문입니다.
@@ -301,16 +300,17 @@ set firewall name localGateway rule 300 state new 'enable'
 
 IBM Virtual Router Appliance에서 이 규칙에는 다음과 같은 문제가 있습니다.
 
-* 최근 개수 및 최근 시간에 대한 선택사항이 더 이상 사용되지 않습니다.
+* 최근 개수 및 최근 시간에 대한 옵션은 더 이상 사용되지 않습니다. 
 
-* 이전 문제로 인해 규칙이 예상대로 작동하지 않으며 적용된 인터페이스에 대한 모든 SSH 연결을 차단합니다.
+* 이전 문제로 인해, 규칙이 예상대로 작동할 수 없으며, 적용된 인터페이스에 대한 모든 SSH 연결을 차단합니다. 
 
 ### 임시 해결책
-대신 CPP를 사용하십시오.
+대신 CPP를 사용하십시오. 
 
-## 시스템 conntrack 문제 설정
+## set system conntrack 문제
 
 ### 문제
+
 ```
 set system conntrack expect-table-size '8192'
 set system conntrack hash-size '375000'
@@ -325,7 +325,7 @@ set system conntrack modules tftp 'disable'
 set system conntrack table-size '3000000'
 ```
 
-## 시스템 conntrack 제한시간 설정
+## set system conntrack 제한시간
 
 ### 문제
 ```
@@ -373,7 +373,7 @@ set policy route change-mss rule 1 set tcp-mss '1436'
 set policy route change-mss rule 1 tcp flags 'SYN
 ```
 
-## S-S Ipsec VPN에서 끊어진 특정 애플리케이션 또는 포트
+## S-S Ipsec VPN에서 중단된 특정 애플리케이션 또는 포트
 
 ### 문제
 
@@ -397,14 +397,14 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 local prefix '172.16.
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103.0.0/24'                                          set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote port 21 (ftp)
 ```
 
-## 로깅 동작에 대한 중요한 변경사항
+## 로깅 동작의 중요한 변경사항
 
 ### 문제
-Vyatta 5400 디바이스와 IBM Virtual Router Appliance 간의 로깅 동작에는 중요한 변경사항이 있습니다. 세션당 로깅에서 패킷당 로깅으로의 변경입니다.
+Vyatta 5400 디바이스와 IBM Virtual Router Appliance 간의 로깅 동작에 중요한 변경사항이 있습니다. 세션당 로깅에서 패킷당 로깅으로 변경되었습니다. 
 
-* 세션 로깅: 상태 저장 세션의 상태 전이를 기록합니다.
+* 세션 로깅: 상태 저장 세션 상태 전이를 기록합니다. 
 
-* 패킷 로깅: 규칙과 일치하는 모든 패킷을 기록합니다. 패킷 로깅은 로그 파일에서 "패킷 단위"로 기록되기 때문에 처리량과 디스크 용량에 대한 부담이 현저하게 감소합니다.
+* 패킷 로깅: 규칙과 일치하는 모든 패킷을 기록합니다. 패킷 로깅이 로그 파일에서 "패킷 단위"로 기록되므로, 처리량과 디스크 용량에 대한 부담이 현저하게 감소합니다. 
 
 * vRouter의 로깅 기능을 사용하여 방화벽 활동을 캡처할 수 있습니다. 로깅 기능과 마찬가지로 특정한 문제를 해결하는 경우에만 이 기능을 사용하고, 가능한 한 빨리 로깅을 사용 안함으로 설정해야 합니다.
 
@@ -428,4 +428,4 @@ Vyatta 5400 디바이스와 IBM Virtual Router Appliance 간의 로깅 동작에
 
 **QoS**
 
-* `policy qos name <policy-name> shaper class <class-id> match <rule-name>` 
+* `policy qos name <policy-name> shaper class <class-id> match <rule-name>`

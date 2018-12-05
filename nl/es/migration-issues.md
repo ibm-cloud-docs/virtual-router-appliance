@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-05-03"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,7 +21,7 @@ La tabla siguiente ilustra los problemas comunes o los cambios de comportamiento
 ### Problemas
 El comportamiento al definir el "estado de State-policy" en cortafuegos con estado del release 5.1 ha cambiado. En las versiones anteriores al release 5.1, si se establecía `state - global -state -policy` en un cortafuegos con estado, el vRouter añadía automáticamente una regla `Allow` implícita para devolver la comunicación de la sesión automáticamente.
 
-En el release 5.1 y posteriores, se debe añadir un valor de regla `Allow` en Virtual Router Appliance. El valor con estado funciona por interfaces en dispositivos Vyatta 5400 y por protocolos en dispositivos VRA.
+En el release 5.1 y posteriores, se debe añadir un valor de regla `Allow` en Virtual Router Appliance. El valor con estado funciona para interfaces en dispositivos Vyatta 5400 y para protocolos en dispositivos VRA.
 
 ### Métodos alternativos
 Si se aplica la regla `firewall-in` en una interfaz Ingress/Inside, se debe aplicar la regla `Firewall-out` a la interfaz Egress/Outside. De lo contrario, el tráfico de retorno se descartará en la interfaz Egress/Outside.        
@@ -37,13 +36,14 @@ Además, si utiliza la opción `state enable` en cada regla en lugar de `global-
 ## Política basada en zonas: manejo de local-zone
 
 ### Problemas
-No hay ninguna pseudointerfaz "local-zone" que asignar a zone-policy. 
+No hay ninguna pseudointerfaz "local-zone" que asignar a zone-policy.
 
 ### Método alternativo
-Este comportamiento se puede simular aplicando un cortafuegos basado en zonas a las interfaces físicas y un cortafuegos de interfaz a la interfaz de bucle de retorno. El cortafuegos de la interfaz de bucle de retorno filtra todo lo que entre y sale del direccionador. 
+Este comportamiento se puede simular aplicando un cortafuegos basado en zonas a las interfaces físicas y un cortafuegos de interfaz a la interfaz de bucle de retorno. El cortafuegos de la interfaz de bucle de retorno filtra todo lo que entre y sale del direccionador.
 
 Por ejemplo:
 
+```
 set security zone-policy zone internal default-action 'drop'
 set security zone-policy zone internal description 'Private zone'
 set security zone-policy zone internal interface 'dp0bond0'
@@ -82,7 +82,7 @@ En los dispositivos Vyatta 5400, esta operación es posible porque el cortafuego
 
 ### Métodos alternativos
 Se requiere un nuevo esquema de direccionamiento para VRA:
-![routing dns](./images/routing-dns.png)
+![dns de direccionamiento](./images/routing-dns.png)
 
 ## Tabla de direccionamiento basado en políticas
 
@@ -119,7 +119,7 @@ Utilice el parámetro `openvpn-option` en lugar de `push-route`.
 ## GRE/VTI sobre IPSEC + OSPF
 
 ### Problemas
-* Cuando VIF tiene varias subredes configuradas, el tráfico no puede ir a través de dichas subredes en VRA.                                
+* Cuando VIF tiene varias subredes configuradas, el tráfico no puede ir a través de dichas subredes en VRA.                                             
 * El direccionamiento InterVlan no funciona en VRA.
 
 ### Métodos alternativos
@@ -138,7 +138,7 @@ Utilice IPSec (basada en VTI).
 ### Problemas
 Con los dispositivos Vyatta 5400, se permite la siguiente regla de cortafuegos:
 
-set firewall name allow rule 10 ipsec 
+set firewall name allow rule 10 ipsec
 
 Sin embargo, con IBM Virtual Router Appliance, no hay IPSec.
 
@@ -184,15 +184,15 @@ set security firewall name <name> rule <rule-no> protocol esp
 IPSec (basada en prefijos) no funciona con DNAT.                                                                                                             
 
 ```
-server (10.71.68.245) -- vyatta 1 (11.0.0.1) 
-===S-S-IPsec=== (12.0.0.1) 
+server (10.71.68.245) -- vyatta 1 (11.0.0.1)
+===S-S-IPsec=== (12.0.0.1)
 vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
-El fragmento de código anterior es un breve ejemplo de configuración de la conversión de DNAT después de que un paquete IPSec se haya descifrado en Vyatta 5400. En el ejemplo, hay dos vyattas, `vyatta1 (11.0.0.1)` y `vyatta2 (12.0.0.1)`. La interconexión de IPsec se establece entre `11.0.0.1` y `12.0.0.1`. En este caso, el cliente se dirige a `172.16.1.245` desde `10.103.0.1` de extremo a extremo.El comportamiento esperado de este caso de ejemplo es que la dirección de destino `172.16.1.245` se convierta en `10.71.68.245` en la cabecera de paquete.
+El fragmento de código anterior es un breve ejemplo de configuración de la conversión de DNAT después de que un paquete IPSec se haya descifrado en Vyatta 5400. En el ejemplo, hay dos vyattas, `vyatta1 (11.0.0.1)` y `vyatta2 (12.0.0.1)`. La interconexión de IPsec se establece entre `11.0.0.1` y `12.0.0.1`. En este caso, el cliente se dirige a `172.16.1.245` desde `10.103.0.1` de extremo a extremo. El comportamiento esperado de este caso de ejemplo es que la dirección de destino `172.16.1.245` se convierta en `10.71.68.245` en la cabecera del paquete.
 
-Inicialmente, el dispositivo Vyatta 5400 realizaba la DNAT en la IPSec de entrada, finalizaba la interfaz y devolvía el tráfico correctamente al túnel IPsec utilizando la tabla de seguimiento de conexiones. 
+Inicialmente, el dispositivo Vyatta 5400 realizaba la DNAT en la IPSec de entrada, finalizaba la interfaz y devolvía el tráfico correctamente al túnel IPsec utilizando la tabla de seguimiento de conexiones.
 
 En Virtual Router Appliance, la configuración no funciona de la misma manera. Se crea la sesión; sin embargo, el tráfico de retorno ignora el túnel IPsec después de que la tabla de seguimiento de conexiones invierta el cambio de DNAT. A continuación, VRA envía el paquete en la conexión sin cifrado de IPsec.  El dispositivo en sentido ascendente no espera este tráfico, y lo más probable es que lo descarte. A pesar de que se interrumpe la conectividad continua, se trata de un comportamiento intencionado.   
 
@@ -201,7 +201,7 @@ Para tener en cuenta el caso de ejemplo de red anterior, IBM ha creado una RFE.�
 
 Mientras se evalúa la RFE, recomendamos el siguiente método alternativo:
 
-**Mandatos de configuración de interfaz**
+**Mandatos de configuración de la interfaz**
 
 ```
 set interfaces dataplane dp0p192p1 address '11.0.0.1/30'
@@ -287,7 +287,7 @@ interfaces dataplane interface-name vrrp vrrp-group group-id notify
 
 ### Problemas
 
-La intención de la regla siguiente consiste en limitar las conexiones SSH a 3 cada 30 segundos para SSH con cualquier dirección: 
+La intención de la regla siguiente consiste en limitar las conexiones SSH a 3 cada 30 segundos para SSH con cualquier dirección:
 
 ```
 set firewall name localGateway rule 300 action 'drop'
@@ -311,6 +311,7 @@ En su lugar, utilice CPP.
 ## Problemas de set system conntrack
 
 ### Problemas
+
 ```
 set system conntrack expect-table-size '8192'
 set system conntrack hash-size '375000'
@@ -397,7 +398,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 local prefix '172.16.
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103.0.0/24'                                          set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote port 21 (ftp)
 ```
 
-## Cambio significativo en el comportamiento de registro 
+## Cambio significativo en el comportamiento de registro
 
 ### Problemas
 Existe un cambio significativo en el comportamiento de registro entre el dispositivo Vyatta 5400 e IBM Virtual Router Appliance, desde el registro por sesión al registro por paquete.
@@ -409,13 +410,13 @@ Existe un cambio significativo en el comportamiento de registro entre el disposi
 * La capacidad de registro de vRouter se puede utilizar para capturar la actividad del cortafuegos. Al igual que cualquier función de registro, sólo debe habilitarla si desea resolver un problema concreto, e inhabilitar el registro tan pronto como pueda.
 
 El cortafuegos con estado que gestiona las sesiones de cortafuegos/NAT escribe en "unidades de sesión". Se recomienda utilizar el registro de sesión. A continuación, se describe cada ejemplo:
- 
-**Registro de sesión**
+
+**Sesión / registro**
 
 * `security firewall session-log <protocol>`
 * `system syslog file <filename> facility <facility> level <level>`
 
-**Cortafuegos de registro de paquete**
+**Cortafuegos de registro de paquetes**
 
 * `security firewall name <name> default-log <action>`
 * `security firewall name <name> rule <rule-number> log`
@@ -426,6 +427,6 @@ El cortafuegos con estado que gestiona las sesiones de cortafuegos/NAT escribe e
 * `service nat source rule <rule-number> log PBR`
 * `policy route pbr <name> rule <rule-number> log`
 
-**QoS**
+**Calidad de servicio**
 
-* `policy qos name <policy-name> shaper class <class-id> match <rule-name>` 
+* `policy qos name <policy-name> shaper class <class-id> match <rule-name>`

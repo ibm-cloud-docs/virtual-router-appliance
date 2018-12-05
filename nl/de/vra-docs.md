@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -45,7 +45,7 @@ Vyatta-Dokumentation  | Beschreibung
 [Brocade Vyatta Network OS OSPFv3 Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-ospfv3.pdf)  | In dieser Veröffentlichung wird das Konfigurieren von OSPFv3 für Brocade-Produkte beschrieben, die unter Brocade Vyatta Network OS ausgeführt werden, das in diesem Dokument auch als virtueller Router, vRouter oder Router bezeichnet wird.
 [Brocade Vyatta Network OS OSPF Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-ospf.pdf)  | In dieser Veröffentlichung wird das Konfigurieren von OSPF für Brocade-Produkte beschrieben, die unter Brocade Vyatta Network OS ausgeführt werden, das in diesem Dokument auch als virtueller Router, vRouter oder Router bezeichnet wird.
 [Brocade Vyatta Network OS Multicast Routing Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-multicastrouting.pdf)  | In dieser Veröffentlichung wird das Aktivieren und Konfigurieren von Multicast-Routing für Brocade-Produkte beschrieben, die unter Brocade Vyatta Network OS ausgeführt werden, das in diesem Dokument auch als virtueller Router, vRouter oder Router bezeichnet wird.
-[Brocade Vyatta Network OS MPLS Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-mpls.pdf)  | In dieser Veröffentlichung werden die Funktionen und die Konfiguration von MPLS (Multiprotocol Label Switching) unter Brocade Vyatta Network OS beschrieben, das in diesem Dokument auch als virtueller Router, vRouter oder Router bezeichnet wird. 
+[Brocade Vyatta Network OS MPLS Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-mpls.pdf)  | In dieser Veröffentlichung werden die Funktionen und die Konfiguration von MPLS (Multiprotocol Label Switching) unter Brocade Vyatta Network OS beschrieben, das in diesem Dokument auch als virtueller Router, vRouter oder Router bezeichnet wird.
 [Brocade Vyatta Network OS MSDP Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-msdp.pdf)  | In dieser Veröffentlichung wird die Ausführung von MSDP unter Brocade Vyatta Network OS beschrieben, das in diesem Dokument auch als virtueller Router, vRouter oder Router bezeichnet wird.
 [Brocade Vyatta Network OS License and Entitlement Management Software Licensing Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-licensing.pdf)  | In dieser Veröffentlichung wird die Verwaltung von Lizenzen und Berechtigungen für Brocade-Produkte beschrieben, die unter Brocade Vyatta Network OS ausgeführt werden, das in diesem Dokument auch als virtueller Router, vRouter oder Router bezeichnet wird.
 [Brocade Vyatta Network OS IPv6 Support Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-ipv6support.pdf)  | In dieser Veröffentlichung wird die IPv6-Unterstützung für Brocade-Produkte beschrieben, die unter Brocade Vyatta Network OS ausgeführt werden, das in diesem Dokument auch als virtueller Router, vRouter oder  Router bezeichnet wird.

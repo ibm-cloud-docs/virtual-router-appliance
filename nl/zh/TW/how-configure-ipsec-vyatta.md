@@ -1,13 +1,13 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-25"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# 如何在 Vyatta 上配置 IPSec
+# 在 Vyatta 5400 上配置 IPSec
 
 對於「網際網路安全通訊協定 (IPSec)」通道，Brocade 5400 vRouter (Vyatta) 裝置將被稱為「本端」。下列每一個指令都會執行不同的功能來配置 IPSec 網站至網站。請注意，此 IPSec 網站至網站範例示範 SoftLayer 公用網路上的通道；請使用 **bond0** 進行專用 IPSec 網站至網站連線。
 

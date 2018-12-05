@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# VRA-Grundlagen
+# Zugreifen und Konfigurieren
 Die VRA kann mithilfe einer fernen Konsolensitzung über SSH oder durch Anmelden bei der Web-GUI konfiguriert werden. Die Web-GUI ist standardmäßig nicht im öffentlichen Internet verfügbar. Melden Sie sich über SSH an, um die Web-GUI zu aktivieren.
 
 **HINWEIS:** Das Konfigurieren von VRA außerhalb der zugehörigen Shell oder Schnittstelle kann zu unerwarteten Ergebnissen führen und wird daher nicht empfohlen.

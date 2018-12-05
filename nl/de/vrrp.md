@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-12"
-
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -122,9 +121,9 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* Eine VRRP- Synchronisationsgruppe (vrrp sync-group) unterscheidet sich von einer VRRP-Gruppe (vrrp group). Wenn eine Schnittstelle, die zu einer Synchronisationsgruppe gehört, den Status ändert, werden alle anderen Mitglieder dieser Synchronisationsgruppe ebenfalls in denselben Status versetzt. 
+* Eine VRRP- Synchronisationsgruppe (vrrp sync-group) unterscheidet sich von einer VRRP-Gruppe (vrrp group). Wenn eine Schnittstelle, die zu einer Synchronisationsgruppe gehört, den Status ändert, werden alle anderen Mitglieder dieser Synchronisationsgruppe ebenfalls in denselben Status versetzt.
 * Die Nummer der VRRP-Gruppe (vrrp-group) der VLAN-Schnittstellen (VIFs) muss nicht mit der Nummer der nativen Schnittstellen oder der anderen VLANs übereinstimmen. Es wird jedoch dringend empfohlen, alle virtuellen Adressen desselben VLANs in einer VRRP-Gruppe - wie in VLAN 10 dargestellt - beizubehalten.
-* Die tatsächlichen Schnittstellenadressen auf den nativen VLANs (z.B. dp0bond1: 169.110.20.28/29) befinden sich nicht immer in demselben Teilnetz wie deren VIPs (169.110.21.26/29). 
+* Die tatsächlichen Schnittstellenadressen auf den nativen VLANs (z.B. dp0bond1: 169.110.20.28/29) befinden sich nicht immer in demselben Teilnetz wie deren VIPs (169.110.21.26/29).
 
 ## Manueller VRRP-Ausweichbetrieb
 Falls Sie einen VRRP-Ausweichbetrieb erzwingen müssen, kann dies durch die Ausführung des folgenden Befehls auf der Einheit, die gerade VRRP-Master ist, erreicht werden.
@@ -149,3 +148,53 @@ set service connsync remote-peer 10.124.10.4
 Die andere VRA verfügt über die gleiche Konfiguration, jedoch über einen anderen fernen Peer (`remote-peer`).
 
 Beachten Sie, dass die Leitung überlastet werden kann, wenn viele Verbindungen zu anderen Schnittstellen führen und in Konkurrenz zu anderen Datenverkehrsströmen in der deklarierten Leitung treten.
+
+## VRRP-Startverzögerungsfunktion
+Die Vyatta-Betriebssystemversion 1801p und höher enthält den neuen Befehl `vrrp`.
+
+`vrrp` gibt ein Wahlprotokoll an, das die Verantwortung für einen virtuellen Router dynamisch einem der VRRP-Router in einem LAN zuordnet. Der VRRP-Router, der die IPv4- oder IPv6-Adresse(n) steuert, die einem virtuellen Router zugeordnet sind, wird als Master bezeichnet und leitet Pakete weiter, die an diese IPv4- oder IPv6-Adressen gesendet wurden. Der Wahlprozess stellt eine dynamische Funktionsübernahme in der Weiterleitungsfunktion bereit, falls der Master nicht mehr verfügbar sein sollte. Alle Protokollnachrichten werden entweder mit IPv4- oder IPv6-Multicast-Datagrammen ausgeführt. Das Protokoll kann dadurch über eine Vielzahl von LAN-Technologien mit mehreren Zugriffsmöglichkeiten, die IPv4/IPv6-Multicasting unterstützen, betrieben werden.
+
+Um den Datenaustausch im Netz zu minimieren, sendet nur der Master für jeden virtuellen Router regelmäßige VRRP-Mitteilungen als Nachrichten. Ein Backup-Router versucht nicht, den Master präemptiv zu verarbeiten, es sei denn, er hat eine höhere Priorität. Dadurch wird die Serviceunterbrechung beseitigt, die bisher bis zur Verfügbarkeit eines bevorzugteren Pfads bestand. Es ist auch möglich, alle Vorableerungsversuche administrativ zu untersagen. Falls der Master nicht mehr verfügbar ist, wird der Backup mit der höchsten Priorität nach einer kurzen Verzögerung zum Master und bietet einen kontrollierten Übergang der Verantwortung des virtuellen Routers mit minimaler Serviceunterbrechung. 
+
+**HINWEIS:** Für Bereitstellungen von IBM Cloud ist der Startverzögerungswert auf den Standardwert eingestellt. Sie können diesen Wert nach Ihrem Ermessen ändern, wenn Sie Ihre Funktionsübernahme- und Hochverfügbarkeitsmethoden testen.
+
+
+### Vorableerung vs. keine Vorableerung
+
+Das Protokoll `vrrp` definiert die Logik, die entscheidet, welcher VRRP-Peer in einem Netz die höhere Priorität hat, und daher der beste Peer ist, um die Rolle als Master auszuführen. Mit einer Standardkonfiguration wird VRRP so aktiviert, dass die Vorableerung ausgeführt wird. Das heißt, dass neue Peers mit höherer Priorität im Netz die Übernahme der Masterrolle erzwingen. 
+
+Wenn die Vorableerung inaktiviert ist, übernimmt ein Peer mit höherer Priorität die Masterrolle nur dann, wenn der vorhandene Peer mit geringerer Priorität nicht mehr im Netz verfügbar ist. Das Inaktivieren der Vorableerung ist manchmal in realen Szenarios sinnvoll. Dies gilt für Situationen mit Peers höherer Priorität, wenn diese möglicherweise damit beginnen, regelmäßig aufgrund von Zuverlässigkeitsproblemen mit dem Peer selbst oder mit einer der Netzverbindungen fehlzuschlagen. Außerdem ist es sinnvoll die vorzeitige Übernahme durch einen neuen Peer mit höherer Priorität zu vermeiden, der die Netzkonvergenz noch nicht abgeschlossen hat. 
+
+### Voraussetzungen und Einschränkung der Vorableerung
+
+Falls die VRRP-Peers so konfiguriert wurden, dass die Vorableerung inaktiviert ist, gibt es einige Fälle, in denen die Vorableerung “scheinbar” doch erfolgt. In Wirklichkeit ist das Szenario jedoch nur eine standardmäßige VRRP-Übernahme. Wie oben beschrieben, verwendet VRRP die IP-Multicast-Datagramme als Mittel zur Bestätigung der Verfügbarkeit des aktuell ausgewählten Master-Routers. Da es sich um ein Protokoll der Ebene 3 handelt, das den Ausfall eines VRRP-Peers erkennt, ist es wichtig, dass die Übernahmedetektion in VRRP verzögert wird, bis VRRP und die Ebene 1 bis 2 des Netzwerkstapels bereit und konvergiert sind. In einigen Fällen kann die Netzschnittstelle, auf der VRRP ausgeführt wird, dem Protokoll bestätigen, dass die Schnittstelle aktiv ist, aber andere zugrundeliegende Services wie Spanning Tree oder Bonding wurden möglicherweise nicht abgeschlossen. Im Ergebnis kann dann die IP-Konnektivität zwischen Peers nicht hergestellt werden. Ist dies der Fall, wird VRRP auf einem neuen höheren Peer zum Master, da keine VRRP-Nachrichten vom aktuellen Master-Peer im Netz erkannt werden können. Nach der Konvergenz wird der kurze Zeitraum, in dem zwei Master-VRRP-Peers ausgeführt werden, dazu führen, dass die Dual-Master-Logik des VRRP ausgeführt wird. Das bedeutet, dass der Peer mit der höheren Priorität Master bleibt und der Peer mit der niedrigeren Priorität zum Backup wird. Dieses Szenario kann “scheinbar” einen Fehler in der Funktion “keine Vorableerung” darstellen. 
+
+### Fehler bei der Startverzögerung
+
+Um die Probleme bei der Startverzögerung in der Konvergenz der unteren Ebenen des Netzstapels während der Schnittstellenaktivierung sowie andere Randerscheinungen zu beseitigen, wurde eine neue Funktion mit dem Namen “Startverzögerung” (Startup Delay) mit der Programmkorrektur 1801p eingeführt. Die Funktion bewirkt, dass der VRRP-Status auf einer Maschine, die “erneut geladen wurde” (reloaded), für eine zuvor definierte Verzögerungsdauer, die vom Netzbediener konfiguriert werden kann, im Status INIT bleibt. Die Flexibilität bei diesem Verzögerungswert ermöglicht es dem Netzbediener, die Merkmale des Netzes und der Geräte unter realen Bedingungen anzupassen.
+
+### Befehlsdetails
+
+```
+vrrp {
+start-delay <0-600>
+}
+```
+
+`start-delay` kann Werte zwischen 0 (Standardwert) und 600 Sekunden annehmen. 
+
+### Beispielkonfiguration
+
+```
+interfaces {
+  bonding dp0bond1 {
+address 161.202.101.206/29 mode balanced
+vrrp {
+      start-delay 120
+      vrrp-group 211 {
+preempt false
+priority 253
+virtual-address 161.202.101.204/29
+} }
+}
+```

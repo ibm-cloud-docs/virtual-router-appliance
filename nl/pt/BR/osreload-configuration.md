@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -23,7 +23,7 @@ Para recarregar seu SO, execute o procedimento a seguir:
 2. Selecione **Lista de Dispositivos** na lista suspensa Dispositivos.
 3. Clique no servidor que você deseja recarregar.
 4. Selecione **Recarregamento do SO** no menu suspenso **Ações** na parte superior esquerda da página.
-5. Na tela Recarregamento do SO, escolha quaisquer recursos e opções que gostaria de aplicar como parte do recarregamento. 
+5. Na tela Recarregamento do S.O., clique em **Editar** para a Categoria que requer uma atualização. Selecione **AT&T** como o Fornecedor e a versão do S.O. que você deseja recarregar.
 6. Clique no botão **Recarregar em Cima da Configuração** para continuar no pop-up **Revisão**. Clique em **Cancelar** para cancelar as mudanças no dispositivo e sair da tela.
 7. Verifique se todos os detalhes na seção Nova configuração estão corretos. Clique em **Avançar** para avançar para o pop-up Confirmar.
 8. Clique no botão **Confirmar Recarregamento do SO** para confirmar e iniciar o Recarregamento do SO. Clique em **Cancelar** para cancelar a ação.

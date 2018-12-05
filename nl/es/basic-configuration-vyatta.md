@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-25"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -40,7 +40,9 @@ Tenga en cuenta que la opción de cálculo se encuentra en la VLAN del lado púb
 
 9\. Pulse el botón **Set** y pulse **Commit**.
 
-10\. Pulse **Save** en la barra de menús del medio, si no, la configuración vuelve a sus valores predeterminados la siguiente vez que se rearranca el sistema.<sup>1</sup>
+10\. Pulse **Save** en la barra de menús del medio, si no, la configuración vuelve a sus valores predeterminados la siguiente vez que se rearranca el sistema.
+
+**NOTA** La retrotracción de la configuración puede ser una característica muy útil si deshace la configuración mientras prueba los cambios. Mientras no guarde los cambios, puede reiniciar el servidor desde el portal web y restaurar la configuración anterior.
 
 11\. Pulse el separador Statistics y abra la nueva interfaz para verificar y supervisar el tráfico.
 
@@ -65,7 +67,9 @@ La modalidad de configuración proporciona acceso a los mandatos para:
   * Mostrar información de configuración
   * Navegar por la jerarquía de configuración
 
-Cuando inicia sesión en el sistema, el sistema está en modalidad operativa; deberá cambiar a la modalidad configuración para utilizar estos mandatos.<sup>2</sup>
+Cuando inicia sesión en el sistema, el sistema está en modalidad operativa; deberá cambiar a la modalidad configuración para utilizar estos mandatos.
+
+**NOTA:** puede saber en qué modalidad está, operativa o de configuración, en función del símbolo del sistema. Si el símbolo del sistema es #, está en modalidad operativa; si el símbolo es $, está en modalidad de configuración.
 
 Utilice los pasos siguientes para configurar la VLAN privada mediante la CLI. Recuerde que los valores necesarios para configurar la VLAN son:
 
@@ -73,9 +77,11 @@ Utilice los pasos siguientes para configurar la VLAN privada mediante la CLI. Re
   * Pasarela y máscara (formato CIDR) de la VLAN que se va a direccionar (10.52.69.201/29)
   * Nombre de enlace privado del dispositivo Brocade 5400 vRouter (bond0)
 
-1\. Establezca una conexión SSH a Brocade 5400 vRouter (dirección IP pública o privada) utilizando **vyatta**<sup>3</sup> como **nombre de usuario**; indique la contraseña cuando se le solicite.
+1. Establezca una conexión SSH a Brocade 5400 vRouter (dirección IP pública o privada) utilizando **vyatta** como **nombre de usuario**; indique la contraseña cuando se le solicite.
 
-2\. Configure la vif:
+   **NOTA:** debe crear un nuevo usuario dentro de Brocade 5400 vRouter e inhabilitar el usuario inicial predeterminado `vyatta`.
+
+2. Configure la vif:
 
   * Escriba *configure* en el indicador de mandatos para entrar en la modalidad de configuración.
   * Escriba *set interfaces bonding bond0 vif 2254 address 10.52.69.201/29* en el indicador de mandatos para establecer la vif.
@@ -86,11 +92,3 @@ Utilice los pasos siguientes para configurar la VLAN privada mediante la CLI. Re
 3\. Escriba *show interfaces* para comprobar los valores que acaba de confirmar.
 
 4\. Direccione las VLAN restantes a través del dispositivo Brocade 5400 vRouter.
-
-**Notas:**
-
-<sup>1</sup> La retrotracción de la configuración puede ser una característica muy útil si deshace la configuración probando los cambios. Mientras no guarde los cambios, puede reiniciar el servidor desde el portal web y restaurar la configuración anterior.
-
-<sup>2</sup> Puede saber en qué modalidad está, operativa o de configuración, en función del símbolo del sistema. Si el símbolo del sistema es #, está en modalidad operativa; si el símbolo es $, está en modalidad de configuración.
-
-<sup>3</sup> Debe crear un nuevo usuario dentro de Brocade 5400 vRouter e inhabilitar el usuario inicial predeterminado `vyatta`.

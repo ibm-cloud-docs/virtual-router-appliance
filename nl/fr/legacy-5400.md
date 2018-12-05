@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-06-15"
+  years: 2017
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,10 +14,9 @@ lastupdated: "2018-06-15"
 {:tip: .tip}
 {:download: .download}
 
-# Ancien système Vyatta 5400
-La documentation suivante relative à Vyatta 5400 est fournie à titre gracieux. 
+# Prise en charge de Vyatta 5400
 
-Les utilisateurs d'un ancien système Vyatta 5400 doivent effectuer une mise à niveau vers IBM Virtual Router Appliance (VRA) dès que possible, car Vyatta 5400 ne sera plus pris en charge à compter d'avril 2018. 
+Les utilisateurs d'un ancien système Vyatta 5400 doivent effectuer une mise à niveau vers IBM Virtual Router Appliance (VRA) dès que possible, car Vyatta 5400 sera retiré à compter du 31 mars 2019.
 
 Un guide de migration est disponible [ici](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf).
 

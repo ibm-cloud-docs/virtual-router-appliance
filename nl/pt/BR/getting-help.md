@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2018-02-28"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -26,6 +26,6 @@ Ao usar os fóruns para fazer uma pergunta, marque a sua pergunta para que ela s
 
 Consulte
 [Obtendo
-ajuda](https://console.bluemix.net/docs/support/index.html#getting-help) para obter mais detalhes sobre o uso dos fóruns.
+ajuda](/docs/support/index.html#getting-help) para obter mais detalhes sobre o uso dos fóruns.
 
-Para obter informações sobre a abertura de um chamado de suporte IBM ou sobre níveis de suporte e gravidades de chamados, veja [Entrando em contato com o suporte](https://console.bluemix.net/docs/support/index.html#contacting-support).
+Para obter informações sobre a abertura de um chamado de suporte IBM ou sobre níveis de suporte e gravidades de chamados, veja [Entrando em contato com o suporte](/docs/support/index.html#contacting-support).

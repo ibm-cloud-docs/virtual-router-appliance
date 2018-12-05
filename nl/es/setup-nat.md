@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Configurar reglas de NAT en Vyatta
+# Configuración de reglas NAT en Vyatta 5400
 Este tema contiene ejemplos de las reglas de NAT (conversión de direcciones de red) utilizadas en Vyatta.
 
 ## Regla de NAT One-to-many (enmascaramiento)
@@ -66,7 +66,8 @@ commit
 
 Si el tráfico entra en la IP `50.97.203.227` en bond1, esa IP se correlacionará con la IP `10.52.69.202` (en cualquier interfaz definida). Si el tráfico sale con la IP `10.52.69.202` (en cualquier interfaz definida), se convertirá a la IP `50.97.203.227` y saldrá en la interfaz bond1.
 
-**NOTA:** utilice el siguiente mandato para resolver problemas de NAT: `run show nat source translations detail`.
+**NOTA:** las direcciones IP que se correlacionan en reglas one-to-one no se pueden enmascarar. Si convierte una dirección IP de entrada, debe convertir la misma IP de salida para que su tráfico vaya en ambos sentidos.
+
 
 ## Adición de rangos de IP a través de VRA
 
@@ -94,10 +95,3 @@ De aplicación a una zona:
 De aplicación a una interfaz de enlace:
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
-
-**NOTAS:**
-
-* Las direcciones IP que se correlacionan en reglas one-to-one no se pueden enmascarar. Si convierte una dirección IP de entrada, debe convertir la misma IP de salida para que su tráfico vaya en ambos sentidos.
-
-* Utilice el siguiente mandato para resolver problemas de NAT: `run show nat source translations detail`.
-

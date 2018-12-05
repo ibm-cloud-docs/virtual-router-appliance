@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-25"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -40,7 +40,9 @@ Observe que é a VLAN do lado público na qual a opção de cálculo está local
 
 9\. Clique no botão **Configurar** e depois em **Confirmar**.
 
-10\. Clique em **Salvar** na barra de menus do meio; caso contrário, a configuração retrocederá para o seu padrão na próxima vez em que o sistema for reinicializado.<sup>1</sup>
+10\. Clique em **Salvar** na barra de menus do meio, caso contrário, a configuração será recuperada para o seu padrão na próxima vez em que o sistema for reinicializado.
+
+**NOTA:** o retrocesso de configuração poderá ser um recurso muito útil se você quebrar a configuração ao testar mudanças. Enquanto as mudanças não são salvas é possível reinicializar o servidor do Portal da web e restaurar a configuração anterior.
 
 11\. Clique na guia Estatísticas e abra a nova interface para verificar e monitorar o tráfego.
 
@@ -65,7 +67,9 @@ A configuração fornece acesso a comandos para:
   * Mostrar informações de configuração
   * Navegar por meio da hierarquia de configuração
 
-Quando você efetuar logon no sistema, o sistema estará no modo operacional; será necessário alternar para a configuração para os comandos.<sup>2</sup>
+Quando você efetuar logon no sistema, o sistema estará no modo operacional; será necessário alternar para configuração para os comandos.
+
+**NOTA:** é possível saber em qual modo você está, operacional ou de configuração, com base no prompt. Você estará no modo operacional se o prompt for # e no modo de configuração se o prompt for $.
 
 Use as etapas a seguir para configurar a VLAN privada usando a CLI. Lembre-se que os valores necessários para configurar a VLAN são:
 
@@ -73,24 +77,18 @@ Use as etapas a seguir para configurar a VLAN privada usando a CLI. Lembre-se qu
   * Gateway e máscara (formato CIDR) da VLAN a ser roteada (10.52.69.201/29)
   * Nome da ligação privada do Dispositivo Brocade 5400 vRouter (bond0)
 
-1\. Faça SSH para o seu Brocade 5400 vRouter (endereço IP público ou privado) usando **vyatta**<sup>3</sup> como o **Nome do usuário**; forneça a senha quando solicitado.
+1. Aplique SSH ao Brocade 5400 vRouter (endereço IP público ou privado) usando **vyatta** como o **Nome de usuário**; forneça a senha quando solicitado.
 
-2\. Configure o vif:
+   **NOTA:** é necessário criar um novo usuário no Brocade 5400 vRouter e desativar o usuário inicial padrão `vyatta`.
+
+2. Configure o vif:
 
   * Digite *configure* no prompt de comandos para entrar no modo de configuração.
   * Digite *set interfaces bonding bond0 vif 2254 address 10.52.69.201/29* no prompt de comandos para configurar o vif.
   * Digite *commit* no prompt de comandos para confirmar as configurações.
   * Digite *save* para salvar as configurações.
-  * Digite *exit* para sair novamente do modo de operação.
+  * Digite *exit* para alternar de volta para o modo de operação.
 
 3\. Digite *show interfaces* para verificar as configurações recém-confirmadas.
 
 4\. Roteie as VLANs restantes por meio do dispositivo Brocade 5400 vRouter.
-
-**Notas:**
-
-<sup>1</sup> O retrocesso de configuração poderá ser um recurso muito útil se você quebrar a sua configuração enquanto testar mudanças. Enquanto as mudanças não são salvas é possível reinicializar o servidor do Portal da web e restaurar a configuração anterior.
-
-<sup>2</sup> É possível informar em qual modo você está, operacional ou de configuração, com base no prompt. Você estará no modo operacional se o prompt for # e no modo de configuração se o prompt for $.
-
-<sup>3</sup> É necessário criar um novo usuário dentro do Brocade 5400 vRouter e desativar o usuário inicial padrão `vyatta`.

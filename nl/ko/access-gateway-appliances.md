@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -20,5 +20,5 @@ lastupdated: "2017-10-30"
 
 다음 프로시저를 수행하여 고객 포털의 게이트웨이 어플라이언스 화면에 액세스하십시오.
 
-1. 고유한 신임 정보를 사용하여 [고객 포털 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){: new_window}에 액세스하십시오.
+1. 고유한 인증 정보를 사용하여 [고객 포털 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){: new_window}에 액세스하십시오.
 2. 네트워크 메뉴 옵션에서 **게이트웨이 어플라이언스**를 선택하십시오.

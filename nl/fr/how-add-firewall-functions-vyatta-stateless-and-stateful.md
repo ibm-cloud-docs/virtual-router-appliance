@@ -1,13 +1,13 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-26"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Comment ajouter des fonctions de pare-feu à Vyatta (sans état et avec état)
+# Ajout de fonctions de pare-feu à Vyatta 5400 (sans état et avec état)
 
 Appliquer des jeux de règles de pare-feu à chaque interface est une méthode de tunnellisation possible avec des unités Brocade 5400 vRouter (Vyatta). Chaque interface comporte trois instances de pare-feu possibles - In, Out et Local - et des règles peuvent être appliquées à chacune d'elles. L'action par défaut est Drop, avec des règles qui permettent à un trafic spécifique d'être appliqué depuis la règle 1 à N. Dès lors qu'une correspondance est établie, le pare-feu applique l'action spécifique de la règle correspondante.
 
@@ -15,7 +15,7 @@ Pour l'une quelconque des trois instances de pare-feu ci-dessous, **une seule** 
 
 * **IN :** le pare-feu filtre les paquets entrant dans l'interface et traversant le système Brocade. Vous devrez autoriser certaines plages d'adresses IP SoftLayer à accéder aux systèmes front-end et back-end à des fins de gestion (ping, surveillance, etc.).
 * **OUT :** le pare-feu filtre les paquets sortant de l'interface. Ces paquets peuvent transiter par ou provenir du système Brocade.
-* **LOCAL :** le pare-feu filtre les paquets destinés au système Brocade vRouter proprement dit à l'aide de l'interface système. Vous devez établir des restrictions sur les ports d'accès entrant dans l'unité Brocade vRouter à partir d'adresses IP externes qui ne sont pas restreintes.<sup>1</sup>
+* **LOCAL:** le pare-feu filtre les paquets destinés au système Brocade vRouter proprement dit via l'interface système. Vous devez établir des restrictions sur les ports d'accès entrant dans l'unité Brocade vRouter à partir d'adresses IP externes qui ne sont pas restreintes. 
 
 Suivez les étapes décrites ci-dessous pour définir un exemple de règle de pare-feu afin de désactiver le protocole ICMP (Internet Control Message Protocol) *(ping - IPv4 echo reply message)* sur les interfaces de votre unité Brocade 5400 vRouter (il s'agit d'une action sans état ; une action avec état sera examinée ultérieurement) :
 
@@ -47,12 +47,14 @@ bond1.1894 = réservé à un usage ultérieur
 
 **Création de règles de pare-feu**
 
-Avant de créer effectivement les zones, il convient de créer les règles de pare-feu qui doivent être appliquées aux zones. Créer les règles avant les zones vous permet de les appliquer immédiatement, au lieu de créer la zone, puis les règles, et de devoir revenir à la zone pour l'application de règle.<sup>2</sup>
+Avant de créer effectivement les zones, il convient de créer les règles de pare-feu qui doivent être appliquées aux zones. Créer les règles avant les zones vous permet de les appliquer immédiatement, au lieu de créer la zone, puis les règles, et de devoir revenir à la zone pour l'application de règle. 
+
+**Remarque :** une instruction d'action par défaut est définie pour les zones et pour les jeux de règles. A l'aide de Zone-Policies, l'action par défaut est définie par l'instruction zone-policy et est représentée par la règle 10,000. De plus, il est important de garder à l'esprit que l'action par défaut d'un jeu de règles de pare-feu est **drop** pour tout le trafic.
 
 Les commandes suivantes permettent d'effectuer ce qui suit :
 
-* Créer une règle de pare-feu nommée **dmz2private** avec l'action par défaut qui consiste à supprimer tous les paquets
-* Activer la journalisation du trafic accepté ou refusé pour la règle nommée **dmz2private**
+* Créer une règle de pare-feu nommée **dmz2private** avec l'action par défaut qui consiste à supprimer tous les paquets.
+* Activer la journalisation du trafic accepté ou refusé pour la règle nommée **dmz2private**.
 
 
 1\. Tapez *configure* à l'invite de commande.
@@ -92,15 +94,17 @@ La règle de pare-feu suivante que nous allons créer sera appliquée à notre z
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
-**Création de zones**
+**Remarque :** les règles de pare-feu doivent suivre un flux sortant via **prod** vers **dmz**. Utilisez la commande suivante pour faciliter le traitement des incidents liés au flot réseau : *sudo tcpdump -i any host 10.52.69.202*.
+
+**Create Zones**
 
 Les zones sont la représentation logique d'une interface. Les commandes suivantes permettent d'effectuer ce qui suit :
 
-* créer une zone et une stratégie nommée **dmz** avec une action par défaut qui consiste à supprimer les paquets destinés à cette zone
-* définir la stratégie **dmz** pour utiliser l'interface **bond1**
-* définir la stratégie **prod** pour utiliser l'interface **bond1.2007**
-* créer une stratégie de zone nommée **private** avec une action par défaut qui consiste à supprimer les paquets destinés à cette zone
-* définir la stratégie nommée **private** pour utiliser l'interface **bond0.2254**
+* Créer une zone et une stratégie nommée **dmz** avec une action par défaut qui consiste à supprimer les paquets destinés à cette zone
+* Définir la stratégie **dmz** pour utiliser l'interface **bond1**
+* Définir la stratégie **prod** pour utiliser l'interface **bond1.2007**
+* Créer une stratégie de zone nommée **private** avec une action par défaut qui consiste à supprimer les paquets destinés à cette zone
+* Définir la stratégie nommée **private** pour utiliser l'interface **bond0.2254**
 
 1\. Entrez les commandes suivantes à l'invite :
 
@@ -124,9 +128,9 @@ Notez que vous pouvez appliquer une règle de pare-feu à une interface spécifi
 * *set interfaces bonding bond1 firewall local name public*
 * *commit*
 
-**Remarques :**
+## Pare-feu sans avec état
 
-<sup>1</sup> : un pare-feu *avec état* conserve une table des flux vus précédemment, et des paquets peuvent être acceptés ou supprimés en fonction de leur relation avec des paquets précédents. En règle générale, il est préférable d'utiliser des pare-feu avec état lorsque le trafic d'application est répandu. 
+Un pare-feu *avec état* conserve une table des flux vus précédemment, et des paquets peuvent être acceptés ou supprimés en fonction de leur relation avec des paquets précédents. En règle générale, il est préférable d'utiliser des pare-feux avec état lorsque le trafic d'application est répandu. 
 
 <span style="text-decoration: underline">*L'unité Brocade 5400 vRouter ne suit pas l'état des connexions avec la configuration par défaut. Le pare-feu est sans état tant que l'une des conditions suivantes n'est pas remplie : *</span>
 
@@ -136,8 +140,6 @@ Notez que vous pouvez appliquer une règle de pare-feu à une interface spécifi
 * Activation du service proxy Web transparent
 * Activation d'une configuration d'équilibrage de charge WAN
 
+## Pare-feu sans état
+
 Un pare-feu *sans état* considère chaque paquet isolément. Les parquets peuvent être acceptés ou supprimés en fonction de critères ACL de base uniquement, tels que les zones source et de destination dans l'adresse IP ou les en-têtes TCP/UDP (Transmission Control Protocols/User Datagram Protocol). Une unité Brocade 5400 vRouter sans état ne stocke pas d'informations de connexion et n'exige pas de rechercher la relation de chaque paquet avec les flux précédents, tous deux consommeront de faibles quantités de mémoire et de temps UC. Les performances du transfert de données brutes sont par conséquent meilleures sur un système sans état. Si vous n'avez pas besoin des fonctions spécifiques du statut avec état, Brocade recommande d'utiliser le routeur sans état afin d'optimiser vos performances.
-
-<sup>2</sup> : une instruction d'action par défaut est définie pour les zones et pour les jeux de règles. A l'aide de Zone-Policies, l'action par défaut est définie par l'instruction zone-policy et est représentée par la règle 10,000. De plus, il est important de garder à l'esprit que l'action par défaut d'un jeu de règles de pare-feu est **drop** pour tout le trafic.
-
-<sup>3</sup> : les règles de pare-feu doivent suivre un flux sortant via **prod** vers **dmz**. Utilisez la commande suivante pour faciliter le traitement des incidents liés au flot réseau : *sudo tcpdump -i any host 10.52.69.202*.

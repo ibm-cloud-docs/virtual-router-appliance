@@ -1,13 +1,13 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-26"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Vyatta-Hochverfügbarkeitskonfiguration
+# Vyatta 5400 Hochverfügbarkeitskonfiguration
 
 Die Hochverfügbarkeit von Vyatta wird durch die Verwendung von VRRP (Virtual Routing Redundancy Protocol) unterstützt. Jede Gateway-Gruppe verfügt über zwei primäre VRRP IP-Adressen. Eine für die private und eine für die öffentliche Seite des Netzes. 
 
@@ -80,9 +80,9 @@ Auf der zweiten Vyatta:
 
 In diesem Fall haben beide Vyattas ihre eigene IP, die nicht mit dem zugeordneten Teilnetz in Konflikt gerät. Sie können fast jeden beliebigen privaten Bereich auswählen. Suchen Sie jedoch ein kleines Teilnetz aus, das nicht mit anderen Routen, über die Sie möglicherweise verfügen, in Konflikt gerät. Beispiele wären Teilnetzbereiche über einem IPsec-Tunnel oder eine 10.0.0.0/8-Adresse, die mit Softlayer in Konflikt steht. Wenn Sie dies beachten, sollten keine Probleme auftreten.
 
-Sie möchten auch einen "sync-group"-Namen hinzufügen. Alle VRRP-Adressen sollten ein Teil derselben sync-group sein. Wenn ein Failure bei einer Schnittstelle auftritt, führt dies dazu, dass alle Schnittstellen in derselben sync-group ebenfalls ausfallen. Andernfalls kann es dazu kommen, dass einige Schnittstellen als MASTER und andere als BACKUP fungieren. Verwenden Sie denselben Namen in der nativen VLAN-Konfiguration bond0 und bond1.
+Sie möchten auch einen "sync-group"-Namen hinzufügen. Alle VRRP-Adressen sollten ein Teil derselben sync-group sein. Wenn ein Fehler bei einer Schnittstelle auftritt, führt dies dazu, dass alle Schnittstellen in derselben sync-group ebenfalls ausfallen. Andernfalls kann es dazu kommen, dass einige Schnittstellen als MASTER und andere als BACKUP fungieren. Verwenden Sie denselben Namen in der nativen VLAN-Konfiguration bond0 und bond1.
 
-HINWEIS: Die VRRP-Konfigurationen bond0 und bond1 können eine Zeile für rfc3768-compatibility enthalten. Dies ist nicht für VRRP in einer virtuellen Schnittstelle erforderlich, sondern nur für ein natives VLAN bei bond0 und bond1.
+HINWEIS: Die VRRP-Konfigurationen bond0 und bond1 können eine Zeile für rfc3768-compatibility enthalten. Dies ist für VRRP in einer virtuellen Schnittstelle nicht erforderlich, sondern nur für ein natives VLAN bei bond0 und bond1.
 
 Auf einem neu bereitgestellten Gatewaypaar, wird config-sync nur über eine Minimalkonfiguration verfügen:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-12-22"
 {:download: .download}
 
 # Gérer les pare-feux
-Virtual Router Appliance (VRA) a la capacité de traiter les règles de pare-feu pour protéger les réseaux locaux virtuels (VLAN) routés via l'unité. Les pare-feux dans l'unité VRA peuvent être divisés en deux étapes :
+Virtual Router Appliance (VRA) a la capacité de traiter les règles de pare-feu pour protéger les réseaux locaux virtuels (VLAN) routés via l'unité. Les pare-feux dans le dispositif VRA peuvent être divisés en deux étapes :
 
 1. Définition d'un ou de plusieurs jeux de règles.
 2. Application d'un jeu de règles à une interface ou à une zone. Une zone consiste en une ou plusieurs interfaces réseau.
@@ -85,33 +85,33 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 Dans le jeu de règles `ALLOW_LEGACY`, deux règles sont définies. La première règle supprime le trafic en provenance d'un groupe d'adresses nommé `network-group1`. La deuxième règle supprime et consigne tout le trafic destiné au port telnet (`tcp/23`) du groupe d'adresses nommé `network-group2`. L'action par défaut (default-action) indique que tout le reste est accepté.
 
 ## Autorisation d'accès au centre de données
-IBM offre plusieurs sous-réseaux d'adresses IP pour fournir des services et prendre en charge des systèmes s'exécutant dans le centre de données. Par exemple, les services du programme de résolution DNS s'exécutent sur `10.0.80.11` et `10.0.80.12`. D'autres sous-réseaux sont utilisés lors de la mise à disposition et du support. Les plages d'adresses IP utilisées dans les centres de données sont présentées [ici](https://console.bluemix.net/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+IBM offre plusieurs sous-réseaux d'adresses IP pour fournir des services et prendre en charge des systèmes s'exécutant dans le centre de données. Par exemple, les services du programme de résolution DNS s'exécutent sur `10.0.80.11` et `10.0.80.12`. D'autres sous-réseaux sont utilisés lors de la mise à disposition et du support. Les plages d'adresses IP utilisées dans les centres de données sont présentées [ici](/docs/infrastructure/hardware-firewall-dedicated/ips.html).
 
 Vous pouvez autoriser l'accès au centre de données en mettant les règles `SERVICE-ALLOW` adéquates au début des jeux de règles de pare-feu avec l'action `accept`. L'emplacement d'application du jeu de règles dépend de la conception de routage et de pare-feu implémentée.
 
 Il est recommandé de placer les règles de pare-feu à l'emplacement qui entraînera le moins de double-emploi. Par exemple, autoriser les réseaux de back-end entrants sur `dp0bond0` est moins contraignant qu'autoriser des sous-réseaux de back-end sortants vers chaque interface virtuelle de VLAN.
 
 ### Règles de pare-feu par interface
-Une méthode de configuration de pare-feu sur une unité VRA consiste à appliquer des jeux de règles de pare-feu à chaque interface. Dans ce cas, une interface dataplane (`dp0s0`) ou une interface virtuelle (`dp0bond0.303`). Chaque interface comporte trois possibilités d'affectation de pare-feu :
+Une méthode de configuration de pare-feu sur un dispositif VRA consiste à appliquer des jeux de règles de pare-feu à chaque interface. Dans ce cas, une interface dataplane (`dp0s0`) ou une interface virtuelle (`dp0bond0.303`). Chaque interface comporte trois possibilités d'affectation de pare-feu :
 
-`in` - La vérification du pare-feu s'effectue par rapport aux paquets entrant via l'interface. Ces paquets peuvent transiter par/ou être destinés à l'unité VRA.
+`in` - La vérification du pare-feu s'effectue par rapport aux paquets entrant via l'interface. Ces paquets peuvent transiter par/ou être destinés au dispositif VRA.
 
-`out` - La vérification du pare-feu s'effectue par rapport aux paquets sortant via l'interface. Ces paquets peuvent transiter par ou provenir de l'unité VRA.
+`out` - La vérification du pare-feu s'effectue par rapport aux paquets sortant via l'interface. Ces paquets peuvent transiter par ou provenir du dispositif VRA.
 
-`local` - La vérification du pare-feu s'effectue par rapport aux paquets destinés directement à l'unité VRA.
+`local` - La vérification du pare-feu s'effectue par rapport aux paquets destinés directement au dispositif VRA.
 
-Une interface peut avoir plusieurs jeux de règles appliqués dans chaque direction. Ils sont appliqués dans l'ordre où ils ont été configurés. Notez qu'il n'est pas possible de créer un pare-feu pour le trafic en provenance de l'unité VRA en utilisant des pare-feux par interface.
+Une interface peut avoir plusieurs jeux de règles appliqués dans chaque direction. Ils sont appliqués dans l'ordre où ils ont été configurés. Notez qu'il n'est pas possible de créer un pare-feu pour le trafic en provenance du dispositif VRA en utilisant des pare-feux par interface.
 
 Par exemple, pour affecter le jeu de règles `ALLOW_LEGACY` à l'option `in` pour l'interface `bp0s1`, vous utiliserez la commande de configuration suivante :   
 
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## Control Plane Policing (CPP)
-Control Plane Policing (CPP) fournit une protection contre les attaques sur l'unité VRA (Virtual Router Appliance) en vous autorisant à configurer des règles d'administration de pare-feu affectées aux interfaces désirées et en appliquant ces règles aux paquets entrant dans l'unité VRA.
+Control Plane Policing (CPP) fournit une protection contre les attaques sur le dispositif VRA (Virtual Router Appliance) en vous autorisant à configurer des règles d'administration de pare-feu affectées aux interfaces désirées et en appliquant ces règles aux paquets entrant dans le dispositif VRA.
 
-CPP est implémenté lorsque le mot-clé `local` est utilisé dans les règles d'administration de pare-feu affectées à n'importe quel type d'interface VRA, que ce soit des interfaces de plan de données ou de bouclage. Contrairement aux règles de pare-feu appliquées aux paquets qui transitent via l'unité VRA, l'action par défaut des règles de pare-feu pour le trafic entrant ou sortant du plan de contrôle est `Allow`. Les utilisateurs doivent ajouter des règles de suppression explicites si le comportement par défaut n'est pas souhaité.
+CPP est implémenté lorsque le mot-clé `local` est utilisé dans les règles d'administration de pare-feu affectées à n'importe quel type d'interface VRA, que ce soit des interfaces de plan de données ou de bouclage. Contrairement aux règles de pare-feu appliquées aux paquets qui transitent via le dispositif VRA, l'action par défaut des règles de pare-feu pour le trafic entrant ou sortant du plan de contrôle est `Allow`. Les utilisateurs doivent ajouter des règles de suppression explicites si le comportement par défaut n'est pas souhaité.
 
-L'unité VRA fournit une règle CPP de base comme modèle. Vous pouvez la fusionner dans votre configuration en exécutant la commande suivante :   
+Le dispositif VRA fournit une règle CPP de base comme modèle. Vous pouvez la fusionner dans votre configuration en exécutant la commande suivante :   
 
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 
@@ -155,8 +155,8 @@ VRA prend en charge deux types de journalisation :
 
 1. Journalisation de session.  Utilisez la commande ``security firewall session-log`` pour configurer la journalisation d'une session de pare-feu.
   
-	Pour UDP, ICMP et tous les flux autres que TCP, une session passe par quatre états sur la durée de vie du flux. Vous pouvez configurer l'unité VRA pour consigner un message à chaque transition. TCP a un nombre plus important de transitions d'état, chacune pouvant être configurée pour figurer dans le journal.  
+	Pour UDP, ICMP et tous les flux autres que TCP, une session passe par quatre états sur la durée de vie du flux. Vous pouvez configurer le dispositif VRA pour consigner un message à chaque transition. TCP a un nombre plus important de transitions d'état, chacune pouvant être configurée pour figurer dans le journal.  
 
 2. Journalisation par paquet. Insérez le mot-clé ``log`` dans la règle NAT ou la règle de pare-feu pour consigner tous les paquets réseau correspondant à la règle.
 
-	La journalisation par paquet intervient dans les chemins de transfert de paquet et génère de grandes quantités de données en sortie. Elle peut réduire considérablement le débit de l'unité VRA et augmenter substantiellement l'espace disque utilisé pour les fichiers journaux. Nous vous recommandons d'utiliser la journalisation par paquet uniquement à des fins de débogage. Pour tout autre objectif opérationnel, la journalisation de session avec état doit être utilisée.
+	La journalisation par paquet intervient dans les chemins de transfert de paquet et génère de grandes quantités de données en sortie. Elle peut réduire considérablement le débit du dispositif VRA et augmenter substantiellement l'espace disque utilisé pour les fichiers journaux. Nous vous recommandons d'utiliser la journalisation par paquet uniquement à des fins de débogage. Pour tout autre objectif opérationnel, la journalisation de session avec état doit être utilisée.

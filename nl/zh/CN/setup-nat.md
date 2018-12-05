@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# 在 Vyatta 上设置 NAT 规则
+# 在 Vyatta 5400 上设置 NAT 规则
 本主题包含 Vyatta 上使用的网络地址转换 (NAT) 规则的示例。
 
 ## 一对多 NAT 规则 (masquerade)
@@ -66,7 +66,8 @@ commit
 
 如果流量进入 bond1 上的 IP `50.97.203.227`，该 IP 会映射到 IP `10.52.69.202`（在定义的任意接口上）。如果流量通过 IP `10.52.69.202`（在定义的任意接口上）流出，那么该 IP 会转换为 IP `50.97.203.227`，然后在接口 bond1 上继续执行出站。
 
-**注：**使用以下命令来帮助对 NAT 进行故障诊断：`run show nat source translations detail`。
+**注：**不能对一对一映射的 IP 地址进行伪装。如果转换了某个 IP 的入站方向，那么还必须转换该 IP 的出站方向，才能使其流量双向传输。
+
 
 ## 通过 VRA 添加 IP 范围
 
@@ -94,10 +95,3 @@ set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 应用于结合接口：
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
-
-**注：**
-
-* 不能对一对一映射的 IP 地址进行伪装。如果转换了某个 IP 的入站方向，那么还必须转换该 IP 的出站方向，才能使其流量双向传输。
-
-* 使用以下命令来帮助对 NAT 进行故障诊断：`run show nat source translations detail`
-

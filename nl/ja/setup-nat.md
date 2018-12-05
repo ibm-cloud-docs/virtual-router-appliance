@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Vyatta での NAT ルールのセットアップ
+# Vyatta 5400 での NAT ルールのセットアップ
 このトピックでは、Vyatta で使用される NAT (ネットワーク・アドレス変換) ルールの例を示します。
 
 ## 1 対多 NAT ルール (マスカレード)
@@ -66,7 +66,8 @@ commit
 
 トラフィックが bond1 上の IP `50.97.203.227` に着信する場合、その IP は (定義された任意のインターフェース上の) IP `10.52.69.202` にマップされます。 トラフィックが (定義された任意のインターフェース上の) IP `10.52.69.202` で発信される場合、IP `50.97.203.227` に変換され、インターフェース bond1 上でアウトバウンドに進みます。
 
-**注:** NAT のトラブルシューティングには、コマンド `run show nat source translations detail` を使用します。
+**注:** 1 対 1 でマップされる IP アドレスをマスカレードにすることはできません。 IP インバウンドを変換する場合、トラフィックが両方向になるためには、その同じ IP アウトバウンドを変換する必要があります。
+
 
 ## VRA を介した IP 範囲の追加
 
@@ -94,10 +95,3 @@ set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 結合インターフェースへの適用:
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
-
-**注:**
-
-* 1 対 1 でマップされる IP アドレスをマスカレードにすることはできません。 IP インバウンドを変換する場合、トラフィックが両方向になるためには、その同じ IP アウトバウンドを変換する必要があります。
-
-* NAT のトラブルシューティングには、コマンド `run show nat source translations detail` を使用します。
-

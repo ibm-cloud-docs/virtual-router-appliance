@@ -1,13 +1,13 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-26"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Como incluir funções de firewall no Vyatta (sem estado e stateful)
+# Incluir funções de firewall no Vyatta 5400 (stateless e stateful)
 
 A aplicação de conjuntos de regras de firewall em cada interface é um método de aplicação de firewall ao usar os dispositivos Brocade 5400 vRouter (Vyatta). Cada interface possui três possíveis instâncias de firewall - Dentro, Fora e Local - e cada instância tem regras que podem ser aplicadas a ela. A ação padrão é Descartar, com regras que permitem que o tráfego específico seja aplicado de acordo com a regra 1 a N. Assim que uma correspondência for feita, o firewall aplicará a ação específica da regra de correspondência.
 
@@ -15,7 +15,7 @@ Para qualquer uma das três instâncias de firewall abaixo, **somente uma** pode
 
 * **IN:** o firewall filtra pacotes que entram na interface e atravessam o sistema Brocade. Será necessário permitir que certos intervalos de IP do SoftLayer tenham acesso ao front-end e backend para gerenciamento (ping, monitoramento e assim por diante).
 * **OUT:** o firewall filtra pacotes que saem da interface. Esses pacotes podem estar atravessando o sistema Brocade ou sendo originados no sistema.
-* **LOCAL:** o firewall filtra pacotes destinados para o próprio sistema Brocade vRouter por meio da interface do sistema. É necessário estabelecer restrições nas portas de acesso que estão chegando no dispositivo do Brocade vRouter por meio de endereços IP externos que não são restritos.<sup>1</sup>
+* **LOCAL:** o firewall filtra pacotes destinados ao próprio sistema Brocade vRouter por meio da interface do sistema. É necessário estabelecer restrições em portas de acesso que chegam no dispositivo Brocade vRouter por meio de endereços IP externos não restritos.
 
 Use as etapas a seguir para configurar uma regra de firewall de exemplo para desativar o Internet Control Message Protocol (ICMP) *(ping - IPv4 echo reply message)* para suas interfaces do Brocade 5400 vRouter (essa é uma ação stateless; uma ação stateful será revisada posteriormente):
 
@@ -29,7 +29,7 @@ Use as etapas a seguir para configurar uma regra de firewall de exemplo para des
 
 Se você tentar executar ping do dispositivo Brocade 5400 vRouter agora, não receberá mais uma resposta.
 
-Para designar regras de firewall ao tráfego roteado, as regras deverão ser aplicadas às **interfaces** ou **criação de zonas** do Brocade 5400 vRouter e aplicadas às zonas.
+Para designar regras de firewall ao tráfego roteado, elas devem ser aplicadas às **interfaces** do Brocade 5400 vRouter ou **criar zonas** e, em seguida, serem aplicadas às zonas.
 
 Para este exemplo, as zonas serão criadas para as VLANs que foram usadas até aqui.
 
@@ -47,12 +47,14 @@ bond1.1894 = reservado para uso futuro
 
 **Criar regras de firewall**
 
-Antes que as zonas sejam realmente criadas, é uma boa ideia criar as regras de firewall que devem ser aplicadas às zonas. A criação das regras antes das zonas permite aplicá-las imediatamente, em vez de criar a zona e, em seguida, criar as regras e ter que voltar para a zona para o aplicativo de regra.<sup>2</sup>
+Antes que as zonas sejam realmente criadas, é uma boa ideia criar as regras de firewall que devem ser aplicadas às zonas. Criar as regras antes das zonas permite aplicá-las imediatamente, versus criar a zona, criar as regras e ter que voltar para a zona para aplicação da regra.
+
+**NOTA:** zonas e conjuntos de regras têm uma instrução de ação padrão. Ao usar Políticas de zona, a ação padrão é configurada pela instrução zone-policy e é representada pela regra 10.000. Também é importante lembrar-se de que a ação padrão de um conjunto de regras de firewall é **descartar** todo o tráfego.
 
 Os comandos a seguir irão:
 
-* Criar uma regra de firewall denominada **dmz2private** com a ação padrão para descartar qualquer pacote
-* Ativar a criação de log de tráfego aceito e negado para a regra denominada **dmz2private**
+* Criar uma regra de firewall denominada **dmz2private** com a ação padrão para descartar qualquer pacote.
+* Ativar a criação de log de tráfego aceito e negado para a regra denominada **dmz2private**.
 
 
 1\. Digite *configure* no prompt de comandos.
@@ -92,13 +94,15 @@ A próxima regra de firewall que criarmos será aplicada à nossa zona **dmz**. 
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
+**NOTA:** as regras de firewall precisam do fluxo de saída de **prod** para **dmz**. Use o comando a seguir para ajudar a solucionar problemas de fluxo de rede: *sudo tcpdump -i any host 10.52.69.202*.
+
 **Criar zonas**
 
 As zonas são a representação lógica de uma interface. Os comandos a seguir irão:
 
 * Criar uma zona e uma política denominada **dmz** com uma ação padrão para descartar pacotes destinados para essa zona.
-* Configurar a política **dmz** para usar a interface **bond1**
-* Configurar a política **prod** para usar a interface **bond1.2007**
+* Configurar a política **dmz** para usar a interface **bond1**.
+* Configurar a política **prod** para usar a interface **bond1.2007**.
 * Criar uma política de zona denominada **private** com uma ação padrão para descartar pacotes destinados para essa zona.
 * Configurar a política denominada **private** para usar a interface **bond0.2254**.
 
@@ -124,9 +128,9 @@ Observe que será possível aplicar uma regra de firewall a uma interface espec�
 * *set interfaces bonding bond1 firewall local name public*
 * *commit*
 
-**Notas:**
+## Firewalls stateful
 
-<sup>1</sup>Um firewall *stateful* mantém uma tabela de fluxos vistos anteriormente e os pacotes podem ser aceitos ou descartados de acordo com a sua relação com pacotes anteriores. Como regra geral, firewalls stateful serão geralmente preferenciais onde o tráfego de aplicativo for predominante. 
+Um firewall *stateful* mantém uma tabela de fluxos vistos anteriormente e os pacotes podem ser aceitos ou descartados de acordo com sua relação com pacotes anteriores. Como regra geral, firewalls stateful serão geralmente preferenciais onde o tráfego de aplicativo for predominante. 
 
 <span style="text-decoration: underline">*O Brocade 5400 vRouter não rastreia o estado das conexões com configuração padrão. O firewall será stateless até que uma das condições a seguir tenha sido atendida:*</span>
 
@@ -136,8 +140,6 @@ Observe que será possível aplicar uma regra de firewall a uma interface espec�
 * A ativação do serviço de proxy da web transparente
 * A ativação de uma configuração de balanceamento de carga da WAN
 
+## Firewalls stateless
+
 Um firewall *stateless* considera cada pacote isoladamente. Os pacotes podem ser aceitos ou descartados de acordo somente com os critérios básicos da lista de controle de acesso (ACL), como os campos de origem e de destino nos cabeçalhos de IP ou do Transmission Control Protocols/User Datagram Protocol (TCP/UDP). Um Brocade 5400 vRouter stateless não armazena informações de conexão e não tem nenhum requisito para consultar a relação de cada pacote com fluxos anteriores, ambos os quais consomem pequenas quantias de memória e tempo de CPU. O desempenho do encaminhamento bruto é portanto melhor em um sistema stateless. O Brocade recomenda manter o roteador stateless para melhor desempenho se você não requerer os recursos específicos para a condição stateful.
-
-<sup>2</sup>Zonas e Conjuntos de regras possuem uma instrução de ação padrão. Ao usar Políticas de zona, a ação padrão é configurada pela instrução zone-policy e é representada pela regra 10.000. Também é importante lembrar-se de que a ação padrão de um conjunto de regras de firewall é **descartar** todo o tráfego.
-
-<sup>3</sup>Regras de firewall precisam fluir a saída por meio de **prod** para **dmz**. Use o comando a seguir para ajudar a resolver problemas do fluxo de rede: *sudo tcpdump -i any host 10.52.69.202*

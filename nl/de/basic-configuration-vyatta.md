@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2017-07-25"
+lastupdated: "2018-11-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -40,7 +40,9 @@ Beachten Sie, dass es die öffentliche Seite des VLANs ist, auf der sich die Rec
 
 9\. Klicken Sie auf die Schaltfläche **Festlegen** und dann auf **Commit**.
 
-10\. Klicken Sie in der mittleren Menüleiste auf **Speichern**. Andernfalls kehrt die Konfiguration beim nächsten Neustart des Systems zur Standardeinstellung zurück.<sup>1</sup> 
+10\. Klicken Sie in der mittleren Menüleiste auf **Speichern**. Andernfalls kehrt die Konfiguration beim nächsten Neustart des Systems zur Standardeinstellung zurück. 
+
+**HINWEIS:** Ein Rollback der Konfiguration kann sehr sinnvoll sein, wenn Sie Ihre Konfiguration beim Testen von Änderungen beschädigt haben. Solange die Änderungen nicht gespeichert wurden, können Sie den Server vom Webportal aus erneut starten und so die vorherige Konfiguration wiederherstellen.
 
 11\. Klicken Sie auf die Registerkarte für Statistik und öffnen Sie die neue Schnittstelle,  um den Datenverkehr zu überprüfen und zu überwachen.
 
@@ -65,7 +67,9 @@ Der Konfigurationsmodus (configuration) bietet Zugriff auf Befehle für:
   * Konfigurationsdaten anzeigen
   * Durch die Konfigurationshierarchie navigieren
 
-Wenn Sie sich beim System anmelden, befindet sich das System im Betriebsmodus. Sie müssen in den Konfigurationsmodus wechseln, um auf die Befehle zugreifen zu können.<sup>2</sup> 
+Wenn Sie sich beim System anmelden, befindet sich das System im Betriebsmodus. Sie müssen in den Konfigurationsmodus wechseln, um auf die Befehle zugreifen zu können. 
+
+**HINWEIS:** Sie können an der Eingabeaufforderung erkennen, in welchem Modus ('operational' oder 'configuration') Sie sich gerade befinden. Sie befinden sich im Betriebsmodus (operational), wenn die Eingabeaufforderung das Doppelkreuz (#) ist. Sie befinden sich im Konfigurationsmodus (configuration), wenn die Eingabeaufforderung ein Dollarzeichen ($) ist.
 
 Gehen Sie wie folgt vor, um das private VLAN mit der CLI zu konfigurieren. Notieren Sie die Werte, die für die Konfiguration des VLAN benötigt werden:
 
@@ -73,24 +77,18 @@ Gehen Sie wie folgt vor, um das private VLAN mit der CLI zu konfigurieren. Notie
   * Gateway und Maske (CIDR-Format) des VLANs, das weitergeleitet werden soll (10.52.69.201/29)
   * Privater Verbindungsname des Geräts Brocade 5400 vRouter (bond0)
 
-1\. SSH in Ihrem Brocade 5400 vRouter (öffentliche oder private IP-Adresse) mit **vyatta**<sup>3</sup> als **Benutzername**. Geben Sie das Kennwort ein, wenn Sie dazu aufgefordert werden. 
+1. SSH in Ihrem Brocade 5400 vRouter (öffentliche oder private IP-Adresse) mit **vyatta** als **Benutzername**. Geben Sie das Kennwort ein, wenn Sie dazu aufgefordert werden. 
 
-2\. Virtuelle Schnittstelle konfigurieren:
+   **HINWEIS:** Sie sollten einen neuen Benutzer innerhalb von Brocade 5400 vRouter erstellen und den Standarderstbenutzer `vyatta` inaktivieren.
+
+2. Virtuelle Schnittstelle konfigurieren:
 
   * Geben Sie in der Eingabeaufforderung *configure* ein, um in den Konfigurationsmodus zu wechseln.
   * Geben Sie in der Eingabeaufforderung *set interfaces bonding bond0 vif 2254 address 10.52.69.201/29* ein, um die virtuelle Schnittstelle festzulegen.
   * Geben Sie in der Eingabeaufforderung *commit* ein, um ein Commit für die Einstellungen durchzuführen.
   * Geben Sie *save* ein, um die Einstellungen zu speichern.
-  * Geben Sie *exit* ein, um in den Betriebsmodus zurückzukehren.
+  * Geben Sie *exit* ein, um in den Betriebsmodus zurückzukehren. 
 
 3\. Geben Sie *show interfaces* ein, um die Einstellungen zu prüfen, für die gerade ein Commit durchgeführt wurde.
 
 4\. Leiten Sie alle verbliebenen VLANs über das Gerät Brocade 5400 vRouter weiter.
-
-**Hinweise:**
-
-<sup>1</sup> Ein Rollback der Konfiguration kann sehr sinnvoll sein, wenn Sie Ihre Konfiguration beim Testen von Änderungen beschädigt haben. Solange die Änderungen nicht gespeichert wurden, können Sie den Server vom Webportal aus erneut starten und so die vorherige Konfiguration wiederherstellen.
-
-<sup>2</sup> Sie können an der Eingabeaufforderung erkennen, in welchem Modus ('operational' oder 'configuration') Sie sich gerade befinden. Sie befinden sich im Betriebsmodus (operational), wenn die Eingabeaufforderung das Doppelkreuz (#) ist. Sie befinden sich im Konfigurationsmodus (configuration), wenn die Eingabeaufforderung ein Dollarzeichen ($) ist.
-
-<sup>3</sup> Sie sollten einen neuen Benutzer innerhalb von Brocade 5400 vRouter erstellen und den Standarderstbenutzer `vyatta` inaktivieren.

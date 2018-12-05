@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-12-22"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -13,11 +13,14 @@ lastupdated: "2017-12-22"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 # 技術常見問題
 下列常見問題可處理 IBM Virtual Router Appliance (VRA) 的配置，以及從 Vyatta 5400 移轉至 VRA。
 
 ## 如何容許來自專用 VLAN 上主機的網際網路連結資料流量？
+{:faq}
+
 此資料流量需要取得公用來源 IP，因此「來源 NAT」需要使用 VRA 的公用 IP 來假冒專用 IP。
 
 ```
@@ -32,6 +35,8 @@ set service nat source rule 1000 translation address masquerade
 這確保它不會干擾已有網際網路可遞送來源位址的封包。
 
 ## 如何過濾網際網路連結資料流量並且只容許特定通訊協定/目的地？
+{:faq}
+
 這是需要結合「來源 NAT」及防火牆時的一般問題。
 
 設計規則集時，請記住 VRA 中的作業順序。
@@ -76,6 +81,8 @@ set security firewall name TO_INTERNET rule 20 state 'enable'
 請確定規則適合您的設計，而且沒有其他規則容許應該封鎖的資料流量。 
 
 ## 如何使用以區域為基礎的防火牆來保護 VRA 本身？
+{:faq}
+
 VRA 沒有`當地時區`。
 
 您可以改為利用 Control Plane Policing (CPP) 功能，因為它在迴圈上套用為 `local` 防火牆。
@@ -83,6 +90,8 @@ VRA 沒有`當地時區`。
 請注意，這是無狀態防火牆，而且您需要明確地容許源自 VRA 本身之出埠階段作業的傳回資料流量。
 
 ## 如何限制 SSH 並封鎖來自網際網路的連線？
+{:faq}
+
 最好不要容許來自網際網路的 SSH 連線，並使用另一種方式來存取專用位址（例如 SSL VPN）。
 
 依預設，VRA 接受所有介面上的 SSH。

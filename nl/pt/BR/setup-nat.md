@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2018-11-10"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Configurar regras do NAT no Vyatta
+# Configurar regras NAT no Vyatta 5400
 Este tópico contém exemplos das regras de Conversão de endereço de rede (NAT) usadas em um Vyatta.
 
 ## Regra NAT uma para muitas (mascarada)
@@ -66,7 +66,8 @@ commit
 
 Se o tráfego vier no IP `50.97.203.227` em bond1, esse IP será mapeado para o IP `10.52.69.202` (em qualquer interface definida). Se o tráfego sair com o IP de `10.52.69.202` (em qualquer interface definida), ele será convertido no IP `50.97.203.227` e continuará de saída na interface bond1.
 
-**NOTA:** use o comando a seguir para ajudar a resolver o NAT: `run show nat source translations detail`.
+**NOTA:** os endereços IP mapeados um para um não podem ser mascarados. Se você converte uma entrada de IP, deve-se converter essa mesma saída de IP para que seu tráfego siga em ambas as direções.
+
 
 ## Incluindo intervalos de IP por meio de seu VRA
 
@@ -94,10 +95,3 @@ Aplicando a uma zona:
 Aplicando a uma interface de ligação:
 
 `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
-
-**NOTAS:**
-
-* Os endereços IP que são mapeados um para um não podem ser mascarados. Se você converte uma entrada de IP, deve-se converter essa mesma saída de IP para que seu tráfego siga em ambas as direções.
-
-* Use o comando a seguir para ajudar a resolver problemas do NAT: `run show nat source translations detail`
-
