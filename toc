@@ -77,7 +77,7 @@ IBM Virtual Router Appliance
         [Vyatta 5400 Migration Guide](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
         migration-issues.md
 
-    external-resource.md
+    external-resources.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
