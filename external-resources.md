@@ -17,7 +17,7 @@ lastupdated: "2018-11-10"
 
 # Other Resources
 
-These resources are created by IBM and some of our partners and customers.
+These resources are created by IBM© and some of our partners and customers.
 
 * [**Product Brief: AT&T Vyatta vRouter: Agile Networking and High Performance**](https://ibm.box.com/s/v1kp0nhfa8eqmnj0klosc8zkgixzcis2)
 

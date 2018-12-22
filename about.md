@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 # About the VRA
 
-The IBM Virtual Router Appliance (VRA) provides the latest Vyatta 5600 operating system for **x86** bare metal servers. It is offered as a High Availability (HA) or standalone configuration.
+The IBM© Virtual Router Appliance (VRA) provides the latest Vyatta 5600 operating system for **x86** bare metal servers. It is offered as a High Availability (HA) or standalone configuration.
 
 The Virtual Router Appliance lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features. The VRA offers performance with ease of configuration. It has the maintenance advantages of running on a normal hardware server. The VRA hardware appliance is sized to handle the routing load for multiple VLANs, and it can be ordered with redundant network links and redundant RAID arrays. All VRA features are managed by you, the customer. 
 

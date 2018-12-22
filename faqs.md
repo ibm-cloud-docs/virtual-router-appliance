@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 {:faq: data-hd-content-type='faq'}
 
 # FAQs
-The following are frequently asked questions when working with the IBM Virtual Router Appliance (VRA).
+The following are frequently asked questions when working with the IBM© Virtual Router Appliance (VRA).
 
 ## What is a VRA? 
 {:faq}

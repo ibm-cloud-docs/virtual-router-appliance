@@ -155,7 +155,7 @@ Vyatta OS version 1801p and greater includes a new `vrrp` command.
 
 To minimize network traffic, only the Master for each virtual router sends periodic VRRP Advertisement messages. A Backup router will not attempt to preempt the Master unless it has higher priority. This eliminates service disruption unless a more preferred path becomes available. It’s also possible to administratively prohibit all preemption attempts. If the Master becomes unavailable, then the highest-priority Backup will transition to Master after a short delay, providing a controlled transition of the virtual router responsibility with minimal service interruption.
 
-**NOTE:** In IBM Cloud provisioned deployments the start delay value is set to the default value. You may wish to alter this at your discretion as you test your failover and high availability methods.
+**NOTE:** In IBM© Cloud provisioned deployments the start delay value is set to the default value. You may wish to alter this at your discretion as you test your failover and high availability methods.
 
 
 ### Preemption vs. No Preemption

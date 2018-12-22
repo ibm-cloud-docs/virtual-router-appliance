@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 
 # What's New
-Find out about new and updated features in IBM Virtual Router Appliance (VRA).
+Find out about new and updated features in IBM© Virtual Router Appliance (VRA).
 
 ## August 2018
 ### Brocade Operating System Version 18.x

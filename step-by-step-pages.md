@@ -76,7 +76,7 @@ Use these comprehensive step-by-step guides to build and customize your Virtual 
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>This guide highlights how a Virtual Router Appliance (VRA) can be configured on the IBM Cloud to create a secure private network (enclosure). </p>
+                <p>This guide highlights how a Virtual Router Appliance (VRA) can be configured on the IBM© Cloud to create a secure private network (enclosure). </p>
                     <span class="tag-filter category">Virtual Router Appliance</span>
                     <span class="tag-filter category">Secure Private Network</span>
                     <span class="tag-filter category">IBM Cloud Console UI</span>

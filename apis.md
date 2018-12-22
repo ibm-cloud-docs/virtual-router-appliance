@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 # API Reference
 
-The SoftLayer® Application Programming Interface (SLAPI) is the development interface that gives developers and system administrators direct interaction with the IBM Cloud backend system.
+The SoftLayer® Application Programming Interface (SLAPI) is the development interface that gives developers and system administrators direct interaction with the IBM© Cloud backend system.
 
 The SLAPI powers many of the features in the Customer Portal, which typically means if an interaction is possible in the Customer Portal, it can also be run in the API. Because you can programmatically interact with all portions of the Customer Portal environment within the API, you can use the API to automate tasks.
 

@@ -71,7 +71,7 @@ If traffic comes in on IP `50.97.203.227` on bond1, that IP will be mapped to IP
 
 ## Adding IP ranges through your VRA
 
-Depending on your VRA configuration, you may want to accept specific IBM Cloud IP addresses. 
+Depending on your VRA configuration, you may want to accept specific IBM© Cloud IP addresses. 
 
 New vRouter deployments come with IBM Cloud's services network IP addresses defined in a firewall rule called `SERVICE-ALLOW`.
 

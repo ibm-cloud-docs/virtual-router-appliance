@@ -15,7 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Creating a secured perimeter
-A fundamental aspect of network isolation is the establishment of a secured perimeter.  A secure perimeter controls traffic between the public internet to the customer assets hosted in the IBM Cloud.  The secured perimeter will also enable direct connectivity with the customer enterprise by the use of Virtual Private Network (VPN) tunnels and IBM Cloud Direct Link.
+A fundamental aspect of network isolation is the establishment of a secured perimeter.  A secure perimeter controls traffic between the public internet to the customer assets hosted in the IBM© Cloud.  The secured perimeter will also enable direct connectivity with the customer enterprise by the use of Virtual Private Network (VPN) tunnels and IBM Cloud Direct Link.
 
 A secured perimeter uses a Secure Perimeter Segment (SPS) to segregate networks between assets inside the secure perimeter. This segregation has several benefits, including access control and service traffic isolation between segments. A Secure Perimeter Segment (SPS) comprises two Virtual Local Area Networks (VLANs), a front-end VLAN and a back-end VLAN, and a VRA connected to the VLANs to manage the traffic into and out of the SPS. A secure perimeter can include multiple Secure Perimeter Segments (for example, for high-availability purposes).
 
