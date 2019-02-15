@@ -16,11 +16,55 @@ lastupdated: "2018-11-10"
 
 # AT&T Vyatta 5600 vRouter Software Patches
 
-**As of: November 20, 2018**
+**As of: February 14, 2018**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+## 1801v
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-45175 | Critical | Rsyslogd core dump when VRFs configured |
+| VRVDR-45057 | Critical | IPsec VTI tunnel interface in A/D state after initially coming up, IPsec SA remain UP |
+| VRVDR-44985 | Major | DNAT and Input Firewall logging / order of operation |
+| VRVDR-44944 | Critical | vyatta-config-vti.pl: Unsafe temporary file usage |
+| VRVDR-44941 | Minor| Static route missing in kernel due to brief VTI interface flap |
+| VRVDR-44914 | Critical | RPC ALG crash on both members of HA pair |
+| VRVDR-44668 | Major | With production traffic flow-monitoring stalls and stops reporting netflow statistics |
+| VRVDR-44667 | Minor | The interface order is not consistent between executions of 'show flow-monitoring' |
+| VRVDR-44657 | Major | IKEv1 re-key collision causes VTI interface to stay down when tunnels are up |
+| VRVDR-44560 | Major| Multiple rcu_sched CPU stalls pointing to ip_gre driver |
+| VRVDR-44517 | Minor | Dataplane crashes with panic in rte_ipv6_fragment_packet |
+| VRVDR-44282 | Major | Issue deleting /32 mask when both address with /32 mask and without are present together in address group |
+| VRVDR-44278 | Minor | "show address-group all ipv4 optimal" not producing any output |
+| VRVDR-44239 | Major | Request to enhance Web GUI verbiage for protocol drop-down when 'all' protocols are required |
+| VRVDR-44076 | Major | memory-leak in flow-monitoring leading to dataplane seg-fault and outage |
+| VRVDR-44007 | Critical | Dataplane segmentation fault at npf_dataplane_session_establish |
+| VRVDR-43909 | Minor| Connsync causes interfaces to go down after "restart vrrp" |
+| VRVDR-42679 | Major | syslog - crash in zactor_is |
+| VRVDR-42020 | Major | RIB stuck adding same route over and over again |
+| VRVDR-18095 | Minor | Flow monitoring stats is not captured as part of 'show tech-support' |
+
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-45148 | N/A | DSA-4371-1 | CVE-2019-3462: Debian DSA-4371-1 – apt security update |
+| VRVDR-45043 | 8.8 | DSA-4369-1 | CVE-2018-19961, CVE-2018-19962, CVE-2018- 19965, CVE-2018-19966, CVE-2018-19967: DSA 4369-1 - Xen security update |
+| VRVDR-45042 | N/A | DSA-4368-1 | CVE-2019-6250: Debian DSA-4368-1 : zeromq3 - security update |
+| VRVDR-45035 | N/A | DSA-4367-1 | CVE-2018-16864, CVE-2018-16865, CVE-2018- 16866: Debian DSA-4367-1 : systemd - security update |
+| VRVDR-44956 | 7.5 | DSA-4359-1 | CVE-2018-16864, CVE-2018-16865, CVE-2018- 16866: Debian DSA-4367-1 : systemd - security updateCVE-2018-12086, CVE-2018-18225, CVE-2018- 18226, CVE-2018-18227, CVE-2018-19622, CVE- 2018-19623, CVE-2018-19624, CVE-2018-19625, CVE-2018-19626, CVE-2018-19627, CVE-2018- 19628: Debian DSA-4359-1 : wireshark - security update |
+| VRVDR-44747 | N/A | DSA-4350-1 | CVE-2018-19788: Debian DSA-4350-1 : policykit-1 - security update |
+| VRVDR-44634 | 8.8 | DSA-4349-1 | CVE-2017-11613, CVE-2017-17095, CVE-2018- 10963, CVE-2018-15209, CVE-2018-16335, CVE- 2018-17101, CVE-2018-18557, CVE-2018-5784, CVE-2018-7456, CVE-2018-8905:Debian DSA-4349- 1 : tiff - security update |
+| VRVDR-44633 | 7.5 | DSA-4348-1| CVE-2018-0732, CVE-2018-0734, CVE-2018-0735, CVE-2018-0737, CVE-2018-5407: Debian DSA-4348- 1 : openssl - security update |
+| VRVDR-44611 | 9.8 | DSA-4347-1| CVE-2018-18311, CVE-2018-18312, CVE-2018- 18313, CVE-2018-18314: Debian DSA-4347-1 : perl - security update |
+| VRVDR-44348| 9.8 | DSA-4338-1 | CVE-2018-10839, CVE-2018-17962, CVE-2018- 17963: Debian DSA-4338-1: qemu security update |
+| VRVDR-43264| 5.6 | DSA-4274-1 | CVE-2018-3620, CVE-2018-3646: Debian DSA-4274- 1: xen security update |
 
 ## 1801u
 
