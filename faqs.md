@@ -15,7 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# FAQs
+# FAQs for IBM Virtual Router Appliance
 The following are frequently asked questions when working with the IBM© Virtual Router Appliance (VRA).
 
 ## What is a VRA? 
@@ -89,7 +89,7 @@ Likewise, if a VRA/firewall is bypassed after an order is placed, it's still lik
 ## What firewall products does IBM offer?
 {:faq}
 
-You can find a detailed comparison of all firewall products offered in the IBM Cloud by reviewing this [topic ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
+You can find a detailed comparison of all firewall products offered in the IBM Cloud by reviewing [this topic](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls). 
 
 ## Can a VRA confound customer support efforts? 
 {:faq}

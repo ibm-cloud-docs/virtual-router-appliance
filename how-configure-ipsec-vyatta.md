@@ -7,7 +7,7 @@ lastupdated: "2018-11-10"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Configure IPSec on Vyatta 5400
+# Configuring IPSec on Vyatta 5400
 
 The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regards to the Internet Security Protocol (IPSec) tunnel. Each of the following commands will perform different functions to configure IPSec site-to-site. Note that this example of IPSec site-to-site demonstrates the tunnel on SoftLayer's public network; use **bond0** for private IPSec site-to-site connections.
 
@@ -28,7 +28,7 @@ The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regar
 
   * Disable perfect forward secrecy (PFS) because not all device can use it. (The esp in the command is the second part of the encryption.)
   * Specify the type of encryption to use; if this is not setup, the device will use **aes128** as a default
-  * Use the has function **sha-1**<br/><br/>
+  * Use the `has` function **sha-1**<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -36,7 +36,7 @@ The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regar
 4. Setup the IPSec site-to-site encryption parameters. The following commands will:
 
   * Specify the remote side IP and that the IPSec will be using pre-shared secret
-  * Use the remote IP and the secrete key TestPSK
+  * Use the remote IP and the secret key TestPSK
   * Set the default **esp** group for the tunnel to TestESP
   * "Tell" the IPSec to use ike-group TestIKE, which was defined earlier<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
@@ -53,7 +53,7 @@ The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regar
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 local prefix 10.54.9.152/29*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 remote prefix 192.168.1.2/32*<br/>
 
-The next step is to set up the remote-side device, which is a Brocade 5400 vRouter 6.6.5 R
+The next step is to set up the remote-side device, which is a Brocade 5400 vRouter 6.6.5 R.
 
   * Use the just-configured deivce (that was configurated in operation mode) to enter the command show configuration commands. A list of commands used to set up the device will be presented.
   * Copy the commands to a text editor. The commands use to set up the local device will be used to set up the remote server with modifications to the IP to point the Brocade 5400 vRouter 6.6.5R device on SoftLayer.
@@ -93,6 +93,6 @@ Remote side configuration:
 *set vpn ipsec site-to-site peer **50.97.240.219** tunnel 1 remote prefix **10.54.9.152/29*** (The local prefix and the remote prefix have not been swapped)
 
 * Copy and paste the new commands into the remote server (be sure to be in configuration mode), type commit, then save.
-* Type run show vpn ike sa to see if the tunnel is now established.
+* Type `run show vpn ike sa` to see if the tunnel is now established.
 
 Here is a recap of what has been done: Only route IP addresses with the subnet of '10.54.9.152/29' that reside on the local interface (bond1, 50.97.240.219) to only 192.168.1.2/32 subnets on the remote service residing in the interface with the IP address of 169.54.254.117.

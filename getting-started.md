@@ -15,7 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 
-# Getting Started
+# Getting Started with IBM Virtual Router Appliance
 To get started with the IBM© Virtual Router Appliance (VRA), navigate to the order page in the Customer Portal:
 
 1. From your browser, open the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} and log into your account.
@@ -47,4 +47,4 @@ In comparison, "gateway" VLANs are where devices, such as servers and containers
 
 The VRA can only manage VLANs that are associated with it through the Gateway Appliance.
 
-For information on how to manage VLANs from the Gateway Appliances Details screen, refer to [Managing VLANs](manage-vlans.html).
+For information on how to manage VLANs from the Gateway Appliances Details screen, refer to [Managing VLANs](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans).

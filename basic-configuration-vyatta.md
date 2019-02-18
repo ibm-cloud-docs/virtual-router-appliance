@@ -89,6 +89,6 @@ Use the following steps to configure the private VLAN using the CLI. Remember th
   * Type *save* to save the settings.
   * Type *exit* to switch back to operation mode.
 
-3\. Type *show interfaces* to check the settings you just committed.
+3. Type *show interfaces* to check the settings you just committed.
 
-4\. Route any remaining VLANs through the Brocade 5400 vRouter device.
+4. Route any remaining VLANs through the Brocade 5400 vRouter device.

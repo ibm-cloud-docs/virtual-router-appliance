@@ -14,7 +14,7 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Manage Firewalls
+# Manage Your IBM Firewalls
 The Virtual Router Appliance (VRA) has the ability to process firewall rules to protect the VLANs routed through the device. The firewalls in the VRA can be broken into two steps:
 
 1. Defining one or more sets of rules.
@@ -90,7 +90,7 @@ set security firewall name ALLOW_LEGACY rule 2 source address network-group2
 In the ruleset, `ALLOW_LEGACY`, there are two rules defined. The first rule drops any traffic sourced from an address group named `network-group1`. The second rule discards and logs any traffic destined for the telnet port (`tcp/23`) from the address group named `network-group2`. The default-action indicates that anything else is accepted.
 
 ## Allowing Data Center Access
-IBM© offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the data centers [here](/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+IBM© offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the data centers in [this topic](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges).
 
 You can allow data center access by placing the proper `SERVICE-ALLOW` rules at the beginning of the firewall rule sets with an action of `accept`. Where the rule set must be applied depends on the routing and firewall design being implemented.
 

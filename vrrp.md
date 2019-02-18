@@ -13,7 +13,7 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# HA and VRRP
+# Working with High Availability and VRRP
 The Virtual Router Appliance (VRA) supports Virtual Router Redundancy Protocol (VRRP) as a high availability protocol. The deployment of devices is done in an active/passive manner, where one machine is master and the other is the backup. All interfaces on both machines will be a member of the same "sync-group", so if one interface experiences a fault, the other interfaces in the same group will also fault, and the device will stop being master. The current backup will detect that the master is no longer broadcasting keepalive/heartbeat messages, and assume control of the VRRP virtual IPs and become master.
 
 VRRP is the most important part of the configuration when provisioning Gateways. High availability functionality depends on the heartbeat messages, so making sure they are not blocked is critical.
@@ -129,7 +129,7 @@ If you need to force a vrrp failover, it can be achieved by running the followin
 
 `vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
 
-The group ID is the vrrp group ID of the native interfaces, and, se mentioned above, could be different in your pair.
+The group ID is the vrrp group ID of the native interfaces, and, as mentioned above, could be different in your pair.
 
 ## Connection synchronization
 When two VRA devices are in an HA pair, it may be useful to track stateful connections between the two devices so that if a failover happens, the current state of all connections that are on the failed device are replicated to the backup device, so that it isn't necessary for any current active sessions (like SSL connections) to be rebuilt from scratch, which can result in a disrupted user experience.
@@ -166,11 +166,11 @@ When preemption is disabled, a higher priority peer will only failover the Maste
 
 ### Assumptions and limitations of preemption
 
-If the VRRP peers have been configured to disable preemption, then there are some cases where preemption may “appear” to occur, but in reality the scenario is just a standard VRRP failover. As described above, VRRP makes use of IP multicast datagrams as a means to confirm availability of the currently elected Master router. Since it is a layer 3 protocol that is detecting failure of a VRRP peer, it is important that failover detection in VRRP is delayed until VRRP and the layer 1 through 2 of the network stack is ready and converged. In some cases the network interface running VRRP may confirm to the protocol that the interface is up, but other underlying services like Spanning Tree, or Bonding may not have completed. As a result, IP connectivity between peers cannot be established. If this occurs, VRRP on a new higher peer will become Master, as it is unable to detect VRRP messages from the current Master peer on the network. After convergence, the brief period of time when there is two Master VRRP peers will result in the dual Master logic of VRRP being executed, the higher priority peer will remain Master, and the lower priority becoming Backup. This scenario may “appear” to demostrate a failure in the “no preemption” functionality.
+If the VRRP peers have been configured to disable preemption, then there are some cases where preemption may “appear” to occur, but in reality the scenario is just a standard VRRP failover. As described above, VRRP makes use of IP multicast datagrams as a means to confirm availability of the currently elected Master router. Since it is a layer 3 protocol that is detecting failure of a VRRP peer, it is important that failover detection in VRRP is delayed until VRRP and the layer 1 through 2 of the network stack is ready and converged. In some cases the network interface running VRRP may confirm to the protocol that the interface is up, but other underlying services like Spanning Tree, or Bonding may not have completed. As a result, IP connectivity between peers cannot be established. If this occurs, VRRP on a new higher peer will become Master, as it is unable to detect VRRP messages from the current Master peer on the network. After convergence, the brief period of time when there is two Master VRRP peers will result in the dual Master logic of VRRP being executed, the higher priority peer will remain Master, and the lower priority becoming Backup. This scenario may “appear” to demonstrate a failure in the “no preemption” functionality.
 
 ### Start Delay Feature
 
-In order to accomodate the issues associated with delay in convergence of the lower levels of the network stack during an interface up event, as well as other contributory factors, a new feature called “Startup Delay” is introduced in the 1801p patch. The feature causes the VRRP state on a machine that has been “reloaded” to remain in the INIT state until after a predefined delay, which can be configured by the network operator. Flexibility in this delay value allows the network operator to customize the characteristics of their network and devices under real world conditions.
+In order to accommodate the issues associated with delay in convergence of the lower levels of the network stack during an interface up event, as well as other contributory factors, a new feature called “Startup Delay” is introduced in the 1801p patch. The feature causes the VRRP state on a machine that has been “reloaded” to remain in the INIT state until after a predefined delay, which can be configured by the network operator. Flexibility in this delay value allows the network operator to customize the characteristics of their network and devices under real world conditions.
 
 ### Command details
 

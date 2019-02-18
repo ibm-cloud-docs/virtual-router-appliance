@@ -14,7 +14,7 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Setup NAT Rules on Vyatta 5400
+# Setting Up NAT Rules on Vyatta 5400
 This topic contains examples of the Network Address Translation (NAT) rules used on a Vyatta.
 
 ## One-to-many NAT rule (masquerade)
@@ -86,7 +86,7 @@ set firewall name SERVICE-ALLOW rule 3 action 'accept'
 set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 ~~~
 
-Once you have deinfed the firewall rules, you may now assign them as you see fit. Two examples are listed below. 
+Once you have defined the firewall rules, you may now assign them as you see fit. Two examples are listed below. 
 
 Applying to a zone:
 

@@ -14,7 +14,7 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Synchronize High Availability Configurations
+# Synchronizing High Availability Configurations
 Two Virtual Router Appliances (VRA) in a High Availabilty (HA) pair must have their configurations synchronized sufficiently so that both devices behave in a similar manner. This is done through `configuration sync-maps` and you can choose which portion of the configuration will be synchronized. If you make a change on one machine, it will push the marked config over to the other device.
 
 **NOTE:** This synchronises and saves the running configuration of the local device on the remote device. However, as a step of the commit process it would not save the configuration on the local device. 

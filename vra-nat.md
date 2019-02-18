@@ -14,8 +14,8 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Using NAT with prefix based IPsec
-In the topic [Configuring a VFP interface with IPsec and Zone Firewalls](vra-vfp.html), we created a VFP interface and set it to be used with an IPsec tunnel. 
+# Using NAT with Prefix Based IPsec
+In the topic [Configuring a VFP interface with IPsec and Zone Firewalls](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), we created a VFP interface and set it to be used with an IPsec tunnel. 
 
 We can use the same interface in NAT rules, as well as the inbound and outbound interface declaration, with one additional caveat. 
 

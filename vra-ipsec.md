@@ -14,7 +14,7 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# How to Set up an IPsec Tunnel that Works with Zone Firewalls
+# Setting Up an IPsec Tunnel that Works with Zone Firewalls
 In previous versions of the Virtual Router Appliance, IPsec tunnels using policy based routing did not work well with zone firewalls. With version 18.01, there is a new set of commands which addresses this issue, using "virtual feature points" to enable the traffic from designated tunnels, where the feature point acts as an interface that provides an endpoint to include in a zone policy configuration.
 
 An example configuration of two machines with IPsec between them follows:

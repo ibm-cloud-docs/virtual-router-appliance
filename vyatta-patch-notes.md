@@ -19,5 +19,5 @@ lastupdated: "2018-11-10"
 
 This topic provides links to the security patch notes for the Vyatta 5400 and 5600.
 
-* [Vyatta 5600 Patch Notes](vyatta-5600-security-fixes.html)
-* [Vyatta 5400 version 6.7 Patch Notes](Vyatta-5400-Security-Fixes.html)
+* [Vyatta 5600 Patch Notes](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches)
+* [Vyatta 5400 version 6.7 Patch Notes](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5400-vrouter-security-vulnerability-fixes)
