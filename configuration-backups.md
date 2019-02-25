@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Backing Up a Configuration
+{: #backing-up-a-configuration}
+
 The configuration commands need to be backed up when there is a change to the system. This can be accomplished by running the operational mode command `show configuration commands` and then saving the output (for example by copying and pasting from the SSH session). This would be considered a minimum backup for the configuration.
 
 A more complete backup involves generating a technical support archive for the system: 

@@ -16,6 +16,8 @@ lastupdated: "2018-11-10"
 
 
 # Getting Started with IBM Virtual Router Appliance
+{: #getting-started-with-ibm-virtual-router-appliance}
+
 To get started with the IBM© Virtual Router Appliance (VRA), navigate to the order page in the Customer Portal:
 
 1. From your browser, open the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} and log into your account.

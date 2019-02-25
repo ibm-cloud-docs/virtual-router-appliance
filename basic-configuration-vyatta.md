@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Basic Configuration of Vyatta 5400
+{: #basic-configuration-of-vyatta-5400}
 
 Perform the following procedure to configure your Vyatta 5400.
 

@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Troubleshooting Your VFP Interface
+{: #troubleshooting-your-vfp-interface}
+
 This topic contains troubleshooting information for VFP interfaces.
 
 * A VFP interface is not a "real" interface, such as `dp0bond0` (or even a VIF or TUN). It is a placeholder for the firewall and NAT processes to hang an interface so they can process traffic properly. You can still route traffic over a VFP like a regular interface, but `tshark` and other monitor commands will reveal no traffic.

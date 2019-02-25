@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Renaming a VRA
+{: #renaming-a-vra}
 
 Network Gateways are given unique names that assist users in their identification. At any time, a Gateway name may be changed. It is recommended that you use a consistent naming convention to more easily identify Gateways.
 

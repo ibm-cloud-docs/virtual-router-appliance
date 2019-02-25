@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Manage Your IBM Firewalls
+{: #manage-your-ibm-firewalls}
+
 The Virtual Router Appliance (VRA) has the ability to process firewall rules to protect the VLANs routed through the device. The firewalls in the VRA can be broken into two steps:
 
 1. Defining one or more sets of rules.

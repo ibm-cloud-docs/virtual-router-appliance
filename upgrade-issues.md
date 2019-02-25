@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Upgrade Issues
+{: #upgrade-issues}
+
 Occasionally, after a successful upgrade and reboot of a new version of the Vyatta OS, you may encounter an issue where you are unable to issue user commands.
 
 For example:

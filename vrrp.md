@@ -14,6 +14,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Working with High Availability and VRRP
+{: #working-with-high-availability-and-vrrp}
+
 The Virtual Router Appliance (VRA) supports Virtual Router Redundancy Protocol (VRRP) as a high availability protocol. The deployment of devices is done in an active/passive manner, where one machine is master and the other is the backup. All interfaces on both machines will be a member of the same "sync-group", so if one interface experiences a fault, the other interfaces in the same group will also fault, and the device will stop being master. The current backup will detect that the master is no longer broadcasting keepalive/heartbeat messages, and assume control of the VRRP virtual IPs and become master.
 
 VRRP is the most important part of the configuration when provisioning Gateways. High availability functionality depends on the heartbeat messages, so making sure they are not blocked is critical.

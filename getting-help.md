@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Getting Help and Support for IBM Virtual Router Appliance
+{: #getting-help-and-support-for-ibm-virtual-router-appliance}
 
 If you have problems or questions when using the IBM© Virtual Router Appliance, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
 

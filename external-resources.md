@@ -15,7 +15,8 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Other Resources or IBM Virtual Router Appliance
+# Other Resources for IBM Virtual Router Appliance
+{: #other-resources-or-ibm-virtual-router-appliance}
 
 These resources are created by IBM© and some of our partners and customers.
 

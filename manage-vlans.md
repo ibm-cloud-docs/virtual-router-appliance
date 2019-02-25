@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Managing Your VLANs
+{: #managing-your-vlans}
+
 You can perform a variety of actions from the [Gateway Appliance Details screen](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details).
 
 ## Associate a VLAN to a Gateway Appliance

@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Setting Up NAT Rules on Vyatta 5400
+{: #setting-up-nat-rules-on-vyatta-5400}
+
 This topic contains examples of the Network Address Translation (NAT) rules used on a Vyatta.
 
 ## One-to-many NAT rule (masquerade)

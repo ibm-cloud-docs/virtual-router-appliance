@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # About the VRA
+{: #about-the-vra}
 
 The IBM© Virtual Router Appliance (VRA) provides the latest Vyatta 5600 operating system for **x86** bare metal servers. It is offered as a High Availability (HA) or standalone configuration.
 

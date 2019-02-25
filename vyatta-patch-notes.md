@@ -16,6 +16,7 @@ lastupdated: "2018-11-10"
 
 
 # Vyatta Patch Notes
+{: #vyatta-patch-notes}
 
 This topic provides links to the security patch notes for the Vyatta 5400 and 5600.
 

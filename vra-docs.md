@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Supplemental VRA documentation
+{: #supplemental-vra-documentation}
+
 The following table provides links to supplemental documentation on the Virtual Router Appliance.
 
 Vyatta Documentation  | Description

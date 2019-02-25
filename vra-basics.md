@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Accessing and Configuring the IBM Virtual Router Appliance
+{: #accessing-and-configuring-the-ibm-virtual-router-appliance}
+
 The VRA can be configured using a remote console session through SSH or by logging into the web GUI. By default, the web GUI is not available from the public internet. To enable the web GUI, log in through SSH first.
 
 **NOTE:** Configuring the VRA outside of its shell and interface may produce unexpected results and thus it is not recommended.

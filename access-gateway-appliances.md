@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # View all VRAs
+{: #view-all-vras}
 
 The Gateway Appliances screen in the Customer Portal is where you can display and access all Network Gateway Appliances which includes the Virtual Router Appliances.  
 

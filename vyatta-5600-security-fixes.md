@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # AT&T Vyatta 5600 vRouter Software Patches
+{: #at-t-vyatta-5600-vrouter-software-patches}
 
 **As of: February 14, 2019**
 
@@ -324,7 +325,7 @@ Released May 11, 2018.
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41664 | Critical | Dataplane drops MTU sized ESP packets |
-| VRVDR-41536 | Minor | Dnsmasq service start-init limit hit when adding more than 4 static host entries if dns forwarding is enabled. |
+| VRVDR-41536 | Minor | Dnsmasq service start-init limit hit when adding more than 4 static host entries if dns forwarding is enabled |
 
 **Security Vulnerabilities Resolved**
 

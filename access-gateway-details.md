@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # View VRA Details
+{: #view-vra-details}
 
 Network Gateways are used to control network traffic on a VLAN that is regularly controlled by a router. Within the Gateway Appliance Details screen on the Customer Portal, you can associate, disassociate, route and bypass VLANs associated with a Network Gateway.
 

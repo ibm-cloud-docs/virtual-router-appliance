@@ -16,6 +16,8 @@ lastupdated: "2018-11-10"
 
 
 # Recent Updates for IBM Virtual Router Appliance
+{: #recent-updates-for-ibm-virtual-router-appliance}
+
 Find out about new and updated features in IBM© Virtual Router Appliance (VRA).
 
 ## August 2018

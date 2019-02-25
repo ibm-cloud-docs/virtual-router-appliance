@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Configuring IPSec on Vyatta 5400
+{: #configuring-ipsec-on-vyatta-5400}
 
 The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regards to the Internet Security Protocol (IPSec) tunnel. Each of the following commands will perform different functions to configure IPSec site-to-site. Note that this example of IPSec site-to-site demonstrates the tunnel on SoftLayer's public network; use **bond0** for private IPSec site-to-site connections.
 
