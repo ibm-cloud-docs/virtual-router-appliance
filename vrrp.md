@@ -123,7 +123,7 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26
 ```
 
 * A vrrp sync-group is different than a vrrp group. When an interface that belongs in a sync-group changes state, all other members of the same sync-group will transition to the same state.
-* The vrrp-group number of the VLAN interfaces (VIFs) do not have to be the same as one of the native interfaces, or of the other vlans. However, it is strongly suggested to keep all virtual addresses of the same vlan in one vrrp-group, as seen in VLAN 10.
+* The vrrp-group number of the VLAN interfaces (VIFs) should always be the same as its matching native interface. For example, dp0bond1.789 should always have the same vrrp-group number as dp0bond1. Having a different group number on the VIF as is on the native interface could cause a split brain condition.
 * The real interface addresses on the native vlans (e.g. dp0bond1: 169.110.20.28/29) are not always in the same subnet as their VIPs (169.110.21.26/29).
 
 ## Manual VRRP failover
