@@ -15,6 +15,14 @@ IBM Virtual Router Appliance
         upgrade-os.md
         upgrade-issues.md
 
+    {: .topicgroup}
+    Vyatta 5400 Migration Guide
+        migration-guide.md
+        5400-announcement.md
+        upgrade-5400-with-ip.md
+        5400-juniper.md
+        migration-issues.md
+
     /fortigate-10g/fortigate-10g-exploring-firewalls
     external-resources.md
     {: .navgroup-end}
@@ -36,7 +44,7 @@ IBM Virtual Router Appliance
     {: .topicgroup}
     Work with High Availability Configurations
         vrrp.md
-        configuration-synchronization.md 
+        configuration-synchronization.md
 
     {: .topicgroup}
     Use IPsec and VFP Interfaces
@@ -68,11 +76,6 @@ IBM Virtual Router Appliance
         how-add-firewall-functions-vyatta-stateless-and-stateful.md
         setup-nat.md
         vyatta-high-availability-configuration.md
-
-    {: .topicgroup}
-    Vyatta 5400 Migration
-        [Vyatta 5400 Migration Guide](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
-        migration-issues.md
 
     faqs.md
     technical-faqs.md
