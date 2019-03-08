@@ -14,6 +14,7 @@ lastupdated: "2019-03-07"
 {:tip: .tip}
 {:important: .important}
 {:download: .download}
+{:note: .note}
 
 # Migration Overview
 {: #migration-overview}
