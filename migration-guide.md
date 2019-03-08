@@ -14,7 +14,6 @@ lastupdated: "2019-03-07"
 {:tip: .tip}
 {:important: .important}
 {:download: .download}
-{:note: .note}
 
 # Migration Overview
 {: #migration-overview}
@@ -39,5 +38,5 @@ To help you migrate from your Vyatta 5400, we have prepared the following docume
 | [Migrating a Vyatta 5400 to a Juniper vSRX or Fortigate Security Appliance (FSA)](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migrating-a-vyatta-5400-to-a-juniper-vsrx-or-fortigate-security-appliance-fsa-) | Instructions on migrating to either a Juniper vSRX or the Fortigate Security Appliance. This option will not allow you to reuse your existing Vyatta 5400 device or keep your associated IP addresses. |
 | [Common Migration Issues](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)  | Information on the most frequently encountered issues or behavior changes you may encounter after migrating from a Vyatta 5400 device to an IBM Virtual Router Appliance. In many cases, it includes workarounds to address these issues. |
 
-If you need to simply order a new Virtual Router Appliance, [click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started-with-ibm-virtual-router-appliance) for more details.
+As an alternative, you can simply order a new Virtual Router Appliance. For more information, [click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started-with-ibm-virtual-router-appliance).
 {: note}
