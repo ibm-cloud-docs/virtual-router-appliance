@@ -2,11 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
-
-keywords: reload, os
-
-subcollection: virtual-router-appliance
+lastupdated: "2019-03-03"
 
 ---
 
@@ -34,6 +30,6 @@ To reload your OS, perform the following procedure:
 7. Verify that all details in the New Configuration section are correct. Click **Next** to advance to the Confirm pop-up.
 8. Click the **Confirm OS Reload** button to confirm and initiate the OS Reload. Click **Cancel** to cancel the action.
 
-After initiating the OS Reload process, the device will be taken offline and the OS Reload process will begin. The time it takes an OS reload to complete varies based on the current and new configuration of the device. Throughout the configuration process, the minimum time for the OS Reload displays on each screen. The timeframe is an estimate made by the system. If the reload takes longer than 24 hours, please contact our Support team. When the device returns online, it will function as specified in the New Configuration for the OS Reload.
+After initiating the OS Reload process, the device will be taken offline and the OS Reload process will begin. The time it takes an OS reload to complete varies based on the current and new configuration of the device. Throughout the configuration process, the minimum time for the OS Reload displays on each screen. The timeframe is an estimate made by the system. If the reload takes longer than 24 hours, please contact our Support team. When the device returns online, it will function as specified in the New Configuration for the OS Reload. 
 
 **NOTE:** All data previously saved to the device will be lost, but can be restored if a backup was made of the device prior to its reload. If data was not backed up, it cannot be retrieved.

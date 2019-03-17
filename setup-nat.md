@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, setup, 5400
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,10 +40,10 @@ Connection request from machines in the `10.xxx.xxx.xxx` network are mapped to t
 
 **NOTE:** You must configure the server to pass its internet traffic through the VRA so that its default gateway is the Private IP address of the managed virtual LAN (VLAN). For example, for `bond0.2254` the gateway is `10.52.69.201`. This should be the gateway address for the server passing Internet traffic.
 
-**NOTE:** Use the following command to help troubleshoot NAT: 
+**NOTE:** Use the following command to help troubleshoot NAT:
 
 '''
-run show nat source translations detail 
+run show nat source translations detail
 '''
 
 ## One-to-one NAT rule
@@ -50,7 +54,7 @@ The commands below show how to setup a one-to-one NAT rule. Notice the rule numb
 
 The following commands are for a source and destination rule. Type `show nat` in configuration mode to see the NAT rule type.
 
-**NOTE:** Use the following command to help troubleshoot NAT: `run show nat source translations detail`. 
+**NOTE:** Use the following command to help troubleshoot NAT: `run show nat source translations detail`.
 
 Enter the following commands in the prompt after ensuring you are in configuration mode:
 
@@ -73,7 +77,7 @@ If traffic comes in on IP `50.97.203.227` on bond1, that IP will be mapped to IP
 
 ## Adding IP ranges through your VRA
 
-Depending on your VRA configuration, you may want to accept specific IBM© Cloud IP addresses. 
+Depending on your VRA configuration, you may want to accept specific IBM© Cloud IP addresses.
 
 New vRouter deployments come with IBM Cloud's services network IP addresses defined in a firewall rule called `SERVICE-ALLOW`.
 
@@ -88,7 +92,7 @@ set firewall name SERVICE-ALLOW rule 3 action 'accept'
 set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 ~~~
 
-Once you have defined the firewall rules, you may now assign them as you see fit. Two examples are listed below. 
+Once you have defined the firewall rules, you may now assign them as you see fit. Two examples are listed below.
 
 Applying to a zone:
 

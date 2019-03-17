@@ -3,6 +3,11 @@
 copyright:
   years: 2017
 lastupdated: "2018-11-10"
+
+keywords: ha, high availability, vrrp, vip
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -123,8 +128,9 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26
 ```
 
 * A vrrp sync-group is different than a vrrp group. When an interface that belongs in a sync-group changes state, all other members of the same sync-group will transition to the same state.
-* The vrrp-group number of the VLAN interfaces (VIFs) should always be the same as its matching native interface. For example, dp0bond1.789 should always have the same vrrp-group number as dp0bond1. Having a different group number on the VIF as is on the native interface could cause a split brain condition.
+*  The vrrp-group number of the VLAN interfaces (VIFs) should almost always be the same as its matching native interface. For example, `dp0bond1.789` should always have the same vrrp-group number as `dp0bond1`, unless the two interfaces share the same sync-group. Having a different group number on the VIF and the native interface may cause a "split brain" condition when paired with different sync groups. When two interfaces share the same sync-group, even though they are on different vrrp-groups, they will both transition between master and backup at the same time, preventing split brain. On the other hand, if the native interface is set up with a different vrrp-group number and a different sync-group as a VLAN interface, since subnets set up on VLAN interfaces are statically routed to the virtual-address on the native interface, if the VLAN interface is showing as backup and the native interface is master, the router will still send VLAN interface traffic to the VRA where the native interface is master even though the VLAN interface is secondary and not active on the VRA. This specific situation will cause "split brain" and an outage. This is why it is very important to be conscious of how sync-groups are set up in conjunction with vrrp-groups. It is also very important to not use the same vrrp-group numbers between multiple HA VRA pairs in the same transit VLAN, since four vyattas using the same group will cause three VRAs to potentially asssume the Backup state, while only one is Master, causing an outage.
 * The real interface addresses on the native vlans (e.g. dp0bond1: 169.110.20.28/29) are not always in the same subnet as their VIPs (169.110.21.26/29).
+
 
 ## Manual VRRP failover
 If you need to force a vrrp failover, it can be achieved by running the following on the device that currently is VRRP master:

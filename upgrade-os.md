@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}

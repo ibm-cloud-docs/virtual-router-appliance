@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ipsec, firewall, configure, policy
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -55,7 +59,7 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-This sets up a generic tunnel that routes 172.16.x.x traffic between the two machines. Machine B has 172,16.100.1 as a loopback address to provide an endpoint to test with, while Machine A has a virtual machine on a routed VLAN to provide source traffic across the tunnel. 
+This sets up a generic tunnel that routes 172.16.x.x traffic between the two machines. Machine B has 172,16.100.1 as a loopback address to provide an endpoint to test with, while Machine A has a virtual machine on a routed VLAN to provide source traffic across the tunnel.
 
 You can see the result here:
 
@@ -86,7 +90,7 @@ set security firewall name ALLOWALL rule 30 action 'accept'
 set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
- 
+
 Then add policies between all three interfaces:
 
 ```

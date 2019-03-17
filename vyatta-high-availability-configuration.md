@@ -1,7 +1,9 @@
 ---
+
 copyright:
   years: 1994, 2017
 lastupdated: "2018-11-10"
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -10,13 +12,13 @@ lastupdated: "2018-11-10"
 # Vyatta 5400 High Availability Configuration
 {: #vyatta-5400-high-availability-configuration}
 
-Vyatta high availability is supported through the use of VRRP, Virtual Routing Redundancy Protocol. Each gateway group will have two primary VRRP IP addresses, one for the private, and one for the public side of the networks. 
+Vyatta high availability is supported through the use of VRRP, Virtual Routing Redundancy Protocol. Each gateway group will have two primary VRRP IP addresses, one for the private, and one for the public side of the networks.
 
-**NOTE:** Private only Vyattas will have only the private VRRP. 
+**NOTE:** Private only Vyattas will have only the private VRRP.
 
 These IP addresses are the target IPs for the Softlayer network infrastructure to route all the subnets on VLANs that are associated with the gateway members. Only one Vyatta will have these VRRP IPs running at a time, the other members of the gateway group will have them administratively down.
 
-Configuration can be synchronized between the two Vyattas with the "config-sync" configuration commands. This configuration will allow one member to push the configuration of specific options to the other Vyatta in a group, and do so selectively. You can push only the firewall rules, or only the IPsec configuration, or any combination of rulesets. 
+Configuration can be synchronized between the two Vyattas with the "config-sync" configuration commands. This configuration will allow one member to push the configuration of specific options to the other Vyatta in a group, and do so selectively. You can push only the firewall rules, or only the IPsec configuration, or any combination of rulesets.
 
 It is recommended that you do not try to push IP addresses or other network configurations, as config-sync will instantly commit your changes on the other Vyattas, bringing those interfaces online. If you want to dynamically enable interfaces and services, you should use transition scripts to perform this action on failover. Additionally, it is recommended that you use more VRRP IP addresses for your gateway IPs on associated VLANs, this will make failover easier to manage.
 

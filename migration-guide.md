@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2019-03-07"
 
+keywords: 5400, 5600, migration, overview, upgrade, brocade
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}

@@ -2,7 +2,12 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-03-03"
+
+keywords: 5400, 5600, issues, faqs, migration, upgrading
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -16,7 +21,7 @@ lastupdated: "2018-11-10"
 # Vyatta 5400 Common Migration Issues
 {: #vyatta-5400-common-migration-issues}
 
-The following table illustrates common issues or behaior changes you may encounter after migrating from a Vyatta 5400 device to a IBM© Virtual Router Appliance. In some cases, it includes workarounds to address the issues.
+The following table illustrates common issues or behavior changes you may encounter after migrating from a Vyatta 5400 device to a IBM© Virtual Router Appliance. In some cases, it includes workarounds to address the issues.
 
 ## Interface Based Global-State Policy for StateFul Firewall
 

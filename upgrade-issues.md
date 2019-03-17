@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -61,7 +65,7 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-The ISOs for the initial installation and your currently running OS are featured here. 
+The ISOs for the initial installation and your currently running OS are featured here.
 
 **NOTE:** If you made more than one upgrade, then those will display here as well.
 

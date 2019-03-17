@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: faq, faqs, questions, gateway, vrouter, vyatta, 5400, 5600, password, traffic, firewall, provision, login, ha, high availability
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -20,12 +24,12 @@ lastupdated: "2018-11-10"
 
 The following are frequently asked questions when working with the IBM© Virtual Router Appliance (VRA).
 
-## What is a VRA? 
+## What is a VRA?
 {:faq}
 
 A Virtual Router Appliance (VRA) allows an IBM Cloud customer to selectively route private and public network traffic through a full-featured enterprise router with firewall, traffic shaping, policy-based routing, VPN, and a host of other features. All VRA features are customer-managed. VRA gives an IBM Cloud customer a degree of control normally reserved for on-premise networks.
 
-## What is a Gateway Appliance? 
+## What is a Gateway Appliance?
 {:faq}
 
 A Gateway Appliance fixture lets you use the Web portal or API to choose network segments (VLANs) to route through a VRA. You can change VLAN selections at any time. The Gateway Appliance also handles VRA high-availability (HA), configuring a second VRA to take over if the first one fails.
@@ -43,7 +47,7 @@ Vyatta was open source, PC-based router software that was acquired in full and t
 IBM will no longer support Vyatta 5400 as of March 31, 2019.
 
 ## What improvements does the Virtual Router Appliance (Vyatta 5600) have over the Vyatta 5400?
-{:faq}
+{: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
 
 Vyatta 5600 offers the following enhancements over the Vyatta 5400:
 
@@ -57,27 +61,27 @@ Vyatta 5600 offers the following enhancements over the Vyatta 5400:
 
 AT&T (formerly Brocade) has announced the End-of-Life and End-of-Support of their Brocade vRouter 5600 offering. While the Brocade vRouter 5600 provides the underlying technology capability for the IBM Virtual Router Appliance, this announcement does not apply to IBM customers. IBM customers will continue to have support using this new offering.
 
-## How is VRA delivered? 
+## How is VRA delivered?
 {:faq}
 
 You obtain a VRA by ordering a Network Gateway. This streamlined process lets you choose a data center and a suitable VRA server, as well as whether you want to deploy an HA pair of VRAs. Servers, operating systems, and the Gateway Appliance fixture are all provisioned automatically. When the provisioning is complete, you can use the Gateway Appliance interface to route VLANs through the VRA. You can configure your VRA server directly by using SSH (secure shell) with the passwords provided in the Hardware Details section of the Customer Portal.
 
-## Is my password safe? 
+## Is my password safe?
 {:faq}
 
 Yes. All VRAs are assigned random passwords visible only to the account holder. Passwords are easily changed, as are SSH public keys and admin IP access restrictions.
 
-## Can I get VRA without a Gateway Appliance? 
+## Can I get VRA without a Gateway Appliance?
 {:faq}
 
 Yes, but it can only manage traffic between the VRA's public and private interfaces. VLANs and HA require the Gateway Appliance fixture.
 
-## Is all network traffic sent through the VRA? 
+## Is all network traffic sent through the VRA?
 {:faq}
 
 No. The Gateway Appliance lets you select the private and public network segments (VLANs) you want to route through the VRA. You may change and bypass VLAN selections at any time. VRA also lets you define IP-based rules that apply to subnets or IP ranges. Such rules function only if the VLANs containing those subnets are routed through the VRA.
 
-## Can a VRA or dedicated firewall prevent new server provisions? 
+## Can a VRA or dedicated firewall prevent new server provisions?
 {:faq}
 
 Yes. Whenever possible, you shouldn't lock down your network until you've populated it with the servers you plan to use.
@@ -91,9 +95,9 @@ Likewise, if a VRA/firewall is bypassed after an order is placed, it's still lik
 ## What firewall products does IBM offer?
 {:faq}
 
-You can find a detailed comparison of all firewall products offered in the IBM Cloud by reviewing [this topic](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls). 
+You can find a detailed comparison of all firewall products offered in the IBM Cloud by reviewing [this topic](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls).
 
-## Can a VRA confound customer support efforts? 
+## Can a VRA confound customer support efforts?
 {:faq}
 
 Yes, for the reasons described above. VRA is a "black box:" VLANs go in, VLANs come out and IBM has no idea what customers are doing with packets in-between.
@@ -102,7 +106,7 @@ Support always does its best, but with VRA and dedicated firewall: a) customer p
 
 As a first diagnostic step, we may require you to put your VRA or Firewall VLANs in bypass. If, in this state, provisions that had failed start going through, we must assume the issue lies with your VRA/firewall configuration.
 
-## What effect will VRA have on my network performance? 
+## What effect will VRA have on my network performance?
 {:faq}
 
 Keep in mind that even though they can't see you, a public cloud shares networks with other customers. True best-case VRA throughput is determined by available network capacity at a point in time, plus the distance the data must travel.
@@ -147,6 +151,11 @@ If there is access using IPMI, you can perform the following actions to recover 
 
 **NOTE:** Incorrect use of these commands can wipe out your interface configuration.
 
+## Why would I want to run two Vyatta devices in a High Availability (HA) pair?
+{:faq}
+
+Most cloud customers want high-availability (HA) services. This is so that your workload will be hosted on two (or more) completely separate (hardware) machines, or even better, in two separate availability zones (think datacenters), so that if one fails, the other will be able to continue the service. If one machine fails, there will be a “failover” to the other machine, which means that the service can keep running. This is what is referred to as an “HA” service — it’s almost always available.
+
 ## How can I enable root logins to the VRA?
 {:faq}
 
@@ -154,7 +163,7 @@ To enable root access through SSH, run the following command:
 
 `set service ssh allow-root`
 
-Note that allowing root access using SSH is considered unsafe. An alternative to access a root shell is to either login as another user and elevate to root locally with `su -`, or by allowing sudo commands to 'superusers'. 
+Note that allowing root access using SSH is considered unsafe. An alternative to access a root shell is to either login as another user and elevate to root locally with `su -`, or by allowing sudo commands to 'superusers'.
 
 For example, to configure the vyatta as a superuser:
 

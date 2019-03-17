@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: 5600, security, fixes, patches, brocade, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -106,7 +110,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-44041 | Major | SNMP ifDescr oid slow response time |
- 
+
 **Security Vulnerabilities Resolved**
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -114,7 +118,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-44074| 9.1 | DSA-4322-1 | CVE-2018-10933: Debian DSA-4322-1: libssh – security update|
 | VRVDR-44054 | 8.8 | DSA-4319-1 | CVE-2018-10873: Debian DSA-4319-1: spice – security update |
 | VRVDR-44038 | N/A | DSA-4315-1 | CVE-2018-16056, CVE-2018-16057, CVE-2018- 16058: Debian DSA-4315-1: wireshark – security update |
-| VRVDR-44033 | N/A | DSA-4314-1 | CVE-2018-18065: Debian DSA-4314-1: net-snmp – security update | 
+| VRVDR-44033 | N/A | DSA-4314-1 | CVE-2018-18065: Debian DSA-4314-1: net-snmp – security update |
 |VRVDR-43922 | 7.8 | DSA-4308-1 | CVE-2018-6554, CVE-2018-6555, CVE-2018-7755, CVE-2018-9363, CVE-2018-9516, CVE-2018-10902, CVE-2018-10938, CVE-2018-13099, CVE-2018- 14609, CVE-2018-14617, CVE-2018-14633, CVE- 2018-14678, CVE-2018-14734, CVE-2018-15572, CVE-2018-15594, CVE-2018-16276, CVE-2018- 16658, CVE-2018-17182: Debian DSA-4308-1: linux – security update |
 | VRVDR-43908 | 9.8 | DSA-4307-1 | CVE-2017-1000158, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4307-1: python3.5 - security update |
 | VRVDR-43884 | 7.5 | DSA-4306-1 | CVE-2018-1000802, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4306-1: python2.7 - security update |
@@ -126,23 +130,23 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-43738 | Major | ICMP Unreachable packets returned through SNAT session are not delivered |
-| VRVDR-43538 | Major | Receive oversize errors on bondinginterface | 
-| VRVDR-43519 | Major | Vyatta-keepalived is running with no config present | 
-| VRVDR-43517 | Major | Traffic fails when endpoint of VFP/Policy-based IPsec resides on the vRouter itself | 
+| VRVDR-43538 | Major | Receive oversize errors on bondinginterface |
+| VRVDR-43519 | Major | Vyatta-keepalived is running with no config present |
+| VRVDR-43517 | Major | Traffic fails when endpoint of VFP/Policy-based IPsec resides on the vRouter itself |
 | VRVDR-43477 | Major | Committing the IPsec VPN configuration returns the warning “Warning: unable to [VPN toggle net.ipv4.conf.intf.disable_policy], received error code 65280 |
 | VRVDR-43379 | Minor | NAT statistics incorrectly shown |
- 
+
 **Security Vulnerabilities Resolved**
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-43837 | 7.5 | DSA-4300-1 | CVE-2018-10860: Debian DSA-4300-1: libarchive-zip-perl –security update |
-| VRVDR-43693 | N/A | DSA-4291-1 | CVE-2018-16741: Debian DSA-4291-1: mgetty –security update | 
+| VRVDR-43693 | N/A | DSA-4291-1 | CVE-2018-16741: Debian DSA-4291-1: mgetty –security update |
 | VRVDR-43578 | N/A | DSA-4286-1 | CVE-2018-14618: Debian DSA-4286-1: curl -security update |
-| VRVDR-43326 | N/A | DSA-4280-1 | CVE-2018-15473: Debian DSA-4280-1: openssh -security update | 
+| VRVDR-43326 | N/A | DSA-4280-1 | CVE-2018-15473: Debian DSA-4280-1: openssh -security update |
 | VRVDR-43198 | N/A | DSA-4272-1 | CVE-2018-5391: Debian DSA-4272-1: linux security update (FragmentSmack) |
-| VRVDR-43110 | N/A | DSA-4265-1 | Debian DSA-4265-1 : xml-security-c -security update | 
-| VRVDR-43057 | N/A | DSA-4260-1 | CVE-2018-14679, CVE-2018-14680, CVE-2018-14681, CVE-2018-14682: Debian DSA-4260-1 : libmspack -security update | 
+| VRVDR-43110 | N/A | DSA-4265-1 | Debian DSA-4265-1 : xml-security-c -security update |
+| VRVDR-43057 | N/A | DSA-4260-1 | CVE-2018-14679, CVE-2018-14680, CVE-2018-14681, CVE-2018-14682: Debian DSA-4260-1 : libmspack -security update |
 | VRVDR-43026 | 9.8 | DSA-4259-1 | Debian DSA-4259-1 : ruby2.3 -security updateVRVDR-42994N/ADSA-4257-1CVE-2018-10906: Debian DSA-4257-1 :fuse -security update |
 
 ## 1801q
@@ -167,7 +171,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-41829 | Major | Dataplane core dumps until system becomes unresponsive with SIP ALG soak test |
 | VRVR-41683 | Blocker | DNS name server address learned over VRF is not consistently recognized |
 | VRVDR-41628 | Minor | Route/prefix from router-advertisement active in kernel and dataplane but ignored by RIB |
- 
+
 **Security Vulnerabilities Resolved**
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -411,7 +415,7 @@ Released March 28, 2018.
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-39985 | Minor | TCP DF packets larger than GRE tunnel MTU are dropped with no ICMP fragmentation needed returned | 
+| VRVDR-39985 | Minor | TCP DF packets larger than GRE tunnel MTU are dropped with no ICMP fragmentation needed returned |
 | VRVDR-41088 | Critical | Extended (4 byte) ASN not represented internally as unsigned type |
 | VRVDR-40988 | Critical | Vhost not starting when used with certain number of interfaces |
 | VRVDR-40927 | Critical | DNAT: SDP in SIP 200 OK not translated when it follows a 183 response |
@@ -443,7 +447,7 @@ Released March 12, 2018.
 | --- | --- | --- |
 | VRVDR-40281 | Major | After upgrading from 5.2 to more recent version error “vbash: show: command not found” in operation mode |
 | VRVDR-40135 | Major | Spanning tree packets are not received on a VIF interface bridge port |
-| VRVDR-39991 | Major | Stateful firewall drops packets between two subnets on the same interface | 
+| VRVDR-39991 | Major | Stateful firewall drops packets between two subnets on the same interface |
 | VRVDR-36481 | Major | Upgrade/downgrade from 5.2R4 to 17.1.0/5.2R3 shows /opt/vyatta/sbin/vyatta-install-image.functions: line 372: is_onie_boot: command not found |
 
 **Security Vulnerabilities Resolved**
@@ -469,7 +473,7 @@ Released March 8, 2018.
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 40327 | 9.8 | | DSA-4098-1
-CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security upate | 
+CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security upate |
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5715 / Spectre, aka variant #2 |
 
 ##1801c

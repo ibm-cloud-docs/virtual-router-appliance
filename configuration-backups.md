@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: backup, configuration
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,7 +23,7 @@ lastupdated: "2018-11-10"
 
 The configuration commands need to be backed up when there is a change to the system. This can be accomplished by running the operational mode command `show configuration commands` and then saving the output (for example by copying and pasting from the SSH session). This would be considered a minimum backup for the configuration.
 
-A more complete backup involves generating a technical support archive for the system: 
+A more complete backup involves generating a technical support archive for the system:
 
 ```
 $ generate tech-support archive
@@ -28,7 +32,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-The generated archive file can then be copied from the Virtual Router Appliance to the storage device of your choice. The archive contains backups of the configuration information, home directories and logging information. It is a much more complete backup of a system. 
+The generated archive file can then be copied from the Virtual Router Appliance to the storage device of your choice. The archive contains backups of the configuration information, home directories and logging information. It is a much more complete backup of a system.
 
 As an example:
 

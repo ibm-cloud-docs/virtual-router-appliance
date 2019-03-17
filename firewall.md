@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: firewall, manage, stateless, stateful, alg, firewall, rules, CPP, Logging
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -43,7 +47,7 @@ Note that the `global-state-policy` commands will only track the state of traffi
 set security firewall name GLOBAL_STATELESS rule 1 action accept
 ```
 
-As `GLOBAL_STATELESS` does not specify `protocol tcp`, the `global-state-policy tcp` command would not apply on this rule. 
+As `GLOBAL_STATELESS` does not specify `protocol tcp`, the `global-state-policy tcp` command would not apply on this rule.
 
 ```
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 action accept
@@ -59,10 +63,10 @@ To make individual firewall rules 'stateful':
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
-This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands. 
+This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands.
 
 ## ALG for assisted stateful tracking
-A few protocols such as FTP utilise more complex sessions that the normal stateful firewall operation can track. 
+A few protocols such as FTP utilise more complex sessions that the normal stateful firewall operation can track.
 There are preconfigured modules that enable these protocols to be stetfully managed.
 It is suggested to disable these ALG modules, unless they are required for the successful use of the respective protocols.
 
@@ -109,7 +113,7 @@ One method for configuring the firewall on a VRA is to apply firewall rule sets 
 
 An interface can have multiple rule sets applied in each direction. They are applied in the order of configuration. Note that it is not possible to firewall traffic originating from the VRA device using per-interface firewalls.
 
-As an example, to assign the `ALLOW_LEGACY` rule set to the `in` option for the `bp0s1` interface, you would use the configuration command: 
+As an example, to assign the `ALLOW_LEGACY` rule set to the `in` option for the `bp0s1` interface, you would use the configuration command:
 
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
@@ -118,7 +122,7 @@ Control plane policing (CPP) provides protection against attacks on the Virtual 
 
 CPP is implemented when the `local` keyword is used in firewall policies that are assigned to any type of VRA interface, such as data plane interfaces or loopback. Unlike the firewall rules applied for packets traversing through the VRA, the default action of firewall rules for traffic entering or leaving the control plane is `Allow`. Users must add explicit drop rules if the default behavior is not desired.
 
-The VRA provides a basic CPP rule set as template. You can merge it into your configuration by running: 
+The VRA provides a basic CPP rule set as template. You can merge it into your configuration by running:
 
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 
@@ -131,7 +135,7 @@ Another firewall concept within the Virtual Router Appliance is zone based firew
 
 An interface can either belong to a zone or have a per-interface firewall configuration; an interface cannot do both.
 
-Imagine the following office scenario with three departments, each department with its own VLAN: 
+Imagine the following office scenario with three departments, each department with its own VLAN:
 
 * Department A - VLANs 10 and 20 (interface dp0bond1.10 and dp0bond1.20)
 * Department B - VLANs 30 and 40 (interface dp0bond1.30 and dp0bond1.40)
@@ -140,15 +144,15 @@ Imagine the following office scenario with three departments, each department wi
 A zone can be created for each department and the interfaces for that department can be added to the zone. The following example illustrates this: 
 ```
 set security zone-policy zone DEPARTMENTA interface dp0bond1.10
-set security zone-policy zone DEPARTMENTA interface dp0bond1.20 
-set security zone-policy zone DEPARTMENTB interface dp0bond1.30 
-set security zone-policy zone DEPARTMENTB interface dp0bond1.40 
+set security zone-policy zone DEPARTMENTA interface dp0bond1.20
+set security zone-policy zone DEPARTMENTB interface dp0bond1.30
+set security zone-policy zone DEPARTMENTB interface dp0bond1.40
 set security zone-policy zone DEPARTMENTC interface dp0bond1.50
 ```
 
 The `commit` command populates each zone as an interface and the default drop rules discard any traffic trying to enter the zone from the outside. In the example, VLAN 10 and 20 can pass traffic since they are in the same zone (`DEPARTMENTA`) but VLAN 10 and VLAN 30 cannot pass traffic because VLAN 30 is in a different zone (`DEPARTMENTB`).
 
-The interfaces within each zone can pass traffic freely and rules can be defined for interaction between the zones. A rule set is configured from the point of view of leaving one zone to another zone. 
+The interfaces within each zone can pass traffic freely and rules can be defined for interaction between the zones. A rule set is configured from the point of view of leaving one zone to another zone.
 
 The following command shows an example of how to configure a rule:
 
@@ -164,7 +168,7 @@ It is important to understand that this assignment from zone DEPARTMENTC going i
 The VRA supports two types of logging:
 
 1. Session logging.  Use ``security firewall session-log`` command to configure firewall session logging.
-  
+
 	For UDP, ICMP, and all non-TCP flows, a session transitions to four states over the lifetime of the flow. For each transition, you can configure the VRA to log a message. TCP has a larger number of state transitions, each of which can be configured to log.  
 
 2. Per packet logging. Include keyword ``log`` in firewall or NAT rule to log every network packet that matches the rule.

@@ -5,6 +5,10 @@ copyright:
 
 lastupdated: "2018-11-10"
 
+keywords: resources, partners, blog, brief
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -27,7 +31,7 @@ These resources are created by IBM© and some of our partners and customers.
 * [**Blog Post: Keep your cloud safe with IBM network security services** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/09/keep-cloud-safe-ibm-network-security-services/){:new_window}
 
     *"When it comes to securing your network, there’s no such thing as a one-size-fits-all approach. As organizations increasingly leverage critical data and applications in the cloud, you might stop and wonder which security option best suits your needs of your network."*
-    
+
 * [**Blog Post: Meet the Virtual Router Appliance** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
 
     *"With the Virtual Router Appliance, you can turn your high-performance bare metal servers into enterprise-grade virtual routers, firewalls, and VPNs to fit your unique application requirements—all from a standalone appliance or a pair of high availability (HA) appliances."*

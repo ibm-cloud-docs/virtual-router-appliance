@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, prefix, IPsec, rules
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -17,9 +21,9 @@ lastupdated: "2018-11-10"
 # Using NAT with Prefix Based IPsec
 {: #using-nat-with-prefix-based-ipsec}
 
-In the topic [Configuring a VFP interface with IPsec and Zone Firewalls](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), we created a VFP interface and set it to be used with an IPsec tunnel. 
+In the topic [Configuring a VFP interface with IPsec and Zone Firewalls](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), we created a VFP interface and set it to be used with an IPsec tunnel.
 
-We can use the same interface in NAT rules, as well as the inbound and outbound interface declaration, with one additional caveat. 
+We can use the same interface in NAT rules, as well as the inbound and outbound interface declaration, with one additional caveat.
 
 Here are some example NAT rules:
 
@@ -51,9 +55,9 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-This creates a more specific route for the traffic to take through `vfp0`. 
+This creates a more specific route for the traffic to take through `vfp0`.
 
-At this point NAT will work as configured, and the traffic will travel through the tunnel. 
+At this point NAT will work as configured, and the traffic will travel through the tunnel.
 
 **NOTE:** With NAT you need a route with a CIDR smaller than the IPsec remote prefix (it cannot be the same size) pointing your traffic over the `vfp0` virtual interface.
 
@@ -69,7 +73,7 @@ PING 172.16.100.1 (172.16.100.1) 56(84) bytes of data.
 --- 172.16.100.1 ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2003ms
 rtt min/avg/max/mdev = 44.247/44.431/44.727/0.272 ms
- 
+
 vyatta@acs-jmat-migsim01:~$ show nat source translations
 Pre-NAT                 Post-NAT                Prot    Timeout
 10.177.137.251:7553     172.16.200.2:7553       icmp    48

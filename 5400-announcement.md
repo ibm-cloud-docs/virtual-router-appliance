@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2019-03-03"
 
+keywords: 5400, migrate, migration, 5600, support
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
