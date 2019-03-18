@@ -43,16 +43,14 @@ After the End of Support date, AT&T will no longer provide any code patches or a
 
 Similarly, IBM Cloud Support will no longer troubleshoot configuration or networking issues on Vyatta 5400 deployments.  Support will be limited to hardware level requests (hard drive, RAM, and so on), power and Out of Band (IPMI) connectivity.
 
-We highly recommend customers take immediate action to migrate onto an alternate solution, such as the Virtual Router Appliance (“VRA”; based on the Vyatta 5600) or Juniper vSRX.  [Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
+We highly recommend customers take immediate action to migrate onto an alternate solution, such as the Virtual Router Appliance (VRA; based on the Vyatta 5600) or Juniper vSRX.  [Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
 
 ## What happens if I'm still running my IBM Cloud workloads using a Vyatta 5400 after March 31?
 {: faq}
 
-While your Vyatta 5400 will still work after March 31, your business and application environments are exposed to potential security threats and other tampering violations, which may result from latent vulnerabilities in the Vyatta 5400 software.
+Your Vyatta 5400 will work after March 31. However, your business and application environments could be exposed to potential security threats and other tampering violations due to latent vulnerabilities in the Vyatta 5400 software.
 
-If you encounter a network issue which takes down your business and application environment, and you trace the root cause to the Vyatta 5400, you should escalate this to our 5400 Offering Manager, as you will not be able to get support from IBM or AT&T. Please reach out to them here:
-
-  nwom@us.ibm.com
+If you encounter a network issue which takes down your business and application environment, and you trace the root cause to the Vyatta 5400, escalate this matter to our 5400 Offering Manager, because support will no longer be available from IBM or AT&T. You can reach the Offering Management team through email at _nwom@us.ibm.com_.
 
 ## What about my underlying Bare Metal Server hardware – is it still supported?
 {: faq}
@@ -67,14 +65,14 @@ Customers who have a Vyatta 5400 should migrate to either VRA (Vyatta 5600), Jun
   VRAs and vSRXs are customer managed devices.
   {: note}
 
-## Is support available from IBM for migrating from the Vyatta 5400 to either the VRA or the vSRX?
+## Is support available from IBM for migrating from the Vyatta 5400 to either the VRA, vSRX, or FSA 10G?
 {: faq}
 
 The Vyatta 5400 to VRA (5600) Configuration Conversion Service is still available:
 
-* For existing customers, IBM Cloud is providing a no-cost offering to assist with re-factoring your existing Vyatta 5400 configuration into Virtual Router Appliance, Juniper vSRX, or Fortigate Security Appliance (FSA) 10G formats. To submit a request for the Configuration Conversion service, please send an e-mail to nwom@us.ibm.com with the subject: `Request for Configuration Conversion: IBM Cloud Account Number xxxxxx`.
+* For existing customers, IBM Cloud is providing a no-cost offering to assist with re-factoring your existing Vyatta 5400 configuration into Virtual Router Appliance (VRA), Juniper vSRX, or Fortigate Security Appliance (FSA) 10G formats. To submit a request for the Configuration Conversion service, please send an e-mail to nwom@us.ibm.com with the subject: `Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx. `.
 
-  Be sure to insert your specific account number in place of 'xxxxxx'  in your request.
+  Be sure to insert your application choice in place of `aaaaaaaa` (Virtual Router Appliance, Juniper vSRX, or Fortigate Security Appliance (FSA) 10G), and your specific account number in place of `xxxxxx` in your subject line.
   {: note}
 
 * Wanclouds, our partner in this conversion configuration process, has completed several hundred successful migration engagements. They will transform your existing Vyatta 5400 to create similar functionality on the Vyatta 5600 Platform. They provide their services in two tiers, described below:

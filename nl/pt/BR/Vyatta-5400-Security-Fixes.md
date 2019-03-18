@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Correções de vulnerabilidade de segurança do AT&T Vyatta 5400 vRouter
+{: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
 **A partir de: 30 de agosto de 2018**
 
@@ -41,7 +42,7 @@ Liberado em 16 de julho de 2018
 | Número do problema | Pontuação CVSS | Recomendação | Resumo |
 | --- | --- | --- | --- |
 | VSE-9909 | 6,5 | DSA-4229-1 | CVE-2018-5388, CVE-2018-10811: Debian DSA-4229- 1: atualização de segurança do Strongswan |
-| VSE-9903  | 9,8 | DLA-1390-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018-1125, CVE-2018-1126: Debian DLA-1390-1: atualização de segurança de procps |
+| VSE-9903  | 9,8 | DLA-1390-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018-1125, CVE-2018-1126: Debian DLA-1390-1: atualização de segurança de procps  |
 
 Vulnerabilidades de segurança resolvidas no 6.7R14S8
 

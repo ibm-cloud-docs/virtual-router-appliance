@@ -15,12 +15,73 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Correções do software AT&T Vyatta 5600 vRouter
+{: #at-t-vyatta-5600-vrouter-software-patches}
 
-**A partir de: 2 de novembro de 2018**
+**A partir de 14 de fevereiro de 2019**
 
 Este documento lista as correções para as versões atualmente suportadas do Vyatta Network OS 5600. Com as versões 5.2 e mais antigas, as correções são nomeadas usando um número S. Com as versões 17.1 e mais novas, as correções são nomeadas com uma letra minúscula, excluindo “i”, “o”, “l” e “x”.
 
 Quando vários números de CVE são abordados em uma única atualização, a pontuação CVSS mais alta é listada.
+
+## 1801v
+
+**Problemas resolvidos**
+
+| Número do problema | Prioridade | Resumo |
+| --- | --- | --- |
+| VRVDR-45175 | Crítico | Core dump Rsyslogd quando há VRFs configurados |
+| VRVDR-45057 | Crítico | Interface de túnel VTI de IPsec no estado A/D após a chegada inicial. O SA de IPsec permanece ATIVADO |
+| VRVDR-44985 | Grave | Criação de log/pedido de operação de DNAT e firewall de entrada |
+| VRVDR-44944 | Crítico | vyatta-config-vti.pl: uso de arquivo temporário não seguro |
+| VRVDR-44941 | Secundário| Rota estática ausente no kernel devido a breve oscilação da interface VTI |
+| VRVDR-44914 | Crítico | Travamento de ALG de RPC em ambos os membros do par de alta disponibilidade |
+| VRVDR-44668 | Grave | Com o tráfego de produção, o monitoramento de fluxo trava e para de relatar estatísticas de fluxo de rede |
+| VRVDR-44667 | Secundário | A ordem de interface não é consistente entre as execuções de 'show flow-monitoring' |
+| VRVDR-44657 | Grave | A colisão de rechaveamento de IKEv1 faz com que a interface VTI fique inativa quando os túneis estão ativos |
+| VRVDR-44560 | Grave| Várias paralisações de CPU rcu_sched apontando para o driver ip_gre |
+| VRVDR-44517 | Secundário | O plano de dados trava com pânico no rte_ipv6_fragment_packet |
+| VRVDR-44282 | Grave | Problema ao excluir a máscara /32 quando tanto o endereço com a máscara /32 quanto o endereço sem ela estão presentes juntos no grupo de endereços |
+| VRVDR-44278 | Secundário | "show address-group all ipv4 optimal" não está produzindo nenhum resultado |
+| VRVDR-44239 | Grave | Solicitação para melhorar o palavreado da GUI da Web para o menu suspenso do protocolo quando 'todos' os protocolos forem necessários |
+| VRVDR-44076 | Grave | fuga de memória no monitoramento de fluxo levando a falha de segmentação e indisponibilidade do plano de dados |
+| VRVDR-44007 | Crítico | Falha de segmentação do plano de dados no npf_dataplan_session_establish|
+| VRVDR-43909 | Secundário| O Connsync faz com que as interfaces fiquem inativas depois de "reiniciar vrrp" |
+| VRVDR-42679 | Grave | syslog - trava no zactor_is |
+| VRVDR-42020 | Grave | RIB preso incluindo a mesma rota várias vezes |
+| VRVDR-18095 | Secundário | As estatísticas de monitoramento de fluxo não são capturadas como parte de 'show tech-support' |
+
+
+**Vulnerabilidades de segurança resolvidas**
+
+| Número do problema | Pontuação CVSS | Recomendação | Resumo |
+| --- | --- | --- | --- |
+| VRVDR-45148 | N/A | DSA-4371-1 | CVE-2019-3462: Debian DSA-4371-1 – atualização de segurança de apt |
+| VRVDR-45043 | 8,8 | DSA-4369-1 | CVE-2018-19961, CVE-2018-19962, CVE-2018- 19965, CVE-2018-19966, CVE-2018-19967: DSA 4369-1 - atualização de segurança de Xen |
+| VRVDR-45042 | N/A | DSA-4368-1 | CVE-2019-6250: Debian DSA-4368-1 : zeromq3 - atualização de segurança |
+| VRVDR-45035 | N/A | DSA-4367-1 | CVE-2018-16864, CVE-2018-16865, CVE-2018- 16866: Debian DSA-4367-1 : systemd - atualização de segurança |
+| VRVDR-44956 | 7,5 | DSA-4359-1 | CVE-2018-16864, CVE-2018-16865, CVE-2018- 16866: Debian DSA-4367-1 : systemd - atualização de segurança CVE-2018-12086, CVE-2018-18225, CVE-2018- 18226, CVE-2018-18227, CVE-2018-19622, CVE- 2018-19623, CVE-2018-19624, CVE-2018-19625, CVE-2018-19626, CVE-2018-19627, CVE-2018- 19628: Debian DSA-4359-1 : wireshark - atualização de segurança |
+| VRVDR-44747 | N/A | DSA-4350-1 | CVE-2018-19788: Debian DSA-4350-1 : policykit-1 - atualização de segurança |
+| VRVDR-44634 | 8,8 | DSA-4349-1 | CVE-2017-11613, CVE-2017-17095, CVE-2018- 10963, CVE-2018-15209, CVE-2018-16335, CVE- 2018-17101, CVE-2018-18557, CVE-2018-5784, CVE-2018-7456, CVE-2018-8905:Debian DSA-4349- 1 : tiff - atualização de segurança |
+| VRVDR-44633 | 7,5 | DSA-4348-1| CVE-2018-0732, CVE-2018-0734, CVE-2018-0735, CVE-2018-0737, CVE-2018-5407: Debian DSA-4348- 1 : openssl - atualização de segurança |
+| VRVDR-44611 | 9,8 | DSA-4347-1| CVE-2018-18311, CVE-2018-18312, CVE-2018- 18313, CVE-2018-18314: Debian DSA-4347-1 : perl - atualização de segurança |
+| VRVDR-44348| 9,8 | DSA-4338-1 | CVE-2018-10839, CVE-2018-17962, CVE-2018- 17963: Debian DSA-4338-1: atualização de segurança de qemu |
+| VRVDR-43264| 5,6 | DSA-4274-1 | CVE-2018-3620, CVE-2018-3646: Debian DSA-4274- 1: atualização de segurança xen |
+
+## 1801u
+
+**Problemas resolvidos**
+
+| Número do problema | Prioridade | Resumo |
+| --- | --- | --- |
+| VRVDR-44406 | Crítico | Com múltiplas sub-redes na mesma taxa baixa de VIF de tráfego de trânsito observado quando comparado com o desempenho do 5400 |
+| VRVDR-44253 | Secundário | O grampeamento do MSS na interface de ligação para o funcionamento após a reinicialização |
+
+**Vulnerabilidades de segurança resolvidas**
+
+| Número do problema | Pontuação CVSS | Recomendação | Resumo |
+| --- | --- | --- | --- |
+| VRVDR-44277 | N/A | DSA-4332-1 | CVE-2018-16395, CVE-2018-16396: Debian DSA-4332-1 : ruby2.3 - atualização de segurança |
+| VRVDR-44276 | N/A | DSA-4331-1 | CVE-2018-16839, CVE-2018-16842: Debian DSA-4331-1 : curl - atualização de segurança |
 
 ## 1801t
 
@@ -103,7 +164,7 @@ Quando vários números de CVE são abordados em uma única atualização, a pon
 | VRVDR-42283 | Grave | O estado do VRRP muda para FAULT para todas as interfaces quando um IP da interface vif é excluído |
 | VRVDR-42244 | Secundário | O monitoramento de fluxo exporta apenas 1.000 amostras para o coletor |
 | VRVDR-42114 | Crítico | O serviço HTTPS NÃO DEVE expor o TLSv1 |
-| VRVDR-41829 | Grave |Ocorre core dump no plano de dados até que o sistema se torne não responsivo com o teste de estabilidade SIP ALG |
+| VRVDR-41829 | Grave | Ocorre core dump no plano de dados até que o sistema se torne não responsivo com o teste de estabilidade SIP ALG |
 | VRVR-41683 | Bloqueador | O endereço do servidor de nomes DNS informado por meio do VRF não é reconhecido consistentemente |
 | VRVDR-41628 | Secundário | Rota/prefixo da propaganda do roteador ativo no kernel e no plano de dados, mas ignorado pelo RIB |
  
@@ -408,7 +469,7 @@ Liberado em 8 de março de 2018.
 | Número do problema | Pontuação CVSS | Recomendação | Resumo |
 | --- | --- | --- | --- |
 | VRVDR- 40327 | 9,8 | | DSA-4098-1
-CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – atualização de segurança |
+CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – atualização de segurança | 
 | VRVDR- 39907 | 7,8 | CVE-2017-5717 | Injeção do destino de ramificação/CVE-2017-5715/Spectre, também conhecido como variante nº 2 |
 
 ##1801c

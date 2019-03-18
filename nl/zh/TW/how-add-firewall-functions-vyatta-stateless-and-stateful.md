@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # 將防火牆功能新增至 Vyatta 5400（無狀態及有狀態）
+{: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
 使用 Brocade 5400 vRouter (Vyatta) 裝置時，將防火牆規則集套用至每一個介面是一種防火牆方法。每一個介面都有三個可能的防火牆實例（In、Out 及 Local），而且每一個實例都已套用規則。預設動作是「捨棄」，而且其規則容許以規則 1 到 N 的形式來套用特定資料流量。只要有相符項，防火牆就會套用相符規則的特定動作。
 

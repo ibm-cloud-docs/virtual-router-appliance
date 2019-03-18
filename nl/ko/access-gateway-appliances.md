@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 모든 VRA 보기
+{: #view-all-vras}
 
 고객 포털의 게이트웨이 어플라이언스 화면에서 Virtual Router Appliance가 포함된 모든 네트워크 게이트웨이 어플라이언스를 표시하고 어플라이언스에 액세스할 수 있습니다.  
 

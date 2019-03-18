@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 存取及配置
+# 存取及配置 IBM Virtual Router Appliance
+{: #accessing-and-configuring-the-ibm-virtual-router-appliance}
+
 VRA 可以透過 SSH 使用遠端主控台階段作業來配置，或透過登入 Web GUI 來配置。依預設，無法從公用網際網路取得 Web GUI。若要啟用 Web GUI，請先透過 SSH 登入。
 
 **附註：**在 Shell 和介面外配置 VRA 可能會產生非預期的結果，因此不建議這樣做。
@@ -222,4 +224,4 @@ set system acm ruleset rule 9999 operation '*'
 set system acm ruleset rule 9999 path '*'
 ```
 
-嘗試啟用 ACM 規則之前，請參閱補充[文件](vra-docs.html)。不正確的 ACM 規則設定可能導致裝置存取拒絕或系統無法作業的錯誤。
+嘗試啟用 ACM 規則之前，請參閱[補充文件](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation)。不正確的 ACM 規則設定可能導致裝置存取拒絕或系統無法作業的錯誤。

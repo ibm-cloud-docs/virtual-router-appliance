@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Ver todos los VRA (Virtual Router Appliance)
+{: #view-all-vras}
 
 En la pantalla de dispositivos de pasarela del Portal de clientes puede visualizar y acceder a todos los dispositivos de pasarela de red, entre los que se incluye Virtual Router Appliance.  
 

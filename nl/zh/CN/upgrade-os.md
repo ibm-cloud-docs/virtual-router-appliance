@@ -15,7 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 升级操作系统
-可通过对支持团队上传的本地 ISO 文件运行 ``add system image`` 命令，从而升级 VRA 操作系统。可用 Vyatta 升级版本的列表可以使用 IBM 支持凭单系统来获取。
+{: #upgrading-the-os}
+
+可通过对支持团队上传的本地 ISO 文件运行 ``add system image`` 命令，从而升级 VRA 操作系统。可用 Vyatta 升级版本的列表可以使用 IBM© 支持凭单系统来获取。
 
 要开始升级过程，请在 IBM 支持凭单系统上开具凭单以请求升级并将新的 ISO 映像上传到您的系统。您将收到来自 IBM 支持人员的电子邮件，其中指示 ISO 文件的上传位置。在以下示例中，此文件位于目录 ``tmp`` 中。
 

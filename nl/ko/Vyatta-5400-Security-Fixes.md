@@ -15,10 +15,11 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # AT&T Vyatta 5400 vRouter 보안 취약점 수정사항
+{: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
 **기준: 2018년 8월 30일**
 
-이 문서는 Vyatta 5400 vRouter에 대한 보안 취약점 수정사항을 나열합니다. 여러 CVE 번호가 단일 업데이트에 지정되는 경우 가장 높은 CVSS 점수가 나열됩니다.  
+이 문서는 Vyatta 5400 vRouter에 대한 보안 취약점 수정사항을 나열합니다. 여러 CVE 번호가 단일 업데이트에 지정되는 경우 가장 높은 CVSS 점수가 나열됩니다. 
 
 ## 6.7R14S10
 
@@ -214,6 +215,6 @@ lastupdated: "2018-11-10"
 
 6.7R14S1에서 해결된 보안 취약점
 
-**참고:** 여기에 포함된 정보는 AT&T에서 제공하는 오퍼, 약정, 표시 또는 보증이 아니며 변경될 수 있습니다. 서면으로 작성된 계약에 명시된 경우를 제외하고 AT&T 회사 외부에서 사용 또는 공개할 수 없습니다. 
+**참고:** 여기에 포함된 정보는 AT&T에서 제공하는 오퍼, 약정, 표시 또는 보증이 아니며 변경될 수 있습니다. 서면으로 작성된 계약에 명시된 경우를 제외하고 AT&T 회사 외부에서 사용 또는 공개할 수 없습니다.
 
-© 2018 AT&T Intellectual Property. All rights reserved. AT&T 및 Globe 로고는 AT&T Intellectual Property의 등록상표입니다. 기타 상표는 해당 상표 소유자의 재산입니다. 
+© 2018 AT&T Intellectual Property. All rights reserved. AT&T 및 Globe 로고는 AT&T Intellectual Property의 등록상표입니다. 기타 상표는 해당 상표 소유자의 재산입니다.

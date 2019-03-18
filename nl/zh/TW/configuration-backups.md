@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 備份配置
+{: #backing-up-a-configuration}
+
 當系統發生變更時，需要備份配置指令。這可以藉由執行作業模式指令 `show configuration commands` 然後儲存輸出（例如，從 SSH 階段作業複製和貼上）來達成。這將視為配置的最小備份。
 
 更完整的備份包括產生系統的技術支援保存檔： 

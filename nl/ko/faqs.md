@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# FAQ
-다음은 IBM Virtual Router Appliance(VRA)에서 작업할 때 자주 묻는 질문입니다.
+# IBM Virtual Router Appliance의 FAQ
+{: #faqs-for-ibm-virtual-router-appliance}
+
+다음은 IBM© Virtual Router Appliance(VRA)에서 작업할 때 자주 묻는 질문입니다.
 
 ## VRA는 무엇입니까? 
 {:faq}
@@ -89,7 +91,7 @@ IBM 지원 센터는 고객의 명시적인 개입 없이 정책에 의해 VRA�
 ## IBM에서 제공하는 방화벽 제품은 무엇입니까?
 {:faq}
 
-이 [주제 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}를 검토하여 IBM Cloud에서 제공하는 모든 방화벽 제품의 자세한 비교를 찾을 수 있습니다. 
+[이 주제](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls)를 검토하여 IBM Cloud에서 제공하는 모든 방화벽 제품의 자세한 비교를 찾을 수 있습니다. 
 
 ## VRA로 인해 고객 지원에 혼란이 있을 수 있습니까? 
 {:faq}

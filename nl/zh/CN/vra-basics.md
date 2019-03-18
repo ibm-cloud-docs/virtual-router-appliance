@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 访问和配置
+# 访问并配置 IBM 虚拟路由器设备
+{: #accessing-and-configuring-the-ibm-virtual-router-appliance}
+
 VRA 可以使用远程控制台会话通过 SSH 进行配置，也可以通过登录到 Web GUI 进行配置。缺省情况下，无法通过公共因特网来访问 Web GUI。要启用 Web GUI，请首先通过 SSH 登录。
 
 **注：**在 VRA 的 shell 和接口外部配置 VRA 可能会生成意外结果，因此建议不要这样做。
@@ -222,4 +224,4 @@ set system acm ruleset rule 9999 operation '*'
 set system acm ruleset rule 9999 path '*'
 ```
 
-在尝试启用 ACM 规则之前，请参阅补充[文档](vra-docs.html)。不准确的 ACM 规则设置会导致设备访问拒绝或系统不可操作错误。
+在尝试启用 ACM 规则之前，请参阅[补充文档](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation)。不准确的 ACM 规则设置会导致设备访问拒绝或系统不可操作错误。

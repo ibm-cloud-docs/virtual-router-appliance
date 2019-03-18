@@ -76,7 +76,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>このガイドでは、仮想ルーター・アプライアンス (VRA) を IBM Cloud 上で構成してセキュア・プライベート・ネットワーク (エンクロージャー) を作成する方法について、重点的に説明します。</p>
+                <p>このガイドでは、仮想ルーター・アプライアンス (VRA) を IBM© Cloud 上で構成してセキュア・プライベート・ネットワーク (エンクロージャー) を作成する方法について、重点的に説明します。 </p>
                     <span class="tag-filter category">仮想ルーター・アプライアンス</span>
                     <span class="tag-filter category">セキュア・プライベート・ネットワーク</span>
                     <span class="tag-filter category">IBM Cloud コンソールの UI</span>
@@ -91,7 +91,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>このガイドでは、IBM Cloud プライベート・ネットワーク上でセキュア・サブネットを接続するために、ネットワーク・アドレス変換 (NAT) マスカレードを仮想ルーター・アプライアンス (VRA) 上でセットアップする方法を提示します。</p>
+                <p>このガイドでは、IBM Cloud プライベート・ネットワーク上でセキュア・サブネットを接続するために、ネットワーク・アドレス変換 (NAT) マスカレードを仮想ルーター・アプライアンス (VRA) 上でセットアップする方法を提示します。 </p>
                     <span class="tag-filter category">仮想ルーター・アプライアンス</span>
                     <span class="tag-filter category">ネットワーク・アドレス変換</span>
                     <span class="tag-filter category">コードの例</span>

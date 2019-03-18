@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 
-# Guía de inicio
-Para empezar con IBM Virtual Router Appliance (VRA), navegue a la página en el Portal de clientes:
+# Iniciación a IBM Virtual Router Appliance
+{: #getting-started-with-ibm-virtual-router-appliance}
+
+Para empezar con IBM© Virtual Router Appliance (VRA), navegue a la página en el Portal de clientes:
 
 1. En el navegador, abra el [Portal de clientes ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){: new_window} e inicie sesión en su cuenta.
 2. En la navegación del Portal de clientes, seleccione **Red > Dispositivos de pasarela**.
@@ -32,12 +34,12 @@ Para empezar con IBM Virtual Router Appliance (VRA), navegue a la página en el 
 
 Cuando se haya aprobado el pedido, el suministro de VRA se inicia automáticamente. Cuando se completa el proceso de suministro, el nuevo VRA se muestra en la página de lista **Dispositivos de pasarela**. Pulse en el nombre de pasarela para abrir la página **Detalles de pasarela** y, a continuación, en cada miembro de pasarela para abrir la página **Detalles de dispositivo**. Encontrará las direcciones IP, el nombre de usuario de inicio de sesión y la contraseña del dispositivo.  
 
-**NOTA:** es importante recordar que una vez que haya pedido y configure el VRA desde el portal de cliente de IBM Cloud, también debe configurar el propio dispositivo con los mismos valores.
+**NOTA:** es importante recordar que una vez que haya pedido y configure el VRA desde el portal de clientes de IBM Cloud, también debe configurar el propio dispositivo con los mismos valores.
 
 ## Rol del dispositivo de pasarela y de VLAN
-Una VLAN (LAN virtual) es un mecanismo que segrega una red física en muchos segmentos virtuales. Por su comodidad, el tráfico de varias VLAN seleccionadas puede entregarse mediante un cable de red único, proceso comúnmente denominado "truncación".
+Una VLAN (LAN virtual) es un mecanismo que segrega una red física en muchos segmentos virtuales. Por su comodidad, el tráfico de varias VLAN seleccionadas puede suministrarse mediante un solo cable de red, proceso comúnmente denominado "conexión troncal".
 
-VRA se entrega en dos partes: los servidores de VRA y el elemento fijo de dispositivo de pasarela. El dispositivo de pasarela le proporciona una interfaz (GUI y API) para seleccionar las VLAN que desea asociar con su VRA. La asociación de una VLAN con un dispositivo de pasarela reencamina (o "realiza una conexión troncal") dicha VLAN y todas sus subredes a VRA, proporcionándole control sobre el filtrado, reenvío y protección. Los servidores de una VLAN asociada solo puede alcanzarse a partir de otras VLAN pasando por VRA; no es posible omitir VRA a menos que ignore o desasocie la VLAN.
+VRA se entrega en dos partes: los servidores de VRA y el elemento fijo de dispositivo de pasarela. El dispositivo de pasarela le proporciona una interfaz (GUI y API) para seleccionar las VLAN que desea asociar con su VRA. La asociación de una VLAN con un dispositivo de pasarela redirige (o "realiza una conexión troncal") dicha VLAN y todas sus subredes a VRA, proporcionándole control sobre el filtrado, reenvío y protección. Los servidores de una VLAN asociada solo pueden alcanzarse a partir de otras VLAN pasando por VRA; no es posible omitir VRA a menos que ignore o desasocie la VLAN.
 
 De forma predeterminada, un nuevo dispositivo de pasarela se asocia a dos VLAN de "tránsito" no extraíbles, una para la pública y otra para la privada. Normalmente se utilizan para fines de administración y los mandatos VRA pueden separarlas de forma segura.
 
@@ -47,4 +49,4 @@ En comparación, las VLAN de "pasarela" es donde están alojados los dispositivo
 
 VRA solo puede gestionar VLAN asociadas con el mismo mediante el dispositivo de pasarela.
 
-Para obtener información acerca de cómo gestionar VLAN en la pantalla Detalles de dispositivos de pasarela, consulte [Gestión de VLAN](manage-vlans.html).
+Para obtener información acerca de cómo gestionar VLAN en la pantalla Detalles de dispositivos de pasarela, consulte [Gestión de VLAN](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans).

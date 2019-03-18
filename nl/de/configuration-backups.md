@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Backup einer Konfiguration durchführen
+# Konfiguration sichern
+{: #backing-up-a-configuration}
+
 Die Konfigurationsbefehle müssen gesichert werden, wenn eine Änderung am System vorgenommen wird. Dies kann durch Ausführen des Betriebsmodusbefehls `show configuration commands` und anschließendes Speichern der Ausgabe (z. B. durch Kopieren und Einfügen aus der SSH-Sitzung) erreicht werden. Das Ergebnis ist ein minimales Backup der Konfiguration.
 
 Für ein ausführlicheres Backup muss ein Technical Support-Archiv des Systems wie folgt erstellt werden: 

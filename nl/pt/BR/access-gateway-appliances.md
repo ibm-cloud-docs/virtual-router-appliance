@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Visualizar todos os VRAs
+{: #view-all-vras}
 
 A tela Dispositivos de Gateway no Portal do Cliente é onde você pode exibir e acessar todos os Dispositivos de Gateway de Rede, o que inclui os Dispositivos de Roteador Virtual.  
 

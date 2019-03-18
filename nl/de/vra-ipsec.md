@@ -14,10 +14,12 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Vorgehensweise beim Einrichten eines IPsec-Tunnels, der mit zonenbasierten Firewalls arbeitet
-In früheren Versionen von Virtual Router Appliance konnten IPsec-Tunnel, die richtlinienbasiertes Routing verwenden, nicht gut mit zonenbasierten Firewalls arbeiten. In Version 18.01 gibt es eine neue Gruppe von Befehlen, die dieses Problem beheben, indem "virtuelle Funktionspunkte" verwendet werden, um den Datenverkehr von genau bezeichneten Tunneln zu ermöglichen. In diesen Tunneln fungieren die Funktionspunkte als Schnittstelle, die einen Endpunkt bereitstellt, der in eine Zonenrichtlinienkonfiguration eingeschlossen werden kann. 
+# IPsec-Tunnel einrichten, der mit zonenbasierten Firewalls arbeitet
+{: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
 
-Eine Beispielkonfiguration für zwei Maschinen mit IPsec als Zwischenglied folgt hier: 
+In früheren Versionen von Virtual Router Appliance konnten IPsec-Tunnel, die richtlinienbasiertes Routing verwenden, nicht gut mit zonenbasierten Firewalls arbeiten. In Version 18.01 gibt es eine neue Gruppe von Befehlen, die dieses Problem beheben, indem "virtuelle Funktionspunkte" verwendet werden, um den Datenverkehr von genau bezeichneten Tunneln zu ermöglichen. In diesen Tunneln fungieren die Funktionspunkte als Schnittstelle, die einen Endpunkt bereitstellt, der in eine Zonenrichtlinienkonfiguration eingeschlossen werden kann.
+
+Eine Beispielkonfiguration für zwei Maschinen mit IPsec als Zwischenglied folgt hier:
 
 ###Maschine A
 ```
@@ -53,7 +55,7 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-Hier wird ein generischer Tunnel definiert, der Datenverkehr von 172.16.x.x zwischen den beiden Maschinen weiterleitet. Für Maschine B ist 172,16.100.1 eine Loopback-Adresse, um einen Endpunkt zum Testen bereitzustellen, während Maschine A über eine virtuelle Maschine auf dem weitergeleiteten VLAN verfügt, um Datenverkehr der Quelle über den Tunnel weiterzuleiten.  
+Hier wird ein generischer Tunnel definiert, der Datenverkehr von 172.16.x.x zwischen den beiden Maschinen weiterleitet. Für Maschine B ist 172,16.100.1 eine Loopback-Adresse, um einen Endpunkt zum Testen bereitzustellen, während Maschine A über eine virtuelle Maschine auf dem weitergeleiteten VLAN verfügt, um Datenverkehr der Quelle über den Tunnel weiterzuleiten. 
 
 Das Ergebnis ist hier zu sehen:
 

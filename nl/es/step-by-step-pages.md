@@ -76,7 +76,7 @@ Utilice estas guías detalladas paso a paso para crear y personalizar su Virtual
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>En esta guía se explica cómo se puede configurar Virtual Router Appliance (VRA) en IBM Cloud para crear una red privada segura (alojamiento). </p>
+                <p>En esta guía se explica cómo se puede configurar Virtual Router Appliance (VRA) en IBM© Cloud para crear una red privada segura (alojamiento). </p>
                     <span class="tag-filter category">Virtual Router Appliance</span>
                     <span class="tag-filter category">Red privada segura</span>
                     <span class="tag-filter category">IU de la consola de IBM Cloud</span>

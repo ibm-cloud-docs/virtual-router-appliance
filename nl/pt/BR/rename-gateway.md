@@ -14,13 +14,14 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Renomear um VRA
+# Renomeando um VRA
+{: #renaming-a-vra}
 
 Gateways de Rede recebem nomes exclusivos que ajudam os usuários na identificação. A qualquer momento, um nome de Gateway pode ser mudado. É recomendado que você use uma convenção de nomenclatura consistente para identificar os Gateways com mais facilidade.
 
 Execute o procedimento a seguir para renomear um Network Gateway:
 
-1. [Acesse a tela Detalhes do Dispositivo de Gateway](access-gateway-details.html) no Portal do Cliente. 
+1. [Acesse a tela Detalhes do Dispositivo de Gateway](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) no Portal do Cliente. 
 2. Clique no menu suspenso **Ações** e selecione **Renomear Gateway**.
 3. Insira o novo Nome do Gateway no campo **Nome do Gateway**.
 4. Clique em **OK** para salvar a mudança. 

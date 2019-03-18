@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Gestionar cortafuegos
+# Gestionar los cortafuegos de IBM
+{: #manage-your-ibm-firewalls}
+
 Virtual Router Appliance (VRA) tiene la capacidad de procesar reglas de cortafuegos para proteger las VLAN direccionadas a través del dispositivo. Los cortafuegos de VRA pueden dividirse en dos pasos:
 
 1. Definición de uno o varios conjuntos de reglas.
@@ -85,9 +87,9 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 En el conjunto de reglas, `ALLOW_LEGACY`, hay dos reglas definidas. La primera regla descarta cualquier tráfico que proviene de un grupo de dirección denominado `network-group1`. La segunda regla descarta y registra cualquier tráfico destinado para el puerto telnet (`tcp/23`) del grupo de dirección denominado `network-group2`. La acción predeterminada indica que se acepta cualquier otra acción.
 
 ## Cómo permitir el acceso de centro de datos
-IBM ofrece varias subredes IP para proporcionar servicios y soporte a los sistemas que se ejecutan en el centro de datos. Por ejemplo, los servicios de resolución de DNS se ejecutan en `10.0.80.11` y `10.0.80.12`. Otras subredes se utilizan durante el suministro y soporte. Encontrará los rangos de IP utilizados en los centros de datos [aquí](/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+IBM© ofrece varias subredes IP para proporcionar servicios y soporte a los sistemas que se ejecutan en el centro de datos. Por ejemplo, los servicios de resolución de DNS se ejecutan en `10.0.80.11` y `10.0.80.12`. Otras subredes se utilizan durante el suministro y soporte. Encontrará los rangos de IP utilizados en los centros de datos en [este tema](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges).
 
-Puede permite el acceso de centro de datos colocando las reglas `SERVICE-ALLOW` adecuadas al principio de los conjuntos de reglas de cortafuegos con la acción `accept`. El lugar en el que el conjunto de reglas debe aplicarse depende del diseño de cortafuegos y direccionamiento implementado.
+Puede permitir el acceso de centro de datos colocando las reglas `SERVICE-ALLOW` adecuadas al principio de los conjuntos de reglas de cortafuegos con la acción `accept`. El lugar en el que el conjunto de reglas debe aplicarse depende del diseño de cortafuegos y direccionamiento implementado.
 
 Se recomienda colocar reglas de cortafuegos en la ubicación que causa la duplicación de trabajo. Por ejemplo, permitir la entrada de subredes de fondo en `dp0bond0` será menos trabajo que permitir la salida de subredes de fondo en cada interfaz virtual de VLAN.
 
@@ -130,7 +132,7 @@ Imagínese el siguiente caso de ejemplo de oficina con tres departamentos, cada 
 * Departamento B - VLAN 30 y 40 (interfaces dp0bond1.30 y dp0bond1.40)
 * Departamento C - VLAN 50 (interfaz dp0bond1.50)
 
-Se puede crear una zona para cada departamento y las interfaces de dicho departamento pueden añadirse a la zona. El ejemplo siguiente lo ilustra:
+Se puede crear una zona para cada departamento y las interfaces de dicho departamento pueden añadirse a la zona. El ejemplo siguiente lo ilustra: 
 ```
 set security zone-policy zone DEPARTMENTA interface dp0bond1.10
 set security zone-policy zone DEPARTMENTA interface dp0bond1.20  set security zone-policy zone DEPARTMENTB interface dp0bond1.30  set security zone-policy zone DEPARTMENTB interface dp0bond1.40  set security zone-policy zone DEPARTMENTC interface dp0bond1.50
@@ -142,7 +144,7 @@ Las interfaces de cada zona pueden pasar el tráfico libremente y las reglas pue
 
 El mandato siguiente muestra un ejemplo de cómo configurar una regla:
 
-`set security zone-policy zone DEPARTMENTC to DEPARTMENTB firewall ALLOW_PING `
+`set security zone-policy zone DEPARTMENTC to DEPARTMENTB firewall ALLOW_PING`
 
 Este mandato asocia la transición de DEPARTMENTC a DEPARTMENTB con el conjunto de reglas denominado `ALLOW_PING`. El tráfico que entra en la zona DEPARTMENTB desde la zona DEPARTMENTC se comprueba en este conjunto de reglas.
 

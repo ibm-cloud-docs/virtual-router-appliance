@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# Foire aux questions techniques
-La foire aux questions suivante aborde la configuration de l'IBM Virtual Router Appliance (VRA) et la migration vers le dispositif VRA à partir de Vyatta 5400.
+# Foire aux questions techniques concernant IBM Virtual Router Appliance
+{: #technical-faqs-for-ibm-virtual-router-appliance}
+
+La foire aux questions suivante aborde la configuration de l'IBM© Virtual Router Appliance (VRA) et la migration vers le dispositif VRA à partir de Vyatta 5400.
 
 ## Comment puis-je autoriser le trafic lié par Internet à partir de systèmes hôte résidant sur un réseau local virtuel privé ?
 {:faq}

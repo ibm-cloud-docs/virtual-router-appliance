@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 액세스 및 구성
+# IBM Virtual Router Appliance 액세스 및 구성
+{: #accessing-and-configuring-the-ibm-virtual-router-appliance}
+
 VRA는 SSH를 통한 원격 콘솔을 사용하거나 웹 GUI에 로그인하여 구성할 수 있습니다. 기본적으로 웹 GUI는 공용 인터넷에서 사용할 수 없습니다. 웹 GUI를 사용하려면 먼저 SSH를 통해 로그인하십시오.
 
 **참고:** 쉘과 인터페이스 외부에 VRA를 구성하면 예기치 않은 결과가 발생할 수 있으므로 권장되지 않습니다.
@@ -222,4 +224,4 @@ set system acm ruleset rule 9999 operation '*'
 set system acm ruleset rule 9999 path '*'
 ```
 
-ACM 규칙을 사용으로 설정하기 전에 보충 [문서](vra-docs.html)를 참조하십시오. 올바르지 않은 ACM 규칙을 사용하면 액세스 거부나 시스템 고장이 발생할 수 있습니다.
+ACM 규칙을 사용으로 설정하기 전에 [보충 문서](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation)를 참조하십시오. 올바르지 않은 ACM 규칙을 사용하면 액세스 거부나 시스템 고장이 발생할 수 있습니다.

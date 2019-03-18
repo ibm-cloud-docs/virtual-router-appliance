@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Gérer les réseaux locaux virtuels (VLAN)
-Vous pouvez effectuer toute une série d'actions à partir de l'[écran des détails du dispositif de passerelle](access-gateway-details.html).
+# Gestion de vos réseaux locaux virtuels (VLAN)
+{: #managing-your-vlans}
+
+Vous pouvez effectuer toute une série d'actions à partir de l'[écran des détails du dispositif de passerelle](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details).
 
 ## Associer un VLAN à un dispositif de passerelle
 
@@ -23,7 +25,7 @@ Un VLAN doit être associé à un dispositif de passerelle pour permettre son ro
 
 Les VLAN peuvent être associés à une seule passerelle à la fois et ne doivent pas avoir de pare-feu. Pour associer un VLAN à une passerelle réseau, procédez comme suit :
 
-1. [Accédez à l'écran des détails du dispositif de passerelle](access-gateway-details.html) dans le portail client. 
+1. [Accédez à l'écran des détails du dispositif de passerelle](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) dans le portail client. 
 2. Sélectionnez le VLAN désiré dans la liste déroulante **Associer un VLAN**.
 3. Cliquez sur le bouton **Associer** pour associer le VLAN.
 
@@ -35,7 +37,7 @@ Les VLAN associés sont liés à un dispositif de passerelle, mais le trafic ent
 
 Pour router un VLAN associé, procédez comme suit :
 
-1. [Accédez à l'écran des détails du dispositif de passerelle](access-gateway-details.html) dans le portail client. 
+1. [Accédez à l'écran des détails du dispositif de passerelle](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) dans le portail client. 
 2. Localisez le VLAN désiré dans la section VLAN associés.
 3. Sélectionnez **Router le VLAN** dans le menu déroulant Actions.
 4. Cliquez sur **Oui** pour procéder au routage du VLAN. 
@@ -50,7 +52,7 @@ Le contournement du VLAN permet au VLAN de rester associé à la passerelle rés
 
 Pour ignorer le routage de la passerelle d'un VLAN, procédez comme suit :
 
-1. [Accédez à l'écran des détails du dispositif de passerelle](access-gateway-details.html) dans le portail client. 
+1. [Accédez à l'écran des détails du dispositif de passerelle](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) dans le portail client. 
 2. Localisez le VLAN désiré dans la section VLAN associés.
 3. Sélectionnez **Contourner le VLAN** dans le menu déroulant Actions.
 4. Cliquez sur **Oui** pour contourner la passerelle. 
@@ -63,7 +65,7 @@ Les VLAN peuvent être liés à un dispositif de passerelle à la fois par [asso
 
 Pour dissocier un VLAN d'un dispositif de passerelle, procédez comme suit :
 
-1. [Accédez à l'écran des détails du dispositif de passerelle](access-gateway-details.html) dans le portail client. 
+1. [Accédez à l'écran des détails du dispositif de passerelle](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) dans le portail client. 
 2. Localisez le VLAN désiré dans la section VLAN associés.
 3. Sélectionnez **Dissocier** dans le menu déroulant **Actions**. 
 4. Cliquez sur **Oui** pour dissocier le VLAN. 
@@ -81,3 +83,29 @@ set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
 
 Les commandes ci-dessus créent deux interfaces virtuelles sur l'interface `dp0bond0`. L'interface `dp0bond0.1432` traite le trafic du VLAN 1432 alors que l'interface `dp0bond0.1693` traite le trafic du VLAN 1693.
+
+## Ajout de plusieurs sous-réseaux à un unique VLAN
+
+Voici un exemple de configuration qui inclut, à la fin, l'ajout d'un exemple de sous-réseau (`159.8.67.96/28`) pour un VLAN public (1451). L'adresse de chaque interface VLAN (VIF) n'est pas acheminée vers le routeur BCR (Backend Customer Router) ou le routeur FCR (Frontend Customer Router). Elle est utilisée uniquement pour la communication VRRP/Haute disponibilité entre deux systèmes Vyatta. 
+
+Les sous-réseaux peuvent être sélectionnés dans n'importe lequel des espaces IP privés inutilisés. Par conséquent, `10.0.0.0/8` est généralement exclu ici. Dans les exemples ci-dessous, les sous-réseaux de `192.168.0.0/16` ont été choisis, mais ceux de `172.16.0.0/12` peuvent également l'être. 
+
+L'adresse virtuelle, `virtual-address`, est celle où le nouveau sous-réseau doit être configuré. Dans la plupart des cas, l'adresse IP de la passerelle du sous-réseau est l'élément à configurer. L'adresse IP de la passerelle vers l'interface VIF sera ensuite utilisée comme prochaine adresse de passerelle pour tous les serveurs virtuels ou bare metal configurés sur le nouveau sous-réseau derrière dispositif VRA. 
+
+L'exemple suivant illustre le sous-réseau `159.8.67.97/28` étant lié à l'interface VIF, de sorte que l'intégralité du trafic du sous-réseau `159.8.67.98/28` soit gérée par le ou les dispositif(s) VRA.
+
+```
+set interfaces bonding dp0bond0 vif 1623 address '192.168.10.2/30'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 virtual-address '10.127.132.129/26'
+set interfaces bonding dp0bond0 vif 1750 address '192.168.20.2/30'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 virtual-address '10.126.19.129/26'
+set interfaces bonding dp0bond1 vif 788 address '192.168.150.2/30'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 virtual-address '159.8.106.129/28'
+set interfaces bonding dp0bond1 vif 1451 address '192.168.200.2/30'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.67.97/28'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.86.49/29'
+```

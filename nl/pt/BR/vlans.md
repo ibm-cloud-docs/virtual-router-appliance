@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Rotear VLANs
+# Roteando suas VLANs
+{: #routing-your-vlans}
+
 O Virtual Router Appliance é capaz de rotear múltiplas VLANs na mesma interface de rede (por exemplo, `dp0bond0` ou `dp0bond1`). Isso é feito configurando a porta do comutador no modo de tronco e configurando interfaces virtuais (VIFs) no dispositivo.
 
 Por exemplo:

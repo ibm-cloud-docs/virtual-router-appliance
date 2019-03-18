@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Faça upgrade do SO
-O upgrade do sistema operacional VRA pode ser executado com o comando ``add system image`` em um arquivo ISO local transferido por upload por nossa equipe de Suporte. Uma lista de versões de upgrade de Vyatta disponíveis pode ser obtida usando o sistema IBM Support Ticket.
+# Fazendo upgrade do S.O.
+{: #upgrading-the-os}
+
+O upgrade do sistema operacional VRA pode ser executado com o comando ``add system image`` em um arquivo ISO local transferido por upload por nossa equipe de Suporte. Uma lista de versões de upgrade disponíveis do Vyatta pode ser obtida usando o sistema IBM© Support Ticket.
 
 Para iniciar o processo de upgrade, abra um chamado com o sistema IBM Support Ticket solicitando um upgrade e que uma nova imagem ISO seja transferida por upload para seu sistema. Você receberá um e-mail do Suporte IBM indicando onde o arquivo ISO foi transferido por upload. No exemplo abaixo, ele está no diretório ``tmp``.
 

@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# よくある質問
-以下は、IBM 仮想ルーター・アプライアンス (Virtual Router Appliance: VRA) を使用した作業でのよくある質問です。
+# IBM 仮想ルーター・アプライアンスの FAQ
+{: #faqs-for-ibm-virtual-router-appliance}
+
+以下は、IBM© 仮想ルーター・アプライアンス (Virtual Router Appliance: VRA) を使用した作業でのよくある質問です。
 
 ## VRA とは何ですか? 
 {:faq}
@@ -89,7 +91,7 @@ IBM サポートは、お客様の明示的な関与なしに VRA または専�
 ## IBM からどのようなファイアウォール製品が提供されていますか
 {:faq}
 
-この[トピック![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}で、IBM Cloud で提供されるすべてのファイアウォール製品の詳細な比較を参照できます。 
+[このトピック](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls)で、IBM Cloud で提供されるすべてのファイアウォール製品の詳細な比較を参照できます。 
 
 ## VRA はお客様サポートの作業を複雑にする可能性がありますか 
 {:faq}

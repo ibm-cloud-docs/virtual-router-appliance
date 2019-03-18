@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Vyatta 5400 上での IPSec の構成
+{: #configuring-ipsec-on-vyatta-5400}
 
 Brocade 5400 vRouter (Vyatta) デバイスは、インターネット・セキュリティー・プロトコル (IPSec) トンネルに関しては「ローカル」と見なされます。 以下の各コマンドがそれぞれ異なる機能を実行して IPSec サイト間が構成されます。 この IPSec サイト間の例は SoftLayer のパブリック・ネットワーク上のトンネルを示していることに注意してください。プライベート IPSec サイト間接続には **bond0** を使用してください。
 
@@ -28,7 +29,7 @@ Brocade 5400 vRouter (Vyatta) デバイスは、インターネット・セキ�
 
   * Perfect Forward Secrecy (PFS) を使用不可にします。すべてのデバイスがこれを使用できるわけではないためです。 (コマンド中の esp は、暗号化の 2 番目の部分です)
   * 使用する暗号化のタイプを指定します。これがセットアップされていない場合、デバイスはデフォルトとして **aes128** を使用します。
-  * ハッシュ関数 **sha-1** を使用します。<br/><br/>
+  * `has` 関数 **sha-1** を使用します<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -93,6 +94,6 @@ Brocade 5400 vRouter (Vyatta) デバイスは、インターネット・セキ�
 *set vpn ipsec site-to-site peer **50.97.240.219** tunnel 1 remote prefix **10.54.9.152/29*** (ローカル・プレフィックスおよびリモート・プレフィックスは交換されていません)
 
 * これらの新しいコマンドをコピーしてリモート・サーバー (必ず構成モードにしてください) に張り付け、commit と入力し、次に save と入力します。
-* run show vpn ike sa と入力して、トンネルが確立されたかどうかを確認します。
+* `run show vpn ike sa` と入力して、トンネルが確立されたかどうかを確認します。
 
 実行内容を要約すると次のようになります。ローカル・インターフェース (bond1、50.97.240.219) にある、サブネット '10.54.9.152/29' の IP アドレスのみを、IP アドレス 169.54.254.117 のインターフェースにあるリモート・サービス上の 192.168.1.2/32 サブネットにのみルーティングします。

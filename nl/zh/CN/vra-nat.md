@@ -15,7 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 将 NAT 与基于前缀的 IPsec 配合使用
-在[为 VFP 接口配置 IPSec 和区域防火墙](vra-vfp.html)主题中，我们创建了一个 VFP 接口，并将其设置为用于 IPsec 隧道。 
+{: #using-nat-with-prefix-based-ipsec}
+
+在[为 VFP 接口配置 IPSec 和区域防火墙](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)主题中，我们创建了一个 VFP 接口，并将其设置为用于 IPsec 隧道。 
 
 我们可以在 NAT 规则中使用相同的接口，还可以使用入站和出站接口声明，但会有一个额外的警告。 
 
@@ -49,7 +51,7 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-这将为流量创建一个更明确的路径来接管 `vfp0`。 
+这将为流量创建一个更明确的路径来通过 `vfp0`。 
 
 此时，NAT 将按配置工作，并且流量将穿过隧道。 
 

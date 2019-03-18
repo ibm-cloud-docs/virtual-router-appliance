@@ -76,7 +76,7 @@ Use estes guias de passo a passo abrangentes para construir e customizar seu Vir
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>Esse guia destaca como um Virtual Router Appliance (VRA) pode ser configurado no IBM Cloud para criar uma rede privada segura (gabinete). </p>
+                <p>Este guia destaca como um Virtual Router Appliance (VRA) pode ser configurado no IBM© Cloud para criar uma rede privada segura (gabinete). </p>
                     <span class="tag-filter category">Virtual Router Appliance</span>
                     <span class="tag-filter category">Rede privada segura</span>
                     <span class="tag-filter category">IU do IBM Cloud Console</span>

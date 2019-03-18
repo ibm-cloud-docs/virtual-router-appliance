@@ -76,7 +76,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>本指南着重说明如何在 IBM Cloud 上配置虚拟路由器设备 (VRA)，以创建安全的专用网络（机柜）。</p>
+                <p>本指南着重说明如何在 IBM© Cloud 上配置虚拟路由器设备 (VRA)，以创建安全的专用网络（机柜）。</p>
                     <span class="tag-filter category">虚拟路由器设备</span>
                     <span class="tag-filter category">安全专用网络</span>
                     <span class="tag-filter category">IBM Cloud 控制台 UI</span>

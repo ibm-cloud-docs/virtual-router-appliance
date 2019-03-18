@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 如何设置使用区域防火墙的 IPsec 隧道
+# 设置使用区域防火墙的 IPsec 隧道
+{: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
+
 在先前版本的虚拟路由器设备中，使用基于策略的路由的 IPsec 隧道与区域防火墙无法很好地协作。在 V18.01 中，有一组新增的命令可解决此问题，这些命令使用“虚拟功能点”支持来自指定隧道的流量，其中功能点充当接口来提供要包含在区域策略配置中的端点。
 
 两台机器之间使用 IPSec 的配置示例如下：

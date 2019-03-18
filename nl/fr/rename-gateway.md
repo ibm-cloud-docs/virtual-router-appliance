@@ -14,13 +14,14 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Renommer un dispositif VRA
+# Changement de nom d'un dispositif VRA
+{: #renaming-a-vra}
 
 Les passerelles réseau ont des noms uniques qui aident les utilisateurs à les identifier. A tout moment, un nom de passerelle peut être modifié. Il est recommandé d'utiliser une convention de dénomination cohérente pour identifier plus facilement les passerelles.
 
 Pour renommer une passerelle réseau, procédez comme suit :
 
-1. [Accédez à l'écran des détails du dispositif de passerelle](access-gateway-details.html) dans le portail client. 
+1. [Accédez à l'écran des détails du dispositif de passerelle](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) dans le portail client. 
 2. Cliquez sur le menu déroulant **Actions** et sélectionnez **Renommer la passerelle**.
 3. Entrez le nouveau nom de la passerelle dans la zone **Nom de la passerelle**.
 4. Cliquez sur **OK** pour sauvegarder la modification. 

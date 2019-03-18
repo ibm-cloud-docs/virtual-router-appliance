@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 遞送 VLAN
+{: #routing-your-vlans}
+
 Virtual Router Appliance 可以透過相同的網路介面來遞送多個 VLAN（例如，`dp0bond0` 或 `dp0bond1`）。作法是將交換器埠設為幹線模式，並在裝置上配置虛擬介面 (VIF)。
 
 例如：

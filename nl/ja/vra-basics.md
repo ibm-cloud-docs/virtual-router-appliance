@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# アクセスと構成
+# IBM 仮想ルーター・アプライアンスに対するアクセスおよび構成
+{: #accessing-and-configuring-the-ibm-virtual-router-appliance}
+
 VRA の構成は、SSH を介してリモート・コンソール・セッションを使用するか、または Web GUI にログインすることによって実行できます。 デフォルトでは、Web GUI はパブリック・インターネットからは利用できません。 Web GUI を使用可能にするには、最初に SSH を介してログインします。
 
 **注:** VRA をシェルおよびインターフェースの外部で構成すると、予期しない結果が生じる可能性があるため、お勧めできません。
@@ -222,4 +224,4 @@ set system acm ruleset rule 9999 operation '*'
 set system acm ruleset rule 9999 path '*'
 ```
 
-ACM ルールを有効にする前に、補足[資料](vra-docs.html)を参照してください。 不正確な ACM ルールを設定すると、デバイスがアクセス拒否されたり、システム作動不能エラーが発生したりする可能性があります。
+ACM ルールを有効にする前に、[補足資料](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation)を参照してください。 不正確な ACM ルールを設定すると、デバイスがアクセス拒否されたり、システム作動不能エラーが発生したりする可能性があります。

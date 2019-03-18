@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Usando a NAT com IPsec baseado em prefixo
-No tópico [Configurando uma interface VFP com IPsec e firewalls de zona](vra-vfp.html), criamos uma interface VFP e a configuramos para ser usada com um túnel IPsec. 
+# Usando a NAT com o IPsec baseado em prefixo
+{: #using-nat-with-prefix-based-ipsec}
+
+No tópico [Configurando uma interface VFP com IPsec e firewalls de zona](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), criamos uma interface VFP e a configuramos para ser usada com um túnel IPsec. 
 
 É possível usar a mesma interface nas regras NAT, bem como a declaração de interface de entrada e saída, com uma advertência adicional. 
 
@@ -36,7 +38,7 @@ O exemplo anterior é uma NAT de origem e de destino um para um bidirecional pad
 set protocols static interface-route 172.16.100.2/32 next-hop-interface 'vfp0'
 ```
 
-O motivo de uma rota estática é o fato de o daemon IPsec já ter criado uma rota de kernel para o prefixo remoto:
+O motivo do uso de uma rota estática é porque o daemon do IPsec já criou uma rota de kernel para o prefixo remoto:
 
 ```
 K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
@@ -49,7 +51,7 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-Isso cria uma rota mais específica para que o tráfego assuma o controle de `vfp0`. 
+Isso cria uma rota mais específica para o tráfego passar por meio de `vfp0`. 
 
 Nesse ponto, a NAT funcionará conforme configurado e o tráfego viajará pelo túnel. 
 

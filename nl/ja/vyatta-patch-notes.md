@@ -16,8 +16,9 @@ lastupdated: "2018-11-10"
 
 
 # Vyatta パッチの注意事項
+{: #vyatta-patch-notes}
 
 このトピックでは、Vyatta 5400 と 5600 のセキュリティー・パッチの注意事項へのリンクを提供しています。
 
-* [Vyatta 5600 パッチの注意事項 (Vyatta 5600 Patch Notes)](vyatta-5600-security-fixes.html)
-* [Vyatta 5400 バージョン 6.7 パッチの注意事項 (Vyatta 5400 version 6.7 Patch Notes)](Vyatta-5400-Security-Fixes.html)
+* [Vyatta 5600 パッチの注意事項 (Vyatta 5600 Patch Notes)](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches)
+* [Vyatta 5400 バージョン 6.7 パッチの注意事項 (Vyatta 5400 version 6.7 Patch Notes)](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5400-vrouter-security-vulnerability-fixes)

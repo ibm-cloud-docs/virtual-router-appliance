@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Vyatta 5400에 NAT 규칙 설정
+{: #setting-up-nat-rules-on-vyatta-5400}
+
 이 주제에는 Vyatta에 사용된 NAT(Network Address Translation) 규칙의 예제가 포함되어 있습니다.
 
 ## 일대다 NAT 규칙(masquerade)
@@ -71,7 +73,7 @@ commit
 
 ## VRA를 통해 IP 범위 추가
 
-VRA 구성에 따라 특정 IBM Cloud IP 주소를 허용하려고 할 수 있습니다. 
+VRA 구성에 따라 특정 IBM© Cloud IP 주소를 허용하려고 할 수 있습니다. 
 
 새 vRouter 배치에는 `SERVICE-ALLOW`라고 하는 방화벽 규칙에 정의된 IBM Cloud의 서비스 네트워크 IP 주소가 포함됩니다.
 

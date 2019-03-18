@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 如何設定使用區域防火牆的 IPsec 通道
-在舊版 Virtual Router Appliance 中，使用原則型遞送的 IPsec 通道未與區域防火牆搭配運作良好。在 18.01 版中，有一組新的指令用於解決此問題，並使用「虛擬特性點」來啟用來自指定通道的資料流量，其中特性點用來作為介面，以提供端點來併入區域原則配置中。
+# 設定使用區域防火牆的 IPsec 通道
+{: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
+
+在舊版 Virtual Router Appliance 中，使用原則型遞送的 IPsec 通道無法與區域防火牆搭配運作良好。在 18.01 版中，有一組新的指令用於解決此問題，並使用「虛擬特性點」來啟用來自指定通道的資料流量，其中特性點用來作為介面，以提供端點來包含在區域原則配置中。
 
 其間具有 IPsec 之兩部機器的範例配置如下：
 

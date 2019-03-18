@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Fazer backup de uma configuração
+# Fazendo backup de uma configuração
+{: #backing-up-a-configuration}
+
 Os comandos de configuração precisam ser submetidos a backup quando há uma mudança no sistema. Isso pode ser feito executando o comando do modo operacional `mostrar comandos de configuração` e, em seguida, salvando a saída (por exemplo, copiando e colando na sessão SSH). Isso seria considerado um backup mínimo para a configuração.
 
 Um backup mais completo envolve gerar um archive de suporte técnico para o sistema: 

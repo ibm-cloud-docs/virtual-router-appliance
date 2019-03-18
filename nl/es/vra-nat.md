@@ -15,7 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Utilización de NAT con IPsec basado en prefijo
-En el tema [Configuración de una interfaz de VFP con IPsec y cortafuegos de zona](vra-vfp.html) hemos creado una interfaz VFP y la hemos configurado para que se utilice con un túnel IPsec. 
+{: #using-nat-with-prefix-based-ipsec}
+
+En el tema [Configuración de una interfaz de VFP con IPsec y cortafuegos de zona](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls) hemos creado una interfaz VFP y la hemos configurado para que se utilice con un túnel IPsec. 
 
 Podemos utilizar la misma interfaz en reglas NAT, así como la declaración de interfaz de entrada y de salida, con una advertencia adicional. 
 
@@ -36,7 +38,7 @@ El ejemplo anterior constituye un NAT de origen y de destino bidireccional de un
 set protocols static interface-route 172.16.100.2/32 next-hop-interface 'vfp0'
 ```
 
-El motivo de disponer de una ruta estática es que el daemon IPsec ya ha creado una ruta de kernel para el prefijo remoto:
+El motivo de utilizar una ruta estática es que el daemon IPsec ya ha creado una ruta de kernel para el prefijo remoto:
 
 ```
 K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1

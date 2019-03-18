@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Acessar e configurar
+# Acessando e configurando o IBM Virtual Router Appliance
+{: #accessing-and-configuring-the-ibm-virtual-router-appliance}
+
 O VRA pode ser configurado usando uma sessão de console remoto por meio de SSH ou efetuando login na GUI da web. Por padrão, a GUI da web não está disponível da Internet pública. Para ativar a GUI da web, efetue login por meio de SSH primeiro.
 
 **NOTA:** configurar o VRA fora de seu shell e interface pode produzir resultados inesperados e, portanto, não é recomendado.
@@ -222,4 +224,4 @@ set system acm ruleset rule 9999 operation '*'
 set system acm ruleset rule 9999 path '*'
 ```
 
-Consulte a [documentação](vra-docs.html) suplementar antes de tentar ativar as regras do ACM. Configurações de regras imprecisas do ACM podem causar negações de acesso ao dispositivo ou erros de inoperância do sistema.
+Consulte a [documentação suplementar](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation) antes de tentar ativar as regras do ACM. Configurações de regras imprecisas do ACM podem causar negações de acesso ao dispositivo ou erros de inoperância do sistema.

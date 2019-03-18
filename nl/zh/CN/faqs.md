@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# 常见问题
-下面是使用 IBM 虚拟路由器设备 (VRA) 时的常见问题。
+# IBM 虚拟路由器设备的常见问题
+{: #faqs-for-ibm-virtual-router-appliance}
+
+下面是使用 IBM© 虚拟路由器设备 (VRA) 时的常见问题。
 
 ## 什么是 VRA？ 
 {:faq}
@@ -89,7 +91,7 @@ AT&T（原名为 Brocade）已声明其 Brocade vRouter 5600 产品寿命终止�
 ## IBM 提供哪些防火墙产品？
 {:faq}
 
-您可以通过查看此[主题 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window} 来找到 IBM Cloud 中提供的所有防火墙产品的详细比较。 
+您可以通过查看[此主题](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls)来找到 IBM Cloud 中提供的所有防火墙产品的详细比较。 
 
 ## VRA 是否会影响客户支持工作？ 
 {:faq}

@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Gestionar redes VLAN
-Puede realizar una serie de acciones de la [pantalla Detalles de dispositivo de pasarela](access-gateway-details.html).
+# Gestión de las VLAN
+{: #managing-your-vlans}
+
+Puede realizar una serie de acciones de la [pantalla Detalles de dispositivo de pasarela](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details).
 
 ## Asociar una VLAN a un dispositivo de pasarela
 
@@ -23,7 +25,7 @@ Una VLAN necesita asociarse a un dispositivo de pasarela antes de poder ser dire
 
 Pueden asociarse las VLAN a una sola pasarela a la vez y no deben tener un cortafuegos. Realice el procedimiento siguiente para asociar una VLAN a una pasarela de red.
 
-1. [Acceda a la pantalla Detalles de dispositivo de pasarela](access-gateway-details.html) en el Portal de clientes. 
+1. [Acceda a la pantalla Detalles de dispositivo de pasarela](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) en el Portal de clientes. 
 2. Seleccione la VLAN deseada de la lista desplegable **Asociar una VLAN**.
 3. Pulse el botón **Asociar** para asociar la VLAN.
 
@@ -35,7 +37,7 @@ Las VLAN asociadas están vinculadas al dispositivo de pasarela, pero el tráfic
 
 Realice el procedimiento siguiente para direccionar una VLAN asociada:
 
-1. [Acceda a la pantalla Detalles de dispositivo de pasarela](access-gateway-details.html) en el Portal de clientes. 
+1. [Acceda a la pantalla Detalles de dispositivo de pasarela](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) en el Portal de clientes. 
 2. Localice la VLAN deseada en la sección VLAN asociadas.
 3. Seleccione **Direccionar VLAN** del menú desplegable Acciones.
 4. Pulse **Sí** para direccionar la VLAN. 
@@ -50,7 +52,7 @@ Ignorar una VLAN permite que esta permanezca asociada a la pasarela de red. Si l
 
 Realice el procedimiento siguiente para ignorar el direccionamiento de pasarela para una VLAN:
 
-1. [Acceda a la pantalla Detalles de dispositivo de pasarela](access-gateway-details.html) en el Portal de clientes. 
+1. [Acceda a la pantalla Detalles de dispositivo de pasarela](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) en el Portal de clientes. 
 2. Localice la VLAN deseada en la sección VLAN asociadas.
 3. Seleccione **Ignorar VLAN** del menú desplegable Acciones.
 4. Pulse **Sí** para ignorar la pasarela. 
@@ -63,7 +65,7 @@ Las VLAN pueden vincularse a un dispositivo de pasarela a la vez mediante [asoci
 
 Realice el procedimiento siguiente para desasociar una VLAN del dispositivo de pasarela:
 
-1. [Acceda a la pantalla Detalles de dispositivo de pasarela](access-gateway-details.html) en el Portal de clientes. 
+1. [Acceda a la pantalla Detalles de dispositivo de pasarela](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) en el Portal de clientes. 
 2. Localice la VLAN deseada en la sección VLAN asociadas.
 3. Seleccione **Desasociar** del menú desplegable **Acciones**. 
 4. Pulse **Sí** para desasociar la VLAN. 
@@ -71,7 +73,7 @@ Realice el procedimiento siguiente para desasociar una VLAN del dispositivo de p
 Después de desasociar una VLAN del dispositivo de pasarela, la VLAN puede asociarse a otra pasarela. También puede volver a asociarse al dispositivo de pasarela en cualquier momento. Después de desasociar una VLAN de un dispositivo de pasarela, el tráfico no puede direccionarse mediante la pasarela. Las VLAN deben asociarse a un dispositivo de pasarela antes de poder ser direccionadas.
 
 ## Direccionar varias VLAN en la misma interfaz de red
-Virtual Router Appliance es capaz de direccionar varios VLAN en la misma interfaz de red (por ejemplo, `dp0bond0` o `dp0bond1`). Esto se consigue estableciendo el puerto de conmutador en modalidad troncal y configurando las interfaces virtuales (VIF) en el dispositivo.
+Virtual Router Appliance es capaz de direccionar varias VLAN en la misma interfaz de red (por ejemplo, `dp0bond0` o `dp0bond1`). Esto se consigue estableciendo el puerto de conmutador en modalidad troncal y configurando las interfaces virtuales (VIF) en el dispositivo.
 
 Por ejemplo: 
 
@@ -81,3 +83,29 @@ set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
 
 Los mandatos anteriores crean dos interfaces virtuales en la interfaz `dp0bond0`. La interfaz `dp0bond0.1432` procesa el tráfico de VLAN 1432 y la interfaz `dp0bond0.1693` procesa el tráfico de la VLAN 1693.
+
+## Añadir varias subredes a una única VLAN
+
+El siguiente es un ejemplo de configuración que incluye, al final, la adición de una subred de ejemplo (`159.8.67.96/28`) para una VLAN pública (1451). La dirección de cada VIF (interfaz VLAN) no se redirecciona en el BCR (Backend Customer Router) o FCR (Frontend Customer Router). Sólo se utiliza para la comunicación VRRP/Alta Disponibilidad entre dos Vyattas. 
+
+Las subredes pueden ser elegidas desde cualquier espacio IP privado no utilizado. Como resultado, `10.0.0.0/8` se excluye generalmente aquí. Las subredes de `192.168.0.0/16` se han elegido para los siguientes ejemplos, pero las subredes de `172.16.0.0/12` también pueden utilizarse. 
+
+`virtual-address` es donde debe configurarse la nueva subred. En la mayoría de los casos, la dirección IP de la pasarela de la subred es lo que se debe configurar. La IP de la pasarela unida a la voluntad VIF se utiliza como la siguiente dirección de pasarela de cualquier Servidor Baremetal o Virtual configurado en la nueva subred detrás de la VRA. 
+
+El siguiente ejemplo muestra que `159.8.67.97/28` está enlazado al VIF, de forma que todo el tráfico de la subred `159.8.67.98/28` puede ser gestionado por el VRA(s).
+
+```
+set interfaces bonding dp0bond0 vif 1623 address '192.168.10.2/30'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 virtual-address '10.127.132.129/26'
+set interfaces bonding dp0bond0 vif 1750 address '192.168.20.2/30'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 virtual-address '10.126.19.129/26'
+set interfaces bonding dp0bond1 vif 788 address '192.168.150.2/30'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 virtual-address '159.8.106.129/28'
+set interfaces bonding dp0bond1 vif 1451 address '192.168.200.2/30'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.67.97/28'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.86.49/29'
+```

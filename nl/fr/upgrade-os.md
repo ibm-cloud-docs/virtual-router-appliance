@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Mettre à niveau le système d'exploitation
-La mise à niveau du système d'exploitation de VRA peut être effectuée avec la commande ``add system image`` sur un fichier ISO local téléchargé par notre équipe de support. Une liste des versions de mise à niveau Vyatta peut être obtenue à l'aide du système de tickets du support IBM.
+# Mise à niveau du système d'exploitation
+{: #upgrading-the-os}
+
+La mise à niveau du système d'exploitation de VRA peut être effectuée avec la commande ``add system image`` sur un fichier ISO local téléchargé par notre équipe de support. Une liste des versions de mise à niveau Vyatta peut être obtenue à l'aide du système de tickets de demande de service IBM©.
 
 Pour commencer le processus de mise à niveau, ouvrez un ticket dans le système de tickets d'IBM support pour demander une mise à niveau et le téléchargement d'une nouvelle image ISO sur votre système. Vous recevrez un e-mail du support IBM indiquant que le fichier ISO a été téléchargé. Dans l'exemple ci-dessous, il se trouve dans le répertoire ``tmp``.
 

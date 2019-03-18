@@ -76,7 +76,7 @@ Verwenden Sie diesen umfassenden Leitfaden, um Ihre Virtual Router Appliance (VR
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>In diesem Leitfaden wird beleuchtet, wie eine Virtual Router Appliance (VRA) in der IBM Cloud konfiguriert werden kann, um ein geschütztes, privates Netz zu erstellen (Einschluss). </p>
+                <p>In diesem Leitfaden wird beleuchtet, wie eine Virtual Router Appliance (VRA) in der IBM© Cloud konfiguriert werden kann, um ein geschütztes, privates Netz zu erstellen (Einschluss). </p>
                     <span class="tag-filter category">Virtual Router Appliance</span>
                     <span class="tag-filter category">Geschütztes, privates Netz</span>
                     <span class="tag-filter category">Benutzerschnittstelle der IBM Cloud-Konsole</span>

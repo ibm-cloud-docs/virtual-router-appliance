@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Problemas de actualización
+{: #upgrade-issues}
+
 Ocasionalmente, después de una actualización correcta y del reinicio de una nueva versión de Vyatta OS, puede producirse un problema por el que no pueda emitir mandatos de usuario.
 
 Por ejemplo:

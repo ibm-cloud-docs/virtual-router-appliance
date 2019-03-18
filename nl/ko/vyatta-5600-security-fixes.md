@@ -15,12 +15,73 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # AT&T Vyatta 5600 vRouter 소프트웨어 패치
+{: #at-t-vyatta-5600-vrouter-software-patches}
 
-**기준: 2018년 11월 2일**
+**기준: 2019년 2월 14일**
 
-이 문서는 Vyatta Network OS 5600의 현재 지원되는 버전에 대한 패치를 나열합니다. 버전 5.2 이하를 사용하는 경우, 패치는 S 수를 사용하여 이름이 지정됩니다. 버전 17.1 이상의 경우, 패치는 "i", "o", "l" 및 "x"를 제외하고 소문자로 이름이 지정됩니다. 
+이 문서는 Vyatta Network OS 5600의 현재 지원되는 버전에 대한 패치를 나열합니다. 버전 5.2 이하를 사용하는 경우, 패치는 S 수를 사용하여 이름이 지정됩니다. 버전 17.1 이상의 경우, 패치는 "i", "o", "l" 및 "x"를 제외하고 소문자로 이름이 지정됩니다.
 
-여러 CVE 수가 단일 업데이트에서 지정되는 경우 가장 높은 CVSS 점수가 나열됩니다. 
+여러 CVE 수가 단일 업데이트에서 지정되는 경우 가장 높은 CVSS 점수가 나열됩니다.
+
+## 1801v
+
+**해결된 문제**
+
+| 문제 번호 | 우선순위 |요약 |
+| --- | --- | --- |
+| VRVDR-45175 | 심각 | VRF가 구성된 경우 Rsyslogd 코어 덤프 |
+| VRVDR-45057 | 심각 | 처음 시작된 후 A/D 상태인 IPsec VTI 터널, IPsec SA는 작동 상태 유지 |
+| VRVDR-44985 | 높음 | DNAT 및 입력 방화벽 로깅 / 운영 순서|
+| VRVDR-44944 | 심각 | vyatta-config-vti.pl: 안전하지 않은 임시 파일 사용 |
+| VRVDR-44941 | 낮음| 간략한 VTI 인터페이스 플랩 이후 커널에서 정적 라우트 누락 |
+| VRVDR-44914 | 심각 | HA 쌍의 두 멤버 모두에서 RPC ALG 충돌 |
+| VRVDR-44668 | 높음 | 프로덕션 트래픽 플로우-모니터링을 통해 보고 넷플로우 통계 지연 및 중지|
+| VRVDR-44667 | 낮음 | 'show flow-monitoring' 실행 간 인터페이스 순서가 일치하지 않음 |
+| VRVDR-44657 | 높음 | 터널이 작동하는 동안 IKEv1 키 재입력 충돌로 인해 VTI 인터페이스가 작동 해제 상태 유지 |
+| VRVDR-44560 | 높음| ip_gre 드라이버를 가리키는 여러 rcu_sched CPU 중단 |
+| VRVDR-44517 | 낮음 | rte_ipv6_fragment_packet의 패닉으로 데이터 영역 충돌 |
+| VRVDR-44282 | 높음 | /32 마스크를 포함하고 포함하지 않는 주소가 모두 주소 그룹에 있으면 /32 마스크를 삭제하는 데 문제 발생 |
+| VRVDR-44278 | 낮음 | "show address-group all ipv4 optimal"에서 출력을 생성하지 않음 |
+| VRVDR-44239 | 높음 | 'all' 프로토콜이 필요한 경우 프로토콜 드롭 다운의 Web GUI 상세 정보를 향상시키도록 요청 |
+| VRVDR-44076 | 높음 | 플로우-모니터링의 메모리 누수로 인해 데이터 영역 세그먼트-결함 및 가동 중단 |
+| VRVDR-44007 | 심각 | npf_dataplane_session_establish의 데이터 영역 분석 방식 결함 |
+| VRVDR-43909 | 낮음| Connsync로 인해 "restart vrrp" 후에 인터페이스가 작동 중지됨 |
+| VRVDR-42679 | 높음 | syslog - zactor_is에서 충돌 발생 |
+| VRVDR-42020 | 높음 | RIB에서 동일한 라우트를 반복 추가 |
+| VRVDR-18095 | 낮음 | 플로우 모니터링 상태는 'show tech-support'의 일부로 캡처되지 않음 |
+
+
+**해결된 보안 취약점**
+
+| 문제 번호 | CVSS 점수 | 보안 권고문 |요약 |
+| --- | --- | --- | --- |
+| VRVDR-45148 |해당사항 없음 | DSA-4371-1 | CVE-2019-3462: Debian DSA-4371-1 – apt security update |
+| VRVDR-45043 | 8.8 | DSA-4369-1 | CVE-2018-19961, CVE-2018-19962, CVE-2018- 19965, CVE-2018-19966, CVE-2018-19967: DSA 4369-1 - Xen security update |
+| VRVDR-45042 |해당사항 없음 | DSA-4368-1 | CVE-2019-6250: Debian DSA-4368-1 : zeromq3 - security update |
+| VRVDR-45035 |해당사항 없음 | DSA-4367-1 | CVE-2018-16864, CVE-2018-16865, CVE-2018- 16866: Debian DSA-4367-1 : systemd - security update |
+| VRVDR-44956 | 7.5 | DSA-4359-1 | CVE-2018-16864, CVE-2018-16865, CVE-2018- 16866: Debian DSA-4367-1 : systemd - security updateCVE-2018-12086, CVE-2018-18225, CVE-2018- 18226, CVE-2018-18227, CVE-2018-19622, CVE- 2018-19623, CVE-2018-19624, CVE-2018-19625, CVE-2018-19626, CVE-2018-19627, CVE-2018- 19628: Debian DSA-4359-1 : wireshark - security update |
+| VRVDR-44747 |해당사항 없음 | DSA-4350-1 | CVE-2018-19788: Debian DSA-4350-1 : policykit-1 - security update |
+| VRVDR-44634 | 8.8 | DSA-4349-1 | CVE-2017-11613, CVE-2017-17095, CVE-2018- 10963, CVE-2018-15209, CVE-2018-16335, CVE- 2018-17101, CVE-2018-18557, CVE-2018-5784, CVE-2018-7456, CVE-2018-8905:Debian DSA-4349- 1 : tiff - security update |
+| VRVDR-44633 | 7.5 | DSA-4348-1| CVE-2018-0732, CVE-2018-0734, CVE-2018-0735, CVE-2018-0737, CVE-2018-5407: Debian DSA-4348- 1 : openssl - security update |
+| VRVDR-44611 | 9.8 | DSA-4347-1| CVE-2018-18311, CVE-2018-18312, CVE-2018- 18313, CVE-2018-18314: Debian DSA-4347-1 : perl - security update |
+| VRVDR-44348| 9.8 | DSA-4338-1 | CVE-2018-10839, CVE-2018-17962, CVE-2018- 17963: Debian DSA-4338-1: qemu security update |
+| VRVDR-43264| 5.6 | DSA-4274-1 | CVE-2018-3620, CVE-2018-3646: Debian DSA-4274- 1: xen security update |
+
+## 1801u
+
+**해결된 문제**
+
+| 문제 번호 | 우선순위 |요약 |
+| --- | --- | --- |
+| VRVDR-44406 | 심각 | 동일한 VIF에 여러 서브넷이 있으면 5400 성능과 비교할 때 낮은 비율의 전이 트래픽이 관찰됨 |
+| VRVDR-44253 | 낮음 | 다시 부팅하고 나면 연결 인터페이스의 MSS 클램핑이 작동을 중지함 |
+
+**해결된 보안 취약점**
+
+| 문제 번호 | CVSS 점수 | 보안 권고문 |요약 |
+| --- | --- | --- | --- |
+| VRVDR-44277 |해당사항 없음 | DSA-4332-1 | CVE-2018-16395, CVE-2018-16396: Debian DSA-4332-1 : ruby2.3 - security update |
+| VRVDR-44276 |해당사항 없음 | DSA-4331-1 | CVE-2018-16839, CVE-2018-16842: Debian DSA-4331-1 : curl - security update |
 
 ## 1801t
 
@@ -96,7 +157,7 @@ lastupdated: "2018-11-10"
 | VRVDR-43157 | 낮음 | 터널이 바운스되는 경우 SNMP 트랩이 올바르게 생성되지 않습니다. |
 | VRVDR-43114 | 심각 | 다시 부팅 시, 해당 피어보다 높은 우선순위를 갖는 HA 쌍의 라우터는 고유 “preempt false” 구성을 이행하지 않으며 부팅 다음에 바로 마스터가 됨 |
 | VRVDR-42826 | 낮음 | remote-id가 “0.0.0.0”인 피어 협상은 사전 공유된 키 불일치로 인해 실패함 |
-| VRVDR-42774 | 심각 | 매우 높은 비율로 X710(i40e) 드라이버에서 플로우 제어 프레임 전송 |
+| VRVDR-42774 | 심각| 매우 높은 비율로 X710(i40e) 드라이버에서 플로우 제어 프레임 전송 |
 | VRVDR-42635 | 낮음 | BGP 재분배 라우트 맵 정책 변경사항이 적용되지 않음 |
 | VRVDR-42620 | 낮음 | Vyatta-ike-sa-daemon에서 터널이 가동되는 것으로 표시되는 동안 “명령 실패: establishing CHILD_SA passthrough-peer” 오류를 처리함 |
 | VRVDR-42483 | 낮음 | TACACS 인증 실패 |
@@ -371,7 +432,7 @@ lastupdated: "2018-11-10"
 
 | 문제 번호 | 우선순위 |요약 |
 | --- | --- | --- |
-| VRVDR-38801 | 높음 | IPsec VTI를 통해 수신된 다중 세그먼트 패킷으로 인해 본드 인터페이스가 중단됨 
+| VRVDR-38801 | 높음 | IPsec VTI를 통해 수신된 다중 세그먼트 패킷으로 인해 본드 인터페이스가 중단됨
 
 ##5.2R6S6
 2018년 5월 12일에 릴리스됨
@@ -382,7 +443,7 @@ lastupdated: "2018-11-10"
 | --- | --- | --- |
 | VRVDR-40281 | 높음 | 5.2에서 최신 버전으로 업그레이드한 후 운영 모드에서 “vbash: show: command not found” 오류가 발생함 |
 | VRVDR-40135 | 높음 | VIF 인터페이스 브릿지 포트에서 스패닝 트리 패킷이 수신되지 않음 |
-| VRVDR-39991 | 높음 | 상태 저장 방화벽이 동일한 인터페이스에 있는 두 서브넷 간의 패킷을 삭제함 | 
+| VRVDR-39991 | 높음 | Stateful 방화벽이 동일한 인터페이스에 있는 두 서브넷 간의 패킷을 삭제함 | 
 | VRVDR-36481 | 높음 | 5.2R4에서 17.1.0/5.2R3로 업그레이드/다운그레이드하는 경우 다음이 표시됨: /opt/vyatta/sbin/vyatta-install-image.functions: line 372: is_onie_boot: command not found |
 
 **해결된 보안 취약점**
@@ -407,7 +468,7 @@ lastupdated: "2018-11-10"
 
 | 문제 번호 | CVSS 점수 | 보안 권고문 |요약 |
 | --- | --- | --- | --- |
-| VRVDR- 40327 | 9.8 | DSA-4098-1 | CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security upate |
+| VRVDR- 40327 | 9.8 | | CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security upate | 
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5715 / Spectre, aka variant #2 |
 
 ##1801c
@@ -494,6 +555,6 @@ lastupdated: "2018-11-10"
 | --- | --- | --- | --- |
 | VRVDR- 38819 | 9.8 | DSA-3989-1 | CVE-2017-14491, CVE-2017-14492, CVE-2017-14493, CVE- 2017-14494, CVE-2017-14495, CVE-2017-14496: DSA- 3989-1 dnsmasq -- security update |
 
-여기에 포함된 정보는 AT&T에서 제공하는 오퍼, 약정, 표시 또는 보증이 아니며 변경될 수 있습니다. 서면으로 작성된 계약에 명시된 경우를 제외하고 AT&T 회사 외부에서 사용 또는 공개할 수 없습니다. 
+여기에 포함된 정보는 AT&T에서 제공하는 오퍼, 약정, 표시 또는 보증이 아니며 변경될 수 있습니다. 서면으로 작성된 계약에 명시된 경우를 제외하고 AT&T 회사 외부에서 사용 또는 공개할 수 없습니다.
 
-© 2018 AT&T Intellectual Property. All rights reserved. AT&T 및 Globe 로고는 AT&T Intellectual Property의 등록상표입니다. 기타 상표는 해당 상표 소유자의 재산입니다. 
+© 2018 AT&T Intellectual Property. All rights reserved. AT&T 및 Globe 로고는 AT&T Intellectual Property의 등록상표입니다. 기타 상표는 해당 상표 소유자의 재산입니다.

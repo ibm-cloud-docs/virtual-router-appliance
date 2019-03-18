@@ -15,13 +15,13 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 创建安全周界
-网络隔离的一个基本方面是建立安全周界。安全周界可控制公用因特网与 IBM Cloud 中托管的客户资产之间的流量。安全周界还支持使用虚拟专用网 (VPN) 隧道和 IBM Cloud Direct Link 与客户企业直接连接。
+网络隔离的一个基本方面是建立安全周界。安全周界可控制公用因特网与 IBM© Cloud 中托管的客户资产之间的流量。安全周界还支持使用虚拟专用网 (VPN) 隧道和 IBM Cloud Direct Link 与客户企业直接连接。
 
 安全周界使用安全周界分段 (SPS) 来隔离安全周界内的各资产之间的网络。此隔离具有多个优点，包括分段之间的访问控制和服务流量隔离。安全周界分段 (SPS) 由两个虚拟局域网 (VLAN)（一个前端 VLAN 和一个后端 VLAN）和一个连接到 VLAN 的 VRA（用于管理进出 SPS 的流量）组成。安全周界可以包含多个安全周界分段（例如，用于高可用性目的）。
 
 ## 设置安全周界
 
-下面是设置安全周界的步骤。有关这些步骤的详细描述，请参阅[在 IBM Cloud 中设置安全周界](https://developer.ibm.com/dwblog/2018/ibm-cloud-vyatta-set-up-secure-perimeter)。
+下面是设置安全周界的步骤。有关这些步骤的详细描述，请参阅 [Set up a Secure Perimeter in the IBM Cloud ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/dwblog/2018/ibm-cloud-vyatta-set-up-secure-perimeter){:new_window}。
 
 1. 在 IBM Cloud 和基础架构中配置访问安全周界中涉及的云服务和基础架构组件所需的许可权。
 2. 在公用因特网中通过公用 VLAN 和防火墙创建外部边界。此外部边界将用于隔离 SPS。
@@ -47,4 +47,4 @@ lastupdated: "2018-11-10"
 22. 部署 Kubernetes 集群。
 
 ## IBM Cloud 中的专用解决方案
-安全周界以及计算隔离和数据加密有助于在公共 IBM Cloud 中提供完整的专用解决方案。请参阅[实施专用解决方案模式](https://developer.ibm.com/dwblog/2018/ibm-cloud-dedicated-cloud-solution-patterns/)，以获取有关云专用解决方案模式的描述。
+安全周界以及计算隔离和数据加密有助于在公共 IBM Cloud 中提供完整的专用解决方案。请参阅 [Implementing a Dedicated Solution Pattern ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/dwblog/2018/ibm-cloud-dedicated-cloud-solution-patterns/){:new_window}，以获取有关云专用解决方案模式的描述。

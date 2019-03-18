@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Acceso y configuración
+# Acceso y configuración de IBM Virtual Router Appliance
+{: #accessing-and-configuring-the-ibm-virtual-router-appliance}
+
 VRA puede configurarse con una sesión de consola remota mediante SSH o iniciando sesión en la GUI de web. De forma predeterminada, la web GUI no está disponible en la Internet pública. Para habilitar la web GUI, primero inicie sesión mediante SSH.
 
 **NOTA:** La configuración de VRA fuera de su shell e interfaz puede producir resultados inesperados y, por lo tanto, no se recomienda.
@@ -76,7 +78,7 @@ La marca hash (`#`) indica la modalidad Configuración. Al iniciar un mandato co
 
 ## Exploración de mandatos
 
-El shell de mandato de VRA incluye funciones de finalización de separador. Si desea saber qué mandatos están disponibles, pulse la tecla tabulador para obtener una lista con una breve explicación. Esto funciona en el indicador de shell y mientras se escribe un mandato. Por ejemplo:
+El shell de mandato de VRA incluye funciones de finalización de separador. Si desea saber qué mandatos están disponibles, pulse la tecla tabulador para obtener una lista con una breve explicación. Esto funciona en el indicador de shell y mientras se escribe un mandato. Por ejemplo:  
 
 ```
 $show log dns [Press tab]
@@ -222,4 +224,4 @@ set system acm ruleset rule 9999 operation '*'
 set system acm ruleset rule 9999 path '*'
 ```
 
-Consulte la [documentación](vra-docs.html) adicional antes de intentar habilitar las reglas de ACM. Los valores erróneos en las reglas de ACM pueden provocar la denegación de acceso o errores en la inoperancia del sistema.
+Consulte la [documentación adicional](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation) antes de intentar habilitar las reglas. Los valores erróneos en las reglas de ACM pueden provocar la denegación de acceso o errores en la inoperancia del sistema.

@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 
-# 入门
-要开始使用 IBM 虚拟路由器设备 (VRA)，请浏览至客户门户网站中的订购页面：
+# IBM 虚拟路由器设备入门
+{: #getting-started-with-ibm-virtual-router-appliance}
+
+要开始使用 IBM© 虚拟路由器设备 (VRA)，请浏览至“客户门户网站”中的订购页面：
 
 1. 在浏览器中，打开[客户门户网站 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){: new_window} 并登录到您的帐户。
 2. 在客户门户网站导航中，选择**网络 > 网关设备**。
@@ -47,4 +49,4 @@ VRA 分为两部分交付：VRA 服务器和网关设备装置。网关设备为
 
 VRA 只能管理通过网关设备与其关联的 VLAN。
 
-有关如何在“网关设备详细信息”屏幕中管理 VLAN 的信息，请参阅[管理 VLAN](manage-vlans.html)。
+有关如何在“网关设备详细信息”屏幕中管理 VLAN 的信息，请参阅[管理 VLAN](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans)。

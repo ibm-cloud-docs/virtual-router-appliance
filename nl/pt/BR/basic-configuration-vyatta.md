@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Configuração básica do Vyatta 5400
+{: #basic-configuration-of-vyatta-5400}
 
 Execute o procedimento a seguir para configurar seu Vyatta 5400.
 
@@ -89,6 +90,6 @@ Use as etapas a seguir para configurar a VLAN privada usando a CLI. Lembre-se qu
   * Digite *save* para salvar as configurações.
   * Digite *exit* para alternar de volta para o modo de operação.
 
-3\. Digite *show interfaces* para verificar as configurações recém-confirmadas.
+3. Digite *show interfaces* para verificar as configurações recém-confirmadas.
 
-4\. Roteie as VLANs restantes por meio do dispositivo Brocade 5400 vRouter.
+4. Roteie as VLANs restantes por meio do dispositivo Brocade 5400 vRouter.

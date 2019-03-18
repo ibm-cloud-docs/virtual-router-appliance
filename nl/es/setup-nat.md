@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Configuración de reglas NAT en Vyatta 5400
+{: #setting-up-nat-rules-on-vyatta-5400}
+
 Este tema contiene ejemplos de las reglas de NAT (conversión de direcciones de red) utilizadas en Vyatta.
 
 ## Regla de NAT One-to-many (enmascaramiento)
@@ -71,7 +73,7 @@ Si el tráfico entra en la IP `50.97.203.227` en bond1, esa IP se correlacionar�
 
 ## Adición de rangos de IP a través de VRA
 
-En función de la configuración de VRA, es posible que desee aceptar direcciones IP de IBM Cloud específicas. 
+En función de la configuración de VRA, es posible que desee aceptar direcciones IP de IBM© Cloud específicas. 
 
 Los nuevos despliegues de vRouter vienen con las direcciones IP de red de servicios de IBM Cloud definidas en una regla de cortafuegos denominada `SERVICE-ALLOW`.
 

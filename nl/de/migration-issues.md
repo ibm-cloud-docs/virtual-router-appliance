@@ -14,14 +14,16 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Gängige Migrationsprobleme mit Vyatta 5400
-In der folgenden Tabelle sind gängige Probleme oder Verhaltensänderungen aufgeführt, die nach einer Migration von einem Vyatta 5400-Gerät zu IBM Virtual Router Appliance auftreten können. In einigen Fällen sind Problemumgehungen angegeben.
+{: #vyatta-5400-common-migration-issues}
+
+In der folgenden Tabelle sind gängige Probleme oder Verhaltensänderungen aufgeführt, die nach einer Migration von einem Vyatta 5400-Gerät zu IBM© Virtual Router Appliance auftreten können. In einigen Fällen sind Problemumgehungen angegeben.
 
 ## Schnittstellenbasierte Richtlinie mit globalem Status für statusabhängige Firewall
 
 ### Probleme
-Das Verhalten beim Festlegen des Status der Statusrichtlinie für statusabhängige Firewalls aus Release 5.1 wurde geändert. Wenn Sie in Versionen vor Release 5.1 `state - global -state -policy` für eine statusabhängige Firewall festgelegt haben, fügte der vRouter automatisch eine implizite `Allow`-Regel für die Rückgabekommunikation der Sitzung hinzu. 
+Das Verhalten beim Festlegen des Status der Statusrichtlinie für statusabhängige Firewalls aus Release 5.1 wurde geändert. Wenn Sie in Versionen vor Release 5.1 `state - global -state -policy` für eine statusabhängige Firewall festgelegt haben, fügte der vRouter automatisch eine implizite `Allow`-Regel für die Rückgabekommunikation der Sitzung hinzu.
 
-In Release 5.1 und späteren Versionen müssen Sie eine `Allow`-Regeleinstellung in Virtual Router Appliance hinzufügen. Die statusabhängige Einstellung funktioniert für Schnittstellen auf Vyatta 5400-Geräten und für Protokolle auf VRA-Geräten. 
+In Release 5.1 und späteren Versionen müssen Sie eine `Allow`-Regeleinstellung in Virtual Router Appliance hinzufügen. Die statusabhängige Einstellung funktioniert für Schnittstellen auf Vyatta 5400-Geräten und für Protokolle auf VRA-Geräten.
 
 ### Problemumgehungen
 Falls die Regel `firewall-in` für eine Ingress-Schnittstelle bzw. innere Schnittstelle gilt, muss die Regel `Firewall-out` auf die Egress-Schnittstelle oder äußere Schnittstelle angewendet werden. Andernfalls wird der rücklaufende Datenverkehr an der Egress-Schnittstelle bzw. der äußeren Schnittstelle gelöscht.        
@@ -87,7 +89,7 @@ Ein neues Routing-Schema ist für die VRA erforderlich:
 ## Richtlinienbasierte Routing-Tabelle
 
 ### Probleme
-Das Wort 'Table' in den Konfigurationen ist beim richtlinienbasierten Routing von Vyatta 5400 optional, aber für VRA ist das Feld **Table** obligatorisch, wenn die Aktion `accept` lautet. Wenn die Aktion in der VRA-Konfiguration `drop` lautet, ist das Feld 'Table' optional. 
+Das Wort 'Table' in den Konfigurationen ist beim richtlinienbasierten Routing von Vyatta 5400 optional, aber für VRA ist das Feld **Table** obligatorisch, wenn die Aktion `accept` lautet. Wenn die Aktion in der VRA-Konfiguration `drop` lautet, ist das Feld 'Table' optional.
 
 ### Problemumgehungen
 'Table Main' ist eine verfügbare Option beim richtlinienbasierten Routing von Vyatta 5400. Das funktional entsprechende Element in VRA lautet 'routing-instance default'.
@@ -163,7 +165,7 @@ Aber auf IBM Virtual Router Appliance gibt es kein IPSec.
 ### Problemumgehungen
 Fügen Sie die Protokolle `ESP` und `AH` (IP-Protokolle 50 bzw. 51) hinzu.
 
-Die Regel `action` kann die Werte `accept` oder `drop` haben, siehe unten: 
+Die Regel `action` kann die Werte `accept` oder `drop` haben, siehe unten:
 
 ```
 set security firewall name <name> rule <regelnummer> action accept
@@ -190,7 +192,7 @@ vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
-Das Snippet oben ist ein kurzes Beispiel für die Konfiguration der DNAT-Umsetzung, nachdem ein IPSec-Paket auf einem Vyatta 5400-Gerät verschlüsselt wurde. In dem Beispiel gibt es zwei Vyatta-Geräte, `vyatta1 (11.0.0.1)` und `vyatta2 (12.0.0.1)`. IPsec-Peering ist zwischen `11.0.0.1` und `12.0.0.1` eingerichtet. In diesem Fall verwendet der Client `172.16.1.245` als Ziel, abgeleitet von `10.103.0.1` End-to-End. Das erwartete Verhalten in diesem Szenario ist, dass die Zieladresse `172.16.1.245` im Paketheader in `10.71.68.245` umgesetzt wird.
+Das Snippet oben ist ein kurzes Beispiel für die Konfiguration der DNAT-Umsetzung, nachdem ein IPSec-Paket auf einem Vyatta 5400-Gerät verschlüsselt wurde. In dem Beispiel gibt es zwei Vyatta-Geräte, `vyatta1 (11.0.0.1)` und `vyatta2 (12.0.0.1)`. IPsec-Peering ist zwischen `11.0.0.1` und `12.0.0.1` eingerichtet. In diesem Fall verwendet der Client `172.16.1.245` als Ziel, abgeleitet von `10.103.0.1` End-to-End.Das erwartete Verhalten in diesem Szenario ist, dass die Zieladresse `172.16.1.245` im Paketheader in `10.71.68.245` umgesetzt wird.
 
 Ursprünglich führte das Vyatta 5400-Gerät DNAT für den eingehenden IPSec aus, beendete die Schnittstelle und gab den Datenverkehr unter Verwendung der Tabelle zum Nachverfolgen von Verbindungen an den IPsec-Tunnel zurück.
 

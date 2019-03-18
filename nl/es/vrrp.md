@@ -13,7 +13,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# HA y VRRP
+# Trabajar con alta disponibilidad y VRRP
+{: #working-with-high-availability-and-vrrp}
+
 Virtual Router Appliance (VRA) proporciona soporte a Virtual Router Redundancy Protocol (VRRP) como protocolo de alta disponibilidad. El despliegue de dispositivos se realiza de manera activa/pasiva, donde una máquina es maestro y la otra es copia de seguridad. Todas las interfaces de ambas máquinas serán un miembro del mismo grupo de sincronización "sync-group", de manera que si se produce un error en una interfaz, el resto de las interfaces del mismo grupo también obtendrá el error y el dispositivo dejará de ser maestro. La copia de seguridad actual detectará que el maestro ya no transmite mensajes de estado activo/latido, supondrá el control de las IP virtuales de VRRP y se convertirá en maestro.
 
 VRRP es la parte más importante de la configuración cuando se suministran pasarelas. La funcionalidad de alta disponibilidad depende de los mensajes latido, por lo que asegurarse de que no están bloqueados es fundamental.
@@ -75,8 +77,7 @@ Al configurar una VPN de alta disponibilidad con VRRP, siempre que una direcció
 
 Ejecute el mandato siguiente en los direccionadores de maestro y copia de seguridad para que cuando se produzca una migración tras error, los daemons IPsec se reinicien en un nuevo dispositivo de maestro tras el tránsito de VIP, como se muestra en el ejemplo siguiente:
 
-`vyatta@vrouter# set interfaces bonding dp0bond1 vrrp vrrp-group 1 notify ipsec
-`
+`vyatta@vrouter# set interfaces bonding dp0bond1 vrrp vrrp-group 1 notify ipsec`
 
 ## Cortafuegos de alta disponibilidad con VRRP
 
@@ -130,7 +131,7 @@ Si necesita forzar una migración tras error de vrrp, puede lograrlo mediante la
 
 `vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
 
-El ID de grupo es el ID de grupo de vrrp de las interfaces nativas y, como se ha mencionado anteriormente, podría ser diferente en su par.
+El ID de grupo es el ID de grupo de vrrp de las interfaces nativas y, como ha mencionado anteriormente, podría ser diferente en su par.
 
 ## Sincronización de conexión
 Cuando dos dispositivos VRA están en un par de alta disponibilidad, puede ser útil rastrear conexiones de estado entre los dos dispositivos de forma que si se produce una migración tras error, el estado actual de todas las conexiones que están en el dispositivo con el error se replican en el dispositivo de copia de seguridad, de modo que no es necesario reconstruir desde cero cualquier sesión activa actual (como las conexiones SSL), hecho que puede provocar una interrupción de la experiencia de usuario.
@@ -156,7 +157,7 @@ Ahora el sistema operativo Vyatta versión 1801p y posteriores incluye un nuevo 
 
 Para minimizar el tráfico en la red, solo el maestro de cada direccionador virtual envía mensajes periódicos de anuncio de VRRP. Un direccionador de copia de seguridad no intentará sustituir al maestro a menos que tenga una prioridad superior. Esto elimina la interrupción del servicio a menos que esté disponible una vía de acceso preferida. También es posible prohibir administrativamente todos los intentos de sustitución. Si el maestro deja de estar disponible, la copia de seguridad de prioridad más alta se convertirá en maestro después de un breve retardo, proporcionando una transición controlada de la responsabilidad de direccionador virtual con una interrupción de servicio mínima.
 
-**NOTA:** en los despliegues suministrados por IBM Cloud, el valor de retardo inicial está establecido en el valor predeterminado. Si lo desea puede modificarlo a medida que pruebe los métodos de migración tras error y de alta disponibilidad.
+**NOTA:** en los despliegues suministrados por IBM© Cloud, el valor de retardo inicial está establecido en el valor predeterminado. Si lo desea puede modificarlo a medida que pruebe los métodos de migración tras error y de alta disponibilidad.
 
 
 ### Preferencia frente a no preferencia

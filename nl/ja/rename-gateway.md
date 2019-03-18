@@ -15,12 +15,13 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # VRA の名前変更
+{: #renaming-a-vra}
 
 ネットワーク・ゲートウェイには、ユーザーが識別しやすいように、固有の名前が付けられます。 ゲートウェイ名は、いつでも変更できます。 ゲートウェイを識別しやすいように、一貫性のある命名規則を使用することをお勧めします。
 
 ネットワーク・ゲートウェイの名前を変更するには、以下の手順を実行します。
 
-1. カスタマー・ポータルで[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセスします](access-gateway-details.html)。 
+1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)します。 
 2. **「アクション」**ドロップダウン・メニューをクリックして、**「ゲートウェイの名前変更」**を選択します。
 3. **「ゲートウェイ名」**フィールドに新しいゲートウェイ名を入力します。
 4. **「OK」**をクリックして、変更を保存します。 

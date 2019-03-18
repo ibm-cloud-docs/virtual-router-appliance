@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # IPSec auf Vyatta 5400 konfigurieren
+{: #configuring-ipsec-on-vyatta-5400}
 
 Der Brocade 5400 vRouter (Vyatta) wird als "local" bezüglich des IPSec-Tunnels (Internet Security Protocol) bezeichnet. Jeder der folgenden Befehle führt unterschiedliche Funktionen aus, um IPSec site-to-site zu konfigurieren. Beachten Sie, dass dieses Beispiel mit IPSec site-to-site den Tunnel im öffentlich Netz von SoftLayer zeigt. Verwenden Sie **bond0** für private IPSec site-to-site-Verbindungen.
 
@@ -28,7 +29,7 @@ Der Brocade 5400 vRouter (Vyatta) wird als "local" bezüglich des IPSec-Tunnels 
 
   * Inaktivieren Sie PFS (Perfect Forward Secrecy), da nicht alle Einheiten PFS verwenden können. (Die Angabe 'esp' im Befehl ist der zweite Teil der Verschlüsselung.)
   * Geben Sie den Typ der zu verwendenden Verschlüsselung an. Falls keine Verschlüsselung definiert ist, wird standardmäßig **aes128** verwendet.
-  * Verwenden Sie die Funktion **sha-1**<br/><br/>
+  * Verwenden Sie die `has`-Funktion **sha-1**<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -53,7 +54,7 @@ Der Brocade 5400 vRouter (Vyatta) wird als "local" bezüglich des IPSec-Tunnels 
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 local prefix 10.54.9.152/29*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 remote prefix 192.168.1.2/32*<br/>
 
-Der nächste Schritte ist die Installation der fernen Einheit, dem Brocade 5400 vRouter 6.6.5 R
+Der nächste Schritte ist die Installation der fernen Einheit, dem Brocade 5400 vRouter 6.6.5 R.
 
   * Verwenden Sie die gerade eben konfigurierte Einheit (das im Betriebsmodus konfiguriert wurde), um den Befehl zum Anzeigen der Konfigurationsbefehle einzugeben. Eine Liste der Befehle für die Konfiguration der Einheit wird angezeigt.
   * Kopieren Sie die Befehle in einen Texteditor. Die Befehle zur Konfiguration der lokalen Einheit werden verwendet, um den fernen Server mit Änderungen an der IP zu konfigurieren und so auf den Brocade 5400 vRouter 6.6.5R im SoftLayer zu verweisen.
@@ -93,6 +94,6 @@ Ferne Konfiguration:
 *set vpn ipsec site-to-site peer **50.97.240.219** tunnel 1 remote prefix **10.54.9.152/29*** (Das lokale Präfix und das ferne Präfix wurden nicht ausgetauscht.)
 
 * Kopieren Sie die neuen Befehle und fügen Sie sie im fernen Server ein. Stellen Sie sicher, dass Sie dabei den Konfigurationsmodus verwenden. Geben Sie 'commit' ein und speichern Sie dann.
-* Geben Sie 'run show vpn ike sa' ein, um zu sehen, ob der Tunnel eingerichtet wurde.
+* Geben Sie `run show vpn ike sa` ein, um zu sehen, ob der Tunnel eingerichtet wurde. 
 
 Hier finden Sie eine kleine Zusammenfassung der durchgeführten Aktionen: Nur IP-Adressen mit dem Teilnetz '10.54.9.152/29', die sich auf der lokalen Schnittstelle (bond1, 50.97.240.219) befinden, werden ausschließlich an 192.168.1.2/32-Teilnetze auf dem fernen Service weitergeleitet, der sich in der Schnittstelle mit der IP-Adresse 169.54.254.117 befindet.

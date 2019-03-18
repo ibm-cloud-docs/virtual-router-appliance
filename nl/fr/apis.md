@@ -14,9 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Référence d'API
+# Référence d'API pour IBM Virtual Router Appliance
+{: #api-reference-for-ibm-virtual-router-appliance}
 
-L'API SoftLayer® Application Programming Interface (SLAPI) est l'interface de développement qui permet aux développeurs et aux administrateurs système d'interagir directement avec le système de back-end d'IBM Cloud.
+L'API SoftLayer® Application Programming Interface (SLAPI) est l'interface de développement qui permet aux développeurs et aux administrateurs système d'interagir directement avec le système de back-end d'IBM© Cloud.
 
 SLAPI alimente de nombreuses fonctions dans le portail client, ce qui signifie, en principe, que si une interaction est possible dans le portail client, elle peut également être exécutée dans l'API. Comme vous pouvez interagir à l'aide d'un programme avec toutes les parties de l'environnement du portail client dans l'API, vous pouvez utiliser l'API pour automatiser des tâches.
 
@@ -24,7 +25,6 @@ SLAPI est un système d'appel RPC (Remote Procedure Call). Chaque appel implique
 
 Comme les API SLAPI se réfèrent aux API IBM Virtual Router Appliance, voir les ressources suivantes dans SoftLayer Development Network (SLDN) :
 
-- [SoftLayer API Overview ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://sldn.softlayer.com/article/softlayer-api-overview?cm_mc_uid=71397258840814855542946&cm_mc_sid_50200000=1508536023){: new_window} 
 - [SoftLayer_Network_Gateway API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 
 - [SoftLayer_Network_Gateway_Member API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window} 
 - [SoftLayer_Network_Gateway_Vlan API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window} 

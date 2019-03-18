@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Configuración de IPSec en Vyatta 5400
+{: #configuring-ipsec-on-vyatta-5400}
 
 Se hará referencia al dispositivo Brocade 5400 vRouter (Vyatta) como "local" por lo que respecta al túnel IPSec (Internet Protocol Security). Cada uno de los mandatos siguientes realizará diferentes funciones para configurar IPSec sitio a sitio. Tenga en cuenta que este ejemplo de IPSec sitio a sitio muestra el túnel en la red pública de SoftLayer; utilice **bond0** para las conexiones privadas de IPSec sitio a sitio.
 
@@ -28,7 +29,7 @@ Se hará referencia al dispositivo Brocade 5400 vRouter (Vyatta) como "local" po
 
   * Inhabilitar PFS (secreto-perfecto-adelante), porque no todos los dispositivos pueden utilizarlo. (En el mandato, esp es la segunda parte del cifrado).
   * Especificar el tipo de cifrado a utilizar; si no se configura, el dispositivo utilizará **aes128** como un valor predeterminado.
-  * Utilizar la función hash **sha-1**.<br/><br/>
+  * Utilizar la función `has`**sha-1**<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -93,6 +94,6 @@ Configuración remota:
 *set vpn ipsec site-to-site peer **50.97.240.219** tunnel 1 remote prefix **10.54.9.152/29*** (No se han intercambiado el prefijo local y el prefijo remoto)
 
 * Copie y pegue los mandatos nuevos en el servidor remoto (asegúrese de estar en modalidad de configuración), escriba commit y guarde.
-* Escriba run show vpn ike sa para ver si el túnel está ahora establecido.
+* Escriba `run show vpn ike sa` para ver si el túnel está ahora establecido.
 
 Este es un resumen de lo que se ha hecho: direccionar solo las direcciones IP con la subred de '10.54.9.152/29' que residen en la interfaz local (bond1, 50.97.240.219) a solo las subredes 192.168.1.2/32 en el servicio remoto que residen en la interfaz con la dirección IP de 169.54.254.117.

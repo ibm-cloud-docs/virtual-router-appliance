@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Configurar servicios
+# Configuración de los servicios
+{: #configuring-your-services}
+
 Hay variedad de servicios que se ejecutan en Virtual Router Appliance (VRA) que se pueden configurar, incluidos:
 
 `vyatta@vrouter# set service`

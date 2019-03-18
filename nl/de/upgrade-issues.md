@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Probleme bei der Aktualisierung
+{: #upgrade-issues}
+
 Gelegentlich tritt nach einer erfolgreichen Aktualisierung und einem Warmstart einer neuen Version des Vyatta-Betriebssystems das Problem auf, dass Sie keine Benutzerbefehle eingeben können.
 
 Beispiel:

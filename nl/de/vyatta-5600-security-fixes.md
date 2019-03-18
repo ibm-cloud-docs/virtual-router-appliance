@@ -15,12 +15,73 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # AT&T Vyatta 5600 vRouter Software-Patches
+{: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Datum: 2. November 2018**
+**Datum: 14. Februar 2019**
 
 In diesem Dokument sind die Patches (Programmkorrekturen) für die derzeit unterstützten Versionen des Netzbetriebssystems Vyatta 5600 aufgelistet. Programmkorrekturen für Version 5.2 und ältere Versionen werden unter Verwendung einer S-Nummer benannt. Ab Version 17.1 werden Programmkorrekturen mit einem Kleinbuchstaben mit Ausnahme von “i”, “o”, “l” und “x” benannt.
 
-Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird die höchste CVSS-Bewertung aufgelistet. 
+Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird die höchste CVSS-Bewertung aufgelistet.
+
+## 1801v
+
+**Gelöste Probleme**
+
+| Problemnummer | Priorität | Zusammenfassung |
+| --- | --- | --- |
+| VRVDR-45175 | Kritisch | Kernspeicherauszug rsyslogd, wenn VRFs konfiguriert wurden |
+| VRVDR-45057 | Kritisch | IPsec-VTI-Tunnelschnittstelle im A/D-Status nach erstem Hochfahren, IPsec SA bleibt aktiv |
+| VRVDR-44985 | Hoch | DNAT- und Input-Firewall-Protokollierung/Verarbeitungsreihenfolge |
+| VRVDR-44944 | Kritisch | vyatta-config-vti.pl: Unsichere Nutzung der temporären Datei |
+| VRVDR-44941 | Niedrig| Statische Route fehlt im Kernel aufgrund eines kurzen VTI-Schnittstellen-Flappings |
+| VRVDR-44914 | Kritisch | RPC-ALG-Absturz bei beiden Mitgliedern eines HA-Paars |
+| VRVDR-44668 | Hoch | Durch die Überwachung des Produktionsdatenverkehrs wird die NetFlow-Statistik blockiert und angehalten |
+| VRVDR-44667 | Niedrig | Die Schnittstellenreihenfolge ist zwischen den Ausführungen von 'show flow-monitoring' nicht konsistent |
+| VRVDR-44657 | Hoch | Bei einer erneuten IKEv1-Schlüsselkollision bleibt die VTI-Schnittstelle inaktiv, wenn die Tunnel aktiv sind |
+| VRVDR-44560 | Hoch| Mehrere 'rcu_sched'-CPU blockieren und weisen auf den Treiber 'ip_gre' |
+| VRVDR-44517 | Niedrig | Datenebene stürzt in 'rte_ipv6_fragment_packet' ab |
+| VRVDR-44282 | Hoch | Problem beim Löschen der /32-Maske, wenn beide Adressen mit bzw. ohne /32-Maske in der Adressgruppe vorhanden sind |
+| VRVDR-44278 | Niedrig | "show address-group all ipv4 optimal" generiert keine Ausgabe |
+| VRVDR-44239 | Hoch | Anforderung zur Erweiterung der Web-GUI-Verbiage für Protokoll-Dropdown, wenn alle ('all') Protokolle erforderlich sind |
+| VRVDR-44076 | Hoch | Speicherverlust bei der Datenflussüberwachung, die zu Segmentierungsfehlern und Ausfällen der Datenebene führt |
+| VRVDR-44007 | Kritisch | Datenebene-Segmentierungsfehler bei 'npf_dataplane_session_establish' |
+| VRVDR-43909 | Niedrig| 'Connsync' bewirkt, dass Schnittstellen nach 'restart vrrp' inaktiv sind. |
+| VRVDR-42679 | Hoch | syslog - Absturz in 'zactor_is' |
+| VRVDR-42020 | Hoch | RIB friert beim wiederholten Hinzufügen derselben Route ein |
+| VRVDR-18095 | Niedrig | Statistiken der Datenflussüberwachung werden nicht als Teil von 'show tech-support' erfasst. |
+
+
+**Behobene Sicherheitslücken**
+
+| Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
+| --- | --- | --- | --- |
+| VRVDR-45148 | N/A | DSA-4371-1 | CVE-2019-3462: Debian DSA-4371-1 – apt Sicherheitsupdate |
+| VRVDR-45043 | 8.8 | DSA-4369-1 | CVE-2018-19961, CVE-2018-19962, CVE-2018- 19965, CVE-2018-19966, CVE-2018-19967: DSA 4369-1 - Xen Sicherheitsupdate |
+| VRVDR-45042 | N/A | DSA-4368-1 | CVE-2019-6250: Debian DSA-4368-1 : zeromq3 - Sicherheitsupdate |
+| VRVDR-45035 | N/A | DSA-4367-1 | CVE-2018-16864, CVE-2018-16865, CVE-2018- 16866: Debian DSA-4367-1 : systemd - Sicherheitsupdate |
+| VRVDR-44956 | 7.5 | DSA-4359-1 | CVE-2018-16864, CVE-2018-16865, CVE-2018- 16866: Debian DSA-4367-1 : systemd - Sicherheitsupdate CVE-2018-12086, CVE-2018-18225, CVE-2018- 18226, CVE-2018-18227, CVE-2018-19622, CVE- 2018-19623, CVE-2018-19624, CVE-2018-19625, CVE-2018-19626, CVE-2018-19627, CVE-2018- 19628: Debian DSA-4359-1 : wireshark - Sicherheitsupdate |
+| VRVDR-44747 | N/A | DSA-4350-1 | CVE-2018-19788: Debian DSA-4350-1 : policykit-1 - Sicherheitsupdate |
+| VRVDR-44634 | 8.8 | DSA-4349-1 | CVE-2017-11613, CVE-2017-17095, CVE-2018- 10963, CVE-2018-15209, CVE-2018-16335, CVE- 2018-17101, CVE-2018-18557, CVE-2018-5784, CVE-2018-7456, CVE-2018-8905:Debian DSA-4349- 1 : tiff - Sicherheitsupdate |
+| VRVDR-44633 | 7.5 | DSA-4348-1| CVE-2018-0732, CVE-2018-0734, CVE-2018-0735, CVE-2018-0737, CVE-2018-5407: Debian DSA-4348- 1 : openssl - Sicherheitsupdate |
+| VRVDR-44611 | 9.8 | DSA-4347-1| CVE-2018-18311, CVE-2018-18312, CVE-2018- 18313, CVE-2018-18314: Debian DSA-4347-1 : perl - Sicherheitsupdate |
+| VRVDR-44348| 9.8 | DSA-4338-1 | CVE-2018-10839, CVE-2018-17962, CVE-2018- 17963: Debian DSA-4338-1: qemu Sicherheitsupdate |
+| VRVDR-43264| 5.6 | DSA-4274-1 | CVE-2018-3620, CVE-2018-3646: Debian DSA-4274- 1: xen - Sicherheitsupdate |
+
+## 1801u
+
+**Gelöste Probleme**
+
+| Problemnummer | Priorität | Zusammenfassung |
+| --- | --- | --- |
+| VRVDR-44406 | Kritisch | Wenn mehrere Teilnetze sich im selben VIF-Netz befinden, wird eine geringe Übertragungsrate des Datenverkehrs im Vergleich zur Leistung von 5400 beobachtet |
+| VRVDR-44253 | Niedrig | MSS-Clamping für Bonding-Schnittstelle funktioniert nach Warmstart nicht mehr |
+
+**Behobene Sicherheitslücken**
+
+| Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
+| --- | --- | --- | --- |
+| VRVDR-44277 | N/A | DSA-4332-1 | CVE-2018-16395, CVE-2018-16396: Debian DSA-4332-1 : ruby2.3 - Sicherheitsupdate |
+| VRVDR-44276 | N/A | DSA-4331-1 | CVE-2018-16839, CVE-2018-16842: Debian DSA-4331-1 : curl - Sicherheitsupdate |
 
 ## 1801t
 
@@ -29,14 +90,14 @@ Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird 
 | Problemnummer | Priorität | Zusammenfassung |
 | --- | --- | --- |
 | VRVDR-44172 | Blocker | Fehler “Schnittstelle [openvpn] ist ungültig” berichtet in mss-clamp-Tests. |
-| VRVDR-43969 | Niedrig | Vyatta 18.x GUI berichtet falsche Speicherbelegung bei Statusprüfung|
-| VRVDR-43847  | Hoch | Geringer Durchsatz für TCP-Datenaustausch bei Bonding-Schnittstelle|
+| VRVDR-43969 | Niedrig | Vyatta 18.x GUI berichtet falsche Speicherbelegung bei Statusprüfung |
+| VRVDR-43847  | Hoch | Geringer Durchsatz für TCP-Datenaustausch bei Bonding-Schnittstelle |
 
 **Behobene Sicherheitslücken**
 
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
-| VRVDR-43842 | Nicht zutreffend | DSA-4305-1 | CVE-2018-16151, CVE-2018-16152: Debian DSA4305-1: strongswan – Sicherheitsupdate |
+| VRVDR-43842 | N/A | DSA-4305-1 | CVE-2018-16151, CVE-2018-16152: Debian DSA4305-1: strongswan – Sicherheitsupdate |
 
 ## 1801s
 
@@ -51,12 +112,12 @@ Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird 
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
 | VRVDR-44074| 9.1 | DSA-4322-1 | CVE-2018-10933: Debian DSA-4322-1: libssh – Sicherheitsupdate|
-| VRVDR-44054 | 8.8 | DSA-4319-1 | CVE-2018-10873: Debian DSA-4319-1: spice – Sicherheitsupdate|
-| VRVDR-44038 | nicht zutreffend | DSA-4315-1 | CVE-2018-16056, CVE-2018-16057, CVE-2018- 16058: Debian DSA-4315-1: wireshark – Sicherheitsupdate|
-| VRVDR-44033 | nicht zutreffend | DSA-4314-1 | CVE-2018-18065: Debian DSA-4314-1: net-snmp – Sicherheitsupdate| 
-|VRVDR-43922 | 7.8 | DSA-4308-1 | CVE-2018-6554, CVE-2018-6555, CVE-2018-7755, CVE-2018-9363, CVE-2018-9516, CVE-2018-10902, CVE-2018-10938, CVE-2018-13099, CVE-2018- 14609, CVE-2018-14617, CVE-2018-14633, CVE- 2018-14678, CVE-2018-14734, CVE-2018-15572, CVE-2018-15594, CVE-2018-16276, CVE-2018- 16658, CVE-2018-17182: Debian DSA-4308-1: linux – Sicherheitsupdate|
-| VRVDR-43908 | 9.8 | DSA-4307-1 | CVE-2017-1000158, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4307-1: python3.5 - Sicherheitsupdate|
-| VRVDR-43884 | 7.5 | DSA-4306-1 | CVE-2018-1000802, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4306-1: python2.7 - Sicherheitsupdate|
+| VRVDR-44054 | 8.8 | DSA-4319-1 | CVE-2018-10873: Debian DSA-4319-1: spice – Sicherheitsupdate |
+| VRVDR-44038 | N/A | DSA-4315-1 | CVE-2018-16056, CVE-2018-16057, CVE-2018- 16058: Debian DSA-4315-1: wireshark – Sicherheitsupdate |
+| VRVDR-44033 | N/A | DSA-4314-1 | CVE-2018-18065: Debian DSA-4314-1: net-snmp – Sicherheitsupdate | 
+|VRVDR-43922 | 7.8 | DSA-4308-1 | CVE-2018-6554, CVE-2018-6555, CVE-2018-7755, CVE-2018-9363, CVE-2018-9516, CVE-2018-10902, CVE-2018-10938, CVE-2018-13099, CVE-2018- 14609, CVE-2018-14617, CVE-2018-14633, CVE- 2018-14678, CVE-2018-14734, CVE-2018-15572, CVE-2018-15594, CVE-2018-16276, CVE-2018- 16658, CVE-2018-17182: Debian DSA-4308-1: linux – Sicherheitsupdate |
+| VRVDR-43908 | 9.8 | DSA-4307-1 | CVE-2017-1000158, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4307-1: python3.5 - Sicherheitsupdate |
+| VRVDR-43884 | 7.5 | DSA-4306-1 | CVE-2018-1000802, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4306-1: python2.7 - Sicherheitsupdate |
 
 ## 1801r
 
@@ -76,12 +137,12 @@ Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird 
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
 | VRVDR-43837 | 7.5 | DSA-4300-1 | CVE-2018-10860: Debian DSA-4300-1: libarchive-zip-perl –Sicherheitsupdate |
-| VRVDR-43693 | Nicht zutreffend | DSA-4291-1 | CVE-2018-16741: Debian DSA-4291-1: mgetty –Sicherheitsupdate | 
-| VRVDR-43578 | Nicht zutreffend | DSA-4286-1 | CVE-2018-14618: Debian DSA-4286-1: curl -Sicherheitsupdate |
-| VRVDR-43326 | Nicht zutreffend | DSA-4280-1 | CVE-2018-15473: Debian DSA-4280-1: openssh -Sicherheitsupdate | 
-| VRVDR-43198 | Nicht zutreffend | DSA-4272-1 | CVE-2018-5391: Debian DSA-4272-1: linux Sicherheitsupdate (FragmentSmack) |
-| VRVDR-43110 | Nicht zutreffend | DSA-4265-1 | Debian DSA-4265-1 : xml-security-c -Sicherheitsupdate | 
-| VRVDR-43057 | Nicht zutreffend | DSA-4260-1 | CVE-2018-14679, CVE-2018-14680, CVE-2018-14681, CVE-2018-14682: Debian DSA-4260-1 : libmspack -Sicherheitsupdate | 
+| VRVDR-43693 | N/A | DSA-4291-1 | CVE-2018-16741: Debian DSA-4291-1: mgetty –Sicherheitsupdate | 
+| VRVDR-43578 | N/A | DSA-4286-1 | CVE-2018-14618: Debian DSA-4286-1: curl -Sicherheitsupdate |
+| VRVDR-43326 | N/A | DSA-4280-1 | CVE-2018-15473: Debian DSA-4280-1: openssh -Sicherheitsupdate | 
+| VRVDR-43198 | N/A | DSA-4272-1 | CVE-2018-5391: Debian DSA-4272-1: linux Sicherheitsupdate (FragmentSmack) |
+| VRVDR-43110 | N/A | DSA-4265-1 | Debian DSA-4265-1 : xml-security-c -Sicherheitsupdate | 
+| VRVDR-43057 | N/A | DSA-4260-1 | CVE-2018-14679, CVE-2018-14680, CVE-2018-14681, CVE-2018-14682: Debian DSA-4260-1 : libmspack -Sicherheitsupdate | 
 | VRVDR-43026 | 9.8 | DSA-4259-1 | Debian DSA-4259-1 : ruby2.3 -Sicherheitsupdate VRVDR-42994N/ADSA-4257-1CVE-2018-10906: Debian DSA-4257-1 :fuse -Sicherheitsupdate |
 
 ## 1801q
@@ -96,7 +157,7 @@ Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird 
 | VRVDR-43157 | Niedrig | Wenn der Tunnel zurückweist, ist die SNMP-Alarmnachricht nicht ordnungsgemäß generiert worden. |
 | VRVDR-43114 | Kritisch | Ein Router in einem HA-Paar mit einer höheren Priorität als sein Peer, beachtet seine eigene Konfiguration “preemt false” beim Warmstart nicht und wird sofort nach dem Warmstart Master. |
 | VRVDR-42826 | Niedrig | Mit der fernen ID “0.0.0.0” schlägt die Peerfestlegung fehl, weil ein pre-shared-key nicht übereinstimmt. |
-| VRVDR-42774 | Kritisch | X710-Treiber (i40e) sendet Ablaufsteuerungsframes mit hoher Geschwindigkeit. |
+| VRVDR-42774 | Kritisch| X710-Treiber (i40e) sendet Ablaufsteuerungsframes mit hoher Geschwindigkeit. |
 | VRVDR-42635 | Niedrig | Richtlinienänderung der route-map bei BGP-Umverteilung wird nicht wirksam. |
 | VRVDR-42620 | Niedrig | Während der Tunnel aktiv zu sein scheint, löst Vyatta-ike-sa-daemon folgenden Fehler aus: “Command failed: establishing CHILD_SA passthrough-peer” |
 | VRVDR-42483 | Niedrig | TACACS-Authentifizierung fehlgeschlagen |
@@ -112,7 +173,7 @@ Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird 
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
 | VRVDR-43288 | 5.6 | DSA-4279-1 | CVE-2018-3620, CVE-2018-3646: Debian DSA-4279- 1 – Linux-Sicherheitsupdate |
-| VRVDR-43111 | Nicht zutreffend | DSA-4266-1 | CVE-2018-5390, CVE-2018-13405: Debian DSA- 4266-1 – Linux-Sicherheitsupdate |
+| VRVDR-43111 | N/A | DSA-4266-1 | CVE-2018-5390, CVE-2018-13405: Debian DSA- 4266-1 – Linux-Sicherheitsupdate |
 
 ## 1801n
 
@@ -133,9 +194,9 @@ Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird 
 
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
-| VRVDR-42505 | Nicht zutreffend | DSA-4236-1 | CVE-2018-12891, CVE-2018-12892, CVE-2018-12893: Debian DSA-4236-1: xen - Sicherheitsupdate |
-| VRVDR-42427 | Nicht zutreffend | DSA-4232-1 | CVE-2018-3665: Debian DSA 4232-1: xen - Sicherheitsupdate |
-| VRVDR-42383 | Nicht zutreffend | DSA-4231-1 | CVE-2018-0495: Debian DSA-4231-1: libgcrypt20 - Sicherheitsupdate |
+| VRVDR-42505 | N/A | DSA-4236-1 | CVE-2018-12891, CVE-2018-12892, CVE-2018-12893: Debian DSA-4236-1: xen - Sicherheitsupdate |
+| VRVDR-42427 | N/A | DSA-4232-1 | CVE-2018-3665: Debian DSA 4232-1: xen - Sicherheitsupdate |
+| VRVDR-42383 | N/A | DSA-4231-1 | CVE-2018-0495: Debian DSA-4231-1: libgcrypt20 - Sicherheitsupdate |
 | VRVDR-42088 | 5.5 | DSA-4210-1 | CVE-2018-3639: Debian DSA-4210-1: xen – Sicherheitsupdate |
 | VRVDR-41924 | 8.8 | DSA-4201-1 | CVE-2018-8897, CVE-2018-10471, CVE-2018-10472, CVE-2018-10981, CVE-2018-10982: Debian DSA-4201- 1: xen – Sicherheitsupdate |
 
@@ -196,9 +257,9 @@ Freigabe am 11. Juni 2018
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
 | VRVDR- 42207 | 7.5 | DSA-4217-1 | CVE-2018-11358, CVE-2018-11360, CVE-2018-11362, CVE- 2018-7320, CVE-2018-7334, CVE-2018-7335, CVE-2018- 7419, CVE-2018-9261, CVE-2018-9264, CVE-2018-9273: Debian DSA-4217-1: wireshark – Sicherheitsupdate |
-| VRVDR- 42013 | Nicht zutreffend | DSA-4210-1 | CVE-2018-3639: spekulative Ausführung, Variante 4: spekulativer Speicherbypass / Spectre v4 / Spectre-NG |
+| VRVDR- 42013 | N/A | DSA-4210-1 | CVE-2018-3639: spekulative Ausführung, Variante 4: spekulativer Speicherbypass / Spectre v4 / Spectre-NG |
 | VRVDR- 42006 | 9.8 | DSA-4208-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018- 1125, CVE-2018-1126: Debian DSA-4208-1: procps – Sicherheitsupdate |
-| VRVDR- 41946 | Nicht zutreffend | DSA-4202-1 | CVE-2018-1000301: Debian DSA-4202-1: curl – Sicherheitsupdate |
+| VRVDR- 41946 | N/A | DSA-4202-1 | CVE-2018-1000301: Debian DSA-4202-1: curl – Sicherheitsupdate |
 | VRVDR- 41795 | 6.5 | DSA-4195-1 | CVE-2018-0494: Debian DSA-4195-1: wget – Sicherheitsupdate |
 
 ## 1801k
@@ -222,9 +283,9 @@ Freigabe am 8. Juni 2018.
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
 | VRVDR- 42207 | 7.5 | DSA-4217-1 | CVE-2018-11358, CVE-2018-11360, CVE-2018-11362, CVE- 2018-7320, CVE-2018-7334, CVE-2018-7335, CVE02018- 7419, CVE-2018-9261, CVE-2018-9264, CVE-2018-9273: Debian DSA-4217-1: wireshark – Sicherheitsupdate |
-| VRVDR- 42013 | Nicht zutreffend | DSA-4210-1 | CVE-2018-3639: Spekulative Ausführung, Variante 4: spekulativer Geschäftsbypass / Spectre v4 / Spectre-NG |
+| VRVDR- 42013 | N/A | DSA-4210-1 | CVE-2018-3639: Spekulative Ausführung, Variante 4: spekulativer Geschäftsbypass / Spectre v4 / Spectre-NG |
 | VRVDR- 42006 | 9.8 | DSA-4208-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018- 1125, CVE-2018-1126: Debian DSA-4208-1: procps – Sicherheitsupdate |
-| VRVDR- 41946 | Nicht zutreffend | DSA-4202-1 | CVE-2018-1000301: Debian DSA-4202-1: curl – Sicherheitsupdate |
+| VRVDR- 41946 | N/A | DSA-4202-1 | CVE-2018-1000301: Debian DSA-4202-1: curl – Sicherheitsupdate |
 | VRVDR- 41795 | 6.5 | DSA-4195-1 | CVE-2018-0494: Debian DSA-4195-1: wget – Sicherheitsupdate |
 
 ## 1801j
@@ -280,7 +341,7 @@ Freigabe am 8. Mai 2018
 
 | Problemnummer | Priorität | Zusammenfassung |
 | --- | --- | --- |
-| VRVDR-40803 | Niedrig | VIF-Schnittstellen nach Warmstart nicht in Ausgabe “show vrrp” vorhanden. |
+| VRVDR-40803 | Niedrig | VIF-Schnittstellen nach Warmstart in Ausgabe “show vrrp” nicht vorhanden. |
 
 **Behobene Sicherheitslücken**
 
@@ -316,7 +377,7 @@ Freigabe am 23. Mai 2018
 | VRVDR-40967 | Hoch | Inaktivierung der IPv6-Weiterleitung verhindert die Weiterleitung von IPv4-Paketen mit VTI als Quelle. |
 | VRVDR-40858 | Hoch | VTI-Schnittstelle zeigt MTU 1428 und verursacht TCP-PMTU-Probleme. |
 | VRVDR-40857 | Kritisch | Vhost-Bridge startet für getagtes VLAN mit Schnittstellennamen einer bestimmten Länge nicht. |
-| VRVDR-40803 | Niedrig | VIF-Schnittstellen nach Warmstart in Ausgabe “show vrrp” nicht vorhanden. |
+| VRVDR-40803 | Niedrig | VIF-Schnittstellen nach Warmstart nicht in Ausgabe “show vrrp” vorhanden. |
 | VRVDR-40644 | Hoch | IKEv1: QUICK_MODE erneute Übertragungen (re-transmits) werden nicht ordnungsgemäß ausgeführt. |
 
 **Behobene Sicherheitslücken**
@@ -324,7 +385,7 @@ Freigabe am 23. Mai 2018
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
 | VRVDR- 41512 | 9.8 | DSA-4172-1 | CVE-2018-6797, CVE-2018-6798, CVE-2018-6913: Debian DSA-4172-1: perl – Sicherheitsupdate |
-| VRVDR- 41331 | 6.5 | DSA-4158-1 | CVE-2018-0739: Debian DSA-4158-1: openssl1.0 – Sicherheitsupdate
+| VRVDR- 41331 | 6.5 | DSA-4158-1 |CVE-2018-0739: Debian DSA-4158-1: openssl1.0 – Sicherheitsupdate
 | VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – Sicherheitsupdate |
 | VRVDR- 41215 | 6.1 |CVE-2018-1059 | CVE-2018-1059 – DPDK vhost außerhalb des gültigen Bereichs des Hostspeicherzugriffs durch VM-Gäste |
 
@@ -335,13 +396,13 @@ Freigabe am 16. Mai 2018
 
 | Problemnummer | Priorität | Zusammenfassung |
 | --- | --- | --- |
-| VRVDR-41283 | Niedrig | Configd stoppt die Verarbeitung statischer Routen während des Bootens, wenn die Konfiguration inaktivierte, statische Routen aufweist. |
+| VRVDR-41283 | Niedrig |Configd stoppt die Verarbeitung statischer Routen während des Bootens, wenn die Konfiguration inaktivierte, statische Routen aufweist. |
 
 **Behobene Sicherheitslücken**
 
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
-| VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – Sicherheitsupdate 
+| VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – Sicherheitsupdate
 
 ##1801e
 Freigabe am 28. März 2018.
@@ -362,7 +423,7 @@ Freigabe am 28. März 2018.
 
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
-| VRVDR- 41172 | Nicht zutreffend | DSA-4140-1 | DSA 4140-1: libvorbis Sicherheitsupdate |
+| VRVDR- 41172 | N/A | DSA-4140-1 | DSA 4140-1: libvorbis Sicherheitsupdate |
 
 ##5.2R6S7
 Freigabe am 15. März 2018.
@@ -371,7 +432,7 @@ Freigabe am 15. März 2018.
 
 | Problemnummer | Priorität | Zusammenfassung |
 | --- | --- | --- |
-| VRVDR-38801 | Hoch | Empfangen eines Multisegmentpakets über IPsec VTI führt zum Absturz der Bonding-Schnittstelle. 
+| VRVDR-38801 | Hoch | Empfangen eines Multisegmentpakets über IPsec VTI führt zum Absturz der Bonding-Schnittstelle.
 
 ##5.2R6S6
 Freigabe am 12. März 2018.
@@ -408,7 +469,7 @@ Freigabe am 8. März 2018.
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
 | VRVDR- 40327 | 9.8 | | DSA-4098-1
-CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – Sicherheitsupdate |
+CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – Sicherheitsupdate | 
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Zweigzieleinblendung / CVE-2017-5715 / Spectre, aka Variante #2 |
 
 ##1801c
@@ -461,10 +522,10 @@ Freigabe am 15. Dezember 2017.
 | VRVDR-39399 | Kritisch | Vyatta legt den Netzstatus FAULT ab, wenn VRRP- bzw. mehrere Schnittstellen (vrrp/multiple) mit flap/seg-Fehler angezeigt werden. |
 | VRVDR-39112 | Hoch | DNAT-Datenverkehr, der mit ZBF übereinstimmt, gibt nur das erste Paket im Datenfluss frei. |
 | VRVDR-38075 | Niedrig | Wenn “restart vpn” vom Responder ausgegeben wird, stellt der Initiator die Verbindung nicht erneut her. |
-| VRVDR-37934 | Kritisch | Absturz von BGPd wenn nur die Zusammenfassung der Aggregatadressen (aggregate-address) konfiguriert wird / statische Routen fehlen|
+| VRVDR-37934 | Kritisch | Absturz von BGPd wenn nur die Zusammenfassung der Aggregatadressen (aggregate-address) konfiguriert wird / statische Routen fehlen |
 | VRVDR-37717 | Niedrig | Die Felder (hard-enf) “Beschreibung” und “Lizenz” in Versionsausgabe umbenennen. |
-| VRVDR-37689 | Hoch |Hohe Rate von NIC-PF-Unterbrechungen |
-| VRVDR-37633 | Kritisch |Blockierung bei Keepalive |
+| VRVDR-37689 | Hoch | Hohe Rate von NIC-PF-Unterbrechungen |
+| VRVDR-37633 | Kritisch | Blockierung bei Keepalive |
 
 ## 5.2R6S3
 Freigabe am 4. Dezember 2017.
@@ -495,6 +556,6 @@ Freigabe am 12. Oktober 2017.
 | --- | --- | --- | --- |
 | VRVDR- 38819 | 9.8 | DSA-3989-1 | CVE-2017-14491, CVE-2017-14492, CVE-2017-14493, CVE- 2017-14494, CVE-2017-14495, CVE-2017-14496: DSA- 3989-1 dnsmasq -- Sicherheitsupdate |
 
-Die hier enthaltenen Informationen stellen weder ein Angebot, noch eine verbindliche Zusage, noch eine Darstellung oder Gewährleistung seitens AT&T dar. Änderungen sind vorbehalten. Diese Informationen dürfen nur nach einer schriftlichen Genehmigung außerhalb von AT&T-Unternehmen verwendet oder weitergegeben werden. 
+Die hier enthaltenen Informationen stellen weder ein Angebot, noch eine verbindliche Zusage, noch eine Darstellung oder Gewährleistung seitens AT&T dar. Änderungen sind vorbehalten. Diese Informationen dürfen nur nach einer schriftlichen Genehmigung außerhalb von AT&T-Unternehmen verwendet oder weitergegeben werden.
 
 © 2018 AT&T Intellectual Property. Alle Rechte vorbehalten. AT&T und das Globe-Logo sind eingetragene Marken von AT&T Intellectual Property. Alle anderen Marken sind Eigentum der jeweiligen Rechtsinhaber.

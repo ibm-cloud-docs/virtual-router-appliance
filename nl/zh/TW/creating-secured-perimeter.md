@@ -15,13 +15,13 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 建立安全周邊
-網路隔離的基礎層面是建立安全周邊。安全周邊會控制公用網際網路與 IBM Cloud 中所管理客戶資產之間的資料流量。安全周邊也藉由使用「虛擬私密網路 (VPN)」通道及 IBM Cloud Direct Link，啟用與客戶企業的直接連線。
+網路隔離的基礎層面是建立安全周邊。安全周邊會控制公用網際網路與 IBM© Cloud 中所管理客戶資產之間的資料流量。安全周邊也藉由使用「虛擬私密網路 (VPN)」通道及 IBM Cloud Direct Link，啟用與客戶企業的直接連線。
 
 安全周邊使用「安全周邊區段 (SPS)」，以隔離安全周邊內資產之間的網路。這項隔離有數個好處，包括區段之間的存取控制及服務資料流量隔離。「安全周邊區段 (SPS)」包含兩個「虛擬區域網路 (VLAN)」（前端 VLAN 及後端 VLAN）以及一個連接至 VLAN 的 VRA 來管理出入 SPS 的資料流量。安全周邊可以包括多個「安全周邊區段」（例如，基於高可用性目的）。
 
 ## 設定安全周邊
 
-以下是設定安全周邊的步驟。如需這些步驟的詳細說明，請參閱 [Set up a Secure Perimeter in the IBM Cloud](https://developer.ibm.com/dwblog/2018/ibm-cloud-vyatta-set-up-secure-perimeter)。
+以下是設定安全周邊的步驟。如需這些步驟的詳細說明，請參閱 [Set up a Secure Perimeter in the IBM Cloud ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/dwblog/2018/ibm-cloud-vyatta-set-up-secure-perimeter){:new_window}。
 
 1. 在 IBM Cloud 和基礎架構中，配置存取安全周邊相關雲端服務及基礎架構元件所需的許可權。
 2. 透過公用 VLAN 及防火牆，在公用網際網路中建立外部界限。此外部界限將用來隔離 SPS。
@@ -47,4 +47,4 @@ lastupdated: "2018-11-10"
 22. 部署 Kubernetes 叢集。
 
 ## IBM Cloud 中的專用解決方案
-安全周邊以及運算隔離和資料加密，能夠促成公用 IBM Cloud 中的完整專用解決方案。如需雲端專用解決方案模式的說明，請參閱 [Implementing a Dedicated Solution Pattern](https://developer.ibm.com/dwblog/2018/ibm-cloud-dedicated-cloud-solution-patterns/)。
+安全周邊以及運算隔離和資料加密，能夠促成公用 IBM Cloud 中的完整專用解決方案。如需雲端專用解決方案模式的說明，請參閱 [Implementing a Dedicated Solution Pattern ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/dwblog/2018/ibm-cloud-dedicated-cloud-solution-patterns/){:new_window}。

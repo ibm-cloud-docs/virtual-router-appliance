@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 使用 IPsec 及區域防火牆配置 VFP 介面
+{: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
+
 IPSec 資料包在到達時會透過防火牆規則處理，然後再解除封裝。出現的新資料包根本未與介面相關聯。一般而言，這不是問題，而且可以移至目的地介面，但是區域防火牆會防止資料包繼續進行。會捨棄未來自區域原則中介面的任何資料包。不過，VFP 介面會通知區域防火牆有關資料包確實來自介面，以容許套用規則。 
 
 若要配置 VFP 介面來使用 IPsec 資料流量，請先定義具有單一 IP 的 VFP 來建立特性點：
@@ -63,4 +65,4 @@ set security zone-policy zone TUNNEL interface 'vfp0'
 set security zone-policy zone TUNNEL to SERVERS firewall 'ALLOWALL'
 ```
 
-雖然 VFP 介面是一個「實際」介面，但它可以使用 `tshark` 這類指令進行監視，而且可以直接遞送資料流量，這麼做並不實用。將會捨棄到達另一端的任何資料流量，而這端不符合通道原則。它不像 VTI 介面這麼多用途。
+雖然 VFP 介面之所以是一個「實際」介面，在於可以使用 `tshark` 這類指令監視它，而且可以直接遞送資料流量，但這麼做並不實用。任何資料流量到達另一端而另一端並不符合通道原則時，這些資料流量都將會被捨棄。它不像 VTI 介面這麼多用途。

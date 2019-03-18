@@ -15,7 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 升級 OS
-可以在我們的支援團隊所上傳的本端 ISO 檔上，使用指令 ``add system image`` 來執行 VRA 作業系統升級。可用的 Vyatta 升級版本清單可以利用「IBM 支援問題單」系統來取得。
+{: #upgrading-the-os}
+
+可以在我們的支援團隊所上傳的本端 ISO 檔上，使用指令 ``add system image`` 來執行 VRA 作業系統升級。可用的 Vyatta 升級版本清單可以利用「IBM© 支援問題單」系統來取得。
 
 若要開始升級程序，請使用「IBM 支援問題單」系統來開立問題單，並要求升級以及將新的 ISO 映像檔上傳至您的系統。您會收到「IBM 支援中心」的電子郵件，指出上傳 ISO 檔案的位置。在下列範例中，它位於 ``tmp`` 目錄。
 

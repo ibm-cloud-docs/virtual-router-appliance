@@ -15,7 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # VLAN の管理
-[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面 ](access-gateway-details.html)からさまざまなアクションを実行できます。
+{: #managing-your-vlans}
+
+[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面 ](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)からさまざまなアクションを実行できます。
 
 ## ゲートウェイ・アプライアンスへの VLAN の関連付け
 
@@ -23,7 +25,7 @@ VLAN を経路指定するには、その前にゲートウェイ・アプライ
 
 VLAN は、一度に 1 つのゲートウェイにのみ関連付けられ、ファイアウォールを持つことはできません。 以下の手順に従って VLAN をネットワーク・ゲートウェイに関連付けます。
 
-1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](access-gateway-details.html)します。 
+1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)します。 
 2. **「VLAN の関連付け」**ドロップダウン・リストの中から任意の VLAN を選択します。
 3. **「関連付け」**ボタンをクリックして、VLAN を関連付けます。
 
@@ -35,7 +37,7 @@ VLAN をゲートウェイ・アプライアンスに関連付けた後、その
 
 関連付けられた VLAN を経路指定するには、次の手順を実行します。
 
-1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](access-gateway-details.html)します。 
+1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)します。 
 2. 「関連付けられた VLAN」セクションで目的の VLANを見つけます。
 3. 「アクション」ドロップダウン・メニューから**「VLAN の経路指定」**を選択します。
 4. **「はい」**をクリックして、VLAN を経路指定します。 
@@ -50,7 +52,7 @@ VLAN をバイパスすると、VLAN をネットワーク・ゲートウェイ�
 
 以下の手順を実行して、VLAN のゲートウェイ経路指定をバイパスします。
 
-1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](access-gateway-details.html)します。 
+1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)します。 
 2. 「関連付けられた VLAN」セクションで目的の VLANを見つけます。
 3. 「アクション」ドロップダウン・メニューから**「VLAN のバイパス」**を選択します。
 4. ゲートウェイをバイパスするには、**「はい」**をクリックします。 
@@ -63,7 +65,7 @@ VLAN は、[関連付け](#associate-a-vlan-to-a-gateway-appliance)を介して�
 
 以下の手順に従って VLAN からゲートウェイ・アプライアンスへの関連付けを解除します。
 
-1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](access-gateway-details.html)します。 
+1. カスタマー・ポータルの[「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面にアクセス](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)します。 
 2. 「関連付けられた VLAN」セクションで目的の VLANを見つけます。
 3. **「アクション」**ドロップダウン・メニューから**「関連付け解除」**を選択します。 
 4. **「はい」**をクリックして、VLAN の関連付けを解除します。 
@@ -81,3 +83,29 @@ set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
 
 上記のコマンドは、`dp0bond0`  インターフェース上に 2 つの仮想インターフェースを作成します。 インターフェース `dp0bond0.1432` は VLAN 1432 のトラフィックを処理し、インターフェース `dp0bond0.1693` は VLAN 1693 のトラフィックを処理します。
+
+## 複数のサブネットを単一の VLAN に追加する
+
+以下の構成例の最後には、パブリック VLAN 用の追加のサンプル・サブネット (`159.8.67.96/28`) が含まれています (1451)。各 VIF (VLAN Interface) のアドレスは、BCR (バックエンド・カスタマー・ルーター) や FCR (フロントエンド・カスタマー・ルーター) では経路指定されません。これは 2 つの Vyattas 間での VRRP/High Availability 通信にのみ使用されます。 
+
+サブネットは、未使用のプライベート IP スペースから選択できます。そのため、ここでは通常は `10.0.0.0/8` が除外されます。以下の例では `192.168.0.0/16` からのサブネットが選択されていますが、`172.16.0.0/12` からのサブネットも使用できます。 
+
+`virtual-address` は、新しいサブネットを構成する場所です。ほとんどの場合、サブネットのゲートウェイ IP アドレスを構成する必要があります。その後、VIF にバインドされたゲートウェイ ID は、VRA の背後にある新しいサブネットにセットアップされたベアメタル・サーバーまたは仮想サーバーのための、次のゲートウェイ・アドレスとして使用されます。 
+
+以下の例は、`159.8.67.97/28` が VIF にバインドされているので、`159.8.67.98/28` サブネットのすべてのトラフィックは VRA によって管理可能であることを示しています。
+
+```
+set interfaces bonding dp0bond0 vif 1623 address '192.168.10.2/30'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 virtual-address '10.127.132.129/26'
+set interfaces bonding dp0bond0 vif 1750 address '192.168.20.2/30'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 virtual-address '10.126.19.129/26'
+set interfaces bonding dp0bond1 vif 788 address '192.168.150.2/30'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 virtual-address '159.8.106.129/28'
+set interfaces bonding dp0bond1 vif 1451 address '192.168.200.2/30'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.67.97/28'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.86.49/29'
+```

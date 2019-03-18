@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 
-# 開始使用
-若要開始使用 IBM Virtual Router Appliance (VRA)，請導覽至 Customer Portal 中的訂購頁面：
+# 開始使用 IBM Virtual Router Appliance
+{: #getting-started-with-ibm-virtual-router-appliance}
+
+若要開始使用 IBM© Virtual Router Appliance (VRA)，請導覽至「客戶入口網站」中的訂購頁面：
 
 1. 從瀏覽器中，開啟[客戶入口網站 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){: new_window}，並登入您的帳戶。
 2. 在「客戶入口網站」導覽中，選取**網路 > 閘道應用裝置**。
@@ -41,10 +43,10 @@ VRA 以兩部分遞送：VRA 伺服器和「閘道應用裝置」。「閘道應
 
 依預設，新的「閘道應用裝置」會與兩個非抽取式的「轉移」VLAN 相關聯，公用及專用各一。這些通常用於管理，且可以用 VRA 指令個別保護。
 
-傳輸 VLAN 用於防火牆或負載平衡器這類的網路裝置，因此它們可以在隔離其他裝置（例如伺服器或容器）與網際網路時遞送資料流量。
+傳輸 VLAN 用於防火牆或負載平衡器這類的網路裝置，以便它們可以在將其他裝置（例如伺服器或容器）隔離於網際網路的同時遞送資料流量。
 
 相較之下，「閘道」VLAN 是裝置（例如伺服器及容器）管理所在的位置。
 
 VRA 只能透過「閘道應用裝置」來管理與其相關聯的 VLAN。
 
-如需如何從「閘道應用裝置詳細資料」畫面管理 VLAN 的相關資訊，請參閱[管理 VLAN](manage-vlans.html)。
+如需如何從「閘道應用裝置詳細資料」畫面管理 VLAN 的相關資訊，請參閱[管理 VLAN](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans)。

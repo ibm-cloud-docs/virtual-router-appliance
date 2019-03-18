@@ -15,8 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # AT&T Vyatta 5400 vRouter 安全漏洞修正程式
+{: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
-**截至：2018 年 8 月 30 日**
+**文件日期：2018 年 8 月 30 日**
 
 本文件列出 Vyatta 5400 vRouter 的安全漏洞修正程式。當在單一更新中處理多個 CVE 號碼時，會列出最高的 CVSS 評分。 
 
@@ -214,6 +215,6 @@ lastupdated: "2018-11-10"
 
 6.7R14S1 中解決的安全漏洞
 
-**附註：**此處所包含的資訊不是 AT&T 的優惠、承諾、呈現或保固，得隨時變更。除非有書面合約，否則無法在 AT&T 公司外部使用或揭露它。
+**附註：**此處所包含的資訊不是 AT&T 的優惠、承諾、呈現或保固，得隨時變更。除非經過書面同意，否則不得在 AT&T 公司以外使用或揭露。
 
 © 2018 AT&T Intellectual Property. All rights reserved. AT&T and Globe logo are registered trademarks of AT&T Intellectual Property. All other marks are the property of their respective owners.

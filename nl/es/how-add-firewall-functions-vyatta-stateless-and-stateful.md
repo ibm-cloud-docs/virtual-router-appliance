@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Añadir funciones de cortafuegos a Vyatta 5400 (con y sin estado)
+{: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
 La aplicación de reglas de cortafuegos en cada interfaz es un método de cortafuegos que se utiliza con dispositivos Brocade 5400 vRouter (Vyatta). Cada interfaz tiene tres instancias posibles de cortafuegos: In, Out y Local. Se pueden aplicar reglas a cada instancia. La acción predeterminada es Drop, y las reglas que permiten el tráfico específico se aplican de la regla 1 a la N. Cuando aparece una coincidencia, el cortafuegos aplica la acción específica de la regla de coincidencia.
 

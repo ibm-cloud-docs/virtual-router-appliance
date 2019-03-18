@@ -7,7 +7,8 @@ lastupdated: "2018-11-10"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Incluir funções de firewall no Vyatta 5400 (stateless e stateful)
+# Incluindo funções de firewall no Vyatta 5400 (stateless e stateful)
+{: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
 A aplicação de conjuntos de regras de firewall em cada interface é um método de aplicação de firewall ao usar os dispositivos Brocade 5400 vRouter (Vyatta). Cada interface possui três possíveis instâncias de firewall - Dentro, Fora e Local - e cada instância tem regras que podem ser aplicadas a ela. A ação padrão é Descartar, com regras que permitem que o tráfego específico seja aplicado de acordo com a regra 1 a N. Assim que uma correspondência for feita, o firewall aplicará a ação específica da regra de correspondência.
 

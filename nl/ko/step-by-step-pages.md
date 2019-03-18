@@ -76,7 +76,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>이 안내서는 보안 사설 네트워크(격납장치)를 작성하기 위해 IBM Clou에서 Virtual Router Appliance(VRA)를 구성할 수 있는 방법을 강조표시합니다. </p>
+                <p>이 안내서는 보안 사설 네트워크(격납장치)를 작성하기 위해 IBM© Cloud에서 Virtual Router Appliance(VRA)를 구성할 수 있는 방법을 강조표시합니다. </p>
                     <span class="tag-filter category">Virtual Router Appliance</span>
                     <span class="tag-filter category">보안 사설 네트워크</span>
                     <span class="tag-filter category">IBM Cloud 콘솔 UI</span>
@@ -106,7 +106,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>이 안내서는 VPC에 대한 액세스 확인 및 API 또는 CLI를 사용하는 VPC 프로비저닝에 대한 둘러보기를 제공합니다. </p>
+                <p>이 안내서는 VPC에 대한 액세스 확인 및 API 또는 CLI를 사용하는 VPC 프로비저닝에 대한 둘러보기를 제공합니다.</p>
                  <span class="tag-filter category">Virtual Router Appliance</span>
                  <span class="tag-filter category">RIAS API</span>
                  <span class="tag-filter category">IBM Cloud Direct Link</span>
@@ -122,7 +122,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>이 안내서는 VPC에 대한 액세스 확인 및 API 또는 CLI를 사용하는 VPC 프로비저닝에 대한 둘러보기를 제공합니다. </p>
+                <p>이 안내서는 VPC에 대한 액세스 확인 및 API 또는 CLI를 사용하는 VPC 프로비저닝에 대한 둘러보기를 제공합니다.</p>
                  <span class="tag-filter category">Virtual Router Appiance</span>
                  <span class="tag-filter category">RIAS API</span>
                  <span class="tag-filter category">VPN(Virtual Private Network)</span>

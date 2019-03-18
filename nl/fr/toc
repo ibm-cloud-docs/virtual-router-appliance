@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance/about.html" path="infrastructure/virtual-router-appliance"}
+{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
 IBM Virtual Router Appliance
 
     {: .navgroup id="learn"}
@@ -15,18 +15,15 @@ IBM Virtual Router Appliance
         upgrade-os.md
         upgrade-issues.md
 
-    [Exploration des pare-feux](../fortigate-10g/explore-firewalls.html)
+    /fortigate-10g/fortigate-10g-exploring-firewalls
+    external-resources.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    step-by-step-pages.md
-
-    {: .topicgroup}
-    Concepts de base de VRA
-        access-gateway-appliances.md
-        access-gateway-details.md
-        vra-basics.md
-        rename-gateway.md
+    access-gateway-appliances.md
+    access-gateway-details.md
+    vra-basics.md
+    rename-gateway.md
 
     {: .topicgroup}
     Gestion des réseaux locaux virtuels
@@ -60,7 +57,7 @@ IBM Virtual Router Appliance
         apis.md
         [API VRA (Virtual Router Appliance)](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
-    [Plages d'adresses IP IBM Cloud](../hardware-firewall-dedicated/ips.html)
+    /hardware-firewall-dedicated/hardware-firewall-dedicated-ibm-cloud-ip-ranges
 
     {: .topicgroup}
     Legacy Vyatta 5400
@@ -77,12 +74,11 @@ IBM Virtual Router Appliance
         [Guide de migration de Vyatta 5400](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
         migration-issues.md
 
-    external-resource.md
+    faqs.md
+    technical-faqs.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    faqs.md
-    technical-faqs.md
     vra-docs.md
     getting-help.md
     {: .navgroup-end}

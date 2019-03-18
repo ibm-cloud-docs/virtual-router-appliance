@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Problemas de upgrade
+{: #upgrade-issues}
+
 Ocasionalmente, após um upgrade e uma reinicialização bem-sucedidos de uma nova versão do OS Vyatta, é possível encontrar um problema em que você não é capaz de emitir comandos do usuário.
 
 Por exemplo:

@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Routage de VLAN
+# Routage de vos réseaux locaux virtuels (VLAN)
+{: #routing-your-vlans}
+
 Virtual Router Appliance (VRA) peut router plusieurs VLAN via la même interface réseau (par exemple, `dp0bond0` ou `dp0bond1`). Cette opération s'effectue en définissant le port de commutation en mode de liaison et en configurant des interfaces virtuelles (VIF) sur l'unité.
 
 Par exemple :

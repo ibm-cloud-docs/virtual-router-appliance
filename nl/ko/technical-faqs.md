@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# 기술 FAQ
-다음 자주 묻는 질문은 IBM Virtual Router Appliance(VRA)의 구성과 Vyatta 5400에서 VRA로의 마이그레이션을 다룹니다.
+# IBM Virtual Router Appliance의 기술 FAQ
+{: #technical-faqs-for-ibm-virtual-router-appliance}
+
+다음 자주 묻는 질문은 IBM© Virtual Router Appliance(VRA)의 구성과 Vyatta 5400에서 VRA로의 마이그레이션을 다룹니다.
 
 ## 사설 VLAN에 있는 호스트에서 인터넷 연결 트래픽을 허용할 수 있는 방법은 무엇입니까?
 {:faq}
@@ -62,7 +64,7 @@ VRA의 VRRP 공용 주소 사용이 강력하게 권장되므로 호스트와 VR
 
 `150.1.2.3`이 VRRP VRA 주소이고 `150.1.2.5`가 실제 dp0bond1 주소라고 가정하십시오.
 
-`dp0bond1 out`에 적용된 상태 저장 방화벽은 다음과 같습니다.
+`dp0bond1 out`에 적용된 Stateful 방화벽은 다음과 같습니다.
 
 ```
 set security firewall name TO_INTERNET default-action drop
@@ -87,7 +89,7 @@ VRA에는 `local zone`이 없습니다.
 
 loopback에서 `local` 방화벽으로 적용되므로 대신 CPP(Control Plane Policing) 기능을 활용할 수 있습니다.
 
-이는 상태 비저장 방화벽이며 VRA 자체에서 생성된 아웃바운드 세션의 리턴하는 트래픽을 명시적으로 허용해야 합니다.
+이는 Stateless 방화벽이며 VRA 자체에서 생성된 아웃바운드 세션의 리턴하는 트래픽을 명시적으로 허용해야 합니다.
 
 ## SSH를 제한하고 인터넷에서 수신되는 연결을 제한하는 방법은 무엇입니까?
 {:faq}

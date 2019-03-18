@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 升級問題
+{: #upgrade-issues}
+
 有時候，成功升級新版 Vyatta OS 並將其並重新開機之後，您可能會發現無法發出使用者指令的問題。
 
 例如：

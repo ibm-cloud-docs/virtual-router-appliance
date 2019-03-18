@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Gerenciar Firewalls
+# Gerenciar os firewalls da IBM
+{: #manage-your-ibm-firewalls}
+
 O Virtual Router Appliance (VRA) tem a capacidade de processar regras de firewall para proteger as VLANs roteadas por meio do dispositivo. Os firewalls no VRA podem ser divididos em duas etapas:
 
 1. Definindo um ou mais conjuntos de regras.
@@ -85,7 +87,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 No conjunto de regras, `ALLOW_LEGACY`, há duas regras definidas. A primeira regra elimina qualquer tráfego originado de um grupo de endereços denominado `network-group1`. A segunda regra descarta e registra qualquer tráfego destinado para a porta telnet (`tcp/23`) do grupo de endereços denominado `network-group2`. A ação padrão indica que qualquer outra coisa é aceita.
 
 ## Permitindo o Acesso ao Data Center
-A IBM oferece várias sub-redes IP para fornecer serviços e suporte para sistemas em execução dentro do data center. Por exemplo, os serviços do resolvedor de DNS estão em execução em `10.0.80.11` e `10.0.80.12`. Outras sub-redes são usadas durante o fornecimento e o suporte. É possível localizar os intervalos de IP usados nos data centers [aqui](/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+A IBM© oferece várias sub-redes de IP para fornecer serviços e suporte a sistemas em execução no data center. Por exemplo, os serviços do resolvedor de DNS estão em execução em `10.0.80.11` e `10.0.80.12`. Outras sub-redes são usadas durante o fornecimento e o suporte. É possível localizar os intervalos de IP usados nos data centers neste [tópico](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges).
 
 É possível permitir acesso ao data center colocando as regras `SERVICE-ALLOW` adequadas no início dos conjuntos de regras de firewall com uma ação igual a `aceitar`. Onde o conjunto de regras deve ser aplicado depende do roteamento e do design de firewall que estão sendo implementados.
 

@@ -16,10 +16,10 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Virtual Router Appliance 逐步
+# Virtual Router Appliance 逐步作業
 {: #tutorials}
 
-使用這些綜合性逐步指南來建置及自訂 Virtual Router Appliance。
+使用這些綜合性的逐步指南來建置及自訂 Virtual Router Appliance。
 
 <style>
     .solutionBox {
@@ -76,7 +76,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>本手冊強調顯示如何在 IBM Cloud 上配置 Virtual Router Appliance (VRA)，以建立安全專用網路（機箱）。</p>
+                <p>本手冊強調顯示如何在 IBM© Cloud 上配置 Virtual Router Appliance (VRA)，以建立安全專用網路（機箱）。</p>
                     <span class="tag-filter category">Virtual Router Appliance</span>
                     <span class="tag-filter category">安全專用網路</span>
                     <span class="tag-filter category">IBM Cloud 主控台使用者介面</span>
@@ -106,7 +106,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>本手冊提供驗證 VPC 存取權的逐步演練，然後透過 API 或 CLI 來佈建 VPC。</p>
+                <p>本手冊提供驗證 VPC 存取權然後透過 API 或 CLI 佈建 VPC 的逐步演練。</p>
                  <span class="tag-filter category">Virtual Router Appliance</span>
                  <span class="tag-filter category">RIAS API</span>
                  <span class="tag-filter category">IBM Cloud Direct Link</span>
@@ -122,7 +122,7 @@ lastupdated: "2018-11-10"
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>本手冊提供驗證 VPC 存取權的逐步演練，然後透過 API 或 CLI 來佈建 VPC。</p>
+                <p>本手冊提供驗證 VPC 存取權然後透過 API 或 CLI 佈建 VPC 的逐步演練。</p>
                  <span class="tag-filter category">Virtual Router Appliance</span>
                  <span class="tag-filter category">RIAS API</span>
                  <span class="tag-filter category">虛擬專用網路</span>

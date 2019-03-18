@@ -15,12 +15,13 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 重命名 VRA
+{: #renaming-a-vra}
 
 系统会为网关提供唯一名称，以帮助用户进行识别。您可以随时更改网关名称。建议使用一致的命名约定，以更轻松地识别网关。
 
 执行以下过程来重命名网关：
 
-1. 在客户门户网站中[访问网关设备详细信息屏幕](access-gateway-details.html)。 
+1. 在客户门户网站中[访问网关设备详细信息屏幕](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)。 
 2. 单击**操作**下拉菜单，然后选择**重命名网关**。
 3. 在**网关名称**字段中输入新的网关名称。
 4. 单击**确定**以保存更改。 

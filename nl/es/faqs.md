@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# Preguntas frecuentes
-Las siguientes son las preguntas más frecuentes cuando se trabaja con IBM Virtual Router Appliance (VRA).
+# Preguntas más frecuentes de IBM Virtual Router Appliance
+{: #faqs-for-ibm-virtual-router-appliance}
+
+Las siguientes son las preguntas más frecuentes cuando se trabaja con IBM© Virtual Router Appliance (VRA).
 
 ## ¿Qué es un VRA? 
 {:faq}
@@ -89,7 +91,7 @@ Del mismo modo, si un VRA/cortafuegos se ignora después de realizar un pedido, 
 ## ¿Qué productos de cortafuegos ofrece IBM?
 {:faq}
 
-Para ver una comparación detallada de todos los productos de cortafuegos que se ofrecen en IBM Cloud, consulte este [tema ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
+Para ver una comparación detallada de todos los productos de cortafuegos que se ofrecen en IBM Cloud, consulte [este tema](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls). 
 
 ## ¿Puede confundir VRA la tarea del soporte al cliente? 
 {:faq}
@@ -123,7 +125,7 @@ Si no hay acceso al sistema, puede rearrancar el dispositivo y utilizar la opci�
 
 La construcción `reboot at [time]` puede ser útil al probar reglas de cortafuegos potencialmente peligrosas.
 
-Si la regla funciona, utilice el mandato `reboot cancel` para cancelar el rearranque. Si la regla le bloquea el acceso, espere al próximo rearranque planificado..
+Si la regla funciona, utilice el mandato `reboot cancel` para cancelar el rearranque. Si la regla le bloquea el acceso, espere al próximo rearranque planificado.
 
 Si no hay acceso al sistema, entonces se utilizará un rearranque para recuperar el acceso. Tras el rearranque, el sistema leerá el archivo de configuración que permanece sin cambios a según las entradas previas descartadas.
 

@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 备份配置
+{: #backing-up-a-configuration}
+
 对系统进行更改后，需要备份配置命令。这可以通过运行操作方式命令 `show configuration commands`，然后保存输出（例如，通过从 SSH 会话复制和粘贴）来完成。这将视为配置的最小备份。
 
 更完整的备份涉及生成系统的技术支持归档： 

@@ -7,7 +7,8 @@ lastupdated: "2018-11-10"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Vyatta 5400에서 IPSec 구성
+# Vyatta 5400에 IPSec 구성
+{: #configuring-ipsec-on-vyatta-5400}
 
 Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) 터널에 대해 "로컬"이라고도 합니다. 다음 각 명령은 서로 다른 기능을 수행하여 IPsec 사이트-투-사이트를 구성합니다. IPsec 사이트-투-사이트의 이 예제는 SoftLayer의 공용 네트워크의 터널을 설명하며, 사설 IPSec 사이트-투-사이트 연결에 **bond0**을 사용합니다.
 
@@ -28,7 +29,7 @@ Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) �
 
   * 모든 디바이스가 PFS(Perfect Forward Secrecy)를 사용할 수 없으므로 이를 사용 안함으로 설정합니다. (명령의 esp는 암호화의 두 번째 파트입니다.)
   * 사용할 암호화 유형을 지정합니다. 설정되지 않으면 디바이스에서는 기본값으로 **aes128**을 사용합니다.
-  * **sha-1** 해시 기능을 사용합니다.<br/><br/>
+  * `has` 함수 **sha-1**을 사용합니다.<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -93,6 +94,6 @@ Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) �
 *set vpn ipsec site-to-site peer **50.97.240.219** tunnel 1 remote prefix **10.54.9.152/29***(로컬 접두부 및 원격 접두부가 스왑됨)
 
 * 새 명령을 원격 서버로 복사하여 붙여넣고(구성 모드여야 함) commit를 입력한 후 저장하십시오.
-* run show vpn ike sa를 입력하여 터널이 현재 확립되었는지 확인하십시오.
+* `run show vpn ike sa`를 입력하여 터널이 현재 설정되었는지 확인하십시오.
 
 요약하면 다음과 같습니다. 169.54.254.117의 IP 주소로 인터페이스에 상주하는 원격 서비스에 있는 192.168.1.2/32 서브넷에 대해서만 로컬 인터페이스(bond1, 50.97.240.219)에 상주하는 10.54.9.152/29'의 서브넷이 포함된 IP 주소만 라우팅합니다.

@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Ajout de fonctions de pare-feu à Vyatta 5400 (sans état et avec état)
+{: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
 Appliquer des jeux de règles de pare-feu à chaque interface est une méthode de tunnellisation possible avec des unités Brocade 5400 vRouter (Vyatta). Chaque interface comporte trois instances de pare-feu possibles - In, Out et Local - et des règles peuvent être appliquées à chacune d'elles. L'action par défaut est Drop, avec des règles qui permettent à un trafic spécifique d'être appliqué depuis la règle 1 à N. Dès lors qu'une correspondance est établie, le pare-feu applique l'action spécifique de la règle correspondante.
 
@@ -15,7 +16,7 @@ Pour l'une quelconque des trois instances de pare-feu ci-dessous, **une seule** 
 
 * **IN :** le pare-feu filtre les paquets entrant dans l'interface et traversant le système Brocade. Vous devrez autoriser certaines plages d'adresses IP SoftLayer à accéder aux systèmes front-end et back-end à des fins de gestion (ping, surveillance, etc.).
 * **OUT :** le pare-feu filtre les paquets sortant de l'interface. Ces paquets peuvent transiter par ou provenir du système Brocade.
-* **LOCAL:** le pare-feu filtre les paquets destinés au système Brocade vRouter proprement dit via l'interface système. Vous devez établir des restrictions sur les ports d'accès entrant dans l'unité Brocade vRouter à partir d'adresses IP externes qui ne sont pas restreintes. 
+* **LOCAL:** le pare-feu filtre les paquets destinés au système Brocade vRouter proprement dit via l'interface système. Vous devez établir des restrictions sur les ports d'accès entrant dans l'unité Brocade vRouter à partir d'adresses IP externes qui ne sont pas restreintes.
 
 Suivez les étapes décrites ci-dessous pour définir un exemple de règle de pare-feu afin de désactiver le protocole ICMP (Internet Control Message Protocol) *(ping - IPv4 echo reply message)* sur les interfaces de votre unité Brocade 5400 vRouter (il s'agit d'une action sans état ; une action avec état sera examinée ultérieurement) :
 
@@ -29,7 +30,7 @@ Suivez les étapes décrites ci-dessous pour définir un exemple de règle de pa
 
 A présent, si vous essayez d'envoyer une commande PING à votre unité Brocade 5400 vRouter, vous ne recevrez plus aucune réponse.
 
-Pour que des règles de pare-feu puissent être affectées à du trafic routé, des règles doivent être appliquées aux **interfaces** ou aux **create zones** de l'unité Brocade 5400 vRouter, puis être appliquées aux zones.
+Pour que des règles de pare-feu puissent être affectées à du trafic routé, des règles doivent être appliquées aux **interfaces** ou aux **zones créées** de l'unité Brocade 5400 vRouter, puis être appliquées aux zones.
 
 Pour cet exemple, des zones seront créées pour les réseaux locaux virtuels qui ont été utilisés jusqu'à maintenant.
 
@@ -47,7 +48,7 @@ bond1.1894 = réservé à un usage ultérieur
 
 **Création de règles de pare-feu**
 
-Avant de créer effectivement les zones, il convient de créer les règles de pare-feu qui doivent être appliquées aux zones. Créer les règles avant les zones vous permet de les appliquer immédiatement, au lieu de créer la zone, puis les règles, et de devoir revenir à la zone pour l'application de règle. 
+Avant de créer effectivement les zones, il convient de créer les règles de pare-feu qui doivent être appliquées aux zones. Créer les règles avant les zones vous permet de les appliquer immédiatement, au lieu de créer la zone, puis les règles, et de devoir revenir à la zone pour l'application de règle.
 
 **Remarque :** une instruction d'action par défaut est définie pour les zones et pour les jeux de règles. A l'aide de Zone-Policies, l'action par défaut est définie par l'instruction zone-policy et est représentée par la règle 10,000. De plus, il est important de garder à l'esprit que l'action par défaut d'un jeu de règles de pare-feu est **drop** pour tout le trafic.
 
@@ -96,7 +97,7 @@ La règle de pare-feu suivante que nous allons créer sera appliquée à notre z
 
 **Remarque :** les règles de pare-feu doivent suivre un flux sortant via **prod** vers **dmz**. Utilisez la commande suivante pour faciliter le traitement des incidents liés au flot réseau : *sudo tcpdump -i any host 10.52.69.202*.
 
-**Create Zones**
+**Création de zones**
 
 Les zones sont la représentation logique d'une interface. Les commandes suivantes permettent d'effectuer ce qui suit :
 

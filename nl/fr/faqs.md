@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# Foire aux questions
-Cette section présente les questions courantes sur l'utilisation d'IBM Virtual Router Appliance (VRA).
+# Foire aux questions concernant IBM Virtual Router Appliance
+{: #faqs-for-ibm-virtual-router-appliance}
+
+Cette section présente les questions courantes sur l'utilisation d'IBM© Virtual Router Appliance (VRA).
 
 ## Qu'est-ce qu'un dispositif VRA ? 
 {:faq}
@@ -89,7 +91,7 @@ De la même façon, si un dispositif VRA ou un pare-feu est ignoré une fois la 
 ## Quels produits de pare-feu sont offerts par IBM ?
 {:faq}
 
-Vous trouverez une comparaison détaillée de tous les produits de pare-feu offerts dans IBM Cloud en lisant cette [rubrique ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](/docs/infrastructure/fortigate-10g/explore-firewalls.html#explore-firewalls){: new_window}. 
+Vous trouverez une comparaison détaillée de tous les produits de pare-feu offerts dans IBM Cloud en lisant [cette rubrique](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls). 
 
 ## Un dispositif VRA peut-elle entraver le support client ? 
 {:faq}

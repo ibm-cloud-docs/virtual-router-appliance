@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 查看所有 VRA
+{: #view-all-vras}
 
 在客户门户网站中的“网关设备”屏幕中，可以显示和访问所有包含虚拟路由器设备的网关设备。  
 

@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 管理防火牆
+# 管理 IBM 防火牆
+{: #manage-your-ibm-firewalls}
+
 Virtual Router Appliance (VRA) 能夠處理防火牆規則，以保護透過裝置遞送的 VLAN。VRA 中的防火牆可以分成兩個步驟：
 
 1. 定義一組以上的規則。
@@ -85,7 +87,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 在規則集 `ALLOW_LEGACY` 中，定義了兩個規則。第一個規則會捨棄來自名為 `network-group1` 之位址群組的任何資料流量。第二個規則會捨棄並記載目的地為 telnet 埠 (`tcp/23`) 且來自名為 `network-group2` 之位址群組的任何資料流量。default-action 表示接受任何其他內容。
 
 ## 容許資料中心存取
-IBM 提供數個 IP 子網路，以提供服務及支援給資料中心內執行的系統。例如，DNS 解析器服務在 `10.0.80.11` 和 `10.0.80.12` 上執行。佈建和支援期間會使用其他子網路。您可以在[這裡](/docs/infrastructure/hardware-firewall-dedicated/ips.html)找到資料中心內所使用的 IP 範圍。
+IBM© 提供數個 IP 子網路，以提供服務及支援給在資料中心內執行的系統。例如，DNS 解析器服務在 `10.0.80.11` 和 `10.0.80.12` 上執行。佈建和支援期間會使用其他子網路。您可以在[本主題](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges)中，找到資料中心所使用的 IP 範圍。
 
 您可以將適當的 `SERVICE-ALLOW` 規則放在防火牆規則集開頭，並搭配 `accept` 的動作來容許資料中心存取。規則集必須套用的位置，取決於要實作的遞送和防火牆設計。
 

@@ -15,10 +15,11 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # AT&T Vyatta 5400 vRouter - Programmkorrekturen wegen Sicherheitslücke
+{: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
 **Datum: 30. August 2018**
 
-In diesem Dokument sind die Programmkorrekturen der Sicherheitslücken für den Vyatta 5400 vRouter aufgelistet. Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird die höchste CVSS-Bewertung aufgelistet.  
+In diesem Dokument sind die Programmkorrekturen der Sicherheitslücken für den Vyatta 5400 vRouter aufgelistet. Wenn mehrere CVE-Nummern von einer einzigen Aktualisierung betroffen sind, wird die höchste CVSS-Bewertung aufgelistet. 
 
 ## 6.7R14S10
 
@@ -28,7 +29,7 @@ Freigabe am 30. August 30 2018
 
 | Problemnummer | Priorität | Zusammenfassung |
 | --- | --- | --- |
-| VSE-9911 | Hoch | 6.7R13S3-Upgrade auf 6.7R14S9 führt zu Fehler “rpc_scheddetected stalls on CPUs/tasks” sowie Systemabsturz und Blockierung.|
+| VSE-9911 | Hoch | 6.7R13S3-Upgrade auf 6.7R14S9 führt zu Fehler “rpc_scheddetected stalls on CPUs/tasks” sowie Systemabsturz und Blockierung. |
 
 Gelöste Probleme in 6.7R14S10
 
@@ -41,7 +42,7 @@ Freigabe am 16. Juli 2018
 | Problemnummer | CVSS-Bewertung | Empfehlung | Zusammenfassung |
 | --- | --- | --- | --- |
 | VSE-9909 | 6.5 | DSA-4229-1 | CVE-2018-5388, CVE-2018-10811: Debian DSA-4229- 1: Strongswan Sicherheitsupdate |
-| VSE-9903  | 9.8 | DLA-1390-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018-1125, CVE-2018-1126: Debian DLA-1390-1: procps Sicherheitsupdate |
+| VSE-9903  | 9.8 | DLA-1390-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018-1125, CVE-2018-1126: Debian DLA-1390-1: procps Sicherheitsupdate  |
 
 Behobene Sicherheitslücken in 6.7R14S8
 
@@ -98,7 +99,7 @@ Freigabe am 6. März 2018.
 
 | Problemnummer | Priorität | Zusammenfassung |
 | --- | --- | --- |
-| VSE-9880 | Niedrig | Inaktivieren von RPF source-validation entfernt nicht die Einstellung von allen Schnittstellen.|
+| VSE-9880 | Niedrig |  Inaktivieren von RPF source-validation entfernt nicht die Einstellung von allen Schnittstellen. |
 
 Gelöste Probleme in 6.7R14S6
 
@@ -178,7 +179,7 @@ Freigabe am 10. Oktober 2017.
 
 | Problemnummer | Priorität | Zusammenfassung |
 | --- | --- | --- |
-| VSE-9837 | Niedrig | “show system commit different” zeigt, dass die Berechtigung nach einem Upgrade von 6.7R11S9 auf 6.7R13S3 verweigert wird.|
+| VSE-9837 | Niedrig | “show system commit different” zeigt, dass die Berechtigung nach einem Upgrade von 6.7R11S9 auf 6.7R13S3 verweigert wird. |
 
 Gelöste Probleme in 6.7R14S2
 
@@ -199,7 +200,7 @@ Freigabe am 22. September 2017.
 
 | Problemnummer | Priorität | Zusammenfassung |
 | --- | --- | --- |
-| VSE-9831 | Hoch | MTU-Einstellung wird nach dem Warmstart an einer VIF-Schnittstelle auf den Standard zurückgesetzt.|
+| VSE-9831 | Hoch | MTU-Einstellung wird nach dem Warmstart an einer VIF-Schnittstelle auf den Standard zurückgesetzt. |
 
 Gelöste Probleme in 6.7R14S1
 
@@ -214,6 +215,6 @@ Gelöste Probleme in 6.7R14S1
 
 Behobene Sicherheitslücken in 6.7R14S1
 
-**Hinweis:** Die hier enthaltenen Informationen stellen weder ein Angebot, noch eine verbindliche Zusage, noch eine Darstellung oder Gewährleistung seitens AT&T dar. Änderungen sind vorbehalten. Diese Informationen dürfen nur nach einer schriftlichen Genehmigung außerhalb von AT&T-Unternehmen verwendet oder weitergegeben werden. 
+**Hinweis:** Die hier enthaltenen Informationen stellen weder ein Angebot, noch eine verbindliche Zusage, noch eine Darstellung oder Gewährleistung seitens AT&T dar. Änderungen sind vorbehalten. Diese Informationen dürfen nur nach einer schriftlichen Genehmigung außerhalb von AT&T-Unternehmen verwendet oder weitergegeben werden.
 
 © 2018 AT&T Intellectual Property. Alle Rechte vorbehalten. AT&T und das Globe-Logo sind eingetragene Marken von AT&T Intellectual Property. Alle anderen Marken sind Eigentum der jeweiligen Rechtsinhaber.

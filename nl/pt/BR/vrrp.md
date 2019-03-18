@@ -13,7 +13,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# HA e VRRP
+# Trabalhando com alta disponibilidade e VRRP
+{: #working-with-high-availability-and-vrrp}
+
 O Virtual Router Appliance (VRA) suporta Virtual Router Redundancy Protocol (VRRP) como um protocolo de alta disponibilidade. A implementação de dispositivos é feita de uma maneira ativa/passiva, na qual uma máquina é a principal e a outra é o backup. Todas as interfaces em ambas as máquinas serão um membro do mesmo "sync-group", portanto, se uma interface tiver uma falha, as outras interfaces no mesmo grupo também falharão e o dispositivo deixará de ser principal. O backup atual detectará que o principal não está mais transmitindo mensagens keepalive/pulsação e assumirá o controle dos IPs virtuais VRRP e se tornará principal.
 
 O VRRP é a parte mais importante da configuração ao provisionar Gateways. A funcionalidade de alta disponibilidade depende das mensagens de pulsação, portanto, é crítico certificar-se de que elas não estejam bloqueadas.
@@ -130,7 +132,7 @@ Se for necessário forçar um failover do VRRP, ele poderá ser obtido executand
 
 `vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
 
-O ID do grupo é o ID do grupo VRRP das interfaces nativas e, se mencionado acima, poderá ser diferente em seu par.
+O ID do grupo é o ID do grupo de vrrp das interfaces nativas e, conforme mencionado acima, pode ser diferente em seu par.
 
 ## Sincronização de conexão
 Quando dois dispositivos VRA estão em um par de HA, pode ser útil rastrear conexões stateful entre os dois dispositivos para que, se um failover ocorrer, o estado atual de todas as conexões que estão no dispositivo com falha seja replicado para o dispositivo de backup, para que não seja necessário que quaisquer sessões ativas atuais (como conexões SSL) sejam reconstruídas a partir do zero, o que pode resultar em uma experiência do usuário comprometida.
@@ -156,7 +158,7 @@ O S.O. Vyatta versão 1801p e superior inclui um novo comando `vrrp`.
 
 Para minimizar o tráfego de rede, apenas o Principal de cada roteador virtual envia mensagens periódicas de Propaganda de VRRP. Um roteador de Backup não tentará priorizar o Principal, a menos que ele tenha prioridade mais alta. Isso elimina a interrupção do serviço, a menos que um caminho mais preferencial se torne disponível. Também é possível proibir, administrativamente, todas as tentativas de preempção. Se o Principal se tornar indisponível, o Backup com prioridade mais alta será transicionado para Principal após um breve atraso, fornecendo uma transição controlada da responsabilidade do roteador virtual com interrupção mínima do serviço.
 
-**NOTA:** nas implementações provisionadas do IBM Cloud, o valor de atraso inicial é configurado para o valor padrão. Talvez você queira alterar isso a seu critério ao testar seus métodos de failover e de alta disponibilidade.
+**NOTA:** em implementações provisionadas do IBM© Cloud, o valor de atraso de início é configurado para o valor padrão. Talvez você queira alterar isso a seu critério ao testar seus métodos de failover e de alta disponibilidade.
 
 
 ### Preempção vs. sem preempção
@@ -167,11 +169,11 @@ Quando a preempção for desativada, um peer de prioridade mais alta só executa
 
 ### Suposições e limitações da preempção
 
-Se os peers do VRRP tiverem sido configurados para desativar a preempção, haverá alguns casos em que a preempção poderá “parecer” ocorrer, mas, na realidade, o cenário é apenas um failover padrão do VRRP. Conforme descrito acima, o VRRP usa datagramas IP multicast como um meio de confirmar a disponibilidade do roteador Principal atualmente selecionado. Como é um protocolo da camada 3 que está detectando falha de um peer VRRP, é importante que a detecção de failover no VRRP seja atrasada até que o VRRP e a camada 1 a 2 da pilha de rede estejam prontas e convergidas. Em alguns casos, a interface de rede que está executando o VRRP pode confirmar para o protocolo que a interface está ativa, mas outros serviços subjacentes, como a Árvore de amplitude ou a Ligação, podem não ter sido concluídos. Como resultado, a conectividade IP entre os peers não pode ser estabelecida. Se isso ocorrer, o VRRP em um novo peer mais alto se tornará Principal, já que não será possível detectar mensagens VRRP do peer principal atual na rede. Após a convergência, o breve período de tempo em que há dois peers VRRP Principais resultará na lógica dual do Principal de VRRP sendo executada, o peer de prioridade mais alta permanecerá o Principal e o de prioridade mais baixa se tornará o de Backup. Esse cenário pode “parecer” demonstrar uma falha na funcionalidade “sem preempção”.
+Se os peers do VRRP tiverem sido configurados para desativar a preempção, haverá alguns casos em que a preempção poderá “parecer” ocorrer, mas, na realidade, o cenário é apenas um failover padrão do VRRP. Conforme descrito acima, o VRRP usa datagramas IP multicast como um meio de confirmar a disponibilidade do roteador Principal atualmente selecionado. Como é um protocolo da camada 3 que está detectando falha de um peer VRRP, é importante que a detecção de failover no VRRP seja atrasada até que o VRRP e a camada 1 a 2 da pilha de rede estejam prontas e convergidas. Em alguns casos, a interface de rede que está executando o VRRP pode confirmar para o protocolo que a interface está ativa, mas outros serviços subjacentes, como a Árvore de amplitude ou a Ligação, podem não ter sido concluídos. Como resultado, a conectividade IP entre os peers não pode ser estabelecida. Se isso ocorrer, o VRRP em um novo peer mais alto se tornará Principal, já que não será possível detectar mensagens VRRP do peer principal atual na rede. Após a convergência, o breve período de tempo em que há dois peers VRRP Principais resultará na lógica dual do Principal de VRRP sendo executada, o peer de prioridade mais alta permanecerá o Principal e o de prioridade mais baixa se tornará o de Backup. Esse cenário pode “aparecer” para demonstrar uma falha na funcionalidade “sem preempção”.
 
 ### Recurso de atraso de início
 
-Para acomodar os problemas associados a atraso na convergência dos níveis mais baixos da pilha de rede durante um evento de interface ativa, bem como outros fatores de contribuição, um novo recurso chamado “Atraso de inicialização” foi introduzido na correção 1801p. O recurso faz com que o estado do VRRP em uma máquina que foi “recarregada” permaneça no estado INIT até depois de um atraso predefinido, que pode ser configurado pelo operador de rede. A flexibilidade nesse valor de atraso permite que o operador de rede customize as características de sua rede e dispositivos em condições do mundo real.
+Para acomodar os problemas associados com atraso na convergência dos níveis mais baixos da pilha de rede durante um evento de interface, bem como outros fatores contributivos, um novo recurso chamado “Atraso de Inicialização” é introduzido na correção 1801p. O recurso faz com que o estado do VRRP em uma máquina que foi “recarregada” permaneça no estado INIT até depois de um atraso predefinido, que pode ser configurado pelo operador de rede. A flexibilidade nesse valor de atraso permite que o operador de rede customize as características de sua rede e dispositivos em condições do mundo real.
 
 ### Detalhes do comando
 

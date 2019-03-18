@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Gerenciar VLANs
-É possível executar uma variedade de ações da [tela Detalhes do Dispositivo de Gateway](access-gateway-details.html).
+# Gerenciando suas VLANs
+{: #managing-your-vlans}
+
+É possível executar uma variedade de ações da [tela Detalhes do Dispositivo de Gateway](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details).
 
 ## Associar uma VLAN a um Dispositivo de Gateway
 
@@ -23,7 +25,7 @@ Uma VLAN precisa ser associada a um Dispositivo de Gateway antes de poder ser ro
 
 VLANs podem ser associadas a apenas um Gateway por vez e não devem ter um firewall. Execute o procedimento a seguir para associar uma VLAN a um Gateway de Rede.
 
-1. [Acesse a tela Detalhes do Dispositivo de Gateway](access-gateway-details.html) no Portal do Cliente. 
+1. [Acesse a tela Detalhes do Dispositivo de Gateway](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) no Portal do Cliente. 
 2. Selecione a VLAN desejada na lista suspensa **Associar uma VLAN**.
 3. Clique no botão **Associar** para associar a VLAN.
 
@@ -35,7 +37,7 @@ VLANs associadas são vinculadas a um Dispositivo de Gateway, mas o tráfego den
 
 Execute o procedimento a seguir para rotear uma VLAN associada:
 
-1. [Acesse a tela Detalhes do Dispositivo de Gateway](access-gateway-details.html) no Portal do Cliente. 
+1. [Acesse a tela Detalhes do Dispositivo de Gateway](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) no Portal do Cliente. 
 2. Localize a VLAN desejada na seção VLANs Associadas.
 3. Selecione **Rotear VLAN** no menu suspenso Ações.
 4. Clique em **Sim** para rotear a VLAN. 
@@ -50,7 +52,7 @@ O bypass de uma VLAN permite que a VLAN permaneça associada ao Gateway de Rede.
 
 Execute o procedimento a seguir para efetuar bypass do roteamento de Gateway para uma VLAN:
 
-1. [Acesse a tela Detalhes do Dispositivo de Gateway](access-gateway-details.html) no Portal do Cliente. 
+1. [Acesse a tela Detalhes do Dispositivo de Gateway](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) no Portal do Cliente. 
 2. Localize a VLAN desejada na seção VLANs Associadas.
 3. Selecione **Efetuar Bypass na VLAN** no menu suspenso Ações.
 4. Clique em **Sim** para efetuar bypass no Gateway. 
@@ -63,7 +65,7 @@ VLANs podem ser vinculadas a um Dispositivo de Gateway em um momento por meio de
 
 Execute o procedimento a seguir para desassociar uma VLAN de um Dispositivo de Gateway:
 
-1. [Acesse a tela Detalhes do Dispositivo de Gateway](access-gateway-details.html) no Portal do Cliente. 
+1. [Acesse a tela Detalhes do Dispositivo de Gateway](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) no Portal do Cliente. 
 2. Localize a VLAN desejada na seção VLANs Associadas.
 3. Selecione **Desassociar** no menu suspenso **Ações**. 
 4. Clique em **Sim** para desassociar a VLAN. 
@@ -81,3 +83,29 @@ set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
 
 Os comandos acima criam duas interfaces virtuais na interface `dp0bond0`. A interface `dp0bond0.1432` processa o tráfego para a VLAN 1432 enquanto a interface `dp0bond0.1693` processa o tráfego para a VLAN 1693.
+
+## Incluir múltiplas sub-redes em uma VLAN única
+
+A seguir está uma configuração de exemplo que inclui, no final, a adição de uma sub-rede de amostra (` 159.8.67.96/28`) para uma VLAN pública (1451). O endereço para cada VIF (Interface VLAN) não é roteado no BCR (Backend Customer Router) nem no FCR (Frontend Customer Router). Ele é usado apenas para a comunicação de VRRP/alta disponibilidade entre dois Vyattas. 
+
+As sub-redes podem ser escolhidas em qualquer espaço de IP privado não utilizado. Como resultado, `10.0.0.0/8` geralmente é excluído aqui. As sub-redes de `192.168.0.0/16` foram escolhidas para os exemplos abaixo, mas as sub-redes de `172.16.0.0/12` também podem ser usadas. 
+
+O `virtual-address` é o local em que a nova sub-rede deve ser configurada. Na maioria dos casos, o endereço IP do gateway da sub-rede é o que deve ser configurado. O IP de gateway ligado ao VIF será, então, usado como o próximo endereço de gateway de qualquer servidor bare metal ou virtual configurado na nova sub-rede atrás do VRA. 
+
+O exemplo a seguir mostra `159.8.67.97/28` sendo ligado ao VIF, de modo que todo o tráfego para a sub-rede `159.8.67.98/28` pode ser gerenciado pelos VRAs.
+
+```
+set interfaces bonding dp0bond0 vif 1623 address '192.168.10.2/30'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 virtual-address '10.127.132.129/26'
+set interfaces bonding dp0bond0 vif 1750 address '192.168.20.2/30'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 virtual-address '10.126.19.129/26'
+set interfaces bonding dp0bond1 vif 788 address '192.168.150.2/30'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 virtual-address '159.8.106.129/28'
+set interfaces bonding dp0bond1 vif 1451 address '192.168.200.2/30'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.67.97/28'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.86.49/29'
+```

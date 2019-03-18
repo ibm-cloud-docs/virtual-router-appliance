@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # VLAN 라우팅
+{: #routing-your-vlans}
+
 Virtual Router Appliance는 동일한 네트워크 인터페이스(`dp0bond0` 또는 `dp0bond1`)를 통해 여러 VLAN을 라우팅할 수 있습니다. 이는 스위치 포트를 트렁크 모드로 설정하고 디바이스에 가상 인터페이스(VIF)를 구성하여 수행할 수 있습니다.
 
 예를 들어 다음과 같습니다.

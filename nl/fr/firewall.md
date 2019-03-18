@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Gérer les pare-feux
+# Gestion de vos pare-feux IBM
+{: #manage-your-ibm-firewalls}
+
 Virtual Router Appliance (VRA) a la capacité de traiter les règles de pare-feu pour protéger les réseaux locaux virtuels (VLAN) routés via l'unité. Les pare-feux dans le dispositif VRA peuvent être divisés en deux étapes :
 
 1. Définition d'un ou de plusieurs jeux de règles.
@@ -85,7 +87,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 Dans le jeu de règles `ALLOW_LEGACY`, deux règles sont définies. La première règle supprime le trafic en provenance d'un groupe d'adresses nommé `network-group1`. La deuxième règle supprime et consigne tout le trafic destiné au port telnet (`tcp/23`) du groupe d'adresses nommé `network-group2`. L'action par défaut (default-action) indique que tout le reste est accepté.
 
 ## Autorisation d'accès au centre de données
-IBM offre plusieurs sous-réseaux d'adresses IP pour fournir des services et prendre en charge des systèmes s'exécutant dans le centre de données. Par exemple, les services du programme de résolution DNS s'exécutent sur `10.0.80.11` et `10.0.80.12`. D'autres sous-réseaux sont utilisés lors de la mise à disposition et du support. Les plages d'adresses IP utilisées dans les centres de données sont présentées [ici](/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+IBM© offre plusieurs sous-réseaux d'adresses IP pour fournir des services et prendre en charge des systèmes s'exécutant dans le centre de données. Par exemple, les services du programme de résolution DNS s'exécutent sur `10.0.80.11` et `10.0.80.12`. D'autres sous-réseaux sont utilisés lors de la mise à disposition et du support. Les plages d'adresses IP utilisées dans les centres de données sont présentées dans [cette rubrique](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges).
 
 Vous pouvez autoriser l'accès au centre de données en mettant les règles `SERVICE-ALLOW` adéquates au début des jeux de règles de pare-feu avec l'action `accept`. L'emplacement d'application du jeu de règles dépend de la conception de routage et de pare-feu implémentée.
 

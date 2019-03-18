@@ -14,9 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Obtendo Ajuda e Suporte
+# Obtendo ajuda e suporte para o IBM Virtual Router Appliance
+{: #getting-help-and-support-for-ibm-virtual-router-appliance}
 
-Se você tiver problemas ou dúvidas ao usar o IBM Virtual Router Appliance, poderá obter ajuda procurando por informações ou fazendo perguntas por meio de um dos fóruns listados abaixo. Também é possível abrir um chamado de
+Se você tiver problemas ou perguntas ao usar o IBM© Virtual Router Appliance, será possível obter ajuda procurando informações ou fazendo perguntas por meio de um dos fóruns listados abaixo. Também é possível abrir um chamado de
 suporte.
 
 Ao usar os fóruns para fazer uma pergunta, marque a sua pergunta para que ela seja vista pelas equipes de desenvolvimento do IBM Cloud.
@@ -26,6 +27,6 @@ Ao usar os fóruns para fazer uma pergunta, marque a sua pergunta para que ela s
 
 Consulte
 [Obtendo
-ajuda](/docs/support/index.html#getting-help) para obter mais detalhes sobre o uso dos fóruns.
+ajuda](/docs/get-support?topic=get-support-using-avatar) para obter mais detalhes sobre o uso dos fóruns.
 
-Para obter informações sobre a abertura de um chamado de suporte IBM ou sobre níveis de suporte e gravidades de chamados, veja [Entrando em contato com o suporte](/docs/support/index.html#contacting-support).
+Para obter informações sobre a abertura de um chamado de suporte IBM ou sobre níveis de suporte e gravidades de chamados, veja [Entrando em contato com o suporte](/docs/get-support?topic=get-support-contacting-bluemix-support-dedicated-local).

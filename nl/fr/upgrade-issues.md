@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Problèmes liés à la mise à niveau
+{: #upgrade-issues}
+
 Après une mise à niveau et un redémarrage d'une nouvelle version du système d'exploitation Vyatta, il se peut que vous ne puissiez pas exécuter des commandes utilisateur.
 
 Par exemple :

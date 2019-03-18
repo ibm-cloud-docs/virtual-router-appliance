@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Vyatta 5400 一般移轉問題
-下表說明從 Vyatta 5400 裝置移轉至 IBM Virtual Router Appliance 之後您可能遇到的一般問題或行為變更。在某些情況下，它還包括能處理問題的暫行解決方法。
+{: #vyatta-5400-common-migration-issues}
+
+下表說明從 Vyatta 5400 裝置移轉至 IBM© Virtual Router Appliance 之後您可能遇到的一般問題或行為變更。在某些情況下，它還包括能處理問題的暫行解決方法。
 
 ## 有狀態防火牆的介面型 Global-State 原則
 
@@ -313,10 +315,10 @@ set firewall name localGateway rule 300 state new 'enable'
 
 * 最新計數及最新時間的選項已淘汰。
 
-* 因為前一個問題，所以此規則無法如預期運作，並且將封鎖對已套用介面的所有 SSH 連線。
+* 因為先前的問題，此規則無法如預期運作，並且將封鎖對已套用之介面的所有 SSH 連線。
 
 ### 暫行解決方法
-改用 CPP。
+請改用 CPP。
 
 ## 設定系統連線追蹤問題
 
@@ -352,7 +354,7 @@ set system conntrack timeout tcp syn-sent '120'
 set system conntrack timeout tcp time-wait '60'
 ```
 
-## 時間型防火牆
+## 以時間為基礎的防火牆
 
 ### 問題
 ```
@@ -384,7 +386,7 @@ set policy route change-mss rule 1 set tcp-mss '1436'
 set policy route change-mss rule 1 tcp flags 'SYN
 ```
 
-## S-S Ipsec VPN 中特定的應用程式或埠中斷
+## S-S IPsec VPN 中特定的應用程式或埠中斷
 
 ### 問題
 

@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Vyatta 5400 的基本配置
+{: #basic-configuration-of-vyatta-5400}
 
 执行以下过程来配置 Vyatta 5400。
 
@@ -89,6 +90,6 @@ CLI（命令行界面）中有两种命令方式：操作和配置。
   * 输入 *save* 以保存设置。
   * 输入 *exit* 以切换回操作方式。
 
-3\. 输入 *show interfaces* 以检查刚才落实的设置。
+3. 输入 *show interfaces* 以检查刚才落实的设置。
 
-4\. 通过 Brocade 5400 vRouter 设备路由其余任何 VLAN。
+4. 通过 Brocade 5400 vRouter 设备路由其余任何 VLAN。

@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 路由 VLAN
+{: #routing-your-vlans}
+
 虚拟路由器设备能够通过同一网络接口（例如，`dp0bond0` 或 `dp0bond1`）路由多个 VLAN。实现方法是将交换机端口设置为中继方式，并在设备上配置虚拟接口 (VIF)。
 
 例如：

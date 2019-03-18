@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Synchronisation des configurations à haute disponibilité
+{: #synchronizing-high-availability-configurations}
+
 Deux unités VRA (Virtual Router Appliance) dans une paire à haute disponibilité (HA) doivent avoir une configuration suffisamment synchronisée pour que les deux unités se comportent de la même manière. Cette synchronisation s'effectue via des mappes de synchronisation de configuration (`configuration sync-maps`) et vous pouvez sélectionner les parties de la configuration à synchroniser. Si vous effectuez une modification sur une machine, la configuration marquée sera envoyée à l'autre unité.
 
 **REMARQUE :** cela permet de synchroniser et sauvegarder la configuration active de l'unité locale sur l'unité distante. Cependant, étant donné qu'il s'agit d'une étape du processus de validation, elle ne sauvegarde pas la configuration sur l'unité locale. 

@@ -15,12 +15,13 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Renombrar un VRA
+{: #renaming-a-vra}
 
 A las pasarelas de red se les proporciona un nombre exclusivo que ayuda a los usuarios a identificarlas. El nombre de una pasarela puede cambiarse en cualquier momento. Se recomienda utilizar un convenio de denominación coherente para identificar las pasarelas más fácilmente.
 
 Realice el procedimiento siguiente para renombrar una pasarela de red:
 
-1. [Acceda a la pantalla Detalles de dispositivo de pasarela](access-gateway-details.html) en el Portal de clientes. 
+1. [Acceda a la pantalla Detalles de dispositivo de pasarela](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) en el Portal de clientes. 
 2. Pulse el menú desplegable **Acciones** y seleccione **Renombrar pasarela**.
 3. Especifique el nuevo nombre de pasarela en el campo **Nombre de pasarela**.
 4. Pulse **Aceptar** para guardar los cambios. 

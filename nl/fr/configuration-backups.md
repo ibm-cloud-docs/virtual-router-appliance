@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Sauvegarde d'une configuration
+{: #backing-up-a-configuration}
+
 Les commandes de configuration doivent être sauvegardées en cas de changement apporté au système. Cette opération s'effectue en exécutant la commande du mode opérationnel `show configuration commands` puis en sauvegardant la sortie (par exemple en effectuant un copier-coller depuis la session SSH). C'est ce que l'on considère comme une sauvegarde minimale de la configuration.
 
 Une sauvegarde plus complète implique la génération d'une archive de support technique pour le système :   

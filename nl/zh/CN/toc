@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance/about.html" path="infrastructure/virtual-router-appliance"}
+{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
 IBM 虚拟路由器设备
 
     {: .navgroup id="learn"}
@@ -15,18 +15,15 @@ IBM 虚拟路由器设备
         upgrade-os.md
         upgrade-issues.md
 
-    [探索防火墙](../fortigate-10g/explore-firewalls.html)
+    /fortigate-10g/fortigate-10g-exploring-firewalls
+    external-resources.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    step-by-step-pages.md
-
-    {: .topicgroup}
-    执行 VRA 基本配置
-        access-gateway-appliances.md
-        access-gateway-details.md
-        vra-basics.md
-        rename-gateway.md
+    access-gateway-appliances.md
+    access-gateway-details.md
+    vra-basics.md
+    rename-gateway.md
 
     {: .topicgroup}
     使用 VLAN
@@ -60,7 +57,7 @@ IBM 虚拟路由器设备
         apis.md
         [虚拟路由器设备 API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
-    [IBM Cloud IP 范围](../hardware-firewall-dedicated/ips.html)
+    /hardware-firewall-dedicated/hardware-firewall-dedicated-ibm-cloud-ip-ranges
 
     {: .topicgroup}
     旧 Vyatta 5400
@@ -77,12 +74,11 @@ IBM 虚拟路由器设备
         [Vyatta 5400 迁移指南](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
         migration-issues.md
 
-    external-resource.md
+    faqs.md
+    technical-faqs.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    faqs.md
-    technical-faqs.md
     vra-docs.md
     getting-help.md
     {: .navgroup-end}

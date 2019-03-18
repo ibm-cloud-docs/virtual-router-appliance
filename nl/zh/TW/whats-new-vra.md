@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 
-# 新增功能
-瞭解 IBM Virtual Router Appliance (VRA) 的新增特性及更新特性。
+# IBM Virtual Router Appliance 的最近更新
+{: #recent-updates-for-ibm-virtual-router-appliance}
+
+瞭解 IBM© Virtual Router Appliance (VRA) 的新增特性及更新特性。
 
 ## 2018 年 8 月
 ### Brocade Operating System 18.x 版
@@ -24,15 +26,15 @@ lastupdated: "2018-11-10"
 
 下列各主題討論 18.x VRA 的新增特性：
 
-* [如何設定使用區域防火牆的 IPsec 通道](vra-ipsec.html)
-* [使用 IPsec 及區域防火牆配置 VFP 介面](vra-vfp.html)
-* [搭配使用 NAT 與字首型 IPsec](vra-nat.html)
-* [VFP 介面疑難排解](vra-vfp-troubleshooting.html)
+* [設定使用區域防火牆的 IPsec 通道](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls)
+* [使用 IPsec 及區域防火牆配置 VFP 介面](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)
+* [搭配使用 NAT 與以字首為基礎的 IPsec](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-using-nat-with-prefix-based-ipsec)
+* [VFP 介面疑難排解](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-troubleshooting-your-vfp-interface)
 
-如果您是從 Vyatta 5400 移轉，則升級至 18.x 的最佳方式是透過完整 OS 重新載入的[一般程序](upgrade-os.html)。
+如果您是從 Vyatta 5400 移轉，則升級至 18.x 的最佳方式是透過完整 OS 重新載入的[一般程序](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os)。
 
-因為 Vyatta 5400 與 Virtual Router Appliance 之間的功能沒有簡單的一對一對映，所以建立 VRA 的基準線配置會有所幫助。「IBM 事業夥伴」WanClouds 可協助您完成此處理程序，並提供有關建立與您 VRA 上 Vyatta 5400 類似之功能的指引。
+因為 Vyatta 5400 與 Virtual Router Appliance 之間的功能沒有簡單的一對一對映，所以建立 VRA 的基準線配置會有所幫助。IBM 合作夥伴 WanClouds 可協助您完成此處理程序，並提供有關建立與您 VRA 上 Vyatta 5400 類似之功能的指引。
 
-如需在此升級處理程序期間所遇到之一般問題的相關資訊，請參閱[其他文件](/docs/infrastructure/virtual-router-appliance/migration-issues.html#vyatta-5400-common-migration-issues)。
+如需在此升級處理程序期間所遇到之一般問題的相關資訊，請參閱[其他文件](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)。
 
 

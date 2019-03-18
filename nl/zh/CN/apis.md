@@ -14,9 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# API 参考
+# IBM 虚拟路由器设备的 API 参考
+{: #api-reference-for-ibm-virtual-router-appliance}
 
-SoftLayer® 应用程序编程接口 (SLAPI) 是开发者和系统管理员与 IBM Cloud 后端系统进行直接交互的开发接口。
+SoftLayer® 应用程序编程接口 (SLAPI) 是开发者和系统管理员与 IBM© Cloud 后端系统进行直接交互的开发接口。
 
 SLAPI 支持客户门户网站中的许多功能，这通常意味着如果某个交互可在客户门户网站中执行，那么也可以在该 API 中运行。由于在 API 中可以通过编程方式与客户门户网站环境的所有部分进行交互，因此可以使用该 API 来自动执行任务。
 
@@ -24,7 +25,6 @@ SLAPI 是一个远程过程调用 (RPC) 系统。每个调用都涉及向 API �
 
 有关 SLAPI（现在称为“IBM 虚拟路由器设备 API”）的更多信息，请参阅 SoftLayer 开发网络 (SLDN) 中的以下资源：
 
-- [SoftLayer API 概述 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/article/softlayer-api-overview?cm_mc_uid=71397258840814855542946&cm_mc_sid_50200000=1508536023){: new_window} 
 - [SoftLayer_Network_Gateway API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 
 - [SoftLayer_Network_Gateway_Member API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window} 
 - [SoftLayer_Network_Gateway_Vlan API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window} 

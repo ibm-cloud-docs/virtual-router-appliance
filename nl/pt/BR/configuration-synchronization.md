@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Sincronizar configurações de alta disponibilidade
+# Sincronizando configurações de alta disponibilidade
+{: #synchronizing-high-availability-configurations}
+
 Dois Virtual Router Appliances (VRA) em um par de Alta disponibilidade (HA) devem ter suas configurações sincronizadas suficientemente para que ambos os dispositivos se comportem de maneira semelhante. Isso é feito por meio de `mapas de sincronização de configuração` e é possível escolher qual parte da configuração será sincronizada. Se você fizer uma mudança em uma máquina, enviará por push a configuração marcada para o outro dispositivo.
 
 **NOTA:** isso sincroniza e salva a configuração de execução do dispositivo local no dispositivo remoto. No entanto, como uma etapa do processo de confirmação, a configuração não seria salva no dispositivo local. 

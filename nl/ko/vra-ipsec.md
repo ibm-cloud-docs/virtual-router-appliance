@@ -14,10 +14,12 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 구역 방화벽에 대해 작업하는 IPsec 터널 설정 방법
-Virtual Router Appliance의 이전 버전에서, 정책 기본 라우팅을 사용하는 IPsec 터널은 구역 방화벽과 잘 작동하지 않았습니다. 버전 18.01에는, 이 문제를 해결하는 새로운 명령 세트가 있으며 이러한 명령은 지정된 터널에서 트래픽을 사용으로 설정하기 위해 "가상 기능 지점"을 사용하며, 여기에서 기능 지점은 구역 정책 구성에 포함할 엔드포인트를 제공하는 인터페이스의 역할을 합니다. 
+# 구역 방화벽에 대해 작업하는 IPsec 터널 설정
+{: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
 
-두 개 시스템 간의 IPsec을 사용하는 두 시스템의 예제 구성은 다음과 같습니다. 
+Virtual Router Appliance의 이전 버전에서, 정책 기본 라우팅을 사용하는 IPsec 터널은 구역 방화벽과 잘 작동하지 않았습니다. 버전 18.01에는, 이 문제를 해결하는 새로운 명령 세트가 있으며 이러한 명령은 지정된 터널에서 트래픽을 사용으로 설정하기 위해 "가상 기능 지점"을 사용하며, 여기에서 기능 지점은 구역 정책 구성에 포함할 엔드포인트를 제공하는 인터페이스의 역할을 합니다.
+
+두 개 시스템 간의 IPsec을 사용하는 두 시스템의 예제 구성은 다음과 같습니다.
 
 ###시스템 A
 ```
@@ -53,7 +55,7 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-두 개 시스템 사이에 172.16.x.x 트래픽을 라우팅하는 일반 터널을 설정합니다. 시스템 B에 테스트할 엔드포인트를 제공하기 위해 루프백 주소로 172,16.100.1이 있는 반면, 시스템 A에는 터널에서 소스 트래픽을 제공하기 위해 라우팅된 VLAN에 가상 머신이 있습니다.  
+두 개 시스템 사이에 172.16.x.x 트래픽을 라우팅하는 일반 터널을 설정합니다. 시스템 B에 테스트할 엔드포인트를 제공하기 위해 루프백 주소로 172,16.100.1이 있는 반면, 시스템 A에는 터널에서 소스 트래픽을 제공하기 위해 라우팅된 VLAN에 가상 머신이 있습니다. 
 
 여기에서 결과를 볼 수 있습니다.
 
@@ -70,7 +72,7 @@ PING 172.16.100.1 (172.16.100.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 44.578/44.750/44.993/0.244 ms
 ```
 
-이 IPsec 터널 전체에서 양방향 트래픽을 보여줍니다. 다음으로, 단순 "allow all" 구역 정책을 시스템 A의 모든 인터페이스에 적용할 수 있습니다. 
+이 IPsec 터널 전체에서 양방향 트래픽을 보여줍니다. 다음으로, 단순 "allow all" 구역 정책을 시스템 A의 모든 인터페이스에 적용할 수 있습니다.
 
 ```
 set security firewall name ALLOWALL default-action 'drop'
@@ -85,7 +87,7 @@ set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
  
-그런 다음 세 개 모든 인터페이스 사이에 정책을 추가하십시오. 
+그런 다음 세 개 모든 인터페이스 사이에 정책을 추가하십시오.
 
 ```
 set security zone-policy zone INTERNET interface 'dp0bond1'

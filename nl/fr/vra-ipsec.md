@@ -15,7 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Configuration d'un tunnel IPsec qui fonctionne avec des pare-feux de zone
-Dans les versions précédentes du dispositif VRA (Virtual Router Appliance), les tunnels IPsec utilisant le routage basé sur une règle ne fonctionnaient pas bien avec des pare-feux de zone. La version 18.01 inclut un nouveau groupe de commandes qui gère ce problème, en utilisant des "points de fonction virtuels" pour activer le trafic à partir des tunnels désignés, le point de fonction agissant comme une interface qui fournit un noeud final à inclure dans une configuration de stratégie de zone. 
+{: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
+
+Dans les versions précédentes du dispositif VRA (Virtual Router Appliance), les tunnels IPsec utilisant le routage basé sur une règle ne fonctionnaient pas bien avec des pare-feux de zone. La version 18.01 inclut un nouveau groupe de commandes qui gère ce problème, en utilisant des "points de fonction virtuels" pour activer le trafic à partir des tunnels désignés, le point de fonction agissant comme une interface qui fournit un noeud final à inclure dans une configuration de stratégie de zone.
 
 Exemple de configuration de deux machines avec IPsec entre elles :
 
@@ -53,7 +55,7 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-Ces commandes permettent de configurer un tunnel générique qui achemine le trafic 172.16.x.x entre les deux machines. La machine B est dotée de l'adresse de bouclage 172,16.100.1 afin de fournir un point final pour les tests, tandis que la machine A est dotée d'une machine virtuelle sur un VLAN routé pour fournir le trafic source à travers le tunnel.  
+Ces commandes permettent de configurer un tunnel générique qui achemine le trafic 172.16.x.x entre les deux machines. La machine B est dotée de l'adresse de bouclage 172,16.100.1 afin de fournir un point final pour les tests, tandis que la machine A est dotée d'une machine virtuelle sur un VLAN routé pour fournir le trafic source à travers le tunnel. 
 
 Résultat :
 

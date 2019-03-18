@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# 技術についてのよくあるご質問 (FAQ)
-以下のよくある質問は、IBM 仮想ルーター・アプライアンス (VRA) の構成と、Vyatta 5400 から VRA へのマイグレーションに関するものです。
+# IBM 仮想ルーター・アプライアンスの技術的な FAQ
+{: #technical-faqs-for-ibm-virtual-router-appliance}
+
+以下のよくある質問は、IBM© 仮想ルーター・アプライアンス (VRA) の構成と、Vyatta 5400 から VRA へのマイグレーションに関するものです。
 
 ## プライベート VLAN 上にあるホストからインターネットへのトラフィックを許可するにはどうすればよいですか？
 {:faq}

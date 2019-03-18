@@ -15,7 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Configuration d'une interface VFP avec IPsec et des pare-feux de zone
-Lorsqu'un datagramme IPSec arrive, il est traité via les règles de pare-feu, puis désencapsulé. Le nouveau datagramme qui émerge n'est pas du tout associé à une interface. Normalement, ce n'est pas un problème, et il peut accéder à l'interface de destination, mais des pare-feux de zone empêcheront la progression du datagramme. Tout datagramme qui ne provient pas d'une interface dans une stratégie de zone est abandonné. Cependant, une interface VFP informe le pare-feu de zone que le datagramme ne provenait pas d'une interface, ce qui permet l'application des règles.  
+{: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
+
+Lorsqu'un datagramme IPSec arrive, il est traité via les règles de pare-feu, puis désencapsulé. Le nouveau datagramme qui émerge n'est pas du tout associé à une interface. Normalement, ce n'est pas un problème, et il peut accéder à l'interface de destination, mais des pare-feux de zone empêcheront la progression du datagramme. Tout datagramme qui ne provient pas d'une interface dans une stratégie de zone est abandonné. Cependant, une interface VFP informe le pare-feu de zone que le datagramme ne provenait pas d'une interface, ce qui permet l'application des règles. 
 
 Pour configurer une interface VFP afin qu'elle fonctionne avec du trafic IPsec, commencez par créer un point de fonction en définissant l'interface VFP avec une seule adresse IP :
 
@@ -53,7 +55,7 @@ PING 172.16.100.1 (172.16.100.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 44.377/44.728/44.996/0.243 ms
 ```
 
-Il est possible d'utiliser la même interface VFP sur plusieurs tunnels ou de créer différentes interfaces VFP pour d'autres tunnels, juste pour s'assurer que les interfaces VFP supplémentaires se trouvent dans une zone et sont associées à des règles qui permettent le trafic pour des trames désencapsulées. 
+Il est possible d'utiliser la même interface VFP sur plusieurs tunnels ou de créer différentes interfaces VFP pour d'autres tunnels, juste pour s'assurer que les interfaces VFP supplémentaires se trouvent dans une zone et sont associées à des règles qui permettent le trafic pour des trames désencapsulées.
 
 Il est également possible d'ajouter des interfaces VFP à leur propre zone. Par exemple :
 
@@ -63,4 +65,4 @@ set security zone-policy zone TUNNEL interface 'vfp0'
 set security zone-policy zone TUNNEL to SERVERS firewall 'ALLOWALL'
 ```
 
-Même si l'interface VFP est une interface "réelle" qui peut être surveillée à l'aide de commandes, telles que `tshark`, et qui peut router le trafic directement, il n'est pas utile d'effectuer ces actions. Le trafic qui arrive à l'autre extrémité et qui ne correspond pas à la stratégie du tunnel sera supprimé. Une interface VFP n'est pas aussi polyvalent qu'une interface VTI. 
+Même si l'interface VFP est une interface "réelle" qui peut être surveillée à l'aide de commandes, telles que `tshark`, et qui peut router le trafic directement, il n'est pas utile d'effectuer ces actions. Le trafic qui arrive à l'autre extrémité et qui ne correspond pas à la stratégie du tunnel sera supprimé. Une interface VFP n'est pas aussi polyvalent qu'une interface VTI.

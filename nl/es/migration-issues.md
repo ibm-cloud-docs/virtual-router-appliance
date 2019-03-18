@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Problemas comunes de migración de Vyatta 5400
-La tabla siguiente ilustra los problemas comunes o los cambios de comportamiento que se pueden producir tras la migración de un dispositivo Vyatta 5400 a IBM Virtual Router Appliance. En algunos casos, se incluyen métodos alternativos para solucionar los problemas.
+{: #vyatta-5400-common-migration-issues}
+
+La tabla siguiente ilustra los problemas comunes o los cambios de comportamiento que se pueden producir tras la migración de un dispositivo Vyatta 5400 a IBM© Virtual Router Appliance. En algunos casos, se incluyen métodos alternativos para solucionar los problemas.
 
 ## Política global-state basada en interfaz para cortafuegos con estado
 

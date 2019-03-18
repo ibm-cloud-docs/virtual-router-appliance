@@ -15,8 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# 常见技术问题
-以下常见问题涉及 IBM 虚拟路由器设备 (VRA) 的配置以及从 Vyatta 5400 迁移到 VRA。
+# IBM 虚拟路由器设备的技术常见问题
+{: #technical-faqs-for-ibm-virtual-router-appliance}
+
+以下常见问题涉及 IBM© 虚拟路由器设备 (VRA) 的配置以及从 Vyatta 5400 迁移到 VRA。
 
 ## 如何允许从专用 VLAN 上的主机发往因特网的流量？
 {:faq}

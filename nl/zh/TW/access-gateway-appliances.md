@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 檢視所有 VRA
+{: #view-all-vras}
 
 「客戶入口網站」中的「閘道應用裝置」畫面是您可以在其中顯示及存取包含 Virtual Router Appliance 之所有「網路閘道應用裝置」的位置。  
 

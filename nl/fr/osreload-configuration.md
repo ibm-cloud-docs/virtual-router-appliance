@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Rechargement du système d'exploitation
+{: #reloading-the-os}
+
 Le processus de rechargement du système d'exploitation, lorsqu'il est lancé sur le portail client, efface complètement toutes les configurations présentes sur l'unité et restaure la configuration d'origine sur l'unité. Tout changement effectué depuis le dernier chargement du système sera effacé. Par conséquent, si vous avez effectué des modifications (par exemple, pour le groupe VRRP sur une autre machine), il y aura sans doute un conflit sur la machine rechargée lorsqu'elle sera à nouveau en ligne.
 
 Pour recharger votre système d'exploitation, procédez comme suit :
@@ -23,7 +25,7 @@ Pour recharger votre système d'exploitation, procédez comme suit :
 2. Sélectionnez **Liste des unités** dans la liste déroulante Unités.
 3. Cliquez sur le serveur que vous souhaitez recharger.
 4. Sélectionnez **Rechargement du système d'exploitation** dans le menu déroulant **Actions** situé en haut à gauche de la page.
-5. Sur l'écran Rechargement du système d'exploitation, cliquez sur **Editer** pour la catégorie qui nécessite une mise à jour. Sélectionnez **AT&T** comme fournisseur et la version de système d'exploitation que vous souhaitez recharger. 
+5. Sur l'écran Rechargement du système d'exploitation, cliquez sur **Editer** pour la catégorie qui nécessite une mise à jour. Sélectionnez **AT&T** comme fournisseur et la version de système d'exploitation que vous souhaitez recharger.
 6. Cliquez sur le bouton **Recharger configuration ci-dessus** pour accéder à la fenêtre contextuelle **Vérifier**. Cliquez sur **Annuler** pour annuler les modifications de l'unité et quitter l'écran.
 7. Vérifiez que les informations s'affichant dans la section Nouvelle configuration sont correctes. Cliquez sur **Suivant** pour passer à la fenêtre contextuelle de confirmation.
 8. Cliquez sur le bouton **Confirmer le rechargement du système d'exploitation** pour confirmer le rechargement et effectuer cette opération. Cliquez sur **Annuler** pour annuler l'action.

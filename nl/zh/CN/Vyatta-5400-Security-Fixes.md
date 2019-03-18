@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # AT&T Vyatta 5400 vRouter 安全漏洞修订
+{: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
 **截止时间：2018 年 8 月 30 日**
 

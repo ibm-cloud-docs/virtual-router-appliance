@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Firewalls verwalten
+# Ihre IBM Firewalls verwalten
+{: #manage-your-ibm-firewalls}
+
 Virtual Router Appliance (VRA) kann Firewallregeln verarbeiten, um die über die Einheit gesteuerten VLANs zu schützen. Für die Firewalls in der VRA können die beiden folgenden Schritte unterschieden werden:
 
 1. Einen oder mehrere Regelsätze definieren
@@ -85,7 +87,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 Im Regelsatz `ALLOW_LEGACY` sind zwei Regeln definiert. Die erste Regel löscht jeden Datenverkehr, der von einer Adressgruppe namens `network-group1` stammt. Die zweite Regel löscht und protokolliert jeden Datenverkehr, der für den Telnet-Port (`tcp/23`) bestimmt ist und von der Adressgruppe namens `network-group2` stammt. Die Standardaktion gibt an, dass alle übrigen Datenpakete akzeptiert werden.
 
 ## Zugriff auf Rechenzentrum zulassen
-IBM stellt mehrere IP-Teilnetze zur Verfügung, die Services und Support für Systeme bereitstellen, die innerhalb des Rechenzentrums ausgeführt werden. Beispiel: Services für DNS-Auflösung werden unter `10.0.80.11` und `10.0.80.12` ausgeführt. Für Bereitstellung und Support werden andere Teilnetze verwendet. Die in den Rechenzentren verwendeten IP-Bereiche finden Sie [hier](/docs/infrastructure/hardware-firewall-dedicated/ips.html).
+IBM© stellt mehrere IP-Teilnetze zur Verfügung, die Services und Support für Systeme bereitstellen, die innerhalb des Rechenzentrums ausgeführt werden. Beispiel: Services für DNS-Auflösung werden unter `10.0.80.11` und `10.0.80.12` ausgeführt. Für Bereitstellung und Support werden andere Teilnetze verwendet. Die in den Rechenzentren verwendeten IP-Bereiche finden Sie in [diesem Thema](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges).
 
 Sie können den Zugriff auf das Rechenzentrum zulassen, indem Sie am Anfang des Firewallregelsatzes entsprechende Regeln für `SERVICE-ALLOW` mit einer Aktion `accept` einfügen. Wo der Regelsatz angewendet werden muss, hängt vom implementierten Routing- und Firewalldesign ab.
 

@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Vyatta 5400 での NAT ルールのセットアップ
+{: #setting-up-nat-rules-on-vyatta-5400}
+
 このトピックでは、Vyatta で使用される NAT (ネットワーク・アドレス変換) ルールの例を示します。
 
 ## 1 対多 NAT ルール (マスカレード)
@@ -71,7 +73,7 @@ commit
 
 ## VRA を介した IP 範囲の追加
 
-ご使用の VRA 構成によっては、特定の IBM Cloud IP アドレスを受け入れることができます。 
+ご使用の VRA 構成によっては、特定の IBM© Cloud IP アドレスを受け入れることができます。 
 
 新しい vRouter デプロイメントには、`SERVICE-ALLOW` という名前のファイアウォール・ルールに定義された、IBM Cloud のサービス・ネットワーク IP アドレスが付属しています。
 

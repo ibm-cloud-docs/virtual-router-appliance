@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 업그레이드 문제
+{: #upgrade-issues}
+
 때때로, Vyatta OS의 새 버전을 업그레이드하고 다시 부팅한 후에 사용자 명령을 실행할 수 없는 문제가 발생할 수 있습니다.
 
 예를 들어 다음과 같습니다.

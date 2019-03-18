@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 为 VFP 接口配置 IPsec 和区域防火墙
+{: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
+
 IPSec 数据报到达时，将通过防火墙规则对其进行处理，然后对其解封装。出现的新数据报与接口完全无关联。通常，这并不是问题，数据报可以继续到达目标接口，但区域防火墙会阻止处理该数据报。将丢弃不是来自区域策略中接口的任何数据报。但是，VFP 接口会告知区域防火墙该数据报确实来自某个接口，这将允许应用规则。 
 
 要配置 VFP 接口以使用 IPsec 流量，请首先通过为 VFP 定义单个 IP 来创建功能点：

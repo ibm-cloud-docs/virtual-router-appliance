@@ -15,6 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Arreglos de vulnerabilidades de seguridad de AT&T Vyatta 5400 vRouter
+{: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
 **A partir de: 30 de agosto de 2018**
 

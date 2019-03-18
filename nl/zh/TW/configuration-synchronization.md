@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 同步化高可用性配置
+{: #synchronizing-high-availability-configurations}
+
 「高可用性 (HA)」配對中的兩個 Virtual Router Appliance (VRA) 必須要充分同步化其配置，讓這兩個裝置的行為方式類似。這是透過 `configuration sync-maps` 來執行，而且您可以選擇要同步化的配置部分。如果您在一台機器上進行變更，它會將已標示的配置推送到另一個裝置上。
 
 **附註：**這會同步化並儲存遠端裝置上本端裝置的執行中配置。不過，因為是確定處理程序的一個步驟，所以不會將配置儲存至本端裝置。 

@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # サービスの構成
+{: #configuring-your-services}
+
 仮想ルーター・アプライアンス (VRA) は、次のようなさまざまなサービスを実行するように構成できます。
 
 `vyatta@vrouter# set service`

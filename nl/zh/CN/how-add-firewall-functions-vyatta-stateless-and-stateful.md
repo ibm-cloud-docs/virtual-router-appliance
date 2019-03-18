@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # 向 Vyatta 5400 添加防火墙功能（无状态和有状态）
+{: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
 使用 Brocade 5400 vRouter (Vyatta) 设备时，建立防火墙的其中一种方法是对每个接口应用防火墙规则集。每个接口有三个可能的防火墙实例 - In、Out 和 Local - 每个实例具有可应用的规则。缺省操作是“丢弃”，其中允许特定流量的规则以从规则 1 到 N 的方式进行应用。只要匹配一条规则，防火墙就会立即应用匹配规则的特定操作。
 

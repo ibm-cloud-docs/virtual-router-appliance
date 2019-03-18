@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Firewallfunktionen zu Vyatta 5400 (statusunabhängig und statusabhängig) hinzufügen
+{: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
 Firewallregelsätze auf jede Schnittstelle anzuwenden, ist eine Methode zum Aufbau einer Firewall bei Brocade 5400 vRouter-Geräten (Vyatta). Jede Schnittstelle weist drei mögliche Firewallinstanzen auf - 'In', 'Out' und 'Local' - und für jede Instanz stehen Regeln zur Verfügung, die auf sie angewendet werden können. Die Standardaktion lautet 'Drop'. Dabei ermöglichen Regeln das Anwenden von bestimmtem Datenverkehr in einer Reihenfolge von Regel 1 bis N. Sobald eine Übereinstimmung erzielt wird, wendet die Firewall die festgelegte Aktion für die übereinstimmende Regel an.
 
@@ -15,7 +16,7 @@ Unter den unten aufgelisteten Firewallinstanzen kann jeweils **nur eine** angewe
 
 * **IN:** Die Firewall filtert Pakete, die über die Schnittstelle ankommen und durch das Brocade-System durchgeleitet werden. Sie müssen bestimmte SoftLayer-IP-Bereiche zulassen, um für Verwaltungszwecke (Ping, Überwachung usw.) Zugriff auf Front-End und Back-End bereitzustellen.
 * **OUT:** Die Firewall filtert Pakete, die über die Schnittstelle abgehen. Diese Pakete können durch das Brocade-System durchgeleitet werden oder vom System stammen.
-* **LOCAL:** Die Firewall filtert Pakete, die für das Brokade vRouter-System selbst bestimmt sind und über die Systemschnittstelle ankommen. Sie sollten Einschränkungen für Zugriffsports erstellen, die von externen, nicht eingeschränkten IP-Adressen beim Brocade vRouter ankommen. 
+* **LOCAL:** Die Firewall filtert Pakete, die für das Brokade vRouter-System selbst bestimmt sind und über die Systemschnittstelle ankommen. Sie sollten Einschränkungen für Zugriffsports erstellen, die von externen, nicht eingeschränkten IP-Adressen beim Brocade vRouter ankommen.
 
 Führen Sie die folgenden Schritte aus, um ein Beispiel für eine Firewallregel festzulegen, die ICMP (Internet Control Message Protocol) *(ping - IPv4 Echo-Antwortnachricht)* für Ihre Brocade 5400 vRouter-Schnittstellen ausschaltet (Dies ist eine statusunabhängige Aktion. Eine statusabhängige Aktion wird später betrachtet.):
 
@@ -47,11 +48,11 @@ bond1.1894 = reserviert für künftige Verwendung
 
 **Firewallregeln erstellen**
 
-Es ist empfehlenswert, die Firewallregel zu erstellen, die auf die Zonen angewendet werden sollen, bevor die Zonen tatsächlich erstellt werden. Wenn Sie zuerst die Regeln und dann die Zonen erstellen, können Sie diese sofort anwenden. Wenn Sie zuerst die Zone und dann die Regeln erstellen, müssen Sie zur Zone zurückkehren, um die Regel anzuwenden. 
+Es ist empfehlenswert, die Firewallregel zu erstellen, die auf die Zonen angewendet werden sollen, bevor die Zonen tatsächlich erstellt werden. Wenn Sie zuerst die Regeln und dann die Zonen erstellen, können Sie diese sofort anwenden. Wenn Sie zuerst die Zone und dann die Regeln erstellen, müssen Sie zur Zone zurückkehren, um die Regel anzuwenden.
 
 **HINWEIS:** Zonen und Regelsätze verfügen über eine Standardaktionsanweisung. Bei der Verwendung von Zonenrichtlinien wird die Standardaktion durch die Zonenrichtlinienanweisung definiert und durch die Regel 10,000 dargestellt. Es ist außerdem wichtig, dass Sie daran denken, dass die Standardaktion einer Firewallregel darin besteht, den gesamten Datenverkehr zu abzulehnen. ****
 
-Die folgenden Befehle dienen folgenden Zwecken: 
+Die folgenden Befehle dienen folgenden Zwecken:
 
 * Erstellen einer Firewallregel mit dem Namen **dmz2private** mit der Standardaktion zum Freigeben eines beliebigen Pakets.
 * Zulassen der Protokollierung von akzeptiertem und verweigertem Datenverkehr für die Regel mit dem Namen **dmz2private**.
@@ -98,13 +99,13 @@ Die nächste Firewallregel, die wir erstellen, wird auf Ihre **dmz**-Zone angewe
 
 **Erstellen Sie Zonen**
 
-Zonen sind logische Darstellungen einer Schnittstelle. Die folgenden Befehle dienen folgenden Zwecken: 
+Zonen sind logische Darstellungen einer Schnittstelle. Die folgenden Befehle dienen folgenden Zwecken:
 
 * Erstellen Sie eine Zone und eine Richtlinie mit dem Namen **dmz** mit einer Standardaktion zum Ablehnen von Paketen, die für diese Zone bestimmt sind.
 * Legen Sie für die Richtlinie **dmz** die Verwendung der Schnittstelle **bond1** fest.
-* Legen Sie für die Richtlinie **prod** die Verwendung der Schnittstelle **bond1.2007** fest. 
-* Erstellen Sie eine Zonenrichtlinie mit dem Namen **private** mit einer Standardaktion zum Ablehnen von Paketen, die für diese Zone bestimmt sind. 
-* Legen Sie für die Richtlinien mit dem Namen **private** die Verwendung der Schnittstelle **bond0.2254** fest. 
+* Legen Sie für die Richtlinie **prod** die Verwendung der Schnittstelle **bond1.2007** fest.
+* Erstellen Sie eine Zonenrichtlinie mit dem Namen **private** mit einer Standardaktion zum Ablehnen von Paketen, die für diese Zone bestimmt sind.
+* Legen Sie für die Richtlinien mit dem Namen **private** die Verwendung der Schnittstelle **bond0.2254** fest.
 
 1\. Geben Sie die folgenden Befehle in der Eingabeaufforderung ein:
 

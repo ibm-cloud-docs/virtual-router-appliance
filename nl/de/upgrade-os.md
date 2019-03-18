@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Upgrade für Betriebssystem durchführen
-Das Betriebssystem der VRA kann mit dem Befehl ``add system image`` und einer lokalen ISO-Datei aktualisiert werden, die vom Support-Team heruntergeladen wurde. Eine Liste der verfügbaren Vyatta-Upgradeversionen kann über das System für IBM Support-Tickets abgerufen werden.
+# Betriebssystem aktualisieren
+{: #upgrading-the-os}
+
+Das Betriebssystem der VRA kann mit dem Befehl ``add system image`` und einer lokalen ISO-Datei aktualisiert werden, die vom Support-Team heruntergeladen wurde. Eine Liste der verfügbaren Vyatta-Upgradeversionen kann über das System für IBM© Support-Tickets abgerufen werden.
 
 Um den Upgradeprozess zu starten, öffnen Sie ein IBM Support-Ticket, um ein Upgrade und das Hochladen eines neuen ISO-Images auf Ihr System anzufordern. In einer E-Mail-Nachricht vom IBM Support werden Sie darüber informiert, an welche Speicherposition die ISO-Datei hochgeladen wurde. Im nachfolgenden Beispiel wird das Verzeichnis ``tmp`` verwendet.
 

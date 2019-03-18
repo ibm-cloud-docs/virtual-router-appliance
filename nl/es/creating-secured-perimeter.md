@@ -15,13 +15,13 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Creación de un perímetro seguro
-Un aspecto fundamental del aislamiento de la red es el establecimiento de un perímetro seguro.  Un perímetro seguro controla el tráfico entre internet público y los activos del cliente alojados en IBM Cloud.  El perímetro seguro también permitirá la conectividad directa con la empresa del cliente mediante el uso de túneles de red privada virtual (VPN) y de IBM Cloud Direct Link.
+Un aspecto fundamental del aislamiento de la red es el establecimiento de un perímetro seguro.  Un perímetro seguro controla el tráfico entre internet público y los activos del cliente alojados en IBM© Cloud.  El perímetro seguro también permitirá la conectividad directa con la empresa del cliente mediante el uso de túneles de red privada virtual (VPN) y de IBM Cloud Direct Link.
 
 Un perímetro seguro utiliza un segmento de perímetro seguro (SPS) para segregar redes entre activos dentro del perímetro seguro. Esta segregación tiene varias ventajas, incluido el control de accesos y el aislamiento de tráfico de servicios entre los segmentos. Un segmento de perímetro seguro (SPS) comprende dos redes de área local virtual (VLAN), una VLAN frontal y una VLAN de fondo, y una VRA conectada a las VLAN para gestionar el tráfico dentro y fuera de los SPS. Un perímetro seguro puede incluir varios segmentos de perímetro seguros (por ejemplo, para fines de alta disponibilidad).
 
 ## Configuración del perímetro seguro
 
-Estos son los pasos a seguir para configurar un perímetro seguro.  Para ver una descripción detallada de estos pasos, consulte [Configuración de un perímetro seguro en IBM Cloud](https://developer.ibm.com/dwblog/2018/ibm-cloud-vyatta-set-up-secure-perimeter).
+Estos son los pasos a seguir para configurar un perímetro seguro.  Para ver una descripción detallada de estos pasos, consulte [Configuración de un perímetro seguro en IBM Cloud ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/dwblog/2018/ibm-cloud-vyatta-set-up-secure-perimeter){:new_window}.
 
 1. Configure los permisos en IBM Cloud y la infraestructura necesaria para acceder a los servicios de nube y a los componentes de la infraestructura que intervienen en el perímetro seguro.
 2. Cree un límite externo en la internet pública mediante una VLAN pública y un cortafuegos. Este límite externo se utilizará para aislar el SPS.
@@ -47,4 +47,4 @@ Estos son los pasos a seguir para configurar un perímetro seguro.  Para ver una
 22. Despliegue el clúster Kubernetes.
 
 ## Soluciones dedicadas en IBM Cloud
-Un perímetro seguro, junto con el aislamiento de cálculo y el cifrado de datos, contribuye a una solución completa dedicada en IBM Cloud público.  Consulte [Implementación de un patrón de soluciones dedicadas](https://developer.ibm.com/dwblog/2018/ibm-cloud-dedicated-cloud-solution-patterns/) para ver una descripción de los patrones de soluciones dedicados de la nube.
+Un perímetro seguro, junto con el aislamiento de cálculo y el cifrado de datos, contribuye a una solución completa dedicada en IBM Cloud público.  Consulte [implementación de un patrón de soluciones dedicadas ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/dwblog/2018/ibm-cloud-dedicated-cloud-solution-patterns/){:new_window} para ver una descripción de los patrones de soluciones dedicados de cloud.

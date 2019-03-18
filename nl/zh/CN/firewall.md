@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 管理防火墙
+# 管理 IBM 防火墙
+{: #manage-your-ibm-firewalls}
+
 虚拟路由器设备 (VRA) 能够处理防火墙规则，以保护通过设备路由的 VLAN。VRA 中的防火墙可以分为两个步骤：
 
 1. 定义一组或多组规则。
@@ -83,7 +85,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 在规则集 `ALLOW_LEGACY` 中，定义了两个规则。第一个规则用于丢弃源自名为 `network-group1` 的地址组的所有流量。第二个规则用于废弃并记录来自名为 `network-group2` 的地址组且以 telnet 端口 (`tcp/23`) 为目标的所有流量。缺省操作指示接受其他所有流量。
 
 ## 允许访问数据中心
-IBM 提供多个 IP 子网，用于为在数据中心内运行的系统提供服务和支持。例如，DNS 解析器服务在 `10.0.80.11` 和 `10.0.80.12` 上运行。在供应和支持期间会使用其他子网。可以在[此处](/docs/infrastructure/hardware-firewall-dedicated/ips.html)找到数据中心内使用的 IP 范围。
+IBM© 提供多个 IP 子网，用于为在数据中心内运行的系统提供服务和支持。例如，DNS 解析器服务在 `10.0.80.11` 和 `10.0.80.12` 上运行。在供应和支持期间会使用其他子网。可以在[此主题](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges)中找到在数据中心中使用的 IP 范围。
 
 通过在防火墙规则集开头放置正确的 `SERVICE-ALLOW` 规则以及操作 `accept`，可允许访问数据中心。必须应用该规则集的位置取决于实现的路由和防火墙设计。
 

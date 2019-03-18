@@ -14,9 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Referência da API
+# Referência de API para o IBM Virtual Router Appliance
+{: #api-reference-for-ibm-virtual-router-appliance}
 
-O SoftLayer® Application Programming Interface (SLAPI) é a interface de desenvolvimento que fornece aos desenvolvedores e administradores de sistema a interação direta com o sistema backend do IBM Cloud.
+A SoftLayer® Application Programming Interface (SLAPI) é a interface de desenvolvimento que fornece aos desenvolvedores e administradores do sistema a interação direta com o sistema back-end do IBM© Cloud.
 
 O SLAPI empodera muitos dos recursos no Portal do Cliente, o que geralmente significa que, se uma interação é possível no Portal do Cliente, ela também pode ser executada na API. Como você pode interagir programaticamente com todas as partes do ambiente do Portal do Cliente dentro da API, é possível usar a API para automatizar tarefas.
 
@@ -25,7 +26,6 @@ SLAPI usa atualmente SOAP, XML-RPC ou REST para transmissão de dados.
 
 Para obter mais informações sobre o SLAPI com relação às APIs do IBM Virtual Router Appliance, consulte os recursos a seguir no SoftLayer Development Network (SLDN):
 
-- [Visão geral do SoftLayer API ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/article/softlayer-api-overview?cm_mc_uid=71397258840814855542946&cm_mc_sid_50200000=1508536023){: new_window} 
 - [API SoftLayer_Network_Gateway ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 
 - [API SoftLayer_Network_Gateway_Member ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window} 
 - [API SoftLayer_Network_Gateway_Vlan ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window} 

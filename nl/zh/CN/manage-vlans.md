@@ -15,7 +15,9 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 管理 VLAN
-您可以在[网关设备详细信息屏幕](access-gateway-details.html)中执行各种操作。
+{: #managing-your-vlans}
+
+您可以在[网关设备详细信息屏幕](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)中执行各种操作。
 
 ## 将 VLAN 与网关设备相关联
 
@@ -23,7 +25,7 @@ VLAN 需要与网关设备关联，然后才能对其进行路由。VLAN 关联�
 
 一次只能将 VLAN 与一个网关相关联，并且 VLAN 不能有防火墙。执行以下过程来将 VLAN 与网关相关联。
 
-1. 在客户门户网站中[访问网关设备详细信息屏幕](access-gateway-details.html)。 
+1. 在客户门户网站中[访问网关设备详细信息屏幕](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)。 
 2. 从**关联 VLAN** 下拉列表中，选择所需的 VLAN。
 3. 单击**关联**按钮以关联 VLAN。
 
@@ -35,7 +37,7 @@ VLAN 需要与网关设备关联，然后才能对其进行路由。VLAN 关联�
 
 执行以下过程来路由关联的 VLAN：
 
-1. 在客户门户网站中[访问网关设备详细信息屏幕](access-gateway-details.html)。 
+1. 在客户门户网站中[访问网关设备详细信息屏幕](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)。 
 2. 在“关联的 VLAN”部分中找到所需的 VLAN。
 3. 从“操作”下拉菜单中，选择**路由 VLAN**。
 4. 单击**是**以路由 VLAN。 
@@ -50,7 +52,7 @@ VLAN 需要与网关设备关联，然后才能对其进行路由。VLAN 关联�
 
 执行以下过程来绕过 VLAN 的网关路由：
 
-1. 在客户门户网站中[访问网关设备详细信息屏幕](access-gateway-details.html)。 
+1. 在客户门户网站中[访问网关设备详细信息屏幕](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)。 
 2. 在“关联的 VLAN”部分中找到所需的 VLAN。
 3. 从“操作”下拉菜单中，选择**绕过 VLAN**。
 4. 单击**是**以绕过网关。 
@@ -63,7 +65,7 @@ VLAN 需要与网关设备关联，然后才能对其进行路由。VLAN 关联�
 
 执行以下过程来解除 VLAN 与网关设备的关联：
 
-1. 在客户门户网站中[访问网关设备详细信息屏幕](access-gateway-details.html)。 
+1. 在客户门户网站中[访问网关设备详细信息屏幕](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)。 
 2. 在“关联的 VLAN”部分中找到所需的 VLAN。
 3. 从**操作**下拉菜单中，选择**解除关联**。 
 4. 单击**是**以解除 VLAN 的关联。 
@@ -81,3 +83,29 @@ set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
 
 以上命令在 `dp0bond0` 接口上创建两个虚拟接口。接口 `dp0bond0.1432` 用于处理 VLAN 1432 的流量，而接口 `dp0bond0.1693` 用于处理 VLAN 1693 的流量。
+
+## 向单个 VLAN 添加多个子网
+
+以下是一个示例配置，在最后添加了公用 VLAN (1451) 的样本子网 (`159.8.67.96/28`)。每个 VIF（VLAN 接口）的地址不会在 BCR（后端客户路由器）或 FCR（前端客户路由器）中路由。它仅用于两个 Vyatta 之间的 VRRP/高可用性通信。 
+
+可以从任意未使用的专用 IP 空间中选择子网。因此，此处通常排除 `10.0.0.0/8`。以下示例中选择了 `192.168.0.0/16` 中的子网，但也可使用 `172.16.0.0/12` 中的子网。 
+
+`virtual-address` 是应该配置新子网的位置。在大多数情况下，子网的网关 IP 地址是应该配置的内容。绑定到 VIF 的网关 IP 将会用作在 VRA 后的新子网中设置的任意裸机或虚拟服务器的下一个网关地址。 
+
+以下示例显示将绑定到该 VIF 的 `159.8.67.97/28`，这样 `159.8.67.98/28` 子网的所有流量都可以由 VRA 进行管理。
+
+```
+set interfaces bonding dp0bond0 vif 1623 address '192.168.10.2/30'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 virtual-address '10.127.132.129/26'
+set interfaces bonding dp0bond0 vif 1750 address '192.168.20.2/30'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 virtual-address '10.126.19.129/26'
+set interfaces bonding dp0bond1 vif 788 address '192.168.150.2/30'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 virtual-address '159.8.106.129/28'
+set interfaces bonding dp0bond1 vif 1451 address '192.168.200.2/30'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.67.97/28'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.86.49/29'
+```

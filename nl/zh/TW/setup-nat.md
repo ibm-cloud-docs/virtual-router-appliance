@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 在 Vyatta 5400 上設定 NAT 規則
+{: #setting-up-nat-rules-on-vyatta-5400}
+
 本主題包含 Vyatta 上所使用的「網址轉換 (NAT)」規則範例。
 
 ## 一對多 NAT 規則（假冒）
@@ -71,7 +73,7 @@ commit
 
 ## 透過 VRA 新增 IP 範圍
 
-根據 VRA 配置，您可能會想要接受特定 IBM Cloud IP 位址。 
+根據 VRA 配置，您可能會想要接受特定的 IBM© Cloud IP 位址。 
 
 新的 vRouter 部署隨附 IBM Cloud 中稱為 `SERVICE-ALLOW` 的防火牆規則中所定義的服務網路 IP 位址。
 

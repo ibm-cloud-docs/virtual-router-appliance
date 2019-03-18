@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 방화벽 관리
+# IBM Firewalls 관리
+{: #manage-your-ibm-firewalls}
+
 VRA(Virtual Router Appliance)에는 디바이스를 통해 라우팅된 VLAN을 보호하기 위해 방화벽 규칙을 처리하는 기능이 있습니다. VRA의 방화벽은 두 단계로 나눌 수 있습니다.
 
 1. 하나 이상의 규칙 세트 정의
@@ -24,10 +26,10 @@ VRA(Virtual Router Appliance)에는 디바이스를 통해 라우팅된 VLAN을 
 
 `dp0bond1` 인터페이스에서 규칙을 조작하는 동안 `dp0bond0`을 사용하여 디바이스에 연결하는 것이 좋습니다. IPMI(Intelligent Platform Management Interface)를 사용하여 콘솔에 연결하는 것도 선택사항입니다.
 
-## 상태 저장 대 상태 비저장
-기본적으로 방화벽은 상태 비저장으로 설정되지만 필요한 경우 상태 저장으로 구성할 수 있습니다. 상태 비저장 방화벽은 양방향 트래픽에 대한 규칙이 필요한 반면에 상태 저장 방화벽은 연결을 추적하고 허용된 플로우의 리턴 트래픽을 자동으로 허용합니다. 상태 저장 방화벽을 구성하려면 상태 저장으로 운영할 규칙을 지정해야 합니다.
+## Stateless 대 Stateful
+기본적으로 방화벽은 Stateless으로 설정되지만 필요한 경우 Stateful으로 구성할 수 있습니다. Stateless 방화벽은 양방향 트래픽에 대한 규칙이 필요한 반면에 Stateful 방화벽은 연결을 추적하고 허용된 플로우의 리턴 트래픽을 자동으로 허용합니다. Stateful 방화벽을 구성하려면 Stateful으로 운영할 규칙을 지정해야 합니다.
 
-`tcp`, `udp` 또는 `icmp` 트래픽의 '상태 저장' 추적을 사용으로 설정하려면 다음 명령을 실행하십시오.
+`tcp`, `udp` 또는 `icmp` 트래픽의 'Stateful' 추적을 사용으로 설정하려면 다음 명령을 실행하십시오.
 
 ```
 set security firewall global-state-policy icmp
@@ -48,20 +50,20 @@ set security firewall name GLOBAL_STATEFUL_TCP rule 1 action accept
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 protocol tcp
 ```
 
-이 경우, `protocol tcp`가 명시적으로 정의됩니다. `global-state-policy tcp` 명령은 `GLOBAL_STATEFUL_TCP`의 규칙 1과 일치하는 트래픽의 상태 저장 추적을 사용합니다.
+이 경우, `protocol tcp`가 명시적으로 정의됩니다. `global-state-policy tcp` 명령은 `GLOBAL_STATEFUL_TCP`의 규칙 1과 일치하는 트래픽의 Stateful 추적을 사용합니다.
 
 
-개별 방화벽을 '상태 저장'으로 구성하려면 다음을 수행하십시오.
+개별 방화벽을 'Stateful'으로 구성하려면 다음을 수행하십시오.
 
 ```
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
-이를 통해 `global-state-policy` 명령의 존재와 상관 없이 상태 저장으로 추적될 수 있고 `TEST`의 규칙 1과 일치하는 모든 트래픽의 상태 저장 추적이 사용 가능합니다. 
+이를 통해 `global-state-policy` 명령의 존재와 상관 없이 Stateful으로 추적될 수 있고 `TEST`의 규칙 1과 일치하는 모든 트래픽의 Stateful 추적이 사용 가능합니다. 
 
-## 지원된 상태 저장 추적용 ALG
-FTP와 같은 일부 프로토콜은 일반 상태 저장 방화벽 오퍼레이션이 추적할 수 있는 좀 더 복잡한 세션을 활용합니다. 
-상태 저장으로 관리될 이 프로토콜을 사용하는 사전 구성된 모듈이 있습니다.
+## 지원된 Stateful 추적용 ALG
+FTP와 같은 일부 프로토콜은 일반 Stateful 방화벽 오퍼레이션이 추적할 수 있는 좀 더 복잡한 세션을 활용합니다. 
+Stateful로 관리될 이 프로토콜을 사용하는 사전 구성된 모듈이 있습니다.
 각 프로토콜의 성공적인 사용을 위해 ALG 모듈이 필요하지 않는 한 ALG 모듈을 사용하지 않는 것이 좋습니다.
 
 ```
@@ -85,7 +87,7 @@ set security firewall name ALLOW_LEGACY rule 1 source address network-group1 s
 규칙 세트 `ALLOW_LEGACY`에 두 개의 규칙이 정의되어 있습니다. 첫 번째 규칙은 `network-group1`이라는 주소 그룹에서 오는 트래픽을 삭제합니다. 두 번째 규칙은 `network-group2`라는 주소 그룹의 Telnet 포트(`tcp/23`)를 대상으로 하는 트래픽을 버리고 로깅합니다. 기본 조치는 다른 모든 조치가 허용됨을 표시합니다.
 
 ## 데이터 센터 액세스 허용
-IBM은 데이터 센터에서 실행되는 시스템에 서비스와 지원을 제공하는 여러 IP 서브넷을 제공합니다. 예를 들어 DNS 분석기 서비스는 `10.0.80.11` 및 `10.0.80.12`에서 실행됩니다. 다른 서브넷은 프로비저닝 및 지원에 사용됩니다. 데이터 센터에서 사용되는 IP 범위는 [여기](/docs/infrastructure/hardware-firewall-dedicated/ips.html)를 참조하십시오.
+IBM©은 데이터 센터에서 실행되는 시스템에 서비스와 지원을 제공하는 여러 IP 서브넷을 제공합니다. 예를 들어 DNS 분석기 서비스는 `10.0.80.11` 및 `10.0.80.12`에서 실행됩니다. 다른 서브넷은 프로비저닝 및 지원에 사용됩니다. 이 데이터 센터에서 사용한 IP 범위는 [이 주제](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges)에서 찾을 수 있습니다.
 
 `accept` 조치로 방화벽 규칙 세트를 시작할 때 적합한 `SERVICE-ALLOW` 규칙을 배치하여 데이터 센터 액세스를 허용할 수 있습니다. 규칙 세트를 적용해야 하는 위치는 구현되는 라우팅과 방화벽 설계에 따라 다릅니다.
 
@@ -117,7 +119,7 @@ VRA는 기본 CPP 규칙 세트를 템플리트로 제공합니다. 다음을 �
 
 이 규칙 세트가 병합되면 `CPP`라는 이름의 새 방화벽 규칙 세트가 루프백 인터페이스에 추가되고 적용됩니다. 사용자 환경에 맞게 이 규칙 세트를 수정하는 것이 좋습니다.
 
-CPP 규칙이 상태 저장일 수 없으며 유입 트래픽에만 적용됩니다.
+CPP 규칙이 Stateful일 수 없으며 유입 트래픽에만 적용됩니다.
 
 ## 구역 방화벽
 Virtual Router Appliance의 다른 방화벽 개념은 구역 기반 방화벽입니다. 구역 기반 방화벽 조작에서는 인터페이스가 구역에 지정되고(인터페이스당 한 구역만 지정) 방화벽 규칙 세트는 구역 내의 모든 인터페이스가 동일한 보안 레벨을 가지고 자유롭게 라우팅할 수 있다는 개념으로 구역 간의 경계에 지정됩니다. 트래픽은 한 구역에서 다른 구역으로 전달될 때만 심사됩니다. 구역은 자기 구역으로 들어오는 명시적으로 허용되지 않는 트래픽을 삭제합니다.
@@ -159,4 +161,4 @@ VRA는 두 가지 유형의 로깅을 지원합니다.
 
 2. 패킷당 로깅. 방화벽 또는 NAT 규칙에 키워드 ``log``를 포함시켜 규칙과 일치하는 모든 네트워크 패킷을 로깅합니다.
 
-	패킷당 로깅은 패킷 전달 경로에서 발생하며 많은 수의 출력을 생성합니다. 이는 VRA의 처리량을 현저하게 줄일 수 있으며 로그 파일에 사용되는 디스크 공간을 대폭 늘릴 수 있습니다. 디버깅을 위해서만 패킷당 로깅을 사용하는 것이 좋습니다. 모든 운영을 위해서는 상태 저장 세션 로깅을 사용해야 합니다.
+	패킷당 로깅은 패킷 전달 경로에서 발생하며 많은 수의 출력을 생성합니다. 이는 VRA의 처리량을 현저하게 줄일 수 있으며 로그 파일에 사용되는 디스크 공간을 대폭 늘릴 수 있습니다. 디버깅을 위해서만 패킷당 로깅을 사용하는 것이 좋습니다. 모든 운영을 위해서는 Stateful 세션 로깅을 사용해야 합니다.

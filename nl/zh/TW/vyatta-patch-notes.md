@@ -16,8 +16,9 @@ lastupdated: "2018-11-10"
 
 
 # Vyatta 修補程式注意事項
+{: #vyatta-patch-notes}
 
 本主題提供 Vyatta 5400 及 5600 的安全修補程式注意事項的鏈結。
 
-* [Vyatta 5600 修補程式注意事項](vyatta-5600-security-fixes.html)
-* [Vyatta 5400 6.7 版修補程式注意事項](Vyatta-5400-Security-Fixes.html)
+* [Vyatta 5600 修補程式注意事項](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches)
+* [Vyatta 5400 6.7 版修補程式注意事項](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5400-vrouter-security-vulnerability-fixes)

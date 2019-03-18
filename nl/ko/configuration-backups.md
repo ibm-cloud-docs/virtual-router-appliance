@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 구성 백업
+{: #backing-up-a-configuration}
+
 시스템에 변경사항이 있는 경우 구성 명령을 백업해야 합니다. 운영 모드 명령 `show configuration commands`를 실행한 후 출력을 저장하여(예를 들어 SSH 세션에서 복사하여 붙여넣기) 이를 수행할 수 있습니다. 이는 구성에 대한 최소 백업으로 간주됩니다.
 
 보다 완전한 백업에는 시스템에 대한 기술 지원 아카이브 생성이 포함됩니다. 

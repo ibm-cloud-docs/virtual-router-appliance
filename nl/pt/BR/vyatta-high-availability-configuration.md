@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Configuração de alta disponibilidade do Vyatta 5400
+{: #vyatta-5400-high-availability-configuration}
 
 A alta disponibilidade do Vyatta é suportada por meio do uso do VRRP, Virtual Routing Redundancy Protocol. Cada grupo de gateway terá dois endereços IP primários do VRRP, um para o lado privado e um para o lado público das redes. 
 

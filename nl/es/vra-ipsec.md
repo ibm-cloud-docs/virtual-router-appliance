@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Cómo configurar un túnel IPsec que funciones con cortafuegos de zona
+# Configuración de un túnel IPsec que funciones con cortafuegos de zona
+{: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
+
 En versiones anteriores de Virtual Router Appliance, los túneles IPsec que utilizan direccionamiento basado en políticas no funcionaban bien con los cortafuegos de zona. Con la versión 18.01, hay un nuevo conjunto de mandatos que se ocupa de este problema, utilizando "puntos de características virtuales" para habilitar el tráfico procedente de túneles designados, donde el punto de característica actúa como una interfaz que proporciona un punto final para incluir en una configuración de política de zona.
 
 A continuación se muestra una configuración de ejemplo de dos máquinas con IPsec entre ellas:

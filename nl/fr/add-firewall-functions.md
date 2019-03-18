@@ -39,7 +39,7 @@ Suivez les étapes décrites ci-dessous pour définir un exemple de règle de pa
 
 A présent, si vous essayez d'envoyer une commande PING à votre dispositif VRA, vous ne recevrez plus aucune réponse.
 
-Pour que des règles de pare-feu puissent être affectées à du trafic routé, des règles doivent être appliquées aux interfaces ou aux create zones du dispositif VRA, puis être appliquées aux zones.
+Pour que des règles de pare-feu puissent être affectées à du trafic routé, des règles doivent être appliquées aux interfaces ou aux zones créées du dispositif VRA, puis être appliquées aux zones.
 
 Pour cet exemple, des zones seront créées pour les réseaux locaux virtuels qui ont été utilisés jusqu'à maintenant.
 

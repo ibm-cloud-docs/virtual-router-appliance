@@ -76,7 +76,7 @@ Utilisez les guides détaillés exhaustifs décrits ci-dessous pour créer et pe
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>Ce guide explique comment configurer un dispositif VRA (Virtual Router Appliance) sur IBM Cloud pour créer un réseau privé sécurisé (boîtier). </p>
+                <p>Ce guide explique comment configurer un dispositif VRA (Virtual Router Appliance) sur IBM© Cloud pour créer un réseau privé sécurisé (boîtier). </p>
                     <span class="tag-filter category">Dispositif VRA (Virtual Router Appliance)</span>
                     <span class="tag-filter category">Réseau privé sécurisé</span>
                     <span class="tag-filter category">Interface utilisateur IBM Cloud Console</span>
@@ -106,7 +106,7 @@ Utilisez les guides détaillés exhaustifs décrits ci-dessous pour créer et pe
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>Ce guide présente la procédure détaillée permettant de vérifier votre accès à votre cloud privé virtuel, puis de mettre ce dernier à disposition avec l'API ou l'interface CLI. </p>
+                <p>Ce guide présente la procédure détaillée permettant de vérifier votre accès à votre cloud privé virtuel, puis de mettre ce dernier à disposition avec l'API ou l'interface CLI.</p>
                  <span class="tag-filter category">Dispositif VRA (Virtual Router Appliance)</span>
                  <span class="tag-filter category">API RIAS</span>
                  <span class="tag-filter category">IBM Cloud Direct Link</span>
@@ -122,7 +122,7 @@ Utilisez les guides détaillés exhaustifs décrits ci-dessous pour créer et pe
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>Ce guide présente la procédure détaillée permettant de vérifier votre accès à votre cloud privé virtuel, puis de mettre ce dernier à disposition avec l'API ou l'interface CLI. </p>
+                <p>Ce guide présente la procédure détaillée permettant de vérifier votre accès à votre cloud privé virtuel, puis de mettre ce dernier à disposition avec l'API ou l'interface CLI.</p>
                  <span class="tag-filter category">Dispositif VRA (Virtual Router Appliance)</span>
                  <span class="tag-filter category">API RIAS</span>
                  <span class="tag-filter category">Réseau privé virtuel (VPN - Virtual Private Network)</span>

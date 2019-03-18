@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Recarga del SO
+{: #reloading-the-os}
+
 Al iniciarse en el Portal de clientes, el proceso de recarga del SO borrará todas las configuraciones presentes en el dispositivo y lo restaurará a su configuración original. Cualquier cambio realizado desde la última carga del sistema se borrará. Como resultado, si ha realizado cambios (por ejemplo en el grupo de VRRP de otra máquina), es probable que la máquina cargada tenga un conflicto cuando vuelva a estar en línea.
 
 Para volver a cargar el SO, realice el procedimiento siguiente:

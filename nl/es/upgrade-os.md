@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Actualice el SO
-Se puede realizar la actualización del sistema operativo VRA con el mandato ``add system image`` en un archivo ISO local cargado por nuestro equipo de soporte. Se puede obtener una lista de las versiones de actualización de Vyatta disponibles mediante el sistema de incidencia de soporte de IBM.
+# Actualización del SO
+{: #upgrading-the-os}
+
+Se puede realizar la actualización del sistema operativo VRA con el mandato ``add system image`` en un archivo ISO local cargado por nuestro equipo de soporte. Se puede obtener una lista de las versiones de actualización de Vyatta disponibles mediante el sistema de incidencia de soporte de IBM©.
 
 Para empezar el proceso de actualización, abra una incidencia con el sistema de incidencia de soporte de IBM solicitando una actualización y que se cargue al sistema una nueva imagen ISO. Recibirá un correo electrónico de soporte de IBM indicando el lugar en el que se ha cargado el archivo ISO. En el ejemplo, se encuentra en el directorio ``tmp``.
 

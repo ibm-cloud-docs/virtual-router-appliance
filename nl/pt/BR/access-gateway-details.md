@@ -15,12 +15,13 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Visualizar Detalhes do VRA
+{: #view-vra-details}
 
 Gateways de rede são usados para controlar o tráfego de rede em uma VLAN que é controlada regularmente por um roteador. Na tela Detalhes do Dispositivo de Gateway no Portal do Cliente, é possível associar, desassociar, rotear e efetuar bypass em VLANs associadas a um Gateway de Rede.
 
 Execute o procedimento a seguir para acessar a tela Detalhes do Gateway.
 
-1. [Acesse a tela Dispositivos de Gateway](access-gateway-appliances.html) no Portal do Cliente.
+1. [Acesse a tela Dispositivos de Gateway](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-all-vras) no Portal do Cliente.
 2. Clique no Nome do Dispositivo de Gateway para o Gateway de Rede desejado para acessar a tela Detalhes do Dispositivo de Gateway.
 
 As interações podem ser realizadas em múltiplas VLANs a qualquer momento usando o recurso Ações em Massa.

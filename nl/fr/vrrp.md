@@ -13,7 +13,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# HA et VRRP
+# Utilisation de la haute disponibilité et de VRRP
+{: #working-with-high-availability-and-vrrp}
+
 Le dispositif VRA (Virtual Router Appliance) prend en charge le protocole VRRP (Virtual Router Redundancy Protocol) en tant que protocole de haute disponibilité. Le déploiement des unités s'effectue de manière active/passive, avec une machine principale et une autre machine de secours. Toutes les interfaces sur les deux machines seront membres du même groupe de synchronisation ("sync-group"), donc s'il y a une défaillance sur une interface, les autres interfaces du même groupe seront également défaillantes et l'unité cessera d'être l'unité principale. La machine de secours détectera que la machine principale ne diffuse plus les messages de type keepalive/heartbeat (conservation de connexion active/signal de présence), et prendra le contrôle des adresses IP virtuelles VRRP pour devenir la machine principale.
 
 VRRP est la partie la plus importante de la configuration lors de la mise à disposition de passerelles. La fonctionnalité de haute disponibilité (HA) dépend des messages de signal de présence, donc s'assurer qu'ils ne sont pas bloqués est essentiel.
@@ -150,20 +152,20 @@ L'autre dispositif VRA aura la même configuration mais un homologue distant (`r
 Notez que cette opération peut saturer une liaison s'il y a un nombre élevé de connexions entrantes sur d'autres interfaces et entrera en concurrence avec d'autre trafic sur la liaison déclarée.
 
 ## Fonction Délai de démarrage VRRP
-La version 1801p et les versions ultérieures du système d'exploitation Vyatta comportent une nouvelle commande `vrrp`. 
+La version 1801p et les versions ultérieures du système d'exploitation Vyatta comportent une nouvelle commande `vrrp`.
 
-`vrrp` spécifie un protocole d'élection qui affecte de façon dynamique la responsabilité pour un routeur virtuel à l'un des routeurs VRRP sur un réseau local. Le routeur VRRP qui contrôle la ou les adresses IPv4 ou IPv6 associée(s) à un routeur virtuel est appelé le maître, et il achemine les paquets envoyés à ces adresses IPv4 ou IPv6. Le processus d'élection fournit un basculement dynamique dans la responsabilité d'acheminement si le maître devient indisponible. Toute la messagerie de protocole est effectuée via des datagrammes multidiffusion IPv4 ou IPv6, par conséquent, le protocole peut fonctionner sur une grande variété de technologies LAN multi-accès prenant en charge la multidiffusion IPv4/IPv6. 
+`vrrp` spécifie un protocole d'élection qui affecte de façon dynamique la responsabilité pour un routeur virtuel à l'un des routeurs VRRP sur un réseau local. Le routeur VRRP qui contrôle la ou les adresses IPv4 ou IPv6 associée(s) à un routeur virtuel est appelé le maître, et il achemine les paquets envoyés à ces adresses IPv4 ou IPv6. Le processus d'élection fournit un basculement dynamique dans la responsabilité d'acheminement si le maître devient indisponible. Toute la messagerie de protocole est effectuée via des datagrammes multidiffusion IPv4 ou IPv6, par conséquent, le protocole peut fonctionner sur une grande variété de technologies LAN multi-accès prenant en charge la multidiffusion IPv4/IPv6.
 
-Pour réduire le trafic réseau, seul le maître de chaque routeur virtuel envoie régulièrement des messages d'annonce VRRP. Un routeur de sauvegarde ne tentera pas de préempter le maître sauf s'il est doté d'une priorité plus élevée. Cela élimine les interruptions de service sauf si un chemin préféré devient disponible. Il est également possible d'interdire de manière administrative toutes les tentatives de préemption. Si le maître devient indisponible, le routeur de sauvegarde doté d'une priorité plus élevée devient le maître après un court délai, fournissant une transition contrôlée de la responsabilité de routeur virtuel avec un minimum d'interruptions de service. 
+Pour réduire le trafic réseau, seul le maître de chaque routeur virtuel envoie régulièrement des messages d'annonce VRRP. Un routeur de sauvegarde ne tentera pas de préempter le maître sauf s'il est doté d'une priorité plus élevée. Cela élimine les interruptions de service sauf si un chemin préféré devient disponible. Il est également possible d'interdire de manière administrative toutes les tentatives de préemption. Si le maître devient indisponible, le routeur de sauvegarde doté d'une priorité plus élevée devient le maître après un court délai, fournissant une transition contrôlée de la responsabilité de routeur virtuel avec un minimum d'interruptions de service.
 
-**Remarque :** dans les déploiements mis à disposition par IBM Cloud, la valeur de délai de démarrage prend la valeur par défaut. Vous souhaiterez peut-être modifier cela à votre gré lorsque vous testerez vos méthodes de basculement et de haute disponibilité. 
+**Remarque :** dans les déploiements mis à disposition par IBM© Cloud, la valeur de délai de démarrage prend la valeur par défaut. Vous souhaiterez peut-être modifier cela à votre gré lorsque vous testerez vos méthodes de basculement et de haute disponibilité.
 
 
 ### Préemption ou pas de préemption
 
-Le protocole `vrrp` définit une logique qui décide quelle paire VRRP sur un réseau est dotée de la priorité la plus élevée, et par conséquent, est la plus à même de porter le rôle de maître. Avec une configuration par défaut, VRRP est activé pour effectuer la préemption, ce qui signifie qu'une nouvelle paire ayant la priorité la plus élevée sur le réseau forcera la reprise du rôle de maître. 
+Le protocole `vrrp` définit une logique qui décide quelle paire VRRP sur un réseau est dotée de la priorité la plus élevée, et par conséquent, est la plus à même de porter le rôle de maître. Avec une configuration par défaut, VRRP est activé pour effectuer la préemption, ce qui signifie qu'une nouvelle paire ayant la priorité la plus élevée sur le réseau forcera la reprise du rôle de maître.
 
-Lorsque la préemption est désactivée, une paire avec la priorité plus élevée reprendra le rôle de maître uniquement si la paire avec la priorité la moins élevée n'est plus disponible sur le réseau. Il est parfois utile de désactiver la préemption dans des scénarios du monde réel, car cela permet de mieux faire face aux situations où la paire avec la priorité plus élevée a commencé à bagoter régulièrement en raison de problèmes de fiabilité avec la paire proprement dite ou d'une de ses connexions réseau. Il est également utile d'empêcher le basculement prématuré vers une nouvelle paire avec une priorité plus élevée qui n'a pas terminé la convergence du réseau. 
+Lorsque la préemption est désactivée, une paire avec la priorité plus élevée reprendra le rôle de maître uniquement si la paire avec la priorité la moins élevée n'est plus disponible sur le réseau. Il est parfois utile de désactiver la préemption dans des scénarios du monde réel, car cela permet de mieux faire face aux situations où la paire avec la priorité plus élevée a commencé à bagoter régulièrement en raison de problèmes de fiabilité avec la paire proprement dite ou d'une de ses connexions réseau. Il est également utile d'empêcher le basculement prématuré vers une nouvelle paire avec une priorité plus élevée qui n'a pas terminé la convergence du réseau.
 
 ### Hypothèses et limitations de préemption
 
@@ -171,7 +173,7 @@ Si les paires VRRP ont été configurées pour désactiver la préemption, il pe
 
 ### Fonction Délai de démarrage
 
-Pour traiter les problèmes liés au retard de convergence des niveaux inférieurs de la pile réseau durant un événement d'interface active, ainsi qu'à d'autres facteurs, une nouvelle fonction nommée "Délai de démarrage" est introduite dans le correctif 1801p. Avec cette fonction, l'état VRRP sur une machine qui a été rechargée demeure INIT pendant une période qui va au-delà d'un délai prédéfini, qui peut être configuré par l'opérateur réseau. La flexibilité de cette valeur de délai permet à l'opérateur réseau de personnaliser les caractéristiques de son réseau et de ses périphériques dans des conditions réelles. 
+Pour traiter les problèmes liés au retard de convergence des niveaux inférieurs de la pile réseau durant un événement d'interface active, ainsi qu'à d'autres facteurs, une nouvelle fonction nommée "Délai de démarrage" est introduite dans le correctif 1801p. Avec cette fonction, l'état VRRP sur une machine qui a été rechargée demeure INIT pendant une période qui va au-delà d'un délai prédéfini, qui peut être configuré par l'opérateur réseau. La flexibilité de cette valeur de délai permet à l'opérateur réseau de personnaliser les caractéristiques de son réseau et de ses périphériques dans des conditions réelles.
 
 ### Détails de la commande
 
@@ -181,7 +183,7 @@ start-delay <0-600>
 }
 ```
 
-`start-delay` peut avoir une valeur comprise entre 0 (par défaut) et 600 secondes. 
+`start-delay` peut avoir une valeur comprise entre 0 (par défaut) et 600 secondes.
 
 ### Exemple de configuration
 

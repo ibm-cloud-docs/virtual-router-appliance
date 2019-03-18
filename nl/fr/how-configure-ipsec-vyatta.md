@@ -8,6 +8,7 @@ lastupdated: "2018-11-10"
 {:new_window: target="_blank"}
 
 # Configuration d'IPSec sur Vyatta 5400
+{: #configuring-ipsec-on-vyatta-5400}
 
 L'unité Brocade 5400 vRouter (Vyatta) est appelée "local" en ce qui concerne le tunnel IPSec (Internet Security Protocol). Chacune des commandes suivantes exécutera des fonctions différentes pour configurer IPSec de site à site. Notez que cet exemple d'IPSec de site à site illustre le tunnel sur le réseau public de SoftLayer ; utilisez **bond0** pour les connexions de site à site IPSec privées.
 
@@ -28,7 +29,7 @@ L'unité Brocade 5400 vRouter (Vyatta) est appelée "local" en ce qui concerne l
 
   * Désactiver la confidentialité persistante parfaite (PFS) car les unités ne peuvent pas toutes l'utiliser. (La mention ESP dans la commande correspond à la seconde partie du chiffrement.)
   * Spécifier le type de chiffrement à utiliser, sinon, l'unité utilisera **aes128** par défaut.
-  * Utiliser la fonction de hachage **sha-1**.<br/><br/>
+  * Utiliser la fonction de `hachage` **sha-1**<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -36,7 +37,7 @@ L'unité Brocade 5400 vRouter (Vyatta) est appelée "local" en ce qui concerne l
 4. Configurez les paramètres de chiffrement de site à site IPSec. Les commandes suivantes permettent d'effectuer ce qui suit :
 
   * Spécifier l'adresse IP distante et le fait qu'IPSec utilisera une valeur confidentielle prépartagée.
-  * Utiliser l'adresse IP distante et la clé secrète TestPSK.
+  * Utiliser l'adresse IP distante et le secret TestPSK
   * Affecter la valeur TestESP au groupe **esp** par défaut pour le tunnel.
   * Indiquer à IPSec qu'il doit utiliser ike-group TestIKE, défini précédemment.<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
@@ -93,6 +94,6 @@ Configuration côté distant :
 *set vpn ipsec site-to-site peer **50.97.240.219** tunnel 1 remote prefix **10.54.9.152/29*** (Le préfixe local et le préfixe distant ont été permutés.)
 
 * Copiez et collez les nouvelles commandes dans le serveur distant (assurez-vous que vous êtes bien en mode configuration), tapez commit, puis sauvegardez.
-* Tapez run show vpn ike sa pour voir si le tunnel est maintenant établi.
+* Tapez `run show vpn ike sa` pour voir si le tunnel est maintenant établi.
 
 Voici un récapitulatif de ce qui a été fait : router uniquement les adresses IP avec le sous-réseau '10.54.9.152/29' qui résident sur l'interface locale (bond1, 50.97.240.219) aux sous-réseaux 192.168.1.2/32 sur le service distant figurant dans l'interface avec l'adresse IP 169.54.254.117.

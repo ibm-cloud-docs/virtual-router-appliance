@@ -15,12 +15,73 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # AT&T Vyatta 5600 vRouter 軟體修補程式
+{: #at-t-vyatta-5600-vrouter-software-patches}
 
-**截至：2018 年 11 月 2 日**
+**文件日期：2019 年 2 月 14 日**
 
 本文件列出目前所支援 Vyatta Network OS 5600 版本的修補程式。使用 5.2 版及更舊版本時，修補程式會使用 S 號碼來命名。使用 17.1 版及更新版本時，修補程式是使用小寫字母命名，不包括 "i"、"o"、"l" 及 "x"。
 
 當在單一更新中處理多個 CVE 號碼時，會列出最高的 CVSS 評分。
+
+## 1801v
+
+**解決的問題**
+
+| 問題號碼 | 優先順序 | 摘要 |
+| --- | --- | --- |
+| VRVDR-45175 | 嚴重 | 配置 VRF 時 Rsyslogd 當機|
+| VRVDR-45057 | 嚴重 | IPsec VTI 通道介面在起始啟動之後處於 A/D 狀態，IPsec SA 保持啟動|
+| VRVDR-44985 | 主要 | DNAT 及輸入防火牆記載 / 作業的順序|
+| VRVDR-44944 | 嚴重 | vyatta-config-vti.pl：未安全使用暫存檔|
+| VRVDR-44941 | 次要 | 短暫的 VTI 介面閃爍，導致核心遺漏靜態路由|
+| VRVDR-44914 | 嚴重 | HA 配對的兩個成員上都發生 RPC ALG 損毀|
+| VRVDR-44668 | 主要 | 在正式作業傳輸中，流程監視停頓並停止產生 netflow 統計資料報告|
+| VRVDR-44667 | 次要 | 兩次執行「顯示流程監視」時的介面順序不一致|
+| VRVDR-44657 | 主要 | IKEv1 重設金鑰發生衝突，導致 VTI 介面在通道啟動時保持關閉狀態|
+| VRVDR-44560 | 主要 | 多個 rcu_sched CPU 停止指向 ip_gre 驅動程式|
+| VRVDR-44517 | 次要 | rte_ipv6_fragment_packet 中 Dataplane 損毀並發生錯誤|
+| VRVDR-44282 | 主要 | 當位址群組中同時出現含有 /32 遮罩的位址以及不含 /32 遮罩的位址時，刪除 /32 遮罩發生問題|
+| VRVDR-44278 | 次要 | "show address-group all ipv4 optimal" 未產生任何輸出|
+| VRVDR-44239 | 主要 | 需要「所有」通訊協定時，要求加強通訊協定下拉的 Web GUI 冗詞|
+| VRVDR-44076 | 主要 | 流程監視中的記憶體洩漏導致 Dataplane 發生分區段錯誤並且中斷運作|
+| VRVDR-44007 | 嚴重 | npf_dataplane_session_establish 發生 Dataplane 分區段錯誤|
+| VRVDR-43909 | 次要 | Connsync 導致介面在 "restart vrrp" 之後關閉|
+| VRVDR-42679 | 主要 | syslog - zactor_is 損毀|
+| VRVDR-42020 | 主要 | RIB 一遍又一遍地新增相同的路徑|
+| VRVDR-18095 | 次要 | 「顯示技術支援」的過程中未擷取流程監視狀態|
+
+
+**解決的安全漏洞**
+
+| 問題號碼 | CVSS 評分 | 諮詢 | 摘要 |
+| --- | --- | --- | --- |
+| VRVDR-45148 | N/A | DSA-4371-1 | CVE-2019-3462：Debian DSA-4371-1 – apt 安全更新|
+| VRVDR-45043 | 8.8 | DSA-4369-1 | CVE-2018-19961、CVE-2018-19962、CVE-2018-19965、CVE-2018-19966、CVE-2018-19967：DSA 4369-1 - Xen 安全更新|
+| VRVDR-45042 | N/A | DSA-4368-1 | CVE-2019-6250：Debian DSA-4368-1：zeromq3 - 安全更新|
+| VRVDR-45035 | N/A | DSA-4367-1 | CVE-2018-16864、CVE-2018-16865、CVE-2018-16866：Debian DSA-4367-1：systemd - 安全更新|
+| VRVDR-44956 | 7.5 | DSA-4359-1 | CVE-2018-16864、CVE-2018-16865、CVE-2018-16866：Debian DSA-4367-1：systemd - 安全更新 CVE-2018-12086、CVE-2018-18225、CVE-2018-18226、CVE-2018-18227、CVE-2018-19622、CVE-2018-19623、CVE-2018-19624、CVE-2018-19625、CVE-2018-19626、CVE-2018-19627、CVE-2018-19628：Debian DSA-4359-1：wireshark - 安全更新|
+| VRVDR-44747 | N/A | DSA-4350-1 | CVE-2018-19788：Debian DSA-4350-1：policykit-1 - 安全更新|
+| VRVDR-44634 | 8.8 | DSA-4349-1 | CVE-2017-11613、CVE-2017-17095、CVE-2018-10963、CVE-2018-15209、CVE-2018-16335、CVE- 2018-17101、CVE-2018-18557、CVE-2018-5784、CVE-2018-7456、CVE-2018-8905：Debian DSA-4349-1：tiff - 安全更新|
+| VRVDR-44633 | 7.5 | DSA-4348-1| CVE-2018-0732、CVE-2018-0734、CVE-2018-0735、CVE-2018-0737、CVE-2018-5407：Debian DSA-4348- 1 : openssl - 安全更新|
+| VRVDR-44611 | 9.8 | DSA-4347-1| CVE-2018-18311、CVE-2018-18312、CVE-2018-18313、CVE-2018-18314：Debian DSA-4347-1：perl- 安全更新|
+| VRVDR-44348| 9.8 | DSA-4338-1 | CVE-2018-10839、CVE-2018-17962、CVE-2018-17963：Debian DSA-4338-1：qemu 安全更新|
+| VRVDR-43264| 5.6 | DSA-4274-1 | CVE-2018-3620、CVE-2018-3646：Debian DSA-4274- 1：xen 安全更新|
+
+## 1801u
+
+**解決的問題**
+
+| 問題號碼 | 優先順序 | 摘要 |
+| --- | --- | --- |
+| VRVDR-44406 | 嚴重 | 相同的 VIF 上有多個子網路，觀察到比 5400 效能還低的資料流量傳輸速率|
+| VRVDR-44253 | 次要 | 重新開機之後，結合介面上的 MSS 停止發揮作用|
+
+**解決的安全漏洞**
+
+| 問題號碼 | CVSS 評分 | 諮詢 | 摘要 |
+| --- | --- | --- | --- |
+| VRVDR-44277 | N/A | DSA-4332-1 | CVE-2018-16395、CVE-2018-16396：Debian DSA-4332-1：ruby2.3 - 安全更新|
+| VRVDR-44276 | N/A | DSA-4331-1 | CVE-2018-16839、CVE-2018-16842：Debian DSA-4331-1：curl - 安全更新|
 
 ## 1801t
 
@@ -28,7 +89,7 @@ lastupdated: "2018-11-10"
 
 | 問題號碼 | 優先順序 | 摘要 |
 | --- | --- | --- |
-| VRVDR-44172 | 阻擋事項 | mss-clamp 測試中所報告的錯誤「介面 [openvpn] 無效」|
+| VRVDR-44172 | 阻擋事件 | mss-clamp 測試中所報告的錯誤「介面 [openvpn] 無效」|
 | VRVDR-43969 | 次要 | Vyatta 18.x GUI 報告狀態檢查記憶體用量錯誤 |
 | VRVDR-43847 | 主要 | 結合介面上 TCP 交談的慢速傳輸量 |
 
@@ -104,7 +165,7 @@ lastupdated: "2018-11-10"
 | VRVDR-42244 | 次要 | 流程-監視只會將 1000 個範例匯出至收集器 |
 | VRVDR-42114 | 嚴重 | HTTPS 服務「不得」公開 TLSv1 |
 | VRVDR-41829 | 主要 | 除非系統在進行 SIP ALG 浸泡測試時變成無回應，否則資料平面會當機 |
-| VRVR-41683 | 阻擋事項 | 未一致地辨識透過 VRF 所學習的 DNS 名稱伺服器位址 |
+| VRVR-41683 | 阻擋事件 | 未一致地辨識透過 VRF 所學習的 DNS 名稱伺服器位址 |
 | VRVDR-41628 | 次要 | router-advertisement 中的路徑/字首作用於核心及資料平面，但 RIB 會予以忽略 |
  
 **解決的安全漏洞**
@@ -147,7 +208,7 @@ lastupdated: "2018-11-10"
 
 | 問題號碼 | 優先順序 | 摘要 |
 | --- | --- | --- |
-| VRVDR-42084 | 阻擋事項 | 重新套用 nat/ipsec 配置時，VFP 介面在 "show dataplane route" 中標示為「非資料平面介面」|
+| VRVDR-42084 | 阻擋事件 | 重新套用 nat/ipsec 配置時，VFP 介面在 "show dataplane route" 中標示為「非資料平面介面」|
 
 **解決的安全漏洞**
 
@@ -167,7 +228,7 @@ lastupdated: "2018-11-10"
 | 問題號碼 | 優先順序 | 摘要 |
 | --- | --- | --- |
 | VRVDR-42256 | 嚴重 | 如果刪除最新建立的 CHILD_SA，則沒有出埠資料流量 |
-| VRVDR-42084 | 阻擋事項 | 針對到達路由器的封包，不會建立鏈結至 PB IPsec 通道之 VFP 介面的 NAT 階段作業，即使配置路由器這麼做也是一樣 |
+| VRVDR-42084 | 阻擋事件 | 針對到達路由器的封包，不會建立鏈結至 PB IPsec 通道之 VFP 介面的 NAT 階段作業，即使配置路由器這麼做也是一樣 |
 | VRVDR-42018 | 次要 | 執行 "restart vpn" 時，會擲出「IKE SA 常駐程式：org.freedesktop.DBus.Error.Service.Unknown」錯誤 |
 | VRVDR-42017 | 次要 | 在 VRRP 備份上執行 "show vpn ipsec sa" 時，會擲出與 vyatta-op-vpn-ipsec-vici 第 563 行有關的 "ConnectionRefusedError" 錯誤 |
 
@@ -187,7 +248,7 @@ lastupdated: "2018-11-10"
 | 問題號碼 | 優先順序 | 摘要 |
 | --- | --- | --- |
 | VRVDR-42109 | 嚴重 | 在 5.2R6S7 上，SNAT+FW 只接收到 1 個 ICMP 回覆封包 |
-| VRVDR-42084 | 阻擋事項 | 針對到達路由器的封包，不會建立鏈結至 PB IPsec 通道之 VFP 介面的 NAT 階段作業，即使配置路由器這麼做也是一樣 |
+| VRVDR-42084 | 阻擋事件 | 針對到達路由器的封包，不會建立鏈結至 PB IPsec 通道之 VFP 介面的 NAT 階段作業，即使配置路由器這麼做也是一樣 |
 | VRVDR-42027 | 主要 | 使用不正確輸入 ifIndex 的 SFLOW |
 | VRVDR-41558 | 主要 | 封包追蹤中所報告的時間戳記與實際時間及系統時鐘不一致 |
 
@@ -209,7 +270,7 @@ lastupdated: "2018-11-10"
 
 | 問題號碼 | 優先順序 | 摘要 |
 | --- | --- | --- |
-| VRVDR-42084 | 阻擋事項 | 針對到達路由器的封包，不會建立鏈結至 PB IPsec 通道之 VFP 介面的 NAT 階段作業，即使配置路由器這麼做也是一樣 |
+| VRVDR-42084 | 阻擋事件 | 針對到達路由器的封包，不會建立鏈結至 PB IPsec 通道之 VFP 介面的 NAT 階段作業，即使配置路由器這麼做也是一樣 |
 | VRVDR-41944 | 主要 | VRRP 失效接手之後，除非發出 "vpn restart" 或 peer reset，否則無法重新建立部分 VTI 通道 |
 | VRVDR-41906 | 主要 | PMTU 探索失敗，因為從錯誤的來源 IP 送出 ICMP 類型 3 接收代碼 4 訊息 |
 | VRVDR-41558 | 主要 | 封包追蹤中所報告的時間戳記與實際時間及系統時鐘不一致 |
@@ -495,6 +556,6 @@ CVE-2018-1000005、CVE-20178-1000007：Debian DSA- 4098-1：curl - 安全更新 
 | --- | --- | --- | --- |
 | VRVDR-38819 | 9.8 | DSA-3989-1 | CVE-2017-14491、CVE-2017-14492、CVE-2017-14493、CVE-2017-14494、CVE-2017-14495、CVE-2017-14496：DSA-3989-1 dnsmasq -- 安全更新 |
 
-此處所包含的資訊不是 AT&T 的優惠、承諾、呈現或保固，得隨時變更。除非有書面合約，否則無法在 AT&T 公司外部使用或揭露它。
+此處所包含的資訊不是 AT&T 的優惠、承諾、呈現或保固，得隨時變更。除非經過書面同意，否則不得在 AT&T 公司以外使用或揭露。
 
 © 2018 AT&T Intellectual Property. All rights reserved. AT&T and Globe logo are registered trademarks of AT&T Intellectual Property. All other marks are the property of their respective owners.

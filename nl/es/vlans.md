@@ -14,10 +14,12 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Direccionar VLAN
-Virtual Router Appliance es capaz de direccionar varios VLAN en la misma interfaz de red (por ejemplo, `dp0bond0` o `dp0bond1`). Esto se consigue estableciendo el puerto de conmutador en modalidad troncal y configurando las interfaces virtuales (VIF) en el dispositivo.
+# Direccionamiento de las VLAN
+{: #routing-your-vlans}
 
-Por ejemplo:
+Virtual Router Appliance es capaz de direccionar varias VLAN en la misma interfaz de red (por ejemplo, `dp0bond0` o `dp0bond1`). Esto se consigue estableciendo el puerto de conmutador en modalidad troncal y configurando las interfaces virtuales (VIF) en el dispositivo.
+
+Por ejemplo:  
 
 ```
 set interfaces bonding dp0bond0 vif 1432 address 10.0.10.1/24

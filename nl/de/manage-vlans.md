@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# VLANs verwalten
-In der [Anzeige 'Gateway-Appliance-Details'](access-gateway-details.html) können Sie zahlreiche verschiedene Aktionen ausführen.
+# Ihre VLANs verwalten
+{: #managing-your-vlans}
+
+In der [Anzeige 'Gateway-Appliance-Details'](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) können Sie zahlreiche verschiedene Aktionen ausführen.
 
 ## Ein VLAN einer Gateway-Appliance zuordnen
 
@@ -23,7 +25,7 @@ Ein VLAN muss einer Gateway-Appliance zugeordnet werden, bevor es weitergeleitet
 
 VLANs können jeweils nur einem Gateway zugeordnet sein und dürfen nicht über eine Firewall verfügen. Führen Sie die folgende Prozedur aus, um ein VLAN einem Netzgateway zuzuordnen.
 
-1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](access-gateway-details.html). 
+1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details). 
 2. Wählen Sie das gewünschte VLAN in der Dropdown-Liste **VLAN zuordnen** aus.
 3. Klicken Sie auf die Schaltfläche **Zuordnen**, um das VLAN zuzuordnen.
 
@@ -35,7 +37,7 @@ Die zugehörigen VLANs sind mit einer Gateway-Appliance verknüpft, aber der ank
 
 Gehen Sie wie folgt vor, um ein zugehöriges VLAN weiterzuleiten:
 
-1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](access-gateway-details.html). 
+1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details). 
 2. Lokalisieren Sie das gewünschte VLAN im Bereich 'Zugehörige VLANs'.
 3. Wählen Sie im Dropdown-Menü 'Aktionen' die Option **VLAN weiterleiten** aus.
 4. Klicken Sie auf **Ja**, um das VLAN weiterzuleiten. 
@@ -50,7 +52,7 @@ Beim Umgehen eines VLANs bleibt das betreffende VLAN dem Netzgateway zugeordnet.
 
 Gehen Sie wie folgt vor, um das Gateway-Routing für ein VLAN zu umgehen:
 
-1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](access-gateway-details.html). 
+1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details). 
 2. Lokalisieren Sie das gewünschte VLAN im Bereich 'Zugehörige VLANs'.
 3. Wählen Sie im Dropdown-Menü 'Aktionen' die Option **VLAN umgehen** aus.
 4. Klicken Sie auf **Ja**, um das Gateway zu umgehen. 
@@ -63,7 +65,7 @@ VLANs können durch [Zuordnen](#associate-a-vlan-to-a-gateway-appliance) jeweils
 
 Gehen Sie wie folgt vor, um die Zuordnung eines VLANs zu einer Gateway-Appliance aufzuheben:
 
-1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](access-gateway-details.html). 
+1. [Rufen Sie die Anzeige 'Gateway-Appliance-Details' im Kundenportal auf](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details). 
 2. Lokalisieren Sie das gewünschte VLAN im Bereich 'Zugehörige VLANs'.
 3. Wählen Sie im Dropdown-Menü **Aktionen** die Option **Zuordnung aufheben** aus. 
 4. Klicken Sie auf **Ja**, um die Zuordnung des VLANs aufzuheben. 
@@ -81,3 +83,29 @@ set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
 
 Die oben angegebenen Befehle erstellen zwei virtuelle Schnittstellen in der Schnittstelle `dp0bond0`. Die Schnittstelle `dp0bond0.1432` verarbeitet den Datenverkehr für das VLAN 1432 und die Schnittstelle `dp0bond0.1693` verarbeitet den Datenverkehr für das VLAN 1693.
+
+## Mehrere Teilnetze zu einem einzigen VLAN hinzufügen
+
+Das folgende Beispiel ist eine Beispielkonfiguration, die am Ende des Hinzufügens eines Beispielteilnetzes (`159.8.67.96/28`) für ein öffentliches VLAN (1451) enthält. Die Adresse für jede virtuelle Schnittstelle (VLAN-Schnittstelle) wird nicht an den BCR (Back-End-Kundenrouter) oder FCR (Front-End-Kundenrouter) weitergeleitet. Sie wird nur für die VRRP/Hochverfügbarkeitskommunikation zwischen zwei Vyattas-Daten verwendet. 
+
+Teilnetze können aus jedem nicht verwendeten privaten IP-Bereich ausgewählt werden. Daher wird in der Regel `10.0.0.0/8` hier ausgeschlossen. Es wurden Teilnetze von `192.168.0.0/16` für die folgenden Beispiele ausgewählt, aber es können auch Teilnetze von `172.16.0.0/12` verwendet werden. 
+
+Die `virtuelle Adresse` ist die Position, an der das neue Teilnetz konfiguriert werden soll. In den meisten Fällen sollte die Gateway-IP-Adresse des Teilnetzes konfiguriert werden. Die an die virtuelle Schnittstelle gebundene Gateway-IP wird dann als nächste Gateway-Adresse von allen Bare-Metal- oder virtuellen Servern verwendet, die auf dem neuen Teilnetz hinter dem VRA konfiguriert sind. 
+
+Das folgende Beispiel zeigt, dass `159.8.67.97/28` an die virtuelle Schnittstelle gebunden ist, so dass der gesamte Datenverkehr für das Teilnetz `159.8.67.98/28` von den VRAs verwaltet werden kann.
+
+```
+set interfaces bonding dp0bond0 vif 1623 address '192.168.10.2/30'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1623 vrrp vrrp-group 2 virtual-address '10.127.132.129/26'
+set interfaces bonding dp0bond0 vif 1750 address '192.168.20.2/30'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond0 vif 1750 vrrp vrrp-group 2 virtual-address '10.126.19.129/26'
+set interfaces bonding dp0bond1 vif 788 address '192.168.150.2/30'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 788 vrrp vrrp-group 2 virtual-address '159.8.106.129/28'
+set interfaces bonding dp0bond1 vif 1451 address '192.168.200.2/30'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 sync-group 'vgroup2'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.67.97/28'
+set interfaces bonding dp0bond1 vif 1451 vrrp vrrp-group 2 virtual-address '159.8.86.49/29'
+```

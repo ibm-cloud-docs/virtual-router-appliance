@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 고가용성 구성 동기화
+{: #synchronizing-high-availability-configurations}
+
 고가용성(HA) 쌍의 두 VRA(Virtual Router Appliance)는 두 디바이스가 유사한 방식으로 작동하도록 구성을 충분히 동기화해야 합니다. 이는 `configuration sync-maps`를 통해 수행되고 동기화할 구성의 부분을 선택할 수 있습니다. 한 시스템에서 변경하면 표시된 구성을 다른 디바이스로 푸시합니다.
 
 **참고:** 이는 원격 디바이스에서 로컬 디바이스의 실행 구성을 동기화하고 저장합니다. 그러나 커미트 프로세스의 한 단계로 로컬 디바이스에 구성을 저장하지 않습니다. 

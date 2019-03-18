@@ -15,6 +15,8 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 升级问题
+{: #upgrade-issues}
+
 有时，成功升级并重新引导新版本的 Vyatta 操作系统后，可能会遇到无法发出用户命令的问题。
 
 例如：

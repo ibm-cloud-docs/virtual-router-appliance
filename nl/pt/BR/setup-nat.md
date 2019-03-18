@@ -14,7 +14,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Configurar regras NAT no Vyatta 5400
+# Configurando regras de NAT no Vyatta 5400
+{: #setting-up-nat-rules-on-vyatta-5400}
+
 Este tópico contém exemplos das regras de Conversão de endereço de rede (NAT) usadas em um Vyatta.
 
 ## Regra NAT uma para muitas (mascarada)
@@ -71,7 +73,7 @@ Se o tráfego vier no IP `50.97.203.227` em bond1, esse IP será mapeado para o 
 
 ## Incluindo intervalos de IP por meio de seu VRA
 
-Dependendo da configuração do VRA, talvez você queira aceitar endereços IP específicos do IBM Cloud. 
+Dependendo de sua configuração do VRA, talvez você queira aceitar endereços IP específicos do IBM© Cloud. 
 
 Novas implementações do vRouter vêm com endereços IP de rede de serviços do IBM Cloud definidos em uma regra de firewall chamada `SERVICE-ALLOW`.
 
@@ -86,7 +88,7 @@ set firewall name SERVICE-ALLOW rule 3 action 'accept'
 set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 ~~~
 
-Depois de ter definido as regras de firewall, agora é possível designá-las conforme necessário. Dois exemplos são listados abaixo. 
+Depois de definir as regras de firewall, será possível designá-las como você achar melhor. Dois exemplos são listados abaixo. 
 
 Aplicando a uma zona:
 

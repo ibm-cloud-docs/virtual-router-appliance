@@ -14,8 +14,10 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# 搭配使用 NAT 與字首型 IPsec
-在[配置具有 IPsec 及區域防火牆的 VFP 介面](vra-vfp.html)主題中，我們已建立 VFP 介面，並將它設為與 IPsec 通道搭配使用。 
+# 搭配使用 NAT 與以字首為基礎的 IPsec
+{: #using-nat-with-prefix-based-ipsec}
+
+在[使用 IPsec 及區域防火牆配置 VFP 介面](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)主題中，我們已建立 VFP 介面，並將它設為與 IPsec 通道搭配使用。 
 
 我們可以在 NAT 規則中使用相同的介面，以及入埠和出埠介面宣告，但有一個額外警告。 
 
@@ -36,7 +38,7 @@ set service nat source rule 10 translation address '172.16.200.2'
 set protocols static interface-route 172.16.100.2/32 next-hop-interface 'vfp0'
 ```
 
-靜態路徑的原因是 IPsec 常駐程式已建立遠端字首的核心路徑：
+使用靜態路徑的原因是因為 IPsec 常駐程式已建立遠端字首的核心路徑：
 
 ```
 K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
@@ -49,7 +51,7 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-這會針對接管 `vfp0` 的資料流量建立更具體的路徑。 
+這會針對要通過 `vfp0` 的資料流量建立更具體的路徑。 
 
 此時，NAT 將依配置運作，而且資料流量會流經通道。 
 

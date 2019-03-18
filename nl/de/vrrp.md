@@ -13,7 +13,9 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# HA und VRRP
+# Mit Hochverfügbarkeit und VRRP arbeiten
+{: #working-with-high-availability-and-vrrp}
+
 Virtual Router Appliance (VRA) unterstützt Virtual Router Redundancy Protocol (VRRP) als Protokoll für Hochverfügbarkeit. Die Bereitstellung von Einheiten folgt der Aktiv/Passiv-Methode, bei der eine Maschine als Mastersystem fungiert und die andere als Backupsystem. Alle Schnittstellen auf beiden Maschinen sind Mitglieder derselben Synchronisationsgruppe (sync-group), d. h. wenn eine Schnittstelle ausfällt, fallen die übrigen Schnittstellen in derselben Gruppe ebenfalls aus und die Einheit wird nicht länger als Master verwendet. Sobald das aktuelle Backupsystem erkennt, dass vom Mastersystem keine Keepalive- bzw. Heartbeatnachrichten mehr gesendet werden, übernimmt es die Steuerung der virtuellen VRRP-IPs und wird damit zum Mastersystem.
 
 VRRP ist der wichtigste Bestandteil der Konfiguration beim Bereitstellen von Gateways. Die Funktion für Hochverfügbarkeit ist von den Heartbeatnachrichten abhängig, d. h. diese Nachrichten dürfen keinesfalls blockiert werden.
@@ -154,16 +156,16 @@ Die Vyatta-Betriebssystemversion 1801p und höher enthält den neuen Befehl `vrr
 
 `vrrp` gibt ein Wahlprotokoll an, das die Verantwortung für einen virtuellen Router dynamisch einem der VRRP-Router in einem LAN zuordnet. Der VRRP-Router, der die IPv4- oder IPv6-Adresse(n) steuert, die einem virtuellen Router zugeordnet sind, wird als Master bezeichnet und leitet Pakete weiter, die an diese IPv4- oder IPv6-Adressen gesendet wurden. Der Wahlprozess stellt eine dynamische Funktionsübernahme in der Weiterleitungsfunktion bereit, falls der Master nicht mehr verfügbar sein sollte. Alle Protokollnachrichten werden entweder mit IPv4- oder IPv6-Multicast-Datagrammen ausgeführt. Das Protokoll kann dadurch über eine Vielzahl von LAN-Technologien mit mehreren Zugriffsmöglichkeiten, die IPv4/IPv6-Multicasting unterstützen, betrieben werden.
 
-Um den Datenaustausch im Netz zu minimieren, sendet nur der Master für jeden virtuellen Router regelmäßige VRRP-Mitteilungen als Nachrichten. Ein Backup-Router versucht nicht, den Master präemptiv zu verarbeiten, es sei denn, er hat eine höhere Priorität. Dadurch wird die Serviceunterbrechung beseitigt, die bisher bis zur Verfügbarkeit eines bevorzugteren Pfads bestand. Es ist auch möglich, alle Vorableerungsversuche administrativ zu untersagen. Falls der Master nicht mehr verfügbar ist, wird der Backup mit der höchsten Priorität nach einer kurzen Verzögerung zum Master und bietet einen kontrollierten Übergang der Verantwortung des virtuellen Routers mit minimaler Serviceunterbrechung. 
+Um den Datenaustausch im Netz zu minimieren, sendet nur der Master für jeden virtuellen Router regelmäßige VRRP-Mitteilungen als Nachrichten. Ein Backup-Router versucht nicht, den Master präemptiv zu verarbeiten, es sei denn, er hat eine höhere Priorität. Dadurch wird die Serviceunterbrechung beseitigt, die bisher bis zur Verfügbarkeit eines bevorzugteren Pfads bestand. Es ist auch möglich, alle Vorableerungsversuche administrativ zu untersagen. Falls der Master nicht mehr verfügbar ist, wird der Backup mit der höchsten Priorität nach einer kurzen Verzögerung zum Master und bietet einen kontrollierten Übergang der Verantwortung des virtuellen Routers mit minimaler Serviceunterbrechung.
 
-**HINWEIS:** Für Bereitstellungen von IBM Cloud ist der Startverzögerungswert auf den Standardwert eingestellt. Sie können diesen Wert nach Ihrem Ermessen ändern, wenn Sie Ihre Funktionsübernahme- und Hochverfügbarkeitsmethoden testen.
+**HINWEIS:** Für Bereitstellungen von IBM© Cloud ist der Startverzögerungswert auf den Standardwert eingestellt. Sie können diesen Wert nach Ihrem Ermessen ändern, wenn Sie Ihre Funktionsübernahme- und Hochverfügbarkeitsmethoden testen.
 
 
 ### Vorableerung vs. keine Vorableerung
 
-Das Protokoll `vrrp` definiert die Logik, die entscheidet, welcher VRRP-Peer in einem Netz die höhere Priorität hat, und daher der beste Peer ist, um die Rolle als Master auszuführen. Mit einer Standardkonfiguration wird VRRP so aktiviert, dass die Vorableerung ausgeführt wird. Das heißt, dass neue Peers mit höherer Priorität im Netz die Übernahme der Masterrolle erzwingen. 
+Das Protokoll `vrrp` definiert die Logik, die entscheidet, welcher VRRP-Peer in einem Netz die höhere Priorität hat, und daher der beste Peer ist, um die Rolle als Master auszuführen. Mit einer Standardkonfiguration wird VRRP so aktiviert, dass die Vorableerung ausgeführt wird. Das heißt, dass neue Peers mit höherer Priorität im Netz die Übernahme der Masterrolle erzwingen.
 
-Wenn die Vorableerung inaktiviert ist, übernimmt ein Peer mit höherer Priorität die Masterrolle nur dann, wenn der vorhandene Peer mit geringerer Priorität nicht mehr im Netz verfügbar ist. Das Inaktivieren der Vorableerung ist manchmal in realen Szenarios sinnvoll. Dies gilt für Situationen mit Peers höherer Priorität, wenn diese möglicherweise damit beginnen, regelmäßig aufgrund von Zuverlässigkeitsproblemen mit dem Peer selbst oder mit einer der Netzverbindungen fehlzuschlagen. Außerdem ist es sinnvoll die vorzeitige Übernahme durch einen neuen Peer mit höherer Priorität zu vermeiden, der die Netzkonvergenz noch nicht abgeschlossen hat. 
+Wenn die Vorableerung inaktiviert ist, übernimmt ein Peer mit höherer Priorität die Masterrolle nur dann, wenn der vorhandene Peer mit geringerer Priorität nicht mehr im Netz verfügbar ist. Das Inaktivieren der Vorableerung ist manchmal in realen Szenarios sinnvoll. Dies gilt für Situationen mit Peers höherer Priorität, wenn diese möglicherweise damit beginnen, regelmäßig aufgrund von Zuverlässigkeitsproblemen mit dem Peer selbst oder mit einer der Netzverbindungen fehlzuschlagen. Außerdem ist es sinnvoll die vorzeitige Übernahme durch einen neuen Peer mit höherer Priorität zu vermeiden, der die Netzkonvergenz noch nicht abgeschlossen hat.
 
 ### Voraussetzungen und Einschränkung der Vorableerung
 
@@ -181,7 +183,7 @@ start-delay <0-600>
 }
 ```
 
-`start-delay` kann Werte zwischen 0 (Standardwert) und 600 Sekunden annehmen. 
+`start-delay` kann Werte zwischen 0 (Standardwert) und 600 Sekunden annehmen.
 
 ### Beispielkonfiguration
 
