@@ -23,11 +23,29 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**As of: February 14, 2019**
+**As of: March 22, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+## 1801w
+
+**Issues Resolved**
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-45672 | Critical | The RSA private key at /opt/vyatta/etc/config/ipsec.d/rsakeys/localhost.key has wrong permissions |
+| VRVDR-45591 | Critical | Interface IP MTU change not taking effect for Intel x710 NICs  |
+| VRVDR-45466 | Minor | IPv6 address not abbreviated when config is loaded via PXE boot causing config-sync issues |
+| VRVDR-45414 | Minor | Vyatta-cpu-shield fails to start and throws OSError:[Errno 22] Invalid argument for various cores on a 2 socket system  |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-45253 | 7.5 | DSA-4375-1 | CVE-2019-3813: Debian DSA 4375-1: spice - security update |
+| VRVDR-44922 | 7.5 | DSA-4355-1 | CVE-2018-0732, CVE-2018-0734, CVE-2018-0737, CVE-2018-5407: Debian DSA-4355-1 : openssl1.0 - security update |
+| VRVDR-43936 | 7.5 | DSA-4309-1 | CVE-2018-17540: Debian DSA-4309-1 : strongswan - security update |
 
 ## 1801v
 
