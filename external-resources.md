@@ -18,6 +18,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Other Resources for IBM Virtual Router Appliance
 {: #other-resources-or-ibm-virtual-router-appliance}

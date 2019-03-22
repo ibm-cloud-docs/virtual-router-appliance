@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Using NAT with Prefix Based IPsec
 {: #using-nat-with-prefix-based-ipsec}
@@ -59,7 +61,8 @@ This creates a more specific route for the traffic to take through `vfp0`.
 
 At this point NAT will work as configured, and the traffic will travel through the tunnel.
 
-**NOTE:** With NAT you need a route with a CIDR smaller than the IPsec remote prefix (it cannot be the same size) pointing your traffic over the `vfp0` virtual interface.
+NAT requires a route with a CIDR smaller than the IPsec remote prefix (it cannot be the same size) pointing your traffic over the `vfp0` virtual interface.
+{: tip}
 
 Once everything is in place, you can ping and verify:
 

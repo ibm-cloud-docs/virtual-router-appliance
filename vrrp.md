@@ -16,6 +16,8 @@ subcollection: virtual-router-appliance
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Working with High Availability and VRRP
@@ -90,9 +92,9 @@ When two devices are in an HA pair, care must be taken on your master device tha
 
 ## Associated VLAN subnets with VRRP
 
-For any VIF configuration with VRRP you will need a virtual IP address (the first usable IP in the subnet, the gateway IP to which everything in that subnet will route) and also a real interface IP address for the VIF on both devices. To conserve usable IPs, it is recommended that the real interface IPs use an out of band range such as 192.168.0.0/30, where one device has the .1 and the other device has the .2 address. You can have multiple VRRP virtual IPs, but you only need one real address on each vif.
+For any VIF configuration with VRRP you will need a virtual IP address (the first usable IP in the subnet, the gateway IP to which everything in that subnet will route) and also a real interface IP address for the VIF on both devices. To conserve usable IPs, it is recommended that the real interface IPs use an out of band range such as 192.168.0.0/30, where one device has the .1 and the other device has the .2 address. You can have multiple VRRP virtual IPs, but you only need one real address on each VIF.
 
-Here is an example of a VRRP configuration with two private vlans and three subnets:
+Here is an example of a VRRP configuration with two private VLANs and three subnets:
 
 ```
 set interfaces bonding dp0bond0 address '10.100.11.39/26'
@@ -127,17 +129,17 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* A vrrp sync-group is different than a vrrp group. When an interface that belongs in a sync-group changes state, all other members of the same sync-group will transition to the same state.
-*  The vrrp-group number of the VLAN interfaces (VIFs) should almost always be the same as its matching native interface. For example, `dp0bond1.789` should always have the same vrrp-group number as `dp0bond1`, unless the two interfaces share the same sync-group. Having a different group number on the VIF and the native interface may cause a "split brain" condition when paired with different sync groups. When two interfaces share the same sync-group, even though they are on different vrrp-groups, they will both transition between master and backup at the same time, preventing split brain. On the other hand, if the native interface is set up with a different vrrp-group number and a different sync-group as a VLAN interface, since subnets set up on VLAN interfaces are statically routed to the virtual-address on the native interface, if the VLAN interface is showing as backup and the native interface is master, the router will still send VLAN interface traffic to the VRA where the native interface is master even though the VLAN interface is secondary and not active on the VRA. This specific situation will cause "split brain" and an outage. This is why it is very important to be conscious of how sync-groups are set up in conjunction with vrrp-groups. It is also very important to not use the same vrrp-group numbers between multiple HA VRA pairs in the same transit VLAN, since four vyattas using the same group will cause three VRAs to potentially asssume the Backup state, while only one is Master, causing an outage.
+* A VRRP sync-group is different than a VRRP group. When an interface that belongs in a sync-group changes state, all other members of the same sync-group will transition to the same state.
+*  The vrrp-group number of the VLAN interfaces (VIFs) should almost always be the same as its matching native interface. For example, `dp0bond1.789` should always have the same vrrp-group number as `dp0bond1`, unless the two interfaces share the same sync-group. Having a different group number on the VIF and the native interface may cause a "split brain" condition when paired with different sync groups. When two interfaces share the same sync-group, even though they are on different vrrp-groups, they will both transition between master and backup at the same time, preventing split brain. On the other hand, if the native interface is set up with a different vrrp-group number and a different sync-group as a VLAN interface, since subnets set up on VLAN interfaces are statically routed to the virtual-address on the native interface, if the VLAN interface is showing as backup and the native interface is master, the router will still send VLAN interface traffic to the VRA where the native interface is master even though the VLAN interface is secondary and not active on the VRA. This specific situation will cause "split brain" and an outage. This is why it is very important to be conscious of how sync-groups are set up in conjunction with vrrp-groups. It is also very important to not use the same vrrp-group numbers between multiple HA VRA pairs in the same transit VLAN, since four Vyattas using the same group will cause three VRAs to potentially assume the Backup state, while only one is Master, causing an outage.
 * The real interface addresses on the native vlans (e.g. dp0bond1: 169.110.20.28/29) are not always in the same subnet as their VIPs (169.110.21.26/29).
 
 
 ## Manual VRRP failover
-If you need to force a vrrp failover, it can be achieved by running the following on the device that currently is VRRP master:
+If you need to force a VRRP failover, it can be achieved by running the following on the device that currently is VRRP master:
 
-`vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
+`vyatta@vrouter$ reset VRRP master interface dp0bond0 group 1`
 
-The group ID is the vrrp group ID of the native interfaces, and, as mentioned above, could be different in your pair.
+The group ID is the VRRP group ID of the native interfaces, and, as mentioned above, could be different in your pair.
 
 ## Connection synchronization
 When two VRA devices are in an HA pair, it may be useful to track stateful connections between the two devices so that if a failover happens, the current state of all connections that are on the failed device are replicated to the backup device, so that it isn't necessary for any current active sessions (like SSL connections) to be rebuilt from scratch, which can result in a disrupted user experience.
@@ -163,8 +165,8 @@ Vyatta OS version 1801p and greater includes a new `vrrp` command.
 
 To minimize network traffic, only the Master for each virtual router sends periodic VRRP Advertisement messages. A Backup router will not attempt to preempt the Master unless it has higher priority. This eliminates service disruption unless a more preferred path becomes available. It’s also possible to administratively prohibit all preemption attempts. If the Master becomes unavailable, then the highest-priority Backup will transition to Master after a short delay, providing a controlled transition of the virtual router responsibility with minimal service interruption.
 
-**NOTE:** In IBM© Cloud provisioned deployments the start delay value is set to the default value. You may wish to alter this at your discretion as you test your failover and high availability methods.
-
+In IBM© Cloud provisioned deployments the start delay value is set to the default value. You may wish to alter this at your discretion as you test your failover and high availability methods.
+{: note}
 
 ### Preemption vs. No Preemption
 

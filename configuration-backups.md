@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Backing Up a Configuration
 {: #backing-up-a-configuration}

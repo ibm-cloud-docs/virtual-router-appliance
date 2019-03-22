@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Upgrading the OS
 {: #upgrading-the-os}
@@ -25,7 +27,8 @@ Upgrading the VRA operating system can be performed with the command ``add syste
 
 To begin the upgrade process, open a ticket with the IBM Support Ticket system requesting an upgrade and that a new ISO image be uploaded to your system. You will receive an e-mail from IBM Support indicating where the ISO file was uploaded. In the example below, it is in the directory ``tmp``.
 
-**NOTE:** The upgrade process illustrated below is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, it is recommended that you upgrade the `BACKUP` machine first, and verify that it is working properly. Then access the `MASTER` machine and fail it over using the `reset vrrp` command. Finally, upgrade the original `MASTER` once the `BACKUP` has taken control.
+The upgrade process illustrated below is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, it is recommended that you upgrade the `BACKUP` machine first, and verify that it is working properly. Then access the `MASTER` machine and fail it over using the `reset vrrp` command. Finally, upgrade the original `MASTER` once the `BACKUP` has taken control.
+{: important}
 
 To upgrade the VRA, perform the following procedure.
 

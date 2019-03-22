@@ -16,6 +16,8 @@ subcollection: virtual-router-appliance
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # AT&T Vyatta 5600 vRouter Software Patches
@@ -94,7 +96,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-44172 | Blocker | Error “interfaces [openvpn] is not valid” reported in mss-clamp tests |
-| VRVDR-43969 | Minor | Vyatta 18.x GUI reporting wrong status check memory usage |
+| VRVDR-43969 | Minor | Vyatta 18.x GUI reports the wrong status check memory usage |
 | VRVDR-43847  | Major | Slow throughput for TCP conversations on bonding interface |
 
 **Security Vulnerabilities Resolved**
@@ -170,7 +172,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-42114 | Critical | HTTPS service MUST NOT expose TLSv1 |
 | VRVDR-41829 | Major | Dataplane core dumps until system becomes unresponsive with SIP ALG soak test |
 | VRVR-41683 | Blocker | DNS name server address learned over VRF is not consistently recognized |
-| VRVDR-41628 | Minor | Route/prefix from router-advertisement active in kernel and dataplane but ignored by RIB |
+| VRVDR-41628 | Minor | Route/prefix from router-advertisement active in kernel and data plane but ignored by RIB |
 
 **Security Vulnerabilities Resolved**
 
@@ -362,7 +364,7 @@ Released May 4, 2018.
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41620 | Major | vTI interface traffic stops sending traffic after new vIF is added |
-| VRVDR-40965 | Major | Bonding does not recover after a dataplane crash |
+| VRVDR-40965 | Major | Bonding does not recover after a data plane crash |
 
 ## 1801f
 
@@ -464,7 +466,7 @@ Released March 8, 2018.
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-40940 | Major | Dataplane crash related to NAT/firewall |
+| VRVDR-40940 | Major | Data plane crash related to NAT/firewall |
 | VRVDR-40886 | Major | Combining “icmp name <value>” with a number of other configuration for the rule will cause firewall to not load |
 | VRVDR-39879 | Major | Configuring bonding for jumbo frames fails |
 
@@ -529,7 +531,7 @@ Released December 15, 2017.
 | VRVDR-37934 | Critical | BGPd crashed when aggregate-address summary-only is configured/static routes missing |
 | VRVDR-37717 | Minor | Rename hard-enf “Description” and “License” fields in version output |
 | VRVDR-37689 | Major | High rate of NIC PF interrupts |
-| VRVDR-37633 | Critical | Keepalived hanging |
+| VRVDR-37633 | Critical | Keepalive hanging |
 
 ## 5.2R6S3
 Released December 4, 2017.

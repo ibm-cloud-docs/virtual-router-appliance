@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Manage Your IBM Firewalls
 {: #manage-your-ibm-firewalls}
@@ -66,8 +68,9 @@ set security firewall name TEST rule 1 state enable
 This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands.
 
 ## ALG for assisted stateful tracking
-A few protocols such as FTP utilise more complex sessions that the normal stateful firewall operation can track.
-There are preconfigured modules that enable these protocols to be stetfully managed.
+A few protocols such as FTP utilize more complex sessions that the normal stateful firewall operation can track.
+There are preconfigured modules that enable these protocols to be statefully managed.
+
 It is suggested to disable these ALG modules, unless they are required for the successful use of the respective protocols.
 
 ```
@@ -169,7 +172,7 @@ The VRA supports two types of logging:
 
 1. Session logging.  Use ``security firewall session-log`` command to configure firewall session logging.
 
-	For UDP, ICMP, and all non-TCP flows, a session transitions to four states over the lifetime of the flow. For each transition, you can configure the VRA to log a message. TCP has a larger number of state transitions, each of which can be configured to log.  
+	For UDP, ICMP, and all non-TCP flows, your session will transition to four states over the lifetime of the flow. For each transition, you can configure the VRA to log a message. TCP has a larger number of state transitions, each of which can be configured to log.  
 
 2. Per packet logging. Include keyword ``log`` in firewall or NAT rule to log every network packet that matches the rule.
 

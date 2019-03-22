@@ -16,6 +16,8 @@ subcollection: virtual-router-appliance
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Setting Up an IPsec Tunnel that Works with Zone Firewalls
@@ -61,7 +63,7 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '1
 
 This sets up a generic tunnel that routes 172.16.x.x traffic between the two machines. Machine B has 172,16.100.1 as a loopback address to provide an endpoint to test with, while Machine A has a virtual machine on a routed VLAN to provide source traffic across the tunnel.
 
-You can see the result here:
+You can see the results here:
 
 ```
 [root@acs-jmat-migserver ~]# ping -c 5 172.16.100.1

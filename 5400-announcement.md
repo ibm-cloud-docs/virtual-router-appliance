@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Vyatta 5400 End of Support Announcement
 {: #vyatta-5400-end-of-support-announcement}

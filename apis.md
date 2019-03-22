@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # API Reference for IBM Virtual Router Appliance
 {: #api-reference-for-ibm-virtual-router-appliance}

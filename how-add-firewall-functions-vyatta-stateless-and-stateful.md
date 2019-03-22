@@ -6,11 +6,14 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Adding Firewall Functions to Vyatta 5400 (stateless and stateful)
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
-Applying firewall rule sets to each interface is one method of firewalling when using Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall intances - In, Out, and Local - and each instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall will apply the specific action of the matching rule.
+Applying firewall rule sets to each interface is one method of firewalling when using Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall instances - In, Out, and Local - and each instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall will apply the specific action of the matching rule.
 
 For any of the three firewall instances below, **only one** can be applied.
 
@@ -24,7 +27,7 @@ Use the following steps to set an example firewall rule to turn off Internet Con
 
 2\. Type *configure*.
 
-3\. Type *set firwall all-ping 'disable'*.
+3\. Type *set firewall all-ping 'disable'*.
 
 4\. Type *commit*.
 
@@ -42,9 +45,9 @@ bond1.2007 = prod (for production)
 
 bond0.2254 = private (for development)
 
-bond1.1280 = reservered for future use
+bond1.1280 = reserved for future use
 
-bond1.1894 = reservered for future use
+bond1.1894 = reserved for future use
 
 **Create firewall rules**
 
@@ -95,7 +98,8 @@ The next firewall rule we create will be applied to our **dmz** zone. The rule w
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
-**NOTE:** Firewall rules need to flow outbound through **prod** to **dmz**. Use the following command to help troubleshoot network flow: *sudo tcpdump -i any host 10.52.69.202*.
+Firewall rules need to flow outbound through **prod** to **dmz**. Use the following command to help troubleshoot network flow: *sudo tcpdump -i any host 10.52.69.202*.
+{: note}
 
 **Create Zones**
 
@@ -107,22 +111,22 @@ Zones are logical representation of an interface. The following commands will:
 * Create a zone policy named **private** with a default action to drop packets destined for this zone.
 * Set the policy named **private** to use the **bond0.2254** interface.
 
-1\. Enter the Following commands in the prompt:
+1. Enter the Following commands in the prompt:
 
-* *configure*
-* *set zone policy zone dmz default-action drop*
-* *set zone-policy zone dmz interface bond1*
-* *set zone-policy zone prod default-action drop*
-* *set zone-policy zone prod interface bond1.2007*
-* *set zone-policy zone private default-action drop*
-* *set zone-policy zone private interface bond0.2254*
+  * *configure*
+  * *set zone policy zone dmz default-action drop*
+  * *set zone-policy zone dmz interface bond1*
+  * *set zone-policy zone prod default-action drop*
+  * *set zone-policy zone prod interface bond1.2007*
+  * *set zone-policy zone private default-action drop*
+  * *set zone-policy zone private interface bond0.2254*
 
-2\. Use the following commands to set the firewall policy for the zones:
+  2. Use the following commands to set the firewall policy for the zones:
 
-* *set zone-policy zone private from dmz firewall name dmz2private*
-* *set zone-policy zone prod from dmz firewall name dmz2private*
-* *set zone-policy zone dmz from prod firewall name public4*
-* *commit*
+  * *set zone-policy zone private from dmz firewall name dmz2private*
+  * *set zone-policy zone prod from dmz firewall name dmz2private*
+  * *set zone-policy zone dmz from prod firewall name public4*
+  * *commit*
 
 Note that you can apply a firewall rule to a specific interface if you do not want to apply it to a zone policy. Use the commands below to apply a rule to an interface.
 
@@ -131,7 +135,7 @@ Note that you can apply a firewall rule to a specific interface if you do not wa
 
 ## Stateful Firewalls
 
-A *stateful* firewall keeps a table of previously seen flows, and packets can be accepted or dropped according to their relation with previous packets. As a general rule, stateful firewalls are generally preferred where application traffic is prevalent. 
+A *stateful* firewall keeps a table of previously seen flows, and packets can be accepted or dropped according to their relation with previous packets. As a general rule, stateful firewalls are generally preferred where application traffic is prevalent.
 
 <span style="text-decoration: underline">*The Brocade 5400 vRouter does not track the state of the connections with default configuration. The firewall is stateless until one of the following conditions has been met:*</span>
 

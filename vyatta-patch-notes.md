@@ -16,6 +16,8 @@ subcollection: virtual-router-appliance
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 

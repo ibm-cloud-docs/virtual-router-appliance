@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Configuring IPSec on Vyatta 5400
 {: #configuring-ipsec-on-vyatta-5400}
@@ -56,7 +59,7 @@ The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regar
 
 The next step is to set up the remote-side device, which is a Brocade 5400 vRouter 6.6.5 R.
 
-  * Use the just-configured deivce (that was configurated in operation mode) to enter the command show configuration commands. A list of commands used to set up the device will be presented.
+  * Use the just-configured device (that was configured in operation mode) to enter the command show configuration commands. A list of commands used to set up the device will be presented.
   * Copy the commands to a text editor. The commands use to set up the local device will be used to set up the remote server with modifications to the IP to point the Brocade 5400 vRouter 6.6.5R device on SoftLayer.
 
 The remote-side configuration used earlier is below. The changes needed for the local-side configuration are in bold.

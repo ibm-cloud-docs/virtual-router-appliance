@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Upgrade Issues
 {: #upgrade-issues}
@@ -67,7 +69,8 @@ drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 
 The ISOs for the initial installation and your currently running OS are featured here.
 
-**NOTE:** If you made more than one upgrade, then those will display here as well.
+If you made more than one upgrade, then those will display here as well.
+{: note}
 
 Next, change directories using the previously loaded OS as the next directory, and go into the VRA home directory:
 
@@ -104,7 +107,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
 
-Once copied, logout, and log back in:
+Once copied, logout, then log back in:
 
 ```
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
@@ -128,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 All your commands will work again, and you can proceed normally.
 
-**NOTE:** The HTTPS certificate `/etc/lighttpd/server.pem` may also fail to copy during the OS upgrade process, which can cause High Availability (HA) configurations to fail to synchronize. To fix this problem, copy over the old `server.pem` file in addition to the files listed above (issue `su -` to reach root level, then issue the `copy` command), then issue `restart https` to restart the HTTPS `demon.m` file (and the files listed above).
+The HTTPS certificate `/etc/lighttpd/server.pem` may also fail to copy during the OS upgrade process, which can cause High Availability (HA) configurations to fail to synchronize. To fix this problem, copy over the old `server.pem` file in addition to the files listed above (issue `su -` to reach root level, then issue the `copy` command), then issue `restart https` to restart the HTTPS `demon.m` file (and the files listed above).
+{: important}

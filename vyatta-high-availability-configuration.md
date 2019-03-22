@@ -8,13 +8,17 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Vyatta 5400 High Availability Configuration
 {: #vyatta-5400-high-availability-configuration}
 
 Vyatta high availability is supported through the use of VRRP, Virtual Routing Redundancy Protocol. Each gateway group will have two primary VRRP IP addresses, one for the private, and one for the public side of the networks.
 
-**NOTE:** Private only Vyattas will have only the private VRRP.
+Private only Vyattas will have only the private VRRP.
+{: note}
 
 These IP addresses are the target IPs for the Softlayer network infrastructure to route all the subnets on VLANs that are associated with the gateway members. Only one Vyatta will have these VRRP IPs running at a time, the other members of the gateway group will have them administratively down.
 
@@ -81,11 +85,12 @@ On the second vyatta:
     set interfaces bonding bond0 vif 1000 vrrp vrrp-group 10 priority 199
     set interfaces bonding bond0 vif 1000 vrrp vrrp-group 10 virtual-address 192.168.10.1/24
 
-In this case, both vyattas will have their own IP that won't conflict with the subnet that is allocated. You can choose almost any private range you want, just pick a small subnet that will not conflict with any other routes you might have, such as a subnet range over an IPsec tunnel, or a 10.0.0.0/8 address that conflicts with Softlayer's, and you will be fine.
+In this case, both Vyattas will have their own IP that won't conflict with the subnet that is allocated. You can choose almost any private range you want, just pick a small subnet that will not conflict with any other routes you might have, such as a subnet range over an IPsec tunnel, or a 10.0.0.0/8 address that conflicts with Softlayer's.
 
 You will also want to add a "sync-group" name as well. All VRRP addresses should be a part of the same sync-group. This is so any failure on one interface will cause all the interfaces in the same sync-group to fail over as well. Otherwise, you could end up with some being MASTER, and others in BACKUP. Use the same name in the bond0 and bond1 native VLAN configuration.
 
-NOTE: The bond0 and bond1 VRRP configuration may have a line for rfc3768-compatibility. This is not needed for VRRP on a vif, only the native VLAN of bond0 and bond1.
+The bond0 and bond1 VRRP configuration may have a line for rfc3768-compatibility. This is not needed for VRRP on a VIF, only the native VLAN of bond0 and bond1.
+{: tip}
 
 On a newly provisioned gateway pair, config-sync will only have minimal configuration:
 
@@ -107,4 +112,5 @@ You will have to add rules to determine which configuration branches to migrate 
 
 Once these are committed, any changes to the firewall or ipsec configuration will be pushed to the other vyatta on commit.
 
-**NOTE:** sync-group and sync-map are two different things. The sync-map configuration is for rules to push configuration changes to another Vyatta. The other, sync-group, is for VRRP IPs to fail over as a group instead of one at a time. Configuring one does not affect the other.
+sync-group and sync-map are two different things. The sync-map configuration is for rules to push configuration changes to another Vyatta. The other, sync-group, is for VRRP IPs to fail over as a group instead of one at a time. Configuring one does not affect the other.
+{: tip}

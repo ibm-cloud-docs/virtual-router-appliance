@@ -16,13 +16,15 @@ subcollection: virtual-router-appliance
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 
 # Getting Started with IBM Virtual Router Appliance
 {: #getting-started-with-ibm-virtual-router-appliance}
 
-To get started with the IBM© Virtual Router Appliance (VRA), visit the order page in the Customer Portal:
+To get started with the IBM© Virtual Router Appliance (VRA), navigate to the order page in the Customer Portal:
 
 1. From your browser, open the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} and log into your account.
 2. In the Customer Portal navigation, select **Network > Gateway Appliances**.
@@ -38,12 +40,13 @@ To get started with the IBM© Virtual Router Appliance (VRA), visit the order pa
 
 After your order is approved, the provisioning of your VRA starts automatically. When the provisioning process is complete, the new VRA will appear in the **Gateway Appliances** list page. Click the gateway name to open the **Gateway Details** page, then click on each gateway member to open the **Device Details** page. You will find the IP addresses, login username, and password for the device.  
 
-**NOTE:** It is important to remember that once you order and configure your VRA from the IBM Cloud Customer Portal, you must also configure the device itself with the same settings.
+Remember that once you order and configure your VRA from the IBM Cloud Customer Portal, you must also configure the device itself with the same settings.
+{: tip}
 
 ## VLANs and the Gateway Appliance's role
 A VLAN (virtual LAN) is a mechanism that segregates a physical network into many virtual segments. For convenience, traffic from multiple selected VLANs can be delivered through a single network cable, a process commonly called "trunking."
 
-VRA is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. The Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. For every VLAN that is associated to the Gateway Appliance, that VLAN is allowed on the switchports that the VRA is connected to, and any subnet on that VLAN is statically routed to your VRA's public IP if the subnet is a public subnet or statically routed to your VRA's private IP if the subnet is a private subnet. That routing is done at the router that the VRA is behind, which will be the Frontend Customer Router (FCR) or the Backend Customer Router (BCR) for public and private traffic respectively. Servers in an associated VLAN can only be reached from other VLANs by going through your VRA; it is not possible to circumvent the VRA unless you bypass or disassociate the VLAN.
+VRA is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. The Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. For every VLAN that is associated to the Gateway Appliance, that VLAN is allowed on the switch ports that the VRA is connected to, and any subnet on that VLAN is statically routed to your VRA's public IP if the subnet is a public subnet or statically routed to your VRA's private IP if the subnet is a private subnet. That routing is done at the router that the VRA is behind, which will be the Frontend Customer Router (FCR) or the Backend Customer Router (BCR) for public and private traffic respectively. Servers in an associated VLAN can only be reached from other VLANs by going through your VRA; it is not possible to circumvent the VRA unless you bypass or disassociate the VLAN.
 
 By default, a new Gateway Appliance is associated with two non-removable "transit" VLANs, one each for public and private. These are typically used for administration and can be separately secured by VRA commands.
 

@@ -18,6 +18,8 @@ subcollection: virtual-router-appliance
 {:tip: .tip}
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
+{:important: .important}
 
 # Technical FAQs for IBM Virtual Router Appliance
 {: #technical-faqs-for-ibm-virtual-router-appliance}
@@ -25,7 +27,7 @@ subcollection: virtual-router-appliance
 The following frequently asked questions address the configuration of the IBM© Virtual Router Appliance (VRA), and migrating to the VRA from Vyatta 5400.
 
 ## How do I allow Internet-bound traffic from hosts that are on a private VLAN?
-{:faq}
+{: faq}
 
 This traffic needs to obtain a public source IP, thus a Source NAT needs to masquerade the private IP with the public one of the VRA.
 
@@ -41,7 +43,7 @@ The configuration above only performs SNAT from traffic originating from servers
 This ensures it will not interfere with packets that already have an Internet-routeable source address.
 
 ## How can I filter Internet-bound traffic and only allow specific protocols/destinations?
-{:faq}
+{: faq}
 
 This is a common question when Source NAT and a firewall need to be combined.
 
@@ -64,7 +66,7 @@ set service nat source rule 10 translation address '150.1.2.3'
 
 `150.1.2.3` would be a public address for the VRA.
 
-It is highly recommended to use the VRRP public address of the VRA, so you can differantiate between host and VRA public traffic.
+It is highly recommended to use the VRRP public address of the VRA, so you can differentiate between host and VRA public traffic.
 
 Assume that `150.1.2.3` is the VRRP VRA address, and `150.1.2.5` is the real dp0bond1 address.
 
@@ -87,7 +89,7 @@ Note that the combination of Source NAT and firewall achieves the required desig
 Ensure that the rules are appropriate for your design, and that no other rules would allow traffic that should be blocked.
 
 ## How do I protect the VRA itself with a zone-based firewall?
-{:faq}
+{: faq}
 
 The VRA does not have a `local zone`.
 
@@ -96,7 +98,7 @@ You can utilize the Control Plane Policing (CPP) functionality instead as it is 
 Note that this is a stateless firewall and you will need to explicitly allow the returning traffic of outbound sessions originating on the VRA itself.
 
 ## How do I restrict SSH and block connections coming from the internet?
-{:faq}
+{: faq}
 
 It is considered a best practice to not allow SSH connections from the internet, and to use another means of accessing the private address, such as SSL VPN.
 

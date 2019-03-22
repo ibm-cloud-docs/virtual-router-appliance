@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Getting Help and Support for IBM Virtual Router Appliance
 {: #getting-help-and-support-for-ibm-virtual-router-appliance}

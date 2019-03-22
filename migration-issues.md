@@ -17,6 +17,8 @@ subcollection: virtual-router-appliance
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Vyatta 5400 Common Migration Issues
 {: #vyatta-5400-common-migration-issues}
@@ -26,12 +28,12 @@ The following table illustrates common issues or behavior changes you may encoun
 ## Interface Based Global-State Policy for StateFul Firewall
 
 ### Issues
-THe behavior when setting "State of State-policy" for stateful firewalls from release 5.1 has been changed. In versions prior to release 5.1, if you set `state - global -state -policy` of a stateful firewall, the vRouter automatically added an implicit `Allow` rule for return communication of the session Automatically.
+The behavior when setting "State of State-policy" for stateful firewalls from release 5.1 has been changed. In versions prior to release 5.1, if you set `state - global -state -policy` of a stateful firewall, the vRouter automatically added an implicit `Allow` rule for return communication of the session Automatically.
 
 In release 5.1 and later you must add an `Allow` rule setting on the Virtual Router Appliance. The stateful setting works for interfaces on Vyatta 5400 devices, and for protocols on VRA devices.
 
 ### Workarounds
-If the `firewall-in` rule is applied on an Ingress/Inside interface then the `Firewall-out` rule must be applied on the Egress/Outside interface. Otherwise, return traffic will be dropped at the Egress/Outside interface.        
+If the `firewall-in` rule is applied on an Ingress/Inside interface, then the `Firewall-out` rule must be applied on the Egress/Outside interface. Otherwise, return traffic will be dropped at the Egress/Outside interface.        
 
 ## State-Enable in Firewall Rules
 
@@ -197,7 +199,7 @@ vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
-The above snippet is a small setup example for DNAT translation after an IPSec packet has been decrypted in a Vyatta 5400. In the exmpale, there two vyattas, `vyatta1 (11.0.0.1)` and `vyatta2 (12.0.0.1)`. IPsec peering is established between `11.0.0.1` and `12.0.0.1`. In this case, the client is targeting `172.16.1.245` sourced from `10.103.0.1` end-to-end. The expected behavior of this scenario is that the destination address `172.16.1.245` will translate to `10.71.68.245` in the packet header.
+The above snippet is a small setup example for DNAT translation after an IPSec packet has been decrypted in a Vyatta 5400. In the example there are two vyattas, `vyatta1 (11.0.0.1)` and `vyatta2 (12.0.0.1)`. IPsec peering is established between `11.0.0.1` and `12.0.0.1`. In this case, the client is targeting `172.16.1.245` sourced from `10.103.0.1` end-to-end. The expected behavior of this scenario is that the destination address `172.16.1.245` will translate to `10.71.68.245` in the packet header.
 
 Initially, the Vyatta 5400 device was performing DNAT on the inbound IPSec, terminating the interface and returning traffic gracefully into the IPsec tunnel using the connection tracking table.
 
@@ -408,7 +410,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ## Significant change in logging behavior
 
 ### Issues
-There is a significant change in logging behavior between the Vyatta 5400 device and the IBM Virtual Router Appliance, from per-session to per-packet loging.
+There is a significant change in logging behavior between the Vyatta 5400 device and the IBM Virtual Router Appliance, from per-session to per-packet logging.
 
 * Session logging: Records stateful session state transitions
 

@@ -16,6 +16,8 @@ subcollection: virtual-router-appliance
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Accessing and Configuring the IBM Virtual Router Appliance
@@ -23,7 +25,8 @@ subcollection: virtual-router-appliance
 
 The VRA can be configured using a remote console session through SSH or by logging into the web GUI. By default, the web GUI is not available from the public internet. To enable the web GUI, log in through SSH first.
 
-**NOTE:** Configuring the VRA outside of its shell and interface may produce unexpected results and thus it is not recommended.
+Configuring the VRA outside of its shell and interface may produce unexpected results and is not recommended.
+{: note}
 
 ## Accessing the Device Using SSH
 Most UNIX-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients included with their default installations. Windows users can download an SSH client, such as PuTTy.
@@ -34,7 +37,8 @@ Use the Vyatta account from the **Device Details** page to login through SSH. Th
 
 `ssh vyatta@[IP address] `
 
-**NOTE:** It is recommended to keep root logins disabled. Log in using the Vyatta account and elevate to root only when needed.
+It is recommended to keep root logins disabled. Log in using the Vyatta account and elevate to root only when needed.
+{: tip}
 
 SSH keys can also be supplied during deployment to avoid needing the Vyatta account to log in. After you verify your ability to access your VRA using your SSH key, you can disable standard user/password logins by running the following commands:
 
@@ -118,7 +122,7 @@ set protocols static route 10.0.0.0/8 next-hop 10.60.63.193
 set protocols static route 192.168.1.0/24 next-hop 10.0.0.1
 ```
 
-This example illustrates that it is possible for a node (static) to have multiple child nodes. To remove the route for `192.168.1.0/24` the command `delete protocols static route 192.168.1.0/24` would be used. If `192.168.1.0/24` was left off the command then both of the route nodes would be marked for deletion.
+This example illustrates that it is possible for a node (static) to have multiple child nodes. To remove the route for `192.168.1.0/24` the command `delete protocols static route 192.168.1.0/24` would be used. If `192.168.1.0/24` was left off the command, then both route nodes are marked for deletion.
 
 Remember that the configuration is not actually changed until the `commit` command is issued. To compare the current running configuration to any changes that are present in the configuration buffer, use the `compare` command. To flush the configuration buffer, use `discard`.
 
@@ -143,7 +147,8 @@ set system login user [account] level operator
 commit
 ```
 
-**NOTE:** When no level is specified, a user is considered admin level. The user passwords in this case display as encrypted in the configuration file.
+When no level is specified, a user is considered admin level. The user passwords in this case display as encrypted in the configuration file.
+{: note}
 
 Role-based Access Control (RBAC) is a method of restricting access to part of the configuration to authorized users. RBAC allows admins to define rules for a user group that restrict the commands they can run.
 

@@ -50,7 +50,7 @@ We highly recommend customers take immediate action to migrate onto an alternate
 
 Your Vyatta 5400 will work after March 31. However, your business and application environments could be exposed to potential security threats and other tampering violations due to latent vulnerabilities in the Vyatta 5400 software.
 
-If you encounter a network issue which takes down your business and application environment, and you trace the root cause to the Vyatta 5400, escalate this matter to our 5400 Offering Manager, because support will no longer be available from IBM or AT&T. You can reach the Offering Management team through email at _nwom@us.ibm.com_.
+If you encounter a network issue which takes down your business and application environment, and you trace the root cause to the Vyatta 5400, escalate this matter to our 5400 Offering Manager, because support will no longer be available from IBM or AT&T. You can reach the Offering Management team through email at `nwom@us.ibm.com`.
 
 ## What about my underlying Bare Metal Server hardware – is it still supported?
 {: faq}
