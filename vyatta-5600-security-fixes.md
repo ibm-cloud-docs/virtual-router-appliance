@@ -493,7 +493,7 @@ Released March 8, 2018.
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 40327 | 9.8 | | DSA-4098-1
-CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security upate |
+CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security update |
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5715 / Spectre, aka variant #2 |
 
 ##1801c
