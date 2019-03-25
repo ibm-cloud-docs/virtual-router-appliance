@@ -32,12 +32,13 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 ## 1801w
 
 **Issues Resolved**
+
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-45672 | Critical | The RSA private key at /opt/vyatta/etc/config/ipsec.d/rsakeys/localhost.key has wrong permissions |
-| VRVDR-45591 | Critical | Interface IP MTU change not taking effect for Intel x710 NICs  |
+| VRVDR-45591 | Critical | Interface IP MTU change not taking effect for Intel x710 NICs |
 | VRVDR-45466 | Minor | IPv6 address not abbreviated when config is loaded via PXE boot causing config-sync issues |
-| VRVDR-45414 | Minor | Vyatta-cpu-shield fails to start and throws OSError:[Errno 22] Invalid argument for various cores on a 2 socket system  |
+| VRVDR-45414 | Minor | Vyatta-cpu-shield fails to start and throws `OSError:[Errno 22] Invalid argument` for various cores on a two socket system |
 
 **Security Vulnerabilities Resolved**
 
