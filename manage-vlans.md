@@ -96,7 +96,7 @@ The following is an example configuration that includes, at the end, the additio
 
 Subnets can be chosen from any unused private IP space. As a result, `10.0.0.0/8` is generally excluded here. Subnets from `192.168.0.0/16` were chosen for the examples below, but subnets from `172.16.0.0/12` can also be used.
 
-The `virtual-address` is where the new subnet should be configured. In most cases, the gateway IP address of the subnet is what should be configured. The gateway IP bound to the VIF will is then used as the next gateway address of any Baremetal or Virtual Servers set up on the new subnet behind the VRA.
+The `virtual-address` is where the new subnet should be configured. In most cases, the gateway IP address of the subnet is what should be configured. The gateway IP bound to the VIF is then used as the next-hop or default route for any Baremetal or Virtual Servers set up on the new subnet behind the VRA.
 
 The following example shows `159.8.67.97/28` being bound to the VIF, so that all traffic for the `159.8.67.98/28` subnet can be managed by the VRA(s).
 
