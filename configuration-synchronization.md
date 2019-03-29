@@ -44,6 +44,13 @@ The first two lines create the actual sync-map itself. Here, the configuration s
 
 The next three lines designate the remote router's `config-sync` user and password, IP, and which sync-map to push. Any changes that match the rules for `TEST`, will go to the `remote-router 192.168.1.22`, using this login information. Note that a `REST` call is made to perform this using the VRA API, so the HTTPS server must be running (and unblocked) on the remote router.
 
+To synchronize the configuration of a password, such as a pre-shared-secret for an IPSec VPN, the standby system must have the `secrets` group configured and the config-sync user must be in that group.
+```
+set system login group secrets
+set system login user vyatta authentication plaintext-password '****'
+set system login user vyatta group secrets
+```
+
 Config-sync happens whenever you commit a change. Watch for error messages that come from the remote device. If the configuration is out of sync, you will need to fix it on the remote device to make it operational again.
 
 You can also see configuration differences using the command `show config-sync difference`.
