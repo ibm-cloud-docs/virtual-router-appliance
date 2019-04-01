@@ -29,9 +29,18 @@ VRRP is the most important part of the configuration when provisioning Gateways.
 
 ## VRRP virtual IP (VIP) addresses
 
-The VRRP virtual IP, or VIP, is the floating IP address changed from master to backup device when failover happens. When a VRA deploys, it will have a public and private bonded network connection and real IPs assigned on each interface. A VIP is assigned on both interfaces as well, whether or not the device is a standalone or in an HA pair. Traffic that has a destination IP in subnets in VLANs associated with the VRA will be sent directly to these VRRP VIPs.
+The VRRP virtual IP for `dp0bond1` or `dp0bond0`, or VIP, is the floating IP address that changes from master to backup device when failover happens. When a VRA deploys, it will have a public and private bonded network connection and real IPs assigned on each interface. A VIP is assigned on both interfaces as well, whether or not the device is a standalone or in an HA pair. Traffic that has a destination IP in subnets in VLANs associated with the VRA will be sent directly to these VRRP VIP's through a static route on the FCR/BCR.
 
-VRRP virtual IP addresses for any gateway group should not be changed, nor should the VRRP interface be disabled. These IP addresses are the method by which traffic is routed to the gateway when a VLAN is associated. If the IP address is not present, then the traffic cannot be forwarded from softLayer BCR/FCR to the gateway itself.
+VRRP virtual IP addresses for any gateway group should never be changed, nor should the VRRP interface be disabled. These IP addresses are the method by which traffic is routed to the gateway when a VLAN is associated. As a result, if they are down, VLAN traffic will also be down. If the IP address is not present, then the traffic cannot be forwarded from softLayer BCR/FCR to the VRA itself. This virtual-address or VIP is not changeable at this time. This limitation may change in the future, but currently neither the migration of a VRA between PODs/FCRs/BCRs and changing the VIP are supported. 
+
+The following is an example of the default configurations of the `dp0bond0` and `dp0bond1` VIP's for a specific VRA. Please note that your IP addresses and vrrp-groups may be different than the example below:
+
+```
+set interfaces bonding dp0bond0 vrrp vrrp-group 2 virtual-address '10.127.170.2/26'
+set interfaces bonding dp0bond1 vrrp vrrp-group 2 virtual-address '159.8.98.214/29'
+```
+
+Please see [Add Multiple Subnets to a Single VLAN](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans#add-multiple-subnets-to-a-single-vlan) or [Associated VLAN subnets with VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp) for more information on configuring virtual-addresses for VIF's.
 
 ## VRRP group
 
