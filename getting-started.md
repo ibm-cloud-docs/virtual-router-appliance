@@ -44,6 +44,8 @@ Remember that once you order and configure your VRA from the IBM Cloud Customer 
 {: tip}
 
 ## VLANs and the Gateway Appliance's role
+{: #vlans-and-the-gateway-appliance-s-role}
+
 A VLAN (virtual LAN) is a mechanism that segregates a physical network into many virtual segments. For convenience, traffic from multiple selected VLANs can be delivered through a single network cable, a process commonly called "trunking."
 
 VRA is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. The Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. For every VLAN that is associated to the Gateway Appliance, that VLAN is allowed on the switch ports that the VRA is connected to, and any subnet on that VLAN is statically routed to your VRA's public IP if the subnet is a public subnet or statically routed to your VRA's private IP if the subnet is a private subnet. That routing is done at the router that the VRA is behind, which will be the Frontend Customer Router (FCR) or the Backend Customer Router (BCR) for public and private traffic respectively. Servers in an associated VLAN can only be reached from other VLANs by going through your VRA; it is not possible to circumvent the VRA unless you bypass or disassociate the VLAN.

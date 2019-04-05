@@ -27,7 +27,11 @@ subcollection: virtual-router-appliance
 Find out about new and updated features in IBM© Virtual Router Appliance (VRA).
 
 ## August 2018
+{: #august-2018}
+
 ### Brocade Operating System Version 18.x
+{: #brocade-operating-system-version-18-x}
+
 Version 18.x of the Brocade OS is now available for the Virtual Router Appliance. Among other new features, this version provides remediation for the Spectre security breach.
 
 New features of the 18.x VRA are discussed in the following topics:

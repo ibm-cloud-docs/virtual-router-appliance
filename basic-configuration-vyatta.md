@@ -23,6 +23,7 @@ The public virtual LAN (VLAN) 1224, which is now associated and routed, needs to
 Note that it is the public side VLAN where the compute option is located - not the Brocade 5400 vRouter appliance's public VLAN.
 
 ## In the Softlayer Portal
+{: #in-the-softlayer-portal}
 
 1. Within the SoftLayer Web Portal, under **Devices**, locate the bond on the **Configuration** tab for the Brocade 5400 vRouter device. Assume that eth1=bond1 on your device.
 
@@ -31,6 +32,7 @@ Note that it is the public side VLAN where the compute option is located - not t
 3. Click your VLAN in the list, and click the **Subnet** where you see your Gateway. Make a note of the mask Classless Inter-Domain Routing (CIDR) details located after the slash.
 
 ## In the Vyatta GUI
+{: #in-the-vyatta-gui}
 
 1. From the dashboard, click the **Configuration** tab.
 
@@ -52,6 +54,7 @@ The configuration rollback can be a very useful feature if you break your config
 8. Click on the Statistics tab and open the new interface to verify and monitor traffic.
 
 ## Configure the private VLAN using the CLI
+{: #configure-the-private-vlan-using-the-cli}
 
 There are two command modes in the CLI (Command Line Interface): operational and configuration.
 

@@ -26,6 +26,7 @@ subcollection: virtual-router-appliance
 This topic contains examples of the Network Address Translation (NAT) rules used on a Vyatta.
 
 ## One-to-many NAT rule (masquerade)
+{: #one-to-many-nat-rule-masquerade-}
 
 Enter the following commands in the prompt:
 
@@ -51,6 +52,7 @@ Use the following command to help troubleshoot NAT:
   {: tip}
 
 ## One-to-one NAT rule
+{: #one-to-one-nat-rule}
 
 The commands below show how to setup a one-to-one NAT rule. Notice the rule numbers are set up to be lower than the masquerade rule. This is so that the one-to-one rules will take precedence over the one-to-many rules.
 
@@ -82,6 +84,7 @@ IP addresses that are mapped one-to-one cannot be masqueraded. If you translate 
 {: note}
 
 ## Adding IP ranges through your VRA
+{: #adding-ip-ranges-through-your-vra}
 
 Depending on your VRA configuration, you may want to accept specific IBM© Cloud IP addresses.
 

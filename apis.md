@@ -40,6 +40,7 @@ For more information about the SLAPI as they refer to the IBM Virtual Router App
 
 
 ### Example - Ordering a Gateway Appliance
+{: #example-ordering-a-gateway-appliance}
 
 ```
 import SoftLayer
@@ -97,6 +98,7 @@ if __name__ == '__main__':
 {: codeblock}
 
 ### Example - Associating, routing, bypassing and disassociating VLANs to the Gateway Appliance
+{: #example-associating-routing-bypassing-and-disassociating-vlans-to-the-gateway-appliance}
 
 ```
 import SoftLayer

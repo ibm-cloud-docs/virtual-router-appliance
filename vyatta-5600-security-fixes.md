@@ -30,6 +30,7 @@ This document lists the patches for the currently supported versions of the Vyat
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
 ## 1801w
+{: #1801w}
 
 **Issues Resolved**
 
@@ -49,6 +50,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-43936 | 7.5 | DSA-4309-1 | CVE-2018-17540: Debian DSA-4309-1 : strongswan - security update |
 
 ## 1801v
+{: #1801v}
 
 **Issues Resolved**
 
@@ -93,6 +95,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-43264| 5.6 | DSA-4274-1 | CVE-2018-3620, CVE-2018-3646: Debian DSA-4274- 1: xen security update |
 
 ## 1801u
+{: #1801u}
 
 **Issues Resolved**
 
@@ -109,6 +112,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-44276 | N/A | DSA-4331-1 | CVE-2018-16839, CVE-2018-16842: Debian DSA-4331-1 : curl - security update |
 
 ## 1801t
+{: #1801t}
 
 **Issues Resolved**
 
@@ -125,6 +129,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-43842 | N/A | DSA-4305-1 | CVE-2018-16151, CVE-2018-16152: Debian DSA4305-1: strongswan – security update |
 
 ## 1801s
+{: #1801s}
 
 **Issues Resolved**
 
@@ -145,6 +150,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-43884 | 7.5 | DSA-4306-1 | CVE-2018-1000802, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4306-1: python2.7 - security update |
 
 ## 1801r
+{: #1801r}
 
 **Issues Resolved**
 
@@ -171,6 +177,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-43026 | 9.8 | DSA-4259-1 | Debian DSA-4259-1 : ruby2.3 -security updateVRVDR-42994N/ADSA-4257-1CVE-2018-10906: Debian DSA-4257-1 :fuse -security update |
 
 ## 1801q
+{: #1801q}
 
 **Issues Resolved**
 
@@ -201,6 +208,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-43111 | N/A | DSA-4266-1 | CVE-2018-5390, CVE-2018-13405: Debian DSA- 4266-1 – Linux security update |
 
 ## 1801n
+{: #1801n}
 
 **Issues Resolved**
 
@@ -226,6 +234,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-41924 | 8.8 | DSA-4201-1 | CVE-2018-8897, CVE-2018-10471, CVE-2018-10472, CVE-2018-10981, CVE-2018-10982: Debian DSA-4201- 1: xen – security update |
 
 ## 5.2R6S12
+{: #5-2R6S12}
 
 Released June 21, 2018.
 
@@ -245,6 +254,7 @@ Released June 21, 2018.
 | VRVDR-41680 | 7.8 | DSA-4188-1 | Debian DSA-4188-1: linux – security update (Spectre) |
 
 ## 1801m
+{: #1801m}
 
 Released June 15, 2018.
 
@@ -265,6 +275,7 @@ Released June 15, 2018.
 | VRVDR- 42284 | 7.5 | DSA-4222-1 | CVE-2018-12020: Debian DSA-4222-1: gnupg2 – security update |
 
 ## 5.2R6S11
+{: #5-2R6S11}
 
 Released June 11, 2018
 
@@ -288,6 +299,7 @@ Released June 11, 2018
 | VRVDR- 41795 | 6.5 | DSA-4195-1 | CVE-2018-0494: Debian DSA-4195-1: wget – security update |
 
 ## 1801k
+{: #1801k}
 
 Released June 8, 2018.
 
@@ -314,6 +326,7 @@ Released June 8, 2018.
 | VRVDR- 41795 | 6.5 | DSA-4195-1 | CVE-2018-0494: Debian DSA-4195-1: wget – security update |
 
 ## 1801j
+{: #1801j}
 
 Released May 18, 2018
 
@@ -332,6 +345,7 @@ Released May 18, 2018
 | VRVDR-41680 | 7.8 | DSA-4188-1 | Debian DSA-4188-1: linux – security update |
 
 ## 5.2R6S10
+{: #5-2R6S10}
 
 Released May 17, 2018
 
@@ -342,6 +356,7 @@ Released May 17, 2018
 | VRVDR-27018 | Critical | Running configuration file is globally readable |
 
 ## 1801h
+{: #1801h}
 
 Released May 11, 2018.
 
@@ -359,6 +374,7 @@ Released May 11, 2018.
 | VRVDR- 41797 | 7.8 | DSA-4196-1 | CVE-2018-1087, CVE-2018-8897: Debian DSA-4196-1: linux security update |
 
 ## 5.2R6S
+{: #5-2R6S}
 
 Released May 8, 2018.
 
@@ -375,6 +391,7 @@ Released May 8, 2018.
 | VRVDR- 41512 | 9.8 | DSA-4172-1 | CVE-2018-6797, CVE-2018-6798, CVE-2018-6913: Debian DSA-4172-1: perl – security update |
 
 ## 1801g
+{: #1801g}
 
 Released May 4, 2018.
 
@@ -386,6 +403,7 @@ Released May 4, 2018.
 | VRVDR-40965 | Major | Bonding does not recover after a data plane crash |
 
 ## 1801f
+{: #1801f}
 
 Released April 23, 2018
 
@@ -414,7 +432,9 @@ Released April 23, 2018
 | VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – security update |
 | VRVDR- 41215 | 6.1 |CVE-2018-1059 | CVE-2018-1059 – DPDK vhost out of bound host memory access from VM guests |
 
-##5.2R6S8
+## 5.2R6S8
+{: #5-2R6S8}
+
 Released April 16, 2018.
 
 **Issues Resolved**
@@ -429,7 +449,9 @@ Released April 16, 2018.
 | --- | --- | --- | --- |
 | VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – security update
 
-##1801e
+## 1801e
+{: #1801e}
+
 Released March 28, 2018.
 
 **Issues Resolved**
@@ -450,7 +472,9 @@ Released March 28, 2018.
 | --- | --- | --- | --- |
 | VRVDR- 41172 | N/A | DSA-4140-1 | DSA 4140-1: libvorbis security update |
 
-##5.2R6S7
+## 5.2R6S7
+{: #5-2R6S7}
+
 Released March 15, 2018.
 
 **Issues Resolved**
@@ -459,7 +483,9 @@ Released March 15, 2018.
 | --- | --- | --- |
 | VRVDR-38801 | Major | Multi-segment packet received via IPsec VTI causes bond interface to go down
 
-##5.2R6S6
+## 5.2R6S6
+{: #5-2R6S6}
+
 Released March 12, 2018.
 
 **Issues Resolved**
@@ -478,7 +504,9 @@ Released March 12, 2018.
 | VRVDR- 40019 | 8.8 | DSA-4086-1 | CVE-2017-15412: Debian DSA-4086-1: libxml2 – security update |
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5717 / Spectre, aka. Variant #2 |
 
-##1801d
+## 1801d
+{: #1801d}
+
 Released March 8, 2018.
 
 **Issues Resolved**
@@ -497,7 +525,9 @@ Released March 8, 2018.
 CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security update |
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5715 / Spectre, aka variant #2 |
 
-##1801c
+## 1801c
+{: #1801c}
+
 Released March 7, 2018.
 
 **Issues Resolved**
@@ -506,7 +536,9 @@ Released March 7, 2018.
 | --- | --- | --- |
 | VRVDR-40281 | Major | After upgrading from 5.2 to more recent version error “-vbash: show: command not found” in operation mode |
 
-##1801b
+## 1801b
+{: #1801b}
+
 Released February 21, 2018.
 
 **Issues Resolved**
@@ -517,7 +549,9 @@ Released February 21, 2018.
 | VRVDR-40613 | Critical | Bond interface does not come up if one of the physical links are down |
 | VRVDR-40328 | Major | Cloud-init images take a long time to boot |
 
-##1801a
+## 1801a
+{: #1801a}
+
 Released February 7, 2018.
 
 **Issues Resolved**
@@ -526,7 +560,9 @@ Released February 7, 2018.
 | --- | --- | --- |
 | VRVDR-40324 | Major | Load averages exceed 1.0 with no load on router with bonding interface |
 
-##5.2R6S5
+## 5.2R6S5
+{: #5-2R6S5}
+
 Released January 19, 2018.
 
 **Security Vulnerabilities Resolved**
@@ -536,7 +572,9 @@ Released January 19, 2018.
 | VRVDR- 39891 | 5.6 | DSA-4078-1 | CVE-2017-5754: Debian DSA-4078-1: linux – security update (Meltdown) |
 | VRVDR- 38265 | 8.8 | DSA-3970-1 | CVE-2017-1 |
 
-##5.2R6S4
+## 5.2R6S4
+{; #5-2R6S4}
+
 Released December 15, 2017.
 
 **Issues Resolved**
@@ -553,6 +591,8 @@ Released December 15, 2017.
 | VRVDR-37633 | Critical | Keepalive hanging |
 
 ## 5.2R6S3
+{: #5-2R6S3}
+
 Released December 4, 2017.
 
 **Issues Resolved**
@@ -562,7 +602,9 @@ Released December 4, 2017.
 | VRVDR-39207 | Critical | ARP failing on bond VIF interface |
 
 
-##5.2R6S2
+## 5.2R6S2
+{: #5-2R6S2}
+
 Released November 2, 2017.
 
 **Issues Resolved**
@@ -572,7 +614,9 @@ Released November 2, 2017.
 | VRVDR-39177 | Major | OpenVPN server domain-name option not being applied with –push dhcp-option |
 | VRVDR-39129 | Critical | OpenVPN server push-route parameter causes OpenVPN to fail to start |
 
-##5.2R6S1
+## 5.2R6S1
+{: #5.2R6S1}
+
 Released October 12, 2017.
 
 **Security Vulnerabilities Resolved**

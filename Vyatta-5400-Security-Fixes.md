@@ -24,6 +24,7 @@ lastupdated: "2018-11-10"
 This document lists the security vulnerability fixes for the Vyatta 5400 vRouter. When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
 ## 6.7R14S10
+{: #6-7r14s10}
 
 Released August 30, 2018
 
@@ -36,6 +37,7 @@ Released August 30, 2018
 Issues resolved in 6.7R14S10
 
 ## 6.7R14S9
+{: #6-7R14S9}
 
 Released July 16, 2018
 
@@ -50,6 +52,7 @@ Security vulnerabilities resolved in 6.7R14S8
 
 
 ## 6.7R14S8
+{: #6-7R14S8}
 
 Released June 1, 2018
 
@@ -63,8 +66,8 @@ Released June 1, 2018
 
 Security vulnerabilities resolved in 6.7R14S8
 
-
 ## 6.7R14S7
+{: #6-7R14S7}
 
 Released May 14, 2018
 
@@ -94,6 +97,7 @@ Security vulnerabilities resolved in 6.7R14S7
 
 
 ## 6.7R14S6
+{: #6-7R14S6}
 
 Released March 6, 2018.
 
@@ -124,6 +128,7 @@ Security vulnerabilities resolved in 6.7R14S6
 
 
 ## 6.7R14S6
+{: #6-7R14S6}
 
 Released February 2, 2018.
 
@@ -147,6 +152,7 @@ Security vulnerabilities resolved in 6.7R14S5
 
 
 ## 6.7R14S4
+{: #6-7R14S4}
 
 Released December 19, 2017.
 
@@ -160,6 +166,7 @@ Security vulnerabilities resolved in 6.7R14S4
 
 
 ## 6.7R14S3
+{: #6-7R14S3}
 
 Released November 14, 2017.
 
@@ -174,6 +181,7 @@ Security vulnerabilities resolved in 6.7R14S3
 
 
 ## 6.7R14S2
+{: #6-7R14S2}
 
 Released October 10, 2017.
 
@@ -195,6 +203,7 @@ Security vulnerabilities resolved in 6.7R14S2
 
 
 ## 6.7R14S1
+{: #6-7R14S1}
 
 Released September 22, 2017.
 

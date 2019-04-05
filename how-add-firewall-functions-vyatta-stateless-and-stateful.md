@@ -134,6 +134,7 @@ Note that you can apply a firewall rule to a specific interface if you do not wa
 * *commit*
 
 ## Stateful Firewalls
+{: #stateful-firewalls}
 
 A *stateful* firewall keeps a table of previously seen flows, and packets can be accepted or dropped according to their relation with previous packets. As a general rule, stateful firewalls are generally preferred where application traffic is prevalent.
 
@@ -146,5 +147,6 @@ A *stateful* firewall keeps a table of previously seen flows, and packets can be
 * Enablement of a WAN load-balancing configuration
 
 ## Stateless Firewalls
+{: #stateless-firewalls}
 
 A *stateless* firewall considers every packet in isolation. Packets can be accepted or dropped according to only basic access control list (ACL) criteria such as the source and destination fields in the IP or Transmission Control Protocols/User Datagram Protocol (TCP/UDP) headers. A stateless Brocade 5400 vRouter does not store connection information and has no requirement to look up every packet's relation to previous flows, both of which consume small amounts of memory and CPU time. Raw forwarding performance is therefore best on a stateless system. Brocade recommends keeping the router stateless for best performance if you do not require the features specific to statefulness.

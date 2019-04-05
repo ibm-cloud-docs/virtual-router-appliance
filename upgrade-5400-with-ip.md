@@ -25,6 +25,7 @@ subcollection: virtual-router-appliance
 This option allows you to reuse your existing Vyatta 5400 device as an equivalent Virtual Router Appliance (VRA), and keep your associated IP addresses. The following procedures provide instructions for upgrading either a stand alone Vyatta 5400, or two Vyatta 5400 devices operating in a High Availability (HA) pair.
 
 ## Upgrading a Stand Alone Vyatta 5400
+{: #upgrading-a-stand-alone-vyatta-5400}
 
 To upgrade a single Vyatta 5400 to a IBM Virtual Router Appliance, perform the following procedure:
 
@@ -38,6 +39,8 @@ To upgrade a single Vyatta 5400 to a IBM Virtual Router Appliance, perform the f
 5. Configure the newly reloaded VRA with your desired settings using [these instructions](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
 
 ## Upgrading a Vyatta 5400 High Availability Pair
+{: #upgrading-a-vyatta-5400-high-availability-pair}
+
 To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 
 1. Identify the Backup Vyatta 5400 device and reload it first as a Virtual Router Appliance, using the procedure above.

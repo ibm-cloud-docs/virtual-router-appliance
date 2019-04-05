@@ -33,6 +33,8 @@ It is important to test firewall rules after creation to ensure the rules work a
 While manipulating rules on the `dp0bond1` interface, it is advised to connect to the device using `dp0bond0`. Connecting to the console using the Intelligent Platform Management Interface (IPMI) is also an option.
 
 ## Stateless vs Stateful
+{: #stateless-vs-stateful}
+
 By default, the firewall is stateless, but it can be configured as stateful if needed. A stateless firewall will need rules for traffic in both directions, while stateful firewalls track connections and automatically allow the returning traffic of accepted flows. To configure a stateful firewall, you must dictate which rules you want to operate statefully.
 
 To enable 'stateful' tracking of `tcp`, `udp`, or `icmp` traffic, run the following commands:
@@ -68,6 +70,8 @@ set security firewall name TEST rule 1 state enable
 This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands.
 
 ## ALG for assisted stateful tracking
+{: #alg-for-assisted-stateful-tracking}
+
 A few protocols such as FTP utilize more complex sessions that the normal stateful firewall operation can track.
 There are preconfigured modules that enable these protocols to be statefully managed.
 
@@ -84,6 +88,8 @@ set system alg tftp 'disable'
 ```
 
 ## Firewall Rule Sets
+{: #firewall-rule-sets}
+
 Firewall rules are grouped together into named sets to make applying rules to multiple interfaces easier. Each rule set has a default action associated with it. Consider the following example:
 ```
 set security firewall name ALLOW_LEGACY default-action accept
@@ -99,6 +105,8 @@ set security firewall name ALLOW_LEGACY rule 2 source address network-group2
 In the ruleset, `ALLOW_LEGACY`, there are two rules defined. The first rule drops any traffic sourced from an address group named `network-group1`. The second rule discards and logs any traffic destined for the telnet port (`tcp/23`) from the address group named `network-group2`. The default-action indicates that anything else is accepted.
 
 ## Allowing Data Center Access
+{: #allowing-data-center-access}
+
 IBM© offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the data centers in [this topic](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges).
 
 You can allow data center access by placing the proper `SERVICE-ALLOW` rules at the beginning of the firewall rule sets with an action of `accept`. Where the rule set must be applied depends on the routing and firewall design being implemented.
@@ -106,6 +114,8 @@ You can allow data center access by placing the proper `SERVICE-ALLOW` rules at 
 It is recommended that you place the firewall rules in the location which causes the least duplication of work. For example, allowing backend subnets inbound on `dp0bond0` would be less work than allowing backend subnets outbound toward each VLAN virtual interface.
 
 ### Per-interface Firewall Rules
+{: #per-interface-firewall-rules}
+
 One method for configuring the firewall on a VRA is to apply firewall rule sets to each interface. In this case an interface can be a dataplane interface (`dp0s0`) or a virtual interface (`dp0bond0.303`). Each interface has three possible firewall assignments:
 
 `in` - The firewall is checked against packets entering through the interface. These packets can be traversing or be destined for the VRA.
@@ -121,6 +131,8 @@ As an example, to assign the `ALLOW_LEGACY` rule set to the `in` option for the 
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## Control Plane Policing (CPP)
+{: #control-plane-policing-cpp-}
+
 Control plane policing (CPP) provides protection against attacks on the Virtual Router Appliance by allowing you to configure firewall policies that are assigned to desired interfaces and applying these policies to packets entering the VRA.
 
 CPP is implemented when the `local` keyword is used in firewall policies that are assigned to any type of VRA interface, such as data plane interfaces or loopback. Unlike the firewall rules applied for packets traversing through the VRA, the default action of firewall rules for traffic entering or leaving the control plane is `Allow`. Users must add explicit drop rules if the default behavior is not desired.
@@ -134,6 +146,8 @@ After this rule set is merged, a new firewall rule set named `CPP` is added and 
 Please note that CPP rules cannot be stateful, and will only apply on ingress traffic.
 
 ## Zone Firewalling
+{: #zone-firewalling}
+
 Another firewall concept within the Virtual Router Appliance is zone based firewalls. In zone-based firewall operation an interface is assigned to a zone (only one zone per interface) and firewall rule sets are assigned to the boundaries between zones with the idea that all interfaces within a zone have the same security level and are allowed to route freely. Traffic is only scrutinized when it is passing from one zone to another. Zones drop any traffic coming into them which is not explicitly allowed.
 
 An interface can either belong to a zone or have a per-interface firewall configuration; an interface cannot do both.
@@ -168,6 +182,8 @@ It is important to understand that this assignment from zone DEPARTMENTC going i
 `ALLOW_PING` would be applied as an `out` firewall on the interfaces of DEPARTMENTB zone (dp0bond1.30 and dp0bond1.40). As this is installed by the zone policy, only traffic originating from the source zone's interfaces (dp0bond1.50) would be checked against the ruleset.
 
 ## Session and Packet Logging
+{: #session-and-packet-logging}
+
 The VRA supports two types of logging:
 
 1. Session logging.  Use ``security firewall session-log`` command to configure firewall session logging.

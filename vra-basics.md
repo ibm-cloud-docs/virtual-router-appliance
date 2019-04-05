@@ -29,6 +29,8 @@ Configuring the VRA outside of its shell and interface may produce unexpected re
 {: note}
 
 ## Accessing the Device Using SSH
+{: #accessing-the-device-using-ssh}
+
 Most UNIX-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients included with their default installations. Windows users can download an SSH client, such as PuTTy.
 
 It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs requires your client to be connected private network. You can login using one of the default VPN options (PPTP, SSL-VPN and IPsec) offered in the customer portal, or using a custom VPN solution configured on the VRA.
@@ -50,6 +52,7 @@ $ configure
 ```
 
 ## Accessing the Device Using the Web GUI
+{: #accessing-the-device-using-the-web-gui}
 
 Log into the VRA using the SSH instructions above, then run the following commands to enable the HTTPS service:
 
@@ -63,6 +66,8 @@ $ configure
 After these commands complete, enter `https://<ip.address>` in your browser's address bar, replacing the IP address with your VRA's. You may be asked to accept the VRA's self-issued certificate. Do so, then log into the Web interface with your Vyatta credentials when prompted.
 
 ## Modes
+{: #modes-1}
+
 **Configuration mode:** Invoked with the use of the `configure` command, this mode is where configuration of the VRA system is performed.
 
 **Operational mode:** The initial mode upon logging into a VRA system. In this mode, `show` commands can be run to query information on the state of the system. The system can also be restarted from this mode.
@@ -85,6 +90,7 @@ set system name-server '10.0.80.12'
 The hash mark (`#`) indicates Configuration mode. Beginning a command with `run` indicates to the VRA shell that an operational command is being presented. The previous example also illustrates the ability to "grep" against the output of commands.
 
 ## Command exploration
+{: #command-exploration}
 
 The VRA command shell includes tab completion capabilities. If you are curious about which commands are available, press the Tab key for a list and a short explanation. This works both at the shell prompt and while typing a command. For instance:  
 
@@ -96,6 +102,8 @@ Possible completions:
 ```
 
 ## Sample Configuration
+{: #sample-configuration}
+
 Configurations are laid out in a hierarchical pattern of nodes. Consider this static route block:
 
 ```
@@ -127,6 +135,8 @@ This example illustrates that it is possible for a node (static) to have multipl
 Remember that the configuration is not actually changed until the `commit` command is issued. To compare the current running configuration to any changes that are present in the configuration buffer, use the `compare` command. To flush the configuration buffer, use `discard`.
 
 ## Users and Role-based Access Control (RBAC)
+{: #users-and-role-based-access-control-rbac-}
+
 User accounts can be configured with three levels of access:
 
 * Admin

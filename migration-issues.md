@@ -26,28 +26,37 @@ subcollection: virtual-router-appliance
 The following table illustrates common issues or behavior changes you may encounter after migrating from a Vyatta 5400 device to a IBM© Virtual Router Appliance. In some cases, it includes workarounds to address the issues.
 
 ## Interface Based Global-State Policy for StateFul Firewall
+{: #interface-based-global-state-policy-for-stateful-firewall}
 
 ### Issues
+{: #issues}
+
 The behavior when setting "State of State-policy" for stateful firewalls from release 5.1 has been changed. In versions prior to release 5.1, if you set `state - global -state -policy` of a stateful firewall, the vRouter automatically added an implicit `Allow` rule for return communication of the session Automatically.
 
 In release 5.1 and later you must add an `Allow` rule setting on the Virtual Router Appliance. The stateful setting works for interfaces on Vyatta 5400 devices, and for protocols on VRA devices.
 
 ### Workarounds
+{: #workarounds}
 If the `firewall-in` rule is applied on an Ingress/Inside interface, then the `Firewall-out` rule must be applied on the Egress/Outside interface. Otherwise, return traffic will be dropped at the Egress/Outside interface.        
 
 ## State-Enable in Firewall Rules
+{: #state-enable-in-firewall-rules}
 
 ### Issues
+{: #issues-2}
 If `global-state-policy` is not configured, this behavior change is not affected.
 
 Also, if you are using the `state enable` option in each rule instead of `global-state-policy`, the behavior change is not affected.
 
 ## Zone-based policy: Local-zone handling
+{: #zone-based-policy-local-zone-handling}
 
 ### Issues
+{: #issues-3}
 There is no "local-zone" pseudo-interface to assign to the zone-policy.
 
-### Workaround
+### Workarounds
+{: #workarounds-3}
 This behavior can be simulated by applying a zone-based firewall to physical interfaces, and an interface-firewall to the loopback interface. The firewall in the loopback interface filters everything that ingress and egress from the router.
 
 For example:
@@ -83,68 +92,101 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 ```
 
 ## Order of operation for firewalls, NAT, routing and DNS
+{: #order-of-operation-for-firewalls-nat-routing-and-dns}
 
 ### Issues
+{: #issues-4}
 In a scenario where Masquerade Source NAT is deployed on an IBM Virtual Router Appliance you cannot use the firewall to determine access for hosts to the internet. This is because the post NAT address will be the same.
 
 For Vyatta 5400 devices, this operation was possible because firewalling was done before NAT, allowing the restriction of hosts to access Internet.
 
 ### Workarounds
+{: #workarounds-4}
 A new routing scheme is required for the VRA:
 ![routing dns](./images/routing-dns.png)
 
 ## Policy Based Routing Table
+{: #policy-based-routing-table}
 
 ### Issues
+{: #issues-5}
+
 The word "Table" in the configs is optional in v5400 Policy Based Routing but for the VRA, if the action is `accept` then the **Table** field is mandatory. If the action is `drop` on the VRA config, then the Table field is optional.
 
 ### Workarounds
+{: #workarounds-5}
 "Table Main" is an available option in Vyatta 5400 Policy Base Routing. The equivalent in VRA is "routing-instance default".
 
 ## Policy Based Routing on Tunnel Interface
+{: #policy-based-routing-on-tunnel-interface}
 
 ### Issues
+{: #issues-6}
 On the Virtual Router Appliance PBR (Policy Based Routing) policies can be applied to data plane interfaces for inbound traffic, but not to loopback, tunnel, bridge, OpenVPN, VTI, and IP unnumbered interfaces.
 
 ### Workarounds
+{: #workarounds-6}
 There are currently no workarounds for this issue.
 
 ## TCP-MSS
+{: #tcp-mss}
 
 ### Issues
+{: #issues-7}
+
 IBM Virtual Router Appliance uses nftables and does not support TCP-MSS.
 
 ### Workarounds
+{: #workarounds-7}
+
 There are currently no workarounds for this issue.
 
 ## OpenVPN
+{: #openvpn}
 
 ### Issues
+{: #issues-8}
+
 OpenVPN does not start working when using the `push-route` parameter on the Virtual Router Appliance.
 
 ### Workarounds
+{: #workarounds-8}
+
 Use the `openvpn-option` parameter instead of `push-route`.
 
 ## GRE/VTI over IPSEC + OSPF
+{: #gre-vti-over-ipsec-ospf}
 
 ### Issues
+{: #issues-9}
+
 * When VIF has multiple subnets configured, traffic cannot go across those subnets in the VRA.                                             
 * InterVlan Routing is not working on the VRA.
 
 ### Workarounds
+{: #workarounds-9}
+
 Use Implicit allow rules to accept traffic across VIF interfaces.
 
 ## IPSec
+{: #ipsec}
 
 ### Issues
+{: #issues-10}
+
 IPSec (Prefix-Based) does not work with IN Filter.
 
 ### Workarounds
+{: #workarounds-10}
+
 Use IPSec (VTI BASED).
 
-## IPSEC 'match-none"
+## IPSEC "match-none"
+{: #ipsec-match-none-}
 
 ### Issues
+{: #issues-11}
+
 With Vyatta 5400 devices, the following firewall rule is allowed:
 
 set firewall name allow rule 10 ipsec
@@ -152,6 +194,8 @@ set firewall name allow rule 10 ipsec
 However, with IBM Virtual Router appliance, there is no IPSec.
 
 ### Workarounds
+{: #workarounds-11}
+
 Possible alternative rules for VRA devices:
 
 ```
@@ -160,8 +204,11 @@ Possible alternative rules for VRA devices:
 ```
 
 ## IPSEC 'match-ipsec"
+{: #ipsec-match-ipsec-}
 
 ### Issues
+{: issues-12}
+
 With Vyatta 5400 devices, the following firewall rules are allowed:
 
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
@@ -170,6 +217,8 @@ set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 However, with IBM Virtual Router appliance, there is no IPSec.
 
 ### Workarounds
+{: workarounds-12}
+
 Add the protocols `ESP` and `AH` (IP protocols 50 and 51 respectively).
 
 The `action` rule can be either `accept` or `drop`, as shown below:
@@ -188,8 +237,11 @@ set security firewall name <name> rule <rule-no> protocol esp
 ```
 
 ## Site-to-Site IPSEC with DNAT
+{: #site-to-site-ipsec-with-dnat}
 
 ### Issues
+{: #issues-13}
+
 IPSec (Prefix-Based) does not work with DNAT.                                                                                                             
 
 ```
@@ -206,6 +258,8 @@ Initially, the Vyatta 5400 device was performing DNAT on the inbound IPSec, term
 On a Virtual Router Appliance, the configuration does not function the same. The session is created, however the return traffic bypasses the IPsec tunnel after the conntrack table reverses the DNAT change. The VRA then sends the packet on the wire without IPsec encryption.  The upstream device is not expecting this traffic and will most likely drop it. While end to end connectivity is broken, this is intended behavior.   
 
 ### Workarounds
+{: #workarounds-13}
+
 In order to accommodate the above networking scenario, IBM has created an RFE. 
 
 While that RFE is currently being assessed, we recommend the following workaround:
@@ -274,16 +328,24 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ```
 
 ## PPTP
+{: #pptp}
 
 ### Issues
+{: #issues-13}
+
 PPTP is no longer supported in the Virtual Router Appliance.                                                                                                                                                   
 
 ### Workarounds
+{: #workarounds-13}
+
 Use the L2TP protocol instead.
 
 ## Script for IPSec Restart
+{: #script-for-ipsec-restart}
 
 ### Issues
+{: issues-14}
+
 Whenever a VRRP virtual address is added to an IBM Virtual Router Appliance on a High Availability VPN, you must reinitialize the IPsec daemon. This is because the IPsec service listens only for connections to the addresses that are present on the VRA when the IKE service daemon is initialized.
 
 For a pair of VRAs with VRRP, the standby router may not have the VRRP virtual address that is present on the device during initialization If the master router does not have that address present. Therefore, to reinitialize the IPsec daemon when a VRRP state transition occurs, run the following command on the master and backup routers:
@@ -293,8 +355,10 @@ interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
 
 ## Recent count and Recent time
+{: #recent-count-and-recent-time}
 
 ### Issues
+{: #issues-15}
 
 The intent of the following rule is to limit SSH connections to 3 every 30 seconds for SSH using any address:
 
@@ -315,11 +379,15 @@ On the IBM Virtual Router Appliance, this rule has the following issues:
 * Due to the previous issue, the rule cannot function as expected and will block all SSH connections to the applied interface.
 
 ### Workarounds
+{: #workarounds-15}
+
 Use CPP instead.
 
 ## Set system conntrack issues
+{: #set-system-conntrack-issues}
 
 ### Issues
+{: #issues-16}
 
 ```
 set system conntrack expect-table-size '8192'
@@ -336,8 +404,11 @@ set system conntrack table-size '3000000'
 ```
 
 ## Set system conntrack timeout
+{: #set-system-conntrack-timeout}
 
 ### Issues
+{: #issues-17}
+
 ```
 set system conntrack timeout icmp '30'
 set system conntrack timeout other '600'
@@ -352,8 +423,11 @@ set system conntrack timeout tcp time-wait '60'
 ```
 
 ## Time based firewall
+{: #time-based-firewall}
 
 ### Issues
+{: #issues-18}
+
 ```
 set firewall name PRIV_SERVICE_IN rule 58 action 'accept'
 set firewall name PRIV_SERVICE_IN rule 58 description '586427 Acesso a base de dados ate 22-2-18'
@@ -366,8 +440,11 @@ set firewall name PRIV_SERVICE_IN rule 58 time stopdate '2018-02-22'
 ```
 
 ## TCP-MSS
+{: #tcp-mss}
 
 ### Issues
+{: #issues-19}
+
 ```
 set interfaces tunnel tun3 address '172.17.175.45/30'
 set interfaces tunnel tun3 encapsulation 'gre'
@@ -384,8 +461,10 @@ set policy route change-mss rule 1 tcp flags 'SYN
 ```
 
 ## Specific Application or port broken in S-S Ipsec VPN
+{: #specific-application-or-port-broken-in-s-s-ipsec-vpn}
 
 ### Issues
+{: #issues-19}
 
 ```
 vyatta@v5600dallas09# set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote
@@ -408,8 +487,11 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ```
 
 ## Significant change in logging behavior
+{: #significant-change-in-logging-behavior}
 
 ### Issues
+{: #issues-20}
+
 There is a significant change in logging behavior between the Vyatta 5400 device and the IBM Virtual Router Appliance, from per-session to per-packet logging.
 
 * Session logging: Records stateful session state transitions
