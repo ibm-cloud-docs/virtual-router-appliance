@@ -26,7 +26,7 @@ subcollection: virtual-router-appliance
 
 These resources are created by IBM© and some of our partners and customers.
 
-* [**Product Brief: AT&T Vyatta vRouter: Agile Networking and High Performance** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.box.com/s/v1kp0nhfa8eqmnj0klosc8zkgixzcis2){:new_window}
+* [**Product Brief: AT&T Vyatta vRouter: Agile Networking and High Performance** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/final_vyatta_product_brief_june_2018_2.pdf){:new_window}
 
     *"As the first virtual router for carrier-class networks, the AT&T Vyatta vRouter is the highest-performing software router in the industry. Achieving 10+ Gbps performance per physical core, the AT&T Vyatta vRouter delivers advanced routing, stateful firewall, NAT, and VPN capabilities in software without sacrificing the reliability and carrier class performance of hardware networking solutions."*
 
