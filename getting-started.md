@@ -26,7 +26,7 @@ subcollection: virtual-router-appliance
 
 To get started with the IBM© Virtual Router Appliance (VRA), navigate to the order page in the Customer Portal:
 
-1. From your browser, open the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} and log into your account.
+1. From your browser, open the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/){: new_window} and log into your account.
 2. In the Customer Portal navigation, select **Network > Gateway Appliances**.
 3. From the **Gateway Appliances** list page, click **Order Gateway**.
 4. From the **Order** page, select your desired data center from dropdown menu, then choose the desired type of server hardware.
