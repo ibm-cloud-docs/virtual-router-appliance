@@ -1,5 +1,5 @@
 {:navgroup: .navgroup}
-{:topicgroup: .topicgroup}
+{:topicgroup: .topicgroup} 
 
 {: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
 IBM Virtual Router Appliance
@@ -83,6 +83,7 @@ IBM Virtual Router Appliance
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    vra-docs-18.md
     vra-docs.md
     getting-help.md
     {: .navgroup-end}
