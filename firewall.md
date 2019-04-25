@@ -188,8 +188,15 @@ The VRA supports two types of logging:
 
 1. Session logging.  Use ``security firewall session-log`` command to configure firewall session logging.
 
-	For UDP, ICMP, and all non-TCP flows, your session will transition to four states over the lifetime of the flow. For each transition, you can configure the VRA to log a message. TCP has a larger number of state transitions, each of which can be configured to log.  
+	For UDP, ICMP, and all non-TCP flows, your session will transition to four states over the lifetime of the flow. For each transition, you can configure the VRA to log a message. TCP has a larger number of state transitions, each of which can be configured to log.  The following is an example of setting up session-log for your firewall:
+
+```
+set security firewall session-log icmp established
+set security firewall session-log tcp established
+set security firewall session-log udp established
+```
 
 2. Per packet logging. Include keyword ``log`` in firewall or NAT rule to log every network packet that matches the rule.
 
-	Per-packet logging occurs in the packet forwarding paths and generates large amounts of output. It can greatly reduce the throughput of the VRA and dramatically increase the disk space used for the log files. We recommend using per packet logging only for debugging purposes. For all operational purposes, stateful session logging should be used.
+	Per-packet logging occurs in the packet forwarding paths and generates large amounts of output. It is very important to note that per-packet logging can greatly reduce the throughput of the VRA, cause performance issues, and dramatically increase the disk space used for the log files. We recommend using per packet logging only for debugging purposes. For all operational purposes, stateful session logging should be used instead of per-packet logging.
+	{: important}
