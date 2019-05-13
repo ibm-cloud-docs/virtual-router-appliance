@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 
 # Initiation à IBM Virtual Router Appliance
-{: #getting-started-with-ibm-virtual-router-appliance}
+{: #getting-started}
 
 Pour débuter avec IBM© Virtual Router Appliance (VRA), accédez à la page des commandes dans le portail client :
 

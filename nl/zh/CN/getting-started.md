@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 
 # IBM 虚拟路由器设备入门
-{: #getting-started-with-ibm-virtual-router-appliance}
+{: #getting-started}
 
 要开始使用 IBM© 虚拟路由器设备 (VRA)，请浏览至“客户门户网站”中的订购页面：
 

@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 
 # IBM 仮想ルーター・アプライアンスの概要
-{: #getting-started-with-ibm-virtual-router-appliance}
+{: #getting-started}
 
 IBM© 仮想ルーター・アプライアンス (Virtual Router Appliance: VRA) を開始するには、カスタム・ポータルの注文ページに移動します。
 
