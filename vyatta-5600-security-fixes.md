@@ -30,7 +30,7 @@ This document lists the patches for the currently supported versions of the Vyat
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
 ## 1801z
-{: #1801y}
+{: #1801z}
 
 **Issues Resolved**
 
