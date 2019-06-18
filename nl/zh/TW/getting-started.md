@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 
 # 開始使用 IBM Virtual Router Appliance
-{: #getting-started-with-ibm-virtual-router-appliance}
+{: #getting-started}
 
 若要開始使用 IBM© Virtual Router Appliance (VRA)，請導覽至「客戶入口網站」中的訂購頁面：
 

@@ -27,7 +27,7 @@ The IBM© Virtual Router Appliance (VRA) provides the latest Vyatta 5600 operati
 
 The Virtual Router Appliance lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features. The VRA offers performance with ease of configuration. It has the maintenance advantages of running on a normal hardware server. The VRA hardware appliance is sized to handle the routing load for multiple VLANs, and it can be ordered with redundant network links and redundant RAID arrays. All VRA features are managed by you, the customer.
 
-**Alternatives:** The FortiGate Security Appliance (FSA) 10Gbps is a single-tenant (dedicated), high-throughput (10Gbps) hardware firewall with next-generation features, such as AntiVirus (AV), Intrusion Prevention (IPS), and web filtering. It may be an alternative to VRA for achieving similar goals. For more information, refer to the [FSA documentation](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started-with-fortigate-security-appliance-10gbps).
+**Alternatives:** The FortiGate Security Appliance (FSA) 10Gbps is a single-tenant (dedicated), high-throughput (10Gbps) hardware firewall with next-generation features, such as AntiVirus (AV), Intrusion Prevention (IPS), and web filtering. It may be an alternative to VRA for achieving similar goals. For more information, refer to the [FSA documentation](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started).
 
 ## Firewall
 {: #firewall}

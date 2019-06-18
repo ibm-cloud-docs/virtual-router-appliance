@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2018-11-10"
+  years: 2017, 2018, 2019
+lastupdated: "2019-4-17"
 
 keywords: 5600, security, fixes, patches, brocade, os
 
@@ -23,11 +23,74 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**As of: March 22, 2019**
+**As of: June 6, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+## 1801z
+{: #1801z}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-46941 | Minor| Traffic that has SNAT session is filtered using stateless ZBF on return |
+| VRVDR-46659 | Major | I350 intfs with mtu 9000 remains stuck at u/D state on upgrade from 1808* to 1903a |
+| VRVDR-46623 | Minor | Firewall 'description' logs a perl error on commit when the description has more than one word |
+| VRVDR-46549 | Critical | Shell injection privilege escalation/sandbox escape in "show ip route routing-instance <name> variance" command |
+| VRVDR-46389 | Major | BGP configuration changes may not take effect if applied after (re)boot |
+| VRVDR-45949 | Minor | Netflow generates a NOTICE log for every sample sent when certain non-key fields are configured |
+| VRVDR-43169 | Minor | Logging everytime one calls a configd C based API but doesn't supply an error struct is no longer useful |
+| VRVDR-41225 | Minor | When configuring interface description, every white space is treated as a new line |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-46824 | N/A | DSA-4440-1 | CVE-2018-5743, CVE-2018-5745, CVE-2019-6465: Debian DSA-4440-1 : bind9 - security update |
+| VRVDR-46603 | 5.3 | DSA-4435-1 | CVE-2019-7317: Debian DSA-4435-1 : libpng1.6 - security update |
+| VRVDR-46425 | N/A | DSA-4433-1 | CVE-2019-8320, CVE-2019-8321, CVE-2019-8322, CVE-2019-8323, CVE-2019-8324, CVE-2019-8325: Debian DSA-4433-1 : ruby2.3 - security update |
+| VRVDR-46350 | 9.1 | DSA-4431-1 | CVE-2019-3855, CVE-2019-3856, CVE-2019-3857, CVE-2019-3858, CVE-2019-3859, CVE-2019-3860, CVE-2019-3861, CVE-2019-3862, CVE-2019-3863: Debian DSA-4431-1 : libssh2 - security update |
+
+## 1801y
+{: #1801y}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-46029 | Major | VRRP authentication either with simple text password or AH type does not work properly |
+| VRVDR-45864 | Critical | Shell injection privilege escalation/sandbox escape in vyatta-techsupport remote copy |
+| VRVDR-45748 | Major | Missing checks for zmsg_popstr returning a NULL pointer causing connsync to crash dataplane |
+| VRVDR-45740 | Minor | 'generate tech-support archive' should not aggregate all existing archives |
+| VRVDR-45720 | Major | vrrp gets stuck waiting for a packet when start_delay used with only a single router |
+| VRVDR-45655 | Critical | "PANIC in rte_mbuf_raw_alloc" when performing VRRP failover |
+| VRVDR-45059 | Major | null deref in sip_expire_session_request |
+| VRVDR-41419 | Major | Static Analysis dataplane fixes |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-46139 | 7.0 | DSA-4428-1 | CVE-2019-3842: Debian DSA-4428-1 : systemd - security update |
+| VRVDR-46087 | N/A | DSA-4425-1 | CVE-2019-5953: Debian DSA-4425-1 : wget - security update |
+| VRVDR-45897 | 7.5 | DSA-4416-1 | CVE-2019-5716, CVE-2019-5717, CVE-2019-5718, CVE-2019-5719, CVE-2019-9208, CVE-2019-9209, CVE-2019-9214: Debian DSA-4416-1 : wireshark - security update |
+| VRVDR-45553 | 5.9 | DSA-4400-1 | CVE-2019-1559: Debian DSA-4400-1 : openssl1.0 - security update |
+| VRVDR-45549 | 6.5 | DSA-4397-1 | CVE-2019-3824: Debian DSA-4397-1 : ldb - security update |
+| VRVDR-45347 | 6.8  | DSA-4387-1 | CVE-2018-20685, CVE-2019-6109, CVE-2019-6111: Debian DSA-4387-1 : openssh - security update |
+
+**Security Vulnerabilities Resolved**
+
+The following commands have been deprecated from this patch and are no longer available: 
+  • policy route pbr <name> rule <rule-number> application name <name> 
+  • policy route pbr <name> rule <rule-number> application type <type> 
+  • policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name> 
+  • policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type> 
+  • security application firewall name <name> rule <rule-number> name <app-name> 
+
+Running any of the above commands will result with the error message “This feature is disabled.” 
 
 ## 1801w
 {: #1801w}
@@ -76,7 +139,6 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-42679 | Major | syslog - crash in zactor_is |
 | VRVDR-42020 | Major | RIB stuck adding same route over and over again |
 | VRVDR-18095 | Minor | Flow monitoring stats is not captured as part of 'show tech-support' |
-
 
 **Security Vulnerabilities Resolved**
 

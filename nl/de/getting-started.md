@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 
 # Einführung in IBM Virtual Router Appliance
-{: #getting-started-with-ibm-virtual-router-appliance}
+{: #getting-started}
 
 Navigieren Sie für den Einstieg in IBM© Virtual Router Appliance (VRA) zur Bestellseite im Kundenportal:
 

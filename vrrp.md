@@ -43,6 +43,20 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 2 virtual-address '159.8.98.214/
 
 Please see [Add Multiple Subnets to a Single VLAN](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans#add-multiple-subnets-to-a-single-vlan) or [Associated VLAN subnets with VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp) for more information on configuring virtual-addresses for VIF's.
 
+**By default, VRRP is set to disabled.** This ensures that new provisions and reloads do not cause outages on the Master device. In order for VLAN traffic to work, VRRP must be reenabled once provisioning or a reload completes. The following example details the default configuration:
+
+```
+set interfaces bonding dp0bond0 vrrp vrrp-group 2 'disable'
+set interfaces bonding dp0bond1 vrrp vrrp-group 2 'disable'
+```
+
+To enable VRRP on these two interfaces after a provision or reload, **which is necessary for both stand-alone and HA pairs**, run the following commands then commit the change:
+
+```
+delete interfaces bonding dp0bond0 vrrp vrrp-group 2 'disable'
+delete interfaces bonding dp0bond1 vrrp vrrp-group 2 'disable'
+```
+
 ## VRRP group
 {: #vrrp-group}
 

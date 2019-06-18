@@ -16,7 +16,7 @@ lastupdated: "2018-11-10"
 
 
 # IBM Virtual Router Appliance 시작하기
-{: #getting-started-with-ibm-virtual-router-appliance}
+{: #getting-started}
 
 IBM© Virtual Router Appliance(VRA)를 시작하려면 고객 포털의 주문 페이지로 이동하십시오.
 
