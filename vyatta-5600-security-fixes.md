@@ -23,11 +23,36 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**As of: April 17, 2019**
+**As of: June 6, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+## 1801z
+{: #1801y}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-46941 | Minor| Traffic that has SNAT session is filtered using stateless ZBF on return |
+| VRVDR-46659 | Major | I350 intfs with mtu 9000 remains stuck at u/D state on upgrade from 1808* to 1903a |
+| VRVDR-46623 | Minor | Firewall 'description' logs a perl error on commit when the description has more than one word |
+| VRVDR-46549 | Critical | Shell injection privilege escalation/sandbox escape in "show ip route routing-instance <name> variance" command |
+| VRVDR-46389 | Major | BGP configuration changes may not take effect if applied after (re)boot |
+| VRVDR-45949 | Minor | Netflow generates a NOTICE log for every sample sent when certain non-key fields are configured |
+| VRVDR-43169 | Minor | Logging everytime one calls a configd C based API but doesn't supply an error struct is no longer useful |
+| VRVDR-41225 | Minor | When configuring interface description, every white space is treated as a new line |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-46824 | N/A | DSA-4440-1 | CVE-2018-5743, CVE-2018-5745, CVE-2019-6465: Debian DSA-4440-1 : bind9 - security update |
+| VRVDR-46603 | 5.3 | DSA-4435-1 | CVE-2019-7317: Debian DSA-4435-1 : libpng1.6 - security update |
+| VRVDR-46425 | N/A | DSA-4433-1 | CVE-2019-8320, CVE-2019-8321, CVE-2019-8322, CVE-2019-8323, CVE-2019-8324, CVE-2019-8325: Debian DSA-4433-1 : ruby2.3 - security update |
+| VRVDR-46350 | 9.1 | DSA-4431-1 | CVE-2019-3855, CVE-2019-3856, CVE-2019-3857, CVE-2019-3858, CVE-2019-3859, CVE-2019-3860, CVE-2019-3861, CVE-2019-3862, CVE-2019-3863: Debian DSA-4431-1 : libssh2 - security update |
 
 ## 1801y
 {: #1801y}
