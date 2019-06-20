@@ -36,7 +36,7 @@ To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with th
 
 2. Contact nwom@us.ibm.com to request that your configuration be converted
 
-3. Order the new device, following the instructions for either [Juniper vSRX](/docs/infrastructure/vsrx?topic=vsrx-getting-started-with-ibm-cloud-juniper-vsrx-gateway#steps-for-ordering) or for [FSA -10G](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started-with-fortigate-security-appliance-10gbps#ordering-the-fsa-10gbps). 
+3. Order the new device, following the instructions for either [Juniper vSRX](/docs/infrastructure/vsrx?topic=vsrx-getting-started) or for [FSA -10G](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started). 
 
   This is a good opportunity to consider ordering a High Availability solution.
   {: note}
@@ -61,7 +61,7 @@ To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 
 2. Contact nwom@us.ibm.com and request that your configuration be converted.
 
-3. Order the new device, following the instructions for either [Juniper vSRX](/docs/infrastructure/vsrx?topic=vsrx-getting-started-with-ibm-cloud-juniper-vsrx-gateway#steps-for-ordering) or for [FSA -10G](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started-with-fortigate-security-appliance-10gbps#ordering-the-fsa-10gbps). 
+3. Order the new device, following the instructions for either [Juniper vSRX](/docs/infrastructure/vsrx?topic=vsrx-getting-started) or for [FSA -10G](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started). 
 
 4. Load the configuration you received from nwom@us.ibm.com onto your newly ordered device.
 
