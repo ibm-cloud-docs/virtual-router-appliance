@@ -32,4 +32,4 @@ When using the forums to ask a question, tag your question so that it is seen by
 
 See [Getting help](/docs/get-support?topic=get-support-using-avatar) for more details about using the forums.
 
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](/docs/get-support?topic=get-support-contacting-bluemix-support-dedicated-local).
+For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
