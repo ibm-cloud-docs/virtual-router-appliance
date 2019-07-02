@@ -47,7 +47,7 @@ To order a VRA, perform the following procedure:
   Only pods that already have an associated VLAN will display here. If you wish to provision your Gateway Appliance in a pod you don't see listed, first create a VLAN there.
   {: note}
 
-4. From the **Configuration** section, choose your processor by selecting your RAM and SSH keys (if necessary).
+4. From the **Configuration** section, choose your processor's RAM. You can also define an SSH key, if you want to use it to authenticate access to your new Gateway.
 
   <img src="images/ordering_vra_2.png" alt="drawing" style="width: 600px;"/>
   
