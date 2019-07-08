@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: configure, service, NAT
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,11 +17,13 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # サービスの構成
 {: #configuring-your-services}
 
-仮想ルーター・アプライアンス (VRA) は、次のようなさまざまなサービスを実行するように構成できます。
+Virtual Router Appliance (VRA) は、次のようなさまざまなサービスを実行するように構成できます。
 
 `vyatta@vrouter# set service`
 

@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: basics, vra, access, configure, gui
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # 访问并配置 IBM 虚拟路由器设备
@@ -19,9 +25,12 @@ lastupdated: "2018-11-10"
 
 VRA 可以使用远程控制台会话通过 SSH 进行配置，也可以通过登录到 Web GUI 进行配置。缺省情况下，无法通过公共因特网来访问 Web GUI。要启用 Web GUI，请首先通过 SSH 登录。
 
-**注：**在 VRA 的 shell 和接口外部配置 VRA 可能会生成意外结果，因此建议不要这样做。
+在 VRA 的 shell 和接口外部配置 VRA 可能会生成意外结果，因此建议不要这样做。
+{: note}
 
 ## 使用 SSH 访问设备
+{: #accessing-the-device-using-ssh}
+
 大多数基于 UNIX 的操作系统（如 Linux、BSD 和 Mac OSX）在其缺省安装中包含 OpenSSH 客户机。Windows 用户可以下载 SSH 客户机，例如 PuTTy。
 
 建议禁止通过 SSH 访问公共 IP，而只允许通过 SSH 访问专用 IP。要连接专用 IP，需要客户机连接到专用网络。您可以使用客户门户网站中提供的缺省 VPN 选项（PPTP、SSL-VPN 和 IPsec）或使用 VRA 上配置的定制 VPN 解决方案来登录。
@@ -30,7 +39,8 @@ VRA 可以使用远程控制台会话通过 SSH 进行配置，也可以通过�
 
 `ssh vyatta@[IP address] `
 
-**注：**建议始终禁用 root 用户登录。请使用 Vyatta 帐户登录，并仅在需要时升级到 root 用户。
+建议使 root 用户登录保持禁用状态。请使用 Vyatta 帐户登录，并仅在需要时升级到 root 用户。
+{: tip}
 
 还可以在部署期间提供 SSH 密钥，这样无需 Vyatta 帐户即可登录。验证能否使用 SSH 密钥访问 VRA 后，可以通过运行以下命令来禁用标准用户/密码登录：
 
@@ -42,6 +52,7 @@ $ configure
 ```
 
 ## 使用 Web GUI 访问设备
+{: #accessing-the-device-using-the-web-gui}
 
 使用以上 SSH 指令登录到 VRA，然后运行以下命令来启用 HTTPS 服务：
 
@@ -52,9 +63,11 @@ $ configure
 # save
 ```
 
-完成这些命令后，在浏览器的地址栏中输入 `https://<ip.address>`，并将 IP 地址替换为您的 VRA 的 IP 地址。系统可能会要求您接受 VRA 的自签发证书。请接受，然后在系统提示时使用您的 Vyatta 凭证登录到 Web 界面。
+完成这些命令后，在浏览器的地址栏中输入 `https://<ip.address>`，将 IP 地址替换为 VRA 的 IP 地址。系统可能会要求您接受 VRA 的自签发证书。请接受，然后在系统提示时使用您的 Vyatta 凭证登录到 Web 界面。
 
 ## 方式
+{: #modes-1}
+
 **配置方式：**此方式是使用 `configure` 命令调用的，在此方式下，将执行 VRA 系统的配置。
 
 **操作方式：**登录到 VRA 系统时的初始方式。在此方式下，可以运行 `show` 命令来查询有关系统状态的信息。还可以在此方式下重新启动系统。
@@ -77,6 +90,7 @@ set system name-server '10.0.80.12'
 散列标记 (`#`) 指示配置方式。以 `run` 开头的命令向 VRA shell 指示显示的是操作命令。先前的示例还说明针对命令的输出执行“grep”的能力。
 
 ## 命令浏览表
+{: #command-exploration}
 
 VRA 命令 shell 包含通过 Tab 键补全的功能。如果您有兴趣了解可用的命令，请按 Tab 键以获取命令列表和简短说明。此功能在 shell 提示符下和输入命令期间都有效。例如：
 
@@ -88,6 +102,8 @@ $show log dns [按 Tab 键]
 ```
 
 ## 样本配置
+{: #sample-configuration}
+
 配置以分层节点模式进行布置。请考虑以下静态路由块：
 
 ```
@@ -119,6 +135,8 @@ set protocols static route 192.168.1.0/24 next-hop 10.0.0.1
 请记住，在发出 `commit` 命令之前，不会实际更改配置。要将当前正在运行的配置与配置缓冲区中存在的任何更改进行比较，请使用 `compare` 命令。要清空配置缓冲区，请使用 `discard`。
 
 ## 用户和基于角色的访问控制 (RBAC)
+{: #users-and-role-based-access-control-rbac-}
+
 可以为用户帐户配置三个级别的访问权：
 
 * 管理员
@@ -139,7 +157,8 @@ set system login user [account] level operator
 commit
 ```
 
-**注：**未指定任何级别时，用户视为具有管理员级别。在这种情况下，用户密码在配置文件中会显示为已加密。
+未指定任何级别时，用户被视为管理员级别。在这种情况下，用户密码在配置文件中会显示为已加密。
+{: note}
 
 基于角色的访问控制 (RBAC) 是针对授权用户限制部分配置的访问权的一种方法。RBAC 支持管理员为用户组定义规则，以限制用户组可以运行的命令。
 

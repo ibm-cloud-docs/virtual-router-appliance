@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Configuration d'IPSec sur Vyatta 5400
 {: #configuring-ipsec-on-vyatta-5400}
@@ -20,7 +23,7 @@ L'unité Brocade 5400 vRouter (Vyatta) est appelée "local" en ce qui concerne l
 
   * Créer un nouveau groupe **ike** nommé **test** et utiliser **dh-group** comme type d'échange de clé.
   * Spécifier le type de chiffrement à utiliser, sinon, l'unité utilisera **aes128** par défaut.
-  * Utiliser la fonction de hachage **sha-1**.<br/><br/>
+  * Utiliser la fonction de hachage **sha-1**<br/><br/>
   1\. *set vpn ipsec ike-group TestIKE proposal 1 dh-group '2'*<br/>
   2\. *set vpn ipsec ike-group TestIKE proposal 1 encryption 'aes128'*<br/>
   3\. *set vpn ipsec ike-group TestIKE proposal 1 hash 'sha1'*<br/>
@@ -29,7 +32,7 @@ L'unité Brocade 5400 vRouter (Vyatta) est appelée "local" en ce qui concerne l
 
   * Désactiver la confidentialité persistante parfaite (PFS) car les unités ne peuvent pas toutes l'utiliser. (La mention ESP dans la commande correspond à la seconde partie du chiffrement.)
   * Spécifier le type de chiffrement à utiliser, sinon, l'unité utilisera **aes128** par défaut.
-  * Utiliser la fonction de `hachage` **sha-1**<br/><br/>
+  * Utiliser la fonction `has` **sha-1**<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -39,7 +42,7 @@ L'unité Brocade 5400 vRouter (Vyatta) est appelée "local" en ce qui concerne l
   * Spécifier l'adresse IP distante et le fait qu'IPSec utilisera une valeur confidentielle prépartagée.
   * Utiliser l'adresse IP distante et le secret TestPSK
   * Affecter la valeur TestESP au groupe **esp** par défaut pour le tunnel.
-  * Indiquer à IPSec qu'il doit utiliser ike-group TestIKE, défini précédemment.<br/><br/>
+  * Indiquer à IPSec qu'il doit utiliser ike-group TestIKE, défini précédemment<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication pre-shared-secret TestPSK۪*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 default-esp-group TestESP۪*<br/>

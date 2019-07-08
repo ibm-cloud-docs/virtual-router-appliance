@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ipsec, firewall, configure, policy
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # 구역 방화벽에 대해 작업하는 IPsec 터널 설정
@@ -22,6 +28,8 @@ Virtual Router Appliance의 이전 버전에서, 정책 기본 라우팅을 사�
 두 개 시스템 간의 IPsec을 사용하는 두 시스템의 예제 구성은 다음과 같습니다.
 
 ###시스템 A
+{: #machine-a}
+
 ```
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -39,6 +47,8 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '17
 ```
 
 ###시스템 B
+{: #machine-b}
+
 ```
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -55,9 +65,9 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-두 개 시스템 사이에 172.16.x.x 트래픽을 라우팅하는 일반 터널을 설정합니다. 시스템 B에 테스트할 엔드포인트를 제공하기 위해 루프백 주소로 172,16.100.1이 있는 반면, 시스템 A에는 터널에서 소스 트래픽을 제공하기 위해 라우팅된 VLAN에 가상 머신이 있습니다. 
+두 개 시스템 사이에 172.16.x.x 트래픽을 라우팅하는 일반 터널을 설정합니다. 시스템 B에 테스트할 엔드포인트를 제공하기 위해 루프백 주소로 172,16.100.1이 있는 반면, 시스템 A에는 터널에서 소스 트래픽을 제공하기 위해 라우팅된 VLAN에 가상 머신이 있습니다.
 
-여기에서 결과를 볼 수 있습니다.
+여기서 결과를 볼 수 있습니다. 
 
 ```
 [root@acs-jmat-migserver ~]# ping -c 5 172.16.100.1
@@ -86,7 +96,7 @@ set security firewall name ALLOWALL rule 30 action 'accept'
 set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
- 
+
 그런 다음 세 개 모든 인터페이스 사이에 정책을 추가하십시오.
 
 ```

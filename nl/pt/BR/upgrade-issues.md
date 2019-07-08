@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Problemas de upgrade
 {: #upgrade-issues}
@@ -61,9 +67,10 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-Os ISOs da instalação inicial e seu OS atualmente em execução são apresentados aqui. 
+Os ISOs da instalação inicial e seu OS atualmente em execução são apresentados aqui.
 
-**NOTA:** se você tiver feito mais de um upgrade, eles também serão exibidos aqui.
+Se você tiver feito mais de um upgrade, eles serão exibidos aqui também.
+{: note}
 
 Em seguida, mude os diretórios usando o OS carregado anteriormente como o próximo diretório e vá para o diretório inicial do VRA:
 
@@ -100,7 +107,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
 
-Depois de copiados, efetue logout e login novamente.
+Depois de copiar, efetuar logout e, em seguida, efetuar login novamente:
 
 ```
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
@@ -124,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 Todos os comandos funcionarão novamente e será possível continuar normalmente.
 
-**NOTA:** o certificado HTTPS `/etc/lighttpd/server.pem` também poderá falhar ao ser copiado durante o processo de upgrade do OS, podendo fazer com que as configurações de alta disponibilidade (HA) falhem na sincronização. Para corrigir esse problema, copie o arquivo `server.pem` antigo, além dos arquivos listados acima (emita `su -` para atingir o nível raiz e, em seguida, emita o comando `copy`) e, em seguida, emita `restart https` para reiniciar o arquivo HTTPS `demon.m` (e os arquivos listados acima).
+O certificado HTTPS `/etc/lighttpd/server.pem` também pode falhar ao copiar durante o processo de upgrade do S.O., o que pode causar falha de sincronização das configurações de Alta disponibilidade (HA). Para corrigir esse problema, copie o arquivo `server.pem` antigo, além dos arquivos listados acima (emita `su -` para atingir o nível raiz e, em seguida, emita o comando `copy`) e, em seguida, emita `restart https` para reiniciar o arquivo HTTPS `demon.m` (e os arquivos listados acima).
+{: important}

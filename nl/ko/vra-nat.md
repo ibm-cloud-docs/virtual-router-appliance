@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, prefix, IPsec, rules
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 접두부 기반 IPsec이 포함된 NAT 사용
 {: #using-nat-with-prefix-based-ipsec}
 
-[IPsec 및 구역 방화벽으로 VFP 인터페이스 구성](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls) 주제에서, VFP 인터페이스를 작성하고 IPsec 터널과 함께 사용하도록 설정했습니다. 
+[IPsec 및 구역 방화벽으로 VFP 인터페이스 구성](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls) 주제에서, VFP 인터페이스를 작성하고 IPsec 터널과 함께 사용하도록 설정했습니다.
 
-한 가지 추가 제한사항으로 인바운드 및 아웃바운드 인터페이스 선언뿐만 아니라 NAT 규칙에서 동일한 인터페이스를 사용할 수 있습니다. 
+한 가지 추가 제한사항으로 인바운드 및 아웃바운드 인터페이스 선언뿐만 아니라 NAT 규칙에서 동일한 인터페이스를 사용할 수 있습니다.
 
 다음은 몇 가지 예제 NAT 규칙입니다.
 
@@ -51,11 +57,12 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-이 명령은 `vfp0`을 통해 받는 트래픽에 대한 더 구체적인 라우트를 작성합니다. 
+이 명령은 `vfp0`을 통해 받는 트래픽에 대한 더 구체적인 라우트를 작성합니다.
 
-이 때 NAT는 구성된 대로 작동하며 터널을 통해 트래픽이 이동하게 됩니다. 
+이 때 NAT는 구성된 대로 작동하며 터널을 통해 트래픽이 이동하게 됩니다.
 
-**참고:** NAT를 사용하면, `vfp0` 가상 인터페이스에서 트래픽을 가리키는 IPsec 원격 접두부보다 더 작은 CIDR(동일한 크기일 수 없음)을 사용하는 라우트가 필요합니다.
+NAT를 사용하려면 `vfp0` 가상 인터페이스를 통한 트래픽을 가리키는 IPsec 원격 접두부보다 작은(동일한 크기여서는 안 됨) CIDR을 가진 라우트가 필요합니다.
+{: tip}
 
 모든 사항이 준비되면 ping을 실행하여 확인할 수 있습니다.
 

@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: docs, supplemental, documentation, help, vyatta, brocade
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
-# VRA 補充文件
-{: #supplemental-vra-documentation}
+# VRA 補充文件（已保存）
+{: #supplemental-vra-documentation-archived}
 
-下表提供關於 Virtual Router Appliance 的補充文件鏈結。
+本主題包含 Vyatta 5600 OS（比 17.2 更舊）補充文件的鏈結。
 
 Vyatta 文件|說明
 ------------- | -------------
@@ -28,6 +34,7 @@ Vyatta 文件|說明
 [Brocade Vyatta Network OS Services Configuration Guide, 5.2R1 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-services.pdf){:new_window} |本手冊說明如何在 Brocade Vyatta Network OS（在手冊裡稱為虛擬路由器、vRouter 或路由器）上配置 DHCP、DHCPv6、DNS、流程監視、NHRP、sFlow、TWAMP 及埠監視服務。
 [Brocade Vyatta Network OS High Availability Configuration Guide, 5.2R1 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-high-availability.pdf){:new_window}  |本手冊說明如何配置在 Brocade Vyatta Network OS（在手冊裡稱為虛擬路由器、vRouter 或路由器）上執行的 Brocade 產品，以提供高可用性。
 [Brocade Vyatta Network OS Remote Management Configuration Guide, 5.2R1 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-remote-management.pdf){:new_window}  |本手冊說明如何配置 SSH、Telnet、Web GUI 存取 (HTTPS)、NETCONF 及 SNMP 以便遠端管理 Brocade 5600 vRouter（在手冊裡稱為虛擬路由器、vRouter 或路由器）。
+[IPv6 Support Configuration Guide, 5.2R1 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipv6_configuration_5600.pdf){:new_window} |本手冊說明在 AT&T Vyatta Network OS（在手冊裡稱為虛擬路由器、vRouter 或路由器）上執行的 AT&T 產品的 IPv6 支援。
 [Brocade Vyatta Network OS NAT Configuration Guide, 5.2R1 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-nat.pdf){:new_window}  |本手冊說明如何在 Brocade Vyatta Network OS（在手冊裡稱為虛擬路由器、vRouter 或路由器）上執行的 Brocade 產品上配置 NAT。
 [BrocadeVyatta Network OS Policy-based Routing Configuration Guide, 5.2R1 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-policy-based-routing.pdf){:new_window}  |本手冊說明如何在 Brocade Vyatta Network OS（在手冊裡稱為虛擬路由器、vRouter 或路由器）上執行的 Brocade 產品上定義及配置遞送原則。
 [Brocade Vyatta Network OS Firewall Configuration Guide, 5.2R1 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-firewall.pdf){:new_window}  |本手冊說明 Brocade 5600 vRouter（在手冊裡稱為虛擬路由器、vRouter 或路由器）上的防火牆功能。

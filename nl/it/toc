@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
-{:topicgroup: .topicgroup}
+{:topicgroup: .topicgroup} 
 
-{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
+{: .toc subcollection="virtual-router-appliance" category="network" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
 IBM Virtual Router Appliance
 
     {: .navgroup id="learn"}
@@ -14,6 +14,15 @@ IBM Virtual Router Appliance
     Guida all'upgrade
         upgrade-os.md
         upgrade-issues.md
+
+    {: .topicgroup}
+    Guida alla migrazione di Vyatta 5400
+        migration-guide.md
+        5400-announcement.md
+        upgrade-5400-with-ip.md
+        5400-juniper.md
+        migration-issues.md
+        migration-faqs.md
 
     /fortigate-10g/fortigate-10g-exploring-firewalls
     external-resources.md
@@ -36,7 +45,7 @@ IBM Virtual Router Appliance
     {: .topicgroup}
     Gestisci le configurazioni ad alta disponibilità (HA)
         vrrp.md
-        configuration-synchronization.md 
+        configuration-synchronization.md
 
     {: .topicgroup}
     Utilizza le interfacce VFP e IPsec
@@ -69,16 +78,12 @@ IBM Virtual Router Appliance
         setup-nat.md
         vyatta-high-availability-configuration.md
 
-    {: .topicgroup}
-    Migrazione di Vyatta 5400
-        [Guida alla migrazione di Vyatta 5400](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
-        migration-issues.md
-
     faqs.md
     technical-faqs.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    vra-docs-18.md
     vra-docs.md
     getting-help.md
     {: .navgroup-end}

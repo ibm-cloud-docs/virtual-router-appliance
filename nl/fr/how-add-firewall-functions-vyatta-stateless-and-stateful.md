@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Ajout de fonctions de pare-feu à Vyatta 5400 (sans état et avec état)
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
@@ -24,7 +27,7 @@ Suivez les étapes décrites ci-dessous pour définir un exemple de règle de pa
 
 2\. Tapez *configure*.
 
-3\. Tapez *set firwall all-ping 'disable'*.
+3\. Tapez *set firewall all-ping 'disable'*.
 
 4\. Tapez *commit*.
 
@@ -95,7 +98,8 @@ La règle de pare-feu suivante que nous allons créer sera appliquée à notre z
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
-**Remarque :** les règles de pare-feu doivent suivre un flux sortant via **prod** vers **dmz**. Utilisez la commande suivante pour faciliter le traitement des incidents liés au flot réseau : *sudo tcpdump -i any host 10.52.69.202*.
+Les règles de pare-feu doivent suivre un flux sortant via **prod** vers **dmz**. Utilisez la commande suivante pour faciliter le traitement des incidents liés au flot réseau : *sudo tcpdump -i any host 10.52.69.202*.
+{: note}
 
 **Création de zones**
 
@@ -107,22 +111,22 @@ Les zones sont la représentation logique d'une interface. Les commandes suivant
 * Créer une stratégie de zone nommée **private** avec une action par défaut qui consiste à supprimer les paquets destinés à cette zone
 * Définir la stratégie nommée **private** pour utiliser l'interface **bond0.2254**
 
-1\. Entrez les commandes suivantes à l'invite :
+1. Entrez les commandes suivantes à l'invite :
 
-* *configure*
-* *set zone policy zone dmz default-action drop*
-* *set zone-policy zone dmz interface bond1*
-* *set zone-policy zone prod default-action drop*
-* *set zone-policy zone prod interface bond1.2007*
-* *set zone-policy zone private default-action drop*
-* *set zone-policy zone private interface bond0.2254*
+  * *configure*
+  * *set zone policy zone dmz default-action drop*
+  * *set zone-policy zone dmz interface bond1*
+  * *set zone-policy zone prod default-action drop*
+  * *set zone-policy zone prod interface bond1.2007*
+  * *set zone-policy zone private default-action drop*
+  * *set zone-policy zone private interface bond0.2254*
 
-2\. Utilisez les commandes suivantes pour définir la stratégie de pare-feu pour les zones :
+  2. Utilisez les commandes suivantes pour définir la stratégie de pare-feu pour les zones :
 
-* *set zone-policy zone private from dmz firewall name dmz2private*
-* *set zone-policy zone prod from dmz firewall name dmz2private*
-* *set zone-policy zone dmz from prod firewall name public4*
-* *commit*
+  * *set zone-policy zone private from dmz firewall name dmz2private*
+  * *set zone-policy zone prod from dmz firewall name dmz2private*
+  * *set zone-policy zone dmz from prod firewall name public4*
+  * *commit*
 
 Notez que vous pouvez appliquer une règle de pare-feu à une interface spécifique si vous ne voulez pas l'appliquer à une stratégie de zone. Utilisez les commandes ci-dessous pour appliquer une règle à une interface.
 
@@ -130,8 +134,9 @@ Notez que vous pouvez appliquer une règle de pare-feu à une interface spécifi
 * *commit*
 
 ## Pare-feu sans avec état
+{: #stateful-firewalls}
 
-Un pare-feu *avec état* conserve une table des flux vus précédemment, et des paquets peuvent être acceptés ou supprimés en fonction de leur relation avec des paquets précédents. En règle générale, il est préférable d'utiliser des pare-feux avec état lorsque le trafic d'application est répandu. 
+Un pare-feu *avec état* conserve une table des flux vus précédemment, et des paquets peuvent être acceptés ou supprimés en fonction de leur relation avec des paquets précédents. En règle générale, il est préférable d'utiliser des pare-feux avec état lorsque le trafic d'application est répandu.
 
 <span style="text-decoration: underline">*L'unité Brocade 5400 vRouter ne suit pas l'état des connexions avec la configuration par défaut. Le pare-feu est sans état tant que l'une des conditions suivantes n'est pas remplie : *</span>
 
@@ -142,5 +147,6 @@ Un pare-feu *avec état* conserve une table des flux vus précédemment, et des 
 * Activation d'une configuration d'équilibrage de charge WAN
 
 ## Pare-feu sans état
+{: #stateless-firewalls}
 
 Un pare-feu *sans état* considère chaque paquet isolément. Les parquets peuvent être acceptés ou supprimés en fonction de critères ACL de base uniquement, tels que les zones source et de destination dans l'adresse IP ou les en-têtes TCP/UDP (Transmission Control Protocols/User Datagram Protocol). Une unité Brocade 5400 vRouter sans état ne stocke pas d'informations de connexion et n'exige pas de rechercher la relation de chaque paquet avec les flux précédents, tous deux consommeront de faibles quantités de mémoire et de temps UC. Les performances du transfert de données brutes sont par conséquent meilleures sur un système sans état. Si vous n'avez pas besoin des fonctions spécifiques du statut avec état, Brocade recommande d'utiliser le routeur sans état afin d'optimiser vos performances.

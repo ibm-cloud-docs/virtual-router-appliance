@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: updates, changes, additions
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 
@@ -21,8 +27,12 @@ lastupdated: "2018-11-10"
 瞭解 IBM© Virtual Router Appliance (VRA) 的新增特性及更新特性。
 
 ## 2018 年 8 月
+{: #august-2018}
+
 ### Brocade Operating System 18.x 版
-現在提供 Virtual Router Appliance 的 Brocade OS 18.x 版。在其他新特性中，此版本提供 Spectre 安全侵害的補救。 
+{: #brocade-operating-system-version-18-x}
+
+現在提供 Virtual Router Appliance 的 Brocade OS 18.x 版。在其他新特性中，此版本提供 Spectre 安全侵害的補救。
 
 下列各主題討論 18.x VRA 的新增特性：
 
@@ -36,5 +46,3 @@ lastupdated: "2018-11-10"
 因為 Vyatta 5400 與 Virtual Router Appliance 之間的功能沒有簡單的一對一對映，所以建立 VRA 的基準線配置會有所幫助。IBM 合作夥伴 WanClouds 可協助您完成此處理程序，並提供有關建立與您 VRA 上 Vyatta 5400 類似之功能的指引。
 
 如需在此升級處理程序期間所遇到之一般問題的相關資訊，請參閱[其他文件](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)。
-
-

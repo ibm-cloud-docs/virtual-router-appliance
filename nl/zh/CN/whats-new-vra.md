@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: updates, changes, additions
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 
@@ -21,8 +27,12 @@ lastupdated: "2018-11-10"
 了解 IBM© 虚拟路由器设备 (VRA) 中的新增功能和更新的功能。
 
 ## 2018 年 8 月
+{: #august-2018}
+
 ### Brocade 操作系统 V18.x
-现在，Brocade 操作系统 V18.x 可供虚拟路由器设备使用。除了这些新增功能外，此版本还提供了针对 Spectre 安全性违规的修复措施。 
+{: #brocade-operating-system-version-18-x}
+
+现在，Brocade 操作系统 V18.x 可供虚拟路由器设备使用。除了这些新增功能外，此版本还提供了针对 Spectre 安全性违规的修复措施。
 
 以下主题中讨论了 18.x VRA 的新增功能：
 
@@ -36,5 +46,3 @@ lastupdated: "2018-11-10"
 由于 Vyatta 5400 和虚拟路由器设备之间的功能没有简单的一对一映射，因此为 VRA 创建基线配置非常有用。IBM 合作伙伴 WanClouds 可帮助您完成此过程，并提供有关在 VRA 上创建类似于 Vyatta 5400 的功能的指导。
 
 有关此升级过程中遇到的常见问题的更多信息，请参阅[其他文档](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)。
-
-

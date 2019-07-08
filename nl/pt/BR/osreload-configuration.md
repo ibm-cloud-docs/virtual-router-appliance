@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: reload, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Recarregando o S.O.
 {: #reloading-the-os}
@@ -30,6 +36,7 @@ Para recarregar seu SO, execute o procedimento a seguir:
 7. Verifique se todos os detalhes na seção Nova configuração estão corretos. Clique em **Avançar** para avançar para o pop-up Confirmar.
 8. Clique no botão **Confirmar Recarregamento do SO** para confirmar e iniciar o Recarregamento do SO. Clique em **Cancelar** para cancelar a ação.
 
-Depois de iniciar o processo de Recarregamento do SO, o dispositivo será colocado off-line e o processo de Recarregamento do SO iniciará. O tempo que leva para um recarregamento do SO concluir varia com base na configuração atual e nova do dispositivo. Durante o processo de configuração, o tempo mínimo para o Recarregamento do SO é exibido em cada tela. O intervalo de tempo é uma estimativa feita pelo sistema. Se o recarregamento levar mais de 24 horas, entre em contato com nossa equipe de Suporte. Quando o dispositivo ficar on-line novamente, ele funcionará conforme especificado na Nova Configuração para o Recarregamento do SO. 
+Depois de iniciar o processo de Recarregamento do SO, o dispositivo será colocado off-line e o processo de Recarregamento do SO iniciará. O tempo que leva para um recarregamento do SO concluir varia com base na configuração atual e nova do dispositivo. Durante o processo de configuração, o tempo mínimo para o Recarregamento do SO é exibido em cada tela. O intervalo de tempo é uma estimativa feita pelo sistema. Se o recarregamento levar mais de 24 horas, entre em contato com nossa equipe de Suporte. Quando o dispositivo ficar on-line novamente, ele funcionará conforme especificado na Nova Configuração para o Recarregamento do SO.
 
-**NOTA:** todos os dados salvos anteriormente no dispositivo serão perdidos, mas poderão ser restaurados se foi feito um backup do dispositivo antes de seu recarregamento. Caso não tenha sido feito backup dos dados, eles não poderão ser recuperados.
+Todos os dados salvos anteriormente no dispositivo serão perdidos, mas poderão ser restaurados se um backup do dispositivo tiver sido feito antes de seu recarregamento. Caso não tenha sido feito backup dos dados, eles não poderão ser recuperados.
+{: note}

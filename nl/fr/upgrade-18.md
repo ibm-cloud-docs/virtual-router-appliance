@@ -31,7 +31,7 @@ Ce fichier contient une liste d'éléments que vous devez connaître lorsque vou
 La version 1801f du dispositif VRA contient un correctif de sécurité pour la vulnérabilité Spectre, cependant, une modification doit être apportée au programme d'installation proprement dit avant que le correctif puisse être installé. Une étape intermédiaire consistant à installer la version 1801C est obligatoire.
 
 ## Procédure de mise à niveau normale
-Avant d'effectuer une mise à niveau vers la version 18.01f, vous devez d'abord télécharger et installer le correctif 18.01c pour mettre à jour le programme d'installation de VRA : 
+Avant d'effectuer une mise à niveau vers la version 18.01f, vous devez d'abord télécharger et installer le correctif 18.01c pour mettre à jour le programme d'installation de VRA :
 
 1. Téléchargez le correctif 1801c à partir de cet emplacement, puis suivez la [procédure normale](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) pour l'installer.
 
@@ -44,7 +44,7 @@ Il existe une autre solution qui consiste à effectuer un rechargement complet d
 
 *AVERTISSEMENT :* avec cette procédure, vous pouvez ignorer l'étape intermédiaire qui consiste à télécharger et à installer deux correctifs, en revanche, vous perdrez toutes vos données durant le rechargement complet à l'aide d'ISO.
 
-1. Procurez-vous l'ISO 18.01f à partir de cet emplacement. 
+1. Procurez-vous l'ISO 18.01f à partir de cet emplacement.
 2. Suivez la [procédure normale](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) pour l'installer et réamorcez le système.
 
 A présent, vous disposez de la version 1801f et le problème de sécurité Spectre est résolu.

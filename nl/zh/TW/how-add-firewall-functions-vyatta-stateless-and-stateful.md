@@ -6,11 +6,14 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # 將防火牆功能新增至 Vyatta 5400（無狀態及有狀態）
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
-使用 Brocade 5400 vRouter (Vyatta) 裝置時，將防火牆規則集套用至每一個介面是一種防火牆方法。每一個介面都有三個可能的防火牆實例（In、Out 及 Local），而且每一個實例都已套用規則。預設動作是「捨棄」，而且其規則容許以規則 1 到 N 的形式來套用特定資料流量。只要有相符項，防火牆就會套用相符規則的特定動作。
+使用 Brocade 5400 vRouter (Vyatta) 裝置時，將防火牆規則集套用至每一個介面是一種防火牆方法。每個介面都有三個可能的防火牆實例（In、Out 及 Local），而且每個實例都已套用規則。預設動作是「捨棄」，而且其規則容許以規則 1 到 N 的形式來套用特定資料流量。只要有相符項，防火牆就會套用相符規則的特定動作。
 
 對於下面這三個防火牆實例，**只能套用其中一個**。
 
@@ -24,7 +27,7 @@ lastupdated: "2018-11-10"
 
 2\. 鍵入 *configure*。
 
-3\. 鍵入 *set firwall all-ping 'disable'*。
+3\. 鍵入 *set firewall all-ping 'disable'*。
 
 4\. 鍵入 *commit*。
 
@@ -95,7 +98,8 @@ bond1.1894 = 保留供未來使用
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
-**附註：**防火牆規則需要往外從 **prod** 流向 **dmz**。使用下列指令以協助疑難排解網路流程：*sudo tcpdump -i any host 10.52.69.202*。
+防火牆規則需要往外從 **prod** 流向 **dmz**。使用下列指令以協助疑難排解網路流程：*sudo tcpdump -i any host 10.52.69.202*。
+{: note}
 
 **建立區域**
 
@@ -107,22 +111,22 @@ bond1.1894 = 保留供未來使用
 * 建立名為 **private** 的區域原則，且預設動作是捨棄送往此區域的封包。
 * 設定名為 **private** 的原則，以使用 **bond0.2254** 介面。
 
-1\. 在提示中，輸入下列指令：
+1. 在提示中，輸入下列指令：
 
-* *configure*
-* *set zone policy zone dmz default-action drop*
-* *set zone-policy zone dmz interface bond1*
-* *set zone-policy zone prod default-action drop*
-* *set zone-policy zone prod interface bond1.2007*
-* *set zone-policy zone private default-action drop*
-* *set zone-policy zone private interface bond0.2254*
+  * *configure*
+  * *set zone policy zone dmz default-action drop*
+  * *set zone-policy zone dmz interface bond1*
+  * *set zone-policy zone prod default-action drop*
+  * *set zone-policy zone prod interface bond1.2007*
+  * *set zone-policy zone private default-action drop*
+  * *set zone-policy zone private interface bond0.2254*
 
-2\. 使用下列指令，以設定區域的防火牆原則：
+  2. 使用下列指令，以設定區域的防火牆原則：
 
-* *set zone-policy zone private from dmz firewall name dmz2private*
-* *set zone-policy zone prod from dmz firewall name dmz2private*
-* *set zone-policy zone dmz from prod firewall name public4*
-* *commit*
+  * *set zone-policy zone private from dmz firewall name dmz2private*
+  * *set zone-policy zone prod from dmz firewall name dmz2private*
+  * *set zone-policy zone dmz from prod firewall name public4*
+  * *commit*
 
 請注意，如果您不想將防火牆規則套用至區域原則，則可以將它套用至特定介面。使用下面的指令，以將規則套用至介面。
 
@@ -130,8 +134,9 @@ bond1.1894 = 保留供未來使用
 * *commit*
 
 ## 有狀態防火牆
+{: #stateful-firewalls}
 
-*有狀態* 防火牆會備有先前所見的流程，而且可以根據封包與先前封包的關係來接受或捨棄封包。一般而言，一般會偏好普遍具有應用程式資料流量的有狀態防火牆。 
+*有狀態* 防火牆會備有先前所見的流程，而且可以根據封包與先前封包的關係來接受或捨棄封包。一般而言，一般會偏好普遍具有應用程式資料流量的有狀態防火牆。
 
 <span style="text-decoration: underline">*Brocade 5400 vRouter 不會追蹤具有預設配置之連線的狀態。除非符合下列其中一個條件，否則防火牆會是無狀態：*</span>
 
@@ -142,5 +147,6 @@ bond1.1894 = 保留供未來使用
 * 啟用 WAN 負載平衡配置
 
 ## 無狀態防火牆
+{: #stateless-firewalls}
 
 *無狀態* 防火牆會分別考量每個封包。可以根據僅限基本存取控制清單 (ACL) 準則（例如 IP 或「傳輸控制通訊協定/使用者資料封包通訊協定 (TCP/UDP)」標頭中的來源及目的地欄位）來接受或捨棄封包。無狀態 Brocade 5400 vRouter 不會儲存連線資訊，而且不需要查閱每個封包與先前流程的關係，而且兩者都耗用少量記憶體及 CPU 時間。因此，在無狀態系統上，原始轉遞效能最佳。如果您不需要有狀態性特定的特性，則 Brocade 建議將路由器保持無狀態以獲得最佳效能。

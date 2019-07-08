@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: docs, supplemental, documentation, help, vyatta, brocade
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
-# 보충 VRA 문서
-{: #supplemental-vra-documentation}
+# 보충 VRA 문서(아카이브됨)
+{: #supplemental-vra-documentation-archived}
 
-다음 표는 Virtual Router Appliance에 대한 보충 문서 링크를 제공합니다.
+이 주제에는 17.2 이전의 Vyatta 5600 OS에 대한 보충 문서의 링크가 포함되어 있습니다. 
 
 Vyatta 문서  |설명
 ------------- | -------------
@@ -28,6 +34,7 @@ Vyatta 문서  |설명
 [Brocade Vyatta Network OS 서비스 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-services.pdf){:new_window} |이 안내서는 DHCP Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 DHCP, DHCPv6, DNS, 플로우 모니터링, NHRP, sFlow, TWAMP 및 포트 모니터링 서비스를 구성하는 방법을 설명합니다.
 [Brocade Vyatta Network OS 고가용성 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-high-availability.pdf){:new_window}  |이 안내서는 고가용성을 제공하기 위해 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 Brocade 제품을 구성하는 방법을 설명합니다.
 [Brocade Vyatta Network OS 원격 관리 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-remote-management.pdf){:new_window}  |이 안내서는 Brocade 5600 vRouter(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)의 원격 관리를 위해 SSH, Telnet, Web GUI 액세스(HTTPS), NETCONF 및 SNMP를 구성하는 방법을 설명합니다.
+[IPv6 지원 구성 안내서, 5.2R1![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipv6_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에 대한 IPv6 지원에 대해 설명합니다. 
 [Brocade Vyatta Network OS NAT 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-nat.pdf){:new_window}  |이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 Brocade 제품에 NAT를 구성하는 방법을 설명합니다.
 [Brocade Vyatta Network OS 정책 기반 라우팅 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-policy-based-routing.pdf){:new_window}  |이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 Brocade 제품에 라우팅 정책을 정의하고 구성하는 방법을 설명합니다.
 [Brocade Vyatta Network OS 방화벽 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-firewall.pdf){:new_window}  |이 안내서는 Brocade 5600 vRouter OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)의 방화벽 기능에 대해 설명합니다.
@@ -48,7 +55,7 @@ Vyatta 문서  |설명
 [Brocade Vyatta Network OS OSPFv3 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-ospfv3.pdf){:new_window}  |이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 Brocade 제품에 OSPFv3을 구성하는 방법을 설명합니다.
 [Brocade Vyatta Network OS OSPF 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-ospf.pdf){:new_window}  |이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 Brocade 제품에 OSPF를 구성하는 방법을 설명합니다.
 [Brocade Vyatta Network OS 멀티캐스트 라우팅 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-multicastrouting.pdf){:new_window}  |이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 Brocade 제품에 멀티캐스트 라우팅을 사용 설정하고 구성하는 방법을 설명합니다.
-[Brocade Vyatta Network OS MPLS 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-mpls.pdf){:new_window}  | 이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에 있는 MPLS(Multiprotocol Label Switching)의 기능과 구성에 대해 설명합니다. {:new_window}.
+[Brocade Vyatta Network OS MPLS 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-mpls.pdf){:new_window}  | 이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에 있는 MPLS(Multiprotocol Label Switching)의 기능과 구성에 대해 설명합니다.{:new_window}.
 [Brocade Vyatta Network OS MSDP 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-msdp.pdf){:new_window}  |이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 MSDP를 실행하는 방법을 설명합니다.
 [Brocade Vyatta Network OS 라이센스 및 인타이틀먼트 관리 소프트웨어 라이센싱 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-licensing.pdf){:new_window}  |이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 Brocade 제품의 라이센스 및 인타이틀먼트 관리에 대해 설명합니다.
 [Brocade Vyatta Network OS IPv6 지원 구성 안내서, 5.2R1 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-ipv6support.pdf){:new_window}  |이 안내서는 Brocade Vyatta Network OS(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 Brocade 제품의 IPv6 지원에 대해 설명합니다.

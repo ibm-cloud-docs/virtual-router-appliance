@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-05-03"
+
+keywords: vra, virtual router, order
+
+subcollection: virtual-router-appliance
 
 ---
 
@@ -12,34 +16,79 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 
 # Iniciación a IBM Virtual Router Appliance
 {: #getting-started}
 
-Para empezar con IBM© Virtual Router Appliance (VRA), navegue a la página en el Portal de clientes:
+IBM© Virtual Router Appliance (VRA) proporciona el sistema operativo Vyatta 5600 más reciente para servidores nativos x86. Se ofrece como una configuración de alta disponibilidad (HA) o autónoma, y le permite direccionar el tráfico de red privada y pública selectivamente, a través de un direccionador de empresa completo que tiene cortafuegos, modelado de tráfico, direccionamiento basado en políticas, VPN y otras características.
 
-1. En el navegador, abra el [Portal de clientes ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){: new_window} e inicie sesión en su cuenta.
-2. En la navegación del Portal de clientes, seleccione **Red > Dispositivos de pasarela**.
-3. En la página de lista **Dispositivos de pasarela**, pulse **Pasarela de orden**.
-4. En la página **Orden**, seleccione el centro de datos deseado desde el menú desplegable y elija el tipo de hardware de servidor deseado.
+Los requisitos mínimos para un servidor de VRA son 8 GB de RAM y un núcleo de CPU para cada 10 Gbps de capacidad de red. Por ejemplo, un sistema con enlaces públicos y privados de 10 Gbps duales requiere al menos cuatro núcleos. Además, si pretende configurar servicios VPN con cifrado, es posible que desee añadir núcleos adicionales. Añadiendo núcleos adicionales para los servicios de VPN, se garantiza que no se sobrecargue el VRA con cargas pesadas al direccionar y, simultáneamente, cifrar y descifrar datos.
 
-    **NOTA:** los requisitos mínimos de servidor de VRA son de 8 GB de RAM y un núcleo de CPU para cada 10 Gbps de capacidad de red. Por ejemplo, un sistema con enlaces públicos y privados de 10 Gbps duales requiere al menos cuatro núcleos. Reserve más de los valores predeterminados de disco si desea ejecutar diagnósticos de red que generen registros detallados. Finalmente, si pretende configurar servicios VPN con cifrado, es posible que desee añadir núcleos adicionales. Al añadir núcleos adicionales para servicios VPN, se garantiza que no se sobrecargue el VRA con una carga pesada al direccionar y, simultáneamente, cifrar y descifrar datos.
+## Pedido de un Virtual Router Appliance
+{: #order-vra}
 
-5. En la página de pedido, seleccione la opción **Par de alta disponibilidad** si lo desea, seleccione el tamaño de memoria, seleccione la versión adecuada del sistema operativo VRA y luego seleccione la velocidad de enlace ascendente de red.
+Para hacer un pedido de un VRA, siga el procedimiento siguiente:
 
-6. Revise todas las selecciones y pulse **Añadir a pedido**, y el pedido se verificará automáticamente.
-7. En la página **PAGO**, si ya dispone de VLAN en el centro de datos seleccionado, seleccione las VLAN de fondo que deben protegerse. Proporcione un nombre de host y un nombre de dominio para VRA. Compruebe todos los recuadros de los términos de los servicios de IBM Cloud y el acuerdo de servicio de terceros. Pulse **Enviar pedido**.
+1. En el navegador, abra la página Dispositivos de pasarela en la [consola de la IU de IBM Cloud ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/gen1/infrastructure/provision/gateway){: new_window} e inicie sesión en su cuenta. 
 
-Cuando se haya aprobado el pedido, el suministro de VRA se inicia automáticamente. Cuando se completa el proceso de suministro, el nuevo VRA se muestra en la página de lista **Dispositivos de pasarela**. Pulse en el nombre de pasarela para abrir la página **Detalles de pasarela** y, a continuación, en cada miembro de pasarela para abrir la página **Detalles de dispositivo**. Encontrará las direcciones IP, el nombre de usuario de inicio de sesión y la contraseña del dispositivo.  
+  También puede llegar a esta página seleccionando el menú de navegación en la parte superior izquierda del [Catálogo de IBM Cloud ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com) y seleccionando **Infraestructura clásica > Red > Dispositivo de pasarela**. 
+  {: tip}
 
-**NOTA:** es importante recordar que una vez que haya pedido y configure el VRA desde el portal de clientes de IBM Cloud, también debe configurar el propio dispositivo con los mismos valores.
+2. En la sección **Proveedor de pasarela**, seleccione la opción **AT&T** (cuando está seleccionada, aparece una marca de selección azul sobre el botón). En el menú desplegable de ese mismo botón, elija el ancho de banda (20 Gbps o 2 Gbps).
+
+  	<img src="images/ordering_vra.png" alt="dibujo" style="width: 500px;"/>
+
+3. En la sección **Dispositivo de pasarela**, especifique la información de **Nombre de host** y nombre de **Dominio**. Estos campos ya estarán cumplimentados con información predeterminada, asegúrese de que los valores son correctos. Si lo desea, marque la opción **Alta disponibilidad** y seleccione la **Ubicación** deseada del centro de datos y el **Pod** específico que prefiera en el menú desplegable.
+
+  Sólo se mostrarán los pods que ya tengan una VLAN asociada. Si desea suministrar su Dispositivo de pasarela en un pod que no aparece en la lista, primero cree una VLAN en el mismo.
+  {: note}
+
+4. En la sección **Configuración**, seleccione el procesador seleccionando las claves de RAM y SSH (si es necesario).
+
+  <img src="images/ordering_vra_2.png" alt="dibujo" style="width: 600px;"/>
+  
+  Se elige el procesador adecuado en base a la versión de licencia que ha seleccionado en el paso dos. Sin embargo, puede elegir configuraciones de RAM distintas.
+  {: note}
+
+5. En la sección **Discos de almacenamiento**, elija las opciones que se ajusten a sus requisitos de almacenamiento. 
+
+  Hay las opciones RAID0 y RAID1 disponibles para una mayor protección contra la pérdida de datos, así como los repuestos dinámicos (componentes de copia de seguridad que se pueden poner en servicio inmediatamente cuando falla un componente primario).
+  {: note}
+
+  Puede tener hasta cuatro discos por cada VRA. El "Tamaño de disco" en una configuración de RAID es el tamaño de disco utilizable, ya que las configuraciones de RAID están duplicadas.
+  {: note}
+
+  Reserve más de los valores predeterminados de disco si desea ejecutar diagnósticos de red que generen registros detallados.
+  {: tip}
+
+6. En la sección **Interfaz de red**, seleccione las **Velocidades de puerto de enlace ascendente**. La selección predeterminada es una única interfaz, pero también hay las opciones redundante y privada. Elija la que mejor se ajuste a sus necesidades.
+
+  La sección **Complementos** de interfaz de red le permite seleccionar una dirección IPv6 si es necesario, y muestra las opciones predeterminadas adicionales que haya. 
+  
+8. Revise las selecciones que ha realizado, compruebe que ha leído los Acuerdos de servicio de terceros y pulse **Crear**. El pedido se verifica automáticamente.
+
+Cuando se haya aprobado el pedido, se inicia automáticamente el suministro de Virtual Router Appliance. Cuando se completa el proceso de suministro, el nuevo VRA se muestra en la página de lista Dispositivos de pasarela. Pulse el nombre de la pasarela para abrir la página Detalles de pasarela. Encontrará las direcciones IP, el nombre de usuario de inicio de sesión y la contraseña del dispositivo.  
+
+  <img src="images/gateway_details.png" alt="dibujo" style="width: 500px;"/>
+
+Recuerde que una vez que haya pedido y configurado el VRA desde el Catálogo de IBM Cloud, también debe configurar el propio dispositivo con los mismos valores.
+{: tip}
 
 ## Rol del dispositivo de pasarela y de VLAN
-Una VLAN (LAN virtual) es un mecanismo que segrega una red física en muchos segmentos virtuales. Por su comodidad, el tráfico de varias VLAN seleccionadas puede suministrarse mediante un solo cable de red, proceso comúnmente denominado "conexión troncal".
+{: #vlans-and-the-gateway-appliance-s-role}
 
-VRA se entrega en dos partes: los servidores de VRA y el elemento fijo de dispositivo de pasarela. El dispositivo de pasarela le proporciona una interfaz (GUI y API) para seleccionar las VLAN que desea asociar con su VRA. La asociación de una VLAN con un dispositivo de pasarela redirige (o "realiza una conexión troncal") dicha VLAN y todas sus subredes a VRA, proporcionándole control sobre el filtrado, reenvío y protección. Los servidores de una VLAN asociada solo pueden alcanzarse a partir de otras VLAN pasando por VRA; no es posible omitir VRA a menos que ignore o desasocie la VLAN.
+Una VLAN (LAN virtual) es un mecanismo que segrega una red física en muchos segmentos virtuales. Para mayor comodidad, el tráfico de varias VLAN seleccionadas puede suministrarse mediante un solo cable de red, proceso comúnmente denominado "conexión troncal".
+
+Virtual Router Appliance se entrega en dos partes: los servidores de VRA y el elemento fijo de dispositivo de pasarela. El dispositivo de pasarela le proporciona una interfaz (GUI y API) para seleccionar las VLAN que desea asociar con su VRA. La asociación de una VLAN con un dispositivo de pasarela redirige (o "realiza una conexión troncal") dicha VLAN y todas sus subredes a VRA, proporcionándole control sobre el filtrado, reenvío y protección. Para cada VLAN asociada con el Dispositivo de pasarela, esa VLAN está permitida en los puertos de conmutador a los que está conectado el VRA, y cualquier subred en dicha VLAN se direcciona estáticamente a la IP de VRRP pública del VRA (si la subred es una subred pública) o a la IP de VRRP privada del VRA (si la subred es una subred privada). Este direccionamiento se realiza en el direccionador detrás del VRA, que será el FCR (Frontend Customer Router) o el BCR (Backend Customer Router) para el tráfico público y privado respectivamente. 
+
+Tenga en cuenta que VRRP está inhabilitado de forma predeterminada y que debe estar habilitado para que el tráfico de VLAN funcione, incluso en vyattas autónomos. Esto es consecuencia de que las subredes en la VLAN asociada están direccionadas a la IP de VRRP o a la dirección virtual asignada al VRA. Para obtener más información, consulte [Direcciones IP virtuales (VIP) de VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
+{: important}
+
+Los servidores de una VLAN asociada solo pueden alcanzarse a partir de otras VLAN a través del Virtual Router Appliance; no es posible omitir el VRA a menos que se ignore o se desasocie la VLAN.
 
 De forma predeterminada, un nuevo dispositivo de pasarela se asocia a dos VLAN de "tránsito" no extraíbles, una para la pública y otra para la privada. Normalmente se utilizan para fines de administración y los mandatos VRA pueden separarlas de forma segura.
 

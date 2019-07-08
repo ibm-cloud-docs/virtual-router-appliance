@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: reload, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Recarga del SO
 {: #reloading-the-os}
@@ -30,6 +36,7 @@ Para volver a cargar el SO, realice el procedimiento siguiente:
 7. Verifique que todos los detalles de la sección Nueva configuración son correctos. Pulse **Siguiente** para avanzar a la pantalla emergente Confirmación.
 8. Pulse el botón **Confirmar recarga de SO** para confirmar e iniciar la recarga de SO. Pulse **Cancelar** para cancelar la acción.
 
-Tras iniciarse el proceso de recarga de SO, el dispositivo se pondrá fuera de línea y comenzará el proceso de recarga. El tiempo que tarda en completarse una recarga de SO varía en función de la configuración actual y la nueva configuración del dispositivo. Durante el proceso de configuración, se muestra en cada pantalla el tiempo mínimo de la recarga de SO. El periodo de tiempo es una estimación hecha por el sistema. Si tarda más de 24 horas, póngase en contacto con nuestro equipo de soporte. Cuando el dispositivo vuelva a estar en línea, funcionará según se haya especificado en la nueva configuración para la recarga de SO. 
+Tras iniciarse el proceso de recarga de SO, el dispositivo se pondrá fuera de línea y comenzará el proceso de recarga. El tiempo que tarda en completarse una recarga de SO varía en función de la configuración actual y la nueva configuración del dispositivo. Durante el proceso de configuración, se muestra en cada pantalla el tiempo mínimo de la recarga de SO. El periodo de tiempo es una estimación hecha por el sistema. Si tarda más de 24 horas, póngase en contacto con nuestro equipo de soporte. Cuando el dispositivo vuelva a estar en línea, funcionará según se haya especificado en la nueva configuración para la recarga de SO.
 
-**NOTA:** Se perderán todos los datos anteriormente guardados en el dispositivo, pero se pueden restaurar si se realizó una copia de seguridad antes de su recarga. Si no se efectuó ninguna copia de seguridad, no se podrán recuperar los datos.
+Se perderán todos los datos guardados anteriormente en el dispositivo, pero puede restaurarlos si realizó una copia de seguridad antes de la recarga. Si no se efectuó ninguna copia de seguridad, no se podrán recuperar los datos.
+{: note}

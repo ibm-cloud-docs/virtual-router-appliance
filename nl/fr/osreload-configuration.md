@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: reload, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Rechargement du système d'exploitation
 {: #reloading-the-os}
@@ -30,6 +36,7 @@ Pour recharger votre système d'exploitation, procédez comme suit :
 7. Vérifiez que les informations s'affichant dans la section Nouvelle configuration sont correctes. Cliquez sur **Suivant** pour passer à la fenêtre contextuelle de confirmation.
 8. Cliquez sur le bouton **Confirmer le rechargement du système d'exploitation** pour confirmer le rechargement et effectuer cette opération. Cliquez sur **Annuler** pour annuler l'action.
 
-Après avoir lancé le processus de rechargement du système d'exploitation, l'unité est déconnectée et le processus de rechargement du système d'exploitation commence. La durée de rechargement d'un système d'exploitation varie en fonction de la configuration actuelle et de la nouvelle configuration de l'unité. Tout au long du processus de configuration, la durée minimale de rechargement du système d'exploitation s'affiche sur chaque écran. Le délai est une estimation indiquée par le système. Si le rechargement dure plus de 24 heures, contactez notre équipe de support. Lorsque l'unité est à nouveau en ligne, elle fonctionnera selon la nouvelle configuration indiquée pour le rechargement du système d'exploitation. 
+Après avoir lancé le processus de rechargement du système d'exploitation, l'unité est déconnectée et le processus de rechargement du système d'exploitation commence. La durée de rechargement d'un système d'exploitation varie en fonction de la configuration actuelle et de la nouvelle configuration de l'unité. Tout au long du processus de configuration, la durée minimale de rechargement du système d'exploitation s'affiche sur chaque écran. Le délai est une estimation indiquée par le système. Si le rechargement dure plus de 24 heures, contactez notre équipe de support. Lorsque l'unité est à nouveau en ligne, elle fonctionnera selon la nouvelle configuration indiquée pour le rechargement du système d'exploitation.
 
-**REMARQUE :** Toutes les données qui avaient été préalablement sauvegardées sur l'unité seront perdues, mais pourront être restaurées si une sauvegarde de l'unité a été effectuée avant son rechargement. Si les données n'ont pas été sauvegardées, elles ne seront plus récupérables.
+Toutes les données qui avaient été préalablement sauvegardées sur l'unité seront perdues, mais pourront être restaurées si une sauvegarde de l'unité a été effectuée avant son rechargement. Si les données n'ont pas été sauvegardées, elles ne seront plus récupérables.
+{: note}

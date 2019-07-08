@@ -4,6 +4,10 @@ copyright:
   years: 2018
 lastupdated: "2018-11-10"
 
+keywords: patch, notes, 5400, 5600, os, brocade
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 

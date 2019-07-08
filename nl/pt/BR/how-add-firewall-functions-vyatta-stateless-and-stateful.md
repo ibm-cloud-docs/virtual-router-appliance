@@ -6,11 +6,14 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Incluindo funções de firewall no Vyatta 5400 (stateless e stateful)
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
-A aplicação de conjuntos de regras de firewall em cada interface é um método de aplicação de firewall ao usar os dispositivos Brocade 5400 vRouter (Vyatta). Cada interface possui três possíveis instâncias de firewall - Dentro, Fora e Local - e cada instância tem regras que podem ser aplicadas a ela. A ação padrão é Descartar, com regras que permitem que o tráfego específico seja aplicado de acordo com a regra 1 a N. Assim que uma correspondência for feita, o firewall aplicará a ação específica da regra de correspondência.
+A aplicação de conjuntos de regras de firewall em cada interface é um método de aplicação de firewall ao usar os dispositivos Brocade 5400 vRouter (Vyatta). Cada interface possui três possíveis instâncias de firewall (Entrada, Saída e Local) e cada instância possui regras que podem ser aplicadas a ela. A ação padrão é Descartar, com regras que permitem que o tráfego específico seja aplicado de acordo com a regra 1 a N. Assim que uma correspondência for feita, o firewall aplicará a ação específica da regra de correspondência.
 
 Para qualquer uma das três instâncias de firewall abaixo, **somente uma** pode ser aplicada.
 
@@ -24,7 +27,7 @@ Use as etapas a seguir para configurar uma regra de firewall de exemplo para des
 
 2\. Digite *configure*.
 
-3\. Digite *set firwall all-ping 'disable'*.
+3\. Digite *set firewall all-ping 'disable'*.
 
 4\. Digite *commit*.
 
@@ -95,7 +98,8 @@ A próxima regra de firewall que criarmos será aplicada à nossa zona **dmz**. 
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
-**NOTA:** as regras de firewall precisam do fluxo de saída de **prod** para **dmz**. Use o comando a seguir para ajudar a solucionar problemas de fluxo de rede: *sudo tcpdump -i any host 10.52.69.202*.
+As regras de firewall precisam fluir a saída por meio de **prod** para **dmz**. Use o comando a seguir para ajudar a solucionar problemas de fluxo de rede: *sudo tcpdump -i any host 10.52.69.202*.
+{: note}
 
 **Criar zonas**
 
@@ -107,22 +111,22 @@ As zonas são a representação lógica de uma interface. Os comandos a seguir i
 * Criar uma política de zona denominada **private** com uma ação padrão para descartar pacotes destinados para essa zona.
 * Configurar a política denominada **private** para usar a interface **bond0.2254**.
 
-1\. Insira os comandos a seguir no prompt:
+1. Insira os comandos a seguir no prompt:
 
-* *configure*
-* *set zone policy zone dmz default-action drop*
-* *set zone-policy zone dmz interface bond1*
-* *set zone-policy zone prod default-action drop*
-* *set zone-policy zone prod interface bond1.2007*
-* *set zone-policy zone private default-action drop*
-* *set zone-policy zone private interface bond0.2254*
+  * *configure*
+  * *set zone policy zone dmz default-action drop*
+  * *set zone-policy zone dmz interface bond1*
+  * *set zone-policy zone prod default-action drop*
+  * *set zone-policy zone prod interface bond1.2007*
+  * *set zone-policy zone private default-action drop*
+  * *set zone-policy zone private interface bond0.2254*
 
-2\. Use os comandos a seguir para configurar a política de firewall para as zonas:
+  2. Use os comandos a seguir para configurar a política de firewall para as zonas:
 
-* *set zone-policy zone private from dmz firewall name dmz2private*
-* *set zone-policy zone prod from dmz firewall name dmz2private*
-* *set zone-policy zone dmz from prod firewall name public4*
-* *commit*
+  * *set zone-policy zone private from dmz firewall name dmz2private*
+  * *set zone-policy zone prod from dmz firewall name dmz2private*
+  * *set zone-policy zone dmz from prod firewall name public4*
+  * *commit*
 
 Observe que será possível aplicar uma regra de firewall a uma interface específica se você não desejar aplicá-la a uma política de zona. Use os comandos abaixo para aplicar uma regra a uma interface.
 
@@ -130,8 +134,9 @@ Observe que será possível aplicar uma regra de firewall a uma interface espec�
 * *commit*
 
 ## Firewalls stateful
+{: #stateful-firewalls}
 
-Um firewall *stateful* mantém uma tabela de fluxos vistos anteriormente e os pacotes podem ser aceitos ou descartados de acordo com sua relação com pacotes anteriores. Como regra geral, firewalls stateful serão geralmente preferenciais onde o tráfego de aplicativo for predominante. 
+Um firewall *stateful* mantém uma tabela de fluxos vistos anteriormente e os pacotes podem ser aceitos ou descartados de acordo com sua relação com pacotes anteriores. Como regra geral, firewalls stateful serão geralmente preferenciais onde o tráfego de aplicativo for predominante.
 
 <span style="text-decoration: underline">*O Brocade 5400 vRouter não rastreia o estado das conexões com configuração padrão. O firewall será stateless até que uma das condições a seguir tenha sido atendida:*</span>
 
@@ -142,5 +147,6 @@ Um firewall *stateful* mantém uma tabela de fluxos vistos anteriormente e os pa
 * A ativação de uma configuração de balanceamento de carga da WAN
 
 ## Firewalls stateless
+{: #stateless-firewalls}
 
 Um firewall *stateless* considera cada pacote isoladamente. Os pacotes podem ser aceitos ou descartados de acordo somente com os critérios básicos da lista de controle de acesso (ACL), como os campos de origem e de destino nos cabeçalhos de IP ou do Transmission Control Protocols/User Datagram Protocol (TCP/UDP). Um Brocade 5400 vRouter stateless não armazena informações de conexão e não tem nenhum requisito para consultar a relação de cada pacote com fluxos anteriores, ambos os quais consomem pequenas quantias de memória e tempo de CPU. O desempenho do encaminhamento bruto é portanto melhor em um sistema stateless. O Brocade recomenda manter o roteador stateless para melhor desempenho se você não requerer os recursos específicos para a condição stateful.

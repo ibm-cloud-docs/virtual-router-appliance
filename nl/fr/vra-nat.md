@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, prefix, IPsec, rules
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Utilisation de NAT avec IPsec basé sur le préfixe
 {: #using-nat-with-prefix-based-ipsec}
 
-Dans la rubrique [Configuration d'une interface VFP avec IPsec et des pare-feux de zone](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), nous avons créé une interface VFP et l'avons configurée pour être utilisée avec un tunnel IPsec. 
+Dans la rubrique [Configuration d'une interface VFP avec IPsec et des pare-feux de zone](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), nous avons créé une interface VFP et l'avons configurée pour être utilisée avec un tunnel IPsec.
 
-Nous pouvez utiliser la même interface dans des règles NAT, ainsi que la déclaration d'interface entrante et sortante, avec une restriction supplémentaire. 
+Nous pouvez utiliser la même interface dans des règles NAT, ainsi que la déclaration d'interface entrante et sortante, avec une restriction supplémentaire.
 
 Exemples de règles NAT :
 
@@ -51,11 +57,12 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-Cela crée une route plus spécifique pour permettre au trafic de reprendre `vfp0`. 
+Cela crée une route plus spécifique pour permettre au trafic de reprendre `vfp0`.
 
-A ce stade, la conversion NAT fonctionnera comme prévu et le trafic transitera par le tunnel. 
+A ce stade, la conversion NAT fonctionnera comme prévu et le trafic transitera par le tunnel.
 
-**Remarque :** avec la conversion NAT, vous avez besoin d'une route avec un routage CIDR plus petit que le préfixe distant IPsec (il ne peut pas être de la même taille) pointant votre trafic sur l'interface virtuelle `vfp0`.
+La conversion NAT requiert une route avec un routage CIDR plus petit que le préfixe distant IPsec (il ne peut pas être de la même taille) pointant votre trafic sur l'interface virtuelle `vfp0`.
+{: tip}
 
 Une fois que tout est en place, vous pouvez exécuter une commande PING et procéder à des vérifications :
 

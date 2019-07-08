@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ipsec, firewall, configure, policy
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,16 +16,20 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # ゾーン・ファイアウォールで機能する IPsec トンネルのセットアップ
 {: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
 
-旧バージョンの仮想ルーター・アプライアンスでは、ポリシー・ベースのルーティングを使用した IPsec トンネルは、ゾーン・ファイアウォールで適切に機能しませんでした。 バージョン 18.01 では、この問題に対応する一連の新コマンドが導入されました。「仮想フィーチャー・ポイント」を使用して指定のトンネルからのトラフィックを有効にします。ここで、フィーチャー・ポイントは、ゾーン・ポリシー構成に含めるエンドポイントを提供するインターフェースとして機能します。
+旧バージョンの Virtual Router Appliance では、ポリシー・ベースのルーティングを使用した IPsec トンネルは、ゾーン・ファイアウォールで適切に機能しませんでした。 バージョン 18.01 では、この問題に対応する一連の新コマンドが導入されました。「仮想フィーチャー・ポイント」を使用して指定のトンネルからのトラフィックを有効にします。ここで、フィーチャー・ポイントは、ゾーン・ポリシー構成に含めるエンドポイントを提供するインターフェースとして機能します。
 
 間に IPsec を配置した 2 台のマシンの構成例を以下に示します。
 
 ###マシン A
+{: #machine-a}
+
 ```
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -39,6 +47,8 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '17
 ```
 
 ###マシン B
+{: #machine-b}
+
 ```
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -55,7 +65,7 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-これにより、2 台のマシン間に 172.16.x.x トラフィックを経路指定する一般的なトンネルをセットアップします。 マシン B は、テストに使用するエンドポイントを指定するループバック・アドレスとして 172,16.100.1 を持ちます。マシン A には、トンネル経由でソース・トラフィックを提供するために、経路指定された VLAN 上に仮想マシンがあります。 
+これにより、2 台のマシン間に 172.16.x.x トラフィックを経路指定する一般的なトンネルをセットアップします。 マシン B は、テストに使用するエンドポイントを指定するループバック・アドレスとして 172,16.100.1 を持ちます。マシン A には、トンネル経由でソース・トラフィックを提供するために、経路指定された VLAN 上に仮想マシンがあります。
 
 結果は次のようになります。
 
@@ -86,7 +96,7 @@ set security firewall name ALLOWALL rule 30 action 'accept'
 set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
- 
+
 その後、3 つすべてのインターフェース間でポリシーを追加します。
 
 ```

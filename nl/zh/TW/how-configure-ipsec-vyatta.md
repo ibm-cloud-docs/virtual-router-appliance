@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # 在 Vyatta 5400 上配置 IPSec
 {: #configuring-ipsec-on-vyatta-5400}
@@ -56,7 +59,7 @@ lastupdated: "2018-11-10"
 
 下一步是設定遠端裝置，即 Brocade 5400 vRouter 6.6.5 R。
 
-  * 使用剛才配置的裝置（以作業模式所配置）以輸入指令來顯示配置指令。將會呈現用來設定裝置的指令清單。
+  * 使用剛才配置的裝置（以作業模式所配置），輸入指令來顯示配置指令。將會呈現用來設定裝置的指令清單。
   * 將指令複製到文字編輯器。用來設定本端裝置的指令將會用來設定遠端伺服器，但需要修改 IP 以指向 SoftLayer 上的 Brocade 5400 vRouter 6.6.5R 裝置。
 
 先前使用的遠端配置如下。本端配置所需的變更會以粗體顯示。

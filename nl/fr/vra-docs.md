@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: docs, supplemental, documentation, help, vyatta, brocade
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
-# Documentation supplémentaire pour VRA
-{: #supplemental-vra-documentation}
+# Documentation VRA supplémentaire (archivée) 
+{: #supplemental-vra-documentation-archived}
 
-Le tableau suivant fournit des liens vers la documentation supplémentaire relative à Virtual Router Appliance (VRA).
+Cette rubrique contient des liens vers de la documentation supplémentaire pour le système d’exploitation de Vyatta 5600 antérieur à 17.2. 
 
 Documentation sur Vyatta  | Description
 ------------- | -------------
@@ -28,6 +34,7 @@ Documentation sur Vyatta  | Description
 [Brocade Vyatta Network OS Services Configuration Guide, 5.2R1 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-services.pdf){:new_window} | Ce guide décrit comment configurer DHCP, DHCPv6, DNS, la surveillance de flux, NHRP, sFlow, TWAMP et les services de surveillance de port sur le système d'exploitation Brocade Vyatta Network OS (désigné par "virtual router" , "vRouter" ou "router" dans le guide).
 [Brocade Vyatta Network OS High Availability Configuration Guide, 5.2R1 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-high-availability.pdf){:new_window}  | Ce guide décrit comment configurer les produits Brocade qui s'exécutent sur le système d'exploitation Brocade Vyatta Network OS (désigné par "virtual router", "vRouter" ou "router" dans le guide) pour garantir la haute disponibilité.
 [Brocade Vyatta Network OS Remote Management Configuration Guide, 5.2R1 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-remote-management.pdf){:new_window}  | Ce guide décrit comment configurer SSH, Telnet, l'accès à l'interface Web (HTTPS), NETCONF et SNMP pour la gestion à distance du routeur virtuel Brocade 5600 vRouter (désigné par "virtual router", "vRouter" ou "router" dans le guide).
+[IPv6 Support Configuration Guide, 5.2R1 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipv6_configuration_5600.pdf){:new_window} | Ce guide décrit le support IPv6 sur les produits AT&T qui s'exécutent sur le système AT&T Vyatta Network OS (désigné par "virtual router", "vRouter" ou "router" dans le guide). 
 [Brocade Vyatta Network OS NAT Configuration Guide, 5.2R1 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-nat.pdf){:new_window}  | Ce guide décrit comment configurer NAT sur les produits Brocade qui s'exécutent sur le système d'exploitation Brocade Vyatta Network OS (désigné par "virtual router", "vRouter" ou "router" dans le guide).
 [Brocade Vyatta Network OS Policy-based Routing Configuration Guide, 5.2R1 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-policy-based-routing.pdf){:new_window}  | Ce guide décrit comment définir et configurer des stratégies de routage sur les produits Brocade qui s'exécutent sur le système d'exploitation Brocade Vyatta Network OS (désigné par "virtual router", "vRouter" ou "router" dans le guide).
 [Brocade Vyatta Network OS Firewall Configuration Guide, 5.2R1 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-firewall.pdf){:new_window}  | Ce guide décrit la fonctionnalité de pare-feu sur le routeur virtuel Brocade 5600 vRouter (désigné par "virtual router", "vRouter" ou "router" dans le guide).

@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, prefix, IPsec, rules
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Utilización de NAT con IPsec basado en prefijo
 {: #using-nat-with-prefix-based-ipsec}
 
-En el tema [Configuración de una interfaz de VFP con IPsec y cortafuegos de zona](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls) hemos creado una interfaz VFP y la hemos configurado para que se utilice con un túnel IPsec. 
+En el tema [Configuración de una interfaz de VFP con IPsec y cortafuegos de zona](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls) hemos creado una interfaz VFP y la hemos configurado para que se utilice con un túnel IPsec.
 
-Podemos utilizar la misma interfaz en reglas NAT, así como la declaración de interfaz de entrada y de salida, con una advertencia adicional. 
+Podemos utilizar la misma interfaz en reglas NAT, así como la declaración de interfaz de entrada y de salida, con una advertencia adicional.
 
 A continuación se muestran algunas reglas NAT de ejemplo:
 
@@ -51,11 +57,12 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-Esto crea una ruta más específica para que el tráfico utilice `vfp0`. 
+Esto crea una ruta más específica para que el tráfico utilice `vfp0`.
 
-En este punto NAT funcionará según la configuración y el tráfico se desplazará a través del túnel. 
+En este punto NAT funcionará según la configuración y el tráfico se desplazará a través del túnel.
 
-**NOTA:** con NAT, necesita una ruta con un CIDR menor que el prefijo remoto de IPsec (no puede ser del mismo tamaño) que apunte al tráfico sobre la interfaz virtual `vfp0`.
+NAT requiere una ruta con un CIDR menor que el prefijo remoto de IPsec (no puede ser del mismo tamaño) que apunte al tráfico sobre la interfaz virtual `vfp0`.
+{: tip}
 
 Una vez especificado todo esto, puede ejecutar ping y verificar:
 

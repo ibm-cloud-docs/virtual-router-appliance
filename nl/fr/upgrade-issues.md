@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Problèmes liés à la mise à niveau
 {: #upgrade-issues}
@@ -61,9 +67,10 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-Les images ISO pour l'installation initiale et votre système d'exploitation en cours d'exécution sont présentés ici. 
+Les images ISO pour l'installation initiale et votre système d'exploitation en cours d'exécution sont présentés ici.
 
-**REMARQUE :** si vous avez effectué plus d'une mise à niveau, ces mises à niveau apparaîtront également ici.
+Si vous avez effectué plus d'une mise à niveau, ces mises à niveau apparaîtront également ici.
+{: note}
 
 Ensuite, changez de répertoire en utilisant le système d'exploitation précédemment chargé comme répertoire suivant, puis accédez au répertoire de base VRA :
 
@@ -124,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 Toutes vos commandes seront de nouveau opérationnelles et vous pourrez poursuivre normalement.
 
-**REMARQUE :** la copie du certificat HTTPS `/etc/lighttpd/server.pem` peut également échouer durant le processus de mise à niveau de système d'exploitation et provoquer éventuellement l'échec de la synchronisation des configurations à haute disponibilité. Pour résoudre ce problème, recopiez l'ancien fichier `server.pem` en plus des fichiers répertoriés ci-dessus (exécutez `su -` pour atteindre le niveau racine, puis exécutez la commande `copy`), puis exécutez la commande `restart https` pour redémarrer le fichier `demon.m` HTTPS (et les fichiers répertoriés ci-dessus).
+La copie du certificat HTTPS `/etc/lighttpd/server.pem` peut également échouer durant le processus de mise à niveau de système d'exploitation et provoquer éventuellement l'échec de la synchronisation des configurations à haute disponibilité. Pour résoudre ce problème, recopiez l'ancien fichier `server.pem` en plus des fichiers répertoriés ci-dessus (exécutez `su -` pour atteindre le niveau racine, puis exécutez la commande `copy`), puis exécutez la commande `restart https` pour redémarrer le fichier `demon.m` HTTPS (et les fichiers répertoriés ci-dessus).
+{: important}

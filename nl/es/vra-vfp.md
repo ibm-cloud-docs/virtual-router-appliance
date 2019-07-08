@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: vfp, ipsec, firewall
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Configuración de una interfaz de VFP con IPsec y cortafuegos de zona
 {: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
 
-Cuando llega un datagrama de IPSec, se procesa a través de las reglas de cortafuegos y luego se desencapsula. El nuevo datagrama que se genera no está asociado con una interfaz en absoluto. Normalmente, esto no es un problema, y puede ir a la interfaz de destino, pero los cortafuegos de zona impedirán que el datagrama progrese. Cualquier datagrama que no provenga de una interfaz de una política de zona se descarta. Sin embargo, una interfaz de VFP informa al cortafuegos de zona que el datagrama ha salido de una interfaz, lo que permite aplicar las reglas. 
+Cuando llega un datagrama de IPSec, se procesa a través de las reglas de cortafuegos y luego se desencapsula. El nuevo datagrama que se genera no está asociado con una interfaz en absoluto. Normalmente, esto no es un problema, y puede ir a la interfaz de destino, pero los cortafuegos de zona impedirán que el datagrama progrese. Cualquier datagrama que no provenga de una interfaz de una política de zona se descarta. Sin embargo, una interfaz de VFP informa al cortafuegos de zona que el datagrama ha salido de una interfaz, lo que permite aplicar las reglas.
 
 Para configurar una interfaz de VFP para que funcione con el tráfico IPsec, cree primero un punto de característica definiendo el VFP con una única IP:
 

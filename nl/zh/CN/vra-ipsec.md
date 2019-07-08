@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ipsec, firewall, configure, policy
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # 设置使用区域防火墙的 IPsec 隧道
@@ -22,6 +28,8 @@ lastupdated: "2018-11-10"
 两台机器之间使用 IPSec 的配置示例如下：
 
 ###机器 A
+{: #machine-a}
+
 ```
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -39,6 +47,8 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '17
 ```
 
 ###机器 B
+{: #machine-b}
+
 ```
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -55,9 +65,9 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-这将设置一个通用隧道，用于路由两台机器之间的 172.16.x.x 流量。机器 B 的 172.16.100.1 作为回送地址，以提供要用于测试的端点，而机器 A 在路由的 VLAN 上具有虚拟机，可在隧道中提供源流量。 
+这将设置一个通用隧道，用于路由两台机器之间的 172.16.x.x 流量。机器 B 的 172.16.100.1 作为回送地址，以提供要用于测试的端点，而机器 A 在路由的 VLAN 上具有虚拟机，可在隧道中提供源流量。
 
-您可能会看到以下结果：
+您可以在此处查看结果：
 
 ```
 [root@acs-jmat-migserver ~]# ping -c 5 172.16.100.1
@@ -86,7 +96,7 @@ set security firewall name ALLOWALL rule 30 action 'accept'
 set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
- 
+
 然后，在所有三个接口之间添加策略：
 
 ```

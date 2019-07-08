@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: basics, vra, access, configure, gui
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Acessando e configurando o IBM Virtual Router Appliance
@@ -19,9 +25,12 @@ lastupdated: "2018-11-10"
 
 O VRA pode ser configurado usando uma sessão de console remoto por meio de SSH ou efetuando login na GUI da web. Por padrão, a GUI da web não está disponível da Internet pública. Para ativar a GUI da web, efetue login por meio de SSH primeiro.
 
-**NOTA:** configurar o VRA fora de seu shell e interface pode produzir resultados inesperados e, portanto, não é recomendado.
+Configurar o VRA fora de seu shell e interface pode produzir resultados inesperados e não é recomendado.
+{: note}
 
 ## Acessando o dispositivo usando SSH
+{: #accessing-the-device-using-ssh}
+
 A maioria do sistemas operacionais baseados no UNIX, como Linux, BSD e Mac OSX, tem clientes OpenSSH incluídos em suas instalações padrão. Os usuários do Windows podem fazer download de um cliente SSH, tal como PuTTy.
 
 É recomendado que o SSH para o IP público seja desativado e apenas o SSH para o IP privado seja permitido. As conexões com IPs privados requerem que o cliente esteja conectado a uma rede privada. É possível efetuar login usando uma das opções de VPN padrão (PPTP, SSL-VPN e IPsec) oferecidas no portal do cliente ou usando uma solução VPN customizada configurada no VRA.
@@ -30,7 +39,8 @@ Use a conta do Vyatta na página **Detalhes do Dispositivo** para efetuar login 
 
 `ssh vyatta@[IP address] `
 
-**NOTA:** é recomendável manter logins raízes desativados. Efetue login usando a conta do Vyatta e eleve para raiz somente quando necessário.
+É recomendado manter os logins raiz desativados. Efetue login usando a conta do Vyatta e eleve para raiz somente quando necessário.
+{: tip}
 
 Chaves SSH também podem ser fornecidas durante a implementação para evitar a necessidade da conta Vyatta efetuar login. Depois de verificar sua capacidade de acessar seu VRA usando sua chave SSH, é possível desativar logins de usuário/senha padrão executando os comandos a seguir:
 
@@ -42,6 +52,7 @@ $ configure
 ```
 
 ## Acessando o dispositivo usando a GUI da web
+{: #accessing-the-device-using-the-web-gui}
 
 Efetue login no VRA usando as instruções de SSH acima e, em seguida, execute os comandos a seguir para ativar o serviço HTTPS:
 
@@ -52,9 +63,11 @@ $ configure
 # save
 ```
 
-Após a conclusão desses comandos, insira `https://<ip.address>` na barra de endereço de seu navegador, substituindo o endereço IP por seus VRAs. Pode ser solicitado que você aceite o certificado autoemitido do VRA. Faça isso e, em seguida, efetue login na interface da web com suas credenciais do Vyatta, quando solicitado.
+Após a conclusão desses comandos, insira `https://<ip.address>` na barra de endereço de seu navegador, substituindo o endereço IP por seu VRA. Pode ser solicitado que você aceite o certificado autoemitido do VRA. Faça isso e, em seguida, efetue login na interface da web com suas credenciais do Vyatta, quando solicitado.
 
 ## Modos
+{: #modes-1}
+
 **Modo de configuração:** chamado com o uso do comando `configure`, esse modo é onde a configuração do sistema VRA é executada.
 
 **Modo operacional:** o modo inicial para efetuar login em um sistema do VRA. Nesse modo, comandos `show` podem ser executados para consultar informações sobre o estado do sistema. O sistema também pode ser reiniciado desse modo.
@@ -77,6 +90,7 @@ set system name-server '10.0.80.12'
 A marca de hash (`#`) indica o modo de Configuração. Iniciar um comando com `run` indica ao shell do VRA que um comando operacional está sendo apresentado. O exemplo anterior também ilustra a capacidade de "grep" na saída de comandos.
 
 ## Exploração de comando
+{: #command-exploration}
 
 O shell de comando do VRA inclui recursos de conclusão da guia. Se você estiver curioso sobre quais comandos estão disponíveis, pressione a tecla Tab para obter uma lista e uma breve explicação. Isso funciona no prompt de shell e ao digitar um comando. Por exemplo:  
 
@@ -88,6 +102,8 @@ Possible completions:
 ```
 
 ## Configuração de Amostra
+{: #sample-configuration}
+
 As configurações são organizadas em um padrão hierárquico de nós. Considere este bloco de rota estática:
 
 ```
@@ -114,11 +130,13 @@ set protocols static route 10.0.0.0/8 next-hop 10.60.63.193
 set protocols static route 192.168.1.0/24 next-hop 10.0.0.1
 ```
 
-Este exemplo ilustra que é possível para um nó (estático) ter múltiplos nós-filhos. Para remover a rota para `192.168.1.0/24`, o comando `delete protocols static route 192.168.1.0/24` seria usado. Se `192.168.1.0/24` fosse deixado fora do comando, ambos os nós de rota seriam marcados para exclusão.
+Este exemplo ilustra que é possível para um nó (estático) ter múltiplos nós-filhos. Para remover a rota para `192.168.1.0/24`, o comando `delete protocols static route 192.168.1.0/24` seria usado. Se `192.168.1.0/24` foi deixado fora do comando, os nós de rota serão marcados para exclusão.
 
 Lembre-se de que a configuração não é realmente mudada até que o comando `commit` seja emitido. Para comparar a configuração de execução atual com relação a quaisquer mudanças que estejam presentes no buffer de configuração, use o comando `compare`. Para limpar o buffer de configuração, use `discard`.
 
 ## Usuários e Controle de Acesso Baseado na Função (RBAC)
+{: #users-and-role-based-access-control-rbac-}
+
 As contas do usuário podem ser configuradas com três níveis de acesso:
 
 * Administrador
@@ -139,7 +157,8 @@ set system login user [account] level operator
 commit
 ```
 
-**NOTA:** quando nenhum nível for especificado, um usuário será considerado no nível de administrador. As senhas do usuário neste caso são exibidas como criptografadas no arquivo de configuração.
+Quando nenhum nível é especificado, um usuário é considerado como o nível de administrador. As senhas do usuário neste caso são exibidas como criptografadas no arquivo de configuração.
+{: note}
 
 Controle de Acesso Baseado na Função (RBAC) é um método para restringir o acesso à parte da configuração para usuários autorizados. O RBAC permite que os administradores definam regras para um grupo de usuários que restrinjam os comandos que eles podem executar.
 

@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # アップグレードの問題
 {: #upgrade-issues}
@@ -61,9 +67,10 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-初期インストール用の ISO および現在実行中の OS 用の ISO がここで示されます。 
+初期インストール用の ISO および現在実行中の OS 用の ISO がここで示されます。
 
-**注:** 複数のアップグレードを行った場合、それらもここに表示されます。
+複数のアップグレードを行った場合、それらもここに表示されます。
+{: note}
 
 次に、以前にロードした OS を次のディレクトリーとして使用してディレクトリーを変更し、VRA ホーム・ディレクトリーに移動します。
 
@@ -100,7 +107,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
 
-コピーが終わったら、ログアウトし、もう一度ログインします。
+コピーが終わったら、ログアウトしてから、もう一度ログインします。
 
 ```
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
@@ -124,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 すべてのコマンドが再び機能するようになり、正常に続行できます。
 
-**注:** OS アップグレード処理中に HTTPS 証明書 `/etc/lighttpd/server.pem` のコピーも失敗することがあり、それが原因で高可用性 (HA) 構成の同期化が失敗する可能性があります。 この問題を修正するには、上記のリストされたファイルに加えて、古い `server.pem` ファイルをコピーし (`su -` を実行してルート・レベルに移動してから、`copy` コマンドを実行します)、その後、`restart https` を実行して HTTPS `demon.m` ファイル (および上記のリストされたファイル) を再始動します。
+OS アップグレード処理中に HTTPS 証明書 `/etc/lighttpd/server.pem` のコピーも失敗することがあり、それが原因で高可用性 (HA) 構成の同期化が失敗する可能性があります。 この問題を修正するには、上記のリストされたファイルに加えて、古い `server.pem` ファイルをコピーし (`su -` を実行してルート・レベルに移動してから、`copy` コマンドを実行します)、その後、`restart https` を実行して HTTPS `demon.m` ファイル (および上記のリストされたファイル) を再始動します。
+{: important}

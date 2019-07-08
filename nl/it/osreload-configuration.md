@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: reload, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Ricaricamento del SO
 {: #reloading-the-os}
@@ -30,6 +36,7 @@ Per ricaricare il tuo SO, esegui la seguente procedura:
 7. Verifica che tutti i dettagli nella sezione New Configuration siano corretti. Fai clic su **Next** per passare alla finestra a comparsa Confirm.
 8. Fai clic sul pulsante **Confirm OS Reload** per confermare e avvia il ricaricamento del SO. Fai clic su **Cancel** per annullare l'azione.
 
-Dopo aver avviato il processo di ricaricamento del SO, il dispositivo andrà offline e il processo di ricaricamento del SO inizierà. Il tempo impiegato dal ricaricamento del SO varia in base alla configurazione nuova e corrente del dispositivo. Durante il processo di configurazione, il tempo minimo per il ricaricamento del SO, viene visualizzato in ogni schermata. Il periodo di tempo è una stima fatta dal sistema. Se il ricaricamento impiega più di 24 ore, contattare il team di supporto. Quando il dispositivo torna online, funzionerà come specificato nella nuova configurazione del ricaricamento del SO. 
+Dopo aver avviato il processo di ricaricamento del SO, il dispositivo andrà offline e il processo di ricaricamento del SO inizierà. Il tempo impiegato dal ricaricamento del SO varia in base alla configurazione nuova e corrente del dispositivo. Durante il processo di configurazione, il tempo minimo per il ricaricamento del SO, viene visualizzato in ogni schermata. Il periodo di tempo è una stima fatta dal sistema. Se il ricaricamento impiega più di 24 ore, contattare il team di supporto. Quando il dispositivo torna online, funzionerà come specificato nella nuova configurazione del ricaricamento del SO.
 
-**NOTA:** tutti i dati precedentemente salvati nel dispositivo andranno persi, ma possono essere ripristinati se era stato eseguito un backup del dispositivo prima del suo ricaricamento. Se non era stato eseguito il backup dei dati, non possono essere ripristinati.
+Tutti i dati precedentemente salvati nel dispositivo andranno persi ma possono essere ripristinati se era stato eseguito un backup del dispositivo prima del relativo ricaricamento. Se non era stato eseguito il backup dei dati, non possono essere ripristinati.
+{: note}

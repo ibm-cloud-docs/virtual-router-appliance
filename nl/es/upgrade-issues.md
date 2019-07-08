@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Problemas de actualización
 {: #upgrade-issues}
@@ -61,9 +67,10 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-Las ISO de la instalación inicial y el sistema operativo que se ejecuta actualmente aparecen aquí. 
+Las ISO de la instalación inicial y el sistema operativo que se ejecuta actualmente aparecen aquí.
 
-**NOTA:** si ha realizado más de una actualización, también se mostrarán aquí.
+Si ha realizado más de una actualización, también se mostrarán aquí.
+{: note}
 
 A continuación, cambie los directorios utilizando el sistema operativo cargado anteriormente como directorio siguiente, y vaya al directorio inicial de VRA:
 
@@ -100,7 +107,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
 
-Una vez copiados, cierre la sesión y vuelva a iniciarla:
+Una vez copiados, cierre la sesión y después vuelva a iniciarla:
 
 ```
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
@@ -124,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 Todos los mandatos funcionarán de nuevo y podrá continuar con normalidad.
 
-**NOTA:** también puede fallar la copia del certificado HTTPS `/etc/lighttpd/server.pem` durante el proceso de actualización del sistema operativo, lo que puede provocar que no se puedan sincronizar las configuraciones de alta disponibilidad (HA). Para solucionar este problema, copie el archivo antiguo `server.pem` además de los archivos enumerados más arriba (emita `su -` para llegar al nivel raíz y, a continuación, emita el mandato `copy`) luego emita `restart https` para reiniciar el archivo `demon.m` HTTPS (y los archivos enumerados más arriba).
+También puede fallar la copia del certificado HTTPS `/etc/lighttpd/server.pem` durante el proceso de actualización del sistema operativo, lo que puede provocar que no se puedan sincronizar las configuraciones de alta disponibilidad (HA). Para solucionar este problema, copie el archivo antiguo `server.pem` además de los archivos enumerados más arriba (emita `su -` para llegar al nivel raíz y, a continuación, emita el mandato `copy`) luego emita `restart https` para reiniciar el archivo `demon.m` HTTPS (y los archivos enumerados más arriba).
+{: important}

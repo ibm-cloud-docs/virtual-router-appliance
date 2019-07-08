@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 升級問題
 {: #upgrade-issues}
@@ -61,9 +67,10 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-這裡具有起始安裝及目前執行中 OS 的 ISO。 
+這裡具有起始安裝及目前執行中 OS 的 ISO。
 
-**附註：**如果您已進行多次升級，則這裡也會顯示這些升級。
+如果您已進行多次升級，則這裡也會顯示這些升級。
+{: note}
 
 接下來，使用先前載入的 OS 作為下一個目錄來切換目錄，並移至 VRA 起始目錄：
 
@@ -100,7 +107,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
 
-複製之後，請登出，並重新登入：
+複製之後，請登出，然後再重新登入：
 
 ```
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
@@ -124,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 所有指令都會重新運作，而且您可以正常地繼續進行。
 
-**附註：**在 OS 升級處理程序期間，可能也無法複製 HTTPS 憑證 `/etc/lighttpd/server.pem`，這可能會導致無法同步化「高可用性 (HA)」配置。若要修正此問題，除了上面所列的檔案，也請複製舊的 `server.pem` 檔案（發出 `su -` 以到達根層次，然後發出 `copy` 指令），然後發出 `restart https` 重新啟動 HTTPS `demon.m` 檔案（及上面所列的檔案）。
+在 OS 升級處理程序期間，可能也無法複製 HTTPS 憑證 `/etc/lighttpd/server.pem`，這可能會導致無法同步化「高可用性 (HA)」配置。若要修正此問題，除了上面所列的檔案，也請複製舊的 `server.pem` 檔案（發出 `su -` 以到達根層次，然後發出 `copy` 指令），然後發出 `restart https` 重新啟動 HTTPS `demon.m` 檔案（及上面所列的檔案）。
+{: important}

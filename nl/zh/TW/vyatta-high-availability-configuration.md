@@ -1,22 +1,28 @@
 ---
+
 copyright:
   years: 1994, 2017
 lastupdated: "2018-11-10"
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Vyatta 5400 高可用性配置
 {: #vyatta-5400-high-availability-configuration}
 
-透過使用 VRRP（虛擬遞送備援通訊協定）來支援 Vyatta 高可用性。每一個閘道群組都會有兩個主要 VRRP IP 位址：一個用於專用，另一個則用於網路的公用端。 
+透過使用 VRRP（虛擬遞送備援通訊協定）來支援 Vyatta 高可用性。每一個閘道群組都會有兩個主要 VRRP IP 位址：一個用於專用，另一個則用於網路的公用端。
 
-**附註：**僅限專用 Vyatta 才會有專用 VRRP。 
+僅限專用 Vyatta 才會有專用 VRRP。
+{: note}
 
 這些 IP 位址是 Softlayer 網路基礎架構的目標 IP，可遞送 VLAN 上與閘道成員相關聯的所有子網路。一次只有一個 Vyatta 會執行這些 VRRP IP，其他閘道群組成員則會透過管理方式關閉它們。
 
-使用 "config-sync" 配置指令，可以同步化兩個 Vyatta 之間的配置。此配置將容許一位成員將特定選項的配置推送至群組中的另一個 Vyatta，並選擇性地這麼做。您只能推送防火牆規則、只能推送 IPsec 配置，或推送任意規則集組合。 
+使用 "config-sync" 配置指令，可以同步化兩個 Vyatta 之間的配置。此配置將容許一位成員將特定選項的配置推送至群組中的另一個 Vyatta，並選擇性地這麼做。您只能推送防火牆規則、只能推送 IPsec 配置，或推送任意規則集組合。
 
 建議您不要嘗試推送 IP 位址或其他網路配置，因為 config-sync 會立即確定其他 Vyatta 上的變更，讓這些介面上線。如果您要動態啟用介面及服務，則應該使用轉移 Script 執行此動作以進行失效接手。此外，建議您針對關聯 VLAN 上的閘道 IP 使用其他 VRRP IP 位址，這樣可更輕鬆地管理失效接手。
 
@@ -79,11 +85,12 @@ VRRP 需要一個實際 IP 位址先連結至虛擬介面，才能傳送所有 V
     set interfaces bonding bond0 vif 1000 vrrp vrrp-group 10 priority 199
     set interfaces bonding bond0 vif 1000 vrrp vrrp-group 10 virtual-address 192.168.10.1/24
 
-在此情況下，兩個 vyatta 都會有自己的 IP，而 IP 不會與已配置的子網路發生衝突。您幾乎可以選擇任何想要的專用範圍，只要挑選不會與您可能會有的任何其他路徑發生衝突的小型子網路（例如透過 IPsec 通道的子網路範圍，或與 Softlayer 發生衝突的 10.0.0.0/8 位址）。
+在此情況下，兩個 Vyatta 都會有自己的 IP，而 IP 不會與已配置的子網路發生衝突。您幾乎可以選擇任何想要的專用範圍，只要挑選不會與您可能會有的任何其他路徑發生衝突的小型子網路（例如透過 IPsec 通道的子網路範圍，或與 Softlayer 發生衝突的 10.0.0.0/8 位址）。
 
 您也想要新增 "sync-group" 名稱。所有 VRRP 位址都應該是相同 sync-group 的一部分。某個介面上有任何失敗，也會導致相同 sync-group 中的所有介面都進行失效接手。否則，最後會有一些成為 MASTER，其他則在 BACKUP 中。在 bond0 及 bond1 原生 VLAN 配置中，會使用相同名稱。
 
-附註：bond0 及 bond1 VRRP 配置可能會有一行是針對 rfc3768 相容性。在 vif 上，VRRP 不需要這個項目，只有原生 VLAN bond0 及 bond1 才需要。
+bond0 和 bond1 VRRP 配置可能會有一行是針對 rfc3768 相容性。在 VIF 上，VRRP 不需要這個項目，只有原生 VLAN bond0 和 bond1 才需要。
+{: tip}
 
 在新佈建的閘道配對中，config-sync 只會有最小配置：
 
@@ -105,4 +112,5 @@ VRRP 需要一個實際 IP 位址先連結至虛擬介面，才能傳送所有 V
 
 確定這些項目之後，在確定時，會將對 firewall 或 ipsec 配置進行的全部變更推送至另一個 vyatta。
 
-**附註：**sync-group 及 sync-map 是兩個不同的事項。sync-map 配置是讓規則將配置變更推送至另一個 Vyatta。另一個 sync-group 則是讓 VRRP IP 以群組方式進行失效接手，而不是一次一個。配置其中一個並不會影響另一個。
+sync-group 及 sync-map 是兩個不同的事項。sync-map 配置是讓規則將配置變更推送至另一個 Vyatta。另一個 sync-group 則是讓 VRRP IP 以群組方式進行失效接手，而不是一次一個。配置其中一個並不會影響另一個。
+{: tip}

@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: backup, configuration
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Copia de seguridad de una configuración
 {: #backing-up-a-configuration}
 
 Se debe realizar una copia de seguridad de los mandatos de configuración cuando se realiza un cambio en el sistema. Esto se puede lograr ejecutando el mandato de modo operativo `show configuration commands` y guardando la salida (por ejemplo, copiando y pegando desde la sesión SSH). Esto se considera una copia de seguridad mínima de la configuración.
 
-Una copia de seguridad más completa implica la generación de un archivo de soporte técnico para el sistema: 
+Una copia de seguridad más completa implica la generación de un archivo de soporte técnico para el sistema:
 
 ```
 $ generate tech-support archive
@@ -28,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-El archivo de archivado generado se puede copiar de Virtual Router Appliance al dispositivo de almacenamiento de su elección. Este archivo contiene copias de seguridad de la información de configuración, los directorios de inicio y la información de registro. Es una copia más completa del sistema. 
+El archivo de archivado generado se puede copiar de Virtual Router Appliance al dispositivo de almacenamiento de su elección. Este archivo contiene copias de seguridad de la información de configuración, los directorios de inicio y la información de registro. Es una copia más completa del sistema.
 
 Por ejemplo:
 

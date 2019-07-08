@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, prefix, IPsec, rules
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Usando a NAT com o IPsec baseado em prefixo
 {: #using-nat-with-prefix-based-ipsec}
 
-No tópico [Configurando uma interface VFP com IPsec e firewalls de zona](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), criamos uma interface VFP e a configuramos para ser usada com um túnel IPsec. 
+No tópico [Configurando uma interface VFP com IPsec e firewalls de zona](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), criamos uma interface VFP e a configuramos para ser usada com um túnel IPsec.
 
-É possível usar a mesma interface nas regras NAT, bem como a declaração de interface de entrada e saída, com uma advertência adicional. 
+É possível usar a mesma interface nas regras NAT, bem como a declaração de interface de entrada e saída, com uma advertência adicional.
 
 Aqui estão algumas regras NAT de exemplo:
 
@@ -51,11 +57,12 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-Isso cria uma rota mais específica para o tráfego passar por meio de `vfp0`. 
+Isso cria uma rota mais específica para o tráfego passar por meio de `vfp0`.
 
-Nesse ponto, a NAT funcionará conforme configurado e o tráfego viajará pelo túnel. 
+Nesse ponto, a NAT funcionará conforme configurado e o tráfego viajará pelo túnel.
 
-**NOTA:** com a NAT, é necessária uma rota com um CIDR menor que o prefixo remoto de IPsec (não pode ter o mesmo tamanho) apontando seu tráfego sobre a interface virtual `vfp0`.
+O NAT requer uma rota com um CIDR menor que o prefixo remoto IPsec (não pode ter o mesmo tamanho) apontando seu tráfego sobre a interface virtual `vfp0`.
+{: tip}
 
 Quando tudo estiver em seu lugar, será possível executar ping e verificar:
 

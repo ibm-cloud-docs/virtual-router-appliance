@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Añadir funciones de cortafuegos a Vyatta 5400 (con y sin estado)
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
@@ -20,11 +23,11 @@ De las tres instancias de cortafuegos siguientes, se puede aplicar **solo una**.
 
 Utilice los pasos siguientes para establecer una regla de cortafuegos de ejemplo para desactivar el protocolo de mensajes de control de Internet (ICMP) *(ping - mensaje de respuesta de eco de IPv4)* en las interfaces de Brocade 5400 vRouter (se trata de una acción sin estado, más adelante se analizará una acción con estado):
 
-1\. Escriba los mandatos *show configuration* en el indicador de mandatos para ver qué configuraciones están establecidas. Verá una lista de todos los mandatos que tiene establecidos en el dispositivo (puede ser útil si decide migrar y desea ver todas las configuraciones). Observe el mandato *set firewall all-ping 'enable'*, que indica que ICMP todavía está habilitado en el dispositivo.
+1\. Escriba *show configuration commands* en el indicador de mandatos para ver qué configuraciones están establecidas. Verá una lista de todos los mandatos que tiene establecidos en el dispositivo (puede ser útil si decide migrar y desea ver todas las configuraciones). Observe el mandato *set firewall all-ping 'enable'*, que indica que ICMP todavía está habilitado en el dispositivo.
 
 2\. Escriba *configure*.
 
-3\. Escriba *set firwall all-ping 'disable'*.
+3\. Escriba *set firewall all-ping 'disable'*.
 
 4\. Escriba *commit*.
 
@@ -95,7 +98,8 @@ La siguiente regla de cortafuegos que vamos a crear, se aplicará a la zona **dm
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
-**NOTA:** las reglas de cortafuegos deben circular a través de **prod** y **dmz**. Utilice el siguiente mandato para resolver problemas de flujo de red: *sudo tcpdump -i any host 10.52.69.202*.
+Las reglas de cortafuegos deben circular a través de **prod** y **dmz**. Utilice el siguiente mandato para resolver problemas de flujo de red: *sudo tcpdump -i any host 10.52.69.202*.
+{: note}
 
 **Crear zonas**
 
@@ -107,22 +111,22 @@ Las zonas son representaciones lógicas de una interfaz. Los siguientes mandatos
 * Crear una política de zona denominada **private** con una acción predeterminada para descartar los paquetes destinados a esta zona.
 * Definir que la política denominada **private** utilice la interfaz **bond0.2254**.
 
-1\. Especifique los mandatos siguientes en el símbolo del sistema:
+1. Especifique los mandatos siguientes en el símbolo del sistema:
 
-* *configure*
-* *set zone policy zone dmz default-action drop*
-* *set zone-policy zone dmz interface bond1*
-* *set zone-policy zone prod default-action drop*
-* *set zone-policy zone prod interface bond1.2007*
-* *set zone-policy zone private default-action drop*
-* *set zone-policy zone private interface bond0.2254*
+  * *configure*
+  * *set zone policy zone dmz default-action drop*
+  * *set zone-policy zone dmz interface bond1*
+  * *set zone-policy zone prod default-action drop*
+  * *set zone-policy zone prod interface bond1.2007*
+  * *set zone-policy zone private default-action drop*
+  * *set zone-policy zone private interface bond0.2254*
 
-2\. Utilice los mandatos siguientes para establecer la política de cortafuegos para las zonas:
+  2. Utilice los mandatos siguientes para establecer la política de cortafuegos para las zonas:
 
-* *set zone-policy zone private from dmz firewall name dmz2private*
-* *set zone-policy zone prod from dmz firewall name dmz2private*
-* *set zone-policy zone dmz from prod firewall name public4*
-* *commit*
+  * *set zone-policy zone private from dmz firewall name dmz2private*
+  * *set zone-policy zone prod from dmz firewall name dmz2private*
+  * *set zone-policy zone dmz from prod firewall name public4*
+  * *commit*
 
 Tenga en cuenta que puede aplicar una regla de cortafuegos a una interfaz específica si no desea aplicarla a una política de zona. Utilice los mandatos siguientes para aplicar una regla a una interfaz.
 
@@ -130,8 +134,9 @@ Tenga en cuenta que puede aplicar una regla de cortafuegos a una interfaz espec�
 * *commit*
 
 ## Cortafuegos con estado
+{: #stateful-firewalls}
 
-Los cortafuegos *con estado* mantienen una tabla de flujos vistos anteriormente, y los paquetes se pueden aceptar o descartar según su relación con los paquetes anteriores. Como regla general, se prefieren los cortafuegos con estado cuando el tráfico de la aplicación es frecuente. 
+Los cortafuegos *con estado* mantienen una tabla de flujos vistos anteriormente, y los paquetes se pueden aceptar o descartar según su relación con los paquetes anteriores. Como regla general, se prefieren los cortafuegos con estado cuando el tráfico de la aplicación es frecuente.
 
 <span style="text-decoration: underline">*Brocade 5400 vRouter no realiza el seguimiento del estado de las conexiones con la configuración predeterminada. El cortafuegos es sin estado hasta que se cumple una de las siguientes condiciones:*</span>
 
@@ -142,5 +147,6 @@ Los cortafuegos *con estado* mantienen una tabla de flujos vistos anteriormente,
 * Se habilita una configuración de equilibrio de carga de WAN
 
 ## Cortafuegos sin estado
+{: #stateless-firewalls}
 
 Los cortafuegos *sin estado* consideran cada paquete de cortafuegos de forma aislada. Los paquetes se pueden aceptar o descartar únicamente según criterios básicos de lista de control de accesos (ACL), como los campos de origen y destino en las cabeceras de TCP/UDP (Transmission Control Protocols/User Datagram Protocol) e IP. Los dispositivos Brocade 5400 vRouter sin estado no almacenan información de conexión y no se requiere que comprueben la relación de cada paquete con los flujos anteriores; ambas acciones consumen pequeñas cantidades de memoria y tiempo de CPU. Por lo tanto, el rendimiento de reenvío bruto es mejor opción en un sistema sin estado. Brocade recomienda mantener el direccionador sin estado para un mejor rendimiento, si no necesita las características específicas de la opción con estado.

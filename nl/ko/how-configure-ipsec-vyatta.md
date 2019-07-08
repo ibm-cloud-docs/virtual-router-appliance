@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Vyatta 5400에 IPSec 구성
 {: #configuring-ipsec-on-vyatta-5400}
@@ -20,7 +23,7 @@ Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) �
 
   * **test**라고 하는 새 **ike** 그룹을 작성하고 키 교환 유형으로 **dh-group**을 사용합니다.
   * 사용할 암호화 유형을 지정합니다. 설정되지 않으면 디바이스에서는 기본값으로 **aes128**을 사용합니다.
-  * **sha-1** 해시 기능을 사용합니다.<br/><br/>
+  * 해시 함수 **sha-1**을 사용합니다. <br/><br/>
   1\. *set vpn ipsec ike-group TestIKE proposal 1 dh-group '2'*<br/>
   2\. *set vpn ipsec ike-group TestIKE proposal 1 encryption 'aes128'*<br/>
   3\. *set vpn ipsec ike-group TestIKE proposal 1 hash 'sha1'*<br/>
@@ -29,7 +32,7 @@ Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) �
 
   * 모든 디바이스가 PFS(Perfect Forward Secrecy)를 사용할 수 없으므로 이를 사용 안함으로 설정합니다. (명령의 esp는 암호화의 두 번째 파트입니다.)
   * 사용할 암호화 유형을 지정합니다. 설정되지 않으면 디바이스에서는 기본값으로 **aes128**을 사용합니다.
-  * `has` 함수 **sha-1**을 사용합니다.<br/><br/>
+  * `has` 함수 **sha-1**을 사용합니다. <br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -39,7 +42,7 @@ Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) �
   * 원격 측 IP를 지정하면 IPSec은 사전 공유 시크릿을 사용합니다.
   * 원격 IP 및 시크릿 키 TestPSK를 사용합니다.
   * 터널의 기본 **esp** 그룹을 TestESP로 설정합니다.
-  * IPSec에 이전에 정의된 ike-group TestIKE를 사용할 것을 알립니다.<br/><br/>
+  * 이전에 정의된 ike-group TestIKE를 사용하도록 IPSec에 "지시"합니다. <br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication pre-shared-secret TestPSK۪*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 default-esp-group TestESP۪*<br/>
@@ -49,7 +52,7 @@ Brocade 5400 vRouter(Vyatta) 디바이스는 IPSec(Internet Security Protocol) �
 
   * 터널에 bond1, 50.97.240.219의 로컬 IP 주소에 대한 169.54.254.117의 원격 IP 주소로 맵핑할 것을 알립니다.
   * 로컬 서버 인터페이스에 있는 IP 주소(10.54.9.152/29의 서브넷이 포함)만 원격 서버 169.54.254.117에 라우팅합니다.
-  * 터널 1 원격 트래픽 169.54.254.117을 192.168.1.2/32의 원격 서브넷으로 라우팅합니다.<br/><br/>
+  * 터널 1 원격 트래픽 169.54.254.117을 192.168.1.2/32의 원격 서브넷으로 라우팅합니다. <br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 local-address ۪50.97.240.219*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 local prefix 10.54.9.152/29*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 remote prefix 192.168.1.2/32*<br/>

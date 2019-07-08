@@ -1,22 +1,28 @@
 ---
+
 copyright:
   years: 1994, 2017
 lastupdated: "2018-11-10"
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Configurazione dell'elevata disponibilità di Vyatta 5400
 {: #vyatta-5400-high-availability-configuration}
 
-L'alta disponibilità di Vyatta è supportata tramite l'utilizzo di VRRP, Virtual Routing Redundancy Protocol. Ogni gruppo di gateway avrà due indirizzi IP VRRP primari, uno per il lato privato e uno per il lato pubblico delle reti. 
+L'alta disponibilità di Vyatta è supportata tramite l'utilizzo di VRRP, Virtual Routing Redundancy Protocol. Ogni gruppo di gateway avrà due indirizzi IP VRRP primari, uno per il lato privato e uno per il lato pubblico delle reti.
 
-**NOTA:** i Vyatta solo privati avranno solo il VRRP privato. 
+I Vyatta solo privati avranno solo il VRRP privato.
+{: note}
 
 Questi indirizzi IP sono gli IP di destinazione per l'infrastruttura di rete Softlayer per instradare tutte le sottoreti delle VLAN associate ai membri del gateway. Solo un Vyatta alla volta avrà questi IP VRRP in esecuzione, gli altri membri del gruppo di gateway li avranno disattivati in modo amministrativo.
 
-La configurazione può essere sincronizzata tra due Vyatta con i comandi di configurazione "config-sync". Questa configurazione consentirà a un membro di trasmettere la configurazione di opzioni specifiche a un altro Vyatta in un gruppo e di farlo in modo selettivo. Puoi trasmettere solo le regole del firewall o solo la configurazione IPsec o una qualsiasi combinazione di serie di regole. 
+La configurazione può essere sincronizzata tra due Vyatta con i comandi di configurazione "config-sync". Questa configurazione consentirà a un membro di trasmettere la configurazione di opzioni specifiche a un altro Vyatta in un gruppo e di farlo in modo selettivo. Puoi trasmettere solo le regole del firewall o solo la configurazione IPsec o una qualsiasi combinazione di serie di regole.
 
 Si consiglia di non tentare di trasmettere gli indirizzi IP o altre configurazioni di rete poiché config-sync eseguirà immediatamente il commit delle tue modifiche agli altri Vyatta, portando quelle interfacce online. Se vuoi abilitare dinamicamente le interfacce e i servizi, dovresti utilizzare gli script di transizione per eseguire questa azione al failover. Inoltre, si consiglia di utilizzare più indirizzi IP VRRP per i tuoi IP del gateway sulle VLAN associate, questo renderà più facile gestire un failover.
 
@@ -79,11 +85,12 @@ Nella seconda Vyatta:
     set interfaces bonding bond0 vif 1000 vrrp vrrp-group 10 priority 199
     set interfaces bonding bond0 vif 1000 vrrp vrrp-group 10 virtual-address 192.168.10.1/24
 
-In questo caso, entrambe i Vyatta avranno i propri IP che non andranno in conflitto con la sottorete assegnata. Puoi scegliere quasi ogni intervallo privato che desideri, basta scegliere una piccola sottorete che non andrà in conflitto con tutte le altre rotte di cui disponi, come un intervallo di sottoreti in un tunnel IPsec o un indirizzo 10.0.0.0/8 in conflitto con quello di Softlayer e non avrai problemi.
+In questo caso, entrambi i Vyatta avranno un loro IP che non andrà in conflitto con la sottorete assegnata. Puoi scegliere quasi ogni intervallo privato che desideri; scegli soltanto una piccola sottorete che non andrà in conflitto con tutti gli altri instradamenti di cui disponi, come un intervallo di sottoreti in un tunnel IPsec o un indirizzo 10.0.0.0/8 in conflitto con quello di Softlayer.
 
 Vorrai anche aggiungere un nome "sync-group". Tutti gli indirizzi VRRP dovrebbero far parte dello stesso sync-group. Questo perché un malfunzionamento in un'interfaccia comporterà che anche tutte le interfacce nello stesso sync-group siano in errore. Altrimenti, alla fine alcune potrebbero essere MASTER e altre in BACKUP. Utilizza lo stesso nome nella configurazione VLAN nativa bond0 e bond1.
 
-NOTA: la configurazione VRRP bond0 e bond1 potrebbe avere una riga per rfc3768-compatibility. Questa non è necessaria per VRRP in un VIF, solo la VLAN nativa di bond0 e bond1.
+La configurazione VRRP bond0 e bond1 potrebbe avere una riga per rfc3768-compatibility. Questa non è necessaria per VRRP in un VIF, solo la VLAN nativa di bond0 e bond1.
+{: tip}
 
 In una coppia di gateway appena forniti, config-sync avrà solo una configurazione minima:
 
@@ -105,4 +112,5 @@ Dovrai aggiungere le regole per determinare su quali rami della configurazione m
 
 Dopo aver eseguito il commit di questi comandi, tutte le modifiche al firewall o alla configurazione ipsec saranno trasmesse a un altro Vyatta al commit.
 
-**NOTA:** sync-group e sync-map sono due cose diverse. La configurazione sync-map è per le regole per trasmettere le modifiche della configurazione a un altro Vyatta. L'altro, sync-group, è per gli IP VRRP con un failover come un gruppo invece di uno alla volta. La configurazione di uno non influenza l'altro.
+sync-group e sync-map sono due cose diverse. La configurazione sync-map è per le regole per trasmettere le modifiche della configurazione a un altro Vyatta. L'altro, sync-group, è per gli IP VRRP con un failover come un gruppo invece di uno alla volta. La configurazione di uno non influenza l'altro.
+{: tip}

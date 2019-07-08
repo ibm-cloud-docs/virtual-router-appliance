@@ -2,7 +2,12 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-03-03"
+
+keywords: 5400, 5600, issues, faqs, migration, upgrading
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Problemi di migrazione comuni di Vyatta 5400
 {: #vyatta-5400-common-migration-issues}
@@ -19,28 +26,37 @@ lastupdated: "2018-11-10"
 La seguente tabella illustra i problemi comuni o le modifiche della modalità di funzionamento che potresti riscontrare dopo la migrazione da un dispositivo Vyatta 5400 a una IBM© Virtual Router Appliance. In alcuni casi, include delle soluzioni temporanee per risolvere i problemi.
 
 ## Politica di stato globale basata sull'interfaccia per il firewall con stato
+{: #interface-based-global-state-policy-for-stateful-firewall}
 
 ### Problemi
+{: #issues}
+
 La modalità di funzionamento quando si imposta "State of State-policy" per i firewall con stato dalla release 5.1 è stata modificata. Nella versione antecedente alla release 5.1, se impostavi `state - global -state -policy` di un firewall con stato, il vRouter aggiungeva automaticamente una regola `Allow` implicita per la comunicazione di ritorno della sessione automaticamente
 
 Nella release 5.1 e versioni successive, devi aggiungere un'impostazione di regola `Allow` sulla Virtual Router Appliance. L'impostazione con stato funziona per le interfacce sui dispositivi Vyatta 5400 e per i protocolli sui dispositivi VRA.
 
 ### Soluzioni alternative
+{: #workarounds}
 Se la regola `firewall-in` viene applicata su un'interfaccia Ingress/Inside, la regola `Firewall-out` deve essere applicata sull'interfaccia Egress/Outside. Altrimenti, il traffico di ritorno verrà rilasciato all'interfaccia Egress/Outside.        
 
 ## Abilitazione dello stato nelle regole firewall
+{: #state-enable-in-firewall-rules}
 
 ### Problemi
+{: #issues-2}
 Se `global-state-policy` non è configurato, questa modifica della modalità di funzionamento non è interessata.
 
 Inoltre, se stai utilizzando l'opzione `state enable` in ciascuna regola invece di `global-state-policy`, la modifica della modalità di funzionamento non è interessata.
 
 ## Politica basata sulla zona: gestione della zona locale
+{: #zone-based-policy-local-zone-handling}
 
 ### Problemi
+{: #issues-3}
 Non c'è alcuna pseudointerfaccia "local-zone" da assegnare alla politica di zona.
 
-### Soluzione temporanea
+### Soluzioni alternative
+{: #workarounds-3}
 Questa modalità di funzionamento può essere simulata applicando un firewall basato sulle zone alle interfacce fisiche e un firewall interfaccia all'interfaccia loopback. Il firewall nell'interfaccia loopback filtra tutto quanto entra nel, ed esce dal, router.
 
 Ad esempio:
@@ -76,68 +92,101 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 ```
 
 ## Ordine delle operazioni per firewall, NAT, instradamento e DNS
+{: #order-of-operation-for-firewalls-nat-routing-and-dns}
 
 ### Problemi
+{: #issues-4}
 In uno scenario in cui la NAT di origine Masquerade viene distribuita su una IBM Virtual Router Appliance, non puoi utilizzare il firewall per determinare l'accesso per gli host a internet. Ciò è dovuto al fatto che l'indirizzo post-NAT sarà lo stesso.
 
 Per i dispositivi Vyatta 5400, questa operazione era possibile perché il firewalling veniva eseguito prima della NAT, consentendo la limitazione dell'accesso a Internet agli host.
 
 ### Soluzioni alternative
+{: #workarounds-4}
 Un nuovo schema di instradamento è richiesto per la VRA:
 ![routing dns](./images/routing-dns.png)
 
 ## Tabella PBR (Policy Based Routing)
+{: #policy-based-routing-table}
 
 ### Problemi
+{: #issues-5}
+
 La parola "Table" nelle configurazioni è facoltativa nel PBR (Policy Based Routing) v5400 ma, per VRA, se l'azione è `accept`, il campo **Table** è obbligatorio. Se l'azione è `drop` nella configurazione VRA, il campo Table è facoltativo.
 
 ### Soluzioni alternative
+{: #workarounds-5}
 "Table Main" è un'opzione disponibile nel PBR (Policy Based Routing) Vyatta 5400. L'equivalente in VRA è "routing-instance default".
 
 ## PBR (Policy Based Routing) nell'interfaccia tunnel
+{: #policy-based-routing-on-tunnel-interface}
 
 ### Problemi
+{: #issues-6}
 Sulla Virtual Router Appliance, le politiche PBR (Policy Based Routing) possono essere applicate alle interfacce di piano dati per il traffico in entrata ma non alle interfacce senza numero IP, VTI, OpenVPN, bridge, tunnel e loopback.
 
 ### Soluzioni alternative
+{: #workarounds-6}
 Non ci sono attualmente delle soluzioni temporanee per questo problema.
 
 ## TCP-MSS
+{: #tcp-mss}
 
 ### Problemi
+{: #issues-7}
+
 IBM Virtual Router Appliance utilizza nftables e non supporta TCP-MSS.
 
 ### Soluzioni alternative
+{: #workarounds-7}
+
 Non ci sono attualmente delle soluzioni temporanee per questo problema.
 
 ## OpenVPN
+{: #openvpn}
 
 ### Problemi
+{: #issues-8}
+
 OpenVPN non inizia a funzionare quando si utilizza il parametro `push-route` sulla Virtual Router Appliance.
 
 ### Soluzioni alternative
+{: #workarounds-8}
+
 Utilizza il parametro `openvpn-option` invece di `push-route`.
 
 ## GRE/VTI su IPSEC + OSPF
+{: #gre-vti-over-ipsec-ospf}
 
 ### Problemi
+{: #issues-9}
+
 * Quando VIF ha più sottoreti configurate, il traffico non può attraversare tali sottoreti nella VRA.                                             
 * L'instradamento InterVlan non sta funzionando sulla VRA.
 
 ### Soluzioni alternative
+{: #workarounds-9}
+
 Utilizza le regole di consenso implicito per accettare il traffico attraverso le interfacce VIF.
 
 ## IPSec
+{: #ipsec}
 
 ### Problemi
+{: #issues-10}
+
 IPSec (basato sui prefissi) non funziona con il filtro IN.
 
 ### Soluzioni alternative
+{: #workarounds-10}
+
 Utilizza IPSec (BASATO SU VTI).
 
-## IPSEC 'match-none"
+## IPSEC "match-none"
+{: #ipsec-match-none-}
 
 ### Problemi
+{: #issues-11}
+
 Con i dispositivi Vyatta 5400, è consentita la seguente regola firewall:
 
 set firewall name allow rule 10 ipsec
@@ -145,6 +194,8 @@ set firewall name allow rule 10 ipsec
 Tuttavia, con IBM Virtual Router Appliance, non c'è alcun IPSec.
 
 ### Soluzioni alternative
+{: #workarounds-11}
+
 Regole alternative possibili per i dispositivi VRA:
 
 ```
@@ -153,8 +204,11 @@ Regole alternative possibili per i dispositivi VRA:
 ```
 
 ## IPSEC 'match-ipsec"
+{: #ipsec-match-ipsec-}
 
 ### Problemi
+{: issues-12}
+
 Con i dispositivi Vyatta 5400, sono consentite le seguenti regole firewall:
 
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
@@ -163,6 +217,8 @@ set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 Tuttavia, con IBM Virtual Router Appliance, non c'è alcun IPSec.
 
 ### Soluzioni alternative
+{: workarounds-12}
+
 Aggiungi i protocolli `ESP` e `AH` (rispettivamente i protocolli IP 50 e 51).
 
 La regola `action` può essere `accept` o `drop`, come mostrato di seguito:
@@ -181,8 +237,11 @@ set security firewall name <name> rule <rule-no> protocol esp
 ```
 
 ## IPSEC site-to-site con DNAT
+{: #site-to-site-ipsec-with-dnat}
 
 ### Problemi
+{: #issues-13}
+
 IPSec (basato sui prefissi) non funziona con DNAT.                                                                                                             
 
 ```
@@ -199,6 +258,8 @@ Inizialmente, il dispositivo Vyatta 5400 stava eseguendo DNAT sull'IPSec in entr
 Su una Virtual Router Appliance, la configurazione non funziona nello stesso modo. La sessione viene creata, tuttavia il traffico di restituzione esclude il tunnel IPsec dopo che la tabella di traccia della connessione ha invertito la modifica DNAT.La VRA invia quindi il pacchetto in transito senza la crittografia IPsec. Il dispositivo di upstream non sta prevedendo questo traffico e molto probabilmente lo rilascerà.Sebbene la connettività end-to-end sia interrotta, questa è la modalità di funzionamento prevista.   
 
 ### Soluzioni alternative
+{: #workarounds-13}
+
 Al fine di conformarsi allo scenario di rete sopra indicato, IBM ha creato una RFE.
 
 Mentre tale RFE è attualmente in fase di valutazione, consigliamo la seguente soluzione temporanea:
@@ -267,16 +328,24 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ```
 
 ## PPTP
+{: #pptp}
 
 ### Problemi
+{: #issues-13}
+
 PPTP non è più supportato nella Virtual Router Appliance.                                                                                                                                                   
 
 ### Soluzioni alternative
+{: #workarounds-13}
+
 Utilizza invece il protocollo L2TP.
 
 ## Script per il riavvio di IPSec
+{: #script-for-ipsec-restart}
 
 ### Problemi
+{: issues-14}
+
 Quando viene aggiunto un indirizzo virtuale VRRP a una IBM Virtual Router Appliance su una VPN ad alta disponibilità, devi reinizializzare il daemon IPsec. Ciò è dovuto al fatto che il servizio IPsec è in ascolto solo per le connessioni agli indirizzi presenti nella VRA quando viene inizializzato il daemon IKE.
 
 Per una coppia di VRA con VRRP, il router di standby potrebbe non avere l'indirizzo virtuale VRRP che è presente sul dispositivo durante l'inizializzazione se il router master non ha tale indirizzo presente. Pertanto, per reinizializzare il daemon IPsec quando si verifica una transizione dello stato VRRP esegui questo comando sui router master e di backup:
@@ -286,8 +355,10 @@ interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
 
 ## Conteggio recente e tempo recente
+{: #recent-count-and-recent-time}
 
 ### Problemi
+{: #issues-15}
 
 L'intento della seguente regola è limitare le connessioni SSH a 3 ogni 30 secondi per SSH utilizzando qualsiasi indirizzo:
 
@@ -308,11 +379,15 @@ Sulla IBM Virtual Router Appliance, questa regola ha i seguenti problemi:
 * A causa del problema precedente, la regola non può funzionare come previsto e bloccherà tutte le connessioni SSH all'interfaccia applicata.
 
 ### Soluzioni alternative
+{: #workarounds-15}
+
 Utilizza invece CPP.
 
 ## Imposta problemi di conntrack di sistema
+{: #set-system-conntrack-issues}
 
 ### Problemi
+{: #issues-16}
 
 ```
 set system conntrack expect-table-size '8192'
@@ -329,8 +404,11 @@ set system conntrack table-size '3000000'
 ```
 
 ## Imposta timeout di conntrack di sistema
+{: #set-system-conntrack-timeout}
 
 ### Problemi
+{: #issues-17}
+
 ```
 set system conntrack timeout icmp '30'
 set system conntrack timeout other '600'
@@ -345,8 +423,11 @@ set system conntrack timeout tcp time-wait '60'
 ```
 
 ## Firewall basato sul data/ora
+{: #time-based-firewall}
 
 ### Problemi
+{: #issues-18}
+
 ```
 set firewall name PRIV_SERVICE_IN rule 58 action 'accept'
 set firewall name PRIV_SERVICE_IN rule 58 description '586427 Acesso a base de dados ate 22-2-18'
@@ -359,8 +440,11 @@ set firewall name PRIV_SERVICE_IN rule 58 time stopdate '2018-02-22'
 ```
 
 ## TCP-MSS
+{: #tcp-mss}
 
 ### Problemi
+{: #issues-19}
+
 ```
 set interfaces tunnel tun3 address '172.17.175.45/30'
 set interfaces tunnel tun3 encapsulation 'gre'
@@ -377,8 +461,10 @@ set policy route change-mss rule 1 tcp flags 'SYN
 ```
 
 ## Applicazione o porta specifiche interrotte nella VPN Ipsec S-S
+{: #specific-application-or-port-broken-in-s-s-ipsec-vpn}
 
 ### Problemi
+{: #issues-19}
 
 ```
 vyatta@v5600dallas09# set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote
@@ -401,8 +487,11 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ```
 
 ## Modifica significativa nella modalità di funzionamento della registrazione
+{: #significant-change-in-logging-behavior}
 
 ### Problemi
+{: #issues-20}
+
 Si è verificato un importante cambiamento nella modalità di funzionamento della registrazione tra il dispositivo Vyatta 5400 e IBM Virtual Router Appliance: da registrazione per sessione a registrazione per pacchetto.
 
 * Registrazione sessione: registra le transizioni di stato delle sessioni con stato

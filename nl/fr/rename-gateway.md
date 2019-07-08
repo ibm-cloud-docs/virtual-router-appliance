@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: gateway, rename
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Changement de nom d'un dispositif VRA
 {: #renaming-a-vra}
@@ -21,11 +27,12 @@ Les passerelles réseau ont des noms uniques qui aident les utilisateurs à les 
 
 Pour renommer une passerelle réseau, procédez comme suit :
 
-1. [Accédez à l'écran des détails du dispositif de passerelle](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) dans le portail client. 
+1. [Accédez à l'écran des détails du dispositif de passerelle](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) dans le portail client.
 2. Cliquez sur le menu déroulant **Actions** et sélectionnez **Renommer la passerelle**.
 3. Entrez le nouveau nom de la passerelle dans la zone **Nom de la passerelle**.
-4. Cliquez sur **OK** pour sauvegarder la modification. 
+4. Cliquez sur **OK** pour sauvegarder la modification.
 
 Après avoir modifié le nom d'un dispositif de passerelle, le nom changera immédiatement en haut de l'écran des détails du dispositif de passerelle. Le nom de la passerelle peut être à nouveau modifié à tout moment en répétant les étapes ci-dessus.
 
-**Remarque :** la modification du nom du dispositif VRA dans le portail client n'entraîne pas automatiquement la modification du nom d'hôte dans le dispositif de routeur virtuel ou les éventuelles entrées DNS dont vous disposez. Cela nécessite une intervention manuelle.
+La modification du nom du dispositif VRA dans le portail client n'entraîne pas automatiquement la modification du nom d'hôte dans le dispositif de routeur virtuel ou les éventuelles entrées DNS dont vous disposez. Cela nécessite une intervention manuelle.
+{: note}

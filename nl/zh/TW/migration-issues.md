@@ -2,7 +2,12 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-03-03"
+
+keywords: 5400, 5600, issues, faqs, migration, upgrading
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Vyatta 5400 一般移轉問題
 {: #vyatta-5400-common-migration-issues}
@@ -19,28 +26,37 @@ lastupdated: "2018-11-10"
 下表說明從 Vyatta 5400 裝置移轉至 IBM© Virtual Router Appliance 之後您可能遇到的一般問題或行為變更。在某些情況下，它還包括能處理問題的暫行解決方法。
 
 ## 有狀態防火牆的介面型 Global-State 原則
+{: #interface-based-global-state-policy-for-stateful-firewall}
 
 ### 問題
+{: #issues}
+
 從 5.1 版開始，為狀態防火牆設定 "State of State-policy" 的行為已變更。在 5.1 版之前的版本中，如果您設定有狀態防火牆為 `state - global -state -policy`，vRouter 會自動新增隱含的 `Allow` 規則，使階段作業的傳回通訊自動化。
 
 在 5.1 版以及更新版本中，您必須在 Virtual Router Appliance 上新增 `Allow` 規則設定。有狀態設定適用於 Vyatta 5400 裝置上的介面，以及 VRA 裝置上的通訊協定。
 
 ### 暫行解決方法
+{: #workarounds}
 如果 `firewall-in` 規則已套用在 Ingress/Inside 介面上，則 `Firewall-out` 規則必須套用在 Egress/Outside 介面上。否則，傳回資料流量將在 Egress/Outside 介面上捨棄。        
 
 ## 防火牆規則中的 State-Enable
+{: #state-enable-in-firewall-rules}
 
 ### 問題
+{: #issues-2}
 如果未配置 `global-state-policy`，則此行為變更不受影響。
 
 還有，如果您在每一個規則中使用 `state enable` 選項而非 `global-state-policy`，則行為變更不受影響。
 
 ## 區域型原則：當地時區處理
+{: #zone-based-policy-local-zone-handling}
 
 ### 問題
+{: #issues-3}
 沒有「當地時區」虛擬介面可指派給區域原則。
 
 ### 暫行解決方法
+{: #workarounds-3}
 可對實體介面套用區域型防火牆以及對迴圈介面套用介面防火牆，來模擬此行為。迴圈介面中的防火牆會過濾在路由器進出的一切。
 
 例如：
@@ -74,8 +90,10 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 ```
 
 ## 防火牆、NAT、遞送及 DNS 作業的順序
+{: #order-of-operation-for-firewalls-nat-routing-and-dns}
 
 ### 問題
+{: #issues-4}
 在 Masquerade Source NAT 部署於 IBM Virtual Router Appliance 的情境中，您不能使用防火牆來決定主機對網際網路的存取。這是因為 post NAT 位址會是相同的。
 
 
@@ -85,63 +103,94 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 
 
 ### 暫行解決方法
+{: #workarounds-4}
 VRA 需要新的遞送方法：
 ![遞送 DNS](./images/routing-dns.png)
 
 ## 原則型遞送表
+{: #policy-based-routing-table}
 
 ### 問題
+{: #issues-5}
+
 配置檔中的 "Table" 一字在 v5400「原則型遞送」中是選用的，但對於 VRA 而言，如果此動作為 `accept`，則 **Table** 欄位是必要的。如果在 VRA 配置中，動作是 `drop`，則 Table 欄位是選用的。
 
 ### 暫行解決方法
+{: #workarounds-5}
 在 Vyatta 5400「原則型遞送」中，"Table Main" 是可用的選項。VRA 中的對等項目是 "routing-instance default"。
 
 
 
 ## 通道介面上的原則型遞送
+{: #policy-based-routing-on-tunnel-interface}
 
 ### 問題
+{: #issues-6}
 在 Virtual Router Appliance PBR（原則型遞送）上，原則可以套用至入埠資料流量的資料平面介面，而不能套用至迴圈、通道、橋接器、OpenVPN、VTI 及 IP 未編號介面。
 
 ### 暫行解決方法
+{: #workarounds-6}
 此問題目前沒有暫行解決方法。
 
 ## TCP-MSS
+{: #tcp-mss}
 
 ### 問題
+{: #issues-7}
+
 IBM Virtual Router Appliance 使用 nftables，且不支援 TCP-MSS。
 
 ### 暫行解決方法
+{: #workarounds-7}
+
 此問題目前沒有暫行解決方法。
 
 ## OpenVPN
+{: #openvpn}
 
 ### 問題
+{: #issues-8}
+
 在 Virtual Router Appliance 上使用 `push-route` 參數時，OpenVPN 未能開始運作。
 
 ### 暫行解決方法
+{: #workarounds-8}
+
 使用 `openvpn-option` 參數，而非 `push-route`。
 
 ## GRE/VTI over IPSEC + OSPF
+{: #gre-vti-over-ipsec-ospf}
 
 ### 問題
+{: #issues-9}
+
 * 當 VIF 配置多個子網路之後，資料流量無法透過 VRA 中的那些子網路傳送。                                             
 * InterVlan Routing 在 VRA 上無法運作。
 
 ### 暫行解決方法
+{: #workarounds-9}
+
 使用「隱含的容許」規則，以接受透過 VIF 介面的資料流量。
 
 ## IPSec
+{: #ipsec}
 
 ### 問題
+{: #issues-10}
+
 IPSec（基於字首）無法與「IN 過濾器」搭配使用。
 
 ### 暫行解決方法
+{: #workarounds-10}
+
 使用 IPSec (VTI BASED)。
 
-## IPSEC 'match-none"
+## IPSEC "match-none"
+{: #ipsec-match-none-}
 
 ### 問題
+{: #issues-11}
+
 使用 Vyatta 5400 裝置時，容許下列防火牆規則：
 
 set firewall name allow rule 10 ipsec
@@ -149,6 +198,8 @@ set firewall name allow rule 10 ipsec
 不過，使用 IBM Virtual Router Appliance 時，沒有 IPSec。
 
 ### 暫行解決方法
+{: #workarounds-11}
+
 VRA 裝置的可能替代規則：
 
 ```
@@ -157,8 +208,11 @@ VRA 裝置的可能替代規則：
 ```
 
 ## IPSEC 'match-ipsec"
+{: #ipsec-match-ipsec-}
 
 ### 問題
+{: issues-12}
+
 使用 Vyatta 5400 裝置時，容許下列防火牆規則：
 
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
@@ -167,6 +221,8 @@ set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 不過，使用 IBM Virtual Router Appliance 時，沒有 IPSec。
 
 ### 暫行解決方法
+{: workarounds-12}
+
 新增通訊協定 `ESP` 及 `AH`（分別為 IP 通訊協定 50 及 51）。
 
 `action` 規則可以是 `accept` 或 `drop`，如下所示：
@@ -185,8 +241,11 @@ set security firewall name <name> rule <rule-no> protocol esp
 ```
 
 ## 網站對網站 IPSEC 與 DNAT
+{: #site-to-site-ipsec-with-dnat}
 
 ### 問題
+{: #issues-13}
+
 IPSec（基於字首）無法與 DNAT 搭配使用。                                                                                                             
 
 ```
@@ -196,7 +255,7 @@ vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
-上述 Snippet 是 IPSec 封包在 Vyatta 5400 中解密之後進行 DNAT 轉換的小型設定範例。在此範例中，有兩個 vyatta：`vyatta1 (11.0.0.1)` 及 `vyatta2 (12.0.0.1)`。會在 `11.0.0.1` 與 `12.0.0.1` 之間建立 IPsec 對等作業。在此情況下，用戶端從來源 `10.103.0.1` 端對端鎖定目標 `172.16.1.245`。此情境的預期行為是將目的地位址 `172.16.1.245` 轉換成封包標頭中的 `10.71.68.245`。
+上述 Snippet 是 IPSec 封包在 Vyatta 5400 中解密之後進行 DNAT 轉換的小型設定範例。在此範例中，有兩個 vyatta：`vyatta1 (11.0.0.1)` 和 `vyatta2 (12.0.0.1)`。會在 `11.0.0.1` 與 `12.0.0.1` 之間建立 IPsec 對等作業。在此情況下，用戶端從來源 `10.103.0.1` 端對端鎖定目標 `172.16.1.245`。此情境的預期行為是將目的地位址 `172.16.1.245` 轉換成封包標頭中的 `10.71.68.245`。
 
 一開始，Vyatta 5400 裝置會對入埠 IPSec 執行 DNAT，使用連線追蹤表格終止介面及溫和地將資料流量傳回到 IPsec 通道。
 
@@ -205,6 +264,8 @@ Tun50 172.16.1.245
 
 
 ### 暫行解決方法
+{: #workarounds-13}
+
 為了配合上述網路情境，IBM 已建立 RFE。
 
 由於目前正在評量 RFE，我們建議下列暫行解決方法：
@@ -273,16 +334,24 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ```
 
 ## PPTP
+{: #pptp}
 
 ### 問題
+{: #issues-13}
+
 PPTP 在 Virtual Router Appliance 中不再受到支援。                                                                                                                                                   
 
 ### 暫行解決方法
+{: #workarounds-13}
+
 改用 L2TP 通訊協定。
 
 ## 針對 IPSec 重新啟動的 Script
+{: #script-for-ipsec-restart}
 
 ### 問題
+{: issues-14}
+
 每當 VRRP 虛擬位址新增至高可用性 VPN 的 IBM Virtual Router Appliance 時，您必須重新起始設定 IPsec 常駐程式。這是因為 IPsec 服務只會接聽對於起始設定 IKE 服務常駐程式時，VRA 上存在之位址的連線。
 
 
@@ -294,8 +363,10 @@ interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
 
 ## 最新計數及最新時間
+{: #recent-count-and-recent-time}
 
 ### 問題
+{: #issues-15}
 
 對於使用任何位址的 SSH，下列規則的意圖是要將 SSH 連線限制為每 30 秒 3 次：
 
@@ -318,11 +389,15 @@ set firewall name localGateway rule 300 state new 'enable'
 * 因為先前的問題，此規則無法如預期運作，並且將封鎖對已套用之介面的所有 SSH 連線。
 
 ### 暫行解決方法
+{: #workarounds-15}
+
 請改用 CPP。
 
 ## 設定系統連線追蹤問題
+{: #set-system-conntrack-issues}
 
 ### 問題
+{: #issues-16}
 
 ```
 set system conntrack expect-table-size '8192'
@@ -339,8 +414,11 @@ set system conntrack table-size '3000000'
 ```
 
 ## 設定系統連線追蹤逾時
+{: #set-system-conntrack-timeout}
 
 ### 問題
+{: #issues-17}
+
 ```
 set system conntrack timeout icmp '30'
 set system conntrack timeout other '600'
@@ -355,8 +433,11 @@ set system conntrack timeout tcp time-wait '60'
 ```
 
 ## 以時間為基礎的防火牆
+{: #time-based-firewall}
 
 ### 問題
+{: #issues-18}
+
 ```
 set firewall name PRIV_SERVICE_IN rule 58 action 'accept'
 set firewall name PRIV_SERVICE_IN rule 58 description '586427 Acesso a base de dados ate 22-2-18'
@@ -369,8 +450,11 @@ set firewall name PRIV_SERVICE_IN rule 58 time stopdate '2018-02-22'
 ```
 
 ## TCP-MSS
+{: #tcp-mss}
 
 ### 問題
+{: #issues-19}
+
 ```
 set interfaces tunnel tun3 address '172.17.175.45/30'
 set interfaces tunnel tun3 encapsulation 'gre'
@@ -387,8 +471,10 @@ set policy route change-mss rule 1 tcp flags 'SYN
 ```
 
 ## S-S IPsec VPN 中特定的應用程式或埠中斷
+{: #specific-application-or-port-broken-in-s-s-ipsec-vpn}
 
 ### 問題
+{: #issues-19}
 
 ```
 vyatta@v5600dallas09# set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote
@@ -411,8 +497,11 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ```
 
 ## 記載行為的重大變更
+{: #significant-change-in-logging-behavior}
 
 ### 問題
+{: #issues-20}
+
 從每個階段作業到每個封包記載，Vyatta 5400 裝置與 IBM Virtual Router Appliance 之間的記載行為有重大變更。
 
 * 階段作業記載：記錄有狀態的階段作業狀態轉移

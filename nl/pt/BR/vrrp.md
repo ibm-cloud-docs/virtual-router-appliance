@@ -3,6 +3,11 @@
 copyright:
   years: 2017
 lastupdated: "2018-11-10"
+
+keywords: ha, high availability, vrrp, vip
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -11,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Trabalhando com alta disponibilidade e VRRP
@@ -21,12 +28,37 @@ O Virtual Router Appliance (VRA) suporta Virtual Router Redundancy Protocol (VRR
 O VRRP é a parte mais importante da configuração ao provisionar Gateways. A funcionalidade de alta disponibilidade depende das mensagens de pulsação, portanto, é crítico certificar-se de que elas não estejam bloqueadas.
 
 ## Endereços de IP virtual (VIP) VRRP
+{: #vrrp-virtual-ip-vip-addresses}
 
-O IP virtual VRRP, ou VIP, é o endereço IP flutuante mudado do dispositivo principal para o de backup quando o failover ocorre. Quando um VRA for implementado, ele terá uma conexão de rede ligada pública e privada e IPs reais designados em cada interface. Um VIP é designado em ambas as interfaces também, independentemente de o dispositivo ser independente ou de estar em um par de HA. O tráfego que tem um IP de destino em sub-redes em VLANs associadas ao VRA será enviado diretamente para os VIPs do VRRP.
+O IP virtual do VRRP para `dp0bond1` ou `dp0bond0`, ou VIP, é o endereço IP flutuante que muda do dispositivo principal para o de backup quando ocorre failover. Quando um VRA for implementado, ele terá uma conexão de rede ligada pública e privada e IPs reais designados em cada interface. Um VIP é designado em ambas as interfaces também, independentemente de o dispositivo ser independente ou de estar em um par de HA. O tráfego que tem um IP de destino em sub-redes em VLANs associadas ao VRA será enviado diretamente para esses VIPs do VRRP por meio de uma rota estática no FCR/BCR.
 
-Os endereços IP virtuais VRRP para qualquer grupo de gateway não devem ser mudados, nem a interface VRRP deve ser desativada. Esses endereços IP são o método pelo qual o tráfego é roteado para o gateway quando uma VLAN está associada. Se o endereço IP não estiver presente, o tráfego não poderá ser encaminhado do BCR/FCR da Softlayer para o próprio gateway.
+Endereços IP virtuais de VRRP para qualquer grupo de gateway nunca devem ser mudados, nem a interface do VRRP deve ser desativada. Esses endereços IP são o método pelo qual o tráfego é roteado para o gateway quando uma VLAN está associada. Como resultado, se eles estiverem inativos, o tráfego de VLAN também estará inativo. Se o endereço IP não estiver presente, o tráfego não poderá ser encaminhado do BCR/FCR SoftLayer para o próprio VRA. Esse endereço virtual ou VIP não é mutável neste momento. Essa limitação pode mudar no futuro, mas, atualmente, nem a migração de um VRA entre os PODs/FCRs/BCRs nem a mudança do VIP são suportadas.
+
+A seguir, está um exemplo das configurações padrão do VIP `dp0bond0` e `dp0bond1` para um VRA específico. Observe que seus endereços IP e grupos vrrp podem ser diferentes do exemplo abaixo:
+
+```
+set interfaces bonding dp0bond0 vrrp vrrp-group 2 virtual-address '10.127.170.2/26'
+set interfaces bonding dp0bond1 vrrp vrrp-group 2 virtual-address '159.8.98.214/29'
+```
+
+Consulte [Incluir múltiplas sub-redes em uma VLAN única](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans#add-multiple-subnets-to-a-single-vlan) ou [Sub-redes de VLAN associadas a VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp) para obter mais informações sobre como configurar endereços virtuais para os VIF.
+
+**Por padrão, o VRRP está configurado como desativado.** Isso assegura que novas provisões e recarregamentos não causem indisponibilidades no dispositivo principal. Para que o tráfego de VLAN funcione, o VRRP deve ser reativado quando o fornecimento ou um recarregamento é concluído. O exemplo a seguir detalha a configuração padrão:
+
+```
+set interfaces bonding dp0bond0 vrrp vrrp-group 2 'disable'
+set interfaces bonding dp0bond1 vrrp vrrp-group 2 'disable'
+```
+
+Para ativar o VRRP nessas duas interfaces após uma provisão ou recarregamento, **o que é necessário para os pares independente e de HA**, execute os comandos a seguir e, em seguida, confirme a mudança:
+
+```
+delete interfaces bonding dp0bond0 vrrp vrrp-group 2 'disable'
+delete interfaces bonding dp0bond1 vrrp vrrp-group 2 'disable'
+```
 
 ## Grupo do VRRP
+{: #vrrp-group}
 
 Um grupo do VRRP consiste em um cluster de interfaces ou interfaces virtuais que fornecem redundância para uma interface primária, ou “principal“, no grupo. Cada interface no grupo geralmente está em um roteador separado. A redundância é gerenciada pelo processo VRRP em cada sistema. O grupo do VRRP tem um identificador numérico exclusivo e pode ter até 20 endereços IP virtuais designados.  
 
@@ -37,30 +69,37 @@ Se você migrar de uma configuração anterior, recomenda-se que verifique sua c
 O ID do grupo do VRRP é persistido no banco de dados SoftLayer, então o mesmo valor de ID do grupo será usado durante um recarregamento ou upgrade do SO. Qualquer ID do grupo do VRRP modificado pelo usuário será sobrescrito com o valor designado pelo sistema durante um recarregamento do SO.  
 
 ## Prioridade do VRRP
+{: #vrrp-priority}
 
 A primeira máquina em um grupo de gateway terá uma prioridade de 254 e esse valor é reduzido para o próximo dispositivo provisionado. Você nunca deve configurar uma prioridade como 255, pois isto define o "proprietário do endereço" VIP e pode resultar em comportamento indesejado quando a máquina é colocada on-line com uma configuração que difere da principal ativa em execução.
 
 ## Preempção do VRRP
+{: #vrrp-preemption}
 
 A preempção deve sempre ser desativada em todas as interfaces do VRRP, para que um novo dispositivo ou um que está passando pelo recarregamento de seu SO não tente assumir o cluster.
 
 ## Intervalo de aviso do VRRP
+{: #vrrp-advertise-interval}
 
 Para sinalizar que ela ainda está em serviço, a interface principal ou VIF envia pacotes de “pulsação“ chamados “propagandas“ para o segmento de LAN, usando os endereços multicast designados por IANA para o VRRP (`224.0.0.18` para IPv4 e `FF02:0:0:0:0:0:0:12` para IPv6).
 
 Por padrão, o intervalo é configurado como 1. Esse valor pode ser aumentado, mas não é recomendado que você configure um valor acima de 5. Em uma rede ocupada, pode levar muito mais tempo do que um segundo para que todos os avisos do VRRP cheguem no dispositivo de backup do principal, portanto, um valor igual a 2 deve ser utilizado para redes de alto tráfego.
 
 ## Sincronização do VRRP (sync-group)
+{: #vrrp-synchronization-sync-group-}
 
 As interfaces em um grupo de sincronização do VRRP (“grupo de sincronização”) serão sincronizadas de modo que, se uma das interfaces no grupo efetuar failover para o backup, todas as interfaces no grupo efetuem failover para o backup. Por exemplo, em muitos casos, se uma interface em um roteador principal falhar, o roteador inteiro efetuará failover para um roteador de backup.
 
 Esse valor é diferente do grupo do VRRP, pois ele define quais interfaces em um dispositivo efetuarão failover quando uma interface nesse grupo registrar uma falha. É recomendado que todas as interfaces pertençam ao mesmo grupo de sincronização, caso contrário, algumas interfaces serão principal e terão IPs de gateway, e outras serão de backup e o tráfego não será mais encaminhado corretamente. Configurações ativo/ativo não são suportadas.
 
 ## rfc-compatibility do VRRP
+{: #vrrp-rfc-compatibility}
 
 A compatibilidade RFC ativa ou desativa endereços MAC RFC 3768 para VRRP em uma interface. Isso deve ser ativado nas interfaces nativas, mas não ativado em quaisquer VIFs configurados. Alguns comutadores virtuais (principalmente vmware) têm problemas com isso sendo ativado e farão com que o tráfego seja eliminado e não enviado para o IP de gateway da máquina host do hypervisor. Deixe essa configuração sozinha e não defina a configuração para nenhum VIF.
 
 ## Autenticação do VRRP
+{: #vrrp-authenticaton}
+
 Se uma senha for configurada para autenticação do VRRP, o tipo de autenticação também deverá ser definido. Se a senha for configurada e o tipo de autenticação não for definido, o sistema gerará um erro quando você tentar confirmar a configuração.
 
 Da mesma forma, não é possível excluir a senha do VRRP sem também excluir o tipo de autenticação do VRRP. Se você o fizer, o sistema gerará um erro quando você tentar confirmar a configuração. Se você excluir a senha de autenticação e o tipo de autenticação do VRRP, a autenticação do VRRP será desativada.
@@ -68,9 +107,13 @@ Da mesma forma, não é possível excluir a senha do VRRP sem também excluir o 
 O IETF decidiu que a autenticação não deve ser usada para a versão 3 do VRRP. Para obter mais informações, consulte RFC 5798 VRRP.
 
 ## Suporte da Versão 2/3
+{: #version-2-3-support}
+
 O VRA suporta ambos os protocolos do VRRP, versão 2 (padrão) e versão 3. Na versão 2, não é possível ter IPv4 e IPv6 juntos. Mas, na Versão 3, é possível ter IPv4 e IPv6 ao mesmo tempo.
 
 ## VPN de Alta Disponibilidade com VRRP
+{: #high-availability-vpn-with-vrrp}
+
 O VRA fornece a capacidade de manter a conectividade por meio de um túnel IPsec usando um par de Virtual Router Appliances com VRRP. Quando um roteador falhar ou for encerrado para manutenção, o novo roteador principal VRRP restaurará a conectividade IPsec entre as redes locais e remotas.
 
 Ao configurar VPN de Alta Disponibilidade com VRRP, sempre que um endereço virtual VRRP é incluído em uma interface de VRA, deve-se reinicializar o daemon IPsec porque o serviço IPsec atende apenas conexões com endereços que estão presentes no VRA quando o daemon de serviço Internet Key Exchange (IKE) é inicializado.
@@ -81,14 +124,16 @@ Execute o comando a seguir nos roteadores principal e de backup de forma que, qu
 `
 
 ## Firewalls de Alta Disponibilidade com o VRRP
+{: #high-availability-firewalls-with-vrrp}
 
 Quando dois dispositivos estão em um par de HA, deve-se tomar cuidado em seu dispositivo principal para que você não bloqueie o acesso do outro dispositivo. A porta 443 deve ser permitida entre ambos os dispositivos para que a sincronização de configuração funcione e o VRRP deve ter permissão para ser enviado e recebido, incluindo o intervalo multicast de 224.0.0.0/24.
 
 ## Sub-redes de VLAN associadas ao VRRP
+{: #associated-vlan-subnets-with-vrrp}
 
-Para qualquer configuração de VIF com VRRP, será necessário um endereço IP virtual (o primeiro IP utilizável na sub-rede, o IP do gateway para o qual tudo nessa sub-rede será roteado) e também um endereço IP da interface real para o VIF em ambos os dispositivos. Para conservar IPs utilizáveis, é recomendado que os IPs de interface reais usem um intervalo fora da banda, tal como 192.168.0.0/30, no qual um dispositivo tem .1 e o outro dispositivo tem o endereço .2. Você pode ter vários IPs virtuais de VRRP, mas precisará de apenas um endereço real em cada vif.
+Para qualquer configuração de VIF com VRRP, será necessário um endereço IP virtual (o primeiro IP utilizável na sub-rede, o IP do gateway para o qual tudo nessa sub-rede será roteado) e também um endereço IP da interface real para o VIF em ambos os dispositivos. Para conservar IPs utilizáveis, é recomendado que os IPs de interface reais usem um intervalo fora da banda, tal como 192.168.0.0/30, no qual um dispositivo tem .1 e o outro dispositivo tem o endereço .2. É possível ter vários IPs virtuais VRRP, mas você precisa apenas de um endereço real em cada VIF.
 
-Aqui está um exemplo de uma configuração do VRRP com duas VLANs privadas e três sub-redes:
+Aqui está um exemplo de uma configuração de VRRP com duas VLANs privadas e três sub-redes:
 
 ```
 set interfaces bonding dp0bond0 address '10.100.11.39/26'
@@ -123,18 +168,23 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 sync-group 'SYNC1'
 set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26/29'
 ```
 
-* Um grupo de sincronização VRRP é diferente de um grupo VRRP. Quando uma interface que pertence a um grupo de sincronização mudar de estado, todos os outros membros do mesmo grupo de sincronização serão transicionados para o mesmo estado.
-* O número do grupo VRRP das interfaces VLAN (VIFs) não precisa ser o mesmo que uma das interfaces nativas ou das outras VLANs. No entanto, é altamente sugerido manter todos os endereços virtuais da mesma VLAN em um grupo VRRP, conforme visto na VLAN 10.
+* Um grupo de sincronização do VRRP é diferente de um grupo VRRP. Quando uma interface que pertence a um grupo de sincronização mudar de estado, todos os outros membros do mesmo grupo de sincronização serão transicionados para o mesmo estado.
+*  O número de grupos vrrp das interfaces VLAN (VIFs) deve quase sempre ser o mesmo que sua interface nativa correspondente. Por exemplo, `dp0bond1.789` deve sempre ter o mesmo número de grupos vrrp como `dp0bond1`, a menos que as duas interfaces compartilhem o mesmo grupo de sincronização. Ter um número de grupo diferente no VIF e a interface nativa pode causar uma condição de "cérebro dividido" quando emparelhados com diferentes grupos de sincronização. Quando duas interfaces compartilham o mesmo grupo de sincronização, mesmo que estejam em diferentes grupos de vrrp, elas fazem a transição entre o principal e o backup ao mesmo tempo, evitando o cérebro dividido. Por outro lado, se a interface nativa estiver configurada com um número de grupo de vrrp diferente e um grupo de sincronização diferente como uma interface VLAN, como as sub-redes configuradas nas interfaces de VLAN são estaticamente roteadas para o endereço virtual na interface nativa, se a interface da VLAN estiver sendo mostrada como backup e a interface nativa for a principal, o roteador ainda enviará o tráfego de interface de VLAN para o VRA no qual a interface nativa é principal, embora a interface de VLAN seja secundária e não ativa no VRA. Essa situação específica causará um "cérebro dividido" e uma indisponibilidade. É por isso que é muito importante ter consciência de como os grupos de sincronização são configurados em conjunto com os grupos de vrrp. Também é muito importante não usar o mesmo número de grupos de vrrp entre vários pares do VRA de HA na mesma VLAN de trânsito, já que quatro Vyattas que usam o mesmo grupo farão com que três VRAs presumam potencialmente o estado de Backup, enquanto apenas um é Principal, causando uma indisponibilidade.
 * Os endereços da interface real nas VLANs nativas (por exemplo, dp0bond1: 169.110.20.28/29) nem sempre estão na mesma sub-rede que seus VIPs (169.110.21.26/29).
 
+
 ## Failover manual do VRRP
-Se for necessário forçar um failover do VRRP, ele poderá ser obtido executando o seguinte no dispositivo que atualmente é o VRRP principal:
+{: #manual-vrrp-failover}
 
-`vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
+Se for necessário forçar um failover do VRRP, isso poderá ser feito executando o comando a seguir no dispositivo que atualmente é o VRRP principal:
 
-O ID do grupo é o ID do grupo de vrrp das interfaces nativas e, conforme mencionado acima, pode ser diferente em seu par.
+`vyatta@vrouter$ reset VRRP master interface dp0bond0 group 1`
+
+O ID do grupo é o ID do grupo VRRP das interfaces nativas e, conforme mencionado acima, pode ser diferente em seu par.
 
 ## Sincronização de conexão
+{: #connection-synchronization}
+
 Quando dois dispositivos VRA estão em um par de HA, pode ser útil rastrear conexões stateful entre os dois dispositivos para que, se um failover ocorrer, o estado atual de todas as conexões que estão no dispositivo com falha seja replicado para o dispositivo de backup, para que não seja necessário que quaisquer sessões ativas atuais (como conexões SSL) sejam reconstruídas a partir do zero, o que pode resultar em uma experiência do usuário comprometida.
 
 Isso é chamado de sincronização de rastreamento de conexão.
@@ -152,30 +202,36 @@ O outro VRA terá a mesma configuração, mas um `remote-peer` diferente.
 Observe que isso poderá saturar um link se houver um número alto de conexões entrando em outras interfaces e competirá com outro tráfego no link declarado.
 
 ## Recurso de atraso de início do VRRP
+{: #vrrp-start-delay-feature}
+
 O S.O. Vyatta versão 1801p e superior inclui um novo comando `vrrp`.
 
 `vrrp` especifica um protocolo de eleição que designa dinamicamente a responsabilidade de um roteador virtual a um dos roteadores VRRP em uma LAN. O roteador VRRP que controla os endereços IPv4 ou IPv6 associados a um roteador virtual é chamado Principal e encaminha pacotes enviados para esses endereços IPv4 ou IPv6. O processo de eleição fornece failover dinâmico na responsabilidade de encaminhamento, caso o Principal se torne indisponível. Todo o sistema de mensagens de protocolo é executado usando datagramas multicast IPv4 ou IPv6; como resultado, o protocolo pode operar em uma variedade de tecnologias de LAN multiacesso que suportam multicast IPv4/IPv6.
 
 Para minimizar o tráfego de rede, apenas o Principal de cada roteador virtual envia mensagens periódicas de Propaganda de VRRP. Um roteador de Backup não tentará priorizar o Principal, a menos que ele tenha prioridade mais alta. Isso elimina a interrupção do serviço, a menos que um caminho mais preferencial se torne disponível. Também é possível proibir, administrativamente, todas as tentativas de preempção. Se o Principal se tornar indisponível, o Backup com prioridade mais alta será transicionado para Principal após um breve atraso, fornecendo uma transição controlada da responsabilidade do roteador virtual com interrupção mínima do serviço.
 
-**NOTA:** em implementações provisionadas do IBM© Cloud, o valor de atraso de início é configurado para o valor padrão. Talvez você queira alterar isso a seu critério ao testar seus métodos de failover e de alta disponibilidade.
-
+Em implementações provisionadas do IBM© Cloud, o valor de atraso de início é configurado para o valor padrão. Talvez você queira alterar isso a seu critério ao testar seus métodos de failover e de alta disponibilidade.
+{: note}
 
 ### Preempção vs. sem preempção
+{: #preemption-vs-no-preemption}
 
 O protocolo `vrrp` define a lógica que decide qual peer do VRRP em uma rede tem a prioridade mais alta e, como tal, o melhor peer para executar a função como Principal. Com uma configuração padrão, o VRRP será ativado para executar preempção, o que significa que um novo peer de prioridade mais alta na rede forçará o failover da Função principal.
 
 Quando a preempção for desativada, um peer de prioridade mais alta só executará failover da função Principal se o peer de prioridade inferior existente não estiver mais disponível na rede. A desativação da preempção é, às vezes, útil em cenários do mundo real, já que é melhor lidar com situações em que o peer de prioridade mais alta pode ter começado a oscilar periodicamente devido a problemas de confiabilidade com o próprio peer ou uma de suas conexões de rede. Também é útil evitar o failover prematuro em um novo peer de prioridade mais alta que não tenha concluído a convergência de rede.
 
 ### Suposições e limitações da preempção
+{: #assumptions-and-limitations-of-preemption}
 
 Se os peers do VRRP tiverem sido configurados para desativar a preempção, haverá alguns casos em que a preempção poderá “parecer” ocorrer, mas, na realidade, o cenário é apenas um failover padrão do VRRP. Conforme descrito acima, o VRRP usa datagramas IP multicast como um meio de confirmar a disponibilidade do roteador Principal atualmente selecionado. Como é um protocolo da camada 3 que está detectando falha de um peer VRRP, é importante que a detecção de failover no VRRP seja atrasada até que o VRRP e a camada 1 a 2 da pilha de rede estejam prontas e convergidas. Em alguns casos, a interface de rede que está executando o VRRP pode confirmar para o protocolo que a interface está ativa, mas outros serviços subjacentes, como a Árvore de amplitude ou a Ligação, podem não ter sido concluídos. Como resultado, a conectividade IP entre os peers não pode ser estabelecida. Se isso ocorrer, o VRRP em um novo peer mais alto se tornará Principal, já que não será possível detectar mensagens VRRP do peer principal atual na rede. Após a convergência, o breve período de tempo em que há dois peers VRRP Principais resultará na lógica dual do Principal de VRRP sendo executada, o peer de prioridade mais alta permanecerá o Principal e o de prioridade mais baixa se tornará o de Backup. Esse cenário pode “aparecer” para demonstrar uma falha na funcionalidade “sem preempção”.
 
 ### Recurso de atraso de início
+{: #start-delay-feature}
 
 Para acomodar os problemas associados com atraso na convergência dos níveis mais baixos da pilha de rede durante um evento de interface, bem como outros fatores contributivos, um novo recurso chamado “Atraso de Inicialização” é introduzido na correção 1801p. O recurso faz com que o estado do VRRP em uma máquina que foi “recarregada” permaneça no estado INIT até depois de um atraso predefinido, que pode ser configurado pelo operador de rede. A flexibilidade nesse valor de atraso permite que o operador de rede customize as características de sua rede e dispositivos em condições do mundo real.
 
 ### Detalhes do comando
+{: #command-details}
 
 ```
 vrrp {
@@ -186,6 +242,7 @@ start-delay <0-600>
 `start-delay` pode ter um valor entre 0 (padrão) e 600 segundos.
 
 ### Configuração de exemplo
+{: #example-configuration}
 
 ```
 interfaces {

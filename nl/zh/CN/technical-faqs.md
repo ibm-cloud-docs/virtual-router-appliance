@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: faqs, vlan, traffic, firewall, SSH,
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,6 +18,8 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
+{:important: .important}
 
 # IBM 虚拟路由器设备的技术常见问题
 {: #technical-faqs-for-ibm-virtual-router-appliance}
@@ -21,7 +27,7 @@ lastupdated: "2018-11-10"
 以下常见问题涉及 IBM© 虚拟路由器设备 (VRA) 的配置以及从 Vyatta 5400 迁移到 VRA。
 
 ## 如何允许从专用 VLAN 上的主机发往因特网的流量？
-{:faq}
+{: faq}
 
 此流量需要获取公共源 IP，因此源 NAT 需要使用 VRA 的公共 IP 来伪装专用 IP。
 
@@ -37,7 +43,7 @@ set service nat source rule 1000 translation address masquerade
 这可以确保它不会干扰已具有可通过因特网路由的源地址的包。
 
 ## 如何过滤发往因特网的流量，而只允许特定的协议/目标？
-{:faq}
+{: faq}
 
 这是源 NAT 和防火墙需要组合使用时的一个常见问题。
 
@@ -58,7 +64,7 @@ set service nat source rule 10 source address '10.1.2.3'
 set service nat source rule 10 translation address '150.1.2.3'
 ```
 
-`150.1.2.3` 是 VRA 的公共地址。 
+`150.1.2.3` 是 VRA 的公共地址。
 
 强烈建议使用 VRA 的 VRRP 公共地址，以便可以区分主机和 VRA 公共流量。
 
@@ -78,12 +84,12 @@ set security firewall name TO_INTERNET rule 20 source address '150.1.2.5'
 set security firewall name TO_INTERNET rule 20 state 'enable'
 ```
 
-请注意，通过源 NAT 和防火墙的组合使用，实现了所需的设计目标。 
+请注意，通过源 NAT 和防火墙的组合使用，实现了所需的设计目标。
 
-确保规则适合您的设计，并且没有其他规则会允许应该阻止的流量。 
+确保规则适合您的设计，并且没有其他规则会允许应该阻止的流量。
 
 ## 如何使用基于区域的防火墙来保护 VRA 自身？
-{:faq}
+{: faq}
 
 VRA 没有`本地区域`。
 
@@ -92,7 +98,7 @@ VRA 没有`本地区域`。
 请注意，这是一个无状态的防火墙，因此需要显式允许以 VRA 自身为源的出站会话的返回流量。
 
 ## 如何限制 SSH 并阻止来自因特网的连接？
-{:faq}
+{: faq}
 
 公认的最佳做法是不允许来自因特网的 SSH 连接，而使用其他访问专用地址的方法（如 SSL VPN）。
 

@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # OS 업그레이드
 {: #upgrading-the-os}
@@ -21,7 +27,8 @@ lastupdated: "2018-11-10"
 
 업그레이드 프로세스를 시작하려면 IBM 지원 티켓 시스템에서 업그레이드하고 새 ISO 이미지를 시스템에 업로드하도록 요청하는 티켓을 여십시오. IBM 지원 센터에서 ISO 파일이 업로드된 위치를 나타내는 이메일을 받습니다. 아래 예에서 이 파일은 ``tmp``에 있습니다.
 
-**참고:** 아래 설명된 업그레이드 프로세스는 단일 VRA의 프로세스입니다. VRA를 고가용성 모드로 사용하는 경우 두 시스템 모두에서 동일한 업그레이드 명령을 실행해야 합니다. 또한 먼저 `BACKUP` 시스템을 업그레이드하고 제대로 작업되는지 확인하는 것이 좋습니다. 그런 다음 `MASTER` 시스템에 액세스한 후 `reset vrrp` 명령을 사용하여 장애 복구하십시오. 마지막으로 `BACKUP`으로 제어가 돌아오면 원래 `MASTER`를 업그레이드하십시오.
+아래에 설명된 업그레이드 프로세스는 단일 VRA용입니다. VRA를 고가용성 모드로 사용하는 경우 두 시스템 모두에서 동일한 업그레이드 명령을 실행해야 합니다. 또한 먼저 `BACKUP` 시스템을 업그레이드하고 제대로 작업되는지 확인하는 것이 좋습니다. 그런 다음 `MASTER` 시스템에 액세스한 후 `reset vrrp` 명령을 사용하여 장애 복구하십시오. 마지막으로 `BACKUP`으로 제어가 돌아오면 원래 `MASTER`를 업그레이드하십시오.
+{: important}
 
 VRA를 업그레이드하려면 다음 프로시저를 수행하십시오.
 

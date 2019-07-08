@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 업그레이드 문제
 {: #upgrade-issues}
@@ -61,9 +67,10 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-여기서 초기 설치를 위한 ISO와 현재 실행 중인 OS가 작동합니다. 
+여기서 초기 설치를 위한 ISO와 현재 실행 중인 OS가 작동합니다.
 
-**참고:** 하나 이상의 업그레이드를 수행한 경우에도 여기에 표시됩니다.
+둘 이상의 업그레이드를 작성한 경우 해당 업그레이드는 여기에도 표시됩니다.
+{: note}
 
 이후, 다음 디렉토리로 이전에 로드된 OS를 사용하여 디렉토리를 변경한 후 VRA 홈 디렉토리로 이동하십시오.
 
@@ -100,7 +107,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
 
-복사되면 로그아웃한 후 다시 로그인합니다.
+복사되면 로그아웃한 후 다시 로그인하십시오. 
 
 ```
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
@@ -124,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 모든 명령이 다시 작동하고 정상적으로 진행될 수 있습니다.
 
-**참고:** HTTPS 인증서 `/etc/lighttpd/server.pem` 또한 OS 업그레이드 프로세스 중에 복사하는 데 실패하여 고가용성(HA) 구성이 동기화되지 않을 수 있습니다. 이 문제점을 수정하려면 이전 `server.pem` 파일과 위에 나열된 파일을 복사한 후(`su -`를 실행하여 루트 레벨에 도달한 후 `copy` 명령 실행) `restart https`를 실행하여 HTTPS `demon.m` 파일(및 위에 나열된 파일)을 재시작하십시오.
+HTTPS 인증서 `/etc/lighttpd/server.pem`도 OS 업그레이드 프로세스 중에 복사에 실패하여 고가용성(HA) 구성이 동기화되지 않을 수 있습니다. 이 문제점을 수정하려면 이전 `server.pem` 파일과 위에 나열된 파일을 복사한 후(`su -`를 실행하여 루트 레벨에 도달한 후 `copy` 명령 실행) `restart https`를 실행하여 HTTPS `demon.m` 파일(및 위에 나열된 파일)을 재시작하십시오.
+{: important}

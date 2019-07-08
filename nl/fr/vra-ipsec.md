@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ipsec, firewall, configure, policy
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Configuration d'un tunnel IPsec qui fonctionne avec des pare-feux de zone
@@ -22,6 +28,8 @@ Dans les versions précédentes du dispositif VRA (Virtual Router Appliance), le
 Exemple de configuration de deux machines avec IPsec entre elles :
 
 ###Machine A
+{: #machine-a}
+
 ```
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -39,6 +47,8 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '17
 ```
 
 ###Machine B
+{: #machine-b}
+
 ```
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -55,9 +65,9 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-Ces commandes permettent de configurer un tunnel générique qui achemine le trafic 172.16.x.x entre les deux machines. La machine B est dotée de l'adresse de bouclage 172,16.100.1 afin de fournir un point final pour les tests, tandis que la machine A est dotée d'une machine virtuelle sur un VLAN routé pour fournir le trafic source à travers le tunnel. 
+Ces commandes permettent de configurer un tunnel générique qui achemine le trafic 172.16.x.x entre les deux machines. La machine B est dotée de l'adresse de bouclage 172,16.100.1 afin de fournir un point final pour les tests, tandis que la machine A est dotée d'une machine virtuelle sur un VLAN routé pour fournir le trafic source à travers le tunnel.
 
-Résultat :
+Résultats :
 
 ```
 [root@acs-jmat-migserver ~]# ping -c 5 172.16.100.1
@@ -86,7 +96,7 @@ set security firewall name ALLOWALL rule 30 action 'accept'
 set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
- 
+
 Ajoutez ensuite des stratégies entre les trois interfaces :
 
 ```

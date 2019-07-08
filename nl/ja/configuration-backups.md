@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: backup, configuration
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 構成のバックアップ
 {: #backing-up-a-configuration}
 
 構成コマンドは、システムが変更された場合にバックアップする必要があります。 これは、操作モード・コマンド `show configuration commands` を実行してから出力を (例えば、SSH セッションからコピーして貼り付けることによって) 保存することによって行えます。 これは、構成の最小バックアップと見なされます。
 
-より詳細なバックアップを作成するには、以下のようにして、システムのテクニカル・サポート・アーカイブを生成する必要があります。 
+より詳細なバックアップを作成するには、以下のようにして、システムのテクニカル・サポート・アーカイブを生成する必要があります。
 
 ```
 $ generate tech-support archive
@@ -28,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-生成されたアーカイブ・ファイルは、この後仮想ルーター・アプライアンスから任意のストレージ・デバイスにコピーできます。 アーカイブには、構成情報、ホーム・ディレクトリー、およびロギング情報のバックアップが含まれています。 これは、システムのより詳細なバックアップです。 
+生成されたアーカイブ・ファイルは、この後 Virtual Router Appliance から任意のストレージ・デバイスにコピーできます。 アーカイブには、構成情報、ホーム・ディレクトリー、およびロギング情報のバックアップが含まれています。 これは、システムのより詳細なバックアップです。
 
 次に例を挙げます。
 

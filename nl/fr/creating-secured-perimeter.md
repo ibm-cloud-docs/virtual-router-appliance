@@ -15,7 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # Création d'un périmètre sécurisé
-L'un des aspects essentiels de l'isolement de réseau est l'établissement d'un périmètre sécurisé.  Un périmètre sécurisé contrôle le trafic entre l'Internet public et les actifs du client hébergés dans IBM© Cloud. Il permet également d'activer la connectivité directe avec l'entreprise du client via des tunnels de réseau privé virtuel et IBM Cloud Direct.
+L'un des aspects essentiels de l'isolement de réseau est l'établissement d'un périmètre sécurisé.  Un périmètre sécurisé contrôle le trafic entre l'Internet public et les actifs du client hébergés dans IBM© Cloud.  Il permet également d'activer la connectivité directe avec l'entreprise du client via des tunnels de réseau privé virtuel et IBM Cloud Direct.
 
 Un périmètre sécurisé utilise un segment SPS (Secure Perimeter Segment) pour séparer les réseaux entre les actifs. Cette séparation offre plusieurs avantages, notamment le contrôle d'accès et l'isolement du trafic de service entre les segments. Un segment SPS (Secure Perimeter Segment) est constitué de deux réseaux locaux virtuels (VLAN), un VLAN frontal et un VLAN de back end, et d'un dispositif VRA connecté aux VLAN afin de gérer le trafic vers et depuis le segment SPS. Un périmètre sécurisé peut inclure plusieurs segments SPS (par exemple, à des fins de haute disponibilité).
 

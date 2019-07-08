@@ -5,6 +5,10 @@ copyright:
 
 lastupdated: "2018-11-10"
 
+keywords: resources, partners, blog, brief
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,6 +18,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # IBM Virtual Router Appliance 的其他資源
 {: #other-resources-or-ibm-virtual-router-appliance}

@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: vfp, ipsec, firewall
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # IPsec 및 구역 방화벽을 사용하여 VPF 인터페이스 구성
 {: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
 
-IPSec 데이터그램에 도달하면 방화벽 규칙을 통해 처리된 후 캡슐화가 해제됩니다. 새로 알려진 데이터그램은 인터페이스와 전혀 연관되어 있지 않습니다. 일반적으로, 문제가 되지 않으며 대상 인터페이스로 계속할 수 있지만, 구역 방화벽에서 데이터그램이 진행되는 것을 막습니다. 구역 정책의 인터페이스에서 발생하지 않는 데이터그램은 삭제됩니다. 그러나 VFP 인터페이스는 데이터그램이 인터페이스에서 발생하지 않았다고 구역 방화벽에 알리고, 규칙을 적용하도록 허용합니다. 
+IPSec 데이터그램에 도달하면 방화벽 규칙을 통해 처리된 후 캡슐화가 해제됩니다. 새로 알려진 데이터그램은 인터페이스와 전혀 연관되어 있지 않습니다. 일반적으로, 문제가 되지 않으며 대상 인터페이스로 계속할 수 있지만, 구역 방화벽에서 데이터그램이 진행되는 것을 막습니다. 구역 정책의 인터페이스에서 발생하지 않는 데이터그램은 삭제됩니다. 그러나 VFP 인터페이스는 데이터그램이 인터페이스에서 발생하지 않았다고 구역 방화벽에 알리고, 규칙을 적용하도록 허용합니다.
 
 IPsec 트래픽에 대해 작업하도록 VFP 인터페이스를 구성하려면, 먼저 단일 IP를 사용하여 VFP를 정의함으로써 기능 지점을 작성하십시오.
 

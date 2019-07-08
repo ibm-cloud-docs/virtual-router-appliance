@@ -47,4 +47,4 @@ Sono qui di seguito indicati i passi per configurare un perimetro protetto.  Per
 22. Distribuisci il cluster Kubernetes.
 
 ## Soluzioni dedicate in IBM Cloud
-Un perimetro protetto, insieme all'isolamento del calcolo e alla crittografia dei dati, contribuisce a una soluzione dedicata completa in IBM Cloud pubblico.  Vedi [Implementing a Dedicated Solution Pattern ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://developer.ibm.com/dwblog/2018/ibm-cloud-dedicated-cloud-solution-patterns/){:new_window} per una descrizione dei modelli di soluzione dedicata cloud. 
+Un perimetro protetto, insieme all'isolamento del calcolo e alla crittografia dei dati, contribuisce a una soluzione dedicata completa in IBM Cloud pubblico.  Vedi [Implementing a Dedicated Solution Pattern ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://developer.ibm.com/dwblog/2018/ibm-cloud-dedicated-cloud-solution-patterns/){:new_window} per una descrizione dei modelli di soluzione dedicata cloud.

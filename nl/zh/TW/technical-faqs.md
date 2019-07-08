@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: faqs, vlan, traffic, firewall, SSH,
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,6 +18,8 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
+{:important: .important}
 
 # IBM Virtual Router Appliance 的常見技術問題
 {: #technical-faqs-for-ibm-virtual-router-appliance}
@@ -21,7 +27,7 @@ lastupdated: "2018-11-10"
 下列常見問題可處理 IBM© Virtual Router Appliance (VRA) 的配置，以及從 Vyatta 5400 移轉至 VRA。
 
 ## 如何容許來自專用 VLAN 上主機的網際網路連結資料流量？
-{:faq}
+{: faq}
 
 此資料流量需要取得公用來源 IP，因此「來源 NAT」需要使用 VRA 的公用 IP 來假冒專用 IP。
 
@@ -37,7 +43,7 @@ set service nat source rule 1000 translation address masquerade
 這確保它不會干擾已有網際網路可遞送來源位址的封包。
 
 ## 如何過濾網際網路連結資料流量並且只容許特定通訊協定/目的地？
-{:faq}
+{: faq}
 
 這是需要結合「來源 NAT」及防火牆時的一般問題。
 
@@ -45,7 +51,7 @@ set service nat source rule 1000 translation address masquerade
 
 簡言之，請在 SNAT *之後* 套用防火牆規則。
 
-若要在防火牆中封鎖所有送出的資料流量，但容許特定 SNAT 流程，您需要將過濾邏輯移至 SNAT。
+為了能夠在防火牆中封鎖所有送出的資料流量，但容許特定 SNAT 流程，您需要將過濾邏輯移至 SNAT。
 
 例如，若只要容許主機的 HTTPS 網際網路連結資料流量，SNAT 規則會是：
 
@@ -58,9 +64,9 @@ set service nat source rule 10 source address '10.1.2.3'
 set service nat source rule 10 translation address '150.1.2.3'
 ```
 
-`150.1.2.3` 將是 VRA 的公用位址。 
+`150.1.2.3` 將是 VRA 的公用位址。
 
-強烈建議使用 VRA 的 VRRP 公用位址，以讓您區分主機與 VRA 公用資料流量。
+強烈建議使用 VRA 的 VRRP 公用位址，以讓您可以區分主機與 VRA 公用資料流量。
 
 假設 `150.1.2.3` 是 VRRP VRA 位址，而 `150.1.2.5` 是實際 dp0bond1 位址。
 
@@ -78,12 +84,12 @@ set security firewall name TO_INTERNET rule 20 source address '150.1.2.5'
 set security firewall name TO_INTERNET rule 20 state 'enable'
 ```
 
-請注意，「來源 NAT」與防火牆的組合可以達到所需的設計目標。 
+請注意，「來源 NAT」與防火牆的組合可以達到所需的設計目標。
 
-請確定規則適合您的設計，而且沒有其他規則容許應該封鎖的資料流量。 
+請確定規則適合您的設計，而且沒有其他規則容許應該封鎖的資料流量。
 
 ## 如何使用以區域為基礎的防火牆來保護 VRA 本身？
-{:faq}
+{: faq}
 
 VRA 沒有`當地時區`。
 
@@ -92,12 +98,12 @@ VRA 沒有`當地時區`。
 請注意，這是無狀態防火牆，而且您需要明確地容許源自 VRA 本身之出埠階段作業的傳回資料流量。
 
 ## 如何限制 SSH 並封鎖來自網際網路的連線？
-{:faq}
+{: faq}
 
 最好不要容許來自網際網路的 SSH 連線，並使用另一種方式來存取專用位址（例如 SSL VPN）。
 
 依預設，VRA 接受所有介面上的 SSH。
-若只要接聽專用介面上的 SSH 連線，需要設定下列配置：
+為了能夠只接聽專用介面上的 SSH 連線，需要設定下列配置：
 
 ```
 set service ssh listen-address '10.1.2.3'

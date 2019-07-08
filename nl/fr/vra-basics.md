@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: basics, vra, access, configure, gui
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Accès et configuration du dispositif IBM Virtual Router Appliance
@@ -19,9 +25,12 @@ lastupdated: "2018-11-10"
 
 Le dispositif VRA peut être configuré à l'aide d'une session de console distante via SSH ou en se connectant à l'interface graphique Web. Par défaut, l'interface graphique Web n'est pas disponible depuis l'Internet public. Pour activer cette interface, connectez-vous d'abord via SSH.
 
-**REMARQUE :** La configuration de VRA hors de son interpréteur de commandes et de son interface peut engendrer des résultats imprévisibles et n'est donc pas recommandée.
+La configuration de VRA hors de son interpréteur de commandes et de son interface peut engendrer des résultats imprévisibles et n'est donc pas recommandée.
+{: note}
 
 ## Accès à l'unité via SSH
+{: #accessing-the-device-using-ssh}
+
 La plupart des systèmes fonctionnant sous UNIX, tels que Linux, BSD et Mac OSX, ont des clients OpenSSH inclus dans leurs installations par défaut. Les utilisateurs Windows peuvent télécharger un client SSH, par exemple PuTTy.
 
 Il est recommandé que la connexion SSH à l'adresse IP publique soit désactivée et que seule la connexion SSH à l'adresse IP privée soit autorisée. Les connexions à des adresses IP privées nécessitent que votre client soit connecté à un réseau privé. Vous pouvez vous connecter à l'aide de l'une des options VPN par défaut (PPTP, SSL-VPN et IPsec) offertes dans le portail client ou à l'aide d'une solution VPN personnalisée configurée sur le dispositif VRA.
@@ -30,7 +39,8 @@ Utilisez le compte Vyatta indiqué à la page **Détails de l'unité** pour vous
 
 `ssh vyatta@[IP address] `
 
-**REMARQUE :** Il est recommandé de maintenir les connexions root désactivées. Connectez-vous à l'aide du compte Vyatta et n'utilisez root qu'en cas de nécessité.
+Il est recommandé de maintenir les connexions root désactivées. Connectez-vous à l'aide du compte Vyatta et n'utilisez root qu'en cas de nécessité.
+{: tip}
 
 Des clés SSH peuvent également être fournies lors du déploiement, pour éviter de passer par un compte Vyatta pour se connecter. Après avoir vérifié que vous pouvez accéder à votre système VRA avec votre clé SSH, vous pouvez désactiver les connexions à l'aide d'un utilisateur et d'un mot de passe standard en exécutant les commandes suivantes :
 
@@ -42,6 +52,7 @@ $ configure
 ```
 
 ## Accès à l'unité à l'aide de l'interface graphique Web
+{: #accessing-the-device-using-the-web-gui}
 
 Connectez-vous à VRA à l'aide des instructions SSH ci-dessus, puis exécutez les commandes suivantes pour activer le service HTTPS :
 
@@ -55,6 +66,8 @@ $ configure
 Une fois ces commandes terminées, entrez `https://<ip.address>` dans la barre d'adresse de votre navigateur, en remplaçant l'adresse IP par celle de votre VRA. Vous serez peut-être invité à accepter le certificat auto-émis par VRA. Pour cela, à l'invite, connectez-vous à l'interface Web avec vos données d'identification 'vyatta'.
 
 ## Modes
+{: #modes-1}
+
 **Mode configuration :** Appelé avec la commande `configure`, ce mode est utilisé pour effectuer la configuration du système VRA.
 
 **Mode opérationnel :** Mode initial lors de la connexion à un système VRA. Dans ce mode, les commandes `show` peuvent être exécutées pour demander des informations sur l'état du système. Le système peut également être redémarré dans ce mode.
@@ -77,6 +90,7 @@ set system name-server '10.0.80.12'
 La marque de hachage (`#`) indique le mode Configuration. Commencer la commande par `run` indique à l'interpréteur de commandes VRA qu'il s'agit d'une commande opérationnelle. L'exemple précédent illustre également la possibilité de faire des recherches avec "grep" sur la sortie des commandes.
 
 ## Exploration des commandes
+{: #command-exploration}
 
 L'interpréteur de commandes VRA comprend des fonctions de saisie semi-automatique via la touche TAB. Si vous voulez connaître les commandes disponibles, appuyez sur la touche TAB pour obtenir la liste, ainsi qu'une brève explication. Vous pouvez le faire à l'invite de l'interpréteur de commandes ou en tapant une commande. Par exemple :  
 
@@ -88,6 +102,8 @@ Possible completions:
 ```
 
 ## Exemple de configuration
+{: #sample-configuration}
+
 Les configurations sont agencées dans un modèle de noeuds hiérarchique. Prenez par exemple ce bloc de commandes static route :
 
 ```
@@ -114,11 +130,13 @@ set protocols static route 10.0.0.0/8 next-hop 10.60.63.193
 set protocols static route 192.168.1.0/24 next-hop 10.0.0.1
 ```
 
-Cet exemple montre qu'il est possible qu'un noeud (static) ait plusieurs noeuds enfant. Pour supprimer la route correspondant à `192.168.1.0/24`, la commande `delete protocols static route 192.168.1.0/24` sera utilisée. Si `192.168.1.0/24` ne figure pas dans la commande, les deux noeuds de route seront marqués pour suppression.
+Cet exemple montre qu'il est possible qu'un noeud (static) ait plusieurs noeuds enfant. Pour supprimer la route correspondant à `192.168.1.0/24`, la commande `delete protocols static route 192.168.1.0/24` sera utilisée. Si `192.168.1.0/24` ne figure pas dans la commande, les deux noeuds de route sont marqués pour suppression.
 
 N'oubliez pas que la configuration n'est réellement modifiée qu'une fois la commande `commit` émise. Pour comparer la configuration en cours aux changements présents dans la mémoire tampon de configuration, utilisez la commande `compare`. Pour vider la mémoire tampon de configuration, utilisez la commande `discard`.
 
 ## Contrôle d'accès RBAC (Users and Role-based Access Control)
+{: #users-and-role-based-access-control-rbac-}
+
 Les comptes utilisateur peuvent être configurés avec trois niveaux d'accès :
 
 * Administrateur
@@ -139,7 +157,8 @@ set system login user [account] level operator
 commit
 ```
 
-**REMARQUE :** Lorsqu'aucun niveau n'est spécifié, l'utilisateur est considéré être au niveau administrateur. Dans ce cas, les mots de passe de l'utilisateur apparaissent chiffrés dans le fichier de configuration.
+Lorsqu'aucun niveau n'est spécifié, l'utilisateur est considéré être au niveau administrateur. Dans ce cas, les mots de passe de l'utilisateur apparaissent chiffrés dans le fichier de configuration.
+{: note}
 
 Le contrôle d'accès RBAC est une méthode utilisée pour limiter l'accès à une partie de la configuration à des utilisateurs autorisés. RBAC permet aux administrateurs de définir des règles pour un groupe d'utilisateurs qui limitent les commandes qu'ils peuvent exécuter.
 

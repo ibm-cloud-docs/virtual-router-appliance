@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Configuration de base de Vyatta 5400
 {: #basic-configuration-of-vyatta-5400}
@@ -20,36 +23,40 @@ Le réseau local virtuel public 1224, qui est désormais associé et routé, doi
 Notez qu'il s'agit du réseau local virtuel côté public où se trouve l'option compute et non le réseau local virtuel public du dispositif Brocade 5400 vRouter.
 
 ## Dans le portail Softlayer
+{: #in-the-softlayer-portal}
 
-1\. Dans le portail Web SoftLayer, sous **Devices**, localisez la liaison sur l'onglet **Configuration** pour l'unité Brocade 5400 vRouter. Supposons que <span style="text-decoration: underline">eth1=bond1</span> sur votre unité.
+1. Dans le portail Web SoftLayer, sous **Devices**, localisez la liaison sur l'onglet **Configuration** pour l'unité Brocade 5400 vRouter. Supposons que eth1=bond1 sur votre unité.
 
-2\. Sélectionnez **Network > IP Management > VLANs** sur le portail Web afin de trouver la passerelle par défaut pour le réseau local virtuel 1224.
+2. Sélectionnez **Network > IP Management > VLANs** sur le portail Web afin de trouver la passerelle par défaut pour le réseau local virtuel 1224.
 
-3\. Cliquez sur votre réseau local virtuel dans la liste, puis cliquez sur le **sous-réseau** sur lequel votre passerelle est visible. Notez les détails de routage CIDR situés après la barre oblique. 
+3. Cliquez sur votre réseau local virtuel dans la liste, puis cliquez sur le **sous-réseau** sur lequel votre passerelle est visible. Notez les détails de routage CIDR situés après la barre oblique.
 
 ## Dans l'interface graphique Vyatta
+{: #in-the-vyatta-gui}
 
-4\. Depuis le tableau de bord, cliquez sur l'onglet **Configuration**.
+1. Depuis le tableau de bord, cliquez sur l'onglet **Configuration**.
 
-5\. Développez **Interfaces > Bonding > bond1** sur le côté gauche de l'écran, puis mettez en évidence **vif**.
+2. Développez **Interfaces > Bonding > bond1** sur le côté gauche de l'écran, puis mettez en évidence **vif**.
 
-6\. Entrez le nom des réseaux locaux virtuels dans la zone **vif** (1224 dans notre cas) et cliquez sur le bouton **Create**. Le processus dure quelques secondes.
+3. Entrez le nom des réseaux locaux virtuels dans la zone **vif** (1224 dans notre cas) et cliquez sur le bouton **Create**. Le processus dure quelques secondes.
 
-7\. Sélectionnez l'élément **vif 1224** nouvellement créé sous l'icône **vif**.
+4. Sélectionnez l'élément **vif 1224** nouvellement créé sous l'icône **vif**.
 
-8\. Cochez la case sous **dhcp** et tapez l'adresse IP de passerelle par défaut et la notation CIDR de masque du réseau local virtuel que vous souhaitez faire passer par Brocade 5400 vRouter (par exemple, VLAN 1224).
+5. Cochez la case sous **dhcp** et tapez l'adresse IP de passerelle par défaut et la notation CIDR de masque du réseau local virtuel que vous souhaitez faire passer par Brocade 5400 vRouter (par exemple, VLAN 1224).
 
-9\. Cliquez sur le bouton **Set**, puis sur **Commit**.
+6. Cliquez sur le bouton **Set**, puis sur **Commit**.
 
-10\. Cliquez sur **Sauvegarder** dans la barre de menu du milieu, faute de quoi, la configuration par défaut sera rétablie lorsque le système sera redémarré.
+7. Cliquez sur **Sauvegarder** dans la barre de menu du milieu, faute de quoi, la configuration par défaut sera rétablie lorsque le système sera redémarré.
 
-**Remarque :** l'annulation de la configuration peut s'avérer très utile si vous interrompez votre configuration pendant que vous testez vos modifications. Tant que les modifications ne sont pas sauvegardées, vous pouvez redémarrer le serveur à partir du portail Web et restaurer votre configuration précédente.
+L'annulation de la configuration peut s'avérer très utile si vous interrompez votre configuration pendant que vous testez vos modifications. Tant que les modifications ne sont pas sauvegardées, vous pouvez redémarrer le serveur à partir du portail Web et restaurer votre configuration précédente.
+{: note}
 
-11\. Cliquez sur l'onglet Statistics et ouvrez la nouvelle interface afin de vérifier et surveiller le trafic.
+8. Cliquez sur l'onglet Statistics et ouvrez la nouvelle interface afin de vérifier et surveiller le trafic.
 
 ## Configuration du réseau local virtuel privé à l'aide de l'interface de ligne de commande
+{: #configure-the-private-vlan-using-the-cli}
 
-L'interface de ligne de commande propose les deux modes commande suivants : opérationnel et configuration. 
+L'interface de ligne de commande propose les deux modes commande suivants : opérationnel et configuration.
 
 Le mode opérationnel permet d'accéder à des commandes opérationnelles pour :
 
@@ -70,7 +77,8 @@ Le mode configuration permet d'accéder à des commandes pour :
 
 Lorsque vous vous connectez au système, celui-ci est en mode opérationnel ; vous devez passer en mode configuration pour les commandes.
 
-**Remarque :** vous pouvez déterminer le mode dans lequel vous travaillez, opérationnel ou configuration, en fonction de l'invite. Vous êtes en mode opérationnel si l'invite est # et vous êtes en mode configuration si l'invite est $.
+Vous pouvez déterminer le mode dans lequel vous travaillez, opérationnel ou configuration, en fonction de l'invite. Vous êtes en mode opérationnel si l'invite est # et vous êtes en mode configuration si l'invite est $.
+{: note}
 
 Pour configurer le réseau local virtuel privé à l'aide de l'interface de ligne de commande, procédez comme indiqué ci-après. N'oubliez pas que les valeurs nécessaires pour configurer le réseau local virtuel sont les suivantes :
 
@@ -80,7 +88,8 @@ Pour configurer le réseau local virtuel privé à l'aide de l'interface de lign
 
 1. Ouvrez une session SSH dans votre Brocade 5400 vRouter (adresse IP publique ou privée) en utilisant **vyatta** comme **nom d'utilisateur** ; indiquez le mot de passe approprié lorsque vous y êtes invité.
 
-   **Remarque :** vous devez créer un nouvel utilisateur dans Brocade 5400 vRouter et désactiver l'utilisateur initial par défaut `vyatta`.
+   Vous devez créer un nouvel utilisateur dans Brocade 5400 vRouter et désactiver l'utilisateur initial par défaut `vyatta`.
+   {: note}
 
 2. Configurez l'interface VIF :
 

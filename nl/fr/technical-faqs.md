@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: faqs, vlan, traffic, firewall, SSH,
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,6 +18,8 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
+{:important: .important}
 
 # Foire aux questions techniques concernant IBM Virtual Router Appliance
 {: #technical-faqs-for-ibm-virtual-router-appliance}
@@ -21,7 +27,7 @@ lastupdated: "2018-11-10"
 La foire aux questions suivante aborde la configuration de l'IBM© Virtual Router Appliance (VRA) et la migration vers le dispositif VRA à partir de Vyatta 5400.
 
 ## Comment puis-je autoriser le trafic lié par Internet à partir de systèmes hôte résidant sur un réseau local virtuel privé ?
-{:faq}
+{: faq}
 
 Ce trafic doit obtenir une adresse IP source publique, par conséquent, une conversion d'adresses réseau source doit usurper l'adresse IP privée avec l'adresse publique du dispositif VRA.
 
@@ -37,7 +43,7 @@ La configuration ci-dessus effectue uniquement une conversion d'adresses réseau
 Cela permet de garantir qu'elle n'interférera pas avec les paquets qui possèdent déjà une adresse source routable par Internet.
 
 ## Comment puis-je filtrer le trafic lié par Internet et autoriser uniquement des protocoles/destinations spécifiques ?
-{:faq}
+{: faq}
 
 Il s'agit d'une question courante lorsque la conversion d'adresses réseau source et un pare-feu doivent être combinés.
 
@@ -58,7 +64,7 @@ set service nat source rule 10 source address '10.1.2.3'
 set service nat source rule 10 translation address '150.1.2.3'
 ```
 
-`150.1.2.3` serait une adresse publique pour le dispositif VRA. 
+`150.1.2.3` serait une adresse publique pour le dispositif VRA.
 
 Il est fortement recommandé d'utiliser l'adresse publique VRRP du dispositif VRA, par conséquent, vous pouvez faire la différence entre le trafic public de l'hôte et du dispositif VRA.
 
@@ -78,12 +84,12 @@ set security firewall name TO_INTERNET rule 20 source address '150.1.2.5'
 set security firewall name TO_INTERNET rule 20 state 'enable'
 ```
 
-Notez que la combinaison de la conversion d'adresses réseau source et du pare-feu permet d'atteindre l'objectif de conception demandé. 
+Notez que la combinaison de la conversion d'adresses réseau source et du pare-feu permet d'atteindre l'objectif de conception demandé.
 
-Assurez-vous que les règles sont adaptées à votre conception et qu'aucune autre règle ne peut autoriser le trafic qui doit être bloqué. 
+Assurez-vous que les règles sont adaptées à votre conception et qu'aucune autre règle ne peut autoriser le trafic qui doit être bloqué.
 
 ## Comment puis-je protéger le dispositif VRA proprement dit avec un pare-feu basé sur zone ?
-{:faq}
+{: faq}
 
 Le dispositif VRA ne possède pas de `zone locale`.
 
@@ -92,7 +98,7 @@ A la place, vous pouvez utiliser la fonctionnalité CPP (Control Plane Policing)
 Notez qu'il s'agit d'un pare-feu sans état et que vous devrez autoriser explicitement le trafic en retour de sessions sortantes provenant du dispositif VRA proprement dit.
 
 ## Comment puis-je restreindre SSH et bloquer les connexions provenant d'Internet ?
-{:faq}
+{: faq}
 
 La meilleure pratique consiste à ne pas autoriser les connexions SSH provenant d'Internet et à utiliser d'autres moyens pour accéder à l'adresse privée, par exemple, SSL VPN.
 

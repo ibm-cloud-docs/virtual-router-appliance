@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: apis, api
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,8 +17,10 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
-# IBM 仮想ルーター・アプライアンスの API リファレンス
+# IBM Virtual Router Appliance の API リファレンス
 {: #api-reference-for-ibm-virtual-router-appliance}
 
 SoftLayer® アプリケーション・プログラミング・インターフェース (SLAPI) は、開発者やシステム管理者が IBM© Cloud のバックエンド・システムと直接対話できるようにする開発用インターフェースです。
@@ -23,17 +29,18 @@ SLAPI は、カスタマー・ポータルの多くの機能を備えていま�
 
 SLAPI は、リモート・プロシージャー・コール (RPC) システムです。 各呼び出しには、API エンドポイントへのデータの送信と、それと引き換えに構造化データの受信が含まれます。 SLAPI でのデータの送受信に使用される形式は、選択した API の実装によって異なります。 SLAPI は現在、データ伝送に SOAP、XML-RPC、または REST を使用しています。
 
-SLAPI は IBM 仮想ルーター・アプライアンス API を参照するため、SLAPI について詳しくは、SoftLayer Development Network (SLDN) にある次のリソースを参照してください。
+SLAPI は IBM Virtual Router Appliance  API を参照するため、SLAPI について詳しくは、SoftLayer Development Network (SLDN) にある次のリソースを参照してください。
 
-- [SoftLayer_Network_Gateway API![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 
-- [SoftLayer_Network_Gateway_Member API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window} 
-- [SoftLayer_Network_Gateway_Vlan API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window} 
-- [SoftLayer_Network_Gateway_Status API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window} 
-- [SoftLayer API Python Client ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window} 
-- [各種言語による SoftLayer API のその他の例![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer.github.io/python/){: new_window} 
+- [SoftLayer_Network_Gateway API![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window}
+- [SoftLayer_Network_Gateway_Member API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window}
+- [SoftLayer_Network_Gateway_Vlan API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window}
+- [SoftLayer_Network_Gateway_Status API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window}
+- [SoftLayer API Python Client ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window}
+- [各種言語による SoftLayer API のその他の例![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer.github.io/python/){: new_window}
 
 
 ### 例 - ゲートウェイ・アプライアンスの注文
+{: #example-ordering-a-gateway-appliance}
 
 ```
 import SoftLayer
@@ -91,6 +98,7 @@ if __name__ == '__main__':
 {: codeblock}
 
 ### 例 - VLAN とゲートウェイ・アプライアンスの関連付け、ルーティング、バイパス、および関連付け解除
+{: #example-associating-routing-bypassing-and-disassociating-vlans-to-the-gateway-appliance}
 
 ```
 import SoftLayer

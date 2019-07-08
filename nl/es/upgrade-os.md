@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Actualización del SO
 {: #upgrading-the-os}
@@ -21,7 +27,8 @@ Se puede realizar la actualización del sistema operativo VRA con el mandato ``a
 
 Para empezar el proceso de actualización, abra una incidencia con el sistema de incidencia de soporte de IBM solicitando una actualización y que se cargue al sistema una nueva imagen ISO. Recibirá un correo electrónico de soporte de IBM indicando el lugar en el que se ha cargado el archivo ISO. En el ejemplo, se encuentra en el directorio ``tmp``.
 
-**NOTA:** El proceso de actualización que se muestra a continuación es un VRA único. Si está utilizando VRA en modo de alta disponibilidad, debe ejecutar el mismo mandato de actualización en ambos sistemas. Además, se recomienda que actualice primero la máquina `BACKUP`, y verifique que funciona correctamente. A continuación, acceda a la máquina `MASTER` rechácela utilizando el mandato `reset vrrp`. Finalmente, actualice el `MASTER` original cuando `BACKUP` haya tomado el control.
+El proceso de actualización que se muestra a continuación es un VRA único. Si está utilizando VRA en modo de alta disponibilidad, debe ejecutar el mismo mandato de actualización en ambos sistemas. Además, se recomienda que actualice primero la máquina `BACKUP`, y verifique que funciona correctamente. A continuación, acceda a la máquina `MASTER` rechácela utilizando el mandato `reset vrrp`. Finalmente, actualice el `MASTER` original cuando `BACKUP` haya tomado el control.
+{: important}
 
 Para actualizar el VRA, realice el procedimiento siguiente.
 

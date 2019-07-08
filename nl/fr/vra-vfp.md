@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: vfp, ipsec, firewall
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Configuration d'une interface VFP avec IPsec et des pare-feux de zone
 {: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
 
-Lorsqu'un datagramme IPSec arrive, il est traité via les règles de pare-feu, puis désencapsulé. Le nouveau datagramme qui émerge n'est pas du tout associé à une interface. Normalement, ce n'est pas un problème, et il peut accéder à l'interface de destination, mais des pare-feux de zone empêcheront la progression du datagramme. Tout datagramme qui ne provient pas d'une interface dans une stratégie de zone est abandonné. Cependant, une interface VFP informe le pare-feu de zone que le datagramme ne provenait pas d'une interface, ce qui permet l'application des règles. 
+Lorsqu'un datagramme IPSec arrive, il est traité via les règles de pare-feu, puis désencapsulé. Le nouveau datagramme qui émerge n'est pas du tout associé à une interface. Normalement, ce n'est pas un problème, et il peut accéder à l'interface de destination, mais des pare-feux de zone empêcheront la progression du datagramme. Tout datagramme qui ne provient pas d'une interface dans une stratégie de zone est abandonné. Cependant, une interface VFP informe le pare-feu de zone que le datagramme ne provenait pas d'une interface, ce qui permet l'application des règles.
 
 Pour configurer une interface VFP afin qu'elle fonctionne avec du trafic IPsec, commencez par créer un point de fonction en définissant l'interface VFP avec une seule adresse IP :
 

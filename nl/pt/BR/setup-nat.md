@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, setup, 5400
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Configurando regras de NAT no Vyatta 5400
 {: #setting-up-nat-rules-on-vyatta-5400}
@@ -20,6 +26,7 @@ lastupdated: "2018-11-10"
 Este tópico contém exemplos das regras de Conversão de endereço de rede (NAT) usadas em um Vyatta.
 
 ## Regra NAT uma para muitas (mascarada)
+{: #one-to-many-nat-rule-masquerade-}
 
 Insira os comandos a seguir no prompt:
 
@@ -34,23 +41,28 @@ commit
 
 A solicitação de conexão de máquinas na rede `10.xxx.xxx.xxx` é mapeada para o IP em bond1 e recebe uma porta efêmera associada ao sair. A intenção é designar números maiores de regras mascaradas uma para muitas para que não entrem em conflito com regras NAT menores que você possa ter.
 
-**NOTA:** deve-se configurar o servidor para transmitir seu tráfego de Internet por meio do VRA para que seu gateway padrão seja o endereço IP privado da virtual LAN (VLAN) gerenciada. Por exemplo, para `bond0.2254`, o gateway é `10.52.69.201`. Esse deve ser o endereço do gateway para o servidor que transmite o tráfego da Internet.
+Deve-se configurar o servidor para passar seu tráfego de Internet por meio do VRA para que seu gateway padrão seja o endereço IP privado da LAN virtual (VLAN) gerenciada. Por exemplo, para `bond0.2254`, o gateway é `10.52.69.201`. Esse deve ser o endereço do gateway para o servidor que transmite o tráfego da Internet.
+{: note}
 
-**NOTA:** use o comando a seguir para ajudar a solucionar problemas de NAT: 
+Use o comando a seguir para ajudar a resolver problemas do NAT:
 
+  '''
+  run show nat source translations detail 
 '''
-run show nat source translations detail 
-'''
+  {: tip}
 
 ## Regra NAT uma para uma
+{: #one-to-one-nat-rule}
 
 Os comandos abaixo mostram como configurar uma regra NAT uma para uma. Observe que os números das regras são configurados para serem menores que a regra mascarada. Isso é para que as regras uma para uma tenham precedência sobre as regras uma para muitas.
 
-**NOTA:** os endereços IP mapeados um para um não podem ser mascarados. Se você converte uma entrada de IP, deve-se converter essa saída de IP para que o tráfego siga em ambas as direções.
+Os endereços IP que são mapeados um para um não podem ser mascarados. Se você converte uma entrada de IP, deve-se converter essa saída de IP para que o tráfego siga em ambas as direções.
+{: tip}
 
 Os comandos a seguir são para uma regra de origem e de destino. Digite `show nat` no modo de configuração para ver o tipo de regra NAT.
 
-**NOTA:** use o comando a seguir para ajudar a resolver o NAT: `run show nat source translations detail`. 
+  Use o comando a seguir para ajudar a resolver problemas do NAT: `run show nat source translations detail`.
+  {: tip}
 
 Insira os comandos a seguir no prompt depois de assegurar-se de que está no modo de configuração:
 
@@ -68,17 +80,19 @@ commit
 
 Se o tráfego vier no IP `50.97.203.227` em bond1, esse IP será mapeado para o IP `10.52.69.202` (em qualquer interface definida). Se o tráfego sair com o IP de `10.52.69.202` (em qualquer interface definida), ele será convertido no IP `50.97.203.227` e continuará de saída na interface bond1.
 
-**NOTA:** os endereços IP mapeados um para um não podem ser mascarados. Se você converte uma entrada de IP, deve-se converter essa mesma saída de IP para que seu tráfego siga em ambas as direções.
-
+Os endereços IP que são mapeados um para um não podem ser mascarados. Se você converte uma entrada de IP, deve-se converter essa mesma saída de IP para que seu tráfego siga em ambas as direções.
+{: note}
 
 ## Incluindo intervalos de IP por meio de seu VRA
+{: #adding-ip-ranges-through-your-vra}
 
-Dependendo de sua configuração do VRA, talvez você queira aceitar endereços IP específicos do IBM© Cloud. 
+Dependendo de sua configuração do VRA, talvez você queira aceitar endereços IP específicos do IBM© Cloud.
 
 Novas implementações do vRouter vêm com endereços IP de rede de serviços do IBM Cloud definidos em uma regra de firewall chamada `SERVICE-ALLOW`.
 
 A seguir está um exemplo de `SERVICE-ALLOW`. Isso não é um conjunto de regras IP privado completo.
 
+```
 ~~~
 set firewall name SERVICE-ALLOW rule 1 action 'accept'
 set firewall name SERVICE-ALLOW rule 1 destination address '10.0.64.0/19'
@@ -87,13 +101,10 @@ set firewall name SERVICE-ALLOW rule 2 destination address '10.1.128.0/19'
 set firewall name SERVICE-ALLOW rule 3 action 'accept'
 set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 ~~~
+```
 
-Depois de definir as regras de firewall, será possível designá-las como você achar melhor. Dois exemplos são listados abaixo. 
+Depois de ter definido as regras de firewall, é possível designá-las como você achar adequado. Dois exemplos são listados abaixo.
 
-Aplicando a uma zona:
+Aplicando a uma zona: `set zone-policy zone private from dmz firewall name SERVICE-ALLOW`
 
-`set zone-policy zone private from dmz firewall name SERVICE-ALLOW`
-
-Aplicando a uma interface de ligação:
-
-`set interfaces bonding bond0 firewall local name SERVICE-ALLOW`
+Aplicando a uma interface de ligação: `set interfaces bonding bond0 firewall local name SERVICE-ALLOW`

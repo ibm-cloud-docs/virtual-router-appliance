@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 升级问题
 {: #upgrade-issues}
@@ -61,9 +67,10 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-下面专门列出了用于初始安装和当前运行的操作系统的 ISO。 
+下面专门列出了用于初始安装和当前运行的操作系统的 ISO。
 
-**注：**如果进行过多次升级，那么那些 ISO 也会显示在这里。
+如果进行过多次升级，那么那些 ISO 也会显示在这里。
+{: note}
 
 接下来，将使用先前装入的操作系统的目录更改为下一个目录，然后进入 VRA 主目录：
 
@@ -124,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 所有的命令都会再次起作用，然后您可以正常继续工作。
 
-**注：**在操作系统升级过程中，HTTPS 证书 `/etc/lighttpd/server.pem` 也可能复制失败，这可能会导致高可用性 (HA) 配置无法同步。要解决此问题，除了复制上面列出的文件外，还请复制旧 `server.pem` 文件（发出 `su -` 以转至根级别，然后发出 `copy` 命令），然后发出 `restart https` 以重新启动 HTTPS `demon.m` 文件（及上面列出的文件）。
+在操作系统升级过程中，HTTPS 证书 `/etc/lighttpd/server.pem` 也可能复制失败，这可能会导致高可用性 (HA) 配置无法同步。要解决此问题，除了复制上面列出的文件外，还请复制旧 `server.pem` 文件（发出 `su -` 以转至根级别，然后发出 `copy` 命令），然后发出 `restart https` 以重新启动 HTTPS `demon.m` 文件（及上面列出的文件）。
+{: important}

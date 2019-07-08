@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2018-11-10"
+  years: 2017, 2019
+lastupdated: "2019-06-11"
+
+keywords: vra, details, view, gateway
+
+subcollection: virtual-router-appliance
 
 ---
 
@@ -13,11 +17,13 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 查看 VRA 详细信息
 {: #view-vra-details}
 
-网关用于控制 VLAN 上通常由路由器控制的网络流量。在客户门户网站上的“网关设备详细信息”屏幕中，可以将 VLAN 关联到网关、解除 VLAN 与网关的关联、将 VLAN 路由到网关以及使 VLAN 绕过网关。
+网关用于控制 VLAN 上通常由路由器控制的网络流量。在 {{site.data.keyword.cloud}} 基础架构客户门户网站上的“网关设备详细信息”屏幕中，可以将 VLAN 关联到网关、解除 VLAN 与网关的关联、将 VLAN 路由到网关以及绕过与网关相关联的 VLAN。
 
 执行以下过程以访问“网关详细信息”屏幕。
 

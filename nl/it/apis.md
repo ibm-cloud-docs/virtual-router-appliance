@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: apis, api
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Riferimento API per IBM Virtual Router Appliance
 {: #api-reference-for-ibm-virtual-router-appliance}
@@ -25,15 +31,16 @@ La SLAPI è un sistema RPC (Remote Procedure Call). Ogni chiamata prevede l'invi
 
 Per ulteriori informazioni sulla SLAPI e su come fa riferimento alle API IBM Virtual Router Appliance, consulta le seguenti risorse in SLDN (SoftLayer Development Network):
 
-- [SoftLayer_Network_Gateway API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 
-- [SoftLayer_Network_Gateway_Member API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window} 
-- [SoftLayer_Network_Gateway_Vlan API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window} 
-- [SoftLayer_Network_Gateway_Status API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window} 
-- [SoftLayer API Python Client ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window} 
-- [More SoftLayer API Examples with different languages ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer.github.io/python/){: new_window} 
+- [SoftLayer_Network_Gateway API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window}
+- [SoftLayer_Network_Gateway_Member API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window}
+- [SoftLayer_Network_Gateway_Vlan API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window}
+- [SoftLayer_Network_Gateway_Status API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window}
+- [SoftLayer API Python Client ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window}
+- [More SoftLayer API Examples with different languages ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer.github.io/python/){: new_window}
 
 
 ### Esempio - Ordine di un'applicazione gateway
+{: #example-ordering-a-gateway-appliance}
 
 ```
 import SoftLayer
@@ -91,6 +98,7 @@ if __name__ == '__main__':
 {: codeblock}
 
 ### Esempio - Associazione, instradamento, elusione e annullamento dell'associazione delle VLAN per l'applicazione gatewayxample - Associating, routing, bypassing and disassociating VLANs to the Gateway Appliance
+{: #example-associating-routing-bypassing-and-disassociating-vlans-to-the-gateway-appliance}
 
 ```
 import SoftLayer

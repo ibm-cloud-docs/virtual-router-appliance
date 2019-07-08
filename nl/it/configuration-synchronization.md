@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ha, high availability, sync, synchronize, config-sync
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,16 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Sincronizzazione delle configurazioni di alta disponibilità
 {: #synchronizing-high-availability-configurations}
 
-Due VRA (Virtual Router Appliances) in una coppia HA (alta disponibilità) devono avere le loro configurazioni sufficientemente sincronizzate in modo che i dispositivi si comportino in modo simile. Questo viene eseguito tramite `configuration sync-maps` e puoi scegliere quale parte della configurazione sarà sincronizzata. Se effettui una modifica in una macchina, trasmetterà la configurazione contrassegnata all'altro dispositivo.
+Due VRA (Virtual Router Appliance) in una coppia HA (alta disponibilità) devono avere le loro configurazioni sufficientemente sincronizzate in modo che i dispositivi si comportino in modo simile. Questo viene eseguito tramite `configuration sync-maps` e puoi scegliere quale parte della configurazione sarà sincronizzata. Se effettui una modifica in una macchina, trasmetterà la configurazione contrassegnata all'altro dispositivo.
 
-**NOTA:** questo sincronizza e salva la configurazione in esecuzione del dispositivo locale sul dispositivo remoto. Tuttavia, come parte del processo di commit non salva la configurazione sul dispositivo locale. 
+Questo sincronizza e salva la configurazione in esecuzione del dispositivo locale sul dispositivo remoto. Tuttavia, come parte del processo di commit non salva la configurazione sul dispositivo locale.
+{: note}
 
 Le configurazioni che sono univoche in un sistema non vengono sincronizzate nell'altro. Gli indirizzi IP reali e i MAC non dovrebbero venire sincronizzati, per l'istanza. Il nodo stesso di configurazione `system config-sync` e il nodo `service https` non possono essere sincronizzati affatto.
 
@@ -36,6 +43,14 @@ set system config-sync remote-router 192.168.1.22 sync-map TEST
 Le prime due righe creano lo stesso sync-map reale. Qui, la stanza di configurazione per `security firewall` sarà impostata su `sync-map`. Di conseguenza, tutte le modifiche effettuate nel nodo di configurazione saranno trasmesse al dispositivo remoto. Tuttavia, le modifiche effettuate a `security user` non saranno inviate, perché non corrispondono alla regola. Puoi eseguire `sync-map` come specifico o generale a tua scelta.
 
 Le successive tre righe designano la password e l'utente, l'IP e quale sync-map da trasmettere `config-sync` del router remoto. Tutte le modifiche che corrispondo alle regole per `TEST`, andranno a `remote-router 192.168.1.22`, utilizzando queste informazioni di accesso. Tieni presente che viene effettuata una chiamata `REST` per eseguire questa operazione utilizzando l'API VRA, in modo che il server HTTPS debba essere in esecuzione (e sbloccato) nel router remoto.
+
+Per sincronizzare la configurazione di una password, come ad esempio un pre-shared-secret per una VPN IPSec, il sistema di standby deve avere il gruppo `secrets` configurato e l'utente config-sync deve trovarsi in tale gruppo.
+
+```
+set system login group secrets
+set system login user vyatta authentication plaintext-password '****'
+set system login user vyatta group secrets
+```
 
 Config-sync si verifica se esegui il commit di una modifica. Controlla se sono presenti messaggi di errore che provengono dal dispositivo remoto. Se la configurazione non è sincronizzata, dovrai correggerla nel dispositivo remoto per renderlo nuovamente operativo.
 

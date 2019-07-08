@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: basics, vra, access, configure, gui
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # 存取及配置 IBM Virtual Router Appliance
@@ -19,9 +25,12 @@ lastupdated: "2018-11-10"
 
 VRA 可以透過 SSH 使用遠端主控台階段作業來配置，或透過登入 Web GUI 來配置。依預設，無法從公用網際網路取得 Web GUI。若要啟用 Web GUI，請先透過 SSH 登入。
 
-**附註：**在 Shell 和介面外配置 VRA 可能會產生非預期的結果，因此不建議這樣做。
+在 Shell 和介面外配置 VRA 可能會產生非預期的結果，因此不建議這樣做。
+{: note}
 
 ## 使用 SSH 存取裝置
+{: #accessing-the-device-using-ssh}
+
 大部分 UNIX 型作業系統（例如 Linux、BSD 及 Mac OSX）的預設安裝都會包含 OpenSSH 用戶端。Windows 使用者可以下載 SSH 用戶端，例如 PuTTy。
 
 建議將公用 IP 的 SSH 停用，且只容許專用 IP 的 SSH。與專用 IP 的連線需要您的用戶端連接專用網路。您可以使用下列方式登入：使用客戶入口網站中所提供的其中一個預設 VPN 選項（PPTP、SSL-VPN 及 IPsec），或使用 VRA 上所配置的自訂 VPN 解決方案。
@@ -30,7 +39,8 @@ VRA 可以透過 SSH 使用遠端主控台階段作業來配置，或透過登�
 
 `ssh vyatta@[IP address] `
 
-**附註：**建議您維持停用 root 登入。請使用 Vyatta 帳戶登入，並在必要時提升至 root。
+建議您維持停用 root 登入。請使用 Vyatta 帳戶登入，並在必要時提升至 root。
+{: tip}
 
 SSH 金鑰也可以在部署期間提供，以避免需要 Vyatta 帳戶登入。在您驗證能夠使用 SSH 金鑰存取 VRA 之後，可以執行下列指令來停用標準使用者/密碼登入：
 
@@ -42,6 +52,7 @@ $ configure
 ```
 
 ## 使用 Web GUI 存取裝置
+{: #accessing-the-device-using-the-web-gui}
 
 使用上述 SSH 指示登入 VRA，然後執行下列指令以啟用 HTTPS 服務：
 
@@ -55,6 +66,8 @@ $ configure
 完成這些指令之後，請在瀏覽器的位址列中輸入 `https://<ip.address>`，並將 IP 位址取代為 VRA 的 IP 位址。可能會要求您接受 VRA 的自簽憑證。請這樣做，然後登入 Web 介面，並在系統提示時使用 Vyatta 認證。
 
 ## 模式
+{: #modes-1}
+
 **配置模式：**此模式使用 `configure` 指令呼叫，是執行 VRA 系統配置之處。
 
 **作業模式：**登入 VRA 系統時的起始模式。在此模式中，可以執行 `show` 指令，以查詢系統狀態的相關資訊。系統也可以從這個模式重新啟動。
@@ -77,6 +90,7 @@ set system name-server '10.0.80.12'
 井字號 (`#`) 表示配置模式。使用 `run` 作為指令的開頭，會告知 VRA Shell 正在呈現作業指令。上一個範例也說明了可以對指令輸出執行 "grep"。
 
 ## 指令探索
+{: #command-exploration}
 
 VRA 指令 Shell 包含 tab 完成功能。如果您好奇有哪些指令可用，請按 Tab 鍵取得清單及簡要說明。這在 Shell 提示及鍵入指令時都適用。例如：
 
@@ -88,6 +102,8 @@ Possible completions:
 ```
 
 ## 配置範例
+{: #sample-configuration}
+
 配置是以階層式的節點來佈置。請考量這個靜態路由區塊：
 
 ```
@@ -119,6 +135,8 @@ set protocols static route 192.168.1.0/24 next-hop 10.0.0.1
 請記得，在發出 `commit` 指令之前，不會實際變更配置。如果要比較現行執行中配置與配置緩衝區中具有的任何變更，請使用 `compare` 指令。如果要清除配置緩衝區，請使用 `discard`。
 
 ## 使用者和角色型存取控制 (RBAC)
+{: #users-and-role-based-access-control-rbac-}
+
 可以使用三個層次的存取權來配置使用者帳戶：
 
 * 管理者
@@ -139,7 +157,8 @@ set system login user [account] level operator
 commit
 ```
 
-**附註：**如果未指定層次，則會將使用者視為管理者層次。在此情況下，使用者密碼會在配置檔中顯示為已加密。
+如果未指定任何層次，則會將使用者視為管理者層次。在此情況下，使用者密碼會在配置檔中顯示為已加密。
+{: note}
 
 「角色型存取控制 (RBAC)」是將部分配置的存取限制給已獲授權之使用者的一種方法。RBAC 可讓管理者為使用者群組定義規則，以限制他們可以執行的指令。
 

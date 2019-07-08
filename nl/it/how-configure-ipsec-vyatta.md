@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Configurazione di IPSec su Vyatta 5400
 {: #configuring-ipsec-on-vyatta-5400}
@@ -39,7 +42,7 @@ Si farà riferimento al dispositivo Brocade 5400 vRouter (Vyatta) come a "locale
   * Specifica l'IP del lato remoto e che IPSec utilizzerà il segreto precondiviso
   * Utilizza l'IP remoto e la chiave del segreto TestPSK
   * Imposta il gruppo **esp** predefinito per il tunnel su TestESP
-  * "Informa" IPSec di utilizzare ike-group TestIKE, che era stato definito precedentemente<br/><br/>
+  * "Indica" a IPSec di utilizzare ike-group TestIKE, che era stato definito precedentemente<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication pre-shared-secret TestPSK۪*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 default-esp-group TestESP۪*<br/>
@@ -49,7 +52,7 @@ Si farà riferimento al dispositivo Brocade 5400 vRouter (Vyatta) come a "locale
 
   * "Informa" il tunnel di associare l'IP remoto 169.54.254.117 all'indirizzo IP remoto di bond1, 50.97.240.219
   * Instrada solo gli indirizzi IP con la sottorete 10.54.9.152/29 che si trovano nell'interfaccia del server locale al server remoto 169.54.254.117
-  * Instrada il traffico remoto tunnel 1 169.54.254.117 alla sottorete remota 192.168.1.2/32<br/><br/>
+  * Instrada il traffico remoto tunnel 1 169.54.254.117 alla sottorete remota di 192.168.1.2/32<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 local-address ۪50.97.240.219*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 local prefix 10.54.9.152/29*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 remote prefix 192.168.1.2/32*<br/>

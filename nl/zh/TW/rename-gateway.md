@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: gateway, rename
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 重新命名 VRA
 {: #renaming-a-vra}
@@ -21,11 +27,12 @@ lastupdated: "2018-11-10"
 
 請執行下列程序來重新命名「網路閘道」：
 
-1. 在「客戶入口網站」中[存取「閘道應用裝置詳細資料」畫面](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)。 
+1. 在「客戶入口網站」中[存取「閘道應用裝置詳細資料」畫面](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details)。
 2. 按一下**動作**下拉功能表，然後選取**重新命名閘道**。
 3. 在**閘道名稱**欄位中輸入新的閘道名稱。
-4. 按一下**確定**以儲存變更。 
+4. 按一下**確定**以儲存變更。
 
 變更「閘道應用裝置」的名稱之後，名稱將立即在「閘道應用裝置詳細資料」畫面的頂端變更。您隨時可以重複上述步驟，重新變更「閘道」名稱。
 
-**附註：**在「客戶入口網站」中變更 VRA 名稱，並不會自動變更 Virtual Router Appliance 或您可能具有的任何 DNS 項目內的主機名稱。必要的話，這需要人為介入。
+在「客戶入口網站」中變更 VRA 名稱，並不會自動變更 Virtual Router Appliance 或您可能具有的任何 DNS 項目內的主機名稱。必要的話，這需要人為介入。
+{: note}

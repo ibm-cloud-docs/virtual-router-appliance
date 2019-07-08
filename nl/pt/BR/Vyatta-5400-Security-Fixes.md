@@ -13,15 +13,18 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Correções de vulnerabilidade de segurança do AT&T Vyatta 5400 vRouter
 {: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
 **A partir de: 30 de agosto de 2018**
 
-Este documento lista as correções de vulnerabilidade de segurança do Vyatta 5400 vRouter. Quando vários números de CVE são abordados em uma única atualização, a pontuação CVSS mais alta é listada. 
+Este documento lista as correções de vulnerabilidade de segurança do Vyatta 5400 vRouter. Quando vários números de CVE são abordados em uma única atualização, a pontuação CVSS mais alta é listada.
 
 ## 6.7R14S10
+{: #6-7r14s10}
 
 Liberado em 30 de agosto de 2018
 
@@ -34,6 +37,7 @@ Liberado em 30 de agosto de 2018
 Problemas resolvidos na 6.7R14S10
 
 ## 6.7R14S9
+{: #6-7R14S9}
 
 Liberado em 16 de julho de 2018
 
@@ -48,6 +52,7 @@ Vulnerabilidades de segurança resolvidas no 6.7R14S8
 
 
 ## 6.7R14S8
+{: #6-7R14S8}
 
 Liberado em 1º de junho de 2018
 
@@ -61,8 +66,8 @@ Liberado em 1º de junho de 2018
 
 Vulnerabilidades de segurança resolvidas no 6.7R14S8
 
-
 ## 6.7R14S7
+{: #6-7R14S7}
 
 Liberado em 14 de maio de 2018
 
@@ -92,6 +97,7 @@ Vulnerabilidades de segurança resolvidas na 6.7R14S7
 
 
 ## 6.7R14S6
+{: #6-7R14S6}
 
 Liberado em 6 de março de 2018.
 
@@ -109,7 +115,7 @@ Problemas resolvidos na 6.7R14S6
 | --- | --- | --- | --- |
 | VSE-9887 | 6,5 | DSA-4101-1 | CVE-2018-5334, CVE-2018-5335, CVE-2018-5336: Debian DSA-4101-1: wireshark – atualização de segurança |
 | VSE-9884 | 9,8 | DSA-3971-1 | VE-2017-11108, CVE-2017-11541, CVE-2017-11542, CVE-2017-11543, CVE-2017-12893, CVE-2017-12894, CVE-2017-12895, CVE-2017-12896, CVE-2017-12897, CVE-2017-12898, CVE-2017-12899, CVE-2017-12900, CVE-2017-12901, CVE-2017-12902, CVE-2017-12985, CVE-2017-12986, CVE-2017-12987, CVE-2017-12988, CVE-2017-12989, CVE-2017-12990, CVE-2017-12991, CVE-2017-12992, CVE-2017-12993, CVE-2017-12994, CVE-2017-12995, CVE-2017-12996, CVE-2017-12997, CVE-2017-12998, CVE-2017-12999, CVE-2017-13000, CVE-2017-13001, CVE-2017-13002, CVE-2017-13003, CVE-2017-13004, CVE-2017-13005, CVE-2017-13006, CVE-2017-13007, CVE-2017-13008, CVE-2017-13009, CVE-2017-13010, CVE-2017-13011, CVE-2017-13012, CVE-2017-13013, CVE-2017-13014, CVE-2017-13015, CVE-2017-13016, CVE-2017-13017, CVE-2017-13018, CVE-2017-13019, CVE-2017-13020, CVE-2017-13021, CVE-2017-13022, CVE-2017-13023, CVE-2017-13024, CVE-2017-13025, CVE-2017-13026, CVE-2017-13027, CVE-2017-13028, CVE-2017-13029, CVE-2017-13030, CVE-2017-13031, CVE-2017-13032, CVE-2017-13033, CVE-2017-13034, CVE-2017-13035, CVE-2017-13036, CVE-2017-13037, CVE-2017-13038, CVE-2017-13039, CVE-2017-13040, CVE-2017-13041, CVE-2017-13042, CVE-2017-13043, CVE-2017-13044, CVE-2017-13045, CVE-2017-13046, CVE-2017-13047, CVE-2017-13048, CVE-2017-13049, CVE-2017-13050, CVE-2017-13051, CVE-2017-13052, CVE-2017-13053, CVE-2017-13054, CVE-2017-13055, CVE-2017-13687, CVE-2017-13688, CVE-2017-13689, CVE-2017-13690, CVE-2017-13725: Debian DSA-3971-1: tcpdump – atualização de segurança |
-| VSE-9883 | N/A | DLA-1291-1 | Debian DLA-1291-1: nova versão de envio de dados de tzdata | 
+| VSE-9883 | N/A | DLA-1291-1 | Debian DLA-1291-1: nova versão de envio de dados de tzdata |
 | VSE-9878 | 9,8 | DLA-1263-1 | CVE-2018-1000007: Debian DLA-1263-1: atualização de segurança do curl |
 | VSE-9871 | 5,6 | DSA-4078-1 | CVE-2017-5754: Debian DSA-4078-1: linux – atualização de segurança (Meltdown) |
 | VSE-9867 | 9,8 | DLA-1221-1 | CVE-2017-17405, CVE_2017-17790: Debian DLA- 1221-1: atualização de segurança do ruby1.0.1 |
@@ -122,6 +128,7 @@ Vulnerabilidades de segurança resolvidas na 6.7R14S6
 
 
 ## 6.7R14S6
+{: #6-7R14S6}
 
 Liberado em 2 de fevereiro de 2018.
 
@@ -145,6 +152,7 @@ Vulnerabilidades de segurança resolvidas na 6.7R14S5
 
 
 ## 6.7R14S4
+{: #6-7R14S4}
 
 Liberado em 19 de dezembro de 2017.
 
@@ -158,6 +166,7 @@ Vulnerabilidades de segurança resolvidas na 6.7R14S4
 
 
 ## 6.7R14S3
+{: #6-7R14S3}
 
 Liberado em 14 de novembro de 2017.
 
@@ -172,6 +181,7 @@ Vulnerabilidades de segurança resolvidas na 6.7R14S3
 
 
 ## 6.7R14S2
+{: #6-7R14S2}
 
 Liberado em 10 de outubro de 2017.
 
@@ -193,6 +203,7 @@ Vulnerabilidades de segurança resolvidas na 6.7R14S2
 
 
 ## 6.7R14S1
+{: #6-7R14S1}
 
 Liberado em 22 de setembro de 2017.
 
@@ -200,7 +211,7 @@ Liberado em 22 de setembro de 2017.
 
 | Número do problema | Prioridade | Resumo |
 | --- | --- | --- |
-| VSE-9831 | Grave | A configuração de MTU é revertida para o padrão após a reinicialização em uma interface vif |
+| VSE-9831 | Grave | A configuração de MTU é revertida de volta para o padrão após a reinicialização em uma interface VIF |
 
 Problemas resolvidos na 6.7R14S1
 

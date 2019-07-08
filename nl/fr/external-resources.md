@@ -5,6 +5,10 @@ copyright:
 
 lastupdated: "2018-11-10"
 
+keywords: resources, partners, blog, brief
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,6 +18,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Autres ressources pour IBM Virtual Router Appliance
 {: #other-resources-or-ibm-virtual-router-appliance}

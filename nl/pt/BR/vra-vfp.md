@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: vfp, ipsec, firewall
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Configurando uma interface VFP com IPsec e firewalls de zona
 {: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
 
-Quando um datagrama IPSec chega, ele é processado por meio de regras de firewall e, em seguida, desencapsulado. O novo datagrama que emerge não está associado a nenhuma interface. Normalmente, isso não é um problema e pode continuar para a interface de destino, mas os firewalls de zona evitarão que o datagrama progrida. Qualquer datagrama que não vier de uma interface em uma política de zona será descartado. Uma interface VFP, no entanto, informa ao firewall de zona que o datagrama veio realmente de uma interface, permitindo a aplicação de regras. 
+Quando um datagrama IPSec chega, ele é processado por meio de regras de firewall e, em seguida, desencapsulado. O novo datagrama que emerge não está associado a nenhuma interface. Normalmente, isso não é um problema e pode continuar para a interface de destino, mas os firewalls de zona evitarão que o datagrama progrida. Qualquer datagrama que não vier de uma interface em uma política de zona será descartado. Uma interface VFP, no entanto, informa ao firewall de zona que o datagrama veio realmente de uma interface, permitindo a aplicação de regras.
 
 Para configurar uma interface VFP para funcionar com tráfego de IPsec, primeiro crie um ponto de recurso definindo o VFP com um único IP:
 

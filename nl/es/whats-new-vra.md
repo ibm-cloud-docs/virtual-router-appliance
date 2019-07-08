@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: updates, changes, additions
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 
@@ -21,8 +27,12 @@ lastupdated: "2018-11-10"
 Descubra las características nuevas y actualizadas de IBM© Virtual Router Appliance (VRA).
 
 ## Agosto de 2018
+{: #august-2018}
+
 ### Sistema operativo Brocade Versión 18.x
-La versión 18.x del sistema operativo Brocade está ahora disponible para Virtual Router Appliance. Entre otras características nuevas, esta versión proporciona la solución para la brecha de seguridad de Spectre. 
+{: #brocade-operating-system-version-18-x}
+
+La versión 18.x del sistema operativo Brocade está ahora disponible para Virtual Router Appliance. Entre otras características nuevas, esta versión proporciona la solución para la brecha de seguridad de Spectre.
 
 Las nuevas características de VRA 18.x se describen en los temas siguientes:
 
@@ -36,5 +46,3 @@ Si va a migrar de Vyatta 5400, la mejor manera de actualizar a 18.x es a través
 Puesto que no hay una correlación sencilla de uno a uno en la funcionalidad entre Vyatta 5400 y el dispositivo direccionador virtual, resulta útil crear una configuración de línea base para VRA. Un IBM Partner, WanClouds, puede ayudarle con este proceso y proporcionarle orientación sobre la creación de una funcionalidad similar a la Vyatta 5400 en su VRA.
 
 Para obtener más información sobre los problemas comunes que puede encontrar durante este proceso de actualización, consulte nuestra [documentación adicional](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues).
-
-

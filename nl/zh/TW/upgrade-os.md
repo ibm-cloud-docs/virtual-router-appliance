@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 升級 OS
 {: #upgrading-the-os}
@@ -21,7 +27,8 @@ lastupdated: "2018-11-10"
 
 若要開始升級程序，請使用「IBM 支援問題單」系統來開立問題單，並要求升級以及將新的 ISO 映像檔上傳至您的系統。您會收到「IBM 支援中心」的電子郵件，指出上傳 ISO 檔案的位置。在下列範例中，它位於 ``tmp`` 目錄。
 
-**附註：**以下所說明的升級程序適用於單一 VRA。如果您在高可用性模式下使用 VRA，則必須在兩個系統上都執行相同的升級指令。此外，建議先升級 `BACKUP` 機器，並驗證其是否正常運作。然後存取 `MASTER` 機器，並使用 `reset vrrp` 指令進行失效接手。最後，在 `BACKUP` 取得控制權之後，升級原始的 `MASTER`。
+以下所說明的升級程序適用於單一 VRA。如果您在高可用性模式下使用 VRA，則必須在兩個系統上都執行相同的升級指令。此外，建議先升級 `BACKUP` 機器，並驗證其是否正常運作。然後存取 `MASTER` 機器，並使用 `reset vrrp` 指令進行失效接手。最後，在 `BACKUP` 取得控制權之後，升級原始的 `MASTER`。
+{: important}
 
 若要升級 VRA，請執行下列程序。
 

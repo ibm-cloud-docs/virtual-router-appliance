@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Configurando o IPSec no Vyatta 5400
 {: #configuring-ipsec-on-vyatta-5400}
@@ -20,7 +23,7 @@ O dispositivo Brocade 5400 vRouter (Vyatta) será referido como "local" em rela�
 
   * Criar um novo grupo **ike** chamado **teste** e usar **dh-group** como o tipo de troca de chave.
   * Especificar o tipo de criptografia a ser usado; se isso não for configurado, o dispositivo usará **aes128** como um padrão
-  * Usar a função hash **sha-1**<br/><br/>
+  * Use a função hash **sha-1**<br/><br/>
   1\. *set vpn ipsec ike-group TestIKE proposal 1 dh-group '2'*<br/>
   2\. *set vpn ipsec ike-group TestIKE proposal 1 encryption 'aes128'*<br/>
   3\. *set vpn ipsec ike-group TestIKE proposal 1 hash 'sha1'*<br/>
@@ -39,7 +42,7 @@ O dispositivo Brocade 5400 vRouter (Vyatta) será referido como "local" em rela�
   * Especificar o IP do lado remoto e que o IPSec estará usando o segredo pré-compartilhado
   * Use o IP remoto e a chave secreta TestPSK
   * Configurar o grupo **esp** padrão para o túnel como TestESP
-  * "Informar" ao IPSec para usar o grupo ike TestIKE, definido anteriormente<br/><br/>
+  * "Informe" ao IPSec para usar o ike-group TestIKE, que foi definido anteriormente<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication pre-shared-secret TestPSK۪*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 default-esp-group TestESP۪*<br/>
@@ -49,7 +52,7 @@ O dispositivo Brocade 5400 vRouter (Vyatta) será referido como "local" em rela�
 
   * "Informar" ao túnel para mapear para o IP remoto de 169.54.254.117 para o endereço IP local de bond1, 50.97.240.219
   * Rotear somente endereços IP com a sub-rede de 10.54.9.152/29 que está na interface do servidor local para o servidor remoto 169.54.254.117
-  * Rotear o tráfego remoto 169.54.254.117 do túnel 1 para a sub-rede remota de 192.168.1.2/32<br/><br/>
+  * Roteie o túnel 1 tráfego remoto 169.54.254.117 para a sub-rede remota de 192.168.1.2/32<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 local-address ۪50.97.240.219*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 local prefix 10.54.9.152/29*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 remote prefix 192.168.1.2/32*<br/>

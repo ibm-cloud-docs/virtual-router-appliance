@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2018-11-10"
+  years: 2017, 2018, 2019
+lastupdated: "2019-4-17"
+
+keywords: 5600, security, fixes, patches, brocade, os
+
+subcollection: virtual-router-appliance
 
 ---
 
@@ -12,18 +16,104 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # AT&T Vyatta 5600 vRouter 软件补丁
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**截止时间：2019 年 2 月 14 日**
+**截止时间：2019 年 6 月 6 日**
 
 本文档列出了当前支持的 Vyatta 网络操作系统 5600 的补丁。对于 V5.2 和更低版本，补丁使用 S 编号命名。对于 V17.1 和更高版本，补丁以小写字母命名，但不包括“i”、“o”、“l”和“x”。
 
 在单个更新中处理多个 CVE 编号时，将列出最高 CVSS 分数。
 
+## 1801z
+{: #1801z}
+
+**已解决的问题**
+
+|问题编号|优先级|摘要|
+| --- | --- | --- |
+| VRVDR-46941 |微小|具有 SNAT 会话的流量在返回时将使用无状态的 ZBF 进行过滤|
+| VRVDR-46659 |重大|在从 1808* 升级到 1903a 时，带有 mtu 9000 的 I350 intfs 将保持在 u/D 状态|
+| VRVDR-46623 |微小|当描述具有多个词时，在落实时，防火墙“描述”会记录 perl 错误|
+| VRVDR-46549 |严重|“show ip route routing-instance <name> variance”命令中的 Shell 注入特权上报/沙箱转义 |
+| VRVDR-46389 |重大| 如果在（重新）引导后应用 BGP 配置更改，这些更改可能不会生效 |
+| VRVDR-45949 |微小| Netflow 为配置某些非关键字段时发送的每个样本生成一个通知日志 |
+| VRVDR-43169 |微小| 每次有人调用基于 configd C 的 API 但不提供错误 struct 时进行记录已不再有用|
+| VRVDR-41225 |微小| 配置接口描述时，每个空格都被视为换行 |
+
+**已解决的安全漏洞**
+
+|问题编号|CVSS 分数|公告|摘要|
+| --- | --- | --- | --- |
+| VRVDR-46824 |不适用| DSA-4440-1 | CVE-2018-5743, CVE-2018-5745, CVE-2019-6465: Debian DSA-4440-1 : bind9 - 安全性更新 |
+| VRVDR-46603 | 5.3 | DSA-4435-1 | CVE-2019-7317: Debian DSA-4435-1 : libpng1.6 - 安全性更新 |
+| VRVDR-46425 |不适用| DSA-4433-1 | CVE-2019-8320, CVE-2019-8321, CVE-2019-8322, CVE-2019-8323, CVE-2019-8324, CVE-2019-8325: Debian DSA-4433-1 : ruby2.3 - 安全性更新 |
+| VRVDR-46350 |9.1| DSA-4431-1 | CVE-2019-3855, CVE-2019-3856, CVE-2019-3857, CVE-2019-3858, CVE-2019-3859, CVE-2019-3860, CVE-2019-3861, CVE-2019-3862, CVE-2019-3863: Debian DSA-4431-1 : libssh2 - 安全性更新 |
+
+## 1801y
+{: #1801y}
+
+**已解决的问题**
+
+|问题编号|优先级|摘要|
+| --- | --- | --- |
+| VRVDR-46029 |重大| 使用简单文本密码或 AH 类型的 VRRP 认证无法正常工作 |
+| VRVDR-45864 |严重| vyatta-techsupport 远程副本中的 Shell 注入特权上报/沙箱转义|
+| VRVDR-45748 |重大| 缺少对返回 NULL 指针的 zmsg_popstr 的检查，导致 connsync 崩溃数据平面 |
+| VRVDR-45740 |微小| “generate tech-support archive”不应聚集所有现有归档|
+| VRVDR-45720 |重大| 当使用 start_delay 但仅有一个路由器时，vrrp 卡在等待包的状态中|
+| VRVDR-45655 |严重| 执行 VRRP 故障转移时，“PANIC in rte_mbu_alloc” |
+| VRVDR-45059 |重大| sip_expire_session_request 中的 null deref |
+| VRVDR-41419 |重大| 静态分析数据平面修订|
+
+**已解决的安全漏洞**
+
+|问题编号|CVSS 分数|公告|摘要|
+| --- | --- | --- | --- |
+| VRVDR-46139 | 7.0 | DSA-4428-1 | CVE-2019-3842: Debian DSA-4428-1 : systemd - 安全性更新 |
+| VRVDR-46087 |不适用| DSA-4425-1 | CVE-2019-5953: Debian DSA-4425-1 : wget - 安全性更新 |
+| VRVDR-45897 |7.5| DSA-4416-1 | CVE-2019-5716, CVE-2019-5717, CVE-2019-5718, CVE-2019-5719, CVE-2019-9208, CVE-2019-9209, CVE-2019-9214: Debian DSA-4416-1 : wireshark - 安全性更新 |
+| VRVDR-45553 | 5.9 | DSA-4400-1 | CVE-2019-1559: Debian DSA-4400-1 : openssl1.0 - 安全性更新 |
+| VRVDR-45549 |6.5| DSA-4397-1 | CVE-2019-3824: Debian DSA-4397-1 : ldb - 安全性更新 |
+| VRVDR-45347 | 6.8  | DSA-4387-1 | CVE-2018-20685, CVE-2019-6109, CVE-2019-6111: Debian DSA-4387-1 : openssh - 安全性更新 |
+
+**已解决的安全漏洞**
+
+从此补丁开始，以下命令已不推荐使用，并且不再可用：
+  • policy route pbr <name> rule <rule-number> application name <name> 
+  • policy route pbr <name> rule <rule-number> application type <type> 
+  • policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name> 
+  • policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type> 
+  • security application firewall name <name> rule <rule-number> name <app-name> 
+
+运行以上任何命令都将导致错误消息“此功能已禁用”。 
+
+## 1801w
+{: #1801w}
+
+**已解决的问题**
+
+|问题编号|优先级|摘要|
+| --- | --- | --- |
+| VRVDR-45672 |严重| /opt/vyatta/etc/config/ipsec.d/rskeys/localhost.key 中的 RSA 专用密钥的许可权错误 |
+| VRVDR-45591 |严重| 接口 IP MTU 更改未对 Intel x710 NIC 生效 |
+| VRVDR-45466 |微小| 通过 PXE 引导装入配置时，IPv6 地址未缩写，导致 config-sync 问题 |
+| VRVDR-45414 |微小| Vyatta-cpu-shield 未能启动，并针对双套接字的系统上的各种核心抛出 `OSError:[Errno 22] Invalid argument` |
+
+**已解决的安全漏洞**
+
+|问题编号|CVSS 分数|公告|摘要|
+| --- | --- | --- | --- |
+| VRVDR-45253 |7.5| DSA-4375-1 | CVE-2019-3813: Debian DSA 4375-1: spice - 安全性更新|
+| VRVDR-44922 |7.5| DSA-4355-1 | CVE-2018-0732, CVE-2018-0734, CVE-2018-0737, CVE-2018-5407: Debian DSA-4355-1 : openssl1.0 - 安全性更新 |
+| VRVDR-43936 |7.5| DSA-4309-1 | CVE-2018-17540: Debian DSA-4309-1 : strongswan - 安全性更新 |
+
 ## 1801v
+{: #1801v}
 
 **已解决的问题**
 
@@ -50,7 +140,6 @@ lastupdated: "2018-11-10"
 | VRVDR-42020 |重大| RIB 不断重复添加同一路由|
 | VRVDR-18095 |微小| 在执行“show tech-support”的过程中未捕获流监视统计信息|
 
-
 **已解决的安全漏洞**
 
 |问题编号|CVSS 分数|公告|摘要|
@@ -68,6 +157,7 @@ lastupdated: "2018-11-10"
 | VRVDR-43264|5.6| DSA-4274-1 | CVE-2018-3620、CVE-2018-3646: Debian DSA-4274- 1: Xen 安全性更新|
 
 ## 1801u
+{: #1801u}
 
 **已解决的问题**
 
@@ -84,13 +174,14 @@ lastupdated: "2018-11-10"
 | VRVDR-44276 |不适用| DSA-4331-1 | CVE-2018-16839、CVE-2018-16842: Debian DSA-4331-1 : curl - 安全性更新|
 
 ## 1801t
+{: #1801t}
 
 **已解决的问题**
 
 |问题编号|优先级|摘要|
 | --- | --- | --- |
 |VRVDR-44172|阻碍|在 mss-clamp 测试中报告错误“接口 [openvpn] 无效”|
-|VRVDR-43969|微小|Vyatta 18.x GUI 报告不正确的状态检查内存使用情况|
+|VRVDR-43969|微小| Vyatta 18.x GUI 报告了不正确的状态检查内存使用情况 |
 |VRVDR-43847|重大|结合接口上的 TCP 对话吞吐量缓慢|
 
 **已解决的安全漏洞**
@@ -100,13 +191,14 @@ lastupdated: "2018-11-10"
 |VRVDR-43842|不适用|DSA-4305-1|CVE-2018-16151、CVE-2018-16152: Debian DSA4305-1: strongSwan - 安全性更新|
 
 ## 1801s
+{: #1801s}
 
 **已解决的问题**
 
 |问题编号|优先级|摘要|
 | --- | --- | --- |
 |VRVDR-44041|重大|SNMP ifDescr oid 响应缓慢|
- 
+
 **已解决的安全漏洞**
 
 |问题编号|CVSS 分数|公告|摘要|
@@ -114,38 +206,40 @@ lastupdated: "2018-11-10"
 |VRVDR-44074|9.1|DSA-4322-1|CVE-2018-10933: Debian DSA-4322-1: libssh - 安全性更新|
 |VRVDR-44054|8.8|DSA-4319-1|CVE-2018-10873: Debian DSA-4319-1: spice - 安全性更新|
 |VRVDR-44038|不适用|DSA-4315-1|CVE-2018-16056、CVE-2018-16057、CVE-2018- 16058: Debian DSA-4315-1: wireshark - 安全性更新|
-|VRVDR-44033|不适用|DSA-4314-1|CVE-2018-18065: Debian DSA-4314-1: net-snmp - 安全性更新| 
+|VRVDR-44033|不适用|DSA-4314-1|CVE-2018-18065: Debian DSA-4314-1: net-snmp - 安全性更新|
 |VRVDR-43922|7.8|DSA-4308-1|CVE-2018-6554、CVE-2018-6555、CVE-2018-7755、CVE-2018-9363、CVE-2018-9516、CVE-2018-10902、CVE-2018-10938、CVE-2018-13099、CVE-2018- 14609、CVE-2018-14617、CVE-2018-14633、CVE- 2018-14678、CVE-2018-14734、CVE-2018-15572、CVE-2018-15594、CVE-2018-16276、CVE-2018- 16658、CVE-2018-17182: Debian DSA-4308-1: linux - 安全性更新|
 |VRVDR-43908|9.8|DSA-4307-1|CVE-2017-1000158、CVE-2018-1060、CVE-2018- 1061、CVE-2018-14647: Debian DSA-4307-1: python3.5 - 安全性更新|
 |VRVDR-43884|7.5|DSA-4306-1|CVE-2018-1000802、CVE-2018-1060、CVE-2018- 1061、CVE-2018-14647: Debian DSA-4306-1: python2.7 - 安全性更新|
 
 ## 1801r
+{: #1801r}
 
 **已解决的问题**
 
 |问题编号|优先级|摘要|
 | --- | --- | --- |
 |VRVDR-43738|重大|未传递通过 SNAT 会话返回的 ICMP 不可达包|
-|VRVDR-43538|重大|在 bondinginterface 上收到大小太大错误| 
-|VRVDR-43519|重大|Vyatta-keepalived 正在运行，但不存在任何配置| 
-|VRVDR-43517|重大|VFP/基于策略的 IPsec 的端点位于 vRouter 本身时流量失败| 
+|VRVDR-43538|重大|在 bondinginterface 上收到大小太大错误|
+|VRVDR-43519|重大|Vyatta-keepalived 正在运行，但不存在任何配置|
+|VRVDR-43517|重大|VFP/基于策略的 IPsec 的端点位于 vRouter 本身时流量失败|
 |VRVDR-43477|重大|落实 IPsec VPN 配置时返回警告：“警告：无法执行 [VPN toggle net.ipv4.conf.intf.disable_policy]，收到错误代码 65280”|
 |VRVDR-43379|微小|NAT 统计信息未正确显示|
- 
+
 **已解决的安全漏洞**
 
 |问题编号|CVSS 分数|公告|摘要|
 | --- | --- | --- | --- |
 |VRVDR-43837|7.5|DSA-4300-1|CVE-2018-10860: Debian DSA-4300-1: libarchive-zip-perl - 安全性更新|
-|VRVDR-43693|不适用|DSA-4291-1|CVE-2018-16741: Debian DSA-4291-1: mgetty - 安全性更新| 
+|VRVDR-43693|不适用|DSA-4291-1|CVE-2018-16741: Debian DSA-4291-1: mgetty - 安全性更新|
 |VRVDR-43578|不适用|DSA-4286-1|CVE-2018-14618: Debian DSA-4286-1: curl - 安全性更新|
-|VRVDR-43326|不适用|DSA-4280-1|CVE-2018-15473: Debian DSA-4280-1: openssh - 安全性更新| 
+|VRVDR-43326|不适用|DSA-4280-1|CVE-2018-15473: Debian DSA-4280-1: openssh - 安全性更新|
 |VRVDR-43198|不适用|DSA-4272-1|CVE-2018-5391: Debian DSA-4272-1: Linux 安全性更新 (FragmentSmack)|
-|VRVDR-43110|不适用|DSA-4265-1|Debian DSA-4265-1: xml-security-c - 安全性更新| 
-|VRVDR-43057|不适用|DSA-4260-1|CVE-2018-14679、CVE-2018-14680、CVE-2018-14681、CVE-2018-14682: Debian DSA-4260-1: libmspack - 安全性更新| 
+|VRVDR-43110|不适用|DSA-4265-1|Debian DSA-4265-1: xml-security-c - 安全性更新|
+|VRVDR-43057|不适用|DSA-4260-1|CVE-2018-14679、CVE-2018-14680、CVE-2018-14681、CVE-2018-14682: Debian DSA-4260-1: libmspack - 安全性更新|
 |VRVDR-43026|9.8|DSAL4259-1|Debian DSA-4259-1: ruby2.3 - 安全性更新；VRVDR-42994N/ADSA-4257-1CVE-2018-10906: Debian DSA-4257-1: fuse - 安全性更新|
 
 ## 1801q
+{: #1801q}
 
 **已解决的问题**
 
@@ -167,7 +261,7 @@ lastupdated: "2018-11-10"
 |VRVDR-41829|重大|数据平面核心转储，直至系统对 SIP ALG 浸泡测试无响应|
 |VRVR-41683|阻碍|识别到的通过 VRF 获得的 DNS 名称服务器地址不一致|
 |VRVDR-41628|微小|router-advertisement 中的路径/前缀在内核和数据平面中处于活动状态，但被 RIB 忽略|
- 
+
 **已解决的安全漏洞**
 
 |问题编号|CVSS 分数|公告|摘要|
@@ -176,6 +270,7 @@ lastupdated: "2018-11-10"
 |VRVDR-43111|不适用|DSA-4266-1| CVE-2018-5390、CVE-2018-13405: Debian DSA- 4266-1 - Linux 安全性更新|
 
 ## 1801n
+{: #1801n}
 
 **已解决的问题**
 
@@ -201,6 +296,7 @@ lastupdated: "2018-11-10"
 |VRVDR-41924|8.8|DSA-4201-1|CVE-2018-8897、CVE-2018-10471、CVE-2018-10472、CVE-2018-10981、CVE-2018-10982: Debian DSA-4201- 1: xen - 安全性更新|
 
 ## 5.2R6S12
+{: #5-2R6S12}
 
 2018 年 6 月 21 日发布。
 
@@ -220,6 +316,7 @@ lastupdated: "2018-11-10"
 |VRVDR-41680|7.8|DSA-4188-1| Debian DSA-4188-1: linux - 安全性更新 (Spectre) |
 
 ## 1801m
+{: #1801m}
 
 2018 年 6 月 15 日发布。
 
@@ -240,6 +337,7 @@ lastupdated: "2018-11-10"
 |VRVDR-42284|7.5|DSA-4222-1|CVE-2018-12020: Debian DSA-4222-1: gnupg2 - 安全性更新|
 
 ## 5.2R6S11
+{: #5-2R6S11}
 
 2018 年 6 月 11 日发布
 
@@ -263,6 +361,7 @@ lastupdated: "2018-11-10"
 |VRVDR-41795|6.5|DSA-4195-1|CVE-2018-0494: Debian DSA-4195-1: wget - 安全性更新|
 
 ## 1801k
+{: #1801k}
 
 2018 年 6 月 8 日发布。
 
@@ -289,6 +388,7 @@ lastupdated: "2018-11-10"
 |VRVDR-41795|6.5|DSA-4195-1|CVE-2018-0494: Debian DSA-4195-1: wget - 安全性更新|
 
 ## 1801j
+{: #1801j}
 
 2018 年 5 月 18 日发布
 
@@ -307,6 +407,7 @@ lastupdated: "2018-11-10"
 |VRVDR-41680|7.8|DSA-4188-1|Debian DSA-4188-1: linux - 安全性更新|
 
 ## 5.2R6S10
+{: #5-2R6S10}
 
 2018 年 5 月 17 日发布
 
@@ -317,6 +418,7 @@ lastupdated: "2018-11-10"
 |VRVDR-27018|严重|运行的配置文件是全局可读文件|
 
 ## 1801h
+{: #1801h}
 
 2018 年 5 月 11 日发布。
 
@@ -334,6 +436,7 @@ lastupdated: "2018-11-10"
 |VRVDR-41797|7.8|DSA-4196-1|CVE-2018-1087、CVE-2018-8897: Debian DSA-4196-1: Linux 安全性更新|
 
 ## 5.2R6S
+{: #5-2R6S}
 
 2018 年 5 月 8 日发布。
 
@@ -350,6 +453,7 @@ lastupdated: "2018-11-10"
 |VRVDR-41512|9.8|DSA-4172-1|CVE-2018-6797、CVE-2018-6798、CVE-2018-6913: Debian DSA-4172-1: perl - 安全性更新|
 
 ## 1801g
+{: #1801g}
 
 2018 年 5 月 4 日发布。
 
@@ -361,6 +465,7 @@ lastupdated: "2018-11-10"
 |VRVDR-40965|重大|数据平面崩溃后，结合无法恢复|
 
 ## 1801f
+{: #1801f}
 
 2018 年 4 月 23 日发布
 
@@ -389,7 +494,9 @@ lastupdated: "2018-11-10"
 |VRVDR-41330|6.5|DSA-4157-1|CVE-2017-3738、CVE-2018-0739: Debian DSA-4157-1: openssl - 安全性更新|
 |VRVDR-41215|6.1|CVE-2018-1059|CVE-2018-1059 - VM 访客通过 DPDK vhost 进行越界主机内存访问|
 
-##5.2R6S8
+## 5.2R6S8
+{: #5-2R6S8}
+
 2018 年 4 月 16 日发布。
 
 **已解决的问题**
@@ -404,14 +511,16 @@ lastupdated: "2018-11-10"
 | --- | --- | --- | --- |
 |VRVDR-41330|6.5|DSA-4157-1|CVE-2017-3738、CVE-2018-0739: Debian DSA-4157-1: openssl - 安全性更新
 
-##1801e
+## 1801e
+{: #1801e}
+
 2018 年 3 月 28 日发布。
 
 **已解决的问题**
 
 |问题编号|优先级|摘要|
 | --- | --- | --- |
-|VRVDR-39985|微小|将丢弃大于 GRE 隧道 MTU 的 TCP DF 包，并且不会返回所需的 ICMP 分段| 
+|VRVDR-39985|微小|将丢弃大于 GRE 隧道 MTU 的 TCP DF 包，并且不会返回所需的 ICMP 分段|
 |VRVDR-41088|严重|扩展（4 字节）ASN 未以内部方式表示为无符号类型|
 |VRVDR-40988|严重|与特定数量的接口配合使用时，vhost 不启动|
 |VRVDR-40927|严重|DNAT：SIP“200 正常”中的 SDP 在位于 183 响应之后时未转换|
@@ -425,7 +534,9 @@ lastupdated: "2018-11-10"
 | --- | --- | --- | --- |
 |VRVDR-41172|不适用|DSA-4140-1|DSA 4140-1: libvorbis 安全性更新|
 
-##5.2R6S7
+## 5.2R6S7
+{: #5-2R6S7}
+
 2018 年 3 月 15 日发布。
 
 **已解决的问题**
@@ -434,7 +545,9 @@ lastupdated: "2018-11-10"
 | --- | --- | --- |
 |VRVDR-38801|重大|通过 IPsec VTI 收到了多段包，这导致结合接口停止运行
 
-##5.2R6S6
+## 5.2R6S6
+{: #5-2R6S6}
+
 2018 年 3 月 12 日发布。
 
 **已解决的问题**
@@ -443,7 +556,7 @@ lastupdated: "2018-11-10"
 | --- | --- | --- |
 |VRVDR-40281|重大|从 5.2 升级为更新版本后，在操作方式下生成错误“vbash: show: 找不到命令”|
 |VRVDR-40135|重大|在 VIF 接口网桥端口上未收到生成树包|
-|VRVDR-39991|重大|有状态防火墙丢弃同一接口上两个子网之间的包| 
+|VRVDR-39991|重大|有状态防火墙丢弃同一接口上两个子网之间的包|
 |VRVDR-36481|重大|从 5.2R4 升级为 17.1.0/从 5.2R4 降级为 5.2R3 时，显示 /opt/vyatta/sbin/vyatta-install-image.functions: 行 372: is_onie_boot: 找不到命令|
 
 **已解决的安全漏洞**
@@ -453,7 +566,9 @@ lastupdated: "2018-11-10"
 |VRVDR-40019|8.8|DSA-4086-1|CVE-2017-15412: Debian DSA-4086-1: libxml2 - 安全性更新|
 |VRVDR-39907|7.8|CVE-2017-5717|分支目标注入 / CVE-2017-5717 / Spectre，亦称为变体 #2 |
 
-##1801d
+## 1801d
+{: #1801d}
+
 2018 年 3 月 8 日发布。
 
 **已解决的问题**
@@ -468,11 +583,13 @@ lastupdated: "2018-11-10"
 
 |问题编号|CVSS 分数|公告|摘要|
 | --- | --- | --- | --- |
-|VRVDR-40327|9.8| |DSA-4098-1
-CVE-2018-1000005、CVE-20178-1000007: Debian DSA- 4098-1: curl - 安全性更新 |
+|VRVDR-40327|9.8| | DSA-4098-1
+CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – 安全性更新 |
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | 分支目标注入 / CVE-2017-5715 / Spectre，即变体 #2 |
 
-##1801c
+## 1801c
+{: #1801c}
+
 2018 年 3 月 7 日发布。
 
 **已解决的问题**
@@ -481,7 +598,9 @@ CVE-2018-1000005、CVE-20178-1000007: Debian DSA- 4098-1: curl - 安全性更新
 | --- | --- | --- |
 |VRVDR-40281|重大|从 5.2 升级为更新版本后，在操作方式下生成错误“-vbash: show: 找不到命令”|
 
-##1801b
+## 1801b
+{: #1801b}
+
 2018 年 2 月 21 日发布。
 
 **已解决的问题**
@@ -492,7 +611,9 @@ CVE-2018-1000005、CVE-20178-1000007: Debian DSA- 4098-1: curl - 安全性更新
 |VRVDR-40613|严重|如果其中一个物理链路停止运行，那么结合接口不会启动|
 |VRVDR-40328|重大|cloud-init 映像需要较长时间来引导|
 
-##1801a
+## 1801a
+{: #1801a}
+
 2018 年 2 月 7 日发布。
 
 **已解决的问题**
@@ -501,7 +622,9 @@ CVE-2018-1000005、CVE-20178-1000007: Debian DSA- 4098-1: curl - 安全性更新
 | --- | --- | --- |
 |VRVDR-40324|重大|在具有结合接口的路由器上无负载时，负载平均值超过 1.0|
 
-##5.2R6S5
+## 5.2R6S5
+{: #5-2R6S5}
+
 2018 年 1 月 19 日发布。
 
 **已解决的安全漏洞**
@@ -511,7 +634,9 @@ CVE-2018-1000005、CVE-20178-1000007: Debian DSA- 4098-1: curl - 安全性更新
 |VRVDR-39891|5.6|DSA-4078-1|CVE-2017-5754: Debian DSA-4078-1: linux 安全性更新 (Meltdown) |
 |VRVDR- 38265|8.8|DSA-3970-1|CVE-2017-1|
 
-##5.2R6S4
+## 5.2R6S4
+{; #5-2R6S4}
+
 2017 年 12 月 15 日发布。
 
 **已解决的问题**
@@ -525,9 +650,11 @@ CVE-2018-1000005、CVE-20178-1000007: Debian DSA- 4098-1: curl - 安全性更新
 |VRVDR-37934|严重|aggregate-address 配置为使用 summary-only/缺少静态路由时，BGPd 崩溃|
 |VRVDR-37717|微小|重命名版本输出中的 hard-enf“描述”和“许可证”字段|
 |VRVDR-37689|重大|NIC PF 的中断率高|
-|VRVDR-37633|严重|保持活动挂起|
+|VRVDR-37633|严重| 保持活动挂起 |
 
 ## 5.2R6S3
+{: #5-2R6S3}
+
 2017 年 12 月 4 日发布。
 
 **已解决的问题**
@@ -537,7 +664,9 @@ CVE-2018-1000005、CVE-20178-1000007: Debian DSA- 4098-1: curl - 安全性更新
 |VRVDR-39207|严重|ARP 在结合 VIF 接口上失败|
 
 
-##5.2R6S2
+## 5.2R6S2
+{: #5-2R6S2}
+
 2017 年 11 月 2 日发布。
 
 **已解决的问题**
@@ -547,7 +676,9 @@ CVE-2018-1000005、CVE-20178-1000007: Debian DSA- 4098-1: curl - 安全性更新
 |VRVDR-39177|重大|未使用 -push dhcp-option 应用 OpenVPN 服务器 domain-name 选项|
 |VRVDR-39129|严重|OpenVPN 服务器 push-route 参数导致 OpenVPN 无法启动|
 
-##5.2R6S1
+## 5.2R6S1
+{: #5.2R6S1}
+
 2017 年 10 月 12 日发布。
 
 **已解决的安全漏洞**

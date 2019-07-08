@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ipsec, firewall, configure, policy
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Configuración de un túnel IPsec que funciones con cortafuegos de zona
@@ -22,6 +28,8 @@ En versiones anteriores de Virtual Router Appliance, los túneles IPsec que util
 A continuación se muestra una configuración de ejemplo de dos máquinas con IPsec entre ellas:
 
 ###Máquina A
+{: #machine-a}
+
 ```
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -39,6 +47,8 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '17
 ```
 
 ###Máquina B
+{: #machine-b}
+
 ```
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -55,9 +65,9 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-Esto configura un túnel genérico que direcciona el tráfico 172.16.x.x entre las dos máquinas. La Máquina B tiene 172.16.100.1 como dirección de bucle de retorno para proporcionar un punto final con el que realizar pruebas, mientras que la Máquina A tiene una máquina virtual en una VLAN direccionada para proporcionar el tráfico de origen del túnel. 
+Esto configura un túnel genérico que direcciona el tráfico 172.16.x.x entre las dos máquinas. La Máquina B tiene 172.16.100.1 como dirección de bucle de retorno para proporcionar un punto final con el que realizar pruebas, mientras que la Máquina A tiene una máquina virtual en una VLAN direccionada para proporcionar el tráfico de origen del túnel.
 
-Estos son los resultados:
+Puede ver los resultados aquí:
 
 ```
 [root@acs-jmat-migserver ~]# ping -c 5 172.16.100.1
@@ -86,7 +96,7 @@ set security firewall name ALLOWALL rule 30 action 'accept'
 set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
- 
+
 A continuación, añada políticas entre las tres interfaces:
 
 ```

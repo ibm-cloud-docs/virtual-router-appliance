@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: basics, vra, access, configure, gui
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Acceso y configuración de IBM Virtual Router Appliance
@@ -19,10 +25,13 @@ lastupdated: "2018-11-10"
 
 VRA puede configurarse con una sesión de consola remota mediante SSH o iniciando sesión en la GUI de web. De forma predeterminada, la web GUI no está disponible en la Internet pública. Para habilitar la web GUI, primero inicie sesión mediante SSH.
 
-**NOTA:** La configuración de VRA fuera de su shell e interfaz puede producir resultados inesperados y, por lo tanto, no se recomienda.
+La configuración de VRA fuera de su shell e interfaz puede producir resultados inesperados y no se recomienda.
+{: note}
 
 ## Acceso al dispositivo mediante SSH
-La mayoría de los sistemas operativos basados en Unix, como Linux, BSD y Mac OSX, incluyen clientes OpenSSH con las instalaciones predeterminadas. Los usuarios de Windows pueden descargar un cliente SSH, como PuTTy.
+{: #accessing-the-device-using-ssh}
+
+La mayoría de los sistemas operativos basados en UNIX, como Linux, BSD y Mac OSX, incluyen clientes OpenSSH con las instalaciones predeterminadas. Los usuarios de Windows pueden descargar un cliente SSH, como PuTTy.
 
 Se recomienda inhabilitar el SSH en la IP pública y permitirlo solo en la IP privada. Las conexiones a las IP privadas requieren que el cliente esté conectado a la red privada. Puede iniciar sesión con una de las opciones de VPN predeterminadas (PPTP VPN, SSL-VPN e IPsec) ofrecidas en el portal de clientes, o utilizando una solución VPN personalizada configurada en VRA.
 
@@ -30,7 +39,8 @@ Utilice la cuenta de Vyatta de la página **Detalles del dispositivo** para inic
 
 `ssh vyatta@[IP address] `
 
-**NOTA:** Se recomienda mantener inhabilitados los inicios de sesión como root. Inicie sesión utilizando una cuenta de Vyatta y ascienda a root solo cuando sea necesario.
+Se recomienda mantener inhabilitados los inicios de sesión como root. Inicie sesión utilizando una cuenta de Vyatta y ascienda a root solo cuando sea necesario.
+{: tip}
 
 Las claves SSH también se pueden suministrar durante el despliegue para evitar que la cuenta de Vyatta inicie sesión. Después de verificar la capacidad para acceder a VRA utilizando la clave SSH, puede inhabilitar el inicio de sesión de usuario/contraseña estándar ejecutando los mandatos siguientes:
 
@@ -42,6 +52,7 @@ $ configure
 ```
 
 ## Acceso al dispositivo mediante la Web GUI
+{: #accessing-the-device-using-the-web-gui}
 
 Inicie sesión en VRA utilizando las instrucciones de SSH anteriores y ejecute los mandatos siguientes para habilitar el servicio HTTPS:
 
@@ -52,9 +63,11 @@ $ configure
 # save
 ```
 
-Una vez completados los mandatos, indique `https://<ip.address>`en la barra de dirección de su navegador, sustituyendo la dirección de IP por su VRA. Es posible que se le solicite aceptar el certificado emitido de VRA. Si es así, inicie sesión en la interfaz web con las credenciales de Vyatta cuando se le solicite.
+Una vez completados estos mandatos, indique `https://<ip.address>` en la barra de dirección de su navegador, sustituyendo la dirección de IP por la de su VRA. Es posible que se le solicite aceptar el certificado emitido de VRA. Si es así, inicie sesión en la interfaz web con las credenciales de Vyatta cuando se le solicite.
 
 ## Modalidades
+{: #modes-1}
+
 **Modalidad de configuración:** Se invoca con el mandato `configure`. En esta modalidad se realiza la configuración del sistema VRA.
 
 **Modo operativo:** La modalidad inicial al registrarse en un sistema VRA. En esta modalidad, se pueden ejecutar los mandatos `show` para consultar información sobre el estado del sistema. El sistema también puede reiniciarse en esta modalidad.
@@ -77,6 +90,7 @@ set system name-server '10.0.80.12'
 La marca hash (`#`) indica la modalidad Configuración. Al iniciar un mandato con `run` se indica al shell VRA que se presenta un mandato operacional. El ejemplo anterior también ilustra la capacidad a "grep" en la salida de mandatos.
 
 ## Exploración de mandatos
+{: #command-exploration}
 
 El shell de mandato de VRA incluye funciones de finalización de separador. Si desea saber qué mandatos están disponibles, pulse la tecla tabulador para obtener una lista con una breve explicación. Esto funciona en el indicador de shell y mientras se escribe un mandato. Por ejemplo:  
 
@@ -88,6 +102,8 @@ Possible completions:
 ```
 
 ## Configuración de ejemplo
+{: #sample-configuration}
+
 Las configuraciones se organizan en un patrón jerárquico de nodos. Considere este bloque de ruta estática:
 
 ```
@@ -114,11 +130,13 @@ set protocols static route 10.0.0.0/8 next-hop 10.60.63.193
 set protocols static route 192.168.1.0/24 next-hop 10.0.0.1
 ```
 
-Este ejemplo ilustra que es posible que un nodo (estático) tenga varios nodos hijo. Para eliminar la ruta de `192.168.1.0/24` debe utilizarse el mandato `delete protocols static route 192.168.1.0/24`. Si `192.168.1.0/24` se deja fuera del mandato, los nodos de ruta se marcan para supresión.
+Este ejemplo ilustra que es posible que un nodo (estático) tenga varios nodos hijo. Para eliminar la ruta de `192.168.1.0/24` debe utilizarse el mandato `delete protocols static route 192.168.1.0/24`. Si `192.168.1.0/24` se ha dejado fuera del mandato, se marcan los dos nodos de ruta para suprimir.
 
 Recuerde que la configuración no se cambia hasta que se emite el mandato `commit`. Para comparar la configuración de ejecución actual con los cambios presentes en el búfer de configuración, utilice el mandato `compare`. Para vaciar el búfer de configuración, utilice `discard`.
 
 ## Control de accesos basado en roles y usuarios (RBAC)
+{: #users-and-role-based-access-control-rbac-}
+
 Las cuentas de usuario pueden configurarse con tres niveles de acceso:
 
 * Administrador
@@ -139,7 +157,8 @@ set system login user [account] level operator
 commit
 ```
 
-**NOTA:** Cuando no se especifica ningún nivel, se considera el usuario a nivel de administrador. En este caso, las contraseñas de usuario se muestran como cifradas en el archivo de configuración.
+Cuando no se especifica ningún nivel, se considera el usuario a nivel de administrador. En este caso, las contraseñas de usuario se muestran como cifradas en el archivo de configuración.
+{: note}
 
 El control de acceso basado en roles (RBAC) es un método de restricción de acceso para parte de la configuración de los usuarios autorizados. RBAC permite a los administradores definir reglas para un grupo de usuarios que restringe los mandatos que pueden ejecutar.
 

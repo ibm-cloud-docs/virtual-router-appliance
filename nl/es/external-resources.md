@@ -5,6 +5,10 @@ copyright:
 
 lastupdated: "2018-11-10"
 
+keywords: resources, partners, blog, brief
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,6 +18,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Otros recursos de IBM Virtual Router Appliance
 {: #other-resources-or-ibm-virtual-router-appliance}
@@ -22,7 +28,7 @@ Estos recursos han sido creados por IBM© y por algunos de nuestros socios y cli
 
 * [**Resumen del producto: AT&T Vyatta vRouter: red ágil y alto rendimiento** ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/final_vyatta_product_brief_june_2018_2.pdf){:new_window}
 
-    *"Como primer direccionador virtual para redes de transportista, el dispositivo AT&T Vyatta vRouter es el direccionador de software que ofrece mayor rendimiento de la industria. Con un rendimiento de más de 10 Gbps por núcleo físico, AT & T Vyatta vRouter proporciona funciones avanzadas de direccionamiento, cortafuegos con estado, NAT y VPN en software sin sacrificar la fiabilidad y el rendimiento del transporte de las soluciones de red de hardware."*
+    *"Como primer direccionador virtual para redes de transportista, el dispositivo AT&T Vyatta vRouter es el direccionador de software que ofrece mayor rendimiento de la industria. Con un rendimiento de más de 10 Gbps por núcleo físico, AT&T Vyatta vRouter proporciona funciones avanzadas de direccionamiento, cortafuegos con estado, NAT y VPN en software sin sacrificar la fiabilidad y el rendimiento del transporte de las soluciones de red de hardware."*
 
 * [**Publicación del blog: Mantenga protegida su nube con los servicios de seguridad de red de IBM** ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/blogs/bluemix/2017/09/keep-cloud-safe-ibm-network-security-services/){:new_window}
 

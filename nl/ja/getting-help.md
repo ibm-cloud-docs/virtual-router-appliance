@@ -4,6 +4,10 @@ copyright:
   years: 2017,2018
 lastupdated: "2018-11-10"
 
+keywords: help, support, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,15 +17,17 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
-# IBM 仮想ルーター・アプライアンスのためのヘルプおよびサポート
+# IBM Virtual Router Appliance のためのヘルプおよびサポート
 {: #getting-help-and-support-for-ibm-virtual-router-appliance}
 
-IBM© 仮想ルーター・アプライアンスを使用しているときに問題や質問がある場合は、情報を検索したり、以下にリストしたいずれかのフォーラムで質問したりして、支援を得ることができます。 サポート・チケットをオープンすることもできます。
+IBM© Virtual Router Appliance を使用しているときに問題や質問がある場合は、情報を検索したり、以下にリストしたいずれかのフォーラムで質問したりして、支援を得ることができます。 サポート・チケットをオープンすることもできます。
 
 フォーラムを使用して質問する場合は、IBM Cloud 開発チームの目に留まるように質問にタグを付けてください。
 
-* IBM 仮想ルーター・アプライアンスについて技術的な質問がある場合は、[スタック・オーバーフロー](https://stackoverflow.com/search?q=vra+ibm-cloud)に投稿してください。その際、質問には「vra」タグと「ibm-cloud」タグを付けてください。
+* IBM Virtual Router Appliance について技術的な質問がある場合は、[スタック・オーバーフロー](https://stackoverflow.com/search?q=vra+ibm-cloud)に投稿してください。その際、質問には「vra」タグと「ibm-cloud」タグを付けてください。
 * サービスおよび開始の手順に関する質問については、[IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud) フォーラムを使用してください。 「vra」と「ibm-cloud」のタグを含めてください。
 
 フォーラムの使用について詳しくは、[ヘルプの利用](/docs/get-support?topic=get-support-using-avatar)を参照してください。

@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: backup, configuration
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 备份配置
 {: #backing-up-a-configuration}
 
 对系统进行更改后，需要备份配置命令。这可以通过运行操作方式命令 `show configuration commands`，然后保存输出（例如，通过从 SSH 会话复制和粘贴）来完成。这将视为配置的最小备份。
 
-更完整的备份涉及生成系统的技术支持归档： 
+更完整的备份涉及生成系统的技术支持归档：
 
 ```
 $ generate tech-support archive
@@ -28,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-然后，可以将生成的归档文件从虚拟路由器设备复制到所选的存储设备。该归档包含配置信息、主目录和日志记录信息的备份。这是完整得多的系统备份。 
+然后，可以将生成的归档文件从虚拟路由器设备复制到所选的存储设备。该归档包含配置信息、主目录和日志记录信息的备份。这是完整得多的系统备份。
 
 例如：
 

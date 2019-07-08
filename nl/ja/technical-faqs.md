@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: faqs, vlan, traffic, firewall, SSH,
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,14 +18,16 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
+{:important: .important}
 
-# IBM 仮想ルーター・アプライアンスの技術的な FAQ
+# IBM Virtual Router Appliance の技術的な FAQ
 {: #technical-faqs-for-ibm-virtual-router-appliance}
 
-以下のよくある質問は、IBM© 仮想ルーター・アプライアンス (VRA) の構成と、Vyatta 5400 から VRA へのマイグレーションに関するものです。
+以下のよくある質問は、IBM© Virtual Router Appliance (VRA) の構成と、Vyatta 5400 から VRA へのマイグレーションに関するものです。
 
 ## プライベート VLAN 上にあるホストからインターネットへのトラフィックを許可するにはどうすればよいですか？
-{:faq}
+{: faq}
 
 このトラフィックは、パブリック・ソース IP を取得する必要があります。したがって、ソース NAT は、プライベート IP を VRA のパブリック IP でマスカレードする必要があります。
 
@@ -37,7 +43,7 @@ set service nat source rule 1000 translation address masquerade
 これにより、インターネット転送可能なソース・アドレスを既に持っているパケットを阻害しないことが保証されます。
 
 ## インターネットへのトラフィックをフィルタリングし、特定のプロトコル/宛先のみを許可するにはどうすればよいですか?
-{:faq}
+{: faq}
 
 これは、ソース NAT とファイアウォールを結合する必要がある場合によくある質問です。
 
@@ -58,7 +64,7 @@ set service nat source rule 10 source address '10.1.2.3'
 set service nat source rule 10 translation address '150.1.2.3'
 ```
 
-`150.1.2.3` は、VRA のパブリック・アドレスです。 
+`150.1.2.3` は、VRA のパブリック・アドレスです。
 
 ホストと VRA のパブリック・トラフィックを区別できるように、VRA の VRRP パブリック・アドレスを使用することを強くお勧めします。
 
@@ -78,12 +84,12 @@ set security firewall name TO_INTERNET rule 20 source address '150.1.2.5'
 set security firewall name TO_INTERNET rule 20 state 'enable'
 ```
 
-必要な設計目標はソース NAT とファイアウォールの組み合わせによって達成されます。 
+必要な設計目標はソース NAT とファイアウォールの組み合わせによって達成されます。
 
-必ず、ルールが設計に合うものであること、および、ブロックする必要があるトラフィックを許可するような他のルールがないようにしてください。 
+必ず、ルールが設計に合うものであること、および、ブロックする必要があるトラフィックを許可するような他のルールがないようにしてください。
 
 ## ゾーン・ベースのファイアウォールで VRA 自体を保護するにはどうすればよいですか?
-{:faq}
+{: faq}
 
 VRA には `local zone` はありません。
 
@@ -92,7 +98,7 @@ Control Plane Policing (CPP) 機能は `local` ファイアウォールとして
 これはステートレス・ファイアウォールであり、VRA 自体が発信元であるアウトバウンド・セッションのトラフィックを返すことを明示的に許可する必要があることに注意してください。
 
 ## SSH を制限し、インターネットからの接続をブロックするにはどうすればよいですか？
-{:faq}
+{: faq}
 
 インターネットからの SSH 接続を許可しないこと、および、プライベート・アドレスへの別のアクセス手段 (SSL VPN など) を使用することが、ベスト・プラクティスであると考えられます。
 

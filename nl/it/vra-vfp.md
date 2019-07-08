@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: vfp, ipsec, firewall
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Configurazione di un'interfaccia VFP con firewall zona e IPsec
 {: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
 
-Quando arriva un datagramma IPsec, viene elaborato tramite le regole del firewall e quindi deincapsulato. Il nuovo datagramma risultante non è affatto associato a un'interfaccia. Normalmente, questo non è un problema e può proseguire all'interfaccia di destinazione, ma i firewall zona impediranno al datagramma di andare avanti. Qualsiasi datagramma che non proviene da un'interfaccia in una politica di zona viene eliminato. Un'interfaccia VFP, tuttavia, informa il firewall zona che il datagramma proveniva da un'interfaccia, il che consente l'applicazione delle regole. 
+Quando arriva un datagramma IPsec, viene elaborato tramite le regole del firewall e quindi deincapsulato. Il nuovo datagramma risultante non è affatto associato a un'interfaccia. Normalmente, questo non è un problema e può proseguire all'interfaccia di destinazione, ma i firewall zona impediranno al datagramma di andare avanti. Qualsiasi datagramma che non proviene da un'interfaccia in una politica di zona viene eliminato. Un'interfaccia VFP, tuttavia, informa il firewall zona che il datagramma proveniva da un'interfaccia, il che consente l'applicazione delle regole.
 
 Per configurare un'interfaccia VFP per gestire il traffico IPsec, crea prima un punto funzione definendo il VFP con un singolo IP:
 

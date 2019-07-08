@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, os
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 升级操作系统
 {: #upgrading-the-os}
@@ -21,11 +27,12 @@ lastupdated: "2018-11-10"
 
 要开始升级过程，请在 IBM 支持凭单系统上开具凭单以请求升级并将新的 ISO 映像上传到您的系统。您将收到来自 IBM 支持人员的电子邮件，其中指示 ISO 文件的上传位置。在以下示例中，此文件位于目录 ``tmp`` 中。
 
-**注：**下面说明的升级过程适用于单个 VRA。如果是在高可用性方式下使用 VRA，那么必须在两个系统上运行相同的升级命令。此外，建议您首先升级 `BACKUP` 机器，并验证它是否能正常运行。然后访问 `MASTER` 机器，并使用 `reset vrrpp` 命令对其执行故障转移。最后，在 `BACKUP` 获得控制权后，升级原始 `MASTER`。
+下面说明的升级过程适用于单个 VRA。如果是在高可用性方式下使用 VRA，那么必须在两个系统上运行相同的升级命令。此外，建议您首先升级 `BACKUP` 机器，并验证它是否能正常运行。然后访问 `MASTER` 机器，并使用 `reset vrrpp` 命令对其执行故障转移。最后，在 `BACKUP` 获得控制权后，升级原始 `MASTER`。
+{: important}
 
 要升级 VRA，请执行以下过程。
 
-1. 运行命令 ``add system image <Local ISO File>``.
+1. 运行命令 ``add system image <Local ISO File>``。
 2. 点击 **Enter** 键以接受 ISO 映像的缺省名称，或者自行输入名称。
 3. 选择是否保存当前配置目录和配置文件。
 4. 选择是否保存当前配置中的 SSH 主机密钥。

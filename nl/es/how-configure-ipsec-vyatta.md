@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Configuración de IPSec en Vyatta 5400
 {: #configuring-ipsec-on-vyatta-5400}
@@ -20,7 +23,7 @@ Se hará referencia al dispositivo Brocade 5400 vRouter (Vyatta) como "local" po
 
   * Crear un nuevo grupo **ike** denominado **test** y utilizar **dh-group** como tipo de intercambio de claves.
   * Especificar el tipo de cifrado a utilizar; si no se configura, el dispositivo utilizará **aes128** como un valor predeterminado.
-  * Utilizar la función hash **sha-1**.<br/><br/>
+  * Utilizar la función hash **sha-1**<br/><br/>
   1\. *set vpn ipsec ike-group TestIKE proposal 1 dh-group '2'*<br/>
   2\. *set vpn ipsec ike-group TestIKE proposal 1 encryption 'aes128'*<br/>
   3\. *set vpn ipsec ike-group TestIKE proposal 1 hash 'sha1'*<br/>
@@ -29,7 +32,7 @@ Se hará referencia al dispositivo Brocade 5400 vRouter (Vyatta) como "local" po
 
   * Inhabilitar PFS (secreto-perfecto-adelante), porque no todos los dispositivos pueden utilizarlo. (En el mandato, esp es la segunda parte del cifrado).
   * Especificar el tipo de cifrado a utilizar; si no se configura, el dispositivo utilizará **aes128** como un valor predeterminado.
-  * Utilizar la función `has`**sha-1**<br/><br/>
+  * Utilizar la función `has` **sha-1**<br/><br/>
   1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
@@ -39,7 +42,7 @@ Se hará referencia al dispositivo Brocade 5400 vRouter (Vyatta) como "local" po
   * Especificar la IP remota y que IPSec utilice la clave secreta compartida previamente.
   * Utilizar la IP remota y la clave secreta TestPSK.
   * Establecer el grupo predeterminado **esp** del túnel en TestESP
-  * Indicar a IPSec que utilice ike-group TestIKE, que se ha definido anteriormente.<br/><br/>
+  * "Indicar" a IPSec que utilice ike-group TestIKE, que se ha definido anteriormente<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication pre-shared-secret TestPSK۪*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 default-esp-group TestESP۪*<br/>
@@ -56,7 +59,7 @@ Se hará referencia al dispositivo Brocade 5400 vRouter (Vyatta) como "local" po
 
 El siguiente paso es configurar el dispositivo remoto, que es Brocade 5400 vRouter 6.6.5 R.
 
-  * Utilice el dispositivo recién configurado (que se ha configurado en la modalidad operativa) para especificar los mandatos de configuración de muestra de mandatos. Aparecerá una lista de mandatos utilizados para configurar el dispositivo.
+  * Utilice el dispositivo recién configurado (que se ha configurado en la modalidad operativa) para especificar el mandato show configuration commands. Aparecerá una lista de mandatos utilizados para configurar el dispositivo.
   * Copie los mandatos en un editor de texto. Los mandatos utilizados para configurar el dispositivo local se utilizarán para configurar el servidor remoto con modificaciones de la IP para apuntar al dispositivo Brocade 5400 vRouter 6.6.5R en SoftLayer.
 
 La configuración remota utilizada anteriormente se muestra a continuación. Los cambios necesarios para la configuración local se muestran en negrita.

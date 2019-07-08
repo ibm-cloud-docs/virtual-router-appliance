@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
-{:topicgroup: .topicgroup}
+{:topicgroup: .topicgroup} 
 
-{: .toc subcollection="virtual-router-appliance" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
-IBM 仮想ルーター・アプライアンス
+{: .toc subcollection="virtual-router-appliance" category="network" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
+IBM Virtual Router Appliance 
 
     {: .navgroup id="learn"}
     getting-started.md
@@ -14,6 +14,15 @@ IBM 仮想ルーター・アプライアンス
     アップグレード・ガイド
         upgrade-os.md
         upgrade-issues.md
+
+    {: .topicgroup}
+    Vyatta 5400 マイグレーション・ガイド
+        migration-guide.md
+        5400-announcement.md
+        upgrade-5400-with-ip.md
+        5400-juniper.md
+        migration-issues.md
+        migration-faqs.md
 
     /fortigate-10g/fortigate-10g-exploring-firewalls
     external-resources.md
@@ -36,7 +45,7 @@ IBM 仮想ルーター・アプライアンス
     {: .topicgroup}
     高可用性構成での作業
         vrrp.md
-        configuration-synchronization.md 
+        configuration-synchronization.md
 
     {: .topicgroup}
     IPsec および VFP のインターフェースの使用
@@ -53,7 +62,7 @@ IBM 仮想ルーター・アプライアンス
     vyatta-5600-security-fixes.md
 
     {: .topicgroup}
-    仮想ルーター・アプライアンス API 情報
+    Virtual Router Appliance  API 情報
         apis.md
         [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
@@ -69,16 +78,12 @@ IBM 仮想ルーター・アプライアンス
         setup-nat.md
         vyatta-high-availability-configuration.md
 
-    {: .topicgroup}
-    Vyatta 5400 のマイグレーション
-        [Vyatta 5400 マイグレーション・ガイド](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf)
-        migration-issues.md
-
     faqs.md
     technical-faqs.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    vra-docs-18.md
     vra-docs.md
     getting-help.md
     {: .navgroup-end}

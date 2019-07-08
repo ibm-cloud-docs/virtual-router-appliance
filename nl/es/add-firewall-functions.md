@@ -29,7 +29,7 @@ De las tres instancias de cortafuegos siguientes, se puede aplicar solo una.
 
 Utilice los pasos siguientes para establecer una regla de cortafuegos de ejemplo para desactivar el protocolo de mensajes de control de Internet (ICMP) (ping - mensaje de respuesta de eco de IPv4) en las interfaces de Virtual Router Appliance (se trata de una acción sin estado, más adelante se analizará una acción con estado):
 
-1. Escriba los mandatos `show configuration` en el indicador de mandatos para ver qué configuraciones están establecidas. Verá una lista de todos los mandatos que tiene establecidos en el dispositivo (puede ser útil si decide migrar y desea ver todas las configuraciones). Observe el mandato `set firewall all-ping enable`, que indica que ICMP todavía está habilitado en el dispositivo.
+1. Escriba `show configuration commands` en el indicador de mandatos para ver qué configuraciones están establecidas. Verá una lista de todos los mandatos que tiene establecidos en el dispositivo (puede ser útil si decide migrar y desea ver todas las configuraciones). Observe el mandato `set firewall all-ping enable`, que indica que ICMP todavía está habilitado en el dispositivo.
 
 2. Escriba `configure`.
 

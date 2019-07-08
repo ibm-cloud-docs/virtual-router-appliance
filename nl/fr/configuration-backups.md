@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: backup, configuration
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Sauvegarde d'une configuration
 {: #backing-up-a-configuration}
 
 Les commandes de configuration doivent être sauvegardées en cas de changement apporté au système. Cette opération s'effectue en exécutant la commande du mode opérationnel `show configuration commands` puis en sauvegardant la sortie (par exemple en effectuant un copier-coller depuis la session SSH). C'est ce que l'on considère comme une sauvegarde minimale de la configuration.
 
-Une sauvegarde plus complète implique la génération d'une archive de support technique pour le système :   
+Une sauvegarde plus complète implique la génération d'une archive de support technique pour le système :  
 
 ```
 $ generate tech-support archive
@@ -28,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-Le fichier archive généré peut alors être copié de l'unité Virtual Router Appliance sur l'unité de stockage de votre choix. L'archive contient les sauvegardes des informations de configuration, des répertoires de base et des informations de journalisation. Il s'agit d'une sauvegarde de système beaucoup plus complète. 
+Le fichier archive généré peut alors être copié de l'unité Virtual Router Appliance sur l'unité de stockage de votre choix. L'archive contient les sauvegardes des informations de configuration, des répertoires de base et des informations de journalisation. Il s'agit d'une sauvegarde de système beaucoup plus complète.
 
 Par exemple :
 

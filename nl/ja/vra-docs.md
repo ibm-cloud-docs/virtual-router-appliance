@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: docs, supplemental, documentation, help, vyatta, brocade
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
-# VRA の補足資料
-{: #supplemental-vra-documentation}
+# VRA の補足資料 (アーカイブ済み)
+{: #supplemental-vra-documentation-archived}
 
-次の表に、仮想ルーター・アプライアンスに関する補足資料へのリンクを記載します。
+このトピックには、17.2 より前の Vyatta 5600 OS の補足資料へのリンクが含まれています。
 
 Vyatta 資料  | 説明
 ------------- | -------------
@@ -28,6 +34,7 @@ Vyatta 資料  | 説明
 [Brocade Vyatta Network OS Services Configuration Guide, 5.2R1 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-services.pdf){:new_window} | 本書は、Brocade Vyatta Network OS (本書では、仮想ルーター、vRouter、またはルーターと呼ばれる) 上の DHCP、DHCPv6、DNS、フロー・モニタリング、NHRP、sFlow、TWAMP、およびポート・モニタリングの各サービスの構成方法について説明しています。
 [Brocade Vyatta Network OS High Availability Configuration Guide, 5.2R1 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-high-availability.pdf){:new_window}  | 本書は、Brocade Vyatta Network OS (本書では、仮想ルーター、vRouter、またはルーターと呼ばれる) 上で実行される Brocade 製品について、高可用性を提供するための構成方法を説明しています。
 [Brocade Vyatta Network OS Remote Management Configuration Guide, 5.2R1 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-remote-management.pdf){:new_window}  | 本書は、Brocade 5600 vRouter (本書では、仮想ルーター、vRouter、またはルーターと呼ばれる) のリモート管理用の SSH、Telnet、Web GUI アクセス (HTTPS)、NETCONF、および SNMP の構成方法について説明しています。
+[IPv6 Support Configuration Guide, 5.2R1 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipv6_configuration_5600.pdf){:new_window} | 本書は、AT&T Vyatta Network OS (本書では、仮想ルーター、vRouter、またはルーターと呼ばれる) 上で実行される AT&T 製品の IPv6 サポートについて説明しています。 
 [Brocade Vyatta Network OS NAT Configuration Guide, 5.2R1 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-nat.pdf){:new_window}  | 本書は、Brocade Vyatta Network OS (本書では、仮想ルーター、vRouter、またはルーターと呼ばれる) 上で実行される Brocade 製品の NAT の構成方法について説明しています。
 [Brocade Vyatta Network OS Policy-based Routing Configuration Guide, 5.2R1 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-policy-based-routing.pdf){:new_window}  | 本書は、Brocade Vyatta Network OS (本書では、仮想ルーター、vRouter、またはルーターと呼ばれる) 上で実行される Brocade 製品のルーティング・ポリシーの定義および構成の方法について説明しています。
 [Brocade Vyatta Network OS Firewall Configuration Guide, 5.2R1 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-firewall.pdf){:new_window}  | 本書は、Brocade 5600 vRouter (本書では、仮想ルーター、vRouter、またはルーターと呼ばれる) 上のファイアウォール機能について説明しています。

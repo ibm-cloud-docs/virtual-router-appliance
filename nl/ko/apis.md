@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: apis, api
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # IBM Virtual Router Appliance의 API 참조
 {: #api-reference-for-ibm-virtual-router-appliance}
@@ -25,15 +31,16 @@ SLAPI는 원격 프로시저 호출(RPC) 시스템입니다. 각 호출에는 AP
 
 IBM Virtual Router Appliance API를 참조할 때 SLAPI에 대한 자세한 정보는 SLDN(SoftLayer Development Network)에서 다음 리소스를 참조하십시오.
 
-- [SoftLayer_Network_Gateway API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 
-- [SoftLayer_Network_Gateway_Member API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window} 
-- [SoftLayer_Network_Gateway_Vlan API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window} 
-- [SoftLayer_Network_Gateway_Status API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window} 
-- [SoftLayer API Python 클라이언트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window} 
-- [다른 언어로 된 추가 SoftLayer API 예 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer.github.io/python/){: new_window} 
+- [SoftLayer_Network_Gateway API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window}
+- [SoftLayer_Network_Gateway_Member API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window}
+- [SoftLayer_Network_Gateway_Vlan API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window}
+- [SoftLayer_Network_Gateway_Status API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window}
+- [SoftLayer API Python 클라이언트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window}
+- [다른 언어로 된 추가 SoftLayer API 예 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer.github.io/python/){: new_window}
 
 
 ### 예 - 게이트웨이 어플라이언스 순서 지정
+{: #example-ordering-a-gateway-appliance}
 
 ```
 import SoftLayer
@@ -91,6 +98,7 @@ if __name__ == '__main__':
 {: codeblock}
 
 ### 예 - 게이트웨이 어플라이언스에 대한 VLAN 연결, 라우팅, 우회 및 연결 해제
+{: #example-associating-routing-bypassing-and-disassociating-vlans-to-the-gateway-appliance}
 
 ```
 import SoftLayer

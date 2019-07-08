@@ -1,22 +1,28 @@
 ---
+
 copyright:
   years: 1994, 2017
 lastupdated: "2018-11-10"
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Vyatta 5400 高可用性配置
 {: #vyatta-5400-high-availability-configuration}
 
-Vyatta 高可用性通过使用 VRRP、虚拟路由冗余协议进行支持。每个网关组会有两个主 VRRP IP 地址，一个用于网络的专用端，一个用于公用端。 
+Vyatta 高可用性通过使用 VRRP、虚拟路由冗余协议进行支持。每个网关组会有两个主 VRRP IP 地址，一个用于网络的专用端，一个用于公用端。
 
-**注：**仅专用的 Vyatta 将只有专用 VRRP。 
+仅专用的 Vyatta 将只有专用 VRRP。
+{: note}
 
 这些 IP 地址是 SoftLayer 网络基础架构的目标 IP，用于路由与网关成员关联的 VLAN 上的所有子网。在某一时间，网关组中只有一个 Vyatta 会运行这些 VRRP IP，该组中的其他成员将通过管理方式使其停止运行。
 
-可以通过“config-sync”配置命令使配置在两个 Vyatta 之间同步。此配置将允许一个成员将特定选项的配置推送到组中的其他 Vyatta，并支持有选择性地执行此操作。您可以仅推送防火墙规则，仅推送 IPsec 配置，或者推送这两个规则集的任意组合。 
+可以通过“config-sync”配置命令使配置在两个 Vyatta 之间同步。此配置将允许一个成员将特定选项的配置推送到组中的其他 Vyatta，并支持有选择性地执行此操作。您可以仅推送防火墙规则，仅推送 IPsec 配置，或者推送这两个规则集的任意组合。
 
 建议不要尝试推送 IP 地址或其他网络配置，因为 config-sync 会立即在其他 Vyatta 上落实更改，从而使这些接口联机。如果要动态启用接口和服务，应使用转换脚本在故障转移时执行此操作。此外，建议将更多 VRRP IP 地址用于关联 VLAN 上的网关 IP，这将使故障转移更易于管理。
 
@@ -79,11 +85,12 @@ VRRP 需要先将一个真实的 IP 地址绑定到虚拟接口后，才能发�
     set interfaces bonding bond0 vif 1000 vrrp vrrp-group 10 priority 199
     set interfaces bonding bond0 vif 1000 vrrp vrrp-group 10 virtual-address 192.168.10.1/24
 
-在本例中，两个 Vyatta 都有自己的 IP，因此不会与分配的子网发生冲突。您可以选择所需的几乎任何专用 IP 范围，只要选取一个不会与您可能拥有的其他任何路由相冲突的小型子网（例如，通过 IPsec 隧道路由的子网范围），或者选择与 Softlayer 的地址相冲突的 10.0.0.0/8 地址，那么就不会有问题。
+在这种情况下，两个 Vyatta 都有自己的 IP，不会与分配的子网发生冲突。您可以选择所需的几乎任何专用范围，只需选取一个不会与您可能拥有的其他任何路由相冲突的小型子网（例如，通过 IPsec 隧道路由的子网范围），或者选择与 Softlayer 的地址相冲突的 10.0.0.0/8 地址。
 
 您还需要添加“sync-group”名称。所有 VRRP 地址都应该属于同一个 sync-group。这样做的目的是，一个接口上发生的任何故障都会导致同一 sync-group 中的所有接口也执行故障转移。如果 VRRP 地址不属于同一个 sync-group，那么最终会出现一些是 MASTER 而另一些是 BACKUP 的情况。请在 bond0 和 bond1 本机 VLAN 配置中使用相同的名称。
 
-注：bond0 和 bond1 VRRP 配置中可能有一行用于表示 RFC3768 兼容性。vif 中的 VRRP 不需要此行，只有 bond0 和 bond1 的本机 VLAN 需要。
+bond0 和 bond1 VRRP 配置中可能有一行用于表示 RFC3768 兼容性。VIF 中的 VRRP 不需要此行，只有 bond0 和 bond1 的本机 VLAN 需要。
+{: tip}
 
 在新供应的网关对上，config-sync 只有最少的配置：
 
@@ -105,4 +112,5 @@ VRRP 需要先将一个真实的 IP 地址绑定到虚拟接口后，才能发�
 
 一旦落实完这些配置，对防火墙或 IPSec 配置进行的所有更改都将在落实时推送到其他 Vyatta。
 
-**注：**sync-group 和 sync-map 是两个不同的配置。sync-map 配置用于供规则将配置更改推送到其他 Vyatta。而 sync-group 用于使 VRRP IP 作为一个组整体进行故障转移，而不是一次故障转移一个 VRRP IP。配置其中一项不会影响另一项。
+sync-group 和 sync-map 是两个不同的配置。sync-map 配置用于供规则将配置更改推送到其他 Vyatta。而 sync-group 用于使 VRRP IP 作为一个组整体进行故障转移，而不是一次故障转移一个 VRRP IP。配置其中一项不会影响另一项。
+{: tip}

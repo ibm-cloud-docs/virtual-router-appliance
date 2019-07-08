@@ -1,0 +1,69 @@
+---
+
+copyright:
+  years: 2017
+lastupdated: "2019-04-09"
+
+keywords: docs, supplemental, documentation, help, vyatta, brocade, 18
+
+subcollection: virtual-router-appliance
+
+---
+
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:download: .download}
+
+# 보충 VRA 문서(현재)
+{: #supplemental-vra-documentation}
+
+이 주제에는 17.2 이후의 Vyatta 5600 OS에 대한 보충 문서의 링크가 포함되어 있습니다. 17.2 이전의 Vyatta 5600 OS에 대해 아카이브된 보충 문서는 [이 주제](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation-archived#supplemental-vra-documentation-archived)를 참조하십시오. 
+
+|Vyatta 문서  |설명 |
+| ------------- | ------------- |
+| [ALG 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_alg_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 사용 가능한 ALG에 대해 설명합니다. |
+| [기본 라우팅 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_basic_routing_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서의 전달 및 라우팅에 대한 정보를 설명합니다. |
+| [기본 시스템 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_basic_system_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 제품의 아티텍처에 대해 설명합니다. 여기에는 기존 시스템 개념이 포함되어 있으며 라우터의 CLI 사용 방법, 기본 시스템 및 모니터링 태스크 수행 방법, 사용자 계정 관리 방법, 시스템 로그 액세스 방법 및 핫 플러그 인터페이스에 대해 설명합니다. |
+| [BFD 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_bfd_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 BFD를 실행하는 방법에 대해 설명합니다. |
+| [BGP 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_bgp_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 BGP를 구성하는 방법에 대해 설명합니다. |
+| [브릿징 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_bridging_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 계층 2 브릿징을 구성하는 방법에 대해 설명합니다. |
+| [DMVPN 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_dmvpn_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 DMVPN을 구성하는 방법에 대해 설명합니다. |
+| [방화벽 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_firewall_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서의 방화벽 기능에 대해 설명합니다. |
+| [고가용성 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_high_availability_configuration_5600.pdf){:new_window} | 이 안내서에서는 고가용성을 제공하도록 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품을 구성하는 방법에 대해 설명합니다. |
+| [IGMP 및 MLD 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_igmp_and_mld_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 IGMP 및 MLD를 구성하는 방법에 대해 설명합니다. |
+| [IPsec 사이트 대 사이트 VPN 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipsec_site-to-site_vpn_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 사이트 대 사이트 IPsec VPN을 구성하는 방법에 대해 설명합니다. |
+| [LAN 인터페이스 구성 안내서 부록![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_lan_interfaces_configuration_5600_addendum.pdf){:new_window} | 이 부록에서는 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 업데이트된 LAN 인터페이스 기능에 대해 설명합니다. |
+| [LAN 인터페이스 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_lan_Interfaces_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 LAN 인터페이스를 구성하는 방법에 대해 설명합니다. |
+| [MPLS 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_mpls_configuration_5600.pdf){:new_window} | AT&T Vyatta vRouter의 MPLS(Multiprotocol Label Switching)는 추가 기능을 빌드할 기반 역할을 수행하는 기본 LDP(Label Distribution Protocol) 및 RSVP-TE(Resource Reservation Protocol for Traffic Engineering) 지원 및 데이터 플레인 지원을 제공합니다. |
+| [MSDP 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_msdp_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 MSDP를 실행하는 방법에 대해 설명합니다. |
+| [멀티캐스트 라우팅 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_multicast_routing_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 멀티캐스트 라우팅을 사용으로 설정하고 구성하는 방법에 대해 설명합니다. |
+| [NAT 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_nat_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 NAT를 구성하는 방법에 대해 설명합니다. |
+| [OpenVPN 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_open_vpn_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 OpenVPN을 구성하는 방법에 대해 설명합니다. |
+| [OSPF 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ospf_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 OSPF를 구성하는 방법에 대해 설명합니다. |
+| [OSPFv3 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ospf_v3_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 OSPFv3를 구성하는 방법에 대해 설명합니다. |
+| [PIM 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_pim_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 PIM을 구성하는 방법에 대해 설명합니다. |
+| [정책 기반 라우팅 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_policy_based_routing_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 라우팅 정책을 정의하고 구성하는 방법에 대해 설명합니다. |
+| [제품 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_product_guide_5600.pdf){:new_window} | AT&T Vyatta Network Operating System은 현재 및 향후 네트워크 요구를 충족시킬 수 있는 유연하고 사용하기 쉬운 고성능 네트워크 서비스 아키텍처를 위한 기반을 제공합니다. AT&T Vyatta Network Operating System은 클라우드, 가상, 실제 또는 온프레미스 환경에서 사용하기 위해 AT&T Vyatta vRouter, AT&T Services 및 AT&T Distributed Services에 배치됩니다. 조직의 요구사항에 따라 데이터플레인을 수용하는 하드웨어에 공동 상주 항목으로 배치되거나 다수의 분산 데이터 플레인을 관리하기 위해 중앙 집중될 수도 있습니다. |
+| [릴리스 정보, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_release_notes_1720_5600.pdf){:new_window} | 이 릴리스 정보는 AT&T Vyatta Network Operating System 릴리스 17.2.0용입니다. |
+| [원격 액세스 API 2.0 참조 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_remote_access_api_2_configuration_5600.pdf){:new_window} | 이 안내서에서는 HTTPs를 통해 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 원격으로 명령을 실행하기 위해 원격 액세스 API 2.0을 사용하는 방법에 대해 설명합니다. |
+| [원격 액세스 IPsec VPN 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_remote_access_ipsec_vpn_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 원격 액세스 VPN을 구성하는 방법에 대해 설명합니다. |
+| [원격 관리 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_remote_management_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)의 원격 관리를 위해 SSH, Telnet, 웹 GUI 액세스(HTTPS), NETCONF 및 SNMP를 구성하는 방법에 대해 설명합니다. |
+| [RIP 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_rip_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 RIP(Routing Information Protocol)를 구성하는 방법에 대해 설명합니다. |
+| [RIPng 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ripng_Configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 RIPng(Routing Information Protocol next generation)를 구성하는 방법에 대해 설명합니다. |
+| [라우팅 정책 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_routing_policies_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 라우팅 정책을 구성하는 방법에 대해 설명합니다. |
+| [스크립팅 참조 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_scripting_reference_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta vRouter 스크립팅 API(안내서에서는 vRouter 스크립팅 API 또는 configd API라고 함)를 사용하여 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)를 프로그래밍 방식으로 구성하고 관리하는 스크립트를 작성하는 방법에 대해 설명합니다. 이 안내서는 vRouter의 CLI 명령에 액세스하는 vcli 스크립트를 작성하는 방법을 설명합니다. |
+| [서비스 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_services_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 DHCP, DHCPv6, DNS, 플로우 모니터링, NHRP, sFlow, TWAMP 및 포트 모니터링 서비스를 구성하는 방법에 대해 설명합니다. |
+| [터널 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_tunnels_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품에서 터널링을 구성하는 방법에 대해 설명합니다. |
+| [VPN 지원 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_vpn_support_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System에 대해 사용 가능한 모든 문서 안내서와 특히 AT&T Vyatta vRouter, Services 플랫폼 및 Distributed Services에 적용되는 안내서에 대해 설명합니다. |
+| [AMI 설치 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_vrouter_ami_installation_5600.pdf){:new_window} | 이 안내서에서는 AWS(Amazon Web Services) 클라우드에서 AT&T Vyatta vRouter Amazon Machine Image(AMI)를 설치하는 방법에 대해 설명합니다. AT&T Vyatta vRouter는 안내서에서 가상 라우터, vRouter 또는 라우터라고 합니다. |
+| [배치 옵션 구성 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_vrouter_deployment_options_configuration_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에 대한 배치 옵션에 대해 설명합니다. |
+| [하드 디스크 및 지속적 디바이스 설치 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_vrouter_hard_disks_and_persistent_devices_installation_5600.pdf){:new_window} | 이 안내서에서는 AT&T Vyatta Network Operating System(안내서에서 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품의 지속적 디바이스(예: 하드 디스크, 플래시 드라이브 또는 USB 스틱)에서 소프트웨어를 설치하고 업그레이드하는 방법에 대해 설명합니다. |
+| [Hyper-V 설치 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_vrouter_hyper-v_installation_5600.pdf){:new_window} | 이 안내서에서는 Hyper-V 시스템에서 실행 중인 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)를 설치하고 업그레이드하는 방법에 대해 설명합니다. |
+| [Linux KVM 설치 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_vrouter_linux_kvm_installation_5600.pdf){:new_window} | 이 안내서에서는 Linux KVM 환경에서 실행 중인 AT&T Vyatta vRouter(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)를 설치하고 업그레이드하는 방법에 대해 설명합니다. |
+| [빠른 시작 안내서, 17.2.0![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_vrouter_quick_start_5600.pdf){:new_window} | 이 안내서를 통해 AT&T Vyatta Network Operating System(안내서에서는 가상 라우터, vRouter 또는 라우터라고 함)에서 실행되는 AT&T 제품을 사용하고 구성할 수 있습니다. 이 안내서에서는 라우터를 배치하는 방법에 대해 설명하고 라우터에 액세스하고 라우터를 구성 및 관리하는 데 사용할 수 있는 CLI 및 웹 GUI 인터페이스를 소개합니다. |

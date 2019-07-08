@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, prefix, IPsec, rules
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 搭配使用 NAT 與以字首為基礎的 IPsec
 {: #using-nat-with-prefix-based-ipsec}
 
-在[使用 IPsec 及區域防火牆配置 VFP 介面](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)主題中，我們已建立 VFP 介面，並將它設為與 IPsec 通道搭配使用。 
+在[使用 IPsec 及區域防火牆配置 VFP 介面](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)主題中，我們已建立 VFP 介面，並將它設為與 IPsec 通道搭配使用。
 
-我們可以在 NAT 規則中使用相同的介面，以及入埠和出埠介面宣告，但有一個額外警告。 
+我們可以在 NAT 規則中使用相同的介面，以及入埠和出埠介面宣告，但有一個額外警告。
 
 以下是一些範例 NAT 規則：
 
@@ -51,11 +57,12 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-這會針對要通過 `vfp0` 的資料流量建立更具體的路徑。 
+這會針對要通過 `vfp0` 的資料流量建立更具體的路徑。
 
-此時，NAT 將依配置運作，而且資料流量會流經通道。 
+此時，NAT 將依配置運作，而且資料流量會流經通道。
 
-**附註：**使用 NAT，您需要 CIDR 小於 IPsec 遠端字首的路徑（大小不能相同），而 IPsec 遠端字首指向透過 `vfp0` 虛擬介面的資料流量。
+NAT 需要 CIDR 小於 IPsec 遠端字首的路徑（大小不能相同），而 IPsec 遠端字首指向透過 `vfp0` 虛擬介面的資料流量。
+{: tip}
 
 一切就緒之後，即可進行連線測試並驗證：
 

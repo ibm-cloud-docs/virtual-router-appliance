@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: vfp, ipsec, firewall
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,12 +16,14 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # 使用 IPsec 及區域防火牆配置 VFP 介面
 {: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
 
-IPSec 資料包在到達時會透過防火牆規則處理，然後再解除封裝。出現的新資料包根本未與介面相關聯。一般而言，這不是問題，而且可以移至目的地介面，但是區域防火牆會防止資料包繼續進行。會捨棄未來自區域原則中介面的任何資料包。不過，VFP 介面會通知區域防火牆有關資料包確實來自介面，以容許套用規則。 
+IPSec 資料包在到達時會透過防火牆規則處理，然後再解除封裝。出現的新資料包根本未與介面相關聯。一般而言，這不是問題，而且可以移至目的地介面，但是區域防火牆會防止資料包繼續進行。會捨棄未來自區域原則中介面的任何資料包。不過，VFP 介面會通知區域防火牆有關資料包確實來自介面，以容許套用規則。
 
 若要配置 VFP 介面來使用 IPsec 資料流量，請先定義具有單一 IP 的 VFP 來建立特性點：
 

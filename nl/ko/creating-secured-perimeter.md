@@ -15,7 +15,7 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 # 보안 설정된 경계 작성
-네트워크 격리의 기본적인 측면은 보안 설정된 경계의 설정입니다.  보안 경계는 IBM© Cloud에서 호스팅되는 고객 자산에 대한 공용 인터넷 간의 트래픽을 제어합니다. 보안 설정된 경계는 VPN(Virtual Private Network) 터널 및 IBM Cloud Direct Link를 사용하여 고객 기업과의 직접 연결을 사용으로 설정합니다.
+네트워크 격리의 기본적인 측면은 보안 설정된 경계의 설정입니다.  보안 경계는 IBM© Cloud에서 호스팅되는 고객 자산에 대한 공용 인터넷 간의 트래픽을 제어합니다.  보안 설정된 경계는 VPN(Virtual Private Network) 터널 및 IBM Cloud Direct Link를 사용하여 고객 기업과의 직접 연결을 사용으로 설정합니다.
 
 보안 설정된 경계는 SPS(Secure Perimeter Segment)를 사용하여 보안 경계 안에 있는 자산 간의 네트워크를 분리합니다. 이 분리에는 액세스 제어 및 세그먼트 간의 서비스 트래픽 격리를 포함하여 몇 가지 이점이 있습니다. SPS(Secure Perimeter Segment)는 SPS로 들어오고 나가는 트래픽을 관리하기 위해 프론트 엔드 VLAN과 백엔드 VLAN의 두 개 VLAN(Virtual Local Area Network) 및 VLAN에 연결된 VRA로 구성됩니다. 보안 경계는 여러 SPS(Secure Perimeter Segment)를 포함할 수 있습니다(예를 들어, 고가용성 목적을 위해).
 

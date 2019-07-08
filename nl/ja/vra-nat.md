@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, prefix, IPsec, rules
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,14 +17,16 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # プレフィックス・ベースの IPsec での NAT の使用
 {: #using-nat-with-prefix-based-ipsec}
 
 トピック[「IPsec およびゾーン・ファイアウォールに対する VFP インターフェースの構成」
-](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)では、VFP インターフェースを作成して IPsec トンネルと共に使用するよう設定しました。 
+](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)では、VFP インターフェースを作成して IPsec トンネルと共に使用するよう設定しました。
 
-NAT ルールでも、インバウンドおよびアウトバウンドのインターフェース宣言でも、同じインターフェースを使用できますが、注意事項が 1 つあります。 
+NAT ルールでも、インバウンドおよびアウトバウンドのインターフェース宣言でも、同じインターフェースを使用できますが、注意事項が 1 つあります。
 
 以下に NAT ルールの例をいくつか示します。
 
@@ -52,11 +58,12 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-これにより、トラフィックが `vfp0` を通過するための、より具体的な経路が作成されます。 
+これにより、トラフィックが `vfp0` を通過するための、より具体的な経路が作成されます。
 
-この時点で、NAT は構成されたとおりに機能し、トラフィックはトンネルを通過して移動します。 
+この時点で、NAT は構成されたとおりに機能し、トラフィックはトンネルを通過して移動します。
 
-**注:** NAT では、IPsec リモート・プレフィックスより小さい CIDR を使用し (同じサイズのものは使用できません)、`vfp0` 仮想インターフェース上へトラフィックを指定した経路が必要です。
+NAT では、IPsec リモート・プレフィックスより小さい CIDR を使用し (同じサイズのものは使用できません)、`vfp0` 仮想インターフェース上へトラフィックを指定した経路が必要です。
+{: tip}
 
 すべての準備が整ったら、以下のように ping を行って検証します。
 

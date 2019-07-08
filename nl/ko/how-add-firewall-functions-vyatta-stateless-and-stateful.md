@@ -6,11 +6,14 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Vyatta 5400에 방화벽 기능 추가(Stateless 및 Stateful)
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
-각 인터페이스에 방화벽 규칙 세트를 적용하는 것은 Brocade 5400 vRouter(Vyatta) 디바이스를 사용할 때 방화벽 설정의 한 방법입니다. 각 인터페이스에는 세 가지 방화벽 인스턴스(In, Out 및 Local)가 있으며 각 인스턴스에는 적용할 수 있는 규칙이 있습니다. 기본 조치는 삭제로, 특정 트래픽이 규칙 1부터 N까지의 방식으로 적용될 특정 트래픽을 허용하는 규칙이 포함됩니다. 일치되면 방화벽은 일치 규칙의 특정 조치를 적용합니다.
+각 인터페이스에 방화벽 규칙 세트를 적용하는 것은 Brocade 5400 vRouter(Vyatta) 디바이스를 사용할 때 방화벽 설정의 한 방법입니다. 각 인터페이스에는 세 가지 가능한 방화벽 인스턴스(In, Out 및 Local)가 있으며 각 인스턴스에는 적용될 수 있는 규칙이 있습니다. 기본 조치는 삭제로, 특정 트래픽이 규칙 1부터 N까지의 방식으로 적용될 특정 트래픽을 허용하는 규칙이 포함됩니다. 일치되면 방화벽은 일치 규칙의 특정 조치를 적용합니다.
 
 세 가지 방화벽 인스턴스는 다음과 같습니다(단, **하나만** 적용됨).
 
@@ -24,7 +27,7 @@ ICMP(Internet Control Message Protocol)*(Ping - IPv4 에코 응답 메시지)*�
 
 2\. *configure*를 입력하십시오.
 
-3\. *set firwall all-ping 'disable'*을 입력하십시오.
+3\. *set firewall all-ping 'disable'*을 입력하십시오. 
 
 4\. *commit*를 입력하십시오.
 
@@ -42,9 +45,9 @@ bond1.2007 = prod(프로덕션용)
 
 bond0.2254 = private(개발용)
 
-bond1.1280 = 차후 사용을 위해 예약됨
+bond1.1280 = 향후 사용을 위해 예약됨
 
-bond1.1894 = 차후 사용을 위해 예약됨
+bond1.1894 = 향후 사용을 위해 예약됨
 
 **방화벽 규칙 작성**
 
@@ -95,7 +98,8 @@ bond1.1894 = 차후 사용을 위해 예약됨
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
-**참고:** 방화벽 규칙은 **prod**를 통해 **dmz**로 아웃바운드를 이동해야 합니다. 네트워크 플로우의 문제점을 해결하도록 지원하려면 *sudo tcpdump -i any host 10.52.69.202* 명령을 사용하십시오.
+방화벽 규칙은 **prod**를 통해 **dmz**로 아웃바운드로 플로우해야 합니다. 네트워크 플로우의 문제점을 해결하도록 지원하려면 *sudo tcpdump -i any host 10.52.69.202* 명령을 사용하십시오.
+{: note}
 
 **구역 작성**
 
@@ -107,22 +111,22 @@ bond1.1894 = 차후 사용을 위해 예약됨
 * 기본 조치가 포함된 **private**이라는 구역 정책을 작성하여 이 구역을 대상으로 하는 패킷을 삭제합니다.
 * **bond0.2254** 인터페이스를 사용하도록 **private**이라는 정책을 설정합니다.
 
-1\. 프롬프트에서 다음 명령을 입력하십시오.
+1. 프롬프트에서 다음 명령을 입력하십시오.
 
-* *configure*
-* *set zone policy zone dmz default-action drop*
-* *set zone-policy zone dmz interface bond1*
-* *set zone-policy zone prod default-action drop*
-* *set zone-policy zone prod interface bond1.2007*
-* *set zone-policy zone private default-action drop*
-* *set zone-policy zone private interface bond0.2254*
+  * *configure*
+  * *set zone policy zone dmz default-action drop*
+  * *set zone-policy zone dmz interface bond1*
+  * *set zone-policy zone prod default-action drop*
+  * *set zone-policy zone prod interface bond1.2007*
+  * *set zone-policy zone private default-action drop*
+  * *set zone-policy zone private interface bond0.2254*
 
-2\. 구역에 방화벽 정책을 설정하려면 다음 명령을 사용하십시오.
+  2. 구역에 방화벽 정책을 설정하려면 다음 명령을 사용하십시오.
 
-* *set zone-policy zone private from dmz firewall name dmz2private*
-* *set zone-policy zone prod from dmz firewall name dmz2private*
-* *set zone-policy zone dmz from prod firewall name public4*
-* *commit*
+  * *set zone-policy zone private from dmz firewall name dmz2private*
+  * *set zone-policy zone prod from dmz firewall name dmz2private*
+  * *set zone-policy zone dmz from prod firewall name public4*
+  * *commit*
 
 구역 정책에 방화벽을 적용하지 않으려는 경우 특정 인터페이스에 방화벽 규칙을 적용할 수 있습니다. 인터페이스에 규칙을 적용하려면 다음 명령을 사용하십시오.
 
@@ -130,8 +134,9 @@ bond1.1894 = 차후 사용을 위해 예약됨
 * *commit*
 
 ## Stateful 방화벽
+{: #stateful-firewalls}
 
-*Stateful* 방화벽은 이전에 표시된 플로우의 테이블을 유지하고 이전 패킷과의 관계에 따라 패킷을 허용하거나 삭제할 수 있습니다. 일반적인 규칙으로, 애플리케이션 트래픽이 많이 발생하는 위치에서 Stateful 방화벽이 보통 선호됩니다. 
+*Stateful* 방화벽은 이전에 표시된 플로우의 테이블을 유지하고 이전 패킷과의 관계에 따라 패킷을 허용하거나 삭제할 수 있습니다. 일반적인 규칙으로, 애플리케이션 트래픽이 많이 발생하는 위치에서 Stateful 방화벽이 보통 선호됩니다.
 
 <span style="text-decoration: underline">*Brocade 5400 vRouter는 기본 구성으로 연결 상태를 추적하지 않습니다. 방화벽은 다음 조건 중 하나가 충족될 때까지 Stateless입니다.*</span>
 
@@ -142,5 +147,6 @@ bond1.1894 = 차후 사용을 위해 예약됨
 * WAN 로드-밸런싱 구성의 사용
 
 ## Stateless 방화벽
+{: #stateless-firewalls}
 
 *Stateless* 방화벽은 독립적으로 모든 소켓을 고려합니다. 패킷은 IP 또는 TCP/UDP(Transmission Control Protocols/User Datagram Protocol) 헤더의 소스 및 대상 필드와 같이 기본 액세스 제어 목록(ACL)만 따라 허용되거나 삭제될 수 있습니다. Stateless Brocade 5400 vRouter는 연결 정보를 저장하지 않고 모든 패킷에 대해 이전 플로우와의 관계를 검색해야 하는 요구사항이 없으며, 둘 모두 약간의 메모리와 짧은 CPU 시간을 사용합니다. 그러므로 원시 전달 성능은 Stateless 시스템에서 극대화됩니다. Brocade는 Stateful에 특정한 기능이 필요하지 않은 경우 최상의 성능을 위해 라우터를 Stateless 상태로 유지합니다.

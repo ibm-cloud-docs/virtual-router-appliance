@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ipsec, firewall, configure, policy
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # 設定使用區域防火牆的 IPsec 通道
@@ -22,6 +28,8 @@ lastupdated: "2018-11-10"
 其間具有 IPsec 之兩部機器的範例配置如下：
 
 ###機器 A
+{: #machine-a}
+
 ```
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -39,6 +47,8 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '17
 ```
 
 ###機器 B
+{: #machine-b}
+
 ```
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -55,7 +65,7 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-這會設定通用通道，以在兩部機器之間遞送 172.16.x.x 資料流量。「機器 B」有 172,16.100.1 作為一個迴圈位址，以提供要與之一起測試的端點，而「機器 A」在遞送的 VLAN 上具有虛擬機器，以透過通道提供來源資料流量。 
+這會設定通用通道，以在兩部機器之間遞送 172.16.x.x 資料流量。「機器 B」有 172,16.100.1 作為一個迴圈位址，以提供要與之一起測試的端點，而「機器 A」在遞送的 VLAN 上具有虛擬機器，以透過通道提供來源資料流量。
 
 您可以在這裡看到結果：
 
@@ -86,7 +96,7 @@ set security firewall name ALLOWALL rule 30 action 'accept'
 set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
- 
+
 然後在全部三個介面之間新增原則：
 
 ```

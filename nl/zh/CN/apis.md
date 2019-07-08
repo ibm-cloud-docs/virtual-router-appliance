@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: apis, api
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # IBM 虚拟路由器设备的 API 参考
 {: #api-reference-for-ibm-virtual-router-appliance}
@@ -25,15 +31,16 @@ SLAPI 是一个远程过程调用 (RPC) 系统。每个调用都涉及向 API �
 
 有关 SLAPI（现在称为“IBM 虚拟路由器设备 API”）的更多信息，请参阅 SoftLayer 开发网络 (SLDN) 中的以下资源：
 
-- [SoftLayer_Network_Gateway API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 
-- [SoftLayer_Network_Gateway_Member API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window} 
-- [SoftLayer_Network_Gateway_Vlan API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window} 
-- [SoftLayer_Network_Gateway_Status API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window} 
-- [SoftLayer API Python 客户机 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window} 
-- [使用不同语言的更多 SoftLayer API 示例 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/python/){: new_window} 
+- [SoftLayer_Network_Gateway API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window}
+- [SoftLayer_Network_Gateway_Member API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window}
+- [SoftLayer_Network_Gateway_Vlan API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window}
+- [SoftLayer_Network_Gateway_Status API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window}
+- [SoftLayer API Python 客户机 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window}
+- [使用不同语言的更多 SoftLayer API 示例 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/python/){: new_window}
 
 
 ### 示例 - 订购网关设备
+{: #example-ordering-a-gateway-appliance}
 
 ```
 import SoftLayer
@@ -91,6 +98,7 @@ if __name__ == '__main__':
 {: codeblock}
 
 ### 示例 - 将 VLAN 关联到网关设备、将 VLAN 路由到网关设备、使 VLAN 绕过网关设备以及解除 VLAN 与网关设备的关联
+{: #example-associating-routing-bypassing-and-disassociating-vlans-to-the-gateway-appliance}
 
 ```
 import SoftLayer

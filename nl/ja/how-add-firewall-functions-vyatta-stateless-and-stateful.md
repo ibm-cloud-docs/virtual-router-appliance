@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Vyatta 5400 へのファイアウォール機能の追加 (ステートレスおよびステートフル)
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
@@ -24,7 +27,7 @@ lastupdated: "2018-11-10"
 
 2\. *configure* と入力します。
 
-3\. *set firwall all-ping'disable'* と入力します。
+3\. *set firewall all-ping 'disable'* と入力します。
 
 4\. *commit* と入力します。
 
@@ -95,7 +98,8 @@ bond1.1894 = 将来の利用のために予約済み
   * *set firewall name public rule 1 state established enable*
   * *set firewall name public rule 1 state related enable*
 
-**注:**ファイアウォール・ルールは、**prod** を介して **dmz** にアウトバウンドで流れる必要があります。 ネットワーク・フローのトラブルシューティングには、コマンド *sudo tcpdump -i any host 10.52.69.202* を使用します。
+ファイアウォール・ルールは、**prod** を介して **dmz** にアウトバウンドで流れる必要があります。 ネットワーク・フローのトラブルシューティングには、コマンド *sudo tcpdump -i any host 10.52.69.202* を使用します。
+{: note}
 
 **ゾーンの作成**
 
@@ -107,22 +111,22 @@ bond1.1894 = 将来の利用のために予約済み
 * このゾーンを宛先とするパケットをドロップするデフォルト・アクションを含む **private** という名前のゾーン・ポリシーを作成する。
 * **bond0.2254** インターフェースを使用するように **private** という名前のポリシーを設定する。
 
-1\. プロンプトで以下のコマンドを入力します。
+1. プロンプトで以下のコマンドを入力します。
 
-* *configure*
-* *set zone policy zone dmz default-action drop*
-* *set zone-policy zone dmz interface bond1*
-* *set zone-policy zone prod default-action drop*
-* *set zone-policy zone prod interface bond1.2007*
-* *set zone-policy zone private default-action drop*
-* *set zone-policy zone private interface bond0.2254*
+  * *configure*
+  * *set zone policy zone dmz default-action drop*
+  * *set zone-policy zone dmz interface bond1*
+  * *set zone-policy zone prod default-action drop*
+  * *set zone-policy zone prod interface bond1.2007*
+  * *set zone-policy zone private default-action drop*
+  * *set zone-policy zone private interface bond0.2254*
 
-2\. 以下のコマンドを使用して、ゾーンのファイアウォール・ポリシーを設定します。
+  2. 以下のコマンドを使用して、ゾーンのファイアウォール・ポリシーを設定します。
 
-* *set zone-policy zone private from dmz firewall name dmz2private*
-* *set zone-policy zone prod from dmz firewall name dmz2private*
-* *set zone-policy zone dmz from prod firewall name public4*
-* *commit*
+  * *set zone-policy zone private from dmz firewall name dmz2private*
+  * *set zone-policy zone prod from dmz firewall name dmz2private*
+  * *set zone-policy zone dmz from prod firewall name public4*
+  * *commit*
 
 特定のファイアウォール・ルールをゾーン・ポリシーに適用したくない場合は、そのルールを特定のインターフェースに適用できます。 以下のコマンドを使用して、特定のルールをインターフェースに適用します。
 
@@ -130,8 +134,9 @@ bond1.1894 = 将来の利用のために予約済み
 * *commit*
 
 ## ステートフル・ファイアウォール
+{: #stateful-firewalls}
 
-*ステートフル*・ファイアウォールは以前に確認されたフローのテーブルを保持します。前のパケットとの関係に従ってパケットを受け入れるかドロップすることができます。 原則として、アプリケーション・トラフィックが多い場所では、通常はステートフル・ファイアウォールが優先されます。 
+*ステートフル*・ファイアウォールは以前に確認されたフローのテーブルを保持します。前のパケットとの関係に従ってパケットを受け入れるかドロップすることができます。 原則として、アプリケーション・トラフィックが多い場所では、通常はステートフル・ファイアウォールが優先されます。
 
 <span style="text-decoration: underline">*Brocade 5400 vRouter は、デフォルト構成では接続の状態を追跡しません。 ファイアウォールは、以下のいずれかの条件が満たされるまでステートレスです。*</span>
 
@@ -142,5 +147,6 @@ bond1.1894 = 将来の利用のために予約済み
 * WAN ロード・バランシング構成の有効化
 
 ## ステートレス・ファイアウォール
+{: #stateless-firewalls}
 
 *ステートレス*・ファイアウォールは、すべてのパケットが分離しているものと見なします。 IP ヘッダーまたは Transmission Control Protocols/User Datagram Protocol (TCP/UDP) ヘッダー内のソース・フィールドおよび宛先フィールドなどの、基本的なアクセス制御リスト(ACL) 基準のみに従って、パケットを受け入れるかドロップすることができます。 ステートレス Brocade 5400 vRouter は接続情報を保管せず、前のフローとの間のすべてのパケットの関係を検索する必要はありません (これらはどちらも少量のメモリーと CPU 時間を消費します)。 したがって、未加工転送のパフォーマンスは、ステートレス・システムで最高になります。 Brocade では、ステートフルな状態に固有の機能を必要としない場合、最高のパフォーマンスを得るためにルーターをステートレスな状態に維持することをお勧めします。

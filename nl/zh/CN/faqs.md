@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: faq, faqs, questions, gateway, vrouter, vyatta, 5400, 5600, password, traffic, firewall, provision, login, ha, high availability
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,36 +18,38 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
+{:important: .important}
 
 # IBM 虚拟路由器设备的常见问题
 {: #faqs-for-ibm-virtual-router-appliance}
 
 下面是使用 IBM© 虚拟路由器设备 (VRA) 时的常见问题。
 
-## 什么是 VRA？ 
-{:faq}
+## 什么是 VRA？
+{: faq}
 
 虚拟路由器设备 (VRA) 支持 IBM Cloud 客户通过全功能的企业路由器（具有防火墙、流量塑形、基于策略的路由、VPN 和其他诸多功能）有选择地路由专用和公用网络流量。所有 VRA 功能均由客户管理。VRA 给予 IBM Cloud 客户一定程度的控制权，而这种程度的控制权通常是保留用于内部部署网络的。
 
-## 什么是网关设备？ 
-{:faq}
+## 什么是网关设备？
+{: faq}
 
 通过网关设备装置，可以使用 Web 门户网站或 API 来选择要通过 VRA 路由的网络分段 (VLAN)。您可以随时更改选择的 VLAN。网关设备还可处理 VRA 高可用性 (HA)，配置第二个 VRA 以在第一个 VRA 发生故障时进行接管。
 
 ## 有时，我会看到对“Vyatta”和“vRouter”之类的术语的引用。它们与 VRA 有什么关系？
-{:faq}
+{: faq}
 
 Vyatta 原本是一个基于 PC 的开放式源代码路由器软件，但被全面收购后已转变为封闭式源代码。如今，“Vyatta”和“Vyatta 操作系统”都描述的是派生自该封闭式源代码项目的商业软件改写。IBM VRA 包含 Vyatta 操作系统的元素，以及通过 IBM Cloud 独家提供的针对功能和服务的重大改进。
 
 “vRouter”是 Vyatta 当时所有者对其进行的暂时更名。在文档中看到时，可以将其视为与 Vyatta 同义。
 
 ## 是否仍支持 Vyatta 5400？
-{:faq}
+{: faq}
 
 从 2019 年 3 月 31 日开始，IBM 将不再支持 Vyatta 5400。
 
 ## 虚拟路由器设备 (Vyatta 5600) 相比 Vyatta 5400 进行了哪些改进？
-{:faq}
+{: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
 
 相比 Vyatta 5400，Vyatta 5600 提供了以下增强功能：
 
@@ -53,32 +59,32 @@ Vyatta 原本是一个基于 PC 的开放式源代码路由器软件，但被全
 - 更新了标准支持，包括第 2 层隧道协议 V3 (L2TPv3)、因特网密钥交换 V2 (IKEv2)、安全散列算法 2 (SHA-2) 和 802.1Q 隧道 (Q-in-Q) 封装
 
 ## AT&T vRouter 5600 产品是什么情况？
-{:faq}
+{: faq}
 
 AT&T（原名为 Brocade）已声明其 Brocade vRouter 5600 产品寿命终止，不再提供支持。虽然 Brocade vRouter 5600 为 IBM 虚拟路由器设备提供底层技术功能，但此声明不适用于 IBM 客户。IBM 客户使用此新产品时将继续享有支持。
 
-## VRA 如何交付？ 
-{:faq}
+## VRA 如何交付？
+{: faq}
 
 您可通过订购网关来获取 VRA。通过这一简化的流程，您可选择数据中心和适用的 VRA 服务器，以及是否要部署 HA 对形式的 VRA。服务器、操作系统和网关设备装置全部都会自动供应。供应完成后，可以使用网关设备接口通过 VRA 来路由 VLAN。您可以使用 SSH（安全 Shell）和客户门户网站的“硬件详细信息”部分中提供的密码来直接配置 VRA 服务器。
 
-## 我的密码是否安全？ 
-{:faq}
+## 我的密码是否安全？
+{: faq}
 
 安全。所有 VRA 都分配有仅对帐户持有者可视的随机密码。如同 SSH 公用密钥和管理 IP 访问限制那样，密码可轻松更改。
 
-## 可以在没有网关设备的情况下获取 VRA 吗？ 
-{:faq}
+## 可以在没有网关设备的情况下获取 VRA 吗？
+{: faq}
 
 可以，但获取的 VRA 只能管理 VRA 的公用接口和专用接口之间的流量。VLAN 和 HA 需要网关设备装置。
 
-## 是否所有网络流量都通过 VRA 发送？ 
-{:faq}
+## 是否所有网络流量都通过 VRA 发送？
+{: faq}
 
 不是。网关设备支持您选择要通过 VRA 路由的专用和公用网络分段 (VLAN)。您可以随时更改和绕过选择的 VLAN。VRA 还支持定义应用于子网或 IP 范围的基于 IP 的规则。仅当包含这些子网的 VLAN 通过 VRA 进行路由时，这些规则才起作用。
 
-## VRA 或专用防火墙是否会阻止新的服务器供应？ 
-{:faq}
+## VRA 或专用防火墙是否会阻止新的服务器供应？
+{: faq}
 
 会阻止。所以只要有可能，在将您计划使用的服务器填充进网络之前，您都不应当锁定网络。
 
@@ -89,12 +95,12 @@ AT&T（原名为 Brocade）已声明其 Brocade vRouter 5600 产品寿命终止�
 同样，如果下单后绕过 VRA/防火墙，那么订单仍可能失败。可能会在很短的时段内尝试进行自动重试。因此，最好是使整个供应过程持续执行，而没有网络干扰。
 
 ## IBM 提供哪些防火墙产品？
-{:faq}
+{: faq}
 
-您可以通过查看[此主题](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls)来找到 IBM Cloud 中提供的所有防火墙产品的详细比较。 
+您可以通过查看[此主题](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls)来找到 IBM Cloud 中提供的所有防火墙产品的详细比较。
 
-## VRA 是否会影响客户支持工作？ 
-{:faq}
+## VRA 是否会影响客户支持工作？
+{: faq}
 
 会，原因如上所述。VRA 是一个“黑匣”：进去的是 VLAN，出来的也是 VLAN，IBM 并不知道客户对这中间的包执行了哪些操作。
 
@@ -102,15 +108,15 @@ AT&T（原名为 Brocade）已声明其 Brocade vRouter 5600 产品寿命终止�
 
 作为第一个诊断步骤，我们可能需要您将 VRA 或防火墙 VLAN 放入旁路中。如果在此状态下，之前失败的供应开始正常运作，那么我们一定会认定问题出在 VRA/防火墙配置上。
 
-## VRA 对网络性能有什么影响？ 
-{:faq}
+## VRA 对网络性能有什么影响？
+{: faq}
 
 请记住，尽管其他客户看不到您，但公共云会与这些客户共享网络。真正的最佳“VRA”吞吐量根据某个时间点的可用网络容量以及数据必须传递的距离来确定。
 
 除了这些变量外，VRA 能够使用粗略计算公式以 80 Gbps 的速度转发多个接口上未经修改的流量，公式为每 10 Gbps 吞吐量需要一个完整的处理器核心（不包括超线程）。鉴于当前服务器的最大输出为 40 Gbps（2 个 10 Gbps 公用 + 2 个 10 Gbps 专用），带有 8 个或更多核心的服务器应该有足够的计算空余空间来以近最佳网络性能处理多个常用 VRA 功能。
 
 ## 如果丢失了 VRA 密码该怎么办？
-{:faq}
+{: faq}
 
 如果有对系统的访问权，请通过运行以下命令来设置新密码：
 
@@ -121,7 +127,7 @@ set system login user [account] authentication plaintext-password [password]  
 如果无权访问系统，那么可以重新引导设备，然后使用 GRUB 菜单上的“密码恢复”选项来重置 root 用户密码。
 
 ## 如果防火墙阻止我访问该怎么办？
-{:faq}
+{: faq}
 
 在测试可能存在危险的防火墙规则时，`reboot at [time]` 构造会非常有用。
 
@@ -147,14 +153,19 @@ set system login user [account] authentication plaintext-password [password]  
 
 **注：**错误使用这些命令可能会擦除接口配置。
 
+## 为什么要在高可用性 (HA) 对中运行两个 Vyatta 设备？
+{: faq}
+
+大多数云客户都希望获得高可用性 (HA) 服务。这样就可以在两个（或更多）完全独立的（硬件）机器上托管工作负载，或者更有利的是，在两个单独的可用性专区（考虑数据中心）中托管工作负载，以便在一个专区发生故障时，另一个专区能够继续服务。如果一个机器发生故障，那么将“故障转移”到其他机器，这意味着该服务可以保持运行。这就是所谓的“HA”服务，该服务几乎总是可用的。
+
 ## 该如何启用对 VRA 的 root 用户登录？
-{:faq}
+{: faq}
 
 要启用通过 SSH 进行的 root 用户访问，请运行以下命令：
 
 `set service ssh allow-root`
 
-请注意，允许使用 SSH 进行 root 用户访问被视为不安全。访问根 shell 的另一种方法是以其他用户身份登录，然后使用 `su -` 本地升级到 root 用户，或者允许使用 sudo 命令升级到“超级用户”。 
+请注意，允许使用 SSH 进行 root 用户访问被视为不安全。访问根 shell 的另一种方法是以其他用户身份登录，然后使用 `su -` 本地升级到 root 用户，或者允许使用 sudo 命令升级到“超级用户”。
 
 例如，要以超级用户身份配置 Vyatta，请运行以下命令：
 

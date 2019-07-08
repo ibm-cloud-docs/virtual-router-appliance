@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: ipsec, firewall, configure, policy
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,6 +16,8 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # Configurazione di un tunnel IPSec che funziona con i firewall zona
@@ -22,6 +28,8 @@ Nelle versioni precedenti della Virtual Router Appliance, i tunnel IPsec con l'i
 Viene qui di seguito riportata una configurazione di esempio di due macchine con IPsec:
 
 ###Macchina A
+{: #machine-a}
+
 ```
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -39,6 +47,8 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '17
 ```
 
 ###Macchina B
+{: #machine-b}
+
 ```
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
@@ -55,9 +65,9 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-Questo configura un tunnel generico che instrada il traffico 172.16.x.x tra le due macchine. La Macchina B ha 172,16.100.1 come indirizzo di loopback per fornire un endpoint con cui eseguire la verifica, mentre la Macchina A ha una macchina virtuale su una VLAN instradata per fornire il traffico di origine attraverso il tunnel. 
+Questo configura un tunnel generico che instrada il traffico 172.16.x.x tra le due macchine. La Macchina B ha 172,16.100.1 come indirizzo di loopback per fornire un endpoint con cui eseguire la verifica, mentre la Macchina A ha una macchina virtuale su una VLAN instradata per fornire il traffico di origine attraverso il tunnel.
 
-Puoi vedere il risultato qui:
+Puoi vedere i risultati qui:
 
 ```
 [root@acs-jmat-migserver ~]# ping -c 5 172.16.100.1
@@ -86,7 +96,7 @@ set security firewall name ALLOWALL rule 30 action 'accept'
 set security firewall name ALLOWALL rule 30 protocol 'udp'
 set security firewall name ALLOWALL rule 30 state 'enable'
 ```
- 
+
 Aggiungi quindi le politiche tra tutte e tre le interfacce:
 
 ```

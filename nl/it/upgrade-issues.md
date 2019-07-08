@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: upgrade, issues, troubleshooting
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +17,8 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Questioni di aggiornamento
 {: #upgrade-issues}
@@ -61,9 +67,10 @@ drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
 
-Le ISO per l'installazione iniziale e il tuo SO al momento in esecuzione sono qui presentati. 
+Le ISO per l'installazione iniziale e il tuo SO al momento in esecuzione sono qui presentati.
 
-**NOTA:** se esegui più di un upgrade, anche quelli saranno qui visualizzati.
+Se esegui più di un upgrade, anche quelli saranno qui visualizzati.
+{: note}
 
 Successivamente, modifica le directory utilizzando il SO caricato precedentemente come la directory successiva e passa alla directory home di VRA.
 
@@ -124,4 +131,5 @@ vyatta@acs-jmat-vyatta01:~$
 ```
 Tutti i tuoi comandi rifunzioneranno e puoi continuare normalmente.
 
-**NOTA:** può anche non riuscire la copia del certificato HTTPS `/etc/lighttpd/server.pem` durante il processo di upgrade del SO, che può causare un malfunzionamento nella sincronizzazione delle configurazioni dell'alta disponibilità (HA). Per correggere questo problema, sovrascrivi il vecchio file `server.pem` in aggiunta ai file sopra elencati (immetti `su -` per passare al livello della root, quindi immetti il comando `copy`), quindi immetti `restart https` per riavviare il file `demon.m` HTTPS (e i file sopra elencati).
+La copia del certificato HTTPS `/etc/lighttpd/server.pem` può anche non riuscire durante il processo di upgrade del SO, cosa che può causare la mancata riuscita della sincronizzazione delle configurazioni dell'alta disponibilità (HA). Per correggere questo problema, sovrascrivi il vecchio file `server.pem` in aggiunta ai file sopra elencati (immetti `su -` per passare al livello della root, quindi immetti il comando `copy`), quindi immetti `restart https` per riavviare il file `demon.m` HTTPS (e i file sopra elencati).
+{: important}

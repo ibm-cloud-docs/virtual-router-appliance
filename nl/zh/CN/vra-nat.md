@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: nat, prefix, IPsec, rules
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # 将 NAT 与基于前缀的 IPsec 配合使用
 {: #using-nat-with-prefix-based-ipsec}
 
-在[为 VFP 接口配置 IPSec 和区域防火墙](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)主题中，我们创建了一个 VFP 接口，并将其设置为用于 IPsec 隧道。 
+在[为 VFP 接口配置 IPSec 和区域防火墙](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)主题中，我们创建了一个 VFP 接口，并将其设置为用于 IPsec 隧道。
 
-我们可以在 NAT 规则中使用相同的接口，还可以使用入站和出站接口声明，但会有一个额外的警告。 
+我们可以在 NAT 规则中使用相同的接口，还可以使用入站和出站接口声明，但会有一个额外的警告。
 
 下面是一些示例 NAT 规则：
 
@@ -51,11 +57,12 @@ K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
 
-这将为流量创建一个更明确的路径来通过 `vfp0`。 
+这将为流量创建一个更明确的路径来通过 `vfp0`。
 
-此时，NAT 将按配置工作，并且流量将穿过隧道。 
+此时，NAT 将按配置工作，并且流量将穿过隧道。
 
-**注：**使用 NAT 时，您需要指向 `vfp0` 虚拟接口上流量的路径具有的 CIDR 小于 IPsec 远程前缀（大小不能相同）。
+NAT 需要一个路径，其中的 CIDR 小于 IPsec 远程前缀（其大小不能相同）并将流量指向 `vfp0` 虚拟接口。
+{: tip}
 
 一切就绪后，可以对其执行 ping 操作并进行验证：
 

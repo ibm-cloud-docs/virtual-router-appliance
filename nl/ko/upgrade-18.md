@@ -37,7 +37,7 @@ VRA의 버전 1801f에는 Spectre 취약성에 대한 보안 수정사항이 포
 
 2. 다시 부팅한 후에, 이 위치에서 18.01f 패치를 다운로드하고 [일반 프로시저](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os)를 통해 설치하십시오.
 
-이제 Spectre 보안 제한사항이 수정된 버전 18.01f가 실행 중입니다. 
+이제 Spectre 보안 제한사항이 수정된 버전 18.01f가 실행 중입니다.
 
 ## 전체 다시 로드 프로시저
 대체 방법으로, 18.01f 레벨에서 VRA의 전체 다시 로드를 수행할 수도 있습니다.
@@ -51,6 +51,6 @@ VRA의 버전 1801f에는 Spectre 취약성에 대한 보안 수정사항이 포
 
 ## 추가 안내
 
-Vyatta 5400과 Virtual Router Appliance 간에는 단순한 일대일 기능 맵핑이 없으므로, VRA에 대한 기준선 구성을 작성하는 것이 도움이 됩니다. IBM© 파트너인 WanClouds는 이 프로세스를 지원할 수 있으며 VRA의 Vyatta 5400과 유사한 기능을 작성하는 데 대한 안내를 제공합니다. 
+Vyatta 5400과 Virtual Router Appliance 간에는 단순한 일대일 기능 맵핑이 없으므로, VRA에 대한 기준선 구성을 작성하는 것이 도움이 됩니다. IBM© 파트너인 WanClouds는 이 프로세스를 지원할 수 있으며 VRA의 Vyatta 5400과 유사한 기능을 작성하는 데 대한 안내를 제공합니다.
 
 이 업그레이드 프로세스 중에 발생하는 일반적인 문제에 대한 자세한 정보는 [추가 문서](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)를 참조하십시오.

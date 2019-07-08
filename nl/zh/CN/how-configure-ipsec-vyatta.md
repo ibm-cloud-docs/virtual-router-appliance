@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # 在 Vyatta 5400 上配置 IPSec
 {: #configuring-ipsec-on-vyatta-5400}
@@ -21,18 +24,18 @@ lastupdated: "2018-11-10"
   * 创建名为 **test** 的新 **ike** 组，并使用 **dh-group** 作为密钥交换类型。
   * 指定要使用的加密类型；如果未设置此项，设备将使用 **aes128** 作为缺省值
   * 使用散列函数 **sha-1**<br/><br/>
-1\. *set vpn ipsec ike-group TestIKE proposal 1 dh-group '2'*<br/>
-2\. *set vpn ipsec ike-group TestIKE proposal 1 encryption 'aes128'*<br/>
-3\. *set vpn ipsec ike-group TestIKE proposal 1 hash 'sha1'*<br/>
+  1\. *set vpn ipsec ike-group TestIKE proposal 1 dh-group '2'*<br/>
+  2\. *set vpn ipsec ike-group TestIKE proposal 1 encryption 'aes128'*<br/>
+  3\. *set vpn ipsec ike-group TestIKE proposal 1 hash 'sha1'*<br/>
 
 3. 设置两阶段隧道的第二个阶段。以下命令将用于：
 
   * 禁用完美前向保密 (PFS)，因为并非所有设备都可以使用此功能。（命令中的 esp 是加密的第二部分。）
   * 指定要使用的加密类型；如果未设置此项，设备将使用 **aes128** 作为缺省值
   * 使用 `has` 函数 **sha-1**<br/><br/>
-1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
-2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
-3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
+  1\. *set vpn ipsec esp-group TestESP pfs disabl۪*<br/>
+  2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
+  3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
 
 4. 设置 IPSec 站点到站点加密参数。以下命令将用于：
 
@@ -40,19 +43,19 @@ lastupdated: "2018-11-10"
   * 使用远程 IP 和密钥 TestPSK
   * 将隧道的缺省 **esp** 组设置为 TestESP
   * “指示”IPSec 使用先前所定义的 ike-group TestIKE<br/><br/>
-1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
-2\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication pre-shared-secret TestPSK۪*<br/>
-3\. *set vpn ipsec site-to-site peer 169.54.254.117 default-esp-group TestESP۪*<br/>
-4\. *set vpn ipsec site-to-site peer 169.54.254.117 ike-group TestIKE۪*<br/>
+  1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
+  2\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication pre-shared-secret TestPSK۪*<br/>
+  3\. *set vpn ipsec site-to-site peer 169.54.254.117 default-esp-group TestESP۪*<br/>
+  4\. *set vpn ipsec site-to-site peer 169.54.254.117 ike-group TestIKE۪*<br/>
 
 5. 为 IPSec 隧道创建映射。根据材料中的示例，以下命令将用于：
 
   * “指示”隧道将远程 IP 169.54.254.117 映射到 bond1 的本地 IP 地址 50.97.240.219
   * 仅将本地服务器接口上 10.54.9.152/29 子网的 IP 地址路由到远程服务器 169.54.254.117
   * 将隧道 1 远程流量 169.54.254.117 路由到远程子网 192.168.1.2/32<br/><br/>
-1\. *set vpn ipsec site-to-site peer 169.54.254.117 local-address ۪50.97.240.219*<br/>
-2\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 local prefix 10.54.9.152/29*<br/>
-3\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 remote prefix 192.168.1.2/32*<br/>
+  1\. *set vpn ipsec site-to-site peer 169.54.254.117 local-address ۪50.97.240.219*<br/>
+  2\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 local prefix 10.54.9.152/29*<br/>
+  3\. *set vpn ipsec site-to-site peer 169.54.254.117 tunnel 1 remote prefix 192.168.1.2/32*<br/>
 
 下一步是设置远程端设备，即 Brocade 5400 vRouter 6.6.5 R。
 

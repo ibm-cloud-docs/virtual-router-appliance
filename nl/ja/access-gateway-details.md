@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2018-11-10"
+  years: 2017, 2019
+lastupdated: "2019-06-11"
+
+keywords: vra, details, view, gateway
+
+subcollection: virtual-router-appliance
 
 ---
 
@@ -13,11 +17,13 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # VRA の詳細の表示
 {: #view-vra-details}
 
-ネットワーク・ゲートウェイは、通常はルーターによって制御される、VLAN 上のネットワーク・トラフィックの制御に使用されます。 カスタマー・ポータルの「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面で、ネットワーク・ゲートウェイに関連付けられた VLAN の関連付け、関連付け解除、経路指定およびバイパスを行うことができます
+ネットワーク・ゲートウェイは、通常はルーターによって制御される、VLAN 上のネットワーク・トラフィックの制御に使用されます。 {{site.data.keyword.cloud}} インフラストラクチャー・カスタマー・ポータルの「ゲートウェイ・アプライアンスの詳細 (Gateway Appliance Details)」画面で、ネットワーク・ゲートウェイに関連付けられた VLAN の関連付け、関連付け解除、経路指定、およびバイパスを行うことができます。
 
 次の手順を実行して、カスタマー・ポータル内の「ゲートウェイの詳細」画面にアクセスします。
 

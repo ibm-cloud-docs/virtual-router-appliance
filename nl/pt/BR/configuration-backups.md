@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: backup, configuration
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,13 +17,15 @@ lastupdated: "2018-11-10"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
+{:important: .important}
 
 # Fazendo backup de uma configuração
 {: #backing-up-a-configuration}
 
 Os comandos de configuração precisam ser submetidos a backup quando há uma mudança no sistema. Isso pode ser feito executando o comando do modo operacional `mostrar comandos de configuração` e, em seguida, salvando a saída (por exemplo, copiando e colando na sessão SSH). Isso seria considerado um backup mínimo para a configuração.
 
-Um backup mais completo envolve gerar um archive de suporte técnico para o sistema: 
+Um backup mais completo envolve gerar um archive de suporte técnico para o sistema:
 
 ```
 $ generate tech-support archive
@@ -28,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-O archive gerado pode, então, ser copiado do Virtual Router Appliance para o dispositivo de armazenamento de sua escolha. O archive contém os backups das informações de configuração, diretórios iniciais e informações de criação de log. Ele é um backup muito mais completo de um sistema. 
+O archive gerado pode, então, ser copiado do Virtual Router Appliance para o dispositivo de armazenamento de sua escolha. O archive contém os backups das informações de configuração, diretórios iniciais e informações de criação de log. Ele é um backup muito mais completo de um sistema.
 
 Como um exemplo:
 

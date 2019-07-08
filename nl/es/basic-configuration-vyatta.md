@@ -6,6 +6,9 @@ lastupdated: "2018-11-10"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
 
 # Configuración básica de Vyatta 5400
 {: #basic-configuration-of-vyatta-5400}
@@ -20,36 +23,40 @@ La LAN virtual (VLAN) pública 1224, que ahora está asociada y direccionada, de
 Tenga en cuenta que la opción de cálculo se encuentra en la VLAN del lado público, no en la VLAN pública del dispositivo Brocade 5400 vRouter.
 
 ## En el portal de Softlayer
+{: #in-the-softlayer-portal}
 
-1\. En el portal web de SoftLayer, bajo **Dispositivos**, localice el enlace en el separador **Configuración** del dispositivo Brocade 5400 vRouter. Supongamos que <span style="text-decoration: underline">eth1=bond1</span> en el dispositivo.
+1. En el portal web de SoftLayer, bajo **Dispositivos**, localice el enlace en el separador **Configuración** del dispositivo Brocade 5400 vRouter. Suponga ese eth1=bond1 en su dispositivo.
 
-2\. Seleccione **Red > Gestión de IP > VLAN** en el portal web para buscar la pasarela predeterminada para la VLAN 1224.
+2. Seleccione **Red > Gestión de IP > VLAN** en el portal web para buscar la pasarela predeterminada para la VLAN 1224.
 
-3\. Pulse la VLAN en la lista y pulse la **subred** en la que vea su pasarela. Tome nota de la información de CIDR (direccionamiento entre dominios sin clases) que se encuentra tras la barra inclinada. 
+3. Pulse la VLAN en la lista y pulse la **subred** en la que vea su pasarela. Tome nota de la información de CIDR (direccionamiento entre dominios sin clases) que se encuentra tras la barra inclinada.
 
 ## En la GUI de Vyatta
+{: #in-the-vyatta-gui}
 
-4\. Desde el panel de control, pulse el separador **Configuration**.
+1. Desde el panel de control, pulse el separador **Configuration**.
 
-5\. Expanda **Interfaces > Bonding > bond1** en la parte izquierda de la pantalla; resalte **vif**.
+2. Expanda **Interfaces > Bonding > bond1** en la parte izquierda de la pantalla; resalte **vif**.
 
-6\. Especifique el nombre de las VLAN en el campo **vif** (para nuestro objetivo, 1224) y pulse el botón **Create**. El proceso tardará unos segundos en completarse.
+3. Especifique el nombre de las VLAN en el campo **vif** (para nuestro objetivo, 1224) y pulse el botón **Create**. El proceso tardará unos segundos en completarse.
 
-7\. Seleccione el elemento **vif 1224** recién creado bajo el icono de **vif**.
+4. Seleccione el elemento **vif 1224** recién creado bajo el icono de **vif**.
 
-8\. Marque el recuadro bajo **dhcp** y escriba la dirección IP de pasarela predeterminada y la notación de CIDR de máscara de la VLAN que desea que pase por Brocade 5400 vRouter (por ejemplo, VLAN 1224).
+5. Marque el recuadro bajo **dhcp** y escriba la dirección IP de pasarela predeterminada y la notación de CIDR de máscara de la VLAN que desea que pase por Brocade 5400 vRouter (por ejemplo, VLAN 1224).
 
-9\. Pulse el botón **Set** y pulse **Commit**.
+6. Pulse el botón **Set** y pulse **Commit**.
 
-10\. Pulse **Save** en la barra de menús del medio, si no, la configuración vuelve a sus valores predeterminados la siguiente vez que se rearranca el sistema.
+7. Pulse **Save** en la barra de menús del medio, si no, la configuración vuelve a sus valores predeterminados la siguiente vez que se rearranca el sistema.
 
-**NOTA** La retrotracción de la configuración puede ser una característica muy útil si deshace la configuración mientras prueba los cambios. Mientras no guarde los cambios, puede reiniciar el servidor desde el portal web y restaurar la configuración anterior.
+La retrotracción de la configuración puede ser una característica muy útil si deshace la configuración mientras prueba los cambios. Mientras no guarde los cambios, puede reiniciar el servidor desde el portal web y restaurar la configuración anterior.
+{: note}
 
-11\. Pulse el separador Statistics y abra la nueva interfaz para verificar y supervisar el tráfico.
+8. Pulse el separador Statistics y abra la nueva interfaz para verificar y supervisar el tráfico.
 
 ## Configurar la VLAN privada utilizando la CLI
+{: #configure-the-private-vlan-using-the-cli}
 
-Hay dos modalidades de mandatos en la CLI (interfaz de línea de mandatos): operativa y de configuración. 
+Hay dos modalidades de mandatos en la CLI (interfaz de línea de mandatos): operativa y de configuración.
 
 La modalidad operativa proporciona acceso a los mandatos operativos para:
 
@@ -70,7 +77,8 @@ La modalidad de configuración proporciona acceso a los mandatos para:
 
 Cuando inicia sesión en el sistema, el sistema está en modalidad operativa; deberá cambiar a la modalidad configuración para utilizar estos mandatos.
 
-**NOTA:** puede saber en qué modalidad está, operativa o de configuración, en función del símbolo del sistema. Si el símbolo del sistema es #, está en modalidad operativa; si el símbolo es $, está en modalidad de configuración.
+Puede saber en qué modalidad está, operativa o de configuración, en función del símbolo del sistema. Si el símbolo del sistema es #, está en modalidad operativa; si el símbolo es $, está en modalidad de configuración.
+{: note}
 
 Utilice los pasos siguientes para configurar la VLAN privada mediante la CLI. Recuerde que los valores necesarios para configurar la VLAN son:
 
@@ -80,7 +88,8 @@ Utilice los pasos siguientes para configurar la VLAN privada mediante la CLI. Re
 
 1. Establezca una conexión SSH a Brocade 5400 vRouter (dirección IP pública o privada) utilizando **vyatta** como **nombre de usuario**; indique la contraseña cuando se le solicite.
 
-   **NOTA:** debe crear un nuevo usuario dentro de Brocade 5400 vRouter e inhabilitar el usuario inicial predeterminado `vyatta`.
+   Debe crear un nuevo usuario dentro de Brocade 5400 vRouter e inhabilitar el usuario inicial predeterminado `vyatta`.
+   {: note}
 
 2. Configure la vif:
 

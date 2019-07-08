@@ -4,6 +4,10 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
+keywords: faq, faqs, questions, gateway, vrouter, vyatta, 5400, 5600, password, traffic, firewall, provision, login, ha, high availability
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,36 +18,38 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
+{:important: .important}
 
 # FAQ per IBM Virtual Router Appliance
 {: #faqs-for-ibm-virtual-router-appliance}
 
 Le seguenti sono le FAQ (frequently asked question) quando si utilizza IBM© Virtual Router Appliance (VRA).
 
-## Cosa è una VRA? 
-{:faq}
+## Cosa è una VRA?
+{: faq}
 
 Una VRA (Virtual Router Appliance) consente a un cliente IBM Cloud di instradare selettivamente il traffico di rete pubblico e privato tramite un router aziendale completo con firewall, modellamento del traffico, instradamento basato sulla politica, VPN e un host di altre funzioni. Tutte le funzioni VRA sono gestite dal cliente. VRA fornisce a un cliente IBM Cloud un grado di controllo riservato normalmente alle reti in loco.
 
-## Cosa è un'applicazione gateway? 
-{:faq}
+## Cosa è un'applicazione gateway?
+{: faq}
 
 Un'apparecchiatura Applicazione gateway ti consente di utilizzare il portale web o l'API per scegliere i segmenti di rete (VLAN) per l'instradamento tramite una VRA. Puoi modificare le selezioni VLAN in qualsiasi momento. L'applicazione gateway gestisce inoltre l'alta disponibilità (HA) della VRA, configurando una seconda VRA da utilizzare se si verifica un malfunzionamento della prima.
 
 ## Alcune volte vedo dei riferimenti a termini come "Vyatta" e "vRouter." Come si correlano alla VRA?
-{:faq}
+{: faq}
 
 Vyatta era un software basato sul PC open source, che è stato completamente acquisito e passato a un'origine chiusa. Oggi, "Vyatta" e "Vyatta OS" descrivono gli adeguamenti del software commerciali da tale progetto di origine chiuso. IBM VRA incorpora elementi di Vyatta OS, insieme a un notevole miglioramento del servizio e della funzione disponibile esclusivamente tramite IBM Cloud.
 
 "vRouter" era un cambiamento di marchio di breve durata di Vyatta e di sua proprietà. Quando visto nella documentazione, può essere considerato un sinonimo di Vyatta.
 
 ## È Vyatta 5400 ancora supportato?
-{:faq}
+{: faq}
 
 IBM non supporterà più Vyatta 5400 a partire dal 31 marzo 2019.
 
 ## Quali miglioramenti per Virtual Router Appliance (Vyatta 5600) rispetto a Vyatta 5400?
-{:faq}
+{: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
 
 Vyatta 5600 offre i seguenti miglioramenti rispetto a Vyatta 5400:
 
@@ -53,32 +59,32 @@ Vyatta 5600 offre i seguenti miglioramenti rispetto a Vyatta 5400:
 - Supporto per gli standard aggiornato, inclusi Layer 2 Tunneling Protocol, versione 3 (L2TPv3), Internet Key Exchange, versione 2 (IKEv2), Secure Hash Algorithm 2 (SHA-2) e l'incapsulamento 802.1Q tunneling (Q-in-Q)
 
 ## Come è l'offerta AT&T vRouter 5600?
-{:faq}
+{: faq}
 
 AT&T (precedentemente Brocade) ha annunciato la fine del ciclo di vita e del supporto della loro offerta Brocade vRouter 5600. Mentre Brocade vRouter 5600 fornisce la capacità tecnologica sottostante per IBM Virtual Router Appliance, questo annuncio non si applica ai clienti IBM. I clienti IBM continueranno ad avere supporto utilizzando questa nuova offerta.
 
-## Come viene fornita la VRA? 
-{:faq}
+## Come viene fornita la VRA?
+{: faq}
 
 Ottieni una VRA ordinando un gateway di rete. Questo semplice processo di permette di scegliere un data center e un server VRA adatto, così come se volessi distribuire una coppia HA di VRA. I server, i sistemi operativi e l'apparecchiatura Applicazione gateway sono tutti forniti automaticamente. Quando il provisioning è completo, puoi utilizzare l'interfaccia dell'applicazione gateway per instradare le VLAN tramite la VRA. Puoi configurare il tuo server VRA direttamente utilizzando SSH (shell sicura) con le password fornite nella sezione dei dettagli hardware del portale del cliente.
 
-## È la mia password protetta? 
-{:faq}
+## È la mia password protetta?
+{: faq}
 
 Sì. A tutte le VRA sono assegnate password casuali visibili solo al titolare dell'account. Le password sono facilmente modificabili, perché sono chiavi pubbliche SSH e gestiscono le limitazioni dell'accesso all'IP.
 
-## Posso ottenere una VRA senza un'applicazione gateway? 
-{:faq}
+## Posso ottenere una VRA senza un'applicazione gateway?
+{: faq}
 
 Sì, ma può gestire solo il traffico tra le interfacce privata e pubblica della VRA. Le VLAN e HA richiedono l'apparecchiatura Applicazione gateway.
 
-## Tutto il traffico di rete viene inviato tramite la VRA? 
-{:faq}
+## Tutto il traffico di rete viene inviato tramite la VRA?
+{: faq}
 
 No. L'applicazione gateway ti permette di selezionare i segmenti di rete pubblica e privata (VLAN) che desideri instradare tramite la VRA. Puoi modificare e tralasciare le selezioni VLAN in qualsiasi momento. VRA ti permette inoltre di definire le regole basate sull'IP che si applicano alle sottoreti o agli intervalli IP. Queste regole funzionano solo se le VLAN che contengono queste sottoreti sono instradate tramite la VRA.
 
-## Può una VRA o un firewall dedicato impedire il provisioning di un nuovo server? 
-{:faq}
+## Può una VRA o un firewall dedicato impedire il provisioning di un nuovo server?
+{: faq}
 
 Sì. Quando possibile, non dovresti bloccare la tua rete finché non l'hai popolata con i server che hai pianificato di utilizzare.
 
@@ -89,12 +95,12 @@ Al supporto IBM è proibito dalla politica di esaminare o modificare la VRA o la
 Allo stesso modo, se una VRA o un firewall vengono esclusi dopo l'inserimento di un ordine, è ancora probabile che l'ordine non riesca. Potrebbe esserci una finestra ridotta durante la quale saranno tentati i nuovi tentativi di automazione. È meglio che l'intero processo di provisioning proceda senza interferenze di rete.
 
 ## Quali prodotti firewall offre IBM?
-{:faq}
+{: faq}
 
-Puoi trovare un confronto dettagliato di tutti i prodotti firewall offerti in IBM Cloud esaminando [questo argomento](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls). 
+Puoi trovare un confronto dettagliato di tutti i prodotti firewall offerti in IBM Cloud esaminando [questo argomento](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls).
 
-## Può una VRA confondere gli sforzi del supporto clienti? 
-{:faq}
+## Può una VRA confondere gli sforzi del supporto clienti?
+{: faq}
 
 Sì, per i motivi descritti precedentemente. VRA è una "scatola nera:" in cui le VLAN entrano ed escono e IBM non ha idea di quali clienti stiano facendo cosa.
 
@@ -102,15 +108,15 @@ Il supporto fa sempre del suo meglio, ma con VRA e il firewall dedicato: a) la p
 
 Come primo passo di diagnostica, potremmo aver bisogno che metti le tue VLAN VRA e firewall in bypass. Se, in questo stato, i provisioning che hanno avuto esito negativo iniziano a funzionare, dobbiamo assumere che il problema risiede nella tua configurazione VRA/firewall.
 
-## Quale effetto avrà VRA sulle mie prestazioni di rete? 
-{:faq}
+## Quale effetto avrà VRA sulle mie prestazioni di rete?
+{: faq}
 
 Tieni presente che anche se non possono vederti, un cloud pubblico condivide le reti con altri clienti. Nel migliore dei casi la velocità di trasmissione della VRA viene determinata dalla capacità di rete disponibile in punto nel tempo, con in più la distanza che devono percorrere i dati.
 
 A parte queste variabili, VRA può inoltrare 80 Gbps di traffico non modificato tra più interfacce, utilizzando la formula approssimativa che ogni 10 Gbps di velocità di trasmissione richiedono un core del processore completo (non includendo l'hyperthreading). Dato che i server correnti escono al massimo di 40 Gbps (2 x 10 Gbps pubblici + 2 x 10 Gb privati), un server con 8 o più core dovrebbero avere abbastanza capacità di calcolo per gestire più funzioni VRA comuni approssimativamente al meglio delle loro prestazioni di rete.
 
 ## Cosa posso fare se perdo la mia password VRA?
-{:faq}
+{: faq}
 
 Se hai accesso al sistema, imposta una nuova password eseguendo il seguente comando:
 
@@ -121,7 +127,7 @@ set system login user [account] authentication plaintext-password [password]  
 Se non hai accesso al sistema, puoi riavviare il dispositivo e utilizzare l'opzione di recupero della password nel menu GRUB per il ripristino della password utente principale.
 
 ## Cosa faccio se sono stato bloccato dal firewall?
-{:faq}
+{: faq}
 
 Il costrutto `reboot at [time]` può essere utile durante la verifica di regole firewall potenzialmente pericolose.
 
@@ -147,14 +153,19 @@ Se puoi accedere utilizzando IPMI, puoi eseguire le seguenti azioni per ripristi
 
 **NOTA:** l'utilizzo non corretto di questi comandi può cancellare la tua configurazione dell'interfaccia.
 
+## Perché dovrei voler eseguire due dispositivi Vyatta in una coppia HA (High Availability)?
+{: faq}
+
+La maggior parte dei clienti cloud desidera servizi ad alta disponibilità (HA, high-availability). In questo modo il carico di lavoro viene ospitato su due (o più) macchine (hardware) completamente separate o, ancora meglio, in due zone di disponibilità separate (pensiamo ai data center) in modo che, se si verifica una condizione di errore di una, l'altra potrà continuare il servizio. Se si verifica una condizione di errore di una macchina, verrà eseguito un “failover” sull'altra macchina, il che significa che il servizio può continuare a funzionare. Questo è quello a cui si fa riferimento come servizio ad alta disponibilità (“HA”) — è quasi sempre disponibile.
+
 ## Come posso abilitare gli accessi root per la VRA?
-{:faq}
+{: faq}
 
 Per abilitare l'accesso root tramite SSH, esegui il seguente comando:
 
 `set service ssh allow-root`
 
-Nota che consentire l'accesso root utilizzando SSH non è considerato sicuro. Un'alternativa per accedere alla shell root è di accedere come un altro utente e elevare la root localmente con `su -` o di consentire i comandi sudo per 'superusers'. 
+Nota che consentire l'accesso root utilizzando SSH non è considerato sicuro. Un'alternativa per accedere alla shell root è di accedere come un altro utente e elevare la root localmente con `su -` o di consentire i comandi sudo per 'superusers'.
 
 Ad esempio, per configurare vyatta come un superuser:
 
