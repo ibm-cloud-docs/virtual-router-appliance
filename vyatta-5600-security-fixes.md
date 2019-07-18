@@ -23,11 +23,48 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**As of: June 6, 2019**
+**As of: July 10, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+
+## 1801za
+{: #1801za}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-47387 | Major | NAT statistics displaying unrealistic usage values |
+| VRVDR-47345 | Minor | Syslog rate-limiting does not take effect when configured |
+| VRVDR-47290 | Minor | SNMP agent memory cleanup issue on interface scans for ipAddrTable GET/GETNEXT fetch requests |
+| VRVDR-47224 | Minor | OSPF debug logs are incorrectly showing when logging level is set to info |
+| VRVDR-47222 | Minor | GUI not responding after RO users login |
+| VRVDR-47179 | Major | “Update config-sync” overwrites IPsec pre-shared secret key with masked value of asterisks if run by different user than the one used for config-sync itself  |
+| VRVDR-47066 | Major | Configuration change to a site-to-site or DMVPN may cause IKE negotiation to fail with INVAL_ID for IKEv1 or TS_UNACCEPT for IKEv2  |
+| VRVDR-47001 | Minor | MTU value changes on VIF/VRRP interface after restart or reboot - cosmetic |
+| VRVDR-46991 | Minor | “Show tech-support save” should include additional debug detail for site-to-site configs  |
+| VRVDR-46775 | Major | Modifying the tunnel configuration of an IPsec peer that uses multiple VFP interfaces may cause an active tunnel to become stale |
+| VRVER-45230 | Blocker | Massive memory leak with SNMP polling |
+| VRVDR-39747 | Major | Incorrectly reported total available SNAT entries when configuring translation address/mask directly |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-47586 | N/A | DSA-4477-1 | CVE-2019-13132: Debian DSA-4477-1: zeromq3 security update |
+| VRVDR-47573 | 7.4 | DSA-4475-1 | CVE-2019-1543: Debian DSA-4475-1 : openssl - security update |
+| VRVDR-47532 | 9.8 | DSA-4465-1 | CVE-2019-3846, CVE-2019-5489, CVE-2019-9500, CVE-2019-9503, CVE-2019-10126, CVE-201911477, CVE-2019-11478, CVE-2019-11479, CVE2019-11486, CVE-2019-11599, CVE-2019-11815, CVE-2019-11833, CVE-2019-11884: Debian DSA4465-1: Linux – security update |
+| VRVDR-47497 | 7.5 | DSA-4472-1 | CVE-2018-20843: Debian DSA-4472-1 : expat - security update |
+| VRVDR-47389 | N/A | DSA-4467-2 | CVE-2019-12735: Debian DSA-4467-2: vim regression update |
+| VRVDR-47388 | N/A | DSA-4469-1 | CVE-2019-10161, CVE-2019-10167: Debian DSA4469-1: libvirt security update |
+| VRVDR-47363 | 8.6 | DSA-4467-1 | CVE-2019-12735: Debian DSA-4467-1 : vim - security update |
+| VRVDR-47358 | 9.8 | N/A | CVE-2016-10228, CVE-2017-12132, CVE-20181000001, CVE-2018-6485, CVE-2017-15670, CVE2017-15671, CVE-2017-15804, CVE-2017-12133, CVE-2017-16887, CVE-2017-1000366, CVE-20155180, CVE-2016-6323, CVE-2016-10228: glibc package update |
+| VRVDR-47293 | 7.1 | DSA-4462-1 | CVE-2019-12749: Debian DSA-4462-1 : dbus - security update |
+| VRVDR-47202 | N/A | DSA-4454-2 | Debian DSA-4454-2: qemu regression update |
+
 
 ## 1801z
 {: #1801z}
