@@ -62,7 +62,7 @@ IBM Cloud Virtual Router Appliance
     vyatta-5600-security-fixes.md
 
     {: .topicgroup}
-    {{site.data.keyword.vra_full}} API Information
+    VRA API Information
         apis.md
         [{{site.data.keyword.vra_full}} API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
