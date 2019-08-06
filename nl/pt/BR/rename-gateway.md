@@ -34,5 +34,5 @@ Execute o procedimento a seguir para renomear um Network Gateway:
 
 Depois de mudar o nome de um Dispositivo de Gateway, o nome será mudado imediatamente na parte superior da tela Detalhes do Dispositivo de Gateway. O nome do Gateway pode ser mudado novamente a qualquer momento repetindo as etapas acima.
 
-Mudar o nome do VRA no Portal do cliente não muda automaticamente o nome do host dentro do Virtual Router Appliance ou de quaisquer entradas DNS que você possa ter. Isso requererá intervenção manual, se necessário.
+Mudar o nome do VRA no Portal do cliente não muda automaticamente o nome do host dentro do {{site.data.keyword.vra_full}} ou de quaisquer entradas DNS que você possa ter. Isso requererá intervenção manual, se necessário.
 {: note}

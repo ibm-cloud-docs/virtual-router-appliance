@@ -34,5 +34,5 @@ Realice el procedimiento siguiente para renombrar una pasarela de red:
 
 Después de cambiar el nombre del dispositivo de pasarela, este se cambiará de inmediato en la parte superior de la pantalla Detalles de dispositivo de pasarela. El nombre de la pasarela puede cambiarse en cualquier momento siguiente los pasos anteriores.
 
-Al cambiar el nombre de VRA en el Portal de clientes, no se cambia automáticamente el nombre de host en Virtual Router Appliance ni las entradas de DNS que puedan existir. Para ello, se requiere intervención manual, si es necesario.
+Al cambiar el nombre de VRA en el Portal de clientes, no se cambia automáticamente el nombre de host en {{site.data.keyword.vra_full}} ni las entradas de DNS que puedan existir. Para ello, se requiere intervención manual, si es necesario.
 {: note}

@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# Accessing and Configuring the IBM Virtual Router Appliance
+# Accessing and Configuring the IBM Cloud Virtual Router Appliance
 {: #accessing-and-configuring-the-ibm-virtual-router-appliance}
 
 The VRA can be configured using a remote console session through SSH or by logging into the web GUI. By default, the web GUI is not available from the public internet. To enable the web GUI, log in through SSH first.
@@ -92,7 +92,7 @@ The hash mark (`#`) indicates Configuration mode. Beginning a command with `run`
 ## Command exploration
 {: #command-exploration}
 
-The VRA command shell includes tab completion capabilities. If you are curious about which commands are available, press the Tab key for a list and a short explanation. This works both at the shell prompt and while typing a command. For instance:  
+The VRA command shell includes tab completion capabilities. If you are curious about which commands are available, press the Tab key for a list and a short explanation. This works both at the shell prompt and while typing a command. For instance: 
 
 ```
 $show log dns [Press tab]
@@ -164,7 +164,7 @@ Role-based Access Control (RBAC) is a method of restricting access to part of th
 
 RBAC is performed by creating a group assigned to the Access Control Management (ACM) rule set, adding a user to the group, creating a rule set to match the group to the paths in the system, then configuring the system to allow or deny those paths that are applied to the group.
 
-By default, there is no ACM rule set defined in Virtual Router Appliance, and ACM is disabled. If you want use RBAC to provide granular access control, you must enable the ACM and add following default ACM rules in addition to your own defined rules:
+By default, there is no ACM rule set defined in {{site.data.keyword.vra_full}}, and ACM is disabled. If you want use RBAC to provide granular access control, you must enable the ACM and add following default ACM rules in addition to your own defined rules:
 
 ```
 set system acm 'enable'

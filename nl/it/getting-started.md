@@ -21,14 +21,14 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Introduzione a IBM Virtual Router Appliance
+# Introduzione a {{site.data.keyword.vra_full}}
 {: #getting-started}
 
-IBM© VRA (Virtual Router Appliance) fornisce il sistema operativo Vyatta 5600 più recente per i server bare metal x86. Viene offerta come una configurazione ad alta disponibilità (HA, High Availability) oppure autonoma e ti consente di instradare traffico di rete privato e pubblico in modo selettivo mediante un router aziendale completo con firewall, modellamento del traffico, instradamento basato sulle politiche, VPN e altre funzioni.
+IBM© VRA ({{site.data.keyword.vra_full}}) fornisce il sistema operativo Vyatta 5600 più recente per i server bare metal x86. Viene offerta come una configurazione ad alta disponibilità (HA, High Availability) oppure autonoma e ti consente di instradare traffico di rete privato e pubblico in modo selettivo mediante un router aziendale completo con firewall, modellamento del traffico, instradamento basato sulle politiche, VPN e altre funzioni.
 
 I requisisti server minimi di VRA sono 8 GB di RAM e un core CPU per ogni 10 Gbps di capacità di rete. Ad esempio, un sistema con uplink privato e pubblico 10 Gbps duale richiede almeno quattro core. Inoltre, se la tua intenzione è di configurare i servizi VPN con la codifica, potresti voler aggiungere ulteriori core. L'aggiunta di ulteriori core ai servizi VPN garantirà che la VRA non si bloccherà a causa di uno o più carichi pesanti quando instradi e contemporaneamente crittografi/decrittografi i dati.
 
-## Ordinazione di una VRA (Virtual Router Appliance)
+## Ordinazione di una VRA ({{site.data.keyword.vra_full}})
 {: #order-vra}
 
 Per ordinare una VRA, attieniti alla seguente procedura:
@@ -71,7 +71,7 @@ Per ordinare una VRA, attieniti alla seguente procedura:
   
 8. Esamina le tue selezioni, controlla di aver letto gli accordi di servizio di terze parti e fai quindi clic su **Create**. L'ordine viene verificato automaticamente.
 
-Dopo l'approvazione del tuo ordine, il provisioning della tua Virtual Router Appliance viene avviato automaticamente. Quando il processo di provisioning è completo, la nuova VRA sarà visualizzata nella pagina di elenco Gateway Appliances. Fai clic sul nome del gateway per aprire la pagina Gateway Details. Troverai gli indirizzi IP, la password e il nome di accesso del dispositivo.  
+Dopo l'approvazione del tuo ordine, il provisioning della tua {{site.data.keyword.vra_full}} viene avviato automaticamente. Quando il processo di provisioning è completo, la nuova VRA sarà visualizzata nella pagina di elenco Gateway Appliances. Fai clic sul nome del gateway per aprire la pagina Gateway Details. Troverai gli indirizzi IP, la password e il nome di accesso del dispositivo.  
 
   <img src="images/gateway_details.png" alt="disegno" style="width: 500px;"/>
 
@@ -83,12 +83,12 @@ Ricordati che, dopo aver ordinato e configurato la tua VRA dal Catalogo di IBM C
 
 Una VLAN (LAN virtuale) è un meccanismo che suddivide une rete fisica in molti segmenti virtuali. Per comodità, il traffico da più VLAN selezionate può essere consegnato tramite un solo cavo di rete, un processo normalmente chiamato "trunking."
 
-La Virtual Router Appliance viene consegnata in due parti: il(i) server VRA e l'apparecchiatura Applicazione gateway. L'Applicazione gateway ti fornisce un'interfaccia (GUI e API) per selezionare le VLAN che desideri associare alla tua VRA. L'associazione di una VLAN a un'applicazione gateway reinstrada (o "trunks") tale VLAN e tutte le sue sottoreti alla tua VRA, fornendoti il controllo sul filtro, l'inoltro e la protezione. Ogni VLAN associata all'Applicazione gateway viene consentita sulle porte di switch a cui è connessa la VRA e le eventuali sottoreti su tale VLAN vengono instradate staticamente all'IP VRRP pubblico della tua VRA (se le sottoreti sono sottoreti pubbliche) oppure instradate staticamente all'IP VRRP privato della tua VRA (se le sottoreti sono sottoreti private). Questo instradamento viene eseguito al router dietro cui si trova la VRA che sarà, rispettivamente per il traffico pubblico e quello privato, FCR (Frontend Customer Router) o BCR (Backend Customer Router). 
+La {{site.data.keyword.vra_full}} viene consegnata in due parti: il(i) server VRA e l'apparecchiatura Applicazione gateway. L'Applicazione gateway ti fornisce un'interfaccia (GUI e API) per selezionare le VLAN che desideri associare alla tua VRA. L'associazione di una VLAN a un'applicazione gateway reinstrada (o "trunks") tale VLAN e tutte le sue sottoreti alla tua VRA, fornendoti il controllo sul filtro, l'inoltro e la protezione. Ogni VLAN associata all'Applicazione gateway viene consentita sulle porte di switch a cui è connessa la VRA e le eventuali sottoreti su tale VLAN vengono instradate staticamente all'IP VRRP pubblico della tua VRA (se le sottoreti sono sottoreti pubbliche) oppure instradate staticamente all'IP VRRP privato della tua VRA (se le sottoreti sono sottoreti private). Questo instradamento viene eseguito al router dietro cui si trova la VRA che sarà, rispettivamente per il traffico pubblico e quello privato, FCR (Frontend Customer Router) o BCR (Backend Customer Router). 
 
 Tieni presente che VRRP è disabilitato per impostazione predefinita e deve essere abilitato affinché il traffico VLAN funzioni, anche su wyatta autonomi. Questa è una conseguenza delle sottoreti sulle VLAN associate che vengono instradate all'IP VRRP o all'indirizzo virtuale assegnato alla VRA. Per ulteriori informazioni, consulta [Indirizzi VIP (VRRP virtual IP)](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
 {: important}
 
-I server in una VLAN associata possono essere raggiunti solo da altre VLAN passando attraverso la tua Virtual Router Appliance; non è possibile aggirare la VRA a meno che non escludi o annulli l'associazione alla VLAN.
+I server in una VLAN associata possono essere raggiunti solo da altre VLAN passando attraverso la tua {{site.data.keyword.vra_full}}; non è possibile aggirare la VRA a meno che non escludi o annulli l'associazione alla VLAN.
 
 Per impostazione predefinita, una nuova applicazione gateway viene associata a due VLAN "transit" non rimovibili, una per ogni VLAN pubblica e privata. Queste vengono normalmente utilizzate per la gestione e possono essere protette separatamente dai comandi VRA.
 

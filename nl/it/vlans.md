@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Instradamento delle tue VLAN
 {: #routing-your-vlans}
 
-VRA (Virtual Router Appliance) è in grado di instradare più VLAN nella stessa interfaccia di rete (ad esempio, `dp0bond0` o `dp0bond1`). Questo è possibile impostando la porta switch nella modalità trunk e configurando le interfacce virtuali (VIF) sul dispositivo.
+VRA ({{site.data.keyword.vra_full}}) è in grado di instradare più VLAN nella stessa interfaccia di rete (ad esempio, `dp0bond0` o `dp0bond1`). Questo è possibile impostando la porta switch nella modalità trunk e configurando le interfacce virtuali (VIF) sul dispositivo.
 
 Ad esempio:
 

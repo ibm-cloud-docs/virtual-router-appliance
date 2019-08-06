@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # 서비스 구성
 {: #configuring-your-services}
 
-다음을 포함하여 VRA(Virtual Router Appliance)에서 실행되는 구성 가능한 여러 서비스가 있습니다.
+다음을 포함하여 VRA({{site.data.keyword.vra_full}})에서 실행되는 구성 가능한 여러 서비스가 있습니다.
 
 `vyatta@vrouter# set service`
 

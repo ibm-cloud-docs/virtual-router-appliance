@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Afficher toutes les unités VRA
 {: #view-all-vras}
 
-L'écran Dispositifs de passerelle dans le portail client de l'infrastructure {{site.data.keyword.cloud}}  est l'emplacement où vous pouvez afficher et accéder à tous les dispositifs de passerelle réseau qui incluent les unités VRA (Virtual Router Appliance).  
+L'écran Dispositifs de passerelle dans le portail client de l'infrastructure {{site.data.keyword.cloud}}  est l'emplacement où vous pouvez afficher et accéder à tous les dispositifs de passerelle réseau qui incluent les unités VRA ({{site.data.keyword.vra_full}}).  
 
 Pour accéder à l'écran Dispositifs de passerelle dans le portail client, procédez comme suit :
 

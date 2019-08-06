@@ -14,8 +14,8 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Ajout de fonctions de pare-feu à VRA (Virtual Router Appliance) (sans état et avec état)
-Appliquer des jeux de règles de pare-feu à chaque interface est une méthode de tunnellisation possible avec le dispositif VRA (Virtual Router Appliance). Chaque interface comporte trois instances de pare-feu possibles - In, Out et Local - et des règles peuvent être appliquées à chacune d'elles. 
+# Ajout de fonctions de pare-feu à VRA ({{site.data.keyword.vra_full}}) (sans état et avec état)
+Appliquer des jeux de règles de pare-feu à chaque interface est une méthode de tunnellisation possible avec le dispositif VRA ({{site.data.keyword.vra_full}}). Chaque interface comporte trois instances de pare-feu possibles - In, Out et Local - et des règles peuvent être appliquées à chacune d'elles. 
 
 L'action par défaut est Drop, avec des règles qui permettent à un trafic spécifique d'être appliqué depuis la règle 1 à N. Dès lors qu'une correspondance est établie, le pare-feu applique l'action spécifique de la règle correspondante.
 
@@ -27,7 +27,7 @@ Pour l'une quelconque des trois instances de pare-feu ci-dessous, une seule acti
 
 **LOCAL :** le pare-feu filtre les paquets destinés au système VRA proprement dit à l'aide de l'interface système. Vous devez établir des restrictions sur les ports d'accès entrant dans l'unité à partir d'adresses IP externes qui ne sont pas restreintes.
 
-Suivez les étapes décrites ci-dessous pour définir un exemple de règle de pare-feu afin de désactiver le protocole ICMP (Internet Control Message Protocol) (ping - IPv4 echo reply message) sur les interfaces de votre dispositif VRA (Virtual Router Appliance) (il s'agit d'une action sans état ; une action avec état sera examinée ultérieurement) :
+Suivez les étapes décrites ci-dessous pour définir un exemple de règle de pare-feu afin de désactiver le protocole ICMP (Internet Control Message Protocol) (ping - IPv4 echo reply message) sur les interfaces de votre dispositif VRA ({{site.data.keyword.vra_full}}) (il s'agit d'une action sans état ; une action avec état sera examinée ultérieurement) :
 
 1. Tapez `show configuration commands` à l'invite de commande pour voir les configurations qui sont définies. Une liste de toutes les commandes que vous avez définies sur votre unité apparaîtra (cela peut être pratique si vous décidez d'effectuer une migration et souhaitez voir toutes vos configurations). Notez la commande `set firewall all-ping enable`, qui indique que le protocole ICMP est toujours activé pour votre unité.
 

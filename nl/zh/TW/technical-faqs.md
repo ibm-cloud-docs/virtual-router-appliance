@@ -21,10 +21,10 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# IBM Virtual Router Appliance 的常見技術問題
+# {{site.data.keyword.vra_full}} 的常見技術問題
 {: #technical-faqs-for-ibm-virtual-router-appliance}
 
-下列常見問題可處理 IBM© Virtual Router Appliance (VRA) 的配置，以及從 Vyatta 5400 移轉至 VRA。
+下列常見問題可處理 {{site.data.keyword.vra_full}} (VRA) 的配置，以及從 Vyatta 5400 移轉至 VRA。
 
 ## 如何容許來自專用 VLAN 上主機的網際網路連結資料流量？
 {: faq}

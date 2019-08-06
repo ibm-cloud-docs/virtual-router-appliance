@@ -17,7 +17,7 @@ lastupdated: "2018-11-10"
 # Ergänzende Dokumentation zu VRA
 {: #supplemental-vra-documentation}
 
-Die folgende Tabelle enthält Links für ergänzende Dokumentation zu Virtual Router Appliance.
+Die folgende Tabelle enthält Links für ergänzende Dokumentation zu {{site.data.keyword.vra_full}}.
 
 Vyatta-Dokumentation  | Beschreibung
 ------------- | -------------

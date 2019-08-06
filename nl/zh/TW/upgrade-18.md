@@ -22,7 +22,7 @@ lastupdated: "2018-11-10"
 
 * 具有未執行 1801 作業系統之現行 VRA 的任何人。（現行版本是 18.01g）
 
-* 要安裝新的 Virtual Router Appliance 18.01f 版的任何人（例如，從 17.2X 升級的任何人）。
+* 要安裝新的 {{site.data.keyword.vra_full}} 18.01f 版的任何人（例如，從 17.2X 升級的任何人）。
 
 * 如果您有 Vyatta 5400，則此資訊不適用於您。
 
@@ -51,6 +51,6 @@ VRA 的 1801f 版包含 Spectre 漏洞的安全修正程式，不過，必須先
 
 ## 其他指引
 
-因為 Vyatta 5400 與 Virtual Router Appliance 之間的功能沒有簡單的一對一對映，所以建立 VRA 的基準線配置會有所幫助。IBM© 合作夥伴 WanClouds 可協助您完成此處理程序，並提供有關建立與您 VRA 上 Vyatta 5400 類似之功能的指引。
+因為 Vyatta 5400 與 {{site.data.keyword.vra_full}} 之間的功能沒有簡單的一對一對映，所以建立 VRA 的基準線配置會有所幫助。IBM© 合作夥伴 WanClouds 可協助您完成此處理程序，並提供有關建立與您 VRA 上 Vyatta 5400 類似之功能的指引。
 
 如需在此升級處理程序中所遇到之一般問題的相關資訊，請參閱[其他文件](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)。

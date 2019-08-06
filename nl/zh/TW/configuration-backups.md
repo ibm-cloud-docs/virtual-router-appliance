@@ -34,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-然後，產生的保存檔可以從 Virtual Router Appliance 複製到您選擇的儲存裝置。保存檔包含配置資訊、起始目錄及記載資訊等的備份。它是更完整的系統備份。
+然後，產生的保存檔可以從 {{site.data.keyword.vra_full}} 複製到您選擇的儲存裝置。保存檔包含配置資訊、起始目錄及記載資訊等的備份。它是更完整的系統備份。
 
 例如：
 

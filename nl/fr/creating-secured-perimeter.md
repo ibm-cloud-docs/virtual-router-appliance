@@ -27,7 +27,7 @@ Les étapes de configuration d'un périmètre sécurisé sont présentées ci-ap
 2. Créez une limite extérieure dans l'Internet public via un VLAN public et un pare-feu. Cette limite extérieure sera utilisée pour isoler le segment SPS.
 3. Placez le segment dans cette limite.
 4. Configurez une passerelle pour relier le VLAN public et le segment SPS.
-5. Créez un dispositif VRA (Virtual Router Appliance) configuré.
+5. Créez un dispositif VRA ({{site.data.keyword.vra_full}}) configuré.
 6. Créez et configurez un ou plusieurs segments SPS sécurisés.
 7. Créez un VLAN frontal.
 8. Créez un VLAN de back end.

@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Gestionar los cortafuegos de IBM
 {: #manage-your-ibm-firewalls}
 
-Virtual Router Appliance (VRA) tiene la capacidad de procesar reglas de cortafuegos para proteger las VLAN direccionadas a través del dispositivo. Los cortafuegos de VRA pueden dividirse en dos pasos:
+{{site.data.keyword.vra_full}} (VRA) tiene la capacidad de procesar reglas de cortafuegos para proteger las VLAN direccionadas a través del dispositivo. Los cortafuegos de VRA pueden dividirse en dos pasos:
 
 1. Definición de uno o varios conjuntos de reglas.
 2. Aplicación de un conjunto de reglas para una interfaz o zona. Una zona consiste en una o más interfaces de red.
@@ -128,7 +128,7 @@ A modo de ejemplo, para asignar el conjunto de reglas `ALLOW_LEGACY` a la opció
 ## Control Plane Policing (CPP)
 {: #control-plane-policing-cpp-}
 
-Control plane policing (CPP) proporciona protección contra los ataques en Virtual Router Appliance y le permite configurar políticas de cortafuegos asignadas a las interfaces deseadas y aplicar dichas políticas a los paquetes que entran y salen de VRA.
+Control plane policing (CPP) proporciona protección contra los ataques en {{site.data.keyword.vra_full}} y le permite configurar políticas de cortafuegos asignadas a las interfaces deseadas y aplicar dichas políticas a los paquetes que entran y salen de VRA.
 
 CPP se implementa cuando la palabra clave `local` se utiliza en las políticas de cortafuegos que se asignan a cualquier tipo de interfaz VRA, como las interfaces de plano de datos o bucle de retorno. A diferencia de las reglas de cortafuegos aplicadas a los paquetes que atraviesan VRA, la acción predeterminada de las reglas de cortafuegos para el tráfico de entrada y salida del plano de control es `Allow`. Los usuarios deben añadir reglas de descarte explícitas si el comportamiento predeterminado no es el deseado.
 
@@ -143,7 +143,7 @@ Tenga en cuenta que las reglas de CPP no pueden ser con estado, y solo se aplica
 ## Cortafuegos basados en zonas
 {: #zone-firewalling}
 
-Otro concepto de cortafuegos de Virtual Router Appliance son los cortafuegos basados en zonas. En una operación de cortafuegos basado en zonas, se asigna una interfaz a una zona (solo una zona por interfaz) y los conjuntos de reglas de cortafuegos se asignan a los límites entre las zonas, con la idea de que todas las interfaces de una zona tengan el mismo nivel de seguridad y permiso para direccionar libremente. El tráfico solo se analiza cuando pasa de una zona a otra. Las zonas descartan cualquier tráfico que llega que no esté permitido de manera explícita.
+Otro concepto de cortafuegos de {{site.data.keyword.vra_full}} son los cortafuegos basados en zonas. En una operación de cortafuegos basado en zonas, se asigna una interfaz a una zona (solo una zona por interfaz) y los conjuntos de reglas de cortafuegos se asignan a los límites entre las zonas, con la idea de que todas las interfaces de una zona tengan el mismo nivel de seguridad y permiso para direccionar libremente. El tráfico solo se analiza cuando pasa de una zona a otra. Las zonas descartan cualquier tráfico que llega que no esté permitido de manera explícita.
 
 Una interfaz puede pertenecer a una zona o tener una configuración de cortafuegos por interfaz; pero no puede realizar ambas.
 

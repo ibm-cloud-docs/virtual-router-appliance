@@ -21,21 +21,21 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Getting Started with IBM Virtual Router Appliance
+# Getting Started with IBM Cloud Virtual Router Appliance
 {: #getting-started}
 
-The IBM© Virtual Router Appliance (VRA) provides the latest Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or standalone configuration, and lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features.
+The {{site.data.keyword.vra_full}} (VRA) provides the latest Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or standalone configuration, and lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features.
 
 VRA minimum server requirements call for 8 GB of RAM and one CPU core for every 10 Gbps of network capacity. For example, a system with dual 10 Gbps public and private uplinks requires at least four cores. Also, if your intent is to setup VPN services with encryption, you may want to add additional cores. Adding additional cores for VPN Services will ensure the VRA will not get bogged down by heavy load(s) when routing and simultaneously encrypting/decrypting data.
 
-## Ordering a Virtual Router Appliance
+## Ordering a {{site.data.keyword.vra_full}}
 {: #order-vra}
 
 To order a VRA, perform the following procedure:
 
-1. From your browser, open the Gateway Appliances page in the [IBM Cloud UI Console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/gen1/infrastructure/provision/gateway){: new_window} and log into your account. 
+1. From your browser, open the Gateway Appliances page in the [IBM Cloud UI Console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/gen1/infrastructure/provision/gateway){: new_window} and log into your account.
 
-  You can also get to this page by selecting the navigation menu in the top left of the [IBM Cloud Catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com) and selecting **Classic Infrastructure > Network > Gateway appliance**. 
+  You can also get to this page by selecting the navigation menu in the top left of the [IBM Cloud Catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com) and selecting **Classic Infrastructure > Network > Gateway appliance**.
   {: tip}
 
 2. From the **Gateway Vendor** section, select the **AT&T** option (when it is selected, a blue check mark appears on the button). From the drop down on that same button, choose your bandwidth (either 20Gbps or 2Gbps).
@@ -50,11 +50,11 @@ To order a VRA, perform the following procedure:
 4. From the **Configuration** section, choose your processor's RAM. You can also define an SSH key, if you want to use it to authenticate access to your new Gateway.
 
   <img src="images/ordering_vra_2.png" alt="drawing" style="width: 600px;"/>
-  
+
   The appropriate processor is chosen for you based on the license version you selected in step two. You can choose different RAM configurations, however.
   {: note}
 
-5. From the **Storage disks** section, choose the options that meet your storage requirements. 
+5. From the **Storage disks** section, choose the options that meet your storage requirements.
 
   RAID0 and RAID1 options are available for added protection against data loss, as are hot spares (backup components that can be placed into service immediately when a primary component fails).
   {: note}
@@ -67,11 +67,11 @@ To order a VRA, perform the following procedure:
 
 6. From the **Network interface** section, select your **Uplink port speeds**. The default selection is a single interface, but there are redundant and private only options as well. Choose the one that best fits your needs.
 
-  The Network Interface **Add Ons** section allows you to select an IPv6 address if required, and shows you any additional included default options. 
-  
+  The Network Interface **Add Ons** section allows you to select an IPv6 address if required, and shows you any additional included default options.
+
 8. Review your selections, check that you have read the Third Party Service Agreements, then click **Create**. The order is verified automatically.
 
-After your order is approved, the provisioning of your Virtual Router Appliance starts automatically. When the provisioning process is complete, the new VRA will appear in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page. You will find the IP addresses, login username, and password for the device.  
+After your order is approved, the provisioning of your {{site.data.keyword.vra_full}} starts automatically. When the provisioning process is complete, the new VRA will appear in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page. You will find the IP addresses, login username, and password for the device.  
 
   <img src="images/gateway_details.png" alt="drawing" style="width: 500px;"/>
 
@@ -83,12 +83,12 @@ Remember that once you order and configure your VRA from the IBM Cloud Catalog, 
 
 A VLAN (virtual LAN) is a mechanism that segregates a physical network into many virtual segments. For convenience, traffic from multiple selected VLANs can be delivered through a single network cable, a process commonly called "trunking."
 
-Virtual Router Appliance is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. The Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. For every VLAN that is associated to the Gateway Appliance, that VLAN is allowed on the switch ports that the VRA is connected to, and any subnet on that VLAN is statically routed to your VRA's public VRRP IP (if the subnet is a public subnet) or statically routed to your VRA's private VRRP IP (if the subnet is a private subnet). This routing is done at the router that the VRA is behind, which will be the Frontend Customer Router (FCR) or the Backend Customer Router (BCR) for public and private traffic respectively. 
+{{site.data.keyword.vra_full}} is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. The Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. For every VLAN that is associated to the Gateway Appliance, that VLAN is allowed on the switch ports that the VRA is connected to, and any subnet on that VLAN is statically routed to your VRA's public VRRP IP (if the subnet is a public subnet) or statically routed to your VRA's private VRRP IP (if the subnet is a private subnet). This routing is done at the router that the VRA is behind, which will be the Frontend Customer Router (FCR) or the Backend Customer Router (BCR) for public and private traffic respectively.
 
 Be aware that VRRP is disabled by default, and it must be enabled in order for VLAN traffic to work, even on stand-alone vyattas. This is a consequence of the subnets on the associated VLAN's being routed to the VRRP IP or virtual-address assigned to the VRA. For more information, refer to [VRRP virtual IP (VIP) addresses](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
 {: important}
 
-Servers in an associated VLAN can only be reached from other VLANs by going through your Virtual Router Appliance; it is not possible to circumvent the VRA unless you bypass or disassociate the VLAN.
+Servers in an associated VLAN can only be reached from other VLANs by going through your {{site.data.keyword.vra_full}}; it is not possible to circumvent the VRA unless you bypass or disassociate the VLAN.
 
 By default, a new Gateway Appliance is associated with two non-removable "transit" VLANs, one each for public and private. These are typically used for administration and can be separately secured by VRA commands.
 

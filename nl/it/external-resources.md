@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Altre risorse per IBM Virtual Router Appliance
+# Altre risorse per {{site.data.keyword.vra_full}}
 {: #other-resources-or-ibm-virtual-router-appliance}
 
 Queste risorse vengono create da IBM© e da alcuni dei nostri partner e clienti.
@@ -34,6 +34,6 @@ Queste risorse vengono create da IBM© e da alcuni dei nostri partner e clienti.
 
     *"Quando si tratta di proteggere la tua rete, non esiste qualcosa come un approccio indifferenziato. Il crescente uso da parte delle organizzazioni di dati critici e applicazioni nel cloud potrebbe indurti a fermarti a pensare qual è l'opzione di sicurezza che meglio risponde alle esigenze della tua rete."*
 
-* [**Post del blog: Meet the Virtual Router Appliance** ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
+* [**Post del blog: Meet the {{site.data.keyword.vra_full}}** ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
 
-    *"Con la Virtual Router Appliance, puoi trasformare i tuoi server bare metal ad alte prestazioni in VPN, firewall e router virtuali di livello aziendale per rispondere ai tuoi specifici requisiti applicativi, e tutto questo da un'applicazione autonoma o da una coppia di applicazioni ad alta disponibilità (HA)."*
+    *"Con la {{site.data.keyword.vra_full}}, puoi trasformare i tuoi server bare metal ad alte prestazioni in VPN, firewall e router virtuali di livello aziendale per rispondere ai tuoi specifici requisiti applicativi, e tutto questo da un'applicazione autonoma o da una coppia di applicazioni ad alta disponibilità (HA)."*

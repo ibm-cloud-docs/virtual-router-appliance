@@ -34,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-Le fichier archive généré peut alors être copié de l'unité Virtual Router Appliance sur l'unité de stockage de votre choix. L'archive contient les sauvegardes des informations de configuration, des répertoires de base et des informations de journalisation. Il s'agit d'une sauvegarde de système beaucoup plus complète.
+Le fichier archive généré peut alors être copié de l'unité {{site.data.keyword.vra_full}} sur l'unité de stockage de votre choix. L'archive contient les sauvegardes des informations de configuration, des répertoires de base et des informations de journalisation. Il s'agit d'une sauvegarde de système beaucoup plus complète.
 
 Par exemple :
 

@@ -19,7 +19,7 @@ lastupdated: "2018-11-10"
 # Vyatta 5400 支援
 {: #vyatta-5400-support}
 
-舊式 Vyatta 5400 客戶應該儘快升級至 IBM© Virtual Router Appliance (VRA)，因為將在 2019 年 3 月 31 日移除 Vyatta 5400 支援。
+舊式 Vyatta 5400 客戶應該儘快升級至 {{site.data.keyword.vra_full}} (VRA)，因為將在 2019 年 3 月 31 日移除 Vyatta 5400 支援。
 
 [這裡 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf){:new_window}提供移轉手冊。
 

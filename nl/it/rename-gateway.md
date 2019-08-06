@@ -34,5 +34,5 @@ Esegui la seguente procedura per ridenominare un gateway di rete:
 
 Dopo aver modificato un nome dell'applicazione gateway, esso sarà immediatamente modificato all'inizio della schermata Gateway Appliance Details. Il nome del gateway può essere modificato nuovamente in qualsiasi momento ripetendo i precedenti passi.
 
-La modifica del nome della VRA nel portale del cliente non modifica automaticamente il nome host nella VRA (Virtual Router Appliance) o in qualsiasi voce DNS di cui puoi disporre. Questo richiederà un intervento manuale se necessario.
+La modifica del nome della VRA nel portale del cliente non modifica automaticamente il nome host nella VRA ({{site.data.keyword.vra_full}}) o in qualsiasi voce DNS di cui puoi disporre. Questo richiederà un intervento manuale se necessario.
 {: note}

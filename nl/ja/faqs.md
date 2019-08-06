@@ -21,15 +21,15 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# IBM Virtual Router Appliance の FAQ
+# {{site.data.keyword.vra_full}} の FAQ
 {: #faqs-for-ibm-virtual-router-appliance}
 
-以下は、IBM© Virtual Router Appliance (VRA) を使用した作業でのよくある質問です。
+以下は、{{site.data.keyword.vra_full}} (VRA) を使用した作業でのよくある質問です。
 
 ## VRA とは何ですか?
 {: faq}
 
-Virtual Router Appliance (VRA) を使用すると、IBM Cloud のお客様は、ファイアウォール、トラフィック・シェーピング、ポリシーベースのルーティング、VPN、および他のフィーチャーのホストが設定されたフル装備のエンタープライズ・ルーターを介して、プライベートおよびパブリック・ ネットワーク・トラフィックを選択的に経路指定できます。 すべての VRA フィーチャーはお客様により管理されます。 VRA は、IBM Cloud のお客様に、オンプレミス・ネットワーク用に通常予約されている一定の制御を提供します。
+{{site.data.keyword.vra_full}} (VRA) を使用すると、IBM Cloud のお客様は、ファイアウォール、トラフィック・シェーピング、ポリシーベースのルーティング、VPN、および他のフィーチャーのホストが設定されたフル装備のエンタープライズ・ルーターを介して、プライベートおよびパブリック・ ネットワーク・トラフィックを選択的に経路指定できます。 すべての VRA フィーチャーはお客様により管理されます。 VRA は、IBM Cloud のお客様に、オンプレミス・ネットワーク用に通常予約されている一定の制御を提供します。
 
 ## ゲートウェイ・アプライアンスとは何ですか
 {: faq}
@@ -48,7 +48,7 @@ Vyatta は、すべて取得されるオープン・ソースで PC ベースの
 
 IBM は、2019 年 3 月 31 日時点で Vyatta 5400 のサポートを終了します。
 
-## Virtual Router Appliance(Vyatta 5600) が Vyatta 5400 を超える改良点は何ですか
+## {{site.data.keyword.vra_full}}(Vyatta 5600) が Vyatta 5400 を超える改良点は何ですか
 {: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
 
 Vyatta 5600 では、Vyatta 5400 を超える以下の機能拡張があります。
@@ -61,7 +61,7 @@ Vyatta 5600 では、Vyatta 5400 を超える以下の機能拡張がありま�
 ## AT&T vRouter 5600 のオファリングについてはどのようになっていますか
 {: faq}
 
-AT&T (以前は Brocade) は、Brocade vRouter 5600 オファリングの生産終了およびサポートの終了を発表しました。 Brocade vRouter 5600 は IBM Virtual Router Appliance の基本的な技術能力を提供しますが、この発表は IBM のお客様には該当しません。 IBM のお客様は、引き続きこの新しいオファリングを使用したサポートを得られます。
+AT&T (以前は Brocade) は、Brocade vRouter 5600 オファリングの生産終了およびサポートの終了を発表しました。 Brocade vRouter 5600 は {{site.data.keyword.vra_full}} の基本的な技術能力を提供しますが、この発表は IBM のお客様には該当しません。 IBM のお客様は、引き続きこの新しいオファリングを使用したサポートを得られます。
 
 ## VRA はどのように配信されますか
 {: faq}

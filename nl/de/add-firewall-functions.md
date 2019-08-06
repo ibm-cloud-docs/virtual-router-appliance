@@ -14,8 +14,8 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Firewallfunktionen zu Virtual Router Appliance hinzufügen (statusunabhängig und statusabhängig)
-Eine Methode für das Einrichten von Firewalls bei der Verwendung von Virtual Router Appliance (VRA) ist das Anwenden von Firewallregelsätzen auf jede Schnittstelle. Jede Schnittstelle weist drei mögliche Firewallinstanzen auf - 'In', 'Out' und 'Local' - und für jede Instanz stehen Regeln zur Verfügung, die auf sie angewendet werden können. 
+# Firewallfunktionen zu {{site.data.keyword.vra_full}} hinzufügen (statusunabhängig und statusabhängig)
+Eine Methode für das Einrichten von Firewalls bei der Verwendung von {{site.data.keyword.vra_full}} (VRA) ist das Anwenden von Firewallregelsätzen auf jede Schnittstelle. Jede Schnittstelle weist drei mögliche Firewallinstanzen auf - 'In', 'Out' und 'Local' - und für jede Instanz stehen Regeln zur Verfügung, die auf sie angewendet werden können. 
 
 Die Standardaktion lautet 'Drop'. Dabei ermöglichen Regeln, die in einer Reihenfolge von Regel 1 bis N angewendet werden, einen bestimmten Datenverkehr. Sobald eine Übereinstimmung erzielt wird, wendet die Firewall die festgelegte Aktion für die übereinstimmende Regel an.
 
@@ -27,7 +27,7 @@ Unter den unten aufgelisteten Firewallinstanzen kann nur jeweils eine angewendet
 
 **LOCAL:** Die Firewall filtert Pakete, die für das VRA-System selbst bestimmt sind und über die Systemschnittstelle ankommen. Sie sollten Einschränkungen für Zugriffsports erstellen, die von externen, nicht eingeschränkten IP-Adressen bei der Einheit ankommen.
 
-Führen Sie die folgenden Schritte aus, um ein Beispiel für eine Firewallregel festzulegen, die ICMP (Internet Control Message Protocol) (ping - IPv4 Echo-Antwortnachricht) für Ihre Virtual Router Appliance-Schnittstellen ausschaltet (Dies ist eine statusunabhängige Aktion. Eine statusabhängige Aktion wird später betrachtet.):
+Führen Sie die folgenden Schritte aus, um ein Beispiel für eine Firewallregel festzulegen, die ICMP (Internet Control Message Protocol) (ping - IPv4 Echo-Antwortnachricht) für Ihre {{site.data.keyword.vra_full}}-Schnittstellen ausschaltet (Dies ist eine statusunabhängige Aktion. Eine statusabhängige Aktion wird später betrachtet.):
 
 1. Geben Sie in der Eingabeaufforderung `show configuration commands` ein, um anzuzeigen, welche Konfigurationen definiert wurden. Sie sehen eine Liste aller Befehle, die Sie für Ihre Einheit definiert haben. (Das kann z.B. ein Handy sein, wenn Sie eine Migration durchführen möchten und alle Konfigurationen anzeigen wollen. Beachten Sie den Befehl `set firewall all-ping enable`, der angibt, dass ICMP immer noch für Ihre Einheit aktiviert ist.
 

@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Routing Your VLANs
 {: #routing-your-vlans}
 
-The Virtual Router Appliance is able to route multiple VLANs over the same network interface (for example, `dp0bond0` or `dp0bond1`). This is accomplished by setting the switch port into trunk mode and configuring virtual interfaces (VIFs) on the device.
+The {{site.data.keyword.vra_full}} is able to route multiple VLANs over the same network interface (for example, `dp0bond0` or `dp0bond1`). This is accomplished by setting the switch port into trunk mode and configuring virtual interfaces (VIFs) on the device.
 
 For example:  
 

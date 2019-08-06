@@ -17,7 +17,7 @@ lastupdated: "2018-11-10"
 # Ihre VLANs weiterleiten
 {: #routing-your-vlans}
 
-Virtual Router Appliance bietet die Möglichkeit, mehrere VLANs über dieselbe Netzschnittstelle (z. B. `dp0bond0` oder `dp0bond1`) zu leiten. Um dies zu erreichen, müssen der Switch-Port in den Trunking-Modus versetzt und die virtuellen Schnittstellen (Virtual Interfaces, VIFs) in der Einheit konfiguriert werden.
+{{site.data.keyword.vra_full}} bietet die Möglichkeit, mehrere VLANs über dieselbe Netzschnittstelle (z. B. `dp0bond0` oder `dp0bond1`) zu leiten. Um dies zu erreichen, müssen der Switch-Port in den Trunking-Modus versetzt und die virtuellen Schnittstellen (Virtual Interfaces, VIFs) in der Einheit konfiguriert werden.
 
 Beispiel:
 

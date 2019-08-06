@@ -23,32 +23,32 @@ subcollection: virtual-router-appliance
 # Acerca de VRA
 {: #about-the-vra}
 
-IBM© Virtual Router Appliance (VRA) proporciona el sistema operativo Vyatta 5600 más reciente para servidores nativos **x86**. Se suministra como configuración de alta disponibilidad o autónoma.
+{{site.data.keyword.vra_full}} (VRA) proporciona el sistema operativo Vyatta 5600 más reciente para servidores nativos **x86**. Se suministra como configuración de alta disponibilidad o autónoma.
 
-Virtual Router Appliance le permite direccionar el tráfico de red privada y pública selectivamente, a través de un direccionador de empresa completo que tiene cortafuegos, modelado de tráfico, direccionamiento basado en políticas, VPN y otras características. El VRA ofrece rendimiento con facilidad de configuración. Tiene las ventajas de mantenimiento de ejecutarse en un servidor de hardware normal. El dispositivo de hardware VRA tiene un tamaño que permite manejar la carga de direccionamiento de varias VLAN, y se puede solicitar con enlaces de red y matrices RAID redundantes. Todas las características de VRA las gestiona el cliente.
+{{site.data.keyword.vra_full}} le permite direccionar el tráfico de red privada y pública selectivamente, a través de un direccionador de empresa completo que tiene cortafuegos, modelado de tráfico, direccionamiento basado en políticas, VPN y otras características. El VRA ofrece rendimiento con facilidad de configuración. Tiene las ventajas de mantenimiento de ejecutarse en un servidor de hardware normal. El dispositivo de hardware VRA tiene un tamaño que permite manejar la carga de direccionamiento de varias VLAN, y se puede solicitar con enlaces de red y matrices RAID redundantes. Todas las características de VRA las gestiona el cliente.
 
-**NOTA:** FortiGate Security Appliance (FSA) 10Gbps es cortafuegos de hardware de alto rendimiento (10Gbps) de un solo arrendatario (dedicado) con características de última generación como, por ejemplo, antivirus, prevención de intrusiones y filtrado de web. Puede ser una alternativa a VRA (Virtual Router Appliance) para conseguir objetivos similares. Para obtener más información, consulte la [FSA documentación](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started).
+**NOTA:** FortiGate Security Appliance (FSA) 10Gbps es cortafuegos de hardware de alto rendimiento (10Gbps) de un solo arrendatario (dedicado) con características de última generación como, por ejemplo, antivirus, prevención de intrusiones y filtrado de web. Puede ser una alternativa a VRA ({{site.data.keyword.vra_full}}) para conseguir objetivos similares. Para obtener más información, consulte la [FSA documentación](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started).
 
 ## Cortafuegos
 {: #firewall}
 
-Para proteger el entorno de amenazas externas, Virtual Router Appliance puede aprovecharse como cortafuegos. Puede añadir reglas de cortafuegos para permitir o denegar el tráfico de red de entrada o salida a los puertos en los que se ejecuta la aplicación y puede filtrar el tráfico dentro de sus propias redes. También se puede configurar Virtual Router Appliance para que realice un filtrado IPv4 e IPv6 con estado para proteger los datos críticos.
+Para proteger el entorno de amenazas externas, {{site.data.keyword.vra_full}} puede aprovecharse como cortafuegos. Puede añadir reglas de cortafuegos para permitir o denegar el tráfico de red de entrada o salida a los puertos en los que se ejecuta la aplicación y puede filtrar el tráfico dentro de sus propias redes. También se puede configurar {{site.data.keyword.vra_full}} para que realice un filtrado IPv4 e IPv6 con estado para proteger los datos críticos.
 
 ## Pasarela de red privada virtual (VPN)
 {: #virtual-private-network-vpn-gateway}
 
-Conecte su oficina o centro de datos local a IBM Cloud mediante la ejecución en túnel VPN, proporcionando Virtual Router Appliance como dispositivo de pasarela de red. Puede utilizar un túnel VPN de sitio a sitio de IPsec para una comunicación segura de la oficina o el centro de datos de su empresa con la red de IBM Cloud. Otras opciones de VPN son: VPN IPsec de acceso remoto (del cliente al sitio), OpenVPN, GRE, L2TP y DMVPN.
+Conecte su oficina o centro de datos local a IBM Cloud mediante la ejecución en túnel VPN, proporcionando {{site.data.keyword.vra_full}} como dispositivo de pasarela de red. Puede utilizar un túnel VPN de sitio a sitio de IPsec para una comunicación segura de la oficina o el centro de datos de su empresa con la red de IBM Cloud. Otras opciones de VPN son: VPN IPsec de acceso remoto (del cliente al sitio), OpenVPN, GRE, L2TP y DMVPN.
 
 Consulte las guías de configuración de VPN de Brocade en la [sección Documentación de VRA suplementaria](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation).
 
 ## Conversión de direcciones de red (NAT)
 {: #network-address-translation-nat-}
 
-Con Virtual Router Appliance, puede proporcionar aplicaciones y servidores de base de datos sin interfaces de red pública mientras permite que los servidores puedan acceder a Internet mediante Source NAT. También puede ocultar los servidores detrás del dispositivo de pasarela con Destination NAT para mejorar la seguridad.
+Con {{site.data.keyword.vra_full}}, puede proporcionar aplicaciones y servidores de base de datos sin interfaces de red pública mientras permite que los servidores puedan acceder a Internet mediante Source NAT. También puede ocultar los servidores detrás del dispositivo de pasarela con Destination NAT para mejorar la seguridad.
 
 ## Direccionamiento de nivel empresarial
 {: #enterprise-grade-routing}
 
-Para las aplicaciones multinivel en diferentes redes aisladas, Virtual Router Appliance le permite crear conectividad entre estas redes. Puede configurar el direccionamiento dinámico utilizando BGP, lo que le permitirá anunciar su propio espacio de IP pública en los direccionadores de IBM Cloud. BGP también ofrece más flexibilidad para las configuraciones de red privada personalizadas cuando se utilizan varios túneles y soluciones de enlace directo.
+Para las aplicaciones multinivel en diferentes redes aisladas, {{site.data.keyword.vra_full}} le permite crear conectividad entre estas redes. Puede configurar el direccionamiento dinámico utilizando BGP, lo que le permitirá anunciar su propio espacio de IP pública en los direccionadores de IBM Cloud. BGP también ofrece más flexibilidad para las configuraciones de red privada personalizadas cuando se utilizan varios túneles y soluciones de enlace directo.
 
 Consulte las guías de configuración de BGP de Brocade en la [sección Documentación de VRA suplementaria](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation).

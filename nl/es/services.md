@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Configuración de los servicios
 {: #configuring-your-services}
 
-Hay variedad de servicios que se ejecutan en Virtual Router Appliance (VRA) que se pueden configurar, incluidos:
+Hay variedad de servicios que se ejecutan en {{site.data.keyword.vra_full}} (VRA) que se pueden configurar, incluidos:
 
 `vyatta@vrouter# set service`
 

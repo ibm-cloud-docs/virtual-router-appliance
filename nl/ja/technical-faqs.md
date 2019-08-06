@@ -21,10 +21,10 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# IBM Virtual Router Appliance の技術的な FAQ
+# {{site.data.keyword.vra_full}} の技術的な FAQ
 {: #technical-faqs-for-ibm-virtual-router-appliance}
 
-以下のよくある質問は、IBM© Virtual Router Appliance (VRA) の構成と、Vyatta 5400 から VRA へのマイグレーションに関するものです。
+以下のよくある質問は、{{site.data.keyword.vra_full}} (VRA) の構成と、Vyatta 5400 から VRA へのマイグレーションに関するものです。
 
 ## プライベート VLAN 上にあるホストからインターネットへのトラフィックを許可するにはどうすればよいですか？
 {: faq}

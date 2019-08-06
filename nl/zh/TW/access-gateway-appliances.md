@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # 檢視所有 VRA
 {: #view-all-vras}
 
-{{site.data.keyword.cloud}} 基礎架構客戶入口網站中的「閘道應用裝置」畫面是您可以在其中顯示及存取包含 Virtual Router Appliance 之所有「網路閘道應用裝置」的位置。  
+{{site.data.keyword.cloud}} 基礎架構客戶入口網站中的「閘道應用裝置」畫面是您可以在其中顯示及存取包含 {{site.data.keyword.vra_full}} 之所有「網路閘道應用裝置」的位置。  
 
 請執行下列程序，以存取客戶入口網站中的「閘道應用裝置」畫面。
 

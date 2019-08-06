@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Visualizar todos os VRAs
 {: #view-all-vras}
 
-A tela Dispositivos de gateway no portal do cliente de infraestrutura do {{site.data.keyword.cloud}} é o local em que é possível exibir e acessar todos os Network Gateway Appliances que incluem os Virtual Router Appliances.  
+A tela Dispositivos de gateway no portal do cliente de infraestrutura do {{site.data.keyword.cloud}} é o local em que é possível exibir e acessar todos os Network Gateway Appliances que incluem os {{site.data.keyword.vra_full}}s.  
 
 Execute o procedimento a seguir para acessar a tela Dispositivos de gateway no portal do cliente.
 

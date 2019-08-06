@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Gestion de vos pare-feux IBM
 {: #manage-your-ibm-firewalls}
 
-Virtual Router Appliance (VRA) a la capacité de traiter les règles de pare-feu pour protéger les réseaux locaux virtuels (VLAN) routés via l'unité. Les pare-feux dans le dispositif VRA peuvent être divisés en deux étapes :
+{{site.data.keyword.vra_full}} (VRA) a la capacité de traiter les règles de pare-feu pour protéger les réseaux locaux virtuels (VLAN) routés via l'unité. Les pare-feux dans le dispositif VRA peuvent être divisés en deux étapes :
 
 1. Définition d'un ou de plusieurs jeux de règles.
 2. Application d'un jeu de règles à une interface ou à une zone. Une zone consiste en une ou plusieurs interfaces réseau.
@@ -129,7 +129,7 @@ Par exemple, pour affecter le jeu de règles `ALLOW_LEGACY` à l'option `in` pou
 ## Control Plane Policing (CPP)
 {: #control-plane-policing-cpp-}
 
-Control Plane Policing (CPP) fournit une protection contre les attaques sur le dispositif VRA (Virtual Router Appliance) en vous autorisant à configurer des règles d'administration de pare-feu affectées aux interfaces désirées et en appliquant ces règles aux paquets entrant dans le dispositif VRA.
+Control Plane Policing (CPP) fournit une protection contre les attaques sur le dispositif VRA ({{site.data.keyword.vra_full}}) en vous autorisant à configurer des règles d'administration de pare-feu affectées aux interfaces désirées et en appliquant ces règles aux paquets entrant dans le dispositif VRA.
 
 CPP est implémenté lorsque le mot-clé `local` est utilisé dans les règles d'administration de pare-feu affectées à n'importe quel type d'interface VRA, que ce soit des interfaces de plan de données ou de bouclage. Contrairement aux règles de pare-feu appliquées aux paquets qui transitent via le dispositif VRA, l'action par défaut des règles de pare-feu pour le trafic entrant ou sortant du plan de contrôle est `Allow`. Les utilisateurs doivent ajouter des règles de suppression explicites si le comportement par défaut n'est pas souhaité.
 
@@ -144,7 +144,7 @@ Notez que les règles CPP ne peuvent pas être avec état et s’appliqueront un
 ## Mise en place d'un pare-feu de zone
 {: #zone-firewalling}
 
-Un autre concept de pare-feu dans Virtual Router Appliance consiste en pare-feux basés sur des zones. Dans une opération de pare-feu basé sur des zones, une interface est affectée à une zone (il n'y a qu'une seule zone par interface) et des jeux de règles de pare-feu sont affectés aux limites entre les zones dans l'idée que toutes les interfaces dans une zone aient le même niveau de sécurité et soient autorisées à circuler librement. Le trafic n'est examiné que lorsqu'il passe d'une zone à l'autre. Les zones suppriment tout trafic entrant dans leur périmètre qui n'est pas explicitement autorisé.
+Un autre concept de pare-feu dans {{site.data.keyword.vra_full}} consiste en pare-feux basés sur des zones. Dans une opération de pare-feu basé sur des zones, une interface est affectée à une zone (il n'y a qu'une seule zone par interface) et des jeux de règles de pare-feu sont affectés aux limites entre les zones dans l'idée que toutes les interfaces dans une zone aient le même niveau de sécurité et soient autorisées à circuler librement. Le trafic n'est examiné que lorsqu'il passe d'une zone à l'autre. Les zones suppriment tout trafic entrant dans leur périmètre qui n'est pas explicitement autorisé.
 
 Une interface peut appartenir à une zone ou avoir une configuration de pare-feu par interface, mais pas les deux.
 

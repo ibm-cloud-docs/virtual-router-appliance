@@ -27,7 +27,7 @@ Sono qui di seguito indicati i passi per configurare un perimetro protetto.  Per
 2. Crea un limite esterno in internet pubblico tramite una VLAN pubblica e un firewall. Questo limite esterno verrà utilizzato per isolare l'SPS.
 3. Colloca l'SPS all'interno di quel limite
 4. Configura un gateway per il bridging di VLAN pubblica e SPS
-5. Crea e configura una VRA (Virtual Router Appliance)
+5. Crea e configura una VRA ({{site.data.keyword.vra_full}})
 6. Crea e configura uno o più SPS (Secure Perimeter Segment)
 7. Crea una VLAN front-end
 8. Crea una VLAN back-end

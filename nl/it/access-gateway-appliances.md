@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Visualizza tutte le VRA
 {: #view-all-vras}
 
-La schermata delle applicazioni gateway nel portale del cliente dell'infrastruttura {{site.data.keyword.cloud}} è dove puoi visualizzare e accedere alle applicazioni del gateway di rete che includono VRA (Virtual Router Appliance).  
+La schermata delle applicazioni gateway nel portale del cliente dell'infrastruttura {{site.data.keyword.cloud}} è dove puoi visualizzare e accedere alle applicazioni del gateway di rete che includono VRA ({{site.data.keyword.vra_full}}).  
 
 Esegui la seguente procedura per accedere alla schermata delle applicazioni gateway nel portale del cliente.
 

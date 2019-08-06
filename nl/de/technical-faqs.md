@@ -15,10 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 
-# Häufig gestellte technische Fragen für IBM Virtual Router Appliance
+# Häufig gestellte technische Fragen für {{site.data.keyword.vra_full}}
 {: #technical-faqs-for-ibm-virtual-router-appliance}
 
-Die folgenden häufig gestellten Fragen betreffen die Konfiguration der IBM© Virtual Router Appliance (VRA) und die Migration von Vyatta 5400 auf die VRA.
+Die folgenden häufig gestellten Fragen betreffen die Konfiguration der {{site.data.keyword.vra_full}} (VRA) und die Migration von Vyatta 5400 auf die VRA.
 
 ## Wie ermögliche ich Internetdatenverkehr von den Hosts in einem privaten VLAN?
 {:faq}

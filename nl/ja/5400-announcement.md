@@ -27,7 +27,7 @@ subcollection: virtual-router-appliance
 
 2019 年 3 月 31 日以降、Vyatta 5400 のベンダー (つまり、AT&T。2017 年に Brocade から Vyatta 製品ラインを取得) は、コード・パッチの提供や、デバイスのサポート・エスカレーションの受け入れを終了します。
 
-Vyatta 5400 をご使用のお客様は、2019 年 3 月 31 日より前に代替ソリューション (Vyatta 5600 をベースとする IBM Virtual Router Appliance (VRA) や IBM Juniper vSRX オファリングなど) へのマイグレーションが必要です。   
+Vyatta 5400 をご使用のお客様は、2019 年 3 月 31 日より前に代替ソリューション (Vyatta 5600 をベースとする {{site.data.keyword.vra_full}} (VRA) や IBM Juniper vSRX オファリングなど) へのマイグレーションが必要です。   
 
 これらの代替ソリューションではいずれも新しい構成が必要になるため、IBM Cloud では引き続き構成移行サービスを無料で提供いたします。このサービスの詳細に関するお問い合わせ、または移行作業のご依頼については、以下の情報を明記の上、nwom@us.ibm.com までメールをお送りください。
 

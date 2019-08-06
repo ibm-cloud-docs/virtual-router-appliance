@@ -17,7 +17,7 @@ lastupdated: "2018-11-10"
 # Ihre Services konfigurieren
 {: #configuring-your-services}
 
-Eine Reihe von Services in Virtual Router Appliance (VRA) können mit dem folgenden Befehl konfiguriert werden:
+Eine Reihe von Services in {{site.data.keyword.vra_full}} (VRA) können mit dem folgenden Befehl konfiguriert werden:
 
 `vyatta@vrouter# set service`
 

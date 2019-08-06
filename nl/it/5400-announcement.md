@@ -27,7 +27,7 @@ Il supporto per l'offerta Vyatta 5400 legacy terminerà il 31 marzo 2019. Questa
 
 Dopo il 31 marzo 2019, il fornitore per Vyatta 5400 (AT&T, che ha acquistato la linea di prodotti Vyatta da Brocade nel 2017) non fornirà più alcuna patch del codice né accetterà escalation di supporto per il dispositivo.
 
-I clienti che utilizzano Vyatta 5400 dovrebbero eseguire la migrazione a una soluzione alternativa (come IBM “VRA” (Virtual Router Appliance; basata su Vyatta 5600) oppure l'offerta IBM Juniper vSRX) prima del 31 marzo 2019.   
+I clienti che utilizzano Vyatta 5400 dovrebbero eseguire la migrazione a una soluzione alternativa (come IBM “VRA” ({{site.data.keyword.vra_full}}; basata su Vyatta 5600) oppure l'offerta IBM Juniper vSRX) prima del 31 marzo 2019.   
 
 Poiché entrambe queste soluzioni alternative richiedono una nuova configurazione, IBM Cloud continua ad offrire un servizio gratuito di conversione della configurazione. Per i dettagli relativi a questo servizio, o per richiedere un impegno di conversione, invia una email all'indirizzo nwom@us.ibm.com e indica:
 

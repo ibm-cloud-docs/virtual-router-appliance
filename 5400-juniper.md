@@ -22,7 +22,7 @@ subcollection: virtual-router-appliance
 # Migrating a Vyatta 5400 to a Juniper vSRX or Fortigate Security Appliance (FSA) 10Gbps
 {: #migrating-a-vyatta-5400-to-a-juniper-vsrx-or-fortigate-security-appliance-fsa-10gbps}
 
-In addition to being able to upgrade your Vyatta 5400 device to an IBM Virtual Router Appliance, you can also migrate to some of the most cost effective, reliable, and secure options on the market; the Juniper vSRX and the Fortigate Security Appliance.
+In addition to being able to upgrade your Vyatta 5400 device to an {{site.data.keyword.vra_full}}, you can also migrate to some of the most cost effective, reliable, and secure options on the market; the Juniper vSRX and the Fortigate Security Appliance.
 However, you will not be able to reuse your existing Vyatta 5400 device or keep your associated IP addresses.
 
 The following procedures provide instructions for upgrading either a stand alone Vyatta 5400, or two Vyatta 5400 devices operating in a High Availability (HA) pair, to either a Juniper vSRX or FSA.

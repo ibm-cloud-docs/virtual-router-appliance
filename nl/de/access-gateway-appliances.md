@@ -17,7 +17,7 @@ lastupdated: "2018-11-10"
 # Alle VRA-Instanzen anzeigen
 {: #view-all-vras}
 
-In der Anzeige 'Gateway-Appliances' im Kundenportal können Sie alle Netzgateway-Appliances anzeigen und aufrufen, einschließlich der VRAs (Virtual Router Appliances).  
+In der Anzeige 'Gateway-Appliances' im Kundenportal können Sie alle Netzgateway-Appliances anzeigen und aufrufen, einschließlich der VRAs ({{site.data.keyword.vra_full}}s).  
 
 Gehen Sie wie folgt vor, um die Anzeige 'Gateway-Appliances' im Kundenportal aufzurufen.
 

@@ -34,5 +34,5 @@ Perform the following procedure to rename a Network Gateway:
 
 After changing a Gateway Appliance's name, the name will immediately change at the top of the Gateway Appliance Details screen. The Gateway name may be changed again at any time by repeating the steps above.
 
-Changing the name of the VRA in the Customer Portal does not automatically change the hostname within the Virtual Router Appliance or any DNS entries you may have. This will require manual intervention if needed.
+Changing the name of the VRA in the Customer Portal does not automatically change the hostname within the {{site.data.keyword.vra_full}} or any DNS entries you may have. This will require manual intervention if needed.
 {: note}

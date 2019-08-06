@@ -20,14 +20,14 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Getting Help and Support for IBM Virtual Router Appliance
+# Getting Help and Support
 {: #getting-help-and-support-for-ibm-virtual-router-appliance}
 
-If you have problems or questions when using the IBM© Virtual Router Appliance, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
+If you have problems or questions when using the {{site.data.keyword.vra_full}}, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
 
 When using the forums to ask a question, tag your question so that it is seen by the IBM Cloud development teams.
 
-* If you have technical questions about the IBM Virtual Router Appliance, post your question on [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) and tag your question with "vra" and "ibm-cloud".
+* If you have technical questions about the {{site.data.keyword.vra_full}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) and tag your question with "vra" and "ibm-cloud".
 * For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud) forum. Include the "vra" and "ibm-cloud" tags.
 
 See [Getting help](/docs/get-support?topic=get-support-using-avatar) for more details about using the forums.

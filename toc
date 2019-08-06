@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup} 
 
 {: .toc subcollection="virtual-router-appliance" category="network" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
-IBM Virtual Router Appliance
+IBM Cloud Virtual Router Appliance
 
     {: .navgroup id="learn"}
     getting-started.md
@@ -62,9 +62,9 @@ IBM Virtual Router Appliance
     vyatta-5600-security-fixes.md
 
     {: .topicgroup}
-    Virtual Router Appliance API Information
+    {{site.data.keyword.vra_full}} API Information
         apis.md
-        [Virtual Router Appliance API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
+        [{{site.data.keyword.vra_full}} API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
     /hardware-firewall-dedicated/hardware-firewall-dedicated-ibm-cloud-ip-ranges
 

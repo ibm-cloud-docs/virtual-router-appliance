@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # 高可用性構成の同期化
 {: #synchronizing-high-availability-configurations}
 
-高可用性 (HA) ペアの 2 つの Virtual Router Appliance (VRA) では、両方のデバイスが同様の動作をするように、構成を十分に同期させる必要があります。 これは、`configuration sync-maps` を使用して行われ、構成のどの部分を同期化するかを選択できます。 1 つのマシンで変更を行うと、マークされた config が他のデバイスにプッシュされます。
+高可用性 (HA) ペアの 2 つの {{site.data.keyword.vra_full}} (VRA) では、両方のデバイスが同様の動作をするように、構成を十分に同期させる必要があります。 これは、`configuration sync-maps` を使用して行われ、構成のどの部分を同期化するかを選択できます。 1 つのマシンで変更を行うと、マークされた config が他のデバイスにプッシュされます。
 
 これにより、ローカル・デバイスの実行中の構成が同期化され、リモート・デバイス上に保存されます。 ただし、コミット・プロセスのステップとして、構成はローカル・デバイスに保存されません。
 {: note}

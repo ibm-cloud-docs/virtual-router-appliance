@@ -29,7 +29,7 @@ Le seguenti sono le domande frequenti quando si esegue la migrazione da Vyatta 5
 ## Perché la “Fine del supporto” (EoS, End of Support) di Wyatta 5400 il 31 marzo 2019?
 {: faq}
 
-Nel mese di settembre del 2017, per Vyatta 5400 legacy è stata annunciata la fine del supporto per il 20 febbraio 2018 sulla base della politica del ciclo di vita di IBM per il supporto: sei mesi dopo la data di luglio della GA (General Availability) per la versione successiva, IBM VRA (Virtual Router Appliance).
+Nel mese di settembre del 2017, per Vyatta 5400 legacy è stata annunciata la fine del supporto per il 20 febbraio 2018 sulla base della politica del ciclo di vita di IBM per il supporto: sei mesi dopo la data di luglio della GA (General Availability) per la versione successiva, IBM VRA ({{site.data.keyword.vra_full}}).
 
 Per onorare le linee temporali della migrazione del cliente, la data di fine del supporto di Vyatta 5400 è stata estesa fino al 31 marzo 2019. Poiché il software Debian 7 ora non è più supportato dalla community Open Source di Debian, non ci sono piani futuri di estendere il supporto del fornitore da AT&T.
 
@@ -43,7 +43,7 @@ Dopo la data di fine del supporto, AT&T non fornirà più alcuna patch del codic
 
 Analogamente, il supporto di IBM Cloud non risolverà più i problemi di configurazione o di rete sulle distribuzioni Vyatta 5400. Il supporto sarà limitato alle richieste di livello hardware (disco fisso, RAM e così via), alimentazione e connettività fuori banda (IPMI).
 
-Consigliamo vivamente ai clienti di procedere immediatamente alla migrazione a una soluzione alternativa, come VRA (Virtual Router Appliance, basata su Vyatta 5600) o Juniper vSRX.  [Fai clic qui](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) per iniziare.
+Consigliamo vivamente ai clienti di procedere immediatamente alla migrazione a una soluzione alternativa, come VRA ({{site.data.keyword.vra_full}}, basata su Vyatta 5600) o Juniper vSRX.  [Fai clic qui](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) per iniziare.
 
 ## Cosa succede se sto ancora eseguendo i miei carichi di lavoro IBM Cloud utilizzando un Vyatta 5400 dopo il 31 marzo?
 {: faq}
@@ -70,9 +70,9 @@ I clienti che hanno un Vyatta 5400 devono eseguire una migrazione a VRA (Vyatta 
 
 Il servizio di conversione della configurazione da Vyatta 5400 a VRA (5600) è ancora disponibile.
 
-* Per i clienti esistenti, IBM Cloud sta fornendo un'offerta gratuita per assistere nel refactoring della configurazione Vyatta 5400 esistente nei formati VRA (Virtual Router Appliance), Juniper vSRX o FSA (Fortigate Security Appliance) 10G. Per inoltrare una richiesta per il servizio di conversione della configurazione, invia una e-mail a nwom@us.ibm.com con l'oggetto: `Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx. `.
+* Per i clienti esistenti, IBM Cloud sta fornendo un'offerta gratuita per assistere nel refactoring della configurazione Vyatta 5400 esistente nei formati VRA ({{site.data.keyword.vra_full}}), Juniper vSRX o FSA (Fortigate Security Appliance) 10G. Per inoltrare una richiesta per il servizio di conversione della configurazione, invia una e-mail a nwom@us.ibm.com con l'oggetto: `Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx. `.
 
-  Assicurati di inserire la tua scelta dell'applicazione al posto di `aaaaaaaa` (Virtual Router Appliance, Juniper vSRX o FSA (Fortigate Security Appliance) 10G) e il tuo numero di account specifico al posto di `xxxxxx` nella tua riga dell'oggetto.
+  Assicurati di inserire la tua scelta dell'applicazione al posto di `aaaaaaaa` ({{site.data.keyword.vra_full}}, Juniper vSRX o FSA (Fortigate Security Appliance) 10G) e il tuo numero di account specifico al posto di `xxxxxx` nella tua riga dell'oggetto.
   {: note}
 
 * Wanclouds, il nostro partner in questo processo di configurazione della conversione, ha completato diverse centinaia di impegni di migrazione con esito positivo. Trasformeranno il tuo Vyatta 5400 esistente per creare una funzionalità simile sulla piattaforma Vyatta 5600. Forniscono i loro servizi in due livelli, descritti di seguito:
@@ -94,8 +94,8 @@ Contatta i responsabili della gestione dell'offerta di rete IBM VRA e Vyatta 540
 ## Quali risorse aggiuntive sono disponibili per aiutarmi con questa migrazione?
 {: faq}
 
-Per ulteriori informazioni, esamina le seguenti risorse di documentazione della Virtual Router Appliance:
+Per ulteriori informazioni, esamina le seguenti risorse di documentazione della {{site.data.keyword.vra_full}}:
 
-  * [Introduzione a IBM Virtual Router Appliance](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
+  * [Introduzione a {{site.data.keyword.vra_full}}](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
   * [Informazioni sulla VRA](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
   * [Panoramica della migrazione di Vyatta 5400](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)

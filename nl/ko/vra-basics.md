@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# IBM Virtual Router Appliance 액세스 및 구성
+# {{site.data.keyword.vra_full}} 액세스 및 구성
 {: #accessing-and-configuring-the-ibm-virtual-router-appliance}
 
 VRA는 SSH를 통한 원격 콘솔을 사용하거나 웹 GUI에 로그인하여 구성할 수 있습니다. 기본적으로 웹 GUI는 공용 인터넷에서 사용할 수 없습니다. 웹 GUI를 사용하려면 먼저 SSH를 통해 로그인하십시오.
@@ -164,7 +164,7 @@ commit
 
 RBAC는 액세스 제어 관리(ACM) 규칙 세트에 지정된 그룹을 정의하고, 사용자를 그룹에 추가하고, 시스템의 경로와 그룹이 일치하는 규칙 세트를 작성하고, 그룹에 적용되는 경로를 허용하거나 거부하도록 시스템을 구성하여 수행됩니다.
 
-기본적으로 Virtual Router Appliance에 정의된 ACM 규칙 세트가 없으며 ACM은 사용 안함으로 설정됩니다. RBAC를 사용하여 세분화된 액세스 제어를 제공하려면 ACM을 사용으로 설정하고 사용자 소유의 정의된 규칙 외에 다음 기본 ACM 규칙을 추가해야 합니다.
+기본적으로 {{site.data.keyword.vra_full}}에 정의된 ACM 규칙 세트가 없으며 ACM은 사용 안함으로 설정됩니다. RBAC를 사용하여 세분화된 액세스 제어를 제공하려면 ACM을 사용으로 설정하고 사용자 소유의 정의된 규칙 외에 다음 기본 ACM 규칙을 추가해야 합니다.
 
 ```
 set system acm 'enable'

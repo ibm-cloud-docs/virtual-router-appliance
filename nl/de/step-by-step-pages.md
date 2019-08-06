@@ -16,10 +16,10 @@ lastupdated: "2018-11-10"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Schritt-für-Schritt-Anleitung für die Virtual Router Appliance (VRA)
+# Schritt-für-Schritt-Anleitung für die {{site.data.keyword.vra_full}} (VRA)
 {: #tutorials}
 
-Verwenden Sie diesen umfassenden Leitfaden, um Ihre Virtual Router Appliance (VRA) anhand der Schritt-für-Schritt-Anleitung zu erstellen und anzupassen.
+Verwenden Sie diesen umfassenden Leitfaden, um Ihre {{site.data.keyword.vra_full}} (VRA) anhand der Schritt-für-Schritt-Anleitung zu erstellen und anzupassen.
 
 <style>
     .solutionBox {
@@ -76,8 +76,8 @@ Verwenden Sie diesen umfassenden Leitfaden, um Ihre Virtual Router Appliance (VR
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>In diesem Leitfaden wird beleuchtet, wie eine Virtual Router Appliance (VRA) in der IBM© Cloud konfiguriert werden kann, um ein geschütztes, privates Netz zu erstellen (Einschluss). </p>
-                    <span class="tag-filter category">Virtual Router Appliance</span>
+                <p>In diesem Leitfaden wird beleuchtet, wie eine {{site.data.keyword.vra_full}} (VRA) in der IBM© Cloud konfiguriert werden kann, um ein geschütztes, privates Netz zu erstellen (Einschluss). </p>
+                    <span class="tag-filter category">{{site.data.keyword.vra_full}}</span>
                     <span class="tag-filter category">Geschütztes, privates Netz</span>
                     <span class="tag-filter category">Benutzerschnittstelle der IBM Cloud-Konsole</span>
                     <span class="tag-filter category">Beispielcode</span>
@@ -91,8 +91,8 @@ Verwenden Sie diesen umfassenden Leitfaden, um Ihre Virtual Router Appliance (VR
         </h3>
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
-                <p>Dieser Leitfaden stellt die Konfiguration von NAT-Maskierung (NAT, Network Address Translation) auf einer Virtual Router Appliance (VRA) dar, um eine Verbindung zu einem geschützten Teilnetz im privaten Netz in der IBM Cloud herzustellen. </p>
-                    <span class="tag-filter category">Virtual Router Appliance</span>
+                <p>Dieser Leitfaden stellt die Konfiguration von NAT-Maskierung (NAT, Network Address Translation) auf einer {{site.data.keyword.vra_full}} (VRA) dar, um eine Verbindung zu einem geschützten Teilnetz im privaten Netz in der IBM Cloud herzustellen. </p>
+                    <span class="tag-filter category">{{site.data.keyword.vra_full}}</span>
                     <span class="tag-filter category">Network Address Translation</span>
                     <span class="tag-filter category">Beispielcode</span>
     </div>
@@ -107,7 +107,7 @@ Verwenden Sie diesen umfassenden Leitfaden, um Ihre Virtual Router Appliance (VR
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
                 <p>Dieser Leitfaden bietet ein Fallbeispiel für die Überprüfung Ihrer Adresse in der VPC sowie die anschließende Bereitstellung Ihrer VPC mit der API oder der CLI.</p>
-                 <span class="tag-filter category">Virtual Router Appliance</span>
+                 <span class="tag-filter category">{{site.data.keyword.vra_full}}</span>
                  <span class="tag-filter category">RIAS-API</span>
                  <span class="tag-filter category">IBM Cloud Direct Link</span>
                  <span class="tag-filter category">Virtual Private Cloud</span>
@@ -123,7 +123,7 @@ Verwenden Sie diesen umfassenden Leitfaden, um Ihre Virtual Router Appliance (VR
         <div class="solutionBoxDescription">
             <div class="descriptionContainer">
                 <p>Dieser Leitfaden bietet ein Fallbeispiel für die Überprüfung Ihrer Adresse in der VPC sowie die anschließende Bereitstellung Ihrer VPC mit der API oder der CLI.</p>
-                 <span class="tag-filter category">Virtual Router Appliance</span>
+                 <span class="tag-filter category">{{site.data.keyword.vra_full}}</span>
                  <span class="tag-filter category">RIAS-API</span>
                  <span class="tag-filter category">Virtual Private Network</span>
                  <span class="tag-filter category">Beispielcode</span>

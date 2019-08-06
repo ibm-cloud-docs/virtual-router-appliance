@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# 存取及配置 IBM Virtual Router Appliance
+# 存取及配置 {{site.data.keyword.vra_full}}
 {: #accessing-and-configuring-the-ibm-virtual-router-appliance}
 
 VRA 可以透過 SSH 使用遠端主控台階段作業來配置，或透過登入 Web GUI 來配置。依預設，無法從公用網際網路取得 Web GUI。若要啟用 Web GUI，請先透過 SSH 登入。
@@ -164,7 +164,7 @@ commit
 
 要執行 RBAC，可以建立一個指派給「存取控制管理 (ACM)」規則集的群組、將使用者新增至群組、建立規則集以將群組對應到系統中的路徑，然後配置系統以容許或拒絕這些已套用至群組的路徑。
 
-依預設，在 Virtual Router Appliance 中沒有定義 ACM 規則集，且已停用 ACM。如果您要使用 RBAC 來提供精細的存取控制，除了自己的已定義規則之外，您還必須啟用 ACM 並新增下列預設 ACM 規則：
+依預設，在 {{site.data.keyword.vra_full}} 中沒有定義 ACM 規則集，且已停用 ACM。如果您要使用 RBAC 來提供精細的存取控制，除了自己的已定義規則之外，您還必須啟用 ACM 並新增下列預設 ACM 規則：
 
 ```
 set system acm 'enable'

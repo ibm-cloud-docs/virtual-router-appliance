@@ -15,14 +15,14 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 
-# Letzte Aktualisierungen für IBM Virtual Router Appliance
+# Letzte Aktualisierungen für {{site.data.keyword.vra_full}}
 {: #recent-updates-for-ibm-virtual-router-appliance}
 
-Informieren Sie sich über neue und aktualisierte Funktionen in IBM© Virtual Router Appliance (VRA).
+Informieren Sie sich über neue und aktualisierte Funktionen in {{site.data.keyword.vra_full}} (VRA).
 
 ## August 2018
 ### Brocade Operating System Version 18.x
-Version 18.x des Brocade-Betriebssystems steht nun für Virtual Router Appliance zur Verfügung. Neben anderen neuen Features bietet diese Version eine Korrektur für die Sicherheitsverletzung bei Spectre. 
+Version 18.x des Brocade-Betriebssystems steht nun für {{site.data.keyword.vra_full}} zur Verfügung. Neben anderen neuen Features bietet diese Version eine Korrektur für die Sicherheitsverletzung bei Spectre. 
 
 Neue Funktionen von 18.x VRA werden in den folgenden Abschnitten erläutert:
 
@@ -33,7 +33,7 @@ Neue Funktionen von 18.x VRA werden in den folgenden Abschnitten erläutert:
 
 Wenn Sie eine Migration von Vyatta 5400 ausführen, wird empfohlen, ein Upgrade auf Version 18.x über das [normale Verfahren](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os), nämlich über ein vollständiges, erneutes Laden des Betriebssystems, durchzuführen.
 
-Da es keine einfache Eins-zu-eins-Zuordnung zwischen den Funktionen von Vyatta 5400 und der Virtual Router Appliance gibt, ist es hilfreich, eine Baseline-Konfiguration für die VRA zu erstellen. WanClouds, ein IBM Partner, kann Sie bei diesem Prozess unterstützen und Anleitungen zur Verfügung stellen, um ähnliche Funktionen wie in Vyatta 5400 in Ihrer VRA zu erstellen.
+Da es keine einfache Eins-zu-eins-Zuordnung zwischen den Funktionen von Vyatta 5400 und der {{site.data.keyword.vra_full}} gibt, ist es hilfreich, eine Baseline-Konfiguration für die VRA zu erstellen. WanClouds, ein IBM Partner, kann Sie bei diesem Prozess unterstützen und Anleitungen zur Verfügung stellen, um ähnliche Funktionen wie in Vyatta 5400 in Ihrer VRA zu erstellen.
 
 Weitere Informationen zu allgemeinen Problemen, die während dieses Upgrades aufgetreten sind, finden Sie in unter [Weitere Dokumentation](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues).
 

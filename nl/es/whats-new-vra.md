@@ -21,10 +21,10 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Actualizaciones recientes de IBM Virtual Router Appliance
+# Actualizaciones recientes de {{site.data.keyword.vra_full}}
 {: #recent-updates-for-ibm-virtual-router-appliance}
 
-Descubra las características nuevas y actualizadas de IBM© Virtual Router Appliance (VRA).
+Descubra las características nuevas y actualizadas de {{site.data.keyword.vra_full}} (VRA).
 
 ## Agosto de 2018
 {: #august-2018}
@@ -32,7 +32,7 @@ Descubra las características nuevas y actualizadas de IBM© Virtual Router Appl
 ### Sistema operativo Brocade Versión 18.x
 {: #brocade-operating-system-version-18-x}
 
-La versión 18.x del sistema operativo Brocade está ahora disponible para Virtual Router Appliance. Entre otras características nuevas, esta versión proporciona la solución para la brecha de seguridad de Spectre.
+La versión 18.x del sistema operativo Brocade está ahora disponible para {{site.data.keyword.vra_full}}. Entre otras características nuevas, esta versión proporciona la solución para la brecha de seguridad de Spectre.
 
 Las nuevas características de VRA 18.x se describen en los temas siguientes:
 

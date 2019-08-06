@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Vyatta 5400 일반 마이그레이션 문제
 {: #vyatta-5400-common-migration-issues}
 
-다음 표에서는 Vyatta 5400 디바이스에서 IBM© Virtual Router Appliance로 마이그레이션한 후 발생할 수 있는 일반적인 문제 또는 동작 변경사항에 대해 설명합니다. 어떤 경우에는 문제에 대한 임시 해결책도 있습니다.
+다음 표에서는 Vyatta 5400 디바이스에서 {{site.data.keyword.vra_full}}로 마이그레이션한 후 발생할 수 있는 일반적인 문제 또는 동작 변경사항에 대해 설명합니다. 어떤 경우에는 문제에 대한 임시 해결책도 있습니다.
 
 ## Stateful 방화벽에 대한 인터페이스 기반 글로벌 상태 정책
 {: #interface-based-global-state-policy-for-stateful-firewall}
@@ -33,7 +33,7 @@ subcollection: virtual-router-appliance
 
 릴리스 5.1에서 Stateful 방화벽에 대한 "상태 정책 상태"를 설정할 때의 동작이 변경되었습니다. 릴리스 5.1 이전 버전에서는 Stateful 방화벽의 `state - global -state -policy`를 설정하는 경우 vRouter가 세션의 자동 반환 통신에 대한 암묵적인 `Allow` 규칙을 자동으로 추가했습니다.
 
-릴리스 5.1 이상에서는 `Allow` 규칙 설정을 Virtual Router Appliance에 추가해야 합니다. Stateful 설정은 Vyatta 5400 디바이스의 인터페이스에 대해 그리고 VRA 디바이스의 프로토콜에 대해 작동합니다.
+릴리스 5.1 이상에서는 `Allow` 규칙 설정을 {{site.data.keyword.vra_full}}에 추가해야 합니다. Stateful 설정은 Vyatta 5400 디바이스의 인터페이스에 대해 그리고 VRA 디바이스의 프로토콜에 대해 작동합니다.
 
 ### 임시 해결책
 {: #workarounds}
@@ -96,7 +96,7 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 
 ### 문제
 {: #issues-4}
-Masquerade Source NAT가 IBM Virtual Router Appliance에 배치되는 시나리오에서는 방화벽을 사용하여 인터넷에 대한 호스트의 액세스를 판별할 수 없습니다. 이는 NAT 이후 주소가 같기 때문입니다.
+Masquerade Source NAT가 {{site.data.keyword.vra_full}}에 배치되는 시나리오에서는 방화벽을 사용하여 인터넷에 대한 호스트의 액세스를 판별할 수 없습니다. 이는 NAT 이후 주소가 같기 때문입니다.
 
 Vyatta 5400 디바이스의 경우 방화벽이 NAT 전에 수행되었기 때문에 이 조작이 가능했으며, 이 조작을 통해 호스트가 인터넷에 액세스하는 것을 제한할 수 있습니다.
 
@@ -121,7 +121,7 @@ configs의 단어 "Table"은 v5400 정책 기반 라우팅에서 선택사항이
 
 ### 문제
 {: #issues-6}
-Virtual Router Appliance PBR(정책 기반 라우팅)에서 정책을 인바운드 트래픽에 대한 데이터 플레인 인터페이스에 적용할 수 있지만, 루프백, 터널, 브릿지, OpenVPN, VTI 및 IP 번호가 지정되지 않은 인터페이스에는 적용할 수 없습니다.
+{{site.data.keyword.vra_full}} PBR(정책 기반 라우팅)에서 정책을 인바운드 트래픽에 대한 데이터 플레인 인터페이스에 적용할 수 있지만, 루프백, 터널, 브릿지, OpenVPN, VTI 및 IP 번호가 지정되지 않은 인터페이스에는 적용할 수 없습니다.
 
 ### 임시 해결책
 {: #workarounds-6}
@@ -133,7 +133,7 @@ Virtual Router Appliance PBR(정책 기반 라우팅)에서 정책을 인바운�
 ### 문제
 {: #issues-7}
 
-IBM Virtual Router Appliance는 nftables를 사용하며 TCP-MSS는 지원하지 않습니다.
+{{site.data.keyword.vra_full}}는 nftables를 사용하며 TCP-MSS는 지원하지 않습니다.
 
 ### 임시 해결책
 {: #workarounds-7}
@@ -146,7 +146,7 @@ IBM Virtual Router Appliance는 nftables를 사용하며 TCP-MSS는 지원하지
 ### 문제
 {: #issues-8}
 
-Virtual Router Appliance에서 `push-route` 매개변수를 사용하는 경우 OpenVPN이 작동하지 않습니다.
+{{site.data.keyword.vra_full}}에서 `push-route` 매개변수를 사용하는 경우 OpenVPN이 작동하지 않습니다.
 
 ### 임시 해결책
 {: #workarounds-8}
@@ -190,7 +190,7 @@ Vyatta 5400 디바이스를 사용하면, 다음 방화벽 규칙이 허용됩�
 
 set firewall name allow rule 10 ipsec
 
-그러나 IBM Virtual Router Appliance에서는 IPSec이 없습니다.
+그러나 {{site.data.keyword.vra_full}}에서는 IPSec이 없습니다.
 
 ### 임시 해결책
 {: #workarounds-11}
@@ -213,7 +213,7 @@ Vyatta 5400 디바이스를 사용하면, 다음 방화벽 규칙이 허용됩�
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 
-그러나 IBM Virtual Router Appliance에서는 IPSec이 없습니다.
+그러나 {{site.data.keyword.vra_full}}에서는 IPSec이 없습니다.
 
 ### 임시 해결책
 {: workarounds-12}
@@ -254,7 +254,7 @@ Tun50 172.16.1.245
 
 초기에 Vyatta 5400 디바이스는 인바운드 IPSec에서 DNAT를 수행하여 인터페이스를 종료하고 연결 추적 테이블을 사용하여 트래픽을 IPsec 터널로 정상적으로 반환했습니다.
 
-Virtual Router Appliance에서는 이 구성이 동일하게 작동하지 않습니다. 세션은 작성되지만 conntrack 테이블이 DNAT 변경사항을 되돌린 후에는 반환 트래픽이 IPsec 터널을 우회합니다.그런 다음 VRA는 IPsec 암호화 없이 유선으로 패킷을 전송합니다. 업스트림 디바이스는 이 트래픽을 예상하지 않으며 대부분 삭제합니다.엔드-투-엔드 연결이 끊어진 상태에서 이는 의도된 동작입니다.
+{{site.data.keyword.vra_full}}에서는 이 구성이 동일하게 작동하지 않습니다. 세션은 작성되지만 conntrack 테이블이 DNAT 변경사항을 되돌린 후에는 반환 트래픽이 IPsec 터널을 우회합니다.그런 다음 VRA는 IPsec 암호화 없이 유선으로 패킷을 전송합니다. 업스트림 디바이스는 이 트래픽을 예상하지 않으며 대부분 삭제합니다.엔드-투-엔드 연결이 끊어진 상태에서 이는 의도된 동작입니다.
 
 ### 임시 해결책
 {: #workarounds-13}
@@ -332,7 +332,7 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ### 문제
 {: #issues-13}
 
-PPTP는 더 이상 Virtual Router Appliance에서 지원되지 않습니다.                                                                                                                                                   
+PPTP는 더 이상 {{site.data.keyword.vra_full}}에서 지원되지 않습니다.                                                                                                                                                   
 
 ### 임시 해결책
 {: #workarounds-13}
@@ -345,7 +345,7 @@ PPTP는 더 이상 Virtual Router Appliance에서 지원되지 않습니다.
 ### 문제
 {: issues-14}
 
-VRRP 가상 주소가 고가용성 VPN의 IBM Virtual Router Appliance에 추가될 때마다 IPsec 디먼을 다시 초기화해야 합니다. 이는 IPsec 서비스가 IKE 서비스 디먼이 초기화될 때 VRA에 표시되는 주소에 대한 연결만 청취하기 때문입니다.
+VRRP 가상 주소가 고가용성 VPN의 {{site.data.keyword.vra_full}}에 추가될 때마다 IPsec 디먼을 다시 초기화해야 합니다. 이는 IPsec 서비스가 IKE 서비스 디먼이 초기화될 때 VRA에 표시되는 주소에 대한 연결만 청취하기 때문입니다.
 
 VRRP가 있는 VRA 쌍의 경우 마스터 라우터에 VRRP 가상 주소가 없으면 초기화하는 동안 디바이스에 있는 VRRP 가상 주소가 대기 라우터에 없을 수 있습니다. 따라서 VRRP 상태 전이가 발생할 때 IPsec 디먼을 다시 초기화하려면 마스터 및 백업 라우터에서 다음 명령을 실행하십시오.
 
@@ -371,7 +371,7 @@ set firewall name localGateway rule 300 recent time '30'
 set firewall name localGateway rule 300 state new 'enable'
 ```
 
-IBM Virtual Router Appliance에서 이 규칙에는 다음과 같은 문제가 있습니다.
+{{site.data.keyword.vra_full}}에서 이 규칙에는 다음과 같은 문제가 있습니다.
 
 * 최근 개수 및 최근 시간에 대한 옵션은 더 이상 사용되지 않습니다.
 
@@ -491,7 +491,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ### 문제
 {: #issues-20}
 
-Vyatta 5400 디바이스와 IBM Virtual Router Appliance의 로깅 동작 사이에 중요한 변경사항이 있습니다. 세션당 로깅에서 패킷당 로깅으로 변경되었습니다. 
+Vyatta 5400 디바이스와 {{site.data.keyword.vra_full}}의 로깅 동작 사이에 중요한 변경사항이 있습니다. 세션당 로깅에서 패킷당 로깅으로 변경되었습니다. 
 
 * 세션 로깅: Stateful 세션 상태 전이를 기록합니다.
 

@@ -22,7 +22,7 @@ lastupdated: "2018-11-10"
 
 * 현재 1801 운영 체제를 실행 중이지 않은 VRA를 사용하는 사용자. (현재 버전은 18.01g임)
 
-* Virtual Router Appliance에 대해 새로운 18.01f 버전을 설치하려는 사용자(예를 들어, 17.2X에서 업그레이드하는 사용자).
+* {{site.data.keyword.vra_full}}에 대해 새로운 18.01f 버전을 설치하려는 사용자(예를 들어, 17.2X에서 업그레이드하는 사용자).
 
 * Vyatta 5400이 있는 경우 이 정보는 사용자에게 적용되지 않습니다.
 
@@ -51,6 +51,6 @@ VRA의 버전 1801f에는 Spectre 취약성에 대한 보안 수정사항이 포
 
 ## 추가 안내
 
-Vyatta 5400과 Virtual Router Appliance 간에는 단순한 일대일 기능 맵핑이 없으므로, VRA에 대한 기준선 구성을 작성하는 것이 도움이 됩니다. IBM© 파트너인 WanClouds는 이 프로세스를 지원할 수 있으며 VRA의 Vyatta 5400과 유사한 기능을 작성하는 데 대한 안내를 제공합니다.
+Vyatta 5400과 {{site.data.keyword.vra_full}} 간에는 단순한 일대일 기능 맵핑이 없으므로, VRA에 대한 기준선 구성을 작성하는 것이 도움이 됩니다. IBM© 파트너인 WanClouds는 이 프로세스를 지원할 수 있으며 VRA의 Vyatta 5400과 유사한 기능을 작성하는 데 대한 안내를 제공합니다.
 
 이 업그레이드 프로세스 중에 발생하는 일반적인 문제에 대한 자세한 정보는 [추가 문서](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)를 참조하십시오.

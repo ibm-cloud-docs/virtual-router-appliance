@@ -21,10 +21,10 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# IBM Virtual Router Appliance の最新の更新
+# {{site.data.keyword.vra_full}} の最新の更新
 {: #recent-updates-for-ibm-virtual-router-appliance}
 
-以下では、IBM© Virtual Router Appliance (VRA) の新機能および更新された機能について説明します。
+以下では、{{site.data.keyword.vra_full}} (VRA) の新機能および更新された機能について説明します。
 
 ## 2018 年 8 月
 {: #august-2018}
@@ -32,7 +32,7 @@ subcollection: virtual-router-appliance
 ### Brocade オペレーティング・システム バージョン 18.x
 {: #brocade-operating-system-version-18-x}
 
-Virtual Router Appliance では、Brocade OS のバージョン 18.x が使用できるようになりました。 様々な新機能に加え、このバージョンは、Spectre セキュリティー・ブリーチの修復を提供します。
+{{site.data.keyword.vra_full}} では、Brocade OS のバージョン 18.x が使用できるようになりました。 様々な新機能に加え、このバージョンは、Spectre セキュリティー・ブリーチの修復を提供します。
 
 18.x VRA の新機能については、以下のトピックで説明します。
 
@@ -43,6 +43,6 @@ Virtual Router Appliance では、Brocade OS のバージョン 18.x が使用�
 
 Vyatta 5400 から移行する場合、18.x にアップグレードする最善の方法は、[通常の手順](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os)、すなわち OS の完全な再ロードです。
 
-Vyatta 5400 とVirtual Router Appliance との間では、機能を 1 対 1 で単純にマッピングできないので、VRA のベースライン構成を作成すると有用です。 IBM パートナーである WanClouds はこのプロセスのサポートを提供し、Vyatta 5400 の機能に類似した機能を VRA で作成するためのガイダンスを提供しています。
+Vyatta 5400 と{{site.data.keyword.vra_full}} との間では、機能を 1 対 1 で単純にマッピングできないので、VRA のベースライン構成を作成すると有用です。 IBM パートナーである WanClouds はこのプロセスのサポートを提供し、Vyatta 5400 の機能に類似した機能を VRA で作成するためのガイダンスを提供しています。
 
 このアップグレード・プロセスで発生する可能性のある問題の詳細については、[追加資料](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)を参照してください。

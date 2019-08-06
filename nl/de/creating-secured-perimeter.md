@@ -27,7 +27,7 @@ Führen Sie die folgenden Schritte aus, um einen geschützten Bereich einzuricht
 2. Erstellen Sie im öffentlichen Internet durch ein öffentliches VLAN und eine Firewall eine äußere Begrenzung. Diese äußere Begrenzung wird zur Isolierung des SPS verwendet.
 3. Ordnen Sie das SPS innerhalb dieser Begrenzung an.
 4. Richten Sie ein Gateway ein, um eine Brücke zwischen das öffentlichem VLAN und dem SPS zu erhalten.
-5. Erstellen Sie eine VRA (Virtual Router Appliance).
+5. Erstellen Sie eine VRA ({{site.data.keyword.vra_full}}).
 6. Erstellen und konfigurieren Sie ein oder mehrere Secure Perimeter Segments (SPS).
 7. Erstellen Sie ein Front-End-VLAN
 8. Erstellen Sie ein Back-End-VLAN

@@ -28,7 +28,7 @@ A seguir estão as etapas para configurar um perímetro seguro.  Para obter uma 
 2. Criar um limite exterior na Internet pública por meio de uma VLAN pública e de um firewall. Esse limite exterior será usado para isolar o SPS.
 3. Colocar o SPS dentro desse limite
 4. Configurar um gateway para servir de ponte entre a VLAN pública e o SPS
-5. Criar uma configuração do Virtual Router Appliance (VRA)
+5. Criar uma configuração do {{site.data.keyword.vra_full}} (VRA)
 6. Criar e configurar um ou mais Secured Perimeter Segments (SPS)
 7. Criar a VLAN de front-end
 8. Criar a VLAN de backend

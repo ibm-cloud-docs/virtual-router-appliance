@@ -22,7 +22,7 @@ Diese Datei enthält eine Liste der Dinge, die Sie wissen müssen, wenn Sie ein 
 
 * Alle mit einer aktuellen VRA, die nicht unter dem Betriebssystem 1801 ausgeführt wird. (Die aktuelle Version ist 18.01g.)
 
-* Alle, die die neue Version 18.01f für eine Virtual Router Appliance installieren möchten (zum Beispiel alle, die ein Upgrade von 17.2X durchführen).
+* Alle, die die neue Version 18.01f für eine {{site.data.keyword.vra_full}} installieren möchten (zum Beispiel alle, die ein Upgrade von 17.2X durchführen).
 
 * Wenn Sie über eine Vyatta 5400 verfügen, gelten diese Informationen für Sie nicht.
 
@@ -51,6 +51,6 @@ Jetzt sollte die Version 1801f ausgeführt werden, in der die Sicherheitslücke 
 
 ## Zusätzliche Anleitung
 
-Da es keine einfache Eins-zu-eins-Zuordnung zwischen den Funktionen von Vyatta 5400 und der Virtual Router Appliance gibt, ist es hilfreich, eine Baseline-Konfiguration für die VRA zu erstellen. WanClouds, ein IBM© Partner, kann Sie bei diesem Prozess unterstützen und Anleitungen zur Verfügung stellen, um ähnliche Funktionen wie in Vyatta 5400 in Ihrer VRA zu erstellen.
+Da es keine einfache Eins-zu-eins-Zuordnung zwischen den Funktionen von Vyatta 5400 und der {{site.data.keyword.vra_full}} gibt, ist es hilfreich, eine Baseline-Konfiguration für die VRA zu erstellen. WanClouds, ein IBM© Partner, kann Sie bei diesem Prozess unterstützen und Anleitungen zur Verfügung stellen, um ähnliche Funktionen wie in Vyatta 5400 in Ihrer VRA zu erstellen.
 
 Weitere Informationen zu allgemeinen Problemen, die beim Upgradeprozess auftreten können, finden Sie in der [weiteren Dokumentation](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues).

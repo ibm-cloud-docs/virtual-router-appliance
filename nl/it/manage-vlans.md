@@ -85,7 +85,7 @@ Dopo aver annullato l'associazione alla VLAN da un'applicazione gateway, la VLAN
 ## Instrada più VLAN nella stessa interfaccia di rete
 {: #route-multiple-vlans-over-same-network-interface}
 
-VRA (Virtual Router Appliance) è in grado di instradare più VLAN nella stessa interfaccia di rete (ad esempio, `dp0bond0` o `dp0bond1`). Questo è possibile impostando la porta switch nella modalità trunk e configurando le interfacce virtuali (VIF) sul dispositivo.
+VRA ({{site.data.keyword.vra_full}}) è in grado di instradare più VLAN nella stessa interfaccia di rete (ad esempio, `dp0bond0` o `dp0bond1`). Questo è possibile impostando la porta switch nella modalità trunk e configurando le interfacce virtuali (VIF) sul dispositivo.
 
 Ad esempio:
 

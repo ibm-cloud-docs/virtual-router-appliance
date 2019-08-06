@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Gestisti i tuoi firewall IBM
 {: #manage-your-ibm-firewalls}
 
-VRA (Virtual Router Appliance) ha la capacità di elaborare le regole del firewall per proteggere le VLAN instradate tramite il dispositivo. I firewall nella VRA possono essere suddivisi in due passi:
+VRA ({{site.data.keyword.vra_full}}) ha la capacità di elaborare le regole del firewall per proteggere le VLAN instradate tramite il dispositivo. I firewall nella VRA possono essere suddivisi in due passi:
 
 1. Definizione di una o più serie di regole.
 2. Applicazione di una serie di regole a un'interfaccia o zona. Una zona è formata da una o più interfacce di rete.
@@ -128,7 +128,7 @@ Ad esempio, per assegnare la serie di regole `ALLOW_LEGACY` all'opzione `in` per
 ## Control Plane Policing (CPP)
 {: #control-plane-policing-cpp-}
 
-CPP (Control Plane Policing) fornisce la protezione da attacchi alla VRA (Virtual Router Appliance) consentendoti di configurare le politiche del firewall assegnate alle interfacce desiderate e applicando queste politiche ai pacchetti in entrata nella VRA.
+CPP (Control Plane Policing) fornisce la protezione da attacchi alla VRA ({{site.data.keyword.vra_full}}) consentendoti di configurare le politiche del firewall assegnate alle interfacce desiderate e applicando queste politiche ai pacchetti in entrata nella VRA.
 
 CPP viene implementato quando la parola chiave `local` viene utilizzata nelle politiche del firewall assegnate a tutti i tipi di interfaccia VRA, come i loopback o le interfacce del piano dati. Diversamente dalle regole del firewall applicate ai pacchetti in attraversamento nella VRA, l'azione predefinita delle regole del firewall per il piano di controllo del traffico in entrata o in uscita è `Allow`. Gli utenti devono aggiungere regole di rilascio esplicite se il comportamento predefinito non è desiderato.
 
@@ -143,7 +143,7 @@ Tieni presente che le regole CPP non possono essere con stato e saranno applicat
 ## Firewall zona
 {: #zone-firewalling}
 
-Un altro concetto di firewall in VRA (Virtual Router Appliance) è il firewall basato sulla zona. Nell'operazione di firewall basato sulla zona, viene assegnata un'interfaccia a una zona (solo una zona per interfaccia) e vengono assegnate le serie di regole del firewall ai limiti tra le zone con l'idea che tutte le interfacce all'interno di una zona abbiano lo stesso livello di sicurezza e possono instradare liberamente. Il traffico viene soltanto analizzato quando passa da una zona a un'altra. Le zone rilasciano tutto il traffico in entrata che non è consentito esplicitamente.
+Un altro concetto di firewall in VRA ({{site.data.keyword.vra_full}}) è il firewall basato sulla zona. Nell'operazione di firewall basato sulla zona, viene assegnata un'interfaccia a una zona (solo una zona per interfaccia) e vengono assegnate le serie di regole del firewall ai limiti tra le zone con l'idea che tutte le interfacce all'interno di una zona abbiano lo stesso livello di sicurezza e possono instradare liberamente. Il traffico viene soltanto analizzato quando passa da una zona a un'altra. Le zone rilasciano tutto il traffico in entrata che non è consentito esplicitamente.
 
 Un'interfaccia può appartenere a una zona o a una configurazione del firewall pre-interfaccia; un'interfaccia non ad entrambi.
 

@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Manage Your IBM Firewalls
 {: #manage-your-ibm-firewalls}
 
-The Virtual Router Appliance (VRA) has the ability to process firewall rules to protect the VLANs routed through the device. The firewalls in the VRA can be broken into two steps:
+The {{site.data.keyword.vra_full}} (VRA) has the ability to process firewall rules to protect the VLANs routed through the device. The firewalls in the VRA can be broken into two steps:
 
 1. Defining one or more sets of rules.
 2. Applying a set of rules to an interface or a zone. A zone consists of one or more network interfaces.
@@ -133,7 +133,7 @@ As an example, to assign the `ALLOW_LEGACY` rule set to the `in` option for the 
 ## Control Plane Policing (CPP)
 {: #control-plane-policing-cpp-}
 
-Control plane policing (CPP) provides protection against attacks on the Virtual Router Appliance by allowing you to configure firewall policies that are assigned to desired interfaces and applying these policies to packets entering the VRA.
+Control plane policing (CPP) provides protection against attacks on the {{site.data.keyword.vra_full}} by allowing you to configure firewall policies that are assigned to desired interfaces and applying these policies to packets entering the VRA.
 
 CPP is implemented when the `local` keyword is used in firewall policies that are assigned to any type of VRA interface, such as data plane interfaces or loopback. Unlike the firewall rules applied for packets traversing through the VRA, the default action of firewall rules for traffic entering or leaving the control plane is `Allow`. Users must add explicit drop rules if the default behavior is not desired.
 
@@ -148,7 +148,7 @@ Please note that CPP rules cannot be stateful, and will only apply on ingress tr
 ## Zone Firewalling
 {: #zone-firewalling}
 
-Another firewall concept within the Virtual Router Appliance is zone based firewalls. In zone-based firewall operation an interface is assigned to a zone (only one zone per interface) and firewall rule sets are assigned to the boundaries between zones with the idea that all interfaces within a zone have the same security level and are allowed to route freely. Traffic is only scrutinized when it is passing from one zone to another. Zones drop any traffic coming into them which is not explicitly allowed.
+Another firewall concept within the {{site.data.keyword.vra_full}} is zone based firewalls. In zone-based firewall operation an interface is assigned to a zone (only one zone per interface) and firewall rule sets are assigned to the boundaries between zones with the idea that all interfaces within a zone have the same security level and are allowed to route freely. Traffic is only scrutinized when it is passing from one zone to another. Zones drop any traffic coming into them which is not explicitly allowed.
 
 An interface can either belong to a zone or have a per-interface firewall configuration; an interface cannot do both.
 

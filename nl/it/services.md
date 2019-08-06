@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Configurazione dei tuoi servizi
 {: #configuring-your-services}
 
-Esistono molti servizi in esecuzione sulla VRA (Virtual Router Appliance) che possono essere associati, incluso:
+Esistono molti servizi in esecuzione sulla VRA ({{site.data.keyword.vra_full}}) che possono essere associati, incluso:
 
 `vyatta@vrouter# set service`
 

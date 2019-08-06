@@ -21,14 +21,14 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Introdução ao IBM Virtual Router Appliance
+# Introdução ao {{site.data.keyword.vra_full}}
 {: #getting-started}
 
-O IBM© Virtual Router Appliance (VRA) fornece o sistema operacional Vyatta 5600 mais recente para servidores bare metal x86. Ele é oferecido como uma configuração de Alta disponibilidade (HA) ou independente e permite que você roteie o tráfego de rede privada e pública seletivamente, por meio de um roteador corporativo completo que tenha firewall, formato de tráfego, roteamento baseado em política, VPN e outros recursos.
+O {{site.data.keyword.vra_full}} (VRA) fornece o sistema operacional Vyatta 5600 mais recente para servidores bare metal x86. Ele é oferecido como uma configuração de Alta disponibilidade (HA) ou independente e permite que você roteie o tráfego de rede privada e pública seletivamente, por meio de um roteador corporativo completo que tenha firewall, formato de tráfego, roteamento baseado em política, VPN e outros recursos.
 
 Os requisitos mínimos do servidor de VRA requerem 8 GB de RAM e um núcleo de CPU para cada 10 Gbps de capacidade de rede. Por exemplo, um sistema com uplinks duais públicos e privados de 10 Gbps requer pelo menos quatro núcleos. Além disso, se a sua intenção é configurar serviços de VPN com criptografia, talvez você queira incluir núcleos adicionais. A inclusão de núcleos adicionais para serviços de VPN assegurará que o VRA não será atolado por cargas pesadas ao rotear e criptografar/decriptografar dados simultaneamente.
 
-## Solicitando um Virtual Router Appliance
+## Solicitando um {{site.data.keyword.vra_full}}
 {: #order-vra}
 
 Para solicitar um VRA, execute o procedimento a seguir:
@@ -71,7 +71,7 @@ Para solicitar um VRA, execute o procedimento a seguir:
   
 8. Revise suas seleções, verifique se você leu os Contratos de prestação de serviços de terceiros e, em seguida, clique em **Criar**. O pedido é verificado automaticamente.
 
-Após a aprovação de seu pedido, o fornecimento de seu Virtual Router Appliance é iniciado automaticamente. Quando o processo de fornecimento for concluído, o novo VRA aparecerá na página de lista Dispositivos de gateway. Clique no nome do gateway para abrir a página Detalhes do gateway. Você localizará os endereços IP, o nome do usuário de login e a senha para o dispositivo.  
+Após a aprovação de seu pedido, o fornecimento de seu {{site.data.keyword.vra_full}} é iniciado automaticamente. Quando o processo de fornecimento for concluído, o novo VRA aparecerá na página de lista Dispositivos de gateway. Clique no nome do gateway para abrir a página Detalhes do gateway. Você localizará os endereços IP, o nome do usuário de login e a senha para o dispositivo.  
 
   <img src="images/gateway_details.png" alt="desenho" style="width: 500px;"/>
 
@@ -83,12 +83,12 @@ Lembre-se de que, depois que você solicitar e configurar o VRA por meio do Cat�
 
 Uma VLAN (LAN virtual) é um mecanismo que divide uma rede física em muitos segmentos virtuais. Por conveniência, o tráfego de várias VLANs selecionadas pode ser entregue por meio de um único cabo de rede, um processo comumente chamado de "entroncamento".
 
-O Virtual Router Appliance é entregue em duas partes: o servidor ou os servidores do VRA e o utensílio do Dispositivo de gateway. O Dispositivo de gateway fornece uma interface (GUI e API) para selecionar as VLANs que você deseja associar ao VRA. Associar uma VLAN a um Dispositivo de Gateway roteia novamente (ou "entronca") essa VLAN e todas as suas sub-redes para seu VRA, fornecendo-lhe controle sobre a filtragem, o encaminhamento e a proteção. Para cada VLAN associada ao Dispositivo de gateway, essa VLAN é permitida nas portas de comutador às quais o VRA está conectado, e qualquer sub-rede na VLAN é roteada estaticamente para o IP de VRRP público do VRA (caso a sub-rede seja uma sub-rede pública) ou é roteada estaticamente para o IP do VRRP privado do VRA (caso a sub-rede seja uma sub-rede privada). Esse roteamento é feito no roteador do qual o VRA está por trás, que será o FCR (Frontend Customer Router) ou o BCR (Backend Customer Router) para tráfego público e privado, respectivamente. 
+O {{site.data.keyword.vra_full}} é entregue em duas partes: o servidor ou os servidores do VRA e o utensílio do Dispositivo de gateway. O Dispositivo de gateway fornece uma interface (GUI e API) para selecionar as VLANs que você deseja associar ao VRA. Associar uma VLAN a um Dispositivo de Gateway roteia novamente (ou "entronca") essa VLAN e todas as suas sub-redes para seu VRA, fornecendo-lhe controle sobre a filtragem, o encaminhamento e a proteção. Para cada VLAN associada ao Dispositivo de gateway, essa VLAN é permitida nas portas de comutador às quais o VRA está conectado, e qualquer sub-rede na VLAN é roteada estaticamente para o IP de VRRP público do VRA (caso a sub-rede seja uma sub-rede pública) ou é roteada estaticamente para o IP do VRRP privado do VRA (caso a sub-rede seja uma sub-rede privada). Esse roteamento é feito no roteador do qual o VRA está por trás, que será o FCR (Frontend Customer Router) ou o BCR (Backend Customer Router) para tráfego público e privado, respectivamente. 
 
 Esteja ciente de que o VRRP fica desativado por padrão e ele deve ser ativado para que o tráfego de VLAN funcione, mesmo em vyattas independentes. Isso é uma consequência das sub-redes na VLAN associada que estão sendo roteadas para o IP do VRRP ou o endereço virtual designado ao VRA. Para obter mais informações, consulte [Endereços IP virtuais (VIP) do VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
 {: important}
 
-Os servidores em uma VLAN associada podem ser acessados somente por meio de outras VLANs passando por seu Virtual Router Appliance; não é possível contornar o VRA, a menos que você efetue bypass ou desassocie a VLAN.
+Os servidores em uma VLAN associada podem ser acessados somente por meio de outras VLANs passando por seu {{site.data.keyword.vra_full}}; não é possível contornar o VRA, a menos que você efetue bypass ou desassocie a VLAN.
 
 Por padrão, um novo Dispositivo de Gateway está associado a duas VLANs de "trânsito" não removíveis, uma para público e outra para privado. Elas normalmente são usadas para administração e podem ser protegidas separadamente por comandos do VRA.
 

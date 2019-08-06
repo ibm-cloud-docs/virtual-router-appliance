@@ -21,14 +21,14 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# 開始使用 IBM Virtual Router Appliance
+# 開始使用 {{site.data.keyword.vra_full}}
 {: #getting-started}
 
-IBM© Virtual Router Appliance (VRA) 為 x86 裸機伺服器提供最新的 Vyatta 5600 作業系統。它是以「高可用性 (HA)」或獨立式配置的方式來提供，可讓您透過具有防火牆、資料流量塑形、原則型遞送、VPN 及其他特性的完整特性企業路由器，選擇性地遞送專用與公用網路資料流量。
+{{site.data.keyword.vra_full}} (VRA) 為 x86 裸機伺服器提供最新的 Vyatta 5600 作業系統。它是以「高可用性 (HA)」或獨立式配置的方式來提供，可讓您透過具有防火牆、資料流量塑形、原則型遞送、VPN 及其他特性的完整特性企業路由器，選擇性地遞送專用與公用網路資料流量。
 
 VRA 最低伺服器需求，針對每 10 Gbps 的網路容量，需要 8 GB 的 RAM 以及一個 CPU 核心。例如，具有雙重 10 Gbps 公用及專用上行鏈路的系統至少需要四個核心。此外，如果您的目的是設定有加密的 VPN 服務，則可能會想要新增其他核心。新增「VPN 服務」的其他核心可確保 VRA 在遞送及同時加密/解密資料時不會因大量負載而動彈不得。
 
-## 訂購 Virtual Router Appliance
+## 訂購 {{site.data.keyword.vra_full}}
 {: #order-vra}
 
 若要訂購 VRA，請執行下列程序：
@@ -71,7 +71,7 @@ VRA 最低伺服器需求，針對每 10 Gbps 的網路容量，需要 8 GB 的 
   
 8. 檢閱您的選項、確認您已閱讀「協力廠商服務合約」，然後按一下**建立**。系統即會自動驗證訂單。
 
-在核准訂單之後，Virtual Router Appliance 的佈建就會自動開始。佈建處理程序完成時，新的 VRA 會出現在「閘道應用裝置」清單頁面中。請按一下閘道名稱，以開啟「閘道詳細資料」頁面。您會發現裝置的 IP 位址、登入使用者名稱及密碼。  
+在核准訂單之後，{{site.data.keyword.vra_full}} 的佈建就會自動開始。佈建處理程序完成時，新的 VRA 會出現在「閘道應用裝置」清單頁面中。請按一下閘道名稱，以開啟「閘道詳細資料」頁面。您會發現裝置的 IP 位址、登入使用者名稱及密碼。  
 
   <img src="images/gateway_details.png" alt="圖片" style="width: 500px;"/>
 
@@ -83,12 +83,12 @@ VRA 最低伺服器需求，針對每 10 Gbps 的網路容量，需要 8 GB 的 
 
 VLAN（虛擬 LAN）是將實體網路隔離成許多虛擬區段的一種機制。為了方便起見，多個所選 VLAN 的資料流量可以透過單一網路纜線來遞送，這個程序通常稱為「幹線」。
 
-Virtual Router Appliance 以兩部分遞送：VRA 伺服器和「閘道應用裝置」。「閘道應用裝置」提供一個介面（GUI 及 API），供您選取要與 VRA 相關聯的 VLAN。將 VLAN 與閘道應用裝置相關聯，會將該 VLAN 及其所有子網路重新遞送（或 "trunk"）至您的 VRA，讓您能控制過濾、轉遞及保護。對於與「閘道應用裝置」關聯的每個 VLAN，在 VRA 連接至的交換器埠上可接受該 VLAN，且該 VLAN 上的任何子網路都會靜態遞送至您的 VRA 公用 VRRP IP（如果子網路是公用子網路），或靜態遞送至您的 VRA 專用 VRRP IP（如果子網路是專用子網路）。此遞送是在 VRA 位於其後的路由器上完成，它將分別是公用和專用資料傳輸的「前端客戶路由器 (FCR)」或「後端客戶路由器 (BCR)」。 
+{{site.data.keyword.vra_full}} 以兩部分遞送：VRA 伺服器和「閘道應用裝置」。「閘道應用裝置」提供一個介面（GUI 及 API），供您選取要與 VRA 相關聯的 VLAN。將 VLAN 與閘道應用裝置相關聯，會將該 VLAN 及其所有子網路重新遞送（或 "trunk"）至您的 VRA，讓您能控制過濾、轉遞及保護。對於與「閘道應用裝置」關聯的每個 VLAN，在 VRA 連接至的交換器埠上可接受該 VLAN，且該 VLAN 上的任何子網路都會靜態遞送至您的 VRA 公用 VRRP IP（如果子網路是公用子網路），或靜態遞送至您的 VRA 專用 VRRP IP（如果子網路是專用子網路）。此遞送是在 VRA 位於其後的路由器上完成，它將分別是公用和專用資料傳輸的「前端客戶路由器 (FCR)」或「後端客戶路由器 (BCR)」。 
 
 請注意，依預設會停用 VRRP，因此必須啟用它，才能讓 VLAN 資料流量運作，即使是獨立式 vyattas。這是關聯 VLAN 上的子網路遞送至 VRRP IP 或指派給 VRA 之虛擬位址的結果。如需相關資訊，請參閱 [VRRP 虛擬 IP (VIP) 位址](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses)。
 {: important}
 
-關聯 VLAN 中的伺服器只能從其他 VLAN 透過您的 Virtual Router Appliance 連接；除非您略過或取消與 VLAN 的關聯，否則無法規避 VRA。
+關聯 VLAN 中的伺服器只能從其他 VLAN 透過您的 {{site.data.keyword.vra_full}} 連接；除非您略過或取消與 VLAN 的關聯，否則無法規避 VRA。
 
 依預設，新的「閘道應用裝置」會與兩個非抽取式的「轉移」VLAN 相關聯，公用及專用各一。這些通常用於管理，且可以用 VRA 指令個別保護。
 

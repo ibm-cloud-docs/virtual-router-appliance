@@ -28,4 +28,4 @@ Führen Sie die folgende Prozedur durch, um ein Netzgateway umzubenennen:
 
 Der geänderte Name einer Gateway-Appliance wird sofort am oberen Rand der Anzeige 'Gateway-Appliance-Details' angezeigt. Sie können den Gateway-Namen jederzeit erneut ändern, indem Sie die oben angegebenen Schritte wiederholen.
 
-**HINWEIS:** Das Ändern des Namens der VRA im Kundenportal führt nicht automatisch zu einer Änderung des Hostnamens in der Virtual Router Appliance oder in Ihren DNS-Einträgen. Für eine solche Änderung ist bei Bedarf ein manueller Eingriff erforderlich.
+**HINWEIS:** Das Ändern des Namens der VRA im Kundenportal führt nicht automatisch zu einer Änderung des Hostnamens in der {{site.data.keyword.vra_full}} oder in Ihren DNS-Einträgen. Für eine solche Änderung ist bei Bedarf ein manueller Eingriff erforderlich.

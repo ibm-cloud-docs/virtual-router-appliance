@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# IBM Virtual Router Appliance의 기타 리소스
+# {{site.data.keyword.vra_full}}의 기타 리소스
 {: #other-resources-or-ibm-virtual-router-appliance}
 
 IBM© 및 IBM의 일부 파트너와 고객이 이러한 리소스를 작성합니다.
@@ -34,6 +34,6 @@ IBM© 및 IBM의 일부 파트너와 고객이 이러한 리소스를 작성합�
 
     *"네트워크 보안 설정에 관한 한 어디에나 적용되는 접근 방법은 없습니다. 조직이 클라우드에 있는 중요한 데이터 및 애플리케이션을 점점 더 활용할수록, 여러분 네트워크에 가장 적합한 보안 옵션이 무엇인지 궁금할 수 있습니다."*
 
-* [**블로그 게시물: Virtual Router Appliance와의 만남** ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
+* [**블로그 게시물: {{site.data.keyword.vra_full}}와의 만남** ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
 
-    *"Virtual Router Appliance를 사용하면, 고성능 베어메탈 서버를 엔터프라이즈급 가상 라우터, 방화벽 및 VPN으로 변환하여 독립형 어플라이언스 또는 고가용성(HA) 어플라이언스 쌍의 모든 고유한 애플리케이션 요구사항을 충족시킬 수 있습니다."*
+    *"{{site.data.keyword.vra_full}}를 사용하면, 고성능 베어메탈 서버를 엔터프라이즈급 가상 라우터, 방화벽 및 VPN으로 변환하여 독립형 어플라이언스 또는 고가용성(HA) 어플라이언스 쌍의 모든 고유한 애플리케이션 요구사항을 충족시킬 수 있습니다."*

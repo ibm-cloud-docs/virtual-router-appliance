@@ -14,8 +14,8 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# 將防火牆功能新增至 Virtual Router Appliance（無狀態及有狀態）
-使用 Virtual Router Appliance (VRA) 時，將防火牆規則集套用至每一個介面是一種防火牆方法。每一個介面都有三個可能的防火牆實例（In、Out 及 Local），而且每一個實例都已套用規則。 
+# 將防火牆功能新增至 {{site.data.keyword.vra_full}}（無狀態及有狀態）
+使用 {{site.data.keyword.vra_full}} (VRA) 時，將防火牆規則集套用至每一個介面是一種防火牆方法。每一個介面都有三個可能的防火牆實例（In、Out 及 Local），而且每一個實例都已套用規則。 
 
 預設動作是「捨棄」，而且其規則容許以規則 1 到 N 的形式來套用特定資料流量。只要有相符項，防火牆就會套用相符規則的特定動作。
 
@@ -27,7 +27,7 @@ lastupdated: "2017-10-30"
 
 **LOCAL**：防火牆會使用系統介面來過濾送往 VRA 系統本身的封包。如果存取埠是從不受限的外部 IP 位址進入裝置，則您應該建立其限制。
 
-使用下列步驟設定範例防火牆規則，以關閉 Virtual Router Appliance 介面的「網際網路控制訊息通訊協定 (ICMP)」（連線測試 - IPv4 回應回覆訊息）（這是無狀態動作；稍後會檢閱有狀態動作）：
+使用下列步驟設定範例防火牆規則，以關閉 {{site.data.keyword.vra_full}} 介面的「網際網路控制訊息通訊協定 (ICMP)」（連線測試 - IPv4 回應回覆訊息）（這是無狀態動作；稍後會檢閱有狀態動作）：
 
 1. 在命令提示字元中鍵入 `show configuration` 指令，以查看已設定的配置。您將會看到已在裝置上設定的所有指令清單（如果您決定移轉且想要查看所有配置，這會十分有用）。請注意 `set firewall all-ping enable` 指令，這表示仍會針對「裝置」啟用 ICMP。
 

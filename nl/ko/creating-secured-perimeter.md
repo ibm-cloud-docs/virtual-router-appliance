@@ -27,7 +27,7 @@ lastupdated: "2018-11-10"
 2. 공용 VLAN 및 방화벽을 통해 공용 인터넷의 외부 경계를 작성하십시오. 이 외부 경계가 SPS를 격리하는 데 사용됩니다.
 3. 해당 경계 안에 SPS를 배치하십시오.
 4. 공용 VLAN과 SPS를 연결하기 위한 게이트웨이를 설정하십시오.
-5. 구성 VRA(Virtual Router Appliance)를 작성하십시오.
+5. 구성 VRA({{site.data.keyword.vra_full}})를 작성하십시오.
 6. 하나 이상의 SPS(Secured Perimeter Segment)를 작성하고 구성하십시오.
 7. 프론트 엔드 VLAN을 작성하십시오.
 8. 백엔드 VLAN을 작성하십시오.

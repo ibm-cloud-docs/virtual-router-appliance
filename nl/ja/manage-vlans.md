@@ -85,7 +85,7 @@ VLAN は、[関連付け](#associate-a-vlan-to-a-gateway-appliance)を介して�
 ## 同じネットワーク・インターフェース上で複数の VLAN を経路指定する
 {: #route-multiple-vlans-over-same-network-interface}
 
-Virtual Router Appliance は、同じネットワーク・インターフェース (例えば、`dp0bond0` または `dp0bond1`) 上に複数の VLAN を経路指定することができます。 これを行うには、スイッチ・ポートをトランク・モードに設定し、デバイス上で仮想インターフェース (VIF) を構成します。
+{{site.data.keyword.vra_full}} は、同じネットワーク・インターフェース (例えば、`dp0bond0` または `dp0bond1`) 上に複数の VLAN を経路指定することができます。 これを行うには、スイッチ・ポートをトランク・モードに設定し、デバイス上で仮想インターフェース (VIF) を構成します。
 
 以下に例を示します。
 

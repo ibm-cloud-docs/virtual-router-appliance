@@ -34,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-The generated archive file can then be copied from the Virtual Router Appliance to the storage device of your choice. The archive contains backups of the configuration information, home directories and logging information. It is a much more complete backup of a system.
+The generated archive file can then be copied from the {{site.data.keyword.vra_full}} to the storage device of your choice. The archive contains backups of the configuration information, home directories and logging information. It is a much more complete backup of a system.
 
 As an example:
 

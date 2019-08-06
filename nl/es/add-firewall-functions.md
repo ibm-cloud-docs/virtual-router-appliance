@@ -14,8 +14,8 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Añadir funciones de cortafuegos a Virtual Router Appliance (con estado y sin estado)
-La aplicación de reglas de cortafuegos en cada interfaz es un método de cortafuegos que se utiliza con Virtual Router Appliance (VRA). Cada interfaz tiene tres instancias posibles de cortafuegos: In, Out y Local. Se pueden aplicar reglas a cada instancia. 
+# Añadir funciones de cortafuegos a {{site.data.keyword.vra_full}} (con estado y sin estado)
+La aplicación de reglas de cortafuegos en cada interfaz es un método de cortafuegos que se utiliza con {{site.data.keyword.vra_full}} (VRA). Cada interfaz tiene tres instancias posibles de cortafuegos: In, Out y Local. Se pueden aplicar reglas a cada instancia. 
 
 La acción predeterminada es Drop, y las reglas que permiten el tráfico específico se aplican de la regla 1 a la N. Cuando aparece una coincidencia, el cortafuegos aplica la acción específica de la regla de coincidencia.
 
@@ -27,7 +27,7 @@ De las tres instancias de cortafuegos siguientes, se puede aplicar solo una.
 
 **LOCAL:** el cortafuegos filtra paquetes destinados al propio sistema VRA mediante la interfaz del sistema. Debe establecer restricciones en los puertos de acceso al dispositivo de direcciones IP externas que no están restringidas.
 
-Utilice los pasos siguientes para establecer una regla de cortafuegos de ejemplo para desactivar el protocolo de mensajes de control de Internet (ICMP) (ping - mensaje de respuesta de eco de IPv4) en las interfaces de Virtual Router Appliance (se trata de una acción sin estado, más adelante se analizará una acción con estado):
+Utilice los pasos siguientes para establecer una regla de cortafuegos de ejemplo para desactivar el protocolo de mensajes de control de Internet (ICMP) (ping - mensaje de respuesta de eco de IPv4) en las interfaces de {{site.data.keyword.vra_full}} (se trata de una acción sin estado, más adelante se analizará una acción con estado):
 
 1. Escriba `show configuration commands` en el indicador de mandatos para ver qué configuraciones están establecidas. Verá una lista de todos los mandatos que tiene establecidos en el dispositivo (puede ser útil si decide migrar y desea ver todas las configuraciones). Observe el mandato `set firewall all-ping enable`, que indica que ICMP todavía está habilitado en el dispositivo.
 

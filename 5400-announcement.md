@@ -27,7 +27,7 @@ Support for the legacy Vyatta 5400 offering will end on March 31, 2019. This dat
 
 After March 31, 2019, the vendor for Vyatta 5400 (AT&T, who acquired the Vyatta product line from Brocade in 2017) will no longer provide any code patches or accept support escalations for the device.
 
-Customers using the Vyatta 5400 should migrate to an alternative solution (such as the IBM Virtual Router Appliance (“VRA”; based on the Vyatta 5600) or the IBM Juniper vSRX offering) prior to March 31, 2019.   
+Customers using the Vyatta 5400 should migrate to an alternative solution (such as the {{site.data.keyword.vra_full}} (“VRA”; based on the Vyatta 5600) or the IBM Juniper vSRX offering) prior to March 31, 2019.   
 
 For existing customers, the Configuration Conversion service is no longer subsidized by IBM. Customers can submit a request for a quote by sending an e-mail to Wanclouds at services@wanclouds.net with the subject: "Request for Vyatta 5400 Configuration Conversion."
 

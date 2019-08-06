@@ -14,8 +14,8 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Virtual Router Appliance에 방화벽 기능 추가(Stateless 및 Stateful)
-각 인터페이스에 방화벽 규칙 세트를 적용하는 것은 VRA(Virtual Router Appliance)를 사용할 때 방화벽 설정의 한 방법입니다. 각 인터페이스에는 세 가지 방화벽 인스턴스(In, Out 및 Local)가 있으며 각 인스턴스에는 적용할 수 있는 규칙이 있습니다. 
+# {{site.data.keyword.vra_full}}에 방화벽 기능 추가(Stateless 및 Stateful)
+각 인터페이스에 방화벽 규칙 세트를 적용하는 것은 VRA({{site.data.keyword.vra_full}})를 사용할 때 방화벽 설정의 한 방법입니다. 각 인터페이스에는 세 가지 방화벽 인스턴스(In, Out 및 Local)가 있으며 각 인스턴스에는 적용할 수 있는 규칙이 있습니다. 
 
 기본 조치는 삭제로, 특정 트래픽이 규칙 1부터 N까지의 방식으로 적용될 특정 트래픽을 허용하는 규칙이 포함됩니다. 일치되면 방화벽은 일치 규칙의 특정 조치를 적용합니다.
 
@@ -27,7 +27,7 @@ lastupdated: "2017-10-30"
 
 **LOCAL:** 방화벽은 시스템 인터페이스를 사용하여 VRA 시스템 자체를 대상으로 하는 패킷을 필터링합니다. 제한되지 않는 외부 IP 주소에서 디바이스로 들어오는 액세스 포트에 대한 제한을 설정해야 합니다.
 
-ICMP(Internet Control Message Protocol)(Ping - IPv4 에코 응답 메시지)를 끄기 위해 예제 방화벽 규칙을 Virtual Router Appliance의 인터페이스에 설정하려면 다음 단계를 수행하십시오(즉, Stateless 조치이며 Stateful 조치는 나중에 검토됨).
+ICMP(Internet Control Message Protocol)(Ping - IPv4 에코 응답 메시지)를 끄기 위해 예제 방화벽 규칙을 {{site.data.keyword.vra_full}}의 인터페이스에 설정하려면 다음 단계를 수행하십시오(즉, Stateless 조치이며 Stateful 조치는 나중에 검토됨).
 
 1. 설정된 구성을 확인하려면 명령 프롬프트에 `show configuration commands`를 입력하십시오. 디바이스에 설정한 모든 명령의 목록이 표시됩니다(마이그레이션을 결정하고 모든 구성을 표시하려는 경우 유용할 수 있음). ICMP가 계속해서 디바이스에 사용되고 있음을 나타내는 `set firewall all-ping enable` 명령에 유의하십시오.
 

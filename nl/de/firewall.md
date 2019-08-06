@@ -17,7 +17,7 @@ lastupdated: "2018-11-10"
 # Ihre IBM Firewalls verwalten
 {: #manage-your-ibm-firewalls}
 
-Virtual Router Appliance (VRA) kann Firewallregeln verarbeiten, um die über die Einheit gesteuerten VLANs zu schützen. Für die Firewalls in der VRA können die beiden folgenden Schritte unterschieden werden:
+{{site.data.keyword.vra_full}} (VRA) kann Firewallregeln verarbeiten, um die über die Einheit gesteuerten VLANs zu schützen. Für die Firewalls in der VRA können die beiden folgenden Schritte unterschieden werden:
 
 1. Einen oder mehrere Regelsätze definieren
 2. Einen Regelsatz auf eine Schnittstelle oder Zone anwenden (eine Zone besteht aus einer oder mehreren Netzschnittstellen)
@@ -109,7 +109,7 @@ Beispiel: Um den Regelsatz `ALLOW_LEGACY` der Option `in` für die Schnittstelle
 `set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
 
 ## Steuerebenenvorgabe (Control Plane Policing, CPP)
-Die Steuerebenenvorgabe (Control Plane Policing, CPP) bietet Schutz vor Angriffen auf die Virtual Router Appliance, indem Firewallrichtlinien definiert werden, die den gewünschten Schnittstellen zugewiesen und auf ankommende Pakete in der VRA angewendet werden.
+Die Steuerebenenvorgabe (Control Plane Policing, CPP) bietet Schutz vor Angriffen auf die {{site.data.keyword.vra_full}}, indem Firewallrichtlinien definiert werden, die den gewünschten Schnittstellen zugewiesen und auf ankommende Pakete in der VRA angewendet werden.
 
 CPP wird implementiert, wenn das Schlüsselwort `local` in Firewallrichtlinien verwendet wird, die einem beliebigen VRA-Schnittstellentyp zugewiesen sind (z. B. Datenebenen- oder Loopback-Schnittstellen). Im Unterschied zu Firewallregeln für durch die VRA durchgeleitete Datenpakete verwenden Firewallregeln für ankommenden oder abgehenden Datenverkehr auf der Steuerebene die Standardaktion `Allow`. Wenn dieses Standardverhalten nicht erwünscht ist, muss der Benutzer explizite Löschregeln hinzufügen.
 
@@ -122,7 +122,7 @@ Nachdem der Regelsatz mit der Konfiguration zusammengeführt wurde, wird ein neu
 Bitte beachten Sie, dass CPP-Regeln nicht statusabhängig sein können und nur für eingehenden Datenverkehr gelten.
 
 ## Zonenbasierte Firewalls
-Ein anderes Firewallkonzept in Virtual Router Appliance sind zonenbasierte Firewalls. Dabei wird eine Schnittstelle einer Zone zugewiesen (nur eine Zone pro Schnittstelle) und Firewallregelsätze werden auf die Grenzen zwischen den Zonen angewendet, um für alle Schnittstellen in einer Zone dieselbe Sicherheitsebene festzulegen und die freie Weiterleitung zu ermöglichen. Der Datenverkehr wird nur beim Übergang von einer Zone in eine andere überprüft. In jeder Zone wird der ankommende Datenverkehr gelöscht, wenn er nicht explizit zugelassen wurde.
+Ein anderes Firewallkonzept in {{site.data.keyword.vra_full}} sind zonenbasierte Firewalls. Dabei wird eine Schnittstelle einer Zone zugewiesen (nur eine Zone pro Schnittstelle) und Firewallregelsätze werden auf die Grenzen zwischen den Zonen angewendet, um für alle Schnittstellen in einer Zone dieselbe Sicherheitsebene festzulegen und die freie Weiterleitung zu ermöglichen. Der Datenverkehr wird nur beim Übergang von einer Zone in eine andere überprüft. In jeder Zone wird der ankommende Datenverkehr gelöscht, wenn er nicht explizit zugelassen wurde.
 
 Eine Schnittstelle kann entweder einer Zone angehören oder eine schnittstellenbasierte Firewallkonfiguration verwenden, jedoch nicht beides.
 

@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # サービスの構成
 {: #configuring-your-services}
 
-Virtual Router Appliance (VRA) は、次のようなさまざまなサービスを実行するように構成できます。
+{{site.data.keyword.vra_full}} (VRA) は、次のようなさまざまなサービスを実行するように構成できます。
 
 `vyatta@vrouter# set service`
 

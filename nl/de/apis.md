@@ -14,7 +14,7 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# API-Referenz für IBM Virtual Router Appliance
+# API-Referenz für {{site.data.keyword.vra_full}}
 {: #api-reference-for-ibm-virtual-router-appliance}
 
 Die SoftLayer® Application Programming Interface (SLAPI) ist eine Entwicklungsschnittstelle für direkte Interaktionen von Entwicklern und Systemadministratoren mit dem IBM© Cloud-Back-End-System.
@@ -23,7 +23,7 @@ Die SLAPI bildet die Grundlage für viele Funktionen im Kundenportal. Mit andere
 
 Die SLAPI ist ein System für ferne Prozeduraufrufe (Remote Procedure Calls, RPCs). Bei jedem Aufruf werden Daten an einen API-Endpunkt gesendet und strukturierte Daten als Antwort empfangen. Das Format zum Senden und Empfangen von Daten mit der SLAPI hängt davon ab, welche API-Implementierung Sie auswählen. Die Datenübertragung der SLAPI erfolgt gegenwärtig mit SOAP, XML-RPC oder REST.
 
-Weitere Informationen zur SLAPI mit Bezug auf die IBM Virtual Router Appliance-APIs finden Sie in den folgenden Ressourcen im SoftLayer Development Network (SLDN):
+Weitere Informationen zur SLAPI mit Bezug auf die {{site.data.keyword.vra_full}}-APIs finden Sie in den folgenden Ressourcen im SoftLayer Development Network (SLDN):
 
 - [SoftLayer_Network_Gateway - API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window} 
 - [SoftLayer_Network_Gateway_Member - API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window} 

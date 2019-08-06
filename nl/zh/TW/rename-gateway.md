@@ -34,5 +34,5 @@ subcollection: virtual-router-appliance
 
 變更「閘道應用裝置」的名稱之後，名稱將立即在「閘道應用裝置詳細資料」畫面的頂端變更。您隨時可以重複上述步驟，重新變更「閘道」名稱。
 
-在「客戶入口網站」中變更 VRA 名稱，並不會自動變更 Virtual Router Appliance 或您可能具有的任何 DNS 項目內的主機名稱。必要的話，這需要人為介入。
+在「客戶入口網站」中變更 VRA 名稱，並不會自動變更 {{site.data.keyword.vra_full}} 或您可能具有的任何 DNS 項目內的主機名稱。必要的話，這需要人為介入。
 {: note}

@@ -34,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-생성된 아카이브 파일을 Virtual Router Appliance에서 선택한 스토리지 디바이스로 복사할 수 있습니다. 아카이브에는 구성 정보, 홈 디렉토리 및 로깅 정보의 백업이 포함됩니다. 이는 시스템의 보다 완전한 백업입니다.
+생성된 아카이브 파일을 {{site.data.keyword.vra_full}}에서 선택한 스토리지 디바이스로 복사할 수 있습니다. 아카이브에는 구성 정보, 홈 디렉토리 및 로깅 정보의 백업이 포함됩니다. 이는 시스템의 보다 완전한 백업입니다.
 
 에를 들어 다음과 같습니다.
 

@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Autres ressources pour IBM Virtual Router Appliance
+# Autres ressources pour {{site.data.keyword.vra_full}}
 {: #other-resources-or-ibm-virtual-router-appliance}
 
 Ces ressources sont créées par IBM© et certains de nos partenaires et clients.
@@ -34,6 +34,6 @@ Ces ressources sont créées par IBM© et certains de nos partenaires et clients
 
     *"Rien de tel qu'une approche uniforme lorsqu'il s'agit de sécuriser votre réseau. Les organisations ont de plus en plus recours à des données et à des applications critiques dans le cloud et vous pouvez vous demander quelle est l'option de sécurité la plus adaptée à vos besoins en matière de réseau."*
 
-* [**Blog Post: Meet the Virtual Router Appliance** ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
+* [**Blog Post: Meet the {{site.data.keyword.vra_full}}** ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
 
-    *"Grâce au dispositif VRA (Virtual Router Appliance), vous pouvez faire de vos serveurs bare metal à hautes performances des routeurs virtuels, des pare-feux et des réseaux privés virtuels novateurs qui répondent à vos besoins uniques en matière d'application, que ce soit à partir d'un dispositif autonome ou d'une paire de dispositifs à haute disponibilité."*
+    *"Grâce au dispositif VRA ({{site.data.keyword.vra_full}}), vous pouvez faire de vos serveurs bare metal à hautes performances des routeurs virtuels, des pare-feux et des réseaux privés virtuels novateurs qui répondent à vos besoins uniques en matière d'application, que ce soit à partir d'un dispositif autonome ou d'une paire de dispositifs à haute disponibilité."*

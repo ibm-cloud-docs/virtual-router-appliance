@@ -85,7 +85,7 @@ Après avoir dissocié un VLAN d'un dispositif de passerelle, le VLAN peut être
 ## Router plusieurs VLAN via la même interface réseau
 {: #route-multiple-vlans-over-same-network-interface}
 
-Virtual Router Appliance (VRA) peut router plusieurs VLAN via la même interface réseau (par exemple, `dp0bond0` ou `dp0bond1`). Cette opération s'effectue en définissant le port de commutation en mode de liaison et en configurant des interfaces virtuelles (VIF) sur l'unité.
+{{site.data.keyword.vra_full}} (VRA) peut router plusieurs VLAN via la même interface réseau (par exemple, `dp0bond0` ou `dp0bond1`). Cette opération s'effectue en définissant le port de commutation en mode de liaison et en configurant des interfaces virtuelles (VIF) sur l'unité.
 
 Par exemple :
 

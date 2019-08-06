@@ -20,15 +20,15 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Obtendo ajuda e suporte para o IBM Virtual Router Appliance
+# Obtendo ajuda e suporte para o {{site.data.keyword.vra_full}}
 {: #getting-help-and-support-for-ibm-virtual-router-appliance}
 
-Se você tiver problemas ou perguntas ao usar o IBM© Virtual Router Appliance, será possível obter ajuda procurando informações ou fazendo perguntas por meio de um dos fóruns listados abaixo. Também é possível abrir um chamado de
+Se você tiver problemas ou perguntas ao usar o {{site.data.keyword.vra_full}}, será possível obter ajuda procurando informações ou fazendo perguntas por meio de um dos fóruns listados abaixo. Também é possível abrir um chamado de
 suporte.
 
 Ao usar os fóruns para fazer uma pergunta, marque a sua pergunta para que ela seja vista pelas equipes de desenvolvimento do IBM Cloud.
 
-* Se você tiver questões técnicas sobre o IBM Virtual Router Appliance, poste a sua pergunta no [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) e identifique-a com "vra" e "ibm-cloud".
+* Se você tiver questões técnicas sobre o {{site.data.keyword.vra_full}}, poste a sua pergunta no [Stack Overflow](https://stackoverflow.com/search?q=vra+ibm-cloud) e identifique-a com "vra" e "ibm-cloud".
 * Para perguntas sobre o serviço e instruções de introdução, use o fórum do [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vra.html?smartspace=ibm-cloud). Inclua as identificações "vra" e "ibm-cloud".
 
 Consulte

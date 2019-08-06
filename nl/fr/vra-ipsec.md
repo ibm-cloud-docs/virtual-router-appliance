@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Configuration d'un tunnel IPsec qui fonctionne avec des pare-feux de zone
 {: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
 
-Dans les versions précédentes du dispositif VRA (Virtual Router Appliance), les tunnels IPsec utilisant le routage basé sur une règle ne fonctionnaient pas bien avec des pare-feux de zone. La version 18.01 inclut un nouveau groupe de commandes qui gère ce problème, en utilisant des "points de fonction virtuels" pour activer le trafic à partir des tunnels désignés, le point de fonction agissant comme une interface qui fournit un noeud final à inclure dans une configuration de stratégie de zone.
+Dans les versions précédentes du dispositif VRA ({{site.data.keyword.vra_full}}), les tunnels IPsec utilisant le routage basé sur une règle ne fonctionnaient pas bien avec des pare-feux de zone. La version 18.01 inclut un nouveau groupe de commandes qui gère ce problème, en utilisant des "points de fonction virtuels" pour activer le trafic à partir des tunnels désignés, le point de fonction agissant comme une interface qui fournit un noeud final à inclure dans une configuration de stratégie de zone.
 
 Exemple de configuration de deux machines avec IPsec entre elles :
 

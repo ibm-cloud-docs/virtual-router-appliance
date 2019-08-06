@@ -29,7 +29,7 @@ subcollection: virtual-router-appliance
 ## 為什麼 Vyatta 5400 會在 2019 年 3 月 31 日「結束支援」(EoS)？
 {: faq}
 
-2017 年 9 月，舊式 Vyatta 5400 宣告基於 IBM 的支援生命週期原則，將於 2018 年 2 月 20 日結束支援：下一版 (IBM Virtual Router Appliance (VRA)) 的「通用版 (GA)」7 月日期之後的六個月。
+2017 年 9 月，舊式 Vyatta 5400 宣告基於 IBM 的支援生命週期原則，將於 2018 年 2 月 20 日結束支援：下一版 ({{site.data.keyword.vra_full}} (VRA)) 的「通用版 (GA)」7 月日期之後的六個月。
 
 為了遵循客戶移轉時間表，Vyatta 5400 結束支援日期已延長至 2019 年 3 月 31 日。因為「Debian 開放程式碼」社群現在不再支援 Debian 7 軟體，所以沒有未來計劃可延長 AT&T 提供的供應商支援。
 
@@ -43,7 +43,7 @@ subcollection: virtual-router-appliance
 
 同樣地，「IBM Cloud 支援中心」將不再對 Vyatta 5400 部署的配置或網路問題進行疑難排解。支援將限制為硬體層次要求（硬碟、RAM 等等）、電源及「頻外」(IPMI) 連線功能。
 
-強烈建議客戶採取立即行動，以移轉至替代方案，例如 Virtual Router Appliance（VRA；基於 Vyatta 5600）或 Juniper vSRX。[請按一下這裡](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)，以開始進行。
+強烈建議客戶採取立即行動，以移轉至替代方案，例如 {{site.data.keyword.vra_full}}（VRA；基於 Vyatta 5600）或 Juniper vSRX。[請按一下這裡](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)，以開始進行。
 
 ## 如果我在 3 月 31 日之後仍然使用 Vyatta 5400 執行 IBM Cloud 工作負載，會發生什麼情況？
 {: faq}
@@ -70,9 +70,9 @@ subcollection: virtual-router-appliance
 
 Vyatta 5400 至 VRA (5600) 的「配置轉換服務」仍然可用：
 
-* 對於現有客戶，IBM Cloud 會提供免費的供應項目，協助將現有的 Vyatta 5400 配置重構為 Virtual Router Appliance (VRA)、Juniper vSRX 或 Fortigate Security Appliance (FSA) 10G 格式。若要提交「配置轉換」服務的要求，請將電子郵件傳送至 nwom@us.ibm.com，主旨為：`Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx。`。
+* 對於現有客戶，IBM Cloud 會提供免費的供應項目，協助將現有的 Vyatta 5400 配置重構為 {{site.data.keyword.vra_full}} (VRA)、Juniper vSRX 或 Fortigate Security Appliance (FSA) 10G 格式。若要提交「配置轉換」服務的要求，請將電子郵件傳送至 nwom@us.ibm.com，主旨為：`Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx。`。
 
-  務必插入您的應用程式選擇，以取代 `aaaaaaaa`（Virtual Router Appliance、Juniper vSRX 或 Fortigate Security Appliance (FSA) 10G），以及插入您的特定帳號，以取代主旨行中的 `xxxxxx`。
+  務必插入您的應用程式選擇，以取代 `aaaaaaaa`（{{site.data.keyword.vra_full}}、Juniper vSRX 或 Fortigate Security Appliance (FSA) 10G），以及插入您的特定帳號，以取代主旨行中的 `xxxxxx`。
   {: note}
 
 * 在此轉換配置處理程序中，我們的夥伴 Wanclouds 已完成數百個移轉約定。它們會轉換現有的 Vyatta 5400，以在「Vyatta 5600 平台」上建立類似的功能。它們會在兩個層級提供其服務，如下所述：
@@ -94,8 +94,8 @@ Vyatta 5400 至 VRA (5600) 的「配置轉換服務」仍然可用：
 ## 還有哪些其他資源可協助我進行此移轉？
 {: faq}
 
-如需相關資訊，請檢閱下列 Virtual Router Appliance 文件資源：
+如需相關資訊，請檢閱下列 {{site.data.keyword.vra_full}} 文件資源：
 
-  * [開始使用 IBM Virtual Router Appliance](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
+  * [開始使用 {{site.data.keyword.vra_full}}](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
   * [關於 VRA](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
   * [Vyatta 5400 移轉概觀](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)

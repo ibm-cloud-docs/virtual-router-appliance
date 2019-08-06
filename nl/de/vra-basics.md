@@ -14,7 +14,7 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# IBM Virtual Router Appliance aufrufen und konfigurieren
+# {{site.data.keyword.vra_full}} aufrufen und konfigurieren
 {: #accessing-and-configuring-the-ibm-virtual-router-appliance}
 
 Die VRA kann mithilfe einer fernen Konsolensitzung über SSH oder durch Anmelden bei der Web-GUI konfiguriert werden. Die Web-GUI ist standardmäßig nicht im öffentlichen Internet verfügbar. Melden Sie sich über SSH an, um die Web-GUI zu aktivieren.
@@ -145,7 +145,7 @@ Die rollenbasierte Zugriffssteuerung (Role-based Access Control, RBAC) ist ein V
 
 Bei Verwendung von RBAC wird eine Gruppe erstellt, die dem ACM-Regelsatz (ACM = Access Control Management) zugeordnet ist. In dieser Gruppe wird ein Benutzer hinzugefügt und es wird ein Regelsatz erstellt, der die Gruppe mit den Pfaden im System abgleicht. Schließlich wird das System so konfiguriert, dass die für die Gruppe angelegten Pfade entweder gesperrt oder freigegeben werden.
 
-In der Standardeinstellung ist in Virtual Router Appliance kein ACM-Regelsatz definiert und ACM ist inaktiviert. Wenn Sie mit RBAC eine differenzierte Zugriffssteuerung einrichten möchten, müssen Sie ACM aktivieren und zusätzlich zu den von Ihnen definierten Regeln die folgenden ACM-Standardregeln hinzufügen:
+In der Standardeinstellung ist in {{site.data.keyword.vra_full}} kein ACM-Regelsatz definiert und ACM ist inaktiviert. Wenn Sie mit RBAC eine differenzierte Zugriffssteuerung einrichten möchten, müssen Sie ACM aktivieren und zusätzlich zu den von Ihnen definierten Regeln die folgenden ACM-Standardregeln hinzufügen:
 
 ```
 set system acm 'enable'

@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Vyatta 5400 一般移轉問題
 {: #vyatta-5400-common-migration-issues}
 
-下表說明從 Vyatta 5400 裝置移轉至 IBM© Virtual Router Appliance 之後您可能遇到的一般問題或行為變更。在某些情況下，它還包括能處理問題的暫行解決方法。
+下表說明從 Vyatta 5400 裝置移轉至 {{site.data.keyword.vra_full}} 之後您可能遇到的一般問題或行為變更。在某些情況下，它還包括能處理問題的暫行解決方法。
 
 ## 有狀態防火牆的介面型 Global-State 原則
 {: #interface-based-global-state-policy-for-stateful-firewall}
@@ -33,7 +33,7 @@ subcollection: virtual-router-appliance
 
 從 5.1 版開始，為狀態防火牆設定 "State of State-policy" 的行為已變更。在 5.1 版之前的版本中，如果您設定有狀態防火牆為 `state - global -state -policy`，vRouter 會自動新增隱含的 `Allow` 規則，使階段作業的傳回通訊自動化。
 
-在 5.1 版以及更新版本中，您必須在 Virtual Router Appliance 上新增 `Allow` 規則設定。有狀態設定適用於 Vyatta 5400 裝置上的介面，以及 VRA 裝置上的通訊協定。
+在 5.1 版以及更新版本中，您必須在 {{site.data.keyword.vra_full}} 上新增 `Allow` 規則設定。有狀態設定適用於 Vyatta 5400 裝置上的介面，以及 VRA 裝置上的通訊協定。
 
 ### 暫行解決方法
 {: #workarounds}
@@ -94,7 +94,7 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 
 ### 問題
 {: #issues-4}
-在 Masquerade Source NAT 部署於 IBM Virtual Router Appliance 的情境中，您不能使用防火牆來決定主機對網際網路的存取。這是因為 post NAT 位址會是相同的。
+在 Masquerade Source NAT 部署於 {{site.data.keyword.vra_full}} 的情境中，您不能使用防火牆來決定主機對網際網路的存取。這是因為 post NAT 位址會是相同的。
 
 
 
@@ -126,7 +126,7 @@ VRA 需要新的遞送方法：
 
 ### 問題
 {: #issues-6}
-在 Virtual Router Appliance PBR（原則型遞送）上，原則可以套用至入埠資料流量的資料平面介面，而不能套用至迴圈、通道、橋接器、OpenVPN、VTI 及 IP 未編號介面。
+在 {{site.data.keyword.vra_full}} PBR（原則型遞送）上，原則可以套用至入埠資料流量的資料平面介面，而不能套用至迴圈、通道、橋接器、OpenVPN、VTI 及 IP 未編號介面。
 
 ### 暫行解決方法
 {: #workarounds-6}
@@ -138,7 +138,7 @@ VRA 需要新的遞送方法：
 ### 問題
 {: #issues-7}
 
-IBM Virtual Router Appliance 使用 nftables，且不支援 TCP-MSS。
+{{site.data.keyword.vra_full}} 使用 nftables，且不支援 TCP-MSS。
 
 ### 暫行解決方法
 {: #workarounds-7}
@@ -151,7 +151,7 @@ IBM Virtual Router Appliance 使用 nftables，且不支援 TCP-MSS。
 ### 問題
 {: #issues-8}
 
-在 Virtual Router Appliance 上使用 `push-route` 參數時，OpenVPN 未能開始運作。
+在 {{site.data.keyword.vra_full}} 上使用 `push-route` 參數時，OpenVPN 未能開始運作。
 
 ### 暫行解決方法
 {: #workarounds-8}
@@ -195,7 +195,7 @@ IPSec（基於字首）無法與「IN 過濾器」搭配使用。
 
 set firewall name allow rule 10 ipsec
 
-不過，使用 IBM Virtual Router Appliance 時，沒有 IPSec。
+不過，使用 {{site.data.keyword.vra_full}} 時，沒有 IPSec。
 
 ### 暫行解決方法
 {: #workarounds-11}
@@ -218,7 +218,7 @@ VRA 裝置的可能替代規則：
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 
-不過，使用 IBM Virtual Router Appliance 時，沒有 IPSec。
+不過，使用 {{site.data.keyword.vra_full}} 時，沒有 IPSec。
 
 ### 暫行解決方法
 {: workarounds-12}
@@ -259,7 +259,7 @@ Tun50 172.16.1.245
 
 一開始，Vyatta 5400 裝置會對入埠 IPSec 執行 DNAT，使用連線追蹤表格終止介面及溫和地將資料流量傳回到 IPsec 通道。
 
-在 Virtual Router Appliance 上，配置的運作方式不同。雖建立了階段作業，在連線追蹤表格反轉 DNAT 變更之後，返回資料流量卻略過 IPsec 通道。然後 VRA 透過線路傳送封包時沒有使用 IPsec 加密。上游裝置並未預期有此資料流量，很可能會捨棄它。端對端連線功能會中斷，這是預期的行為。  
+在 {{site.data.keyword.vra_full}} 上，配置的運作方式不同。雖建立了階段作業，在連線追蹤表格反轉 DNAT 變更之後，返回資料流量卻略過 IPsec 通道。然後 VRA 透過線路傳送封包時沒有使用 IPsec 加密。上游裝置並未預期有此資料流量，很可能會捨棄它。端對端連線功能會中斷，這是預期的行為。  
 
 
 
@@ -339,7 +339,7 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ### 問題
 {: #issues-13}
 
-PPTP 在 Virtual Router Appliance 中不再受到支援。                                                                                                                                                   
+PPTP 在 {{site.data.keyword.vra_full}} 中不再受到支援。                                                                                                                                                   
 
 ### 暫行解決方法
 {: #workarounds-13}
@@ -352,7 +352,7 @@ PPTP 在 Virtual Router Appliance 中不再受到支援。
 ### 問題
 {: issues-14}
 
-每當 VRRP 虛擬位址新增至高可用性 VPN 的 IBM Virtual Router Appliance 時，您必須重新起始設定 IPsec 常駐程式。這是因為 IPsec 服務只會接聽對於起始設定 IKE 服務常駐程式時，VRA 上存在之位址的連線。
+每當 VRRP 虛擬位址新增至高可用性 VPN 的 {{site.data.keyword.vra_full}} 時，您必須重新起始設定 IPsec 常駐程式。這是因為 IPsec 服務只會接聽對於起始設定 IKE 服務常駐程式時，VRA 上存在之位址的連線。
 
 
 
@@ -380,7 +380,7 @@ set firewall name localGateway rule 300 recent time '30'
 set firewall name localGateway rule 300 state new 'enable'
 ```
 
-在 IBM Virtual Router Appliance 上，此規則有下列問題：
+在 {{site.data.keyword.vra_full}} 上，此規則有下列問題：
 
 
 
@@ -502,7 +502,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ### 問題
 {: #issues-20}
 
-從每個階段作業到每個封包記載，Vyatta 5400 裝置與 IBM Virtual Router Appliance 之間的記載行為有重大變更。
+從每個階段作業到每個封包記載，Vyatta 5400 裝置與 {{site.data.keyword.vra_full}} 之間的記載行為有重大變更。
 
 * 階段作業記載：記錄有狀態的階段作業狀態轉移
 

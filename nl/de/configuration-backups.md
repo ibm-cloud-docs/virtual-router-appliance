@@ -28,7 +28,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-Die erstellte Archivdatei kann anschließend aus der Virtual Router Appliance in eine Speichereinheit Ihrer Wahl kopiert werden. Das Archiv enthält Backups der Konfigurationsdaten, Ausgangsverzeichnisse und Protokolldaten. Es beinhaltet ein viel umfassenderes Backup des Systems. 
+Die erstellte Archivdatei kann anschließend aus der {{site.data.keyword.vra_full}} in eine Speichereinheit Ihrer Wahl kopiert werden. Das Archiv enthält Backups der Konfigurationsdaten, Ausgangsverzeichnisse und Protokolldaten. Es beinhaltet ein viel umfassenderes Backup des Systems. 
 
 Beispiel:
 

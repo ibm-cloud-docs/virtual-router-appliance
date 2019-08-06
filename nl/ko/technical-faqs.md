@@ -21,10 +21,10 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# IBM Virtual Router Appliance의 기술 FAQ
+# {{site.data.keyword.vra_full}}의 기술 FAQ
 {: #technical-faqs-for-ibm-virtual-router-appliance}
 
-다음 자주 묻는 질문은 IBM© Virtual Router Appliance(VRA)의 구성과 Vyatta 5400에서 VRA로의 마이그레이션을 다룹니다.
+다음 자주 묻는 질문은 {{site.data.keyword.vra_full}}(VRA)의 구성과 Vyatta 5400에서 VRA로의 마이그레이션을 다룹니다.
 
 ## 사설 VLAN에 있는 호스트에서 인터넷 연결 트래픽을 허용할 수 있는 방법은 무엇입니까? 
 {: faq}

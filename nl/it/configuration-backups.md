@@ -34,7 +34,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-Il file di archiviazione generato può quindi essere copiato dalla VRA (Virtual Router Appliance) al dispositivo di archiviazione di tua scelta. L'archivio contiene i backup delle informazioni di configurazione, le directory home e le informazioni di registrazione. È un backup del sistema molto più completo.
+Il file di archiviazione generato può quindi essere copiato dalla VRA ({{site.data.keyword.vra_full}}) al dispositivo di archiviazione di tua scelta. L'archivio contiene i backup delle informazioni di configurazione, le directory home e le informazioni di registrazione. È un backup del sistema molto più completo.
 
 Ad esempio:
 

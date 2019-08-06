@@ -85,7 +85,7 @@ Después de desasociar una VLAN del dispositivo de pasarela, la VLAN puede asoci
 ## Direccionar varias VLAN en la misma interfaz de red
 {: #route-multiple-vlans-over-same-network-interface}
 
-Virtual Router Appliance es capaz de direccionar varias VLAN en la misma interfaz de red (por ejemplo, `dp0bond0` o `dp0bond1`). Esto se consigue estableciendo el puerto de conmutador en modalidad troncal y configurando las interfaces virtuales (VIF) en el dispositivo.
+{{site.data.keyword.vra_full}} es capaz de direccionar varias VLAN en la misma interfaz de red (por ejemplo, `dp0bond0` o `dp0bond1`). Esto se consigue estableciendo el puerto de conmutador en modalidad troncal y configurando las interfaces virtuales (VIF) en el dispositivo.
 
 Por ejemplo:
 

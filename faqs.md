@@ -21,15 +21,15 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# FAQs for IBM Virtual Router Appliance
+# FAQs for IBM Cloud Virtual Router Appliance
 {: #faqs-for-ibm-virtual-router-appliance}
 
-The following are frequently asked questions when working with the IBM© Virtual Router Appliance (VRA).
+The following are frequently asked questions when working with the {{site.data.keyword.vra_full}} (VRA).
 
 ## What is a VRA?
 {: faq}
 
-A Virtual Router Appliance (VRA) allows an IBM Cloud customer to selectively route private and public network traffic through a full-featured enterprise router with firewall, traffic shaping, policy-based routing, VPN, and a host of other features. All VRA features are customer-managed. VRA gives an IBM Cloud customer a degree of control normally reserved for on-premise networks.
+A {{site.data.keyword.vra_full}} (VRA) allows an IBM Cloud customer to selectively route private and public network traffic through a full-featured enterprise router with firewall, traffic shaping, policy-based routing, VPN, and a host of other features. All VRA features are customer-managed. VRA gives an IBM Cloud customer a degree of control normally reserved for on-premise networks.
 
 ## What is a Gateway Appliance?
 {: faq}
@@ -48,7 +48,7 @@ Vyatta was open source, PC-based router software that was acquired in full and t
 
 IBM will no longer support Vyatta 5400 as of March 31, 2019.
 
-## What improvements does the Virtual Router Appliance (Vyatta 5600) have over the Vyatta 5400?
+## What improvements does the {{site.data.keyword.vra_full}} (Vyatta 5600) have over the Vyatta 5400?
 {: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
 
 Vyatta 5600 offers the following enhancements over the Vyatta 5400:
@@ -61,7 +61,7 @@ Vyatta 5600 offers the following enhancements over the Vyatta 5400:
 ## What about the AT&T vRouter 5600 offering?
 {: faq}
 
-AT&T (formerly Brocade) has announced the End-of-Life and End-of-Support of their Brocade vRouter 5600 offering. While the Brocade vRouter 5600 provides the underlying technology capability for the IBM Virtual Router Appliance, this announcement does not apply to IBM customers. IBM customers will continue to have support using this new offering.
+AT&T (formerly Brocade) has announced the End-of-Life and End-of-Support of their Brocade vRouter 5600 offering. While the Brocade vRouter 5600 provides the underlying technology capability for the {{site.data.keyword.vra_full}}, this announcement does not apply to IBM customers. IBM customers will continue to have support using this new offering.
 
 ## How is VRA delivered?
 {: faq}
@@ -121,7 +121,7 @@ These variables aside, VRA is capable of forwarding 80 Gbps of unmodified traffi
 If there is access to the system, set a new password by running the following command:
 
 ```
-set system login user [account] authentication plaintext-password [password]  
+set system login user [account] authentication plaintext-password [password] 
 ```
 
 If there is no access to the system, you can reboot the device and use the password recovery option on the GRUB menu for resetting the root user password.

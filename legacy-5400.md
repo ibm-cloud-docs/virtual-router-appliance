@@ -19,7 +19,7 @@ lastupdated: "2018-11-10"
 # Vyatta 5400 Support
 {: #vyatta-5400-support}
 
-Legacy Vyatta 5400 customers should upgrade to IBM© Virtual Router Appliance (VRA) as soon as possible, as support for Vyatta 5400 will be removed as of March 31, 2019.
+Legacy Vyatta 5400 customers should upgrade to {{site.data.keyword.vra_full}} (VRA) as soon as possible, as support for Vyatta 5400 will be removed as of March 31, 2019.
 
 A migration guide is available [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf){:new_window}.
 

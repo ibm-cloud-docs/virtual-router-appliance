@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# IBM Virtual Router Appliance に対するアクセスおよび構成
+# {{site.data.keyword.vra_full}} に対するアクセスおよび構成
 {: #accessing-and-configuring-the-ibm-virtual-router-appliance}
 
 VRA の構成は、SSH を介してリモート・コンソール・セッションを使用するか、または Web GUI にログインすることによって実行できます。 デフォルトでは、Web GUI はパブリック・インターネットからは利用できません。 Web GUI を使用可能にするには、最初に SSH を介してログインします。
@@ -164,7 +164,7 @@ commit
 
 RBAC を実行するには、アクセス制御管理 (ACM) ルール・セットに割り当てられるグループを作成し、グループにユーザーを追加し、グループをシステム内のパスに一致させるルール・セットを作成してから、グループに適用されるパスを許可または拒否するようにシステムを構成します。
 
-デフォルトでは、Virtual Router Appliance には ACM ルール・セットが定義されておらず、ACM は無効になっています。 RBAC を使用して細分性のあるアクセス制御を提供する場合は、ACM を有効にし、ユーザー独自の定義済みルールに加えて、以下のデフォルト ACM ルールを追加する必要があります。
+デフォルトでは、{{site.data.keyword.vra_full}} には ACM ルール・セットが定義されておらず、ACM は無効になっています。 RBAC を使用して細分性のあるアクセス制御を提供する場合は、ACM を有効にし、ユーザー独自の定義済みルールに加えて、以下のデフォルト ACM ルールを追加する必要があります。
 
 ```
 set system acm 'enable'

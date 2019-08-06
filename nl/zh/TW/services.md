@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # 配置服務
 {: #configuring-your-services}
 
-有各種在 Virtual Router Appliance (VRA) 上執行的服務可以配置，包括：
+有各種在 {{site.data.keyword.vra_full}} (VRA) 上執行的服務可以配置，包括：
 
 `vyatta@vrouter# set service`
 

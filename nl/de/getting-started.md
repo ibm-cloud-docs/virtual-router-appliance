@@ -15,10 +15,10 @@ lastupdated: "2018-11-10"
 {:download: .download}
 
 
-# Einführung in IBM Virtual Router Appliance
+# Einführung in {{site.data.keyword.vra_full}}
 {: #getting-started-with-ibm-virtual-router-appliance}
 
-Navigieren Sie für den Einstieg in IBM© Virtual Router Appliance (VRA) zur Bestellseite im Kundenportal:
+Navigieren Sie für den Einstieg in {{site.data.keyword.vra_full}} (VRA) zur Bestellseite im Kundenportal:
 
 1. Rufen Sie in Ihrem Browser das [Kundenportal ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){: new_window} auf und melden Sie sich bei Ihrem Konto an.
 2. Wählen Sie im Navigationsbereich des Kundenportals **Netz > Gateway-Appliances** aus.

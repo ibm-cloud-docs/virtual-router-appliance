@@ -27,7 +27,7 @@ La prise en charge de l'offre Vyatta 5400 a pris fin le 31 mars 2019. Cette date
 
 Après le 31 mars 2019, le fournisseur de Vyatta 5400 (AT&T, qui a acquis la gamme de produits Vyatta auprès de Brocade en 2017) ne fournissait plus aucun correctif de code ni n'acceptait plus les escalades de support pour le périphérique. 
 
-Les clients qui utilisent Vyatta 5400 ont dû migrer vers une solution alternative (telle qu'IBM Virtual Router Appliance ("VRA", basée sur Vyatta 5600) ou l’offre IBM Juniper vSRX) avant le 31 mars 2019.    
+Les clients qui utilisent Vyatta 5400 ont dû migrer vers une solution alternative (telle qu'{{site.data.keyword.vra_full}} ("VRA", basée sur Vyatta 5600) ou l’offre IBM Juniper vSRX) avant le 31 mars 2019.    
 
 Dans la mesure où l'une ou l'autre de ces solutions alternatives nécessite une nouvelle configuration, IBM Cloud continue à offrir un service gratuit de conversion de configuration. Pour plus de détails sur ce service ou pour demander un engagement de conversion, veuillez envoyer un courrier électronique à l'adresse nwom@us.ibm.com, en précisant : 
 

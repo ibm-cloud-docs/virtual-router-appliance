@@ -21,14 +21,14 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Initiation à IBM Virtual Router Appliance
+# Initiation à {{site.data.keyword.vra_full}}
 {: #getting-started}
 
-IBM© Virtual Router Appliance fournit le dernier système d'exploitation Vyatta 5600 pour des serveurs bare metal x86. Il est proposé en configuration à haute disponibilité (HA) ou autonome et vous permet de router de manière sélective le trafic réseau privé et public via un routeur d'entreprise doté de fonctions complètes avec pare-feu, régulation de flux, routage basé sur des règles, VPN et d'autres fonctions. 
+{{site.data.keyword.vra_full}} fournit le dernier système d'exploitation Vyatta 5600 pour des serveurs bare metal x86. Il est proposé en configuration à haute disponibilité (HA) ou autonome et vous permet de router de manière sélective le trafic réseau privé et public via un routeur d'entreprise doté de fonctions complètes avec pare-feu, régulation de flux, routage basé sur des règles, VPN et d'autres fonctions. 
 
 La configuration minimale requise de VRA pour les serveurs nécessite 8 Go de mémoire RAM et un coeur d'UC pour chaque capacité réseau de 10 Gbit/s. Par exemple, un système avec des doubles liaisons montantes publiques et privées de 10 Gbps nécessite au moins quatre coeurs. En outre, si votre intention est de configurer des services VPN avec chiffrement, vous souhaiterez peut-être ajouter des coeurs supplémentaires. L'ajout de coeurs supplémentaires pour les services VPN garantit que le VRA ne sera pas encombré par de lourdes charges lors du routage et du chiffrement/déchiffrement simultané des données. 
 
-## Commande d'un dispositif Virtual Router Appliance
+## Commande d'un dispositif {{site.data.keyword.vra_full}}
 {: #order-vra}
 
 Pour commander un dispositif VRA, procédez comme suit :
@@ -71,7 +71,7 @@ Pour commander un dispositif VRA, procédez comme suit :
   
 8. Passez en revue vos sélections, vérifiez que vous avez lu les contrats de service tiers, puis cliquez sur **Créer**. La commande est vérifiée automatiquement. 
 
-Une fois la commande approuvée, la mise à disposition du dispositif Virtual Router Appliance démarre automatiquement. Lorsque le processus de mise à disposition est terminé, le nouveau dispositif VRA s'affiche dans la page de la liste des Dispositifs de passerelle. Cliquez sur le nom de la passerelle pour ouvrir la page Détails de la passerelle. Vous y trouverez les adresses IP, le nom d'utilisateur et le mot de passe de connexion correspondant à l'unité.  
+Une fois la commande approuvée, la mise à disposition du dispositif {{site.data.keyword.vra_full}} démarre automatiquement. Lorsque le processus de mise à disposition est terminé, le nouveau dispositif VRA s'affiche dans la page de la liste des Dispositifs de passerelle. Cliquez sur le nom de la passerelle pour ouvrir la page Détails de la passerelle. Vous y trouverez les adresses IP, le nom d'utilisateur et le mot de passe de connexion correspondant à l'unité.  
 
   <img src="images/gateway_details.png" alt="dessin" style="width: 500px;"/>
 
@@ -83,12 +83,12 @@ N'oubliez pas que dès que vous commandez et configurez votre dispositif VRA à 
 
 Un VLAN (réseau local virtuel) est un mécanisme qui partage un réseau physique en de nombreux segments virtuels. Par commodité, le trafic en provenance de plusieurs VLAN sélectionnés peut être distribué via un seul câble réseau, un processus connu sous le nom de "jonction" (trunking).
 
-Le dispositif Virtual Router Appliance est livré en deux parties : un ou plusieurs serveurs VRA et l'installation du dispositif de passerelle. Le dispositif de passerelle vous fournit une interface (interface graphique et API) pour sélectionner les VLAN que vous voulez associer à votre dispositif VRA. L'association d'un VLAN à un dispositif de passerelle reroute (ou "joint") ce VLAN et tous ses sous-réseaux à votre dispositif VRA, vous donnant le contrôle en matière de filtrage, de transfert et de protection. Pour chaque VLAN associé au dispositif de passerelle, ce VLAN est autorisé sur les ports de commutateur auxquels le VRA est connecté. Tout sous-réseau de ce VLAN est routé de manière statique vers l'IP VRRP publique du VRA (si le sous-réseau est un sous-réseau public) ou routé de manière statique vers l'adresse IP VRRP privée du VRA (si le sous-réseau est un sous-réseau privé). Ce routage est effectué au niveau du routeur sur lequel se trouve le VRA, qui est le routeur FCR (Frontend Customer Router) ou le routeur BCR (Backend Customer Router) pour le trafic public et privé, respectivement.  
+Le dispositif {{site.data.keyword.vra_full}} est livré en deux parties : un ou plusieurs serveurs VRA et l'installation du dispositif de passerelle. Le dispositif de passerelle vous fournit une interface (interface graphique et API) pour sélectionner les VLAN que vous voulez associer à votre dispositif VRA. L'association d'un VLAN à un dispositif de passerelle reroute (ou "joint") ce VLAN et tous ses sous-réseaux à votre dispositif VRA, vous donnant le contrôle en matière de filtrage, de transfert et de protection. Pour chaque VLAN associé au dispositif de passerelle, ce VLAN est autorisé sur les ports de commutateur auxquels le VRA est connecté. Tout sous-réseau de ce VLAN est routé de manière statique vers l'IP VRRP publique du VRA (si le sous-réseau est un sous-réseau public) ou routé de manière statique vers l'adresse IP VRRP privée du VRA (si le sous-réseau est un sous-réseau privé). Ce routage est effectué au niveau du routeur sur lequel se trouve le VRA, qui est le routeur FCR (Frontend Customer Router) ou le routeur BCR (Backend Customer Router) pour le trafic public et privé, respectivement.  
 
 Sachez que VRRP est désactivé par défaut et qu'il doit être activé pour que le trafic VLAN fonctionne, y compris sur des périphériques Vyatta autonomes. Il s'agit d'une conséquence du routage des sous-réseaux sur les VLAN associés vers l'adresse IP VRRP ou l'adresse virtuelle attribuée au VRA. Pour plus d'informations, reportez-vous à [Adresses IP virtuelles (VIP) VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
 {: important}
 
-Les serveurs d'un VLAN associé sont uniquement accessibles à partir d'autres VLAN en passant par votre dispositif Virtual Router Appliance. Il n'est pas possible de se passer du dispositif VRA sauf si vous contournez ou dissociez le VLAN.
+Les serveurs d'un VLAN associé sont uniquement accessibles à partir d'autres VLAN en passant par votre dispositif {{site.data.keyword.vra_full}}. Il n'est pas possible de se passer du dispositif VRA sauf si vous contournez ou dissociez le VLAN.
 
 Par défaut, un nouveau dispositif de passerelle est associé à deux VLAN de "transit" non amovibles, un pour le réseau public et un pour le réseau privé. Ils sont en principe utilisés à des fins administratives et peuvent être sécurisés séparément par des commandes VRA.
 

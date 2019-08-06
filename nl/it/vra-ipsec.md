@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Configurazione di un tunnel IPSec che funziona con i firewall zona
 {: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
 
-Nelle versioni precedenti della Virtual Router Appliance, i tunnel IPsec con l'instradamento basato sulle politiche non funzionavano bene con alcuni firewall zona. Con la versione 18.01, c'è un nuovo insieme di comandi che risponde a questo problema, utilizzando "punti funzione virtuali" per abilitare il traffico da tunnel designati, dove il punto funzione agisce come un'interfaccia che fornisce un endpoint da includere in una configurazione di politica di zona.
+Nelle versioni precedenti della {{site.data.keyword.vra_full}}, i tunnel IPsec con l'instradamento basato sulle politiche non funzionavano bene con alcuni firewall zona. Con la versione 18.01, c'è un nuovo insieme di comandi che risponde a questo problema, utilizzando "punti funzione virtuali" per abilitare il traffico da tunnel designati, dove il punto funzione agisce come un'interfaccia che fornisce un endpoint da includere in una configurazione di politica di zona.
 
 Viene qui di seguito riportata una configurazione di esempio di due macchine con IPsec:
 

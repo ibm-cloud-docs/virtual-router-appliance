@@ -15,7 +15,7 @@ lastupdated: "2018-11-10"
 {:tip: .tip}
 {:download: .download}
 
-# Andere Ressourcen für IBM Virtual Router Appliance
+# Andere Ressourcen für {{site.data.keyword.vra_full}}
 {: #other-resources-or-ibm-virtual-router-appliance}
 
 Diese Ressourcen werden von IBM© und einigen unserer Partner und Kunden erstellt. 
@@ -28,6 +28,6 @@ Diese Ressourcen werden von IBM© und einigen unserer Partner und Kunden erstell
 
     *"Wenn es um die Sicherheit Ihres Netzwerks geht, gibt es keine Einheitslösung von der Stange. Da Organisationen zunehmend kritische Daten und Anwendungen in der Cloud verwenden, fragen Sie sich vermutlich, welche Sicherheitsoption am besten für Ihr Netz geeignet ist."*
     
-* [**Blogbeitrag: Meet the Virtual Router Appliance** ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
+* [**Blogbeitrag: Meet the {{site.data.keyword.vra_full}}** ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
 
-    *"Mit der Virtual Router Appliance können Sie Ihre leistungsfähigen Bare-Metal-Server in auf Unternehmen abgestimmte virtuelle Router, Firewalls und VPNs verwandeln, um Ihre ganz besonderen Anwendungsanforderungen zu erfüllen.—All das kann von einer Standalone-Appliance oder einigen HA-Appliances (HA, High Availability) aus erfolgen."*
+    *"Mit der {{site.data.keyword.vra_full}} können Sie Ihre leistungsfähigen Bare-Metal-Server in auf Unternehmen abgestimmte virtuelle Router, Firewalls und VPNs verwandeln, um Ihre ganz besonderen Anwendungsanforderungen zu erfüllen.—All das kann von einer Standalone-Appliance oder einigen HA-Appliances (HA, High Availability) aus erfolgen."*

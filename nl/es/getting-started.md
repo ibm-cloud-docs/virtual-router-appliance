@@ -21,14 +21,14 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Iniciación a IBM Virtual Router Appliance
+# Iniciación a {{site.data.keyword.vra_full}}
 {: #getting-started}
 
-IBM© Virtual Router Appliance (VRA) proporciona el sistema operativo Vyatta 5600 más reciente para servidores nativos x86. Se ofrece como una configuración de alta disponibilidad (HA) o autónoma, y le permite direccionar el tráfico de red privada y pública selectivamente, a través de un direccionador de empresa completo que tiene cortafuegos, modelado de tráfico, direccionamiento basado en políticas, VPN y otras características.
+{{site.data.keyword.vra_full}} (VRA) proporciona el sistema operativo Vyatta 5600 más reciente para servidores nativos x86. Se ofrece como una configuración de alta disponibilidad (HA) o autónoma, y le permite direccionar el tráfico de red privada y pública selectivamente, a través de un direccionador de empresa completo que tiene cortafuegos, modelado de tráfico, direccionamiento basado en políticas, VPN y otras características.
 
 Los requisitos mínimos para un servidor de VRA son 8 GB de RAM y un núcleo de CPU para cada 10 Gbps de capacidad de red. Por ejemplo, un sistema con enlaces públicos y privados de 10 Gbps duales requiere al menos cuatro núcleos. Además, si pretende configurar servicios VPN con cifrado, es posible que desee añadir núcleos adicionales. Añadiendo núcleos adicionales para los servicios de VPN, se garantiza que no se sobrecargue el VRA con cargas pesadas al direccionar y, simultáneamente, cifrar y descifrar datos.
 
-## Pedido de un Virtual Router Appliance
+## Pedido de un {{site.data.keyword.vra_full}}
 {: #order-vra}
 
 Para hacer un pedido de un VRA, siga el procedimiento siguiente:
@@ -71,7 +71,7 @@ Para hacer un pedido de un VRA, siga el procedimiento siguiente:
   
 8. Revise las selecciones que ha realizado, compruebe que ha leído los Acuerdos de servicio de terceros y pulse **Crear**. El pedido se verifica automáticamente.
 
-Cuando se haya aprobado el pedido, se inicia automáticamente el suministro de Virtual Router Appliance. Cuando se completa el proceso de suministro, el nuevo VRA se muestra en la página de lista Dispositivos de pasarela. Pulse el nombre de la pasarela para abrir la página Detalles de pasarela. Encontrará las direcciones IP, el nombre de usuario de inicio de sesión y la contraseña del dispositivo.  
+Cuando se haya aprobado el pedido, se inicia automáticamente el suministro de {{site.data.keyword.vra_full}}. Cuando se completa el proceso de suministro, el nuevo VRA se muestra en la página de lista Dispositivos de pasarela. Pulse el nombre de la pasarela para abrir la página Detalles de pasarela. Encontrará las direcciones IP, el nombre de usuario de inicio de sesión y la contraseña del dispositivo.  
 
   <img src="images/gateway_details.png" alt="dibujo" style="width: 500px;"/>
 
@@ -83,12 +83,12 @@ Recuerde que una vez que haya pedido y configurado el VRA desde el Catálogo de 
 
 Una VLAN (LAN virtual) es un mecanismo que segrega una red física en muchos segmentos virtuales. Para mayor comodidad, el tráfico de varias VLAN seleccionadas puede suministrarse mediante un solo cable de red, proceso comúnmente denominado "conexión troncal".
 
-Virtual Router Appliance se entrega en dos partes: los servidores de VRA y el elemento fijo de dispositivo de pasarela. El dispositivo de pasarela le proporciona una interfaz (GUI y API) para seleccionar las VLAN que desea asociar con su VRA. La asociación de una VLAN con un dispositivo de pasarela redirige (o "realiza una conexión troncal") dicha VLAN y todas sus subredes a VRA, proporcionándole control sobre el filtrado, reenvío y protección. Para cada VLAN asociada con el Dispositivo de pasarela, esa VLAN está permitida en los puertos de conmutador a los que está conectado el VRA, y cualquier subred en dicha VLAN se direcciona estáticamente a la IP de VRRP pública del VRA (si la subred es una subred pública) o a la IP de VRRP privada del VRA (si la subred es una subred privada). Este direccionamiento se realiza en el direccionador detrás del VRA, que será el FCR (Frontend Customer Router) o el BCR (Backend Customer Router) para el tráfico público y privado respectivamente. 
+{{site.data.keyword.vra_full}} se entrega en dos partes: los servidores de VRA y el elemento fijo de dispositivo de pasarela. El dispositivo de pasarela le proporciona una interfaz (GUI y API) para seleccionar las VLAN que desea asociar con su VRA. La asociación de una VLAN con un dispositivo de pasarela redirige (o "realiza una conexión troncal") dicha VLAN y todas sus subredes a VRA, proporcionándole control sobre el filtrado, reenvío y protección. Para cada VLAN asociada con el Dispositivo de pasarela, esa VLAN está permitida en los puertos de conmutador a los que está conectado el VRA, y cualquier subred en dicha VLAN se direcciona estáticamente a la IP de VRRP pública del VRA (si la subred es una subred pública) o a la IP de VRRP privada del VRA (si la subred es una subred privada). Este direccionamiento se realiza en el direccionador detrás del VRA, que será el FCR (Frontend Customer Router) o el BCR (Backend Customer Router) para el tráfico público y privado respectivamente. 
 
 Tenga en cuenta que VRRP está inhabilitado de forma predeterminada y que debe estar habilitado para que el tráfico de VLAN funcione, incluso en vyattas autónomos. Esto es consecuencia de que las subredes en la VLAN asociada están direccionadas a la IP de VRRP o a la dirección virtual asignada al VRA. Para obtener más información, consulte [Direcciones IP virtuales (VIP) de VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
 {: important}
 
-Los servidores de una VLAN asociada solo pueden alcanzarse a partir de otras VLAN a través del Virtual Router Appliance; no es posible omitir el VRA a menos que se ignore o se desasocie la VLAN.
+Los servidores de una VLAN asociada solo pueden alcanzarse a partir de otras VLAN a través del {{site.data.keyword.vra_full}}; no es posible omitir el VRA a menos que se ignore o se desasocie la VLAN.
 
 De forma predeterminada, un nuevo dispositivo de pasarela se asocia a dos VLAN de "tránsito" no extraíbles, una para la pública y otra para la privada. Normalmente se utilizan para fines de administración y los mandatos VRA pueden separarlas de forma segura.
 

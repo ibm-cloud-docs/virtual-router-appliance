@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# IBM Virtual Router Appliance 的 API 參考資料
+# {{site.data.keyword.vra_full}} 的 API 參考資料
 {: #api-reference-for-ibm-virtual-router-appliance}
 
 「SoftLayer® 應用程式設計介面 (SLAPI)」是一種開發介面，可讓開發人員和系統管理者直接與 IBM© Cloud 後端系統進行互動。
@@ -29,7 +29,7 @@ SLAPI 會啟動客戶入口網站中的許多特性，這通常表示如果可�
 
 SLAPI 是「遠端程序呼叫 (RPC)」系統。每一個呼叫需要向 API 端點傳送資料，並反過來接收結構化資料。透過 SLAPI 傳送及接收資料時使用何種格式，視您選擇哪一個 API 實作而定。SLAPI 目前使用 SOAP、XML-RPC 或 REST 來進行資料傳輸。
 
-如需 SLAPI 參照 IBM Virtual Router Appliance API 的相關資訊，請參閱 SoftLayer Development Network (SLDN) 中的下列資源：
+如需 SLAPI 參照 {{site.data.keyword.vra_full}} API 的相關資訊，請參閱 SoftLayer Development Network (SLDN) 中的下列資源：
 
 - [SoftLayer_Network_Gateway API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window}
 - [SoftLayer_Network_Gateway_Member API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window}

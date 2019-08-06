@@ -21,15 +21,15 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Preguntas más frecuentes de IBM Virtual Router Appliance
+# Preguntas más frecuentes de {{site.data.keyword.vra_full}}
 {: #faqs-for-ibm-virtual-router-appliance}
 
-Las siguientes son las preguntas más frecuentes cuando se trabaja con IBM© Virtual Router Appliance (VRA).
+Las siguientes son las preguntas más frecuentes cuando se trabaja con {{site.data.keyword.vra_full}} (VRA).
 
 ## ¿Qué es un VRA?
 {: faq}
 
-Virtual Router Appliance (VRA) le permite a un cliente de IBM Cloud direccionar de forma selectiva tráfico de red público y privado a través de un direccionador de empresa completo con cortafuegos, reforma de tráfico, direccionamiento basado en políticas, VPN y un host de otras funciones. Todas las características de VRA están gestionadas por el cliente. VRA le ofrece a un cliente de IBM Cloud un grado de control que normalmente se reserva para las redes sociales.
+{{site.data.keyword.vra_full}} (VRA) le permite a un cliente de IBM Cloud direccionar de forma selectiva tráfico de red público y privado a través de un direccionador de empresa completo con cortafuegos, reforma de tráfico, direccionamiento basado en políticas, VPN y un host de otras funciones. Todas las características de VRA están gestionadas por el cliente. VRA le ofrece a un cliente de IBM Cloud un grado de control que normalmente se reserva para las redes sociales.
 
 ## ¿Qué es un dispositivo de pasarela?
 {: faq}
@@ -48,7 +48,7 @@ Vyatta era un software direccionador basado en PC de código abierto que se adqu
 
 IBM dejará de ofrecer soporte a Vyatta 5400 a partir del 31 de marzo de 2019.
 
-## ¿Qué mejoras tiene Virtual Router Appliance (Vyatta 5600) respecto a Vyatta 5400?
+## ¿Qué mejoras tiene {{site.data.keyword.vra_full}} (Vyatta 5600) respecto a Vyatta 5400?
 {: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
 
 Vyatta 5600 ofrece las mejoras siguientes respecto a Vyatta 5400:
@@ -61,7 +61,7 @@ Vyatta 5600 ofrece las mejoras siguientes respecto a Vyatta 5400:
 ## ¿Qué ocurre con la oferta de vRouter 5600 AT&T?
 {: faq}
 
-AT&T (anteriormente Brocade) ha anunciado la finalización de Brocade vRouter 5600. Si bien Brocade vRouter 5600 proporciona la capacidad de tecnología subyacente para IBM Virtual Router Appliance, este anuncio no se aplica a los clientes de IBM. Los clientes de IBM seguirán recibiendo soporte para poder utilizarlo.
+AT&T (anteriormente Brocade) ha anunciado la finalización de Brocade vRouter 5600. Si bien Brocade vRouter 5600 proporciona la capacidad de tecnología subyacente para {{site.data.keyword.vra_full}}, este anuncio no se aplica a los clientes de IBM. Los clientes de IBM seguirán recibiendo soporte para poder utilizarlo.
 
 ## ¿Cómo se suministra VRA?
 {: faq}

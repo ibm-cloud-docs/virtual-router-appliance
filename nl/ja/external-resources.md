@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# IBM Virtual Router Appliance のための他のリソース
+# {{site.data.keyword.vra_full}} のための他のリソース
 {: #other-resources-or-ibm-virtual-router-appliance}
 
 これらのリソースは、IBM© や、IBM のパートナーおよびお客様によって作成されたものです。
@@ -34,6 +34,6 @@ subcollection: virtual-router-appliance
 
     *「ネットワークの保護に関して、汎用のアプローチというものは存在しません。 組織が重要データやアプリケーションをクラウドで利用する傾向がますます強まる中、どのセキュリティー・オプションが自社のネットワークのニーズに最適なのか、立ち止まって考えることがあるかもしれません。」*
 
-* [**ブログ投稿: Virtual Router Appliance のご紹介** ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
+* [**ブログ投稿: {{site.data.keyword.vra_full}} のご紹介** ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
 
-    *「Virtual Router Appliance を使用すると、高性能なベアメタル・サーバーをエンタープライズ・グレードの仮想ルーター、ファイアウォール、および VPN に変換し、スタンドアロン・アプライアンスまたは 1 対の高可用性 (HA) アプライアンスから、自社の固有のアプリケーション要件すべてに対応することができます。」*
+    *「{{site.data.keyword.vra_full}} を使用すると、高性能なベアメタル・サーバーをエンタープライズ・グレードの仮想ルーター、ファイアウォール、および VPN に変換し、スタンドアロン・アプライアンスまたは 1 対の高可用性 (HA) アプライアンスから、自社の固有のアプリケーション要件すべてに対応することができます。」*

@@ -19,7 +19,7 @@ lastupdated: "2018-11-10"
 # Vyatta 5400 지원
 {: #vyatta-5400-support}
 
-2019년 3월 31일 Vyatta 5400에 대한 지원이 중단되므로, 기존 Vyatta 5400 고객은 가능한 바로 IBM© Virtual Router Appliance(VRA)로 업그레이드해야 합니다.
+2019년 3월 31일 Vyatta 5400에 대한 지원이 중단되므로, 기존 Vyatta 5400 고객은 가능한 바로 {{site.data.keyword.vra_full}}(VRA)로 업그레이드해야 합니다.
 
 마이그레이션 안내서는 [여기 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://wpc.c320.edgecastcdn.net/00C320/Vyatta%205400%20to%20Virtual%20Router%20Appliance%20Upgrade%20Options.pdf){:new_window}에서 사용할 수 있습니다.
 

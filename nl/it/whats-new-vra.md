@@ -21,10 +21,10 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Aggiornamenti recenti per IBM Virtual Router Appliance
+# Aggiornamenti recenti per {{site.data.keyword.vra_full}}
 {: #recent-updates-for-ibm-virtual-router-appliance}
 
-Scopri le funzioni nuove e aggiornate in IBM© Virtual Router Appliance (VRA).
+Scopri le funzioni nuove e aggiornate in {{site.data.keyword.vra_full}} (VRA).
 
 ## Agosto 2018
 {: #august-2018}
@@ -32,7 +32,7 @@ Scopri le funzioni nuove e aggiornate in IBM© Virtual Router Appliance (VRA).
 ### Sistema operativo Brocade versione 18.x
 {: #brocade-operating-system-version-18-x}
 
-La versione 18.x del sistema operativo Brocade è ora disponibile per la Virtual Router Appliance. Tra le altre nuove funzioni, questa versione fornisce una correzione per la violazione della sicurezza Spectre.
+La versione 18.x del sistema operativo Brocade è ora disponibile per la {{site.data.keyword.vra_full}}. Tra le altre nuove funzioni, questa versione fornisce una correzione per la violazione della sicurezza Spectre.
 
 le nuove funzioni della VRA 18.x sono discusse nei seguenti argomenti:
 
@@ -43,6 +43,6 @@ le nuove funzioni della VRA 18.x sono discusse nei seguenti argomenti:
 
 Se stai eseguendo una migrazione da Vyatta 5400, il modo migliore per eseguire l'upgrade alla 18.x consiste nell'utilizzare la [procedura normale](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) di un ricaricamento del sistema operativo completo.
 
-Poiché non esiste una semplice associazione uno-a-uno della funzionalità tra Vyatta 5400 e la Virtual Router Appliance, la creazione di una configurazione baseline per la VRA è utile. Un partner IBM, WanClouds, può aiutarti con questo processo e fornire indicazioni sulla creazione di una funzionalità simile a Vyatta 5400 sulla tua VRA.
+Poiché non esiste una semplice associazione uno-a-uno della funzionalità tra Vyatta 5400 e la {{site.data.keyword.vra_full}}, la creazione di una configurazione baseline per la VRA è utile. Un partner IBM, WanClouds, può aiutarti con questo processo e fornire indicazioni sulla creazione di una funzionalità simile a Vyatta 5400 sulla tua VRA.
 
 Per ulteriori informazioni sui problemi comuni riscontrati durante questo processo di upgrade, consulta la nostra [documentazione aggiuntiva](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues).

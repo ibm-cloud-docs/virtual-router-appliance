@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Outros recursos para o IBM Virtual Router Appliance
+# Outros recursos para o {{site.data.keyword.vra_full}}
 {: #other-resources-or-ibm-virtual-router-appliance}
 
 Esses recursos são criados pela IBM© e por alguns de nossos parceiros e clientes.
@@ -35,6 +35,6 @@ Esses recursos são criados pela IBM© e por alguns de nossos parceiros e client
 
     *"Quando se trata de proteger sua rede, não existe uma abordagem única para todos. À medida que as organizações utilizam cada vez mais dados e aplicativos críticos na nuvem, é possível parar e imaginar qual opção de segurança melhor se adéqua às necessidades de sua rede."*
 
-* [**Postagem do blog: conheça o Virtual Router Appliance** ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
+* [**Postagem do blog: conheça o {{site.data.keyword.vra_full}}** ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
 
-    *"Com o Virtual Router Appliance, é possível transformar os servidores bare metal de alto desempenho em roteadores virtuais, firewalls e VPNs de classificação corporativa para atender aos seus requisitos exclusivos de aplicativo - tudo por meio de um dispositivo independente ou de um par de dispositivos de alta disponibilidade (HA)."*
+    *"Com o {{site.data.keyword.vra_full}}, é possível transformar os servidores bare metal de alto desempenho em roteadores virtuais, firewalls e VPNs de classificação corporativa para atender aos seus requisitos exclusivos de aplicativo - tudo por meio de um dispositivo independente ou de um par de dispositivos de alta disponibilidade (HA)."*

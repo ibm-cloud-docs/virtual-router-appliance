@@ -21,15 +21,15 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# IBM Virtual Router Appliance 的常見問題
+# {{site.data.keyword.vra_full}} 的常見問題
 {: #faqs-for-ibm-virtual-router-appliance}
 
-以下是使用 IBM© Virtual Router Appliance (VRA) 時的常見問題。
+以下是使用 {{site.data.keyword.vra_full}} (VRA) 時的常見問題。
 
 ## 何謂 VRA？
 {: faq}
 
-Virtual Router Appliance (VRA) 容許 IBM Cloud 客戶選擇性地透過具有防火牆、資料流量塑形、原則式遞送、VPN 及其他特性之主機的完整特性企業路由器，遞送專用與公用網路資料流量。所有 VRA 特性都是由客戶管理。VRA 讓 IBM Cloud 客戶能有一定的控制程度，這通常是保留給內部部署網路。
+{{site.data.keyword.vra_full}} (VRA) 容許 IBM Cloud 客戶選擇性地透過具有防火牆、資料流量塑形、原則式遞送、VPN 及其他特性之主機的完整特性企業路由器，遞送專用與公用網路資料流量。所有 VRA 特性都是由客戶管理。VRA 讓 IBM Cloud 客戶能有一定的控制程度，這通常是保留給內部部署網路。
 
 ## 何謂閘道應用裝置？
 {: faq}
@@ -48,7 +48,7 @@ Vyatta 過去是開放程式碼的 PC 型路由器軟體，並且被完全購得
 
 截至 2019 年 3 月 31 日為止，IBM 將不再支援 Vyatta 5400。
 
-## Virtual Router Appliance (Vyatta 5600) 相較於 Vyatta 5400 有什麼改良功能？
+## {{site.data.keyword.vra_full}} (Vyatta 5600) 相較於 Vyatta 5400 有什麼改良功能？
 {: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
 
 Vyatta 5600 提供相較於 Vyatta 5400 的下列加強功能：
@@ -61,7 +61,7 @@ Vyatta 5600 提供相較於 Vyatta 5400 的下列加強功能：
 ## 關於 AT&T vRouter 5600 供應項目呢？
 {: faq}
 
-AT&T（早期為 Brocade）已宣布其 Brocade vRouter 5600 供應項目生命週期結束和終止支援。雖然 Brocade vRouter 5600 為 IBM Virtual Router Appliance 提供基礎技術功能，但這項宣布並不適用於 IBM 客戶。IBM 客戶將繼續受支援使用此項新供應項目。
+AT&T（早期為 Brocade）已宣布其 Brocade vRouter 5600 供應項目生命週期結束和終止支援。雖然 Brocade vRouter 5600 為 {{site.data.keyword.vra_full}} 提供基礎技術功能，但這項宣布並不適用於 IBM 客戶。IBM 客戶將繼續受支援使用此項新供應項目。
 
 ## 如何遞送 VRA？
 {: faq}

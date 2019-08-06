@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# Accès et configuration du dispositif IBM Virtual Router Appliance
+# Accès et configuration du dispositif {{site.data.keyword.vra_full}}
 {: #accessing-and-configuring-the-ibm-virtual-router-appliance}
 
 Le dispositif VRA peut être configuré à l'aide d'une session de console distante via SSH ou en se connectant à l'interface graphique Web. Par défaut, l'interface graphique Web n'est pas disponible depuis l'Internet public. Pour activer cette interface, connectez-vous d'abord via SSH.
@@ -164,7 +164,7 @@ Le contrôle d'accès RBAC est une méthode utilisée pour limiter l'accès à u
 
 RBAC s'exécute en créant un groupe affecté au jeu de règles Access Control Management (ACM), en ajoutant un utilisateur au groupe, en créant un jeu de règles mettant en correspondance ce groupe avec les chemins dans le système, puis en configurant le système pour autoriser ou refuser l'accès aux chemins appliqués à ce groupe.
 
-Par défaut, il n'y a aucun jeu de règles ACM défini dans Virtual Router Appliance et ACM est désactivé. Si vous voulez utiliser RBAC pour fournir un contrôle d'accès granulaire, vous devez activer ACM et ajouter les règles ACM par défaut suivantes en plus des règles que vous avez définies :
+Par défaut, il n'y a aucun jeu de règles ACM défini dans {{site.data.keyword.vra_full}} et ACM est désactivé. Si vous voulez utiliser RBAC pour fournir un contrôle d'accès granulaire, vous devez activer ACM et ajouter les règles ACM par défaut suivantes en plus des règles que vous avez définies :
 
 ```
 set system acm 'enable'

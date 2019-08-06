@@ -27,7 +27,7 @@ lastupdated: "2018-11-10"
 2. 透過公用 VLAN 及防火牆，在公用網際網路中建立外部界限。此外部界限將用來隔離 SPS。
 3. 將 SPS 置於該界限內
 4. 設定閘道以橋接公用 VLAN 與 SPS
-5. 建立及配置 Virtual Router Appliance (VRA)
+5. 建立及配置 {{site.data.keyword.vra_full}} (VRA)
 6. 建立及配置一個以上的「安全周邊區段 (SPS)」
 7. 建立前端 VLAN
 8. 建立後端 VLAN

@@ -73,7 +73,7 @@ Gehen Sie wie folgt vor, um die Zuordnung eines VLANs zu einer Gateway-Appliance
 Nachdem die Zuordnung eines VLANs zu einer Gateway-Appliance aufgehoben wurde, kann das VLAN einem anderen Gateway zugeordnet werden. Das VLAN kann jederzeit erneut der Gateway-Appliance zugeordnet werden. Nachdem die Zuordnung eines VLANs zu einer Gateway-Appliance aufgehoben wurde, kann der Datenverkehr des VLANs nicht mehr über das Gateway geleitet werden. VLANs können erst weitergeleitet werden, wenn eine Zuordnung zu einer Gateway-Appliance besteht.
 
 ## Mehrere VLANs über dieselbe Netzschnittstelle leiten
-Virtual Router Appliance bietet die Möglichkeit, mehrere VLANs über dieselbe Netzschnittstelle (z. B. `dp0bond0` oder `dp0bond1`) zu leiten. Um dies zu erreichen, müssen der Switch-Port in den Trunking-Modus versetzt und die virtuellen Schnittstellen (Virtual Interfaces, VIFs) in der Einheit konfiguriert werden.
+{{site.data.keyword.vra_full}} bietet die Möglichkeit, mehrere VLANs über dieselbe Netzschnittstelle (z. B. `dp0bond0` oder `dp0bond1`) zu leiten. Um dies zu erreichen, müssen der Switch-Port in den Trunking-Modus versetzt und die virtuellen Schnittstellen (Virtual Interfaces, VIFs) in der Einheit konfiguriert werden.
 
 Beispiel: 
 

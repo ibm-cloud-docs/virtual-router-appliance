@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # View all VRAs
 {: #view-all-vras}
 
-The Gateway Appliances screen in the {{site.data.keyword.cloud}} infrastructure customer portal is where you can display and access all Network Gateway Appliances which includes the Virtual Router Appliances.  
+The Gateway Appliances screen in the {{site.data.keyword.cloud}} infrastructure customer portal is where you can display and access all Network Gateway Appliances which includes the {{site.data.keyword.vra_full}}s.  
 
 Perform the following procedure to access the Gateway Appliances screen in the customer portal.
 

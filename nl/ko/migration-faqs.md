@@ -29,7 +29,7 @@ Vyatta 5400에서 마이그레이션할 때 자주 질문되는 내용(FAQ)은 �
 ## Vyatta 5400의 "지원 종료"(EoS) 날짜가 2019년 3월 31일인 이유는 무엇입니까? 
 {: faq}
 
-2017년 9월에 레거시 Vyatta 5400은 IBM의 지원에 대한 라이프사이클 정책에 따라 2018년 2월 20일(다음 버전인 IBM Virtual Router Appliance(VRA)에 대한 GA(General Availability) 7월 날짜 이후 6개월)이 EoS 날짜라고 발표했습니다. 
+2017년 9월에 레거시 Vyatta 5400은 IBM의 지원에 대한 라이프사이클 정책에 따라 2018년 2월 20일(다음 버전인 {{site.data.keyword.vra_full}}(VRA)에 대한 GA(General Availability) 7월 날짜 이후 6개월)이 EoS 날짜라고 발표했습니다. 
 
 고객 마이그레이션 타임라인을 존중하기 위해 Vyatta 5400 EoS 날짜가 2019년 3월 31일로 연장되었습니다. 이제 Debian 7 소프트웨어는 더 이상 Debian 오픈 소스 커뮤니티에서 지원하지 않기 때문에 AT&T로부터 공급업체 지원을 연장할 향후 계획이 없습니다. 
 
@@ -43,7 +43,7 @@ Vyatta 5400에서 마이그레이션할 때 자주 질문되는 내용(FAQ)은 �
 
 마찬가지로 IBM Cloud 지원에서는 더 이상 Vyatta 5400 배치에 대한 구성 또는 네트워킹 문제를 해결하지 않습니다. 지원은 하드웨어 레벨 요청(하드 드라이브, RAM 등), 전원 및 대역 외(IPMI) 연결로 제한됩니다. 
 
-고객이 즉각적으로 조치를 취하여 대체 솔루션(예: Vyatta 5600을 기반으로 하는 VRA(Virtual Router Appliance) 또는 Juniper vSRX)으로 마이그레이션하도록 강력하게 권장합니다. [여기를 클릭](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)하여 시작하십시오. 
+고객이 즉각적으로 조치를 취하여 대체 솔루션(예: Vyatta 5600을 기반으로 하는 VRA({{site.data.keyword.vra_full}}) 또는 Juniper vSRX)으로 마이그레이션하도록 강력하게 권장합니다. [여기를 클릭](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)하여 시작하십시오. 
 
 ## 3월 31일 이후 Vyatta 5400을 사용하여 IBM Cloud 워크로드를 계속 실행하면 어떻게 됩니까? 
 {: faq}
@@ -70,9 +70,9 @@ Vyatta 5400을 보유한 고객은 VRA(Vyatta 5600), Juniper vSRX 또는 FSA(For
 
 Vyatta 5400에서 VRA(5600)로 구성 변환 서비스는 계속 사용할 수 있습니다. 
 
-* 기존 고객의 경우 IBM Cloud는 기존 Vyatta 5400 구성을 VRA(Virtual Router Appliance), Juniper vSRX 또는 FSA(Fortigate Security Appliance) 10G 형식으로 리팩토링하는 것을 지원하기 위해 무료 오퍼링을 제공합니다. 구성 변환 서비스에 대한 요청을 제출하려면 `Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx.`를 제목으로 사용하여 nwom@us.ibm.com에 이메일을 보내십시오. 
+* 기존 고객의 경우 IBM Cloud는 기존 Vyatta 5400 구성을 VRA({{site.data.keyword.vra_full}}), Juniper vSRX 또는 FSA(Fortigate Security Appliance) 10G 형식으로 리팩토링하는 것을 지원하기 위해 무료 오퍼링을 제공합니다. 구성 변환 서비스에 대한 요청을 제출하려면 `Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx.`를 제목으로 사용하여 nwom@us.ibm.com에 이메일을 보내십시오. 
 
-  제목 행에서 `aaaaaaaa` 대신 선택한 애플리케이션(Virtual Router Appliance, Juniper vSRX 또는 FSA(Fortigate Security Appliance) 10G)을 삽입하고 `xxxxxx` 대신 구체적인 계정 번호를 삽입하십시오.
+  제목 행에서 `aaaaaaaa` 대신 선택한 애플리케이션({{site.data.keyword.vra_full}}, Juniper vSRX 또는 FSA(Fortigate Security Appliance) 10G)을 삽입하고 `xxxxxx` 대신 구체적인 계정 번호를 삽입하십시오.
   {: note}
 
 * 이 변환 구성 프로세스에서 파트너인 Wanclouds는 수백 번의 마이그레이션 작업을 완료했습니다. Wanclouds는 기존 Vyatta 5400을 변환하여 Vyatta 5600 플랫폼에서 유사한 기능을 작성합니다. Wanclouds는 아래에 설명된 두 계층으로 서비스를 제공합니다. 
@@ -94,8 +94,8 @@ Vyatta 5400 마이그레이션을 위한 유료 지원을 제공하는 여러 �
 ## 이 마이그레이션을 지원하기 위해 사용할 수 있는 추가 리소스는 무엇입니까? 
 {: faq}
 
-자세한 정보는 다음과 같은 Virtual Router Appliance 문서 리소스를 검토하십시오. 
+자세한 정보는 다음과 같은 {{site.data.keyword.vra_full}} 문서 리소스를 검토하십시오. 
 
-  * [IBM Virtual Router Appliance 시작하기](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
+  * [{{site.data.keyword.vra_full}} 시작하기](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
   * [VRA 정보](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
   * [Vyatta 5400 마이그레이션 개요](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)

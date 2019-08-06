@@ -34,6 +34,6 @@ subcollection: virtual-router-appliance
 
     *“保护网络并没有一体通用的方法。随着组织越来越多地利用云中的关键数据和应用程序，您可能得停下来思考哪种安全选项最适合您的网络需求。”*
 
-* [**博客帖子：Meet the Virtual Router Appliance** ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
+* [**博客帖子：Meet the {{site.data.keyword.vra_full}}** ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/blogs/bluemix/2017/07/virtual-router-appliance/){:new_window}
 
     *“通过虚拟路由器设备，您可以将高性能的裸机服务器转变为企业级虚拟路由器、防火墙和 VPN，从而满足您的独特应用程序需求 - 所有这一切均通过一台独立设备或一对高可用性 (HA) 设备提供。”*

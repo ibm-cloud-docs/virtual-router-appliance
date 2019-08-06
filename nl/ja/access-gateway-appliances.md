@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # すべての VRA の表示
 {: #view-all-vras}
 
-{{site.data.keyword.cloud}} インフラストラクチャー・カスタマー・ポータルの「ゲートウェイ・アプライアンス」画面では、Virtual Router Appliance を含むすべてのネットワーク・ゲートウェイ・アプライアンスを表示し、これらにアクセスすることができます。  
+{{site.data.keyword.cloud}} インフラストラクチャー・カスタマー・ポータルの「ゲートウェイ・アプライアンス」画面では、{{site.data.keyword.vra_full}} を含むすべてのネットワーク・ゲートウェイ・アプライアンスを表示し、これらにアクセスすることができます。  
 
 次の手順を実行して、カスタマー・ポータル内の「ゲートウェイ・アプライアンス」画面にアクセスします。
 

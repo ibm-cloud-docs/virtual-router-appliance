@@ -14,8 +14,8 @@ lastupdated: "2017-10-30"
 {:tip: .tip}
 {:download: .download}
 
-# Incluir funções de firewall no Virtual Router Appliance (stateless e stateful)
-Aplicar conjuntos de regras de firewall a cada interface é um método de aplicação de firewall ao usar o Virtual Router Appliance (VRA). Cada interface possui três possíveis instâncias de firewall - Dentro, Fora e Local - e cada instância tem regras que podem ser aplicadas a ela. 
+# Incluir funções de firewall no {{site.data.keyword.vra_full}} (stateless e stateful)
+Aplicar conjuntos de regras de firewall a cada interface é um método de aplicação de firewall ao usar o {{site.data.keyword.vra_full}} (VRA). Cada interface possui três possíveis instâncias de firewall - Dentro, Fora e Local - e cada instância tem regras que podem ser aplicadas a ela. 
 
 A ação padrão é Descartar, com regras que permitem que o tráfego específico seja aplicado de acordo com a regra 1 a N. Assim que uma correspondência for feita, o firewall aplicará a ação específica da regra de correspondência.
 
@@ -27,7 +27,7 @@ Para qualquer uma das três instâncias de firewall abaixo, somente uma pode ser
 
 **LOCAL:** o firewall filtra pacotes destinados para o próprio sistema VRA usando a interface do sistema. É necessário estabelecer restrições em portas de acesso que chegam no dispositivo por meio de endereços IP externos não restritos.
 
-Use as etapas a seguir para configurar uma regra de firewall de exemplo para desativar o Internet Control Message Protocol (ICMP) (ping - IPv4 echo reply message) para suas interfaces do Virtual Router Appliance (essa é uma ação stateless; uma ação stateful será revisada posteriormente):
+Use as etapas a seguir para configurar uma regra de firewall de exemplo para desativar o Internet Control Message Protocol (ICMP) (ping - IPv4 echo reply message) para suas interfaces do {{site.data.keyword.vra_full}} (essa é uma ação stateless; uma ação stateful será revisada posteriormente):
 
 1. Digite `show configuration commands` no prompt de comandos para ver as configurações definidas. Você verá uma lista de todos os comandos configurados em seu dispositivo (que poderá ser útil se você decidir migrar e desejar ver todas as suas configurações). Observe o comando `set firewall all-ping enable`, que indica que o ICMP ainda está ativado para o seu Dispositivo.
 

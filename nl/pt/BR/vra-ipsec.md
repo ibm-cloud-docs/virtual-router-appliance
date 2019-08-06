@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Configurando um túnel de IPsec que funciona com firewalls de zona
 {: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
 
-Nas versões anteriores do Virtual Router Appliance, os túneis IPsec que usam Policy Based Routing não funcionaram bem com firewalls de zona. Com a versão 18.01, há um novo conjunto de comandos que aborda esse problema usando "pontos de recurso virtual" para permitir o tráfego de túneis designados, em que o ponto de recurso age como uma interface que fornece um terminal para inclusão em uma configuração de política de zona.
+Nas versões anteriores do {{site.data.keyword.vra_full}}, os túneis IPsec que usam Policy Based Routing não funcionaram bem com firewalls de zona. Com a versão 18.01, há um novo conjunto de comandos que aborda esse problema usando "pontos de recurso virtual" para permitir o tráfego de túneis designados, em que o ponto de recurso age como uma interface que fornece um terminal para inclusão em uma configuração de política de zona.
 
 Segue uma configuração de exemplo de duas máquinas com IPsec entre elas:
 

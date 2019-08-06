@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Otros recursos de IBM Virtual Router Appliance
+# Otros recursos de {{site.data.keyword.vra_full}}
 {: #other-resources-or-ibm-virtual-router-appliance}
 
 Estos recursos han sido creados por IBM© y por algunos de nuestros socios y clientes.

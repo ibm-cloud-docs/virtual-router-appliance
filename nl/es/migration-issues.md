@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Problemas comunes de migración de Vyatta 5400
 {: #vyatta-5400-common-migration-issues}
 
-La tabla siguiente ilustra los problemas comunes o los cambios de comportamiento que se pueden producir tras la migración de un dispositivo Vyatta 5400 a IBM© Virtual Router Appliance. En algunos casos, se incluyen métodos alternativos para solucionar los problemas.
+La tabla siguiente ilustra los problemas comunes o los cambios de comportamiento que se pueden producir tras la migración de un dispositivo Vyatta 5400 a {{site.data.keyword.vra_full}}. En algunos casos, se incluyen métodos alternativos para solucionar los problemas.
 
 ## Política global-state basada en interfaz para cortafuegos con estado
 {: #interface-based-global-state-policy-for-stateful-firewall}
@@ -33,7 +33,7 @@ La tabla siguiente ilustra los problemas comunes o los cambios de comportamiento
 
 El comportamiento al definir el "estado de State-policy" en cortafuegos con estado del release 5.1 ha cambiado. En las versiones anteriores al release 5.1, si se establecía `state - global -state -policy` en un cortafuegos con estado, el vRouter añadía automáticamente una regla `Allow` implícita para devolver la comunicación de la sesión automáticamente.
 
-En el release 5.1 y posteriores, se debe añadir un valor de regla `Allow` en Virtual Router Appliance. El valor con estado funciona para interfaces en dispositivos Vyatta 5400 y para protocolos en dispositivos VRA.
+En el release 5.1 y posteriores, se debe añadir un valor de regla `Allow` en {{site.data.keyword.vra_full}}. El valor con estado funciona para interfaces en dispositivos Vyatta 5400 y para protocolos en dispositivos VRA.
 
 ### Métodos alternativos
 {: #workarounds}
@@ -96,7 +96,7 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 
 ### Problemas
 {: #issues-4}
-En un caso de ejemplo en el que se despliega una NAT de origen de enmascaramiento en IBM Virtual Router Appliance, no se puede utilizar el cortafuegos para determinar el acceso de los hosts a Internet. Esto se debe a que la dirección de NAT posterior será la misma.
+En un caso de ejemplo en el que se despliega una NAT de origen de enmascaramiento en {{site.data.keyword.vra_full}}, no se puede utilizar el cortafuegos para determinar el acceso de los hosts a Internet. Esto se debe a que la dirección de NAT posterior será la misma.
 
 En los dispositivos Vyatta 5400, esta operación es posible porque el cortafuegos se realizó antes que la NAT, permitiendo así la restricción de los hosts para acceder a Internet.
 
@@ -122,7 +122,7 @@ La palabra "Table" es opcional en las configuraciones en el direccionamiento bas
 
 ### Problemas
 {: #issues-6}
-En las políticas de PBR (direccionamiento basado en políticas) de Virtual Router Appliance, se pueden aplicar políticas a las interfaces de plano de datos para el tráfico de entrada, pero no a las interfaces de bucle de retorno, túnel, puente, OpenVPN, VTI e IP sin número.
+En las políticas de PBR (direccionamiento basado en políticas) de {{site.data.keyword.vra_full}}, se pueden aplicar políticas a las interfaces de plano de datos para el tráfico de entrada, pero no a las interfaces de bucle de retorno, túnel, puente, OpenVPN, VTI e IP sin número.
 
 ### Métodos alternativos
 {: #workarounds-6}
@@ -134,7 +134,7 @@ Actualmente, no hay soluciones alternativas para este problema.
 ### Problemas
 {: #issues-7}
 
-IBM Virtual Router Appliance utiliza nftables y no admite TCP-MSS.
+{{site.data.keyword.vra_full}} utiliza nftables y no admite TCP-MSS.
 
 ### Métodos alternativos
 {: #workarounds-7}
@@ -147,7 +147,7 @@ Actualmente, no hay soluciones alternativas para este problema.
 ### Problemas
 {: #issues-8}
 
-OpenVPN no empieza a funcionar cuando se utiliza el parámetro `push-route` en Virtual Router Appliance.
+OpenVPN no empieza a funcionar cuando se utiliza el parámetro `push-route` en {{site.data.keyword.vra_full}}.
 
 ### Métodos alternativos
 {: #workarounds-8}
@@ -191,7 +191,7 @@ Con los dispositivos Vyatta 5400, se permite la siguiente regla de cortafuegos:
 
 set firewall name allow rule 10 ipsec
 
-Sin embargo, con IBM Virtual Router Appliance, no hay IPSec.
+Sin embargo, con {{site.data.keyword.vra_full}}, no hay IPSec.
 
 ### Métodos alternativos
 {: #workarounds-11}
@@ -214,7 +214,7 @@ Con los dispositivos Vyatta 5400, se permiten las siguientes reglas de cortafueg
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 
-Sin embargo, con IBM Virtual Router Appliance, no hay IPSec.
+Sin embargo, con {{site.data.keyword.vra_full}}, no hay IPSec.
 
 ### Métodos alternativos
 {: workarounds-12}
@@ -255,7 +255,7 @@ El fragmento de código anterior es un breve ejemplo de configuración de la con
 
 Inicialmente, el dispositivo Vyatta 5400 realizaba la DNAT en la IPSec de entrada, finalizaba la interfaz y devolvía el tráfico correctamente al túnel IPsec utilizando la tabla de seguimiento de conexiones.
 
-En Virtual Router Appliance, la configuración no funciona de la misma manera. Se crea la sesión; sin embargo, el tráfico de retorno ignora el túnel IPsec después de que la tabla de seguimiento de conexiones invierta el cambio de DNAT. A continuación, VRA envía el paquete en la conexión sin cifrado de IPsec.  El dispositivo en sentido ascendente no espera este tráfico, y lo más probable es que lo descarte. A pesar de que se interrumpe la conectividad continua, se trata de un comportamiento intencionado.   
+En {{site.data.keyword.vra_full}}, la configuración no funciona de la misma manera. Se crea la sesión; sin embargo, el tráfico de retorno ignora el túnel IPsec después de que la tabla de seguimiento de conexiones invierta el cambio de DNAT. A continuación, VRA envía el paquete en la conexión sin cifrado de IPsec.  El dispositivo en sentido ascendente no espera este tráfico, y lo más probable es que lo descarte. A pesar de que se interrumpe la conectividad continua, se trata de un comportamiento intencionado.   
 
 ### Métodos alternativos
 {: #workarounds-13}
@@ -333,7 +333,7 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ### Problemas
 {: #issues-13}
 
-PPTP ya no se admite en Virtual Router Appliance.                                                                                                                                                   
+PPTP ya no se admite en {{site.data.keyword.vra_full}}.                                                                                                                                                   
 
 ### Métodos alternativos
 {: #workarounds-13}
@@ -346,7 +346,7 @@ En su lugar, utilice el protocolo L2TP.
 ### Problemas
 {: issues-14}
 
-Cuando se añade una dirección virtual de VRRP a IBM Virtual Router Appliance en una VPN de alta disponibilidad, debe reinicializar el daemon IPsec. Esto se debe a que el servicio de IPsec solo escucha las conexiones en las direcciones que están presentes en VRA cuando se inicializa el daemon del servicio IKE.
+Cuando se añade una dirección virtual de VRRP a {{site.data.keyword.vra_full}} en una VPN de alta disponibilidad, debe reinicializar el daemon IPsec. Esto se debe a que el servicio de IPsec solo escucha las conexiones en las direcciones que están presentes en VRA cuando se inicializa el daemon del servicio IKE.
 
 En un par de VRA con VRRP, es posible que el direccionador en espera no tenga la dirección virtual de VRRP que está presente en el dispositivo durante la inicialización si el direccionador maestro no tiene presente dicha dirección. Por lo tanto, para reinicializar el daemon IPsec cuando se produce una transición de estado de VRRP, ejecute el mandato siguiente en los direccionadores maestro y de copia de seguridad:
 
@@ -372,7 +372,7 @@ set firewall name localGateway rule 300 recent time '30'
 set firewall name localGateway rule 300 state new 'enable'
 ```
 
-En IBM Virtual Router Appliance, esta regla tiene los siguientes problemas:
+En {{site.data.keyword.vra_full}}, esta regla tiene los siguientes problemas:
 
 * La opción de recent count y recent time ha quedado en desuso.
 
@@ -492,7 +492,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ### Problemas
 {: #issues-20}
 
-Existe un cambio significativo en el comportamiento de registro entre el dispositivo Vyatta 5400 e IBM Virtual Router Appliance, desde el registro por sesión al registro por paquete.
+Existe un cambio significativo en el comportamiento de registro entre el dispositivo Vyatta 5400 e {{site.data.keyword.vra_full}}, desde el registro por sesión al registro por paquete.
 
 * Registro de sesión: Registra las transiciones de estado de sesión con estado
 

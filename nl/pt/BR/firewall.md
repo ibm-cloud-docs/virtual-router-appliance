@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Gerenciar os firewalls da IBM
 {: #manage-your-ibm-firewalls}
 
-O Virtual Router Appliance (VRA) tem a capacidade de processar regras de firewall para proteger as VLANs roteadas por meio do dispositivo. Os firewalls no VRA podem ser divididos em duas etapas:
+O {{site.data.keyword.vra_full}} (VRA) tem a capacidade de processar regras de firewall para proteger as VLANs roteadas por meio do dispositivo. Os firewalls no VRA podem ser divididos em duas etapas:
 
 1. Definindo um ou mais conjuntos de regras.
 2. Aplicando um conjunto de regras em uma interface ou uma zona. Uma zona consiste em uma ou mais interfaces de rede.
@@ -127,7 +127,7 @@ Como um exemplo, para designar o conjunto de regras `ALLOW_LEGACY` para a opçã
 ## Policiamento de Plano de Controle (CPP)
 {: #control-plane-policing-cpp-}
 
-O Policiamento de Plano de Controle (CPP) fornece proteção contra ataques no Virtual Router Appliance, permitindo configurar políticas de firewall designadas às interfaces desejadas e aplicando essas políticas aos pacotes que entram no VRA.
+O Policiamento de Plano de Controle (CPP) fornece proteção contra ataques no {{site.data.keyword.vra_full}}, permitindo configurar políticas de firewall designadas às interfaces desejadas e aplicando essas políticas aos pacotes que entram no VRA.
 
 O CPP é implementado quando a palavra-chave `local` é usada em políticas de firewall que são designadas a qualquer tipo de interface de VRA, tais como interfaces de plano de dados ou loopback. Ao contrário das regras de firewall aplicadas para pacotes que atravessam o VRA, a ação padrão de regras de firewall para o tráfego que entra ou sai do plano de controle é `Allow`. Os usuários deverão incluir regras de descarte explícitas se o comportamento padrão não será desejado.
 
@@ -142,7 +142,7 @@ Observe que as regras de CPP não poderão ser stateful e só se aplicarão a tr
 ## Definindo o Firewall da Zona
 {: #zone-firewalling}
 
-Outro conceito de firewall dentro do Virtual Router Appliance são firewalls baseados em zona. Na operação de firewall baseado em zona, uma interface é designada a uma zona (apenas uma zona por interface) e conjuntos de regras de firewall são designados para os limites entre zonas com a ideia de que todas as interfaces dentro de uma zona possuem o mesmo nível de segurança e têm permissão para rotear livremente. O tráfego é analisado apenas quando ele está passando de uma zona para outra. As zonas descartam qualquer tráfego que entre nelas que não seja explicitamente permitido.
+Outro conceito de firewall dentro do {{site.data.keyword.vra_full}} são firewalls baseados em zona. Na operação de firewall baseado em zona, uma interface é designada a uma zona (apenas uma zona por interface) e conjuntos de regras de firewall são designados para os limites entre zonas com a ideia de que todas as interfaces dentro de uma zona possuem o mesmo nível de segurança e têm permissão para rotear livremente. O tráfego é analisado apenas quando ele está passando de uma zona para outra. As zonas descartam qualquer tráfego que entre nelas que não seja explicitamente permitido.
 
 Uma interface pode pertencer a uma zona ou ter uma configuração de firewall por interface; uma interface não pode fazer os dois.
 

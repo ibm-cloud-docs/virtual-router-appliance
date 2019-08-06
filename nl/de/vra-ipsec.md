@@ -17,7 +17,7 @@ lastupdated: "2018-11-10"
 # IPsec-Tunnel einrichten, der mit zonenbasierten Firewalls arbeitet
 {: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
 
-In früheren Versionen von Virtual Router Appliance konnten IPsec-Tunnel, die richtlinienbasiertes Routing verwenden, nicht gut mit zonenbasierten Firewalls arbeiten. In Version 18.01 gibt es eine neue Gruppe von Befehlen, die dieses Problem beheben, indem "virtuelle Funktionspunkte" verwendet werden, um den Datenverkehr von genau bezeichneten Tunneln zu ermöglichen. In diesen Tunneln fungieren die Funktionspunkte als Schnittstelle, die einen Endpunkt bereitstellt, der in eine Zonenrichtlinienkonfiguration eingeschlossen werden kann.
+In früheren Versionen von {{site.data.keyword.vra_full}} konnten IPsec-Tunnel, die richtlinienbasiertes Routing verwenden, nicht gut mit zonenbasierten Firewalls arbeiten. In Version 18.01 gibt es eine neue Gruppe von Befehlen, die dieses Problem beheben, indem "virtuelle Funktionspunkte" verwendet werden, um den Datenverkehr von genau bezeichneten Tunneln zu ermöglichen. In diesen Tunneln fungieren die Funktionspunkte als Schnittstelle, die einen Endpunkt bereitstellt, der in eine Zonenrichtlinienkonfiguration eingeschlossen werden kann.
 
 Eine Beispielkonfiguration für zwei Maschinen mit IPsec als Zwischenglied folgt hier:
 

@@ -27,7 +27,7 @@ subcollection: virtual-router-appliance
 
 在 2019 年 3 月 31 日之後，Vyatta 5400 供應商（AT&T，其在 2017 年從 Brocade 收購了 Vyatta 產品線）將不再提供任何程式碼修補程式，或接受裝置的支援提升。
 
-在 2019 年 3 月 31 日之前，使用 Vyatta 5400 的客戶應該移轉至替代方案（例如 IBM Virtual Router Appliance（"VRA"；基於 Vyatta 5600）或 IBM Juniper vSRX 供應項目）。   
+在 2019 年 3 月 31 日之前，使用 Vyatta 5400 的客戶應該移轉至替代方案（例如 {{site.data.keyword.vra_full}}（"VRA"；基於 Vyatta 5600）或 IBM Juniper vSRX 供應項目）。   
 
 因為其中一個替代方案需要新的配置，所以 IBM Cloud 會繼續提供免費的「配置轉換」服務。如需此服務的詳細資料，或要求轉換約定，請將電子郵件傳送至 nwom@us.ibm.com，並說明：
 

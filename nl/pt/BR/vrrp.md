@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Trabalhando com alta disponibilidade e VRRP
 {: #working-with-high-availability-and-vrrp}
 
-O Virtual Router Appliance (VRA) suporta Virtual Router Redundancy Protocol (VRRP) como um protocolo de alta disponibilidade. A implementação de dispositivos é feita de uma maneira ativa/passiva, na qual uma máquina é a principal e a outra é o backup. Todas as interfaces em ambas as máquinas serão um membro do mesmo "sync-group", portanto, se uma interface tiver uma falha, as outras interfaces no mesmo grupo também falharão e o dispositivo deixará de ser principal. O backup atual detectará que o principal não está mais transmitindo mensagens keepalive/pulsação e assumirá o controle dos IPs virtuais VRRP e se tornará principal.
+O {{site.data.keyword.vra_full}} (VRA) suporta Virtual Router Redundancy Protocol (VRRP) como um protocolo de alta disponibilidade. A implementação de dispositivos é feita de uma maneira ativa/passiva, na qual uma máquina é a principal e a outra é o backup. Todas as interfaces em ambas as máquinas serão um membro do mesmo "sync-group", portanto, se uma interface tiver uma falha, as outras interfaces no mesmo grupo também falharão e o dispositivo deixará de ser principal. O backup atual detectará que o principal não está mais transmitindo mensagens keepalive/pulsação e assumirá o controle dos IPs virtuais VRRP e se tornará principal.
 
 O VRRP é a parte mais importante da configuração ao provisionar Gateways. A funcionalidade de alta disponibilidade depende das mensagens de pulsação, portanto, é crítico certificar-se de que elas não estejam bloqueadas.
 
@@ -114,7 +114,7 @@ O VRA suporta ambos os protocolos do VRRP, versão 2 (padrão) e versão 3. Na v
 ## VPN de Alta Disponibilidade com VRRP
 {: #high-availability-vpn-with-vrrp}
 
-O VRA fornece a capacidade de manter a conectividade por meio de um túnel IPsec usando um par de Virtual Router Appliances com VRRP. Quando um roteador falhar ou for encerrado para manutenção, o novo roteador principal VRRP restaurará a conectividade IPsec entre as redes locais e remotas.
+O VRA fornece a capacidade de manter a conectividade por meio de um túnel IPsec usando um par de {{site.data.keyword.vra_full}}s com VRRP. Quando um roteador falhar ou for encerrado para manutenção, o novo roteador principal VRRP restaurará a conectividade IPsec entre as redes locais e remotas.
 
 Ao configurar VPN de Alta Disponibilidade com VRRP, sempre que um endereço virtual VRRP é incluído em uma interface de VRA, deve-se reinicializar o daemon IPsec porque o serviço IPsec atende apenas conexões com endereços que estão presentes no VRA quando o daemon de serviço Internet Key Exchange (IKE) é inicializado.
 

@@ -16,14 +16,14 @@ lastupdated: "2018-11-10"
 # Gängige Migrationsprobleme mit Vyatta 5400
 {: #vyatta-5400-common-migration-issues}
 
-In der folgenden Tabelle sind gängige Probleme oder Verhaltensänderungen aufgeführt, die nach einer Migration von einem Vyatta 5400-Gerät zu IBM© Virtual Router Appliance auftreten können. In einigen Fällen sind Problemumgehungen angegeben.
+In der folgenden Tabelle sind gängige Probleme oder Verhaltensänderungen aufgeführt, die nach einer Migration von einem Vyatta 5400-Gerät zu {{site.data.keyword.vra_full}} auftreten können. In einigen Fällen sind Problemumgehungen angegeben.
 
 ## Schnittstellenbasierte Richtlinie mit globalem Status für statusabhängige Firewall
 
 ### Probleme
 Das Verhalten beim Festlegen des Status der Statusrichtlinie für statusabhängige Firewalls aus Release 5.1 wurde geändert. Wenn Sie in Versionen vor Release 5.1 `state - global -state -policy` für eine statusabhängige Firewall festgelegt haben, fügte der vRouter automatisch eine implizite `Allow`-Regel für die Rückgabekommunikation der Sitzung hinzu.
 
-In Release 5.1 und späteren Versionen müssen Sie eine `Allow`-Regeleinstellung in Virtual Router Appliance hinzufügen. Die statusabhängige Einstellung funktioniert für Schnittstellen auf Vyatta 5400-Geräten und für Protokolle auf VRA-Geräten.
+In Release 5.1 und späteren Versionen müssen Sie eine `Allow`-Regeleinstellung in {{site.data.keyword.vra_full}} hinzufügen. Die statusabhängige Einstellung funktioniert für Schnittstellen auf Vyatta 5400-Geräten und für Protokolle auf VRA-Geräten.
 
 ### Problemumgehungen
 Falls die Regel `firewall-in` für eine Ingress-Schnittstelle bzw. innere Schnittstelle gilt, muss die Regel `Firewall-out` auf die Egress-Schnittstelle oder äußere Schnittstelle angewendet werden. Andernfalls wird der rücklaufende Datenverkehr an der Egress-Schnittstelle bzw. der äußeren Schnittstelle gelöscht.        
@@ -78,7 +78,7 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 ## Verarbeitungsreihenfolge für Firewalls, NAT, Routing und DNS
 
 ### Probleme
-In einem Szenario, in dem Masquerade-Source-NAT auf einer IBM Virtual Router Appliance bereitgestellt wird, können Sie die Firewall nicht verwenden, um den Internetzugriff für Hosts festzulegen. Der Grund ist, dass die nachfolgende NAT-Adresse dieselbe ist.
+In einem Szenario, in dem Masquerade-Source-NAT auf einer {{site.data.keyword.vra_full}} bereitgestellt wird, können Sie die Firewall nicht verwenden, um den Internetzugriff für Hosts festzulegen. Der Grund ist, dass die nachfolgende NAT-Adresse dieselbe ist.
 
 Bei Vyatta 5400-Geräten war diese Operation möglich, da die Firewall vor NAT geschaltet und deshalb die Einschränkung des Internetzugriffs für Hosts realisierbar war.
 
@@ -97,7 +97,7 @@ Das Wort 'Table' in den Konfigurationen ist beim richtlinienbasierten Routing vo
 ## Richtlinienbasiertes Routing über Tunnelschnittstelle
 
 ### Probleme
-In der Virtual Router Appliance können Richtlinien für das richtlinienbasierte Routing (PBR) auf Datenebenenschnittstellen für eingehenden Datenverkehr angewendet werden, aber nicht auf Loopback-, Tunnel-, Bridge-, OpenVPN-, VTI- und nicht nummerierte IP-Schnittstellen.
+In der {{site.data.keyword.vra_full}} können Richtlinien für das richtlinienbasierte Routing (PBR) auf Datenebenenschnittstellen für eingehenden Datenverkehr angewendet werden, aber nicht auf Loopback-, Tunnel-, Bridge-, OpenVPN-, VTI- und nicht nummerierte IP-Schnittstellen.
 
 ### Problemumgehungen
 Für dieses Problem gibt es momentan keine Problemumgehungen.
@@ -105,7 +105,7 @@ Für dieses Problem gibt es momentan keine Problemumgehungen.
 ## TCP-MSS
 
 ### Probleme
-IBM Virtual Router Appliance verwendet 'nftables' und unterstützt TCP-MSS nicht.
+{{site.data.keyword.vra_full}} verwendet 'nftables' und unterstützt TCP-MSS nicht.
 
 ### Problemumgehungen
 Für dieses Problem gibt es momentan keine Problemumgehungen.
@@ -113,7 +113,7 @@ Für dieses Problem gibt es momentan keine Problemumgehungen.
 ## OpenVPN
 
 ### Probleme
-OpenVPN wird nicht gestartet, wenn der Parameter `push-route` in Virtual Router Appliance verwendet wird.
+OpenVPN wird nicht gestartet, wenn der Parameter `push-route` in {{site.data.keyword.vra_full}} verwendet wird.
 
 ### Problemumgehungen
 Verwenden Sie den Parameter `openvpn-option` anstelle von `push-route`.
@@ -142,7 +142,7 @@ Auf Vyatta 5400-Geräten ist die folgende Firewallregel zulässig:
 
 set firewall name allow rule 10 ipsec
 
-Aber auf IBM Virtual Router Appliance gibt es kein IPSec.
+Aber auf {{site.data.keyword.vra_full}} gibt es kein IPSec.
 
 ### Problemumgehungen
 Mögliche alternative Regeln für VRA-Geräte:
@@ -160,7 +160,7 @@ Auf Vyatta 5400-Geräten sind die folgenden Firewallregeln zulässig:
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 
-Aber auf IBM Virtual Router Appliance gibt es kein IPSec.
+Aber auf {{site.data.keyword.vra_full}} gibt es kein IPSec.
 
 ### Problemumgehungen
 Fügen Sie die Protokolle `ESP` und `AH` (IP-Protokolle 50 bzw. 51) hinzu.
@@ -196,7 +196,7 @@ Das Snippet oben ist ein kurzes Beispiel für die Konfiguration der DNAT-Umsetzu
 
 Ursprünglich führte das Vyatta 5400-Gerät DNAT für den eingehenden IPSec aus, beendete die Schnittstelle und gab den Datenverkehr unter Verwendung der Tabelle zum Nachverfolgen von Verbindungen an den IPsec-Tunnel zurück.
 
-Auf einer Virtual Router Appliance funktioniert die Konfiguration nicht auf diese Weise. Die Sitzung wird erstellt, aber der rücklaufende Datenverkehr umgeht den IPsec-Tunnel, nachdem die Tabelle zum Nachverfolgen von Verbindungen die DNAT-Änderung rückgängig gemacht hat. VRA sendet das Paket dann ohne IPsec-Verschlüsselung. Das vorgeschaltete Gerät erwartet diesen Datenverkehr nicht und wird ihn höchstwahrscheinlich löschen. Die End-to-End-Konnektivität wird unterbrochen, aber dies ist das beabsichtigte Verhalten.   
+Auf einer {{site.data.keyword.vra_full}} funktioniert die Konfiguration nicht auf diese Weise. Die Sitzung wird erstellt, aber der rücklaufende Datenverkehr umgeht den IPsec-Tunnel, nachdem die Tabelle zum Nachverfolgen von Verbindungen die DNAT-Änderung rückgängig gemacht hat. VRA sendet das Paket dann ohne IPsec-Verschlüsselung. Das vorgeschaltete Gerät erwartet diesen Datenverkehr nicht und wird ihn höchstwahrscheinlich löschen. Die End-to-End-Konnektivität wird unterbrochen, aber dies ist das beabsichtigte Verhalten.   
 
 ### Problemumgehungen
 Für das oben beschriebene Netzbetriebsszenario hat IBM eine RFE (Request for Enhancement) erstellt. 
@@ -269,7 +269,7 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ## PPTP
 
 ### Probleme
-PPTP wird in der Virtual Router Appliance nicht länger unterstützt.                                                                                                                                                   
+PPTP wird in der {{site.data.keyword.vra_full}} nicht länger unterstützt.                                                                                                                                                   
 
 ### Problemumgehungen
 Verwenden Sie stattdessen das L2TP-Protokoll.
@@ -277,7 +277,7 @@ Verwenden Sie stattdessen das L2TP-Protokoll.
 ## Skript für den Neustart von IPSec
 
 ### Probleme
-Immer wenn eine virtuelle VRRP-Adresse zu einer IBM Virtual Router Appliance in einem Hochverfügbarkeits-VPN hinzugefügt wird, müssen Sie den IPsec-Dämon reinitialisieren. Der Grund ist, dass der IPsec-Service nur Verbindungen mit Adressen überwacht, die in VRA vorhanden sind, wenn der IKE-Servicedämon initialisiert wird.
+Immer wenn eine virtuelle VRRP-Adresse zu einer {{site.data.keyword.vra_full}} in einem Hochverfügbarkeits-VPN hinzugefügt wird, müssen Sie den IPsec-Dämon reinitialisieren. Der Grund ist, dass der IPsec-Service nur Verbindungen mit Adressen überwacht, die in VRA vorhanden sind, wenn der IKE-Servicedämon initialisiert wird.
 
 Für ein Paar von VRA-Instanzen mit VRRP verfügt der Standby-Router möglicherweise nicht über die virtuelle VRRP-Adresse, die auf dem Gerät während der Initialisierung vorhanden ist, falls diese Adresse nicht auf dem Master-Router vorhanden ist. Führen Sie deshalb den folgenden Befehl auf den Master- und Backup-Routern aus, um den IPsec-Dämon zu reinitialisieren, wenn eine VRRP-Statusänderung auftritt:
 
@@ -301,7 +301,7 @@ set firewall name localGateway rule 300 recent time '30'
 set firewall name localGateway rule 300 state new 'enable'
 ```
 
-In IBM Virtual Router Appliance führt diese Regel zu den folgenden Problemen:
+In {{site.data.keyword.vra_full}} führt diese Regel zu den folgenden Problemen:
 
 * Die Option für die aktuelle Anzahl ('recent count') und die aktuelle Zeit ('recent time') wird nicht mehr verwendet.
 
@@ -404,7 +404,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote port 21 (ftp)
 ## Signifikante Änderung des Protokollierungsverhaltens
 
 ### Probleme
-Das Protokollierungsverhalten zwischen dem Vyatta 5400-Gerät und der IBM Virtual Router Appliance hat sich signifikant geändert, nämlich von einer sitzungsbasierten Protokollierung in eine paketbasierte Protokollierung.
+Das Protokollierungsverhalten zwischen dem Vyatta 5400-Gerät und der {{site.data.keyword.vra_full}} hat sich signifikant geändert, nämlich von einer sitzungsbasierten Protokollierung in eine paketbasierte Protokollierung.
 
 * Sitzungsprotokollierung: Zeichnet Statusübergänge von statusbehafteten Sitzungen auf.
 

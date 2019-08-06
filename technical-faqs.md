@@ -21,10 +21,10 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Technical FAQs for IBM Virtual Router Appliance
+# Technical FAQs for IBM Cloud Virtual Router Appliance
 {: #technical-faqs-for-ibm-virtual-router-appliance}
 
-The following frequently asked questions address the configuration of the IBM© Virtual Router Appliance (VRA), and migrating to the VRA from Vyatta 5400.
+The following frequently asked questions address the configuration of the {{site.data.keyword.vra_full}} (VRA), and migrating to the VRA from Vyatta 5400.
 
 ## How do I allow Internet-bound traffic from hosts that are on a private VLAN?
 {: faq}

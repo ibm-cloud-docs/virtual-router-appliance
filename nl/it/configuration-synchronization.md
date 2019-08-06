@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Sincronizzazione delle configurazioni di alta disponibilità
 {: #synchronizing-high-availability-configurations}
 
-Due VRA (Virtual Router Appliance) in una coppia HA (alta disponibilità) devono avere le loro configurazioni sufficientemente sincronizzate in modo che i dispositivi si comportino in modo simile. Questo viene eseguito tramite `configuration sync-maps` e puoi scegliere quale parte della configurazione sarà sincronizzata. Se effettui una modifica in una macchina, trasmetterà la configurazione contrassegnata all'altro dispositivo.
+Due VRA ({{site.data.keyword.vra_full}}) in una coppia HA (alta disponibilità) devono avere le loro configurazioni sufficientemente sincronizzate in modo che i dispositivi si comportino in modo simile. Questo viene eseguito tramite `configuration sync-maps` e puoi scegliere quale parte della configurazione sarà sincronizzata. Se effettui una modifica in una macchina, trasmetterà la configurazione contrassegnata all'altro dispositivo.
 
 Questo sincronizza e salva la configurazione in esecuzione del dispositivo locale sul dispositivo remoto. Tuttavia, come parte del processo di commit non salva la configurazione sul dispositivo locale.
 {: note}

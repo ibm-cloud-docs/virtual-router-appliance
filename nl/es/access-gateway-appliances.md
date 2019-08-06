@@ -20,10 +20,10 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Ver todos los VRA (Virtual Router Appliance)
+# Ver todos los VRA ({{site.data.keyword.vra_full}})
 {: #view-all-vras}
 
-En la pantalla de dispositivos de pasarela del portal de clientes de la infraestructura de {{site.data.keyword.cloud}} puede visualizar y acceder a todos los dispositivos de pasarela de red, entre los que se incluye Virtual Router Appliance.  
+En la pantalla de dispositivos de pasarela del portal de clientes de la infraestructura de {{site.data.keyword.cloud}} puede visualizar y acceder a todos los dispositivos de pasarela de red, entre los que se incluye {{site.data.keyword.vra_full}}.  
 
 Realice el procedimiento siguiente para acceder a la pantalla Dispositivos de pasarela del portal de clientes.
 
