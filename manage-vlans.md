@@ -105,7 +105,7 @@ Subnets can be chosen from any unused private IP space. As a result, `10.0.0.0/8
 
 The `virtual-address` is where the new subnet should be configured. In most cases, the gateway IP address of the subnet is what should be configured. The gateway IP bound to the VIF is then used as the next-hop or default route for any Baremetal or Virtual Servers set up on the new subnet behind the VRA.
 
-The following example shows `159.8.67.97/28` being bound to the VIF, so that all traffic for the `159.8.67.98/28` subnet can be managed by the VRA(s).
+The following example shows `159.8.67.97/28` being bound to the VIF, so that all traffic for the `159.8.67.96/28` subnet can be managed by the VRA(s).
 
 ```
 set interfaces bonding dp0bond0 vif 1623 address '192.168.10.2/30'
