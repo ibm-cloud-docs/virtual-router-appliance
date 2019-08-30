@@ -1,5 +1,5 @@
 {:navgroup: .navgroup}
-{:topicgroup: .topicgroup} 
+{:topicgroup: .topicgroup}
 
 {: .toc subcollection="virtual-router-appliance" category="network" audience="network" arm="3662762" href="/docs/infrastructure/virtual-router-appliance?topic=infrastructure/virtual-router-appliance-getting-started" path="infrastructure/virtual-router-appliance"}
 IBM Cloud Virtual Router Appliance
@@ -23,6 +23,14 @@ IBM Cloud Virtual Router Appliance
         5400-juniper.md
         migration-issues.md
         migration-faqs.md
+
+    {: .topicgroup}
+    Tutorials
+        /tutorials?topic=solution-tutorials-secure-network-enclosure
+        /tutorials?topic=solution-tutorials-nat-config-private
+        /tutorials?topic=solution-tutorials-configuring-IPSEC-VPN
+        /tutorials?topic=solution-tutorials-vlan-spanning
+        /tutorials?topic=solution-tutorials-web-app-private-network
 
     /fortigate-10g/fortigate-10g-exploring-firewalls
     external-resources.md
