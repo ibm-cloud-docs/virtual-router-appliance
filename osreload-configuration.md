@@ -23,14 +23,16 @@ subcollection: virtual-router-appliance
 # Reloading the OS
 {: #reloading-the-os}
 
-The OS reload process, when initiated in the Customer Portal, will wipe away all configurations present on the device and restore it to its original configuration. Any changes made since the last load of the system will be erased. As a result, if you have made changes (for example to the VRRP group on another machine), the reloaded machine will likely have a conflict when it comes back online.
+The OS reload process, when initiated in the Cloud Catalog, will wipe away all configurations present on the device and restore it to its original configuration. Any changes made since the last load of the system will be erased. As a result, if you have made changes (for example to the VRRP group on another machine), the reloaded machine will likely have a conflict when it comes back online.
 
 To reload your OS, perform the following procedure:
 
-1. Log in to the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} using your unique credentials.
-2. Select **Device List** from the Devices dropdown list.
-3. Click on the server you want to reload.
-4. Select **OS Reload** from the **Actions** dropdown menu on the top left of the page.
+1. From your browser, open [https://cloud.ibm.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com){:new_window} and log into your account.
+2. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the top left, then click **Classic Infrastructure**.
+3. Choose **Network > Gateway Appliances**.
+4. Click on the server you want to reload.
+5. Click the server name in the Hardware section.
+4. Select **OS Reload** from the **Actions** dropdown menu on the top right of the page.
 5. In the OS Reload screen, click **Edit** for the Category that requires an update. Select **AT&T** as the Vendor, and the OS version you wish to reload.
 6. Click the **Reload Above Configuration** button to proceed to the **Review** pop-up. Click **Cancel** to cancel the changes to the device and exit the screen.
 7. Verify that all details in the New Configuration section are correct. Click **Next** to advance to the Confirm pop-up.

@@ -25,7 +25,8 @@ subcollection: virtual-router-appliance
 
 The Gateway Appliances screen in the {{site.data.keyword.cloud}} infrastructure customer portal is where you can display and access all Network Gateway Appliances which includes the {{site.data.keyword.vra_full}}s.  
 
-Perform the following procedure to access the Gateway Appliances screen in the customer portal.
+Perform the following procedure to access the Gateway Appliances screen.
 
-1. Access the [customer portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} using your unique credentials.
-2. Select **Gateway Appliances** from the Network menu option.
+1. From your browser, open [https://cloud.ibm.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com){:new_window} and log into your account.
+2. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the top left, then click **Classic Infrastructure**.
+3. Choose **Network > Gateway Appliances**.
