@@ -72,7 +72,7 @@ IBM Cloud Virtual Router Appliance
     {: .topicgroup}
     VRA API Information
         apis.md
-        [{{site.data.keyword.vra_full}} API](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
+        [Vyatta Network OS Scripting Reference Guide](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
     /hardware-firewall-dedicated/hardware-firewall-dedicated-ibm-cloud-ip-ranges
 
