@@ -23,12 +23,40 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**As of: July 10, 2019**
+**As of: September 5, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
+## 1801zb
+{: #1801zb}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-47924 | Major | BGP 'show' output for default-vrf not captured in 'show tech-support' |
+| VRVDR-47869 | Minor | L2TP/IPsec with x.509 authentication fails due to incorrect path to certificates |
+| VRVDR-47711 | Minor | changing 'syslog global facility all level' overwrites individual 'facility <> level' settings |
+| VRVDR-47710 | Major | nhrp overloads IPSec daemon communication |
+| VRVDR-47661 | Minor | L2TP in high availability pair will not allow connections after VRRP failover |
+| VRVDR-47606 | Major | Configuring "service https listen-address" bypasses the TLSv1.2 enforcement |
+| VRVDR-47543 | Blocker | Long Login Delay due to pam_systemd failed to create session |
+| VRVDR-47506 | Minor | ntpq segfault in ld-2.24.so |
+| VRVDR-47485 | Major | VRRP snmp MIB stops working when any configuration changes made to SNMP |
+| VRVDR-47381 | Major | When a vrrp vif is disabled the next change may prevent the interface from being displayed in 'show interfaces' |
+| VRVDR-47229 | Blocker | netplugd crash on configuration change |
+| VRVDR-46417 | Major | Dataplane is sending GRE packets sourced from non-exist VRRP VIP when router is BACKUP |
+| VRVDR-45396 | Critical | Shunt policy installation race |
+| VRVDR-42108 | Minor | After 25s ssh login delay 'systemctl --user status' fails with "Failed to connect to bus: No such file or directory" |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-47707 | 7.8 | DSA-4484-1 | CVE-2019-13272: Debian DSA-4484-1: linux security update |
+| VRVDR-37993 | 5.0 | N/A | CVE-2013-5211: Network Time Protocol (NTP) Mode 6 Scanner |
 
 ## 1801za
 {: #1801za}
