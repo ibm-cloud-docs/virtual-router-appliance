@@ -64,6 +64,8 @@ IBM Cloud Virtual Router Appliance
 
     configuration-backups.md
     osreload-configuration.md
+    faqs.md
+    technical-faqs.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -85,9 +87,6 @@ IBM Cloud Virtual Router Appliance
         how-add-firewall-functions-vyatta-stateless-and-stateful.md
         setup-nat.md
         vyatta-high-availability-configuration.md
-
-    faqs.md
-    technical-faqs.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
