@@ -32,7 +32,7 @@ VRRP is the most important part of the configuration when provisioning Gateways.
 
 The VRRP virtual IP for `dp0bond1` or `dp0bond0`, or VIP, is the floating IP address that changes from master to backup device when failover happens. When a VRA deploys, it will have a public and private bonded network connection and real IPs assigned on each interface. A VIP is assigned on both interfaces as well, whether the device is a standalone or in an HA pair. Traffic that has a destination IP in subnets in VLANs associated with the VRA will be sent directly to these VRRP VIP's through a static route on the FCR/BCR.
 
-VRRP virtual IP addresses for any gateway group should never be changed, nor should the VRRP interface be disabled. These IP addresses are the method by which traffic is routed to the gateway when a VLAN is associated. As a result, if they are down, VLAN traffic will also be down. If the IP address is not present, then the traffic cannot be forwarded from softLayer BCR/FCR to the VRA itself. This virtual-address or VIP is not changeable at this time. This limitation may change in the future, but currently neither the migration of a VRA between PODs/FCRs/BCRs nor changing the VIP are supported.
+VRRP virtual IP addresses for any gateway group should never be changed, nor should the VRRP interface be disabled. These IP addresses are the method by which traffic is routed to the gateway when a VLAN is associated. As a result, if they are down, VLAN traffic will also be down. If the IP address is not present, then the traffic cannot be forwarded from the BCR/FCR to the VRA itself. This virtual-address or VIP is not changeable at this time. This limitation may change in the future, but currently neither the migration of a VRA between PODs/FCRs/BCRs nor changing the VIP are supported.
 
 The following is an example of the default configurations of the `dp0bond0` and `dp0bond1` VIP's for a specific VRA. Please note that your IP addresses and vrrp-groups may be different than the example below:
 
@@ -62,11 +62,11 @@ delete interfaces bonding dp0bond1 vrrp vrrp-group 2 'disable'
 
 A VRRP group consists of a cluster of interfaces or virtual interfaces that provide redundancy for a primary, or “master,” interface in the group. Each interface in the group is typically on a separate router. Redundancy is managed by the VRRP process on each system. The VRRP group has a unique numeric identifier and can be assigned up to 20 virtual IP addresses.  
 
-The VRRP group ID is assigned by SoftLayer, and should not be changed. When a new gateway group is provisioned behind a Front Customer Router (FCR)/Backend Customer Router (BCR) for the first time, it will receive a VRRP group of 1. Subsequent gateway group provisions will increment this value to prevent conflicts, the next group will have group 2, then group 3, and so on. It is then calculated and assigned by the SoftLayer provisioning process. Altering this value risks collision with other active groups, and then master/master contention, which will likely cause an outage on both gateway groups.
+The VRRP group ID is assigned by by IBM Cloud and should not be changed. When a new gateway group is provisioned behind a Front Customer Router (FCR)/Backend Customer Router (BCR) for the first time, it will receive a VRRP group of 1. Subsequent gateway group provisions will increment this value to prevent conflicts, the next group will have group 2, then group 3, and so on. It is then calculated and assigned by the provisioning process. Altering this value risks collision with other active groups, and then master/master contention, which will likely cause an outage on both gateway groups.
 
 If you migrate from a previous configuration, it is recommended that you double check your configuration code to make sure the VRRP group ID is not statically assigned.
 
-The VRRP group ID is persisted in the SoftLayer database, so the same group ID value will be used during an OS reload or upgrade. Any user modified VRRP group ID will be overwritten with the system assigned value during an OS reload.  
+The VRRP group ID is persisted in the database, so the same group ID value will be used during an OS reload or upgrade. Any user modified VRRP group ID will be overwritten with the system assigned value during an OS reload.  
 
 ## VRRP priority
 {: #vrrp-priority}

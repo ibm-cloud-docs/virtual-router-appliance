@@ -33,7 +33,7 @@ Configuring the VRA outside of its shell and interface may produce unexpected re
 
 Most UNIX-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients included with their default installations. Windows users can download an SSH client, such as PuTTy.
 
-It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs requires your client to be connected private network. You can login using one of the default VPN options (PPTP, SSL-VPN and IPsec) offered in the customer portal, or using a custom VPN solution configured on the VRA.
+It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs requires your client to be connected private network. You can login using one of the default VPN options (PPTP, SSL-VPN and IPsec) offered in the IBM Cloud console, or using a custom VPN solution configured on the VRA.
 
 Use the Vyatta account from the **Device Details** page to login through SSH. The root password is also provided, but root login is disabled by default for security reasons.
 

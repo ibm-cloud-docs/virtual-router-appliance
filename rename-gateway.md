@@ -27,12 +27,12 @@ Network Gateways are given unique names that assist users in their identificatio
 
 Perform the following procedure to rename a Network Gateway:
 
-1. [Access the Gateway Appliance Details screen](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) in the Customer Portal.
+1. [Access the Gateway Appliance Details screen](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) in the IBM Cloud console.
 2. Click the **Actions** dropdown menu and select **Rename Gateway**.
 3. Enter the new Gateway Name in the **Gateway Name** field.
 4. Click **OK** to save the change.
 
 After changing a Gateway Appliance's name, the name will immediately change at the top of the Gateway Appliance Details screen. The Gateway name may be changed again at any time by repeating the steps above.
 
-Changing the name of the VRA in the Customer Portal does not automatically change the hostname within the {{site.data.keyword.vra_full}} or any DNS entries you may have. This will require manual intervention if needed.
+Changing the name of the VRA in the console does not automatically change the hostname within the {{site.data.keyword.vra_full}} or any DNS entries you may have. This will require manual intervention if needed.
 {: note}

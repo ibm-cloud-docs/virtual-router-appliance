@@ -20,7 +20,7 @@ Vyatta high availability is supported through the use of VRRP, Virtual Routing R
 Private only Vyattas will have only the private VRRP.
 {: note}
 
-These IP addresses are the target IPs for the Softlayer network infrastructure to route all the subnets on VLANs that are associated with the gateway members. Only one Vyatta will have these VRRP IPs running at a time, the other members of the gateway group will have them administratively down.
+These IP addresses are the target IPs for the network infrastructure to route all the subnets on VLANs that are associated with the gateway members. Only one Vyatta will have these VRRP IPs running at a time, the other members of the gateway group will have them administratively down.
 
 Configuration can be synchronized between the two Vyattas with the "config-sync" configuration commands. This configuration will allow one member to push the configuration of specific options to the other Vyatta in a group, and do so selectively. You can push only the firewall rules, or only the IPsec configuration, or any combination of rulesets.
 

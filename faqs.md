@@ -66,7 +66,7 @@ AT&T (formerly Brocade) has announced the End-of-Life and End-of-Support of thei
 ## How is VRA delivered?
 {: faq}
 
-You obtain a VRA by ordering a Network Gateway. This streamlined process lets you choose a data center and a suitable VRA server, as well as whether you want to deploy an HA pair of VRAs. Servers, operating systems, and the Gateway Appliance fixture are all provisioned automatically. When the provisioning is complete, you can use the Gateway Appliance interface to route VLANs through the VRA. You can configure your VRA server directly by using SSH (secure shell) with the passwords provided in the Hardware Details section of the Customer Portal.
+You obtain a VRA by ordering a Network Gateway. This streamlined process lets you choose a data center and a suitable VRA server, as well as whether you want to deploy an HA pair of VRAs. Servers, operating systems, and the Gateway Appliance fixture are all provisioned automatically. When the provisioning is complete, you can use the Gateway Appliance interface to route VLANs through the VRA. You can configure your VRA server directly by using SSH (secure shell) with the passwords provided in the Hardware Details section of the IBM Cloud console.
 
 ## Is my password safe?
 {: faq}

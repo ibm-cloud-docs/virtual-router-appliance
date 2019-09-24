@@ -25,7 +25,7 @@ subcollection: virtual-router-appliance
 
 The SoftLayer® Application Programming Interface (SLAPI) is the development interface that gives developers and system administrators direct interaction with the IBM© Cloud backend system.
 
-The SLAPI powers many of the features in the Customer Portal, which typically means if an interaction is possible in the Customer Portal, it can also be run in the API. Because you can programmatically interact with all portions of the Customer Portal environment within the API, you can use the API to automate tasks.
+The SLAPI powers many of the features in the IBM Cloud console, which typically means if an interaction is possible in the console, it can also be run in the API. Because you can programmatically interact with all portions of the IBM Cloud console within the API, you can use the API to automate tasks.
 
 The SLAPI is a Remote Procedure Call (RPC) system. Each call involves sending data towards an API endpoint and receiving structured data in return. The format used to send and receive data with the SLAPI depends on which implementation of the API you choose. The SLAPI currently uses SOAP, XML-RPC or REST for data transmission.
 
