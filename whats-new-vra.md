@@ -39,7 +39,7 @@ New features of the 18.x VRA are discussed in the following topics:
 * [Setting up an IPsec Tunnel that Works with Zone Firewalls](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls)
 * [Configuring a VFP interface with IPsec and Zone Firewalls](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls)
 * [Using NAT with prefix based IPsec](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-using-nat-with-prefix-based-ipsec)
-* [Troubleshooting Your VFP Interface](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-troubleshooting-your-vfp-interface)
+* [Troubleshooting your VFP Interface](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-troubleshooting-your-vfp-interface)
 
 If you are migrating from Vyatta 5400, the best way to upgrade to 18.x is through the [normal procedure](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) of a full OS reload.
 

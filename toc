@@ -33,18 +33,17 @@ IBM Cloud Virtual Router Appliance
         /tutorials/solution-tutorials-web-app-private-network
 
     /fortigate-10g/fortigate-10g-exploring-firewalls
-    external-resources.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    access-gateway-appliances.md
-    access-gateway-details.md
+    /gateway-appliance/gateway-appliance-viewing-all-gateway-appliances
+    /gateway-appliance/gateway-appliance-viewing-gateway-appliance-details
+    /gateway-appliance/gateway-appliance-renaming-a-gateway-appliance
     vra-basics.md
-    rename-gateway.md
 
     {: .topicgroup}
     Work with VLANs
-        manage-vlans.md
+        /gateway-appliance/gateway-appliance-managing-vlans-and-gateway-appliances
         vlans.md
 
     firewall.md
@@ -64,8 +63,6 @@ IBM Cloud Virtual Router Appliance
 
     configuration-backups.md
     osreload-configuration.md
-    faqs.md
-    technical-faqs.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -77,6 +74,7 @@ IBM Cloud Virtual Router Appliance
         [Vyatta Network OS Scripting Reference Guide](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
     /hardware-firewall-dedicated/hardware-firewall-dedicated-ibm-cloud-ip-ranges
+    /gateway-appliance/gateway-appliance-other-resources-for-ibm-gateway-appliances
 
     {: .topicgroup}
     Legacy Vyatta 5400
@@ -92,5 +90,7 @@ IBM Cloud Virtual Router Appliance
     {: .navgroup id="help"}
     vra-docs-18.md
     vra-docs.md
-    getting-help.md
+    faqs.md
+    technical-faqs.md
+    /gateway-appliance/gateway-appliance-getting-help
     {: .navgroup-end}

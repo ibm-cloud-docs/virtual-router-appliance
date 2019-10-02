@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2019-05-03"
+lastupdated: "2019-08-28"
 
 keywords: vra, virtual router, order
 
@@ -98,4 +98,4 @@ In comparison, "gateway" VLANs are where devices, such as servers and containers
 
 The VRA can only manage VLANs that are associated with it through the Gateway Appliance.
 
-For information on how to manage VLANs from the Gateway Appliances Details screen, refer to [Managing VLANs](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans).
+For information on how to manage VLANs from the Gateway Appliances Details screen, refer to [Managing VLANs](/docs/infrastructure/virtual-router-appliance?topic=gateway-appliance-managing-vlans-and-gateway-appliances).

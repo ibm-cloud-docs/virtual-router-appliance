@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# Troubleshooting Your VFP Interface
+# Troubleshooting your VFP Interface
 {: #troubleshooting-your-vfp-interface}
 
 This topic contains troubleshooting information for VFP interfaces.
