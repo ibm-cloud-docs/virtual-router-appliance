@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-4-17"
+lastupdated: "2019-10-16"
 
 keywords: 5600, security, fixes, patches, brocade, os
 
@@ -23,11 +23,33 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**As of: September 5, 2019**
+**As of: Ocotober 16, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+
+## 1801zc
+{: #1801zc}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-48148 | Major | Can't stat /var/run/gre" error seen on deleting erspan tunnel |
+| VRVDR-47842 | Minor | mGRE tunnel is not coming up after making address change at the spoke |
+| VRVDR-47816 | Major | NAT statistics not displaying in 'show tech-support save' output |
+| VRVDR-47601 | Major | VRRP retains MASTER when device is disabled due to license invalid/expired |
+| VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |
+| VRVDR-36174  | Major | A-Time in the output of, 'show vpn ike sa' is always 0 |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-48412 | 9.8 | DSA-4531-1 | CVE-2019-14821, CVE-2019-14835, CVE-201915117, CVE-2019-15118, CVE-2019-15902: Debian DSA-4531-1 : linux - security update |
+| VRVDR-47897 | 8.1 | DSA-4497-1 | CVE-2015-8553, CVE-2018-5995, CVE-2018-20836 , CVE-2018-20856, CVE-2019-1125, CVE-2019-3882, CVE-2019-3900, CVE-2019-10207, CVE-201910638, CVE-2019-10639, CVE-2019-13631, CVE-2019-13648, CVE-2019-14283, CVE-2019-14284: DSA-4497-1: Linux – security update |
 
 ## 1801zb
 {: #1801zb}

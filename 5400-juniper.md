@@ -34,23 +34,21 @@ To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with th
 
 1. Ensure that you have backed up your 5400 and stored the data in two different locations. This includes SSH keys, SSL certs, scripts and any other files necessary to recover your current Vyatta 5400 configuration, if necessary. To do so, follow [these instructions](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-backing-up-a-configuration).
 
-2. Contact nwom@us.ibm.com to request that your configuration be converted
-
-3. Order the new device, following the instructions for either [Juniper vSRX](/docs/infrastructure/vsrx?topic=vsrx-getting-started) or for [FSA -10G](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started). 
+2. Order the new device, following the instructions for either [Juniper vSRX](/docs/infrastructure/vsrx?topic=vsrx-getting-started) or for [FSA -10G](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started). 
 
   This is a good opportunity to consider ordering a High Availability solution.
   {: note}
 
-4. Load the configuration you received from nwom@us.ibm.com onto your newly ordered device.
+3. Load the configuration you received from nwom@us.ibm.com onto your newly ordered device.
 
-5. Schedule time to migrate your VLANs to your new device.
+4. Schedule time to migrate your VLANs to your new device.
 
   This step requires a brief downtime.
   {: note}
 
-6. Test and confirm your new device is functioning properly.
+5. Test and confirm your new device is functioning properly.
 
-7. Open a support ticket to cancel your Vyatta 5400 device.
+6. Open a support ticket to cancel your Vyatta 5400 device.
 
 ## Upgrading a Vyatta 5400 High Availability Pair
 {: #upgrading-a-vyatta-5400-high-availability-pair}
