@@ -23,7 +23,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**As of: Ocotober 16, 2019**
+**Patch received: October 10, 2019**
+
+**Published in documentation: October 16, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
