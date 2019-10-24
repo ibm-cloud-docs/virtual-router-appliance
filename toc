@@ -39,6 +39,7 @@ IBM Cloud Virtual Router Appliance
     /gateway-appliance/gateway-appliance-viewing-all-gateway-appliances
     /gateway-appliance/gateway-appliance-viewing-gateway-appliance-details
     /gateway-appliance/gateway-appliance-renaming-a-gateway-appliance
+    /gateway-appliance/gateway-appliance-cancel-gateway-appliance
     vra-basics.md
 
     {: .topicgroup}
