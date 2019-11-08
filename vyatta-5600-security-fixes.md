@@ -23,14 +23,34 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Patch received: October 10, 2019**
+**Patch received: October 25, 2019**
 
-**Published in documentation: October 16, 2019**
+**Published in documentation: November 9, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
+## 1801zd
+{: #1801zd}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-48717 | Major | Resources group address-group address-range entries do not work together with address entries |
+| VRVDR-48473 | Minor | Error getting Login User Id |
+| VRVDR-47596 | Minor | NAT used count is showing count larger than total available |
+| VRVDR-41091 | Minor | Off-by-one error in lcore id in copying rule stats |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-48746 | 9.8 | DSA-4547-1 | CVE-2018-10103, CVE-2018-10105, CVE-201814461, CVE-2018-14462, CVE-2018-14463, CVE2018-14464, CVE-2018-14465, CVE-2018-14466, CVE-2018-14467,CVE-2018-14468, CVE-201814469, CVE-2018-14470, CVE-2018-14879, CVE2018-14880, CVE-2018-14881, CVE-2018-14882, CVE-2018-16227, CVE-2018-16228, CVE-201816229, CVE-2018-16230, CVE-2018-16300, CVE2018-16451, CVE-2018-16452, CVE-2019-15166: Debian DSA-4547-1: tcpdump – security update |
+| VRVDR-48652 | N/A | DSA-4543-1 | CVE-2019-14287: Debian DSA-4543-1 : sudo - security update |
+| VRVDR-48502 | 5.3 | DSA-4539-1 | CVE-2019-1547, CVE-2019-1549, CVE-2019-1563: Debian DSA-4539-1 : openssl - security update |
+| VRVDR-48446 | 6.7 | DSA-4535-1 | CVE-2019-5094: Debian DSA-4535-1 : e2fsprogs - security update |
 
 ## 1801zc
 {: #1801zc}
