@@ -11,7 +11,7 @@ subcollection: virtual-router-appliance
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:new_window: target="_blank_"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Manage Your IBM Firewalls
+# Manage Firewalls
 {: #manage-your-ibm-firewalls}
 
 The {{site.data.keyword.vra_full}} (VRA) has the ability to process firewall rules to protect the VLANs routed through the device. The firewalls in the VRA can be broken into two steps:

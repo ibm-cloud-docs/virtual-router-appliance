@@ -11,7 +11,7 @@ subcollection: virtual-router-appliance
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:new_window: target="_blank_"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -77,7 +77,7 @@ The Vyatta 5400 to VRA (5600) Configuration Conversion Service is still availabl
 
 * Wanclouds, our partner in this conversion configuration process, has completed several hundred successful migration engagements. They will transform your existing Vyatta 5400 to create similar functionality on the Vyatta 5600 Platform. They provide their services in two tiers, described below:
 
-  <img src="images/tiers.png" alt="drawing" style="width: 700px;"/>
+  ![Tiers](images/tiers.png "Tiers")
 
 [Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
 

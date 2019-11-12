@@ -11,7 +11,7 @@ subcollection: virtual-router-appliance
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:new_window: target="_blank_"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -40,7 +40,7 @@ To order a VRA, perform the following procedure:
 
 2. From the **Gateway Vendor** section, select the **AT&T** option (when it is selected, a blue check mark appears on the button). From the drop down on that same button, choose your bandwidth (either 20Gbps or 2Gbps).
 
-  	<img src="images/ordering_vra.png" alt="drawing" style="width: 500px;"/>
+  	![Gateway vendor](images/ordering_vra.png "Gateway vendor")
 
 3. From the **Gateway appliance** section, enter your **Hostname** and **Domain** name information. These fields will already be populated with default information, so ensure the values are correct. Check the **High Availability** option if desired, then select your desired data center **Location**, and the specific **Pod** you want from the dropdown menu.
 
@@ -49,7 +49,7 @@ To order a VRA, perform the following procedure:
 
 4. From the **Configuration** section, choose your processor's RAM. You can also define an SSH key, if you want to use it to authenticate access to your new Gateway.
 
-  <img src="images/ordering_vra_2.png" alt="drawing" style="width: 600px;"/>
+  ![Configuration](images/ordering_vra_2.png "Configuration")
 
   The appropriate processor is chosen for you based on the license version you selected in step two. You can choose different RAM configurations, however.
   {: note}
@@ -73,7 +73,7 @@ To order a VRA, perform the following procedure:
 
 After your order is approved, the provisioning of your {{site.data.keyword.vra_full}} starts automatically. When the provisioning process is complete, the new VRA will appear in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page. You will find the IP addresses, login username, and password for the device.  
 
-  <img src="images/gateway_details.png" alt="drawing" style="width: 500px;"/>
+  ![Gateway details](images/gateway_details.png "Gateway details")
 
 Remember that once you order and configure your VRA from the IBM Cloud Catalog, you must also configure the device itself with the same settings.
 {: tip}
