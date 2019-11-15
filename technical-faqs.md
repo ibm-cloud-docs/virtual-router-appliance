@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: faqs, vlan, traffic, firewall, SSH,
 
@@ -24,7 +24,8 @@ subcollection: virtual-router-appliance
 # Technical FAQs for IBM Cloud Virtual Router Appliance
 {: #technical-faqs-for-ibm-virtual-router-appliance}
 
-The following frequently asked questions address the configuration of the {{site.data.keyword.vra_full}} (VRA), and migrating to the VRA from Vyatta 5400.
+These frequently asked questions address the configuration of the {{site.data.keyword.vra_full}} (VRA), as well as issues surrounding migrating to the VRA from Vyatta 5400.
+{: shortdesc}
 
 ## How do I allow Internet-bound traffic from hosts that are on a private VLAN?
 {: faq}

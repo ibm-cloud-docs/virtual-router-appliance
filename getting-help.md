@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: help, support, troubleshooting
 
@@ -24,6 +24,7 @@ subcollection: virtual-router-appliance
 {: #getting-help-and-support-for-ibm-virtual-router-appliance}
 
 If you have problems or questions when using the {{site.data.keyword.vra_full}}, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
+{: shortdesc}
 
 When using the forums to ask a question, tag your question so that it is seen by the IBM Cloud development teams.
 

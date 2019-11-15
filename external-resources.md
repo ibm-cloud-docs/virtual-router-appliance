@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: resources, partners, blog, brief
 
@@ -24,7 +24,8 @@ subcollection: virtual-router-appliance
 # Other Resources for IBM Cloud Virtual Router Appliance
 {: #other-resources-or-ibm-virtual-router-appliance}
 
-These resources are created by IBM© and some of our partners and customers.
+There are additional {{site.data.keyword.vra_full}} resources created by IBM and some of our partners and customers.
+{: shortdesc}
 
 * [**Product Brief: AT&T Vyatta vRouter: Agile Networking and High Performance** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/final_vyatta_product_brief_june_2018_2.pdf){:new_window}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: troubleshooting, vfp, problems, nat, dnat, gre
 
@@ -23,7 +23,8 @@ subcollection: virtual-router-appliance
 # Troubleshooting your VFP Interface
 {: #troubleshooting-your-vfp-interface}
 
-This topic contains troubleshooting information for VFP interfaces.
+There is troubleshooting information for VFP interfaces that you may find useful.
+{: shortdesc}
 
 * A VFP interface is not a "real" interface, such as `dp0bond0` (or even a VIF or TUN). It is a placeholder for the firewall and NAT processes to hang an interface so they can process traffic properly. You can still route traffic over a VFP like a regular interface, but `tshark` and other monitor commands will reveal no traffic.
 * With NAT, you must use a more specific subnet range to get traffic routed to the VFP, rather than the kernel route that is created by IPsec. If a static route is not set, then the kernel route will be followed. You can test this using `show ip route x.x.x.x`.

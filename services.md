@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "20189-11-14"
 
 keywords: configure, service, NAT
 
@@ -23,7 +23,10 @@ subcollection: virtual-router-appliance
 # Configuring Services
 {: #configuring-your-services}
 
-There are a variety of services running on the {{site.data.keyword.vra_full}} (VRA) that can be configured, including:
+There are a variety of services running on the {{site.data.keyword.vra_full}} (VRA) that can be configured.
+{: shortdesc}
+
+They include:
 
 `vyatta@vrouter# set service`
 

@@ -2,8 +2,9 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
+keywords: vyatta, 5400, vrouter, security, fix, fixes
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,6 +23,7 @@ lastupdated: "2018-11-10"
 **As of: August 30, 2018**
 
 This document lists the security vulnerability fixes for the Vyatta 5400 vRouter. When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+{: shortdesc}
 
 ## 6.7R14S10
 {: #6-7r14s10}

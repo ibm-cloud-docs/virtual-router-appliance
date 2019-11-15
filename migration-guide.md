@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2019-03-07"
+lastupdated: "2019-11-14"
 
 keywords: 5400, 5600, migration, overview, upgrade, brocade
 
@@ -30,6 +30,7 @@ Legacy Vyatta 5400 customers should migrate to {{site.data.keyword.vra_full}} (V
 {: #how-upgrading-can-benefit-you}
 
 In addition to a variety of new features and capabilities that IBM's {{site.data.keyword.vra_full}} brings to the table, there are also a number of improvements it provides as well. Refer to our [FAQs](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-faqs-for-ibm-virtual-router-appliance#what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-) for more details.
+{: shortdesc}
 
 Upgrading to a new device will have a different configuration from the Vyatta 5400. As a result, a Vyatta 5400 configuration (file) will not transfer to your new appliance.
 {: note}

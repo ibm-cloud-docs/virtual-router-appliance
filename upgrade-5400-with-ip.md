@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2019-03-03"
+lastupdated: "2019-11-14"
 
 keywords: 5400, 5600, migrate, upgrade, migration, ip, standalone, ha
 
@@ -23,6 +23,7 @@ subcollection: virtual-router-appliance
 {: #upgrading-the-vyatta-5400-and-reusing-its-ip-addresses}
 
 This option allows you to reuse your existing Vyatta 5400 device as an equivalent {{site.data.keyword.vra_full}} (VRA), and keep your associated IP addresses. The following procedures provide instructions for upgrading either a stand alone Vyatta 5400, or two Vyatta 5400 devices operating in a High Availability (HA) pair.
+{: shortdesc}
 
 ## Upgrading a Stand Alone Vyatta 5400
 {: #upgrading-a-stand-alone-vyatta-5400}

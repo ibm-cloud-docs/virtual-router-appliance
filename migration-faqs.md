@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2019-03-14"
+lastupdated: "2019-11-14"
 
 keywords: 5400, migrate, migration, support, faqs, eos
 
@@ -24,7 +24,8 @@ subcollection: virtual-router-appliance
 # Vyatta 5400 End of Support FAQs
 {: #vyatta-5400-end-of-support-faqs}
 
-The following are frequently asked questions when migrating from the Vyatta 5400.
+These frequently asked questions can help you when migrating from the Vyatta 5400 to the {{site.data.keyword.vra_full}}.
+{: shortdesc}
 
 ## Why is the Vyatta 5400’s “End of Support” (EoS) on March 31, 2019?
 {: faq}

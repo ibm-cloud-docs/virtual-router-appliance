@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,7 +13,8 @@ lastupdated: "2018-11-10"
 # Basic Configuration of Vyatta 5400
 {: #basic-configuration-of-vyatta-5400}
 
-Perform the following procedure to configure your Vyatta 5400.
+You can configure your Vyatta 5400 using the procedure here.
+{: shortdesc}
 
 The public virtual LAN (VLAN) 1224, which is now associated and routed, needs to be configured before it can pass traffic. Two pieces of information are needed to complete the configuration:
 

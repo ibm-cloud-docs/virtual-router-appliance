@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-10-16"
+lastupdated: "2019-11-14"
 
 keywords: 5600, security, fixes, patches, brocade, os
 
@@ -28,6 +28,7 @@ subcollection: virtual-router-appliance
 **Published in documentation: November 9, 2019**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
+{: shortdesc}
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
@@ -192,14 +193,14 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 **Security Vulnerabilities Resolved**
 
-The following commands have been deprecated from this patch and are no longer available: 
-  • policy route pbr <name> rule <rule-number> application name <name> 
-  • policy route pbr <name> rule <rule-number> application type <type> 
-  • policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name> 
-  • policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type> 
-  • security application firewall name <name> rule <rule-number> name <app-name> 
+The following commands have been deprecated from this patch and are no longer available:
+  • policy route pbr <name> rule <rule-number> application name <name>
+  • policy route pbr <name> rule <rule-number> application type <type>
+  • policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name>
+  • policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type>
+  • security application firewall name <name> rule <rule-number> name <app-name>
 
-Running any of the above commands will result with the error message “This feature is disabled.” 
+Running any of the above commands will result with the error message “This feature is disabled.”
 
 ## 1801w
 {: #1801w}

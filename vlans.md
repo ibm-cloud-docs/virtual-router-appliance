@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: vlan, route
 
@@ -24,8 +24,9 @@ subcollection: virtual-router-appliance
 {: #routing-your-vlans}
 
 The {{site.data.keyword.vra_full}} is able to route multiple VLANs over the same network interface (for example, `dp0bond0` or `dp0bond1`). This is accomplished by setting the switch port into trunk mode and configuring virtual interfaces (VIFs) on the device.
+{: shortdesc}
 
-For example:  
+For example: 
 
 ```
 set interfaces bonding dp0bond0 vif 1432 address 10.0.10.14
@@ -37,12 +38,12 @@ The commands above create two virtual interfaces on the `dp0bond0` interface for
 ## High Availability Commands
 {: #high-availability-commands}
 
-For a High Availability (HA) pair of VRAs, the commands will be different, as shown below. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` private space and are only used for Layer 2 connectivity between the VRAa. More specifically, that connection is used for VRRP advertisements. 
+For a High Availability (HA) pair of VRAs, the commands will be different, as shown below. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` private space and are only used for Layer 2 connectivity between the VRAa. More specifically, that connection is used for VRRP advertisements.
 
-The first command below can also be used on a single VRA that is not set up for High Availability. 
+The first command below can also be used on a single VRA that is not set up for High Availability.
 {: tip}
 
-For more information, please see [Associated VLAN subnets with VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp). 
+For more information, please see [Associated VLAN subnets with VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp).
 {: note}
 
 On the first (or only) VRA, run the following commands:

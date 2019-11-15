@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-11-14"
 
 keywords: vra, view, appliances
 
@@ -24,6 +24,7 @@ subcollection: virtual-router-appliance
 {: #view-all-vras}
 
 The Gateway Appliances screen in the {{site.data.keyword.cloud}} IBM Cloud console is where you can display and access all Network Gateway Appliances which includes the {{site.data.keyword.vra_full}}s.  
+{: shortdesc}
 
 Perform the following procedure to access the Gateway Appliances screen.
 

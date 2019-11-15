@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2019-08-28"
+lastupdated: "2019-11-14"
 
 keywords: vra, virtual router, order
 
@@ -25,6 +25,7 @@ subcollection: virtual-router-appliance
 {: #getting-started}
 
 The {{site.data.keyword.vra_full}} (VRA) provides the latest Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or standalone configuration, and lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features.
+{: shortdesc}
 
 VRA minimum server requirements call for 8 GB of RAM and one CPU core for every 10 Gbps of network capacity. For example, a system with dual 10 Gbps public and private uplinks requires at least four cores. Also, if your intent is to setup VPN services with encryption, you may want to add additional cores. Adding additional cores for VPN Services will ensure the VRA will not get bogged down by heavy load(s) when routing and simultaneously encrypting/decrypting data.
 

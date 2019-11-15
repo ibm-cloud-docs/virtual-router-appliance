@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: ipsec, firewall, configure, policy
 
@@ -24,10 +24,11 @@ subcollection: virtual-router-appliance
 {: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}
 
 In previous versions of the {{site.data.keyword.vra_full}}, IPsec tunnels using policy based routing did not work well with zone firewalls. With version 18.01, there is a new set of commands which addresses this issue, using "virtual feature points" to enable the traffic from designated tunnels, where the feature point acts as an interface that provides an endpoint to include in a zone policy configuration.
+{: shortdesc}
 
 An example configuration of two machines with IPsec between them follows:
 
-###Machine A
+### Machine A
 {: #machine-a}
 
 ```
@@ -46,7 +47,7 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 local prefix '172
 set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '172.16.100.1/30'
 ```
 
-###Machine B
+### Machine B
 {: #machine-b}
 
 ```

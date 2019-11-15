@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-11-14"
 
 keywords: vra, details, view, gateway
 
@@ -24,6 +24,7 @@ subcollection: virtual-router-appliance
 {: #view-vra-details}
 
 Network Gateways are used to control network traffic on a VLAN that is regularly controlled by a router. Within the Gateway Appliance Details screen in the {{site.data.keyword.cloud}} IBM Cloud console, you can associate, disassociate, route and bypass VLANs associated with a Network Gateway.
+{: shortdesc}
 
 Perform the following procedure to access the Gateway Details screen.
 

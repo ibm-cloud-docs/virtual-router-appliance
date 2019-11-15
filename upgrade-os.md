@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: upgrade, os
 
@@ -24,6 +24,7 @@ subcollection: virtual-router-appliance
 {: #upgrading-the-os}
 
 Upgrading the VRA operating system can be performed with the command ``add system image`` on a local ISO file uploaded by our Support team. A list of available Vyatta upgrade versions can be obtained using the IBM© Support Ticket system.
+{: shortdesc}
 
 To begin the upgrade process, open a ticket with the IBM Support Ticket system requesting an upgrade and that a new ISO image be uploaded to your system. You will receive an e-mail from IBM Support indicating where the ISO file was uploaded. In the example below, it is in the directory ``tmp``.
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
-keywords: upgrade, issues, troubleshooting
+keywords: upgrade, issues, troubleshooting, vyatta
 
 subcollection: virtual-router-appliance
 
@@ -24,6 +24,7 @@ subcollection: virtual-router-appliance
 {: #upgrade-issues}
 
 Occasionally, after a successful upgrade and reboot of a new version of the Vyatta OS, you may encounter an issue where you are unable to issue user commands.
+{: shortdesc}
 
 For example:
 

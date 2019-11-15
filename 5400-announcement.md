@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2019-07-25"
+lastupdated: "2019-11-14"
 
 keywords: 5400, migrate, migration, 5600, support
 
@@ -24,6 +24,7 @@ subcollection: virtual-router-appliance
 {: #vyatta-5400-end-of-support-announcement}
 
 Support for the legacy Vyatta 5400 offering will end on March 31, 2019. This date is largely driven by the fact that the underlying Debian 7 software kernel that the Vyatta 5400 code is built on will no longer have Debian community support.
+{: shortdesc}
 
 After March 31, 2019, the vendor for Vyatta 5400 (AT&T, who acquired the Vyatta product line from Brocade in 2017) will no longer provide any code patches or accept support escalations for the device.
 

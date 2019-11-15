@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: nat, setup, 5400
 
@@ -24,6 +24,7 @@ subcollection: virtual-router-appliance
 {: #setting-up-nat-rules-on-vyatta-5400}
 
 This topic contains examples of the Network Address Translation (NAT) rules used on a Vyatta.
+{: shortdesc}
 
 ## One-to-many NAT rule (masquerade)
 {: #one-to-many-nat-rule-masquerade-}

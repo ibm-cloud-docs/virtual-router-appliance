@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2019-04-09"
+lastupdated: "2019-11-14"
 
 keywords: docs, supplemental, documentation, help, vyatta, brocade, 18
 
@@ -23,7 +23,8 @@ subcollection: virtual-router-appliance
 # Supplemental VRA documentation (Current)
 {: #supplemental-vra-documentation}
 
-This topic contains links to supplemental documentation for the Vyatta 5600 OS newer than 17.2. For archived supplemental documentation for the Vyatta 5600 OS older than 17.2, refer to [this topic](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation-archived#supplemental-vra-documentation-archived).
+You can find links to supplemental documentation here for the Vyatta 5600 OS newer than 17.2. For archived supplemental documentation for the Vyatta 5600 OS older than 17.2, refer to [this topic](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation-archived#supplemental-vra-documentation-archived).
+{: shortdesc}
 
 | Vyatta Documentation  | Description |
 | ------------- | ------------- |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: vlan, associate, gateway, route, bypass, disassociate
 
@@ -23,7 +23,8 @@ subcollection: virtual-router-appliance
 # Managing Your VLANs
 {: #managing-your-vlans}
 
-You can perform a variety of actions from the [Gateway Appliance Details screen](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details).
+You can perform a variety of actions from the [Gateway Appliance Details screen](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) to maintain your {{site.data.keyword.vra_full}}.
+{: shortdesc}
 
 ## Associate a VLAN to a Gateway Appliance
 {: #associate-a-vlan-to-a-gateway-appliance}

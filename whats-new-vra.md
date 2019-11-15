@@ -4,7 +4,7 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
-keywords: updates, changes, additions
+keywords: updates, changes, additions, vyatta, vra, virtual router appliance
 
 subcollection: virtual-router-appliance
 
@@ -25,6 +25,7 @@ subcollection: virtual-router-appliance
 {: #recent-updates-for-ibm-virtual-router-appliance}
 
 Find out about new and updated features in {{site.data.keyword.vra_full}} (VRA).
+{: shortdesc}
 
 ## August 2018
 {: #august-2018}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: faq, faqs, questions, gateway, vrouter, vyatta, 5400, 5600, password, traffic, firewall, provision, login, ha, high availability
 
@@ -24,7 +24,8 @@ subcollection: virtual-router-appliance
 # FAQs for IBM Cloud Virtual Router Appliance
 {: #faqs-for-ibm-virtual-router-appliance}
 
-The following are frequently asked questions when working with the {{site.data.keyword.vra_full}} (VRA).
+These frequently asked questions can help you when working with the {{site.data.keyword.vra_full}} (VRA).
+{: shortdesc}
 
 ## What is a VRA?
 {: faq}

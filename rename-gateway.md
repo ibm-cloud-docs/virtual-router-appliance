@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: gateway, rename
 
@@ -23,7 +23,8 @@ subcollection: virtual-router-appliance
 # Renaming a VRA
 {: #renaming-a-vra}
 
-Network Gateways are given unique names that assist users in their identification. At any time, a Gateway name may be changed. It is recommended that you use a consistent naming convention to more easily identify Gateways.
+{{site.data.keyword.vra_full}} gateways are given unique names that assist users in their identification. At any time, a gateway name may be changed. It is recommended that you use a consistent naming convention to more easily identify gateways.
+{: shortdesc}
 
 Perform the following procedure to rename a Network Gateway:
 

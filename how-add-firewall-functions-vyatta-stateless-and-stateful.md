@@ -1,7 +1,9 @@
 ---
 copyright:
   years: 1994, 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
+
+keywords: vyatta, 5400, firewall functions, add, stateless, stateful, adding
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,7 +15,8 @@ lastupdated: "2018-11-10"
 # Adding Firewall Functions to Vyatta 5400 (stateless and stateful)
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
-Applying firewall rule sets to each interface is one method of firewalling when using Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall instances - In, Out, and Local - and each instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall will apply the specific action of the matching rule.
+Applying firewall rule sets to each interface is one firewall method when using Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall instances - In, Out, and Local - and each instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall will apply the specific action of the matching rule.
+{: shortdesc}
 
 For any of the three firewall instances below, **only one** can be applied.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-11-10"
+lastupdated: "2019-11-14"
 
 keywords: docs, supplemental, documentation, help, vyatta, brocade
 
@@ -23,7 +23,8 @@ subcollection: virtual-router-appliance
 # Supplemental VRA documentation (Archived)
 {: #supplemental-vra-documentation-archived}
 
-This topic contains links to supplemental documentation for the Vyatta 5600 OS older than 17.2.
+You can find links here to supplemental documentation for the Vyatta 5600 OS older than 17.2.
+{: shortdesc}
 
 Vyatta Documentation  | Description
 ------------- | -------------
@@ -34,7 +35,7 @@ Vyatta Documentation  | Description
 [Brocade Vyatta Network OS Services Configuration Guide, 5.2R1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-services.pdf){:new_window} | This guide describes how to configure the DHCP, DHCPv6, DNS, flow monitoring, NHRP, sFlow, TWAMP, and port monitoring services on the Brocade Vyatta Network OS (referred to as a virtual router, vRouter, or router in the guide).
 [Brocade Vyatta Network OS High Availability Configuration Guide, 5.2R1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-high-availability.pdf){:new_window}  | This guide describes how to configure Brocade products that run on the Brocade Vyatta Network OS (referred to as a virtual router, vRouter, or router in the guide) to provide high availability.
 [Brocade Vyatta Network OS Remote Management Configuration Guide, 5.2R1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-remote-management.pdf){:new_window}  | This guide describes how to configure SSH, Telnet, Web GUI access (HTTPS), NETCONF and SNMP for remote management of theBrocade 5600 vRouter (referred to as a virtual router, vRouter, or router in the guide).
-[IPv6 Support Configuration Guide, 5.2R1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipv6_configuration_5600.pdf){:new_window} | This guide describes IPv6 support on AT&T products that run on the AT&T Vyatta Network OS (referred to as a virtual router, vRouter, or router in the guide). 
+[IPv6 Support Configuration Guide, 5.2R1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipv6_configuration_5600.pdf){:new_window} | This guide describes IPv6 support on AT&T products that run on the AT&T Vyatta Network OS (referred to as a virtual router, vRouter, or router in the guide).
 [Brocade Vyatta Network OS NAT Configuration Guide, 5.2R1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-nat.pdf){:new_window}  | This guide describes how to configure NAT on Brocade products that run on the Brocade Vyatta Network OS (referred to as a virtual router, vRouter, or router in the guide).
 [Brocade Vyatta Network OS Policy-based Routing Configuration Guide, 5.2R1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-policy-based-routing.pdf){:new_window}  | This guide describes how to define and configure routing policies on Brocade products that run on the Brocade Vyatta Network OS (referred to as a virtual router, vRouter, or router in the guide).
 [Brocade Vyatta Network OS Firewall Configuration Guide, 5.2R1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-firewall.pdf){:new_window}  | This guide describes firewall functionality on the Brocade 5600 vRouter (referred to as a virtual router, vRouter, or router in the guide).
