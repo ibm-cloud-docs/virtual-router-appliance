@@ -61,9 +61,9 @@ delete interfaces bonding dp0bond1 vrrp vrrp-group 2 'disable'
 ## VRRP group
 {: #vrrp-group}
 
-A VRRP group consists of a cluster of interfaces or virtual interfaces that provide redundancy for a primary, or “master,” interface in the group. Each interface in the group is typically on a separate router. Redundancy is managed by the VRRP process on each system. The VRRP group has a unique numeric identifier and can be assigned up to 20 virtual IP addresses.  
+A VRRP group consists of a cluster of interfaces or virtual interfaces that provide redundancy for a primary, or “master,” interface in the group. The VRRP group defines the `virtual_router_id` in the Keepalive configuration. In the VRRP protocol itself it is referred to as the VRID. The VRRP group has a unique numeric identifier and can be assigned up to 20 virtual IP addresses.  
 
-The VRRP group ID is assigned by by IBM Cloud and should not be changed. When a new gateway group is provisioned behind a Front Customer Router (FCR)/Backend Customer Router (BCR) for the first time, it will receive a VRRP group of 1. Subsequent gateway group provisions will increment this value to prevent conflicts, the next group will have group 2, then group 3, and so on. It is then calculated and assigned by the provisioning process. Altering this value risks collision with other active groups, and then master/master contention, which will likely cause an outage on both gateway groups.
+The VRRP group ID is assigned by by IBM Cloud and should not be changed. When a new gateway group is provisioned behind a Frontend Customer Router (FCR)/Backend Customer Router (BCR) for the first time, it will receive a VRRP group of 1. Subsequent gateway group provisions will increment this value to prevent conflicts, the next group will have group 2, then group 3, and so on. It is then calculated and assigned by the provisioning process. Altering this value risks collision with other active groups, and then master/master contention, which will likely cause an outage on both gateway groups.
 
 If you migrate from a previous configuration, it is recommended that you double check your configuration code to make sure the VRRP group ID is not statically assigned.
 
