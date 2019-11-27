@@ -32,28 +32,6 @@ Note that it is the public side VLAN where the compute option is located - not t
 
 3. Click your VLAN in the list, and click the **Subnet** where you see your Gateway. Make a note of the mask Classless Inter-Domain Routing (CIDR) details located after the slash.
 
-## In the Vyatta GUI
-{: #in-the-vyatta-gui}
-
-1. From the dashboard, click the **Configuration** tab.
-
-2. Expand **Interfaces > Bonding > bond1** on the left side of the screen; highlight **vif**.
-
-3. Enter the VLANs "name" in the **vif** field (1224 for our purposes) and click the **Create** button. The process will take a few seconds to complete.
-
-4. Select the newly created **vif 1224** under the **vif** twisty.
-
-5. Check the box under **dhcp** and type the default gateway IP address and the mask CIDR notation of the VLAN you want to pass through the Brocade 5400 vRouter (for example, VLAN 1224).
-
-6. Click the **Set** button and click **Commit**.
-
-7. Click **Save** in the middle menu bar otherwise the configuration rolls back to its' default the next time the system is rebooted.
-
-The configuration rollback can be a very useful feature if you break your configuration while testing changes. As long as the changes are not saved you can reboot the server from the Web Portal and restore your previous configuration.
-{: note}
-
-8. Click on the Statistics tab and open the new interface to verify and monitor traffic.
-
 ## Configure the private VLAN using the CLI
 {: #configure-the-private-vlan-using-the-cli}
 
