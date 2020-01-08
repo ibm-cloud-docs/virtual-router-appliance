@@ -48,7 +48,7 @@ To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with th
 
 5. Test and confirm that your new device is functioning properly.
 
-6. Open a support ticket to cancel your Vyatta 5400 device.
+6. Open a support case to cancel your Vyatta 5400 device.
 
 ## Upgrading a Vyatta 5400 High Availability Pair
 {: #upgrading-a-vyatta-5400-high-availability-pair}
@@ -68,4 +68,4 @@ To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 
 5. Test and confirm that your new device is functioning properly.
 
-6. Open a support ticket to cancel your Vyatta 5400 devices.
+6. Open a support case to cancel your Vyatta 5400 devices.
