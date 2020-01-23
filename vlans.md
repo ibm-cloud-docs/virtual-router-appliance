@@ -38,7 +38,7 @@ The commands above create two virtual interfaces on the `dp0bond0` interface for
 ## High Availability Commands
 {: #high-availability-commands}
 
-For a High Availability (HA) pair of VRAs, the commands will be different, as shown below. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` private space and are only used for Layer 2 connectivity between the VRAa. More specifically, that connection is used for VRRP advertisements.
+For a High Availability (HA) pair of VRAs, the commands are different, as shown in this section. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` or `172.16.0.0/12` private space and are only used for Layer 2 connectivity between the VRAs. More specifically, that connection is used for VRRP advertisements. In addition, the virtual-addresses in the following examples are the gateway IP addresses for each of a customer's primary or secondary subnets.
 
 The first command below can also be used on a single VRA that is not set up for High Availability.
 {: tip}
