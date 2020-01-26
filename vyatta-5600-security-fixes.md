@@ -23,6 +23,44 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter Software Patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
+**Patch received: January 17, 2020**
+
+**Published in documentation: January 27, 2020**
+
+This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number. With versions 17.1 and newer, patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
+{: shortdesc}
+
+When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+## 1801ze
+{: #1801ze}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-49402 | Blocker | Non-GRE Tunnel intfs fail to come back to up state after toggling state |
+| VRVDR-49137 | Major | Syslog rate-limit not respected for above 65000 messages per interval |
+| VRVDR-48992 | Minor | Syslog generates message "Child xxxxx has terminated, reaped by main-loop" at wrong priority |
+| VRVDR-48719 | Minor | Perl traceback when deleting resources group address-group addressrange |
+| VRVDR-48705 | Major | High volume of csync logs causing firewall logs to be suppressed |
+| VRVDR-48585 | Major | ICMP Unreachable not returned when decrypted IPsec packet is too large to pass tunnel interface MTU |
+| VRVDR-48057 | Minor | Add additional IPSec debug support to tech-support |
+| VRVDR-47681 | Critical | Resetting a single VRRP group causes all VRRP groups to reset |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-49486 | 5.3 | DSA-4594-1 | CVE-2019-1551: Debian DSA-4594-1 : openssl1.0 - security update |
+| VRVDR-49477 | 7.5 | DSA-4591-1 | CVE-2019-19906: Debian DSA-4591-1 : cyrus-sasl2 - security update |
+| VRVDR-49450 | 9.8 | DSA-4587-1 | CVE-2019-15845, CVE-2019-16201, CVE-201916254, CVE-2019-16255: Debian DSA-4587-1 : ruby2.3 - security update |
+| VRVDR-48841 | 9.8 | DSA-4550-1 | CVE-2019-18218: Debian DSA-4550-1 : file - security update |
+| VRVDR-48691 | 7.5 | DSA-4544-1 | CVE-2019-16866: Debian DSA-4544-1: unbound security update |
+| VRVDR-48133 | 8.8 | DSA-4512-1 | CVE-2019-13164, CVE-2019-14378: Debian DSA4512-1: qemu – security update |
+| VRVDR-48132 | 7.5 | DSA-4511-1 | CVE-2019-9511, CVE-2019-9513: Debian DSA-45111: nghttp2 – security update |
+| VRVDR-47885 | 8.1 | DSA-4495-1 | CVE-2018-20836, CVE-2019-1125, CVE-2019-1999, CVE-2019-10207, CVE-2019-10638, CVE-201912817, CVE-2019-12984, CVE-2019-13233, CVE2019-13631, CVE-2019-13648, CVE-2019-14283, CVE-2019-14284: Debian DSA-4495-1: linux – security update |
+
 **Patch received: October 25, 2019**
 
 **Published in documentation: November 9, 2019**
