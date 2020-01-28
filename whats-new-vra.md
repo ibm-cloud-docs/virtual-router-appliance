@@ -21,8 +21,8 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Recent Updates for IBM Cloud Virtual Router Appliance
-{: #recent-updates-for-ibm-virtual-router-appliance}
+# Release notes for IBM Cloud Virtual Router Appliance
+{: #release-notes-for-ibm-virtual-router-appliance}
 
 Find out about new and updated features in {{site.data.keyword.vra_full}} (VRA).
 {: shortdesc}
