@@ -49,7 +49,6 @@ SSH keys can also be supplied during deployment to avoid needing the Vyatta acco
 $ configure
 # set service ssh disable-password-authentication
 # commit
-# save
 ```
 
 ## Accessing the Device Using the Web GUI
@@ -61,7 +60,6 @@ Log into the VRA using the SSH instructions above, then run the following comman
 $ configure
 # set service https listen-address 169.45.21.2
 # commit
-# save
 ```
 
 After these commands complete, enter `https://<ip.address>` in your browser's address bar, replacing the IP address with your VRA's. You may be asked to accept the VRA's self-issued certificate. Do so, then log into the Web interface with your Vyatta credentials when prompted.
@@ -75,9 +73,7 @@ After these commands complete, enter `https://<ip.address>` in your browser's ad
 
 The VRA's shell is a modal interface, with several modes of operation. The primary/default mode is **Operational**, and this will be the mode presented upon login. In **Operational** mode, you can view information and issue commands which impact the current run of the system, such as setting the date/time or rebooting the device.
 
-The command `configure` places the user into **Configuration** mode, where edits to the configuration can be performed. Note that configuration changes do not take place immediately; they must be committed and saved. As commands are entered, they go into a configuration buffer. Once all the necessary commands are entered, run the `commit` command to make the changes take effect.
-
-To save commands permanently, run the `save` command after the `commit` command.
+The command `configure` places the user into **Configuration** mode, where edits to the configuration can be performed. Note that configuration changes do not take place immediately; they must be committed. As commands are entered, they go into a configuration buffer. Once all the necessary commands are entered, run the `commit` command to make the changes take effect.
 
 Operational mode commands can be run from Configuration mode by starting the command with `run`. For example:
 
