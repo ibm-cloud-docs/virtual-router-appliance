@@ -169,18 +169,18 @@ Use the `openvpn-option` parameter instead of `push-route`.
 
 Use Implicit allow rules to accept traffic across VIF interfaces.
 
-## IPSec
+## IPsec
 {: #ipsec}
 
 ### Issues
 {: #issues-10}
 
-IPSec (Prefix-Based) does not work with IN Filter.
+IPsec (Prefix-Based) does not work with IN Filter.
 
 ### Workarounds
 {: #workarounds-10}
 
-Use IPSec (VTI BASED).
+Use IPsec (VTI BASED).
 
 ## IPSEC "match-none"
 {: #ipsec-match-none-}
@@ -192,7 +192,7 @@ With Vyatta 5400 devices, the following firewall rule is allowed:
 
 set firewall name allow rule 10 ipsec
 
-However, with {{site.data.keyword.vra_full}}, there is no IPSec.
+However, with {{site.data.keyword.vra_full}}, there is no IPsec.
 
 ### Workarounds
 {: #workarounds-11}
@@ -215,7 +215,7 @@ With Vyatta 5400 devices, the following firewall rules are allowed:
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 
-However, with {{site.data.keyword.vra_full}}, there is no IPSec.
+However, with {{site.data.keyword.vra_full}}, there is no IPsec.
 
 ### Workarounds
 {: workarounds-12}
@@ -243,7 +243,7 @@ set security firewall name <name> rule <rule-no> protocol esp
 ### Issues
 {: #issues-13}
 
-IPSec (Prefix-Based) does not work with DNAT.                                                                                                             
+IPsec (Prefix-Based) does not work with DNAT.                                                                                                             
 
 ```
 server (10.71.68.245) -- vyatta 1 (11.0.0.1)
@@ -252,9 +252,9 @@ vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
 
-The above snippet is a small setup example for DNAT translation after an IPSec packet has been decrypted in a Vyatta 5400. In the example there are two vyattas, `vyatta1 (11.0.0.1)` and `vyatta2 (12.0.0.1)`. IPsec peering is established between `11.0.0.1` and `12.0.0.1`. In this case, the client is targeting `172.16.1.245` sourced from `10.103.0.1` end-to-end. The expected behavior of this scenario is that the destination address `172.16.1.245` will translate to `10.71.68.245` in the packet header.
+The above snippet is a small setup example for DNAT translation after an IPsec packet has been decrypted in a Vyatta 5400. In the example there are two vyattas, `vyatta1 (11.0.0.1)` and `vyatta2 (12.0.0.1)`. IPsec peering is established between `11.0.0.1` and `12.0.0.1`. In this case, the client is targeting `172.16.1.245` sourced from `10.103.0.1` end-to-end. The expected behavior of this scenario is that the destination address `172.16.1.245` will translate to `10.71.68.245` in the packet header.
 
-Initially, the Vyatta 5400 device was performing DNAT on the inbound IPSec, terminating the interface and returning traffic gracefully into the IPsec tunnel using the connection tracking table.
+Initially, the Vyatta 5400 device was performing DNAT on the inbound IPsec, terminating the interface and returning traffic gracefully into the IPsec tunnel using the connection tracking table.
 
 On a {{site.data.keyword.vra_full}}, the configuration does not function the same. The session is created, however the return traffic bypasses the IPsec tunnel after the conntrack table reverses the DNAT change. The VRA then sends the packet on the wire without IPsec encryption.  The upstream device is not expecting this traffic and will most likely drop it. While end to end connectivity is broken, this is intended behavior.   
 
@@ -341,7 +341,7 @@ PPTP is no longer supported in the {{site.data.keyword.vra_full}}.
 
 Use the L2TP protocol instead.
 
-## Script for IPSec Restart
+## Script for IPsec Restart
 {: #script-for-ipsec-restart}
 
 ### Issues

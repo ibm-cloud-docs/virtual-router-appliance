@@ -45,7 +45,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-48719 | Minor | Perl traceback when deleting resources group address-group addressrange |
 | VRVDR-48705 | Major | High volume of csync logs causing firewall logs to be suppressed |
 | VRVDR-48585 | Major | ICMP Unreachable not returned when decrypted IPsec packet is too large to pass tunnel interface MTU |
-| VRVDR-48057 | Minor | Add additional IPSec debug support to tech-support |
+| VRVDR-48057 | Minor | Add additional IPsec debug support to tech-support |
 | VRVDR-47681 | Critical | Resetting a single VRRP group causes all VRRP groups to reset |
 
 **Security Vulnerabilities Resolved**
@@ -122,7 +122,7 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 | VRVDR-47924 | Major | BGP 'show' output for default-vrf not captured in 'show tech-support' |
 | VRVDR-47869 | Minor | L2TP/IPsec with x.509 authentication fails due to incorrect path to certificates |
 | VRVDR-47711 | Minor | changing 'syslog global facility all level' overwrites individual 'facility <> level' settings |
-| VRVDR-47710 | Major | nhrp overloads IPSec daemon communication |
+| VRVDR-47710 | Major | nhrp overloads IPsec daemon communication |
 | VRVDR-47661 | Minor | L2TP in high availability pair will not allow connections after VRRP failover |
 | VRVDR-47606 | Major | Configuring "service https listen-address" bypasses the TLSv1.2 enforcement |
 | VRVDR-47543 | Blocker | Long Login Delay due to pam_systemd failed to create session |

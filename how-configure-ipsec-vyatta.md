@@ -12,10 +12,10 @@ keywords: configure, configuring, vyatta, 5400, ipsec
 {:important: .important}
 {:tip: .tip}
 
-# Configuring IPSec on Vyatta 5400
+# Configuring IPsec on Vyatta 5400
 {: #configuring-ipsec-on-vyatta-5400}
 
-The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regards to the Internet Security Protocol (IPSec) tunnel. Each of the following commands will perform different functions to configure IPSec site-to-site. Note that this example of IPSec site-to-site demonstrates the tunnel on SoftLayer's public network; use **bond0** for private IPSec site-to-site connections.
+The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regards to the Internet Security Protocol (IPsec) tunnel. Each of the following commands will perform different functions to configure IPsec site-to-site. Note that this example of IPsec site-to-site demonstrates the tunnel on SoftLayer's public network; use **bond0** for private IPsec site-to-site connections.
 {: shortdesc}
 
 1. "Tell" the tunnel the purpose of **interface bond1:**
@@ -40,18 +40,18 @@ The Brocade 5400 vRouter (Vyatta) device will be referred to as "local" in regar
   2\. *set vpn ipsec esp-group TestESP proposal 1 encryption aes128۪*<br/>
   3\. *set vpn ipsec esp-group TestESP proposal 1 hash sha1۪*<br/>
 
-4. Setup the IPSec site-to-site encryption parameters. The following commands will:
+4. Setup the IPsec site-to-site encryption parameters. The following commands will:
 
-  * Specify the remote side IP and that the IPSec will be using pre-shared secret
+  * Specify the remote side IP and that the IPsec will be using pre-shared secret
   * Use the remote IP and the secret key TestPSK
   * Set the default **esp** group for the tunnel to TestESP
-  * "Tell" the IPSec to use ike-group TestIKE, which was defined earlier<br/><br/>
+  * "Tell" the IPsec to use ike-group TestIKE, which was defined earlier<br/><br/>
   1\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication mode pre-shared-secret۪*<br/>
   2\. *set vpn ipsec site-to-site peer 169.54.254.117 authentication pre-shared-secret TestPSK۪*<br/>
   3\. *set vpn ipsec site-to-site peer 169.54.254.117 default-esp-group TestESP۪*<br/>
   4\. *set vpn ipsec site-to-site peer 169.54.254.117 ike-group TestIKE۪*<br/>
 
-5. Create the mapping for the IPSec tunnel. The following commands will, based on the example in the material:
+5. Create the mapping for the IPsec tunnel. The following commands will, based on the example in the material:
 
   * "Tell" the tunnel to map to the remote IP of 169.54.254.117 to the local IP address of bond1, 50.97.240.219
   * Route only IP addresses with the subnet of 10.54.9.152/29 that are on the local server interface to the remote server 169.54.254.117
