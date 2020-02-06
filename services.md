@@ -19,9 +19,13 @@ subcollection: virtual-router-appliance
 {:download: .download}
 {:note: .note}
 {:important: .important}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Configuring Services
 {: #configuring-your-services}
+{: help}
+{: support}
 
 There are a variety of services running on the {{site.data.keyword.vra_full}} (VRA) that can be configured.
 {: shortdesc}

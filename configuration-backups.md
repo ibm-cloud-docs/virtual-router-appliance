@@ -19,9 +19,13 @@ subcollection: virtual-router-appliance
 {:download: .download}
 {:note: .note}
 {:important: .important}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Backing Up a Configuration
 {: #backing-up-a-configuration}
+{: help}
+{: support}
 
 The configuration commands for your {{site.data.keyword.vra_full}} need to be backed up when there is a change to the system. This can be accomplished by running the operational mode command `show configuration commands` and then saving the output (for example by copying and pasting from the SSH session). This would be considered a minimum backup for the configuration.
 {: shortdesc}

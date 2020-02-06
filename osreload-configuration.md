@@ -19,9 +19,13 @@ subcollection: virtual-router-appliance
 {:download: .download}
 {:note: .note}
 {:important: .important}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Reloading the OS
 {: #reloading-the-os}
+{: help}
+{: support}
 
 The OS reload process, when initiated in the Cloud Catalog, will wipe away all configurations present on the device and restore it to its original configuration. Any changes made since the last load of the system will be erased. As a result, if you have made changes (for example to the VRRP group on another machine), the reloaded machine will likely have a conflict when it comes back online.
 {: shortdesc}

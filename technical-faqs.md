@@ -20,6 +20,7 @@ subcollection: virtual-router-appliance
 {:faq: data-hd-content-type='faq'}
 {:note: .note}
 {:important: .important}
+{:support: data-reuse='support'}
 
 # Technical FAQs for IBM Cloud Virtual Router Appliance
 {: #technical-faqs-for-ibm-virtual-router-appliance}
@@ -28,7 +29,9 @@ These frequently asked questions address the configuration of the {{site.data.ke
 {: shortdesc}
 
 ## How do I allow Internet-bound traffic from hosts that are on a private VLAN?
+{: #VLAN}
 {: faq}
+{: support}
 
 This traffic needs to obtain a public source IP, thus a Source NAT needs to masquerade the private IP with the public one of the VRA.
 
@@ -44,7 +47,9 @@ The configuration above only performs SNAT from traffic originating from servers
 This ensures it will not interfere with packets that already have an Internet-routeable source address.
 
 ## How can I filter Internet-bound traffic and only allow specific protocols/destinations?
+{: #specific-protocol}
 {: faq}
+{: support}
 
 This is a common question when Source NAT and a firewall need to be combined.
 
@@ -90,7 +95,9 @@ Note that the combination of Source NAT and firewall achieves the required desig
 Ensure that the rules are appropriate for your design, and that no other rules would allow traffic that should be blocked.
 
 ## How do I protect the VRA itself with a zone-based firewall?
+{: #zone-based}
 {: faq}
+{: support}
 
 The VRA does not have a `local zone`.
 
@@ -99,7 +106,9 @@ You can utilize the Control Plane Policing (CPP) functionality instead as it is 
 Note that this is a stateless firewall and you will need to explicitly allow the returning traffic of outbound sessions originating on the VRA itself.
 
 ## How do I restrict SSH and block connections coming from the internet?
+{: #SSH}
 {: faq}
+{: support}
 
 It is considered a best practice to not allow SSH connections from the internet, and to use another means of accessing the private address, such as SSL VPN.
 

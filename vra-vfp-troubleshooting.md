@@ -19,9 +19,12 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 {:download: .download}
+{:support: data-reuse='support'}
 
 # Troubleshooting your VFP Interface
 {: #troubleshooting-your-vfp-interface}
+{: troubleshoot}
+{: support}
 
 There is troubleshooting information for VFP interfaces that you may find useful.
 {: shortdesc}

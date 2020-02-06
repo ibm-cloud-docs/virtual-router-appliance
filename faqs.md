@@ -20,6 +20,7 @@ subcollection: virtual-router-appliance
 {:faq: data-hd-content-type='faq'}
 {:note: .note}
 {:important: .important}
+{:support: data-reuse='support'}
 
 # FAQs for IBM Cloud Virtual Router Appliance
 {: #faqs-for-ibm-virtual-router-appliance}
@@ -28,12 +29,16 @@ These frequently asked questions can help you when working with the {{site.data.
 {: shortdesc}
 
 ## What is a VRA?
+{: #what}
 {: faq}
+{: support}
 
 A {{site.data.keyword.vra_full}} (VRA) allows an IBM Cloud customer to selectively route private and public network traffic through a full-featured enterprise router with firewall, traffic shaping, policy-based routing, VPN, and a host of other features. All VRA features are customer-managed. VRA gives an IBM Cloud customer a degree of control normally reserved for on-premise networks.
 
 ## What is a Gateway Appliance?
+{: #gateway}
 {: faq}
+{: support}
 
 A Gateway Appliance fixture lets you use the Web portal or API to choose network segments (VLANs) to route through a VRA. You can change VLAN selections at any time. The Gateway Appliance also handles VRA high-availability (HA), configuring a second VRA to take over if the first one fails.
 
@@ -45,7 +50,9 @@ Vyatta was open source, PC-based router software that was acquired in full and t
 "vRouter" was a short-lived rebranding of Vyatta by its then-owner. When seen in documentation, it can be considered synonymous with Vyatta.
 
 ## Is Vyatta 5400 still supported?
+{: #5400}
 {: faq}
+{: support}
 
 IBM will no longer support Vyatta 5400 as of March 31, 2019.
 
@@ -85,7 +92,9 @@ Yes, but it can only manage traffic between the VRA's public and private interfa
 No. The Gateway Appliance lets you select the private and public network segments (VLANs) you want to route through the VRA. You may change and bypass VLAN selections at any time. VRA also lets you define IP-based rules that apply to subnets or IP ranges. Such rules function only if the VLANs containing those subnets are routed through the VRA.
 
 ## Can a VRA or dedicated firewall prevent new server provisions?
+{: #new-server}
 {: faq}
+{: support}
 
 Yes. Whenever possible, you shouldn't lock down your network until you've populated it with the servers you plan to use.
 
@@ -117,7 +126,9 @@ Keep in mind that even though they can't see you, a public cloud shares networks
 These variables aside, VRA is capable of forwarding 80 Gbps of unmodified traffic across multiple interfaces, using the rough formula that every 10 Gbps of throughput requires one full processor core (not including hyperthread). Given that current servers max out at 40 Gbps (2 x 10 Gbps public + 2 x 10 Gb private), a server with 8 or more cores should have sufficient compute headroom to handle multiple common VRA features at near best-case network performance
 
 ## What do I do if I lose my VRA password?
+{: #password}
 {: faq}
+{: support}
 
 If there is access to the system, set a new password by running the following command:
 
@@ -128,7 +139,9 @@ set system login user [account] authentication plaintext-password [password] 
 If there is no access to the system, you can reboot the device and use the password recovery option on the GRUB menu for resetting the root user password.
 
 ## What do I do if I have been locked out of the firewall?
+{: #locked-out}
 {: faq}
+{: support}
 
 The `reboot at [time]` construct can be useful when testing potentially dangerous firewall rules.
 
@@ -152,15 +165,20 @@ If there is access using IPMI, you can perform the following actions to recover 
 	commit
 	```
 
-**NOTE:** Incorrect use of these commands can wipe out your interface configuration.
+Incorrect use of these commands can wipe out your interface configuration.
+{: note}
 
 ## Why would I want to run two Vyatta devices in a High Availability (HA) pair?
+{: #HA}
 {: faq}
+{: support}
 
 Most cloud customers want high-availability (HA) services. This is so that your workload will be hosted on two (or more) completely separate (hardware) machines, or even better, in two separate availability zones (think data centers), so that if one fails, the other will be able to continue the service. If one machine fails, there will be a “failover” to the other machine, which means that the service can keep running. This is what is referred to as an “HA” service — it’s almost always available.
 
 ## How can I enable root logins to the VRA?
+{: #root-login}
 {: faq}
+{: support}
 
 To enable root access through SSH, run the following command:
 

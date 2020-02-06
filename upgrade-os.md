@@ -19,9 +19,13 @@ subcollection: virtual-router-appliance
 {:download: .download}
 {:note: .note}
 {:important: .important}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Upgrading the OS
 {: #upgrading-the-os}
+{: help}
+{: support}
 
 Upgrading the VRA operating system can be performed with the command ``add system image`` on a local ISO file uploaded by our Support team. A list of available Vyatta upgrade versions can be obtained using the IBM© support case system.
 {: shortdesc}
