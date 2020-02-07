@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2019-11-14"
+  years: 2017, 2020
+lastupdated: "2020-02-07"
 
 keywords: 5400, 5600, issues, faqs, migration, upgrading
 
@@ -327,19 +327,6 @@ set policy route pbr Backwards-DNAT rule 10 destination address '10.103.0.0/24'
 set policy route pbr Backwards-DNAT rule 10 source address '10.71.68.0/24'
 set policy route pbr Backwards-DNAT rule 10 table '50'
 ```
-
-## PPTP
-{: #pptp}
-
-### Issues
-{: #issues-13}
-
-PPTP is no longer supported in the {{site.data.keyword.vra_full}}.                                                                                                                                                   
-
-### Workarounds
-{: #workarounds-13}
-
-Use the L2TP protocol instead.
 
 ## Script for IPsec Restart
 {: #script-for-ipsec-restart}
