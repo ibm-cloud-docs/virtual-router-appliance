@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2019-11-14"
+  years: 2017, 2020
+lastupdated: "2020-02-07"
 
 keywords: basics, vra, access, configure, gui
 
@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# Accessing and Configuring the IBM Cloud Virtual Router Appliance
+# Accessing and configuring the IBM Cloud Virtual Router Appliance
 {: #accessing-and-configuring-the-ibm-virtual-router-appliance}
 
 The {{site.data.keyword.vra_full}} (VRA) can be configured using a remote console session through SSH or by logging into the web GUI. By default, the web GUI is not available from the public internet. To enable the web GUI, log in through SSH first.
@@ -29,12 +29,12 @@ The {{site.data.keyword.vra_full}} (VRA) can be configured using a remote consol
 Configuring the VRA outside of its shell and interface may produce unexpected results and is not recommended.
 {: note}
 
-## Accessing the Device Using SSH
+## Accessing the device using SSH
 {: #accessing-the-device-using-ssh}
 
 Most UNIX-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients included with their default installations. Windows users can download an SSH client, such as PuTTy.
 
-It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs requires your client to be connected private network. You can login using one of the default VPN options (PPTP, SSL-VPN and IPsec) offered in the IBM Cloud console, or using a custom VPN solution configured on the VRA.
+It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs requires your client to be connected private network. You can log in using one of the default VPN options (SSL and IPsec) offered in the IBM Cloud console, or using a custom VPN solution configured on the VRA.
 
 Use the Vyatta account from the **Device Details** page to login through SSH. The root password is also provided, but root login is disabled by default for security reasons.
 
@@ -51,7 +51,7 @@ $ configure
 # commit
 ```
 
-## Accessing the Device Using the Web GUI
+## Accessing the device using the web GUI
 {: #accessing-the-device-using-the-web-gui}
 
 Log into the VRA using the SSH instructions above, then run the following commands to enable the HTTPS service:
@@ -98,7 +98,7 @@ Possible completions:
   forwarding Show log for DNS Forwarding
 ```
 
-## Sample Configuration
+## Sample configuration
 {: #sample-configuration}
 
 Configurations are laid out in a hierarchical pattern of nodes. Consider this static route block:
