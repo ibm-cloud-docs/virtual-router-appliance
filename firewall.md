@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2019-11-14"
+  years: 2017, 2020
+lastupdated: "2020-02-07"
 
 keywords: firewall, manage, stateless, stateful, alg, firewall, rules, CPP, Logging
 
@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Manage Firewalls
+# Managing firewalls
 {: #manage-your-ibm-firewalls}
 
 The {{site.data.keyword.vra_full}} (VRA) has the ability to process firewall rules to protect the VLANs routed through the device.
@@ -83,15 +83,14 @@ It is suggested to disable these ALG modules, unless they are required for the s
 
 ```
 set system alg ftp 'disable'
-set system alg icmp 'disable'
-set system alg pptp 'disable'
+set system alg icmp 'disable' 
 set system alg rpc 'disable'
 set system alg rsh 'disable'
 set system alg sip 'disable'
 set system alg tftp 'disable'
 ```
 
-## Firewall Rule Sets
+## Firewall rule sets
 {: #firewall-rule-sets}
 
 Firewall rules are grouped together into named sets to make applying rules to multiple interfaces easier. Each rule set has a default action associated with it. Consider the following example:
@@ -108,7 +107,7 @@ set security firewall name ALLOW_LEGACY rule 2 source address network-group2
 
 In the ruleset, `ALLOW_LEGACY`, there are two rules defined. The first rule drops any traffic sourced from an address group named `network-group1`. The second rule discards and logs any traffic destined for the telnet port (`tcp/23`) from the address group named `network-group2`. The default-action indicates that anything else is accepted.
 
-## Allowing Data Center Access
+## Allowing data center access
 {: #allowing-data-center-access}
 
 IBM© offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the data centers in [this topic](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges).
@@ -117,7 +116,7 @@ You can allow data center access by placing the proper `SERVICE-ALLOW` rules at 
 
 It is recommended that you place the firewall rules in the location which causes the least duplication of work. For example, allowing backend subnets inbound on `dp0bond0` would be less work than allowing backend subnets outbound toward each VLAN virtual interface.
 
-### Per-interface Firewall Rules
+### Per-interface firewall rules
 {: #per-interface-firewall-rules}
 
 One method for configuring the firewall on a VRA is to apply firewall rule sets to each interface. In this case an interface can be a dataplane interface (`dp0s0`) or a virtual interface (`dp0bond0.303`). Each interface has three possible firewall assignments:
@@ -149,7 +148,7 @@ After this rule set is merged, a new firewall rule set named `CPP` is added and 
 
 Please note that CPP rules cannot be stateful, and will only apply on ingress traffic.
 
-## Zone Firewalling
+## Zone firewalling
 {: #zone-firewalling}
 
 Another firewall concept within the {{site.data.keyword.vra_full}} is zone based firewalls. In zone-based firewall operation an interface is assigned to a zone (only one zone per interface) and firewall rule sets are assigned to the boundaries between zones with the idea that all interfaces within a zone have the same security level and are allowed to route freely. Traffic is only scrutinized when it is passing from one zone to another. Zones drop any traffic coming into them which is not explicitly allowed.
@@ -185,7 +184,7 @@ It is important to understand that this assignment from zone DEPARTMENTC going i
 
 `ALLOW_PING` would be applied as an `out` firewall on the interfaces of DEPARTMENTB zone (dp0bond1.30 and dp0bond1.40). As this is installed by the zone policy, only traffic originating from the source zone's interfaces (dp0bond1.50) would be checked against the ruleset.
 
-## Session and Packet Logging
+## Session and packet logging
 {: #session-and-packet-logging}
 
 The VRA supports two types of logging:
