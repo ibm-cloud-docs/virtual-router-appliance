@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Supplemental VRA documentation (Current)
 {: #supplemental-vra-documentation}
 
-You can find links to supplemental documentation here for the Vyatta 5600 OS newer than 17.2. For archived supplemental documentation for the Vyatta 5600 OS older than 17.2, refer to [this topic](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation-archived#supplemental-vra-documentation-archived).
+You can find links to supplemental documentation here for the Vyatta 5600 OS newer than 17.2. For archived supplemental documentation for the Vyatta 5600 OS older than 17.2, refer to [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation-archived#supplemental-vra-documentation-archived).
 {: shortdesc}
 
 | Vyatta Documentation  | Description |

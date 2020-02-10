@@ -34,7 +34,7 @@ September 2017, the legacy Vyatta 5400 announced its EoS to be on February 20, 2
 
 To honor customer migration timelines, the Vyatta 5400 EoS date was extended to March 31, 2019. Because the Debian 7 software is now no longer supported by the Debian Open Source community, there are no future plans to extend vendor support from AT&T.
 
-[Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-end-of-support-announcement) to view the formal End of Support Announcement.
+[Click here](/docs/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-end-of-support-announcement) to view the formal End of Support Announcement.
 {: important}
 
 ## What does “End of Support” mean for me as a customer?
@@ -44,7 +44,7 @@ After the End of Support date, AT&T will no longer provide any code patches or a
 
 Similarly, IBM Cloud Support will no longer troubleshoot configuration or networking issues on Vyatta 5400 deployments.  Support will be limited to hardware level requests (hard drive, RAM, and so on), power and Out of Band (IPMI) connectivity.
 
-We highly recommend customers take immediate action to migrate onto an alternate solution, such as the {{site.data.keyword.vra_full}} (VRA; based on the Vyatta 5600) or Juniper vSRX.  [Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
+We highly recommend customers take immediate action to migrate onto an alternate solution, such as the {{site.data.keyword.vra_full}} (VRA; based on the Vyatta 5600) or Juniper vSRX.  [Click here](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
 
 ## What happens if I'm still running my IBM Cloud workloads using a Vyatta 5400 after March 31?
 {: faq}
@@ -56,12 +56,12 @@ If you encounter a network issue which takes down your business and application 
 ## What about my underlying Bare Metal Server hardware – is it still supported?
 {: faq}
 
-Hardware replacements are supported, but if trouble-shooting indicates that your problem is related to the Vyatta OS, you will be directed to migrate to a supported hardware offering immediately. [Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
+Hardware replacements are supported, but if trouble-shooting indicates that your problem is related to the Vyatta OS, you will be directed to migrate to a supported hardware offering immediately. [Click here](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
 
 ## As a customer who owns a Vyatta 5400, what do I need to do by March 31, 2019?
 {: faq}
 
-Customers who have a Vyatta 5400 should migrate to either VRA (Vyatta 5600), Juniper vSRX, or Fortigate Security Appliance (FSA) 10G. The VRA (Vyatta 5600) is still fully supported. There is no current or projected end of support date for the VRA from either IBM Cloud or AT&T. [Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
+Customers who have a Vyatta 5400 should migrate to either VRA (Vyatta 5600), Juniper vSRX, or Fortigate Security Appliance (FSA) 10G. The VRA (Vyatta 5600) is still fully supported. There is no current or projected end of support date for the VRA from either IBM Cloud or AT&T. [Click here](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
 
   VRAs and vSRXs are customer managed devices.
   {: note}
@@ -80,12 +80,12 @@ The Vyatta 5400 to VRA (5600) Configuration Conversion Service is still availabl
 
   ![Tiers](images/tiers.png "Tiers")
 
-[Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
+[Click here](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
 
 ## Are there any additional paid migration services available from IBM Business Partners for migrating off the Vyatta 5400?
 {: faq}
 
-We have several business partners who provide paid support for Vyatta 5400 migrations. [Click here](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-end-of-support-announcement) for more information.
+We have several business partners who provide paid support for Vyatta 5400 migrations. [Click here](/docs/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-end-of-support-announcement) for more information.
 
 ## Is there a Vyatta 5400 Offering Management support contact in IBM where I can ask questions related to my Vyatta 5400 migration?
 {: faq}
@@ -97,6 +97,6 @@ Contact IBM Vyatta 5400 and VRA Network Offering Management with questions at `n
 
 Review the following {{site.data.keyword.vra_full}} documentation resources for more information:
 
-  * [Getting Started with {{site.data.keyword.vra_full}}](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
-  * [About the VRA](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
-  * [Vyatta 5400 Migration Overview](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)
+  * [Getting Started with {{site.data.keyword.vra_full}}](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
+  * [About the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
+  * [Vyatta 5400 Migration Overview](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)

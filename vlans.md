@@ -43,7 +43,7 @@ For a High Availability (HA) pair of VRAs, the commands are different, as shown 
 The first command below can also be used on a single VRA that is not set up for High Availability.
 {: tip}
 
-For more information, please see [Associated VLAN subnets with VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp).
+For more information, please see [Associated VLAN subnets with VRRP](/docs/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp).
 {: note}
 
 On the first (or only) VRA, run the following commands:

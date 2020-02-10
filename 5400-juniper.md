@@ -32,9 +32,9 @@ The following procedures provide instructions for upgrading either a stand alone
 
 To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with the least amount of down-time, we recommend you perform the following procedure.
 
-1. Ensure that you have backed up your 5400 and stored the data in two different locations. This includes SSH keys, SSL certs, scripts and any other files necessary to recover your current Vyatta 5400 configuration, if necessary. To do so, follow [these instructions](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-backing-up-a-configuration).
+1. Ensure that you have backed up your 5400 and stored the data in two different locations. This includes SSH keys, SSL certs, scripts and any other files necessary to recover your current Vyatta 5400 configuration, if necessary. To do so, follow [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-backing-up-a-configuration).
 
-2. Order the new device, following the instructions for either [Juniper vSRX](/docs/infrastructure/vsrx?topic=vsrx-getting-started) or for [FSA -10G](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started). 
+2. Order the new device, following the instructions for either [Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started) or for [FSA -10G](/docs/fortigate-10g?topic=fortigate-10g-getting-started). 
 
   It is a recommended best practice to order a High Availability solution.
   {: tip}
@@ -55,9 +55,9 @@ To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with th
 
 To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 
-1. Ensure that you have backed up your 5400 and stored the data in two different locations. This includes SSH keys, SSL certs, scripts and any other files necessary to recover your current Vyatta 5400 configuration, if necessary. To do so, follow [these instructions](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-backing-up-a-configuration).
+1. Ensure that you have backed up your 5400 and stored the data in two different locations. This includes SSH keys, SSL certs, scripts and any other files necessary to recover your current Vyatta 5400 configuration, if necessary. To do so, follow [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-backing-up-a-configuration).
 
-2. Order the new device, following the instructions for either [Juniper vSRX](/docs/infrastructure/vsrx?topic=vsrx-getting-started) or for [FSA-10G](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-getting-started). 
+2. Order the new device, following the instructions for either [Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started) or for [FSA-10G](/docs/fortigate-10g?topic=fortigate-10g-getting-started). 
 
 3. Load the applicable configuration onto your newly ordered device.
 

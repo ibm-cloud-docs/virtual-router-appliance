@@ -240,4 +240,4 @@ set system acm ruleset rule 9999 operation '*'
 set system acm ruleset rule 9999 path '*'
 ```
 
-Refer to the [supplemental documentation](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation) before attempting to enable ACM rules. Inaccurate ACM rule settings can cause device access denials or system inoperability errors.
+Refer to the [supplemental documentation](/docs/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation) before attempting to enable ACM rules. Inaccurate ACM rule settings can cause device access denials or system inoperability errors.

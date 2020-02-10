@@ -86,7 +86,7 @@ A VLAN (virtual LAN) is a mechanism that segregates a physical network into many
 
 {{site.data.keyword.vra_full}} is delivered in two parts: The VRA server(s) and the Gateway Appliance fixture. The Gateway Appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a Gateway Appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. For every VLAN that is associated to the Gateway Appliance, that VLAN is allowed on the switch ports that the VRA is connected to, and any subnet on that VLAN is statically routed to your VRA's public VRRP IP (if the subnet is a public subnet) or statically routed to your VRA's private VRRP IP (if the subnet is a private subnet). This routing is done at the router that the VRA is behind, which will be the Frontend Customer Router (FCR) or the Backend Customer Router (BCR) for public and private traffic respectively.
 
-Be aware that VRRP is disabled by default, and it must be enabled in order for VLAN traffic to work, even on stand-alone vyattas. This is a consequence of the subnets on the associated VLAN's being routed to the VRRP IP or virtual-address assigned to the VRA. For more information, refer to [VRRP virtual IP (VIP) addresses](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
+Be aware that VRRP is disabled by default, and it must be enabled in order for VLAN traffic to work, even on stand-alone vyattas. This is a consequence of the subnets on the associated VLAN's being routed to the VRRP IP or virtual-address assigned to the VRA. For more information, refer to [VRRP virtual IP (VIP) addresses](/docs/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
 {: important}
 
 Servers in an associated VLAN can only be reached from other VLANs by going through your {{site.data.keyword.vra_full}}; it is not possible to circumvent the VRA unless you bypass or disassociate the VLAN.
@@ -99,4 +99,4 @@ In comparison, "gateway" VLANs are where devices, such as servers and containers
 
 The VRA can only manage VLANs that are associated with it through the Gateway Appliance.
 
-For information on how to manage VLANs from the Gateway Appliances Details screen, refer to [Managing VLANs](/docs/infrastructure/virtual-router-appliance?topic=gateway-appliance-managing-vlans-and-gateway-appliances).
+For information on how to manage VLANs from the Gateway Appliances Details screen, refer to [Managing VLANs](/docs/virtual-router-appliance?topic=gateway-appliance-managing-vlans-and-gateway-appliances).

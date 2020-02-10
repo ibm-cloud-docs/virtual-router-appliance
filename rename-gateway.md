@@ -28,7 +28,7 @@ subcollection: virtual-router-appliance
 
 Perform the following procedure to rename a Network Gateway:
 
-1. [Access the Gateway Appliance Details screen](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) in the IBM Cloud console.
+1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) in the IBM Cloud console.
 2. Click the **Actions** dropdown menu and select **Rename Gateway**.
 3. Enter the new Gateway Name in the **Gateway Name** field.
 4. Click **OK** to save the change.

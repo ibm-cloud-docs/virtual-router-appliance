@@ -107,7 +107,7 @@ Likewise, if a VRA/firewall is bypassed after an order is placed, it's still lik
 ## What firewall products does IBM offer?
 {: faq}
 
-You can find a detailed comparison of all firewall products offered in the IBM Cloud by reviewing [this topic](/docs/infrastructure/fortigate-10g?topic=fortigate-10g-exploring-firewalls).
+You can find a detailed comparison of all firewall products offered in the IBM Cloud by reviewing [this topic](/docs/fortigate-10g?topic=fortigate-10g-exploring-firewalls).
 
 ## Can a VRA confound customer support efforts?
 {: faq}

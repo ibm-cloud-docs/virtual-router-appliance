@@ -28,7 +28,7 @@ Network Gateways are used to control network traffic on a VLAN that is regularly
 
 Perform the following procedure to access the Gateway Details screen.
 
-1. [Access the Gateway Appliances screen](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-view-all-vras) in the console.
+1. [Access the Gateway Appliances screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-all-vras) in the console.
 2. Click the Gateway Appliance Name for the desired Network Gateway to access the Gateway Appliance Details screen.
 
 Interactions may be taken on multiple VLANs at any given time using the Bulk Actions feature.
