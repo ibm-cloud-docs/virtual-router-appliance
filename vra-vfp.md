@@ -72,4 +72,4 @@ set security zone-policy zone TUNNEL interface 'vfp0'
 set security zone-policy zone TUNNEL to SERVERS firewall 'ALLOWALL'
 ```
 
-While the VFP interface is a "real" interface in that it can be monitored with commands like `tshark` and can route traffic directly, it isn't useful to do so. Any traffic that arrives on the other end that does not match the policy of the tunnel will get dropped. It is not as versatile as a VTI interface would be.
+A VFP interface is not a "real" interface, in the way that `dp0bond0` is (or even a VIF or TUN). It is a placeholder interface created by the firewall and NAT processes so they can properly process traffic. You can still route traffic over a VFP like a regular interface, but `tshark` and other monitor commands will reveal no traffic.

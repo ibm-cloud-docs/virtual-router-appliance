@@ -29,7 +29,7 @@ The {{site.data.keyword.vra_full}} is able to route multiple VLANs over the same
 For example: 
 
 ```
-set interfaces bonding dp0bond0 vif 1432 address 10.0.10.14
+set interfaces bonding dp0bond0 vif 1432 address 10.0.10.14/24
 set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
 

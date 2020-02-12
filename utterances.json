@@ -1,12 +1,12 @@
 {
-    "what-is-a-vra-": [
+    "what": [
       "what is VRA",
       "what's Virtual Router Appliance",
       "define Virtual Router Appliance",
       "VRA definition",
       "What's VRA mean"
  ],
-   "what-is-a-gateway-appliance-": [
+   "gateway": [
      "what is Gateway appliance",
      "what's a gateway app",
      "define Gateway Appliance",
@@ -22,7 +22,7 @@
       "define vRouter",
       "vRouter definition"
  ],
-   "is-vyatta-5400-still-supported-": [
+   "5400": [
       "Vyatta 5400 still supported",
       "support for Vyatta 5400",
       "Vyatta 5400 supported",
@@ -75,7 +75,7 @@
       "change VLAN selection at any time",
       "network traffic goes through the VRA"
  ],
-   "can-a-vra-or-dedicated-firewall-prevent-new-server-provisions-": [  
+   "new-server": [  
       "VRA or dedicated firewall prevent new server provision",
       "VRA prevent new server provisions",
       "Virtual Router Appliance prevent server provisioning",
@@ -100,7 +100,7 @@
       "VRA affects network perfomance",
       "how much unmodified traffic does VRA send"
 ],
-   "what-do-i-do-if-i-lose-my-vra-password-": [  
+   "password": [  
       "lose my VRA password",
       "lost VRA password",
       "new Virtual Router Appliance password",
@@ -109,7 +109,7 @@
       "VRA password update",
       "VRA password reset"
 ],
-   "what-do-i-do-if-i-have-been-locked-out-of-the-firewall-": [  
+   "locked-out": [  
      "locked out of the firewall",
      "don’t have access to my firewall",
      "reboot my firewall",
@@ -119,14 +119,14 @@
      "reboot VRA",
      "rebooting Virtual Router Appliance"
 ],
-   "why-would-i-want-to-run-two-vyatta-devices-in-a-high-availability-ha-pair-": [ 
+   "HA": [ 
       "run two Vyatta devices in a High Availability pair",
       "benefits of HA pairing of Vyatta",
       "achieve HA for vyatta",
       "want high availability for Vyatta",
       "high availability with VRA"
 ],
-   "how-can-i-enable-root-logins-to-the-vra-": [      
+   "root-login": [      
       "enable root logins to the VRA",
       "enable root access through SSH",
       "allow root access using SSH",
@@ -134,7 +134,7 @@
       "allow root log in for VRA",
       "root login for Virtual Router Appliance enablement"
 ],
-   "how-do-i-allow-internet-bound-traffic-from-hosts-that-are-on-a-private-vlan-": [    
+   "VLAN": [    
       "allow Internet-bound traffic from hosts that are on a private VLAN",
       "allow Internet traffic from hosts that are on a private VLAN",
       "internet bound traffic from hosts that are on a private VLAN",
@@ -142,7 +142,7 @@
       "allow Internet traffic from private VLAN host",
       "on private VLAN allow Internet traffic"
 ],
-   "how-can-i-filter-internet-bound-traffic-and-only-allow-specific-protocols-destinations-": [    
+   "specific-protocol": [    
       "filter Internet-bound traffic and only allow specific protocols or destinations",
       "filter Internet bound traffic and only allow specific protocols",
       "filtering internet traffic",
@@ -151,7 +151,7 @@
       "order of operation in Virtual Router Appliance",
       "allow HTTPS Internet-bound traffic for a host"
 ],
-   "how-do-i-protect-the-vra-itself-with-a-zone-based-firewall-": [        
+   "zone-based": [        
       "protect the VRA with a zone-based firewall",
       "protect the Virtual Router Appliance with a zone based firewall",
       "does VRA have a local zone",
@@ -159,7 +159,7 @@
       "local zone for VRA",
       "use a zone based firewall for VRA"
 ],
-   "how-do-i-restrict-ssh-and-block-connections-coming-from-the-internet-": [  
+   "SSH": [  
      "restrict SSH and block connections coming from the internet",
      "best to not allow SSH connections from the internet",
      "restrict SSH and block connection from the internet",
