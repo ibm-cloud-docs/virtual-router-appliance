@@ -42,7 +42,7 @@ set interfaces bonding dp0bond0 vrrp vrrp-group 2 virtual-address '10.127.170.2/
 set interfaces bonding dp0bond1 vrrp vrrp-group 2 virtual-address '159.8.98.214/29'
 ```
 
-Please see [Add Multiple Subnets to a Single VLAN](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans#add-multiple-subnets-to-a-single-vlan) or [Associated VLAN subnets with VRRP](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp) for more information on configuring virtual-addresses for VIF's.
+Please see [Add Multiple Subnets to a Single VLAN](/docs/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans#add-multiple-subnets-to-a-single-vlan) or [Associated VLAN subnets with VRRP](/docs/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp) for more information on configuring virtual-addresses for VIF's.
 
 **By default, VRRP is set to disabled.** This ensures that new provisions and reloads do not cause outages on the Master device. In order for VLAN traffic to work, VRRP must be reenabled once provisioning or a reload completes. The following example details the default configuration:
 
@@ -178,7 +178,7 @@ set interfaces bonding dp0bond1 vrrp vrrp-group 1 virtual-address '169.110.21.26
 
 If you need to force a VRRP failover, it can be achieved by running the following on the device that currently is VRRP master:
 
-`vyatta@vrouter$ reset VRRP master interface dp0bond0 group 1`
+`vyatta@vrouter$ reset vrrp master interface dp0bond0 group 1`
 
 The group ID is the VRRP group ID of the native interfaces, and, as mentioned above, could be different in your pair.
 
