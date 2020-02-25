@@ -38,8 +38,8 @@ VRRP virtual IP addresses for any gateway group should never be changed, nor sho
 The following is an example of the default configurations of the `dp0bond0` and `dp0bond1` VIP's for a specific VRA. Please note that your IP addresses and vrrp-groups may be different than the example below:
 
 ```
-set interfaces bonding dp0bond0 vrrp vrrp-group 2 virtual-address '10.127.170.2/26'
-set interfaces bonding dp0bond1 vrrp vrrp-group 2 virtual-address '159.8.98.214/29'
+set interfaces bonding dp0bond0 vrrp vrrp-group 2 virtual-address '10.127.170.1/26'
+set interfaces bonding dp0bond1 vrrp vrrp-group 2 virtual-address '159.8.98.209/29'
 ```
 
 Please see [Add Multiple Subnets to a Single VLAN](/docs/virtual-router-appliance?topic=virtual-router-appliance-managing-your-vlans#add-multiple-subnets-to-a-single-vlan) or [Associated VLAN subnets with VRRP](/docs/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#associated-vlan-subnets-with-vrrp) for more information on configuring virtual-addresses for VIF's.
