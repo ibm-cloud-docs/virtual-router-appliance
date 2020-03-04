@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# AT&T Vyatta 5600 vRouter Software Patches
+# AT&T Vyatta 5600 vRouter software patches
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
 **Patch received: January 17, 2020**

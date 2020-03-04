@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Other Resources for IBM Cloud Virtual Router Appliance
+# Other resources for IBM Cloud Virtual Router Appliance
 {: #other-resources-or-ibm-virtual-router-appliance}
 
 There are additional {{site.data.keyword.vra_full}} resources created by IBM and some of our partners and customers.

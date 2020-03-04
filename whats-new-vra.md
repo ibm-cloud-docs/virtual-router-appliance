@@ -30,7 +30,7 @@ Find out about new and updated features in {{site.data.keyword.vra_full}} (VRA).
 ## August 2018
 {: #august-2018}
 
-### Brocade Operating System Version 18.x
+### Brocade operating system version 18.x
 {: #brocade-operating-system-version-18-x}
 
 Version 18.x of the Brocade OS is now available for the {{site.data.keyword.vra_full}}. Among other new features, this version provides remediation for the Spectre security breach.

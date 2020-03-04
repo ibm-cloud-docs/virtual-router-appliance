@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# Working with High Availability and VRRP
+# Working with High Availability (HA) and VRRP
 {: #working-with-high-availability-and-vrrp}
 
 The {{site.data.keyword.vra_full}} (VRA) supports Virtual Router Redundancy Protocol (VRRP) as a high availability protocol. The deployment of devices is done in an active/passive manner, where one machine is master and the other is the backup. All interfaces on both machines will be a member of the same "sync-group", so if one interface experiences a fault, the other interfaces in the same group will also fault, and the device will stop being master. The current backup will detect that the master is no longer broadcasting keepalive/heartbeat messages, and assume control of the VRRP virtual IPs and become master.
@@ -28,7 +28,7 @@ The {{site.data.keyword.vra_full}} (VRA) supports Virtual Router Redundancy Prot
 
 VRRP is the most important part of the configuration when provisioning Gateways. High availability functionality depends on the heartbeat messages, so making sure they are not blocked is critical.
 
-## VRRP virtual IP (VIP) addresses
+## VRRP Virtual IP (VIP) addresses
 {: #vrrp-virtual-ip-vip-addresses}
 
 The VRRP virtual IP for `dp0bond1` or `dp0bond0`, or VIP, is the floating IP address that changes from master to backup device when failover happens. When a VRA deploys, it will have a public and private bonded network connection and real IPs assigned on each interface. A VIP is assigned on both interfaces as well, whether the device is a standalone or in an HA pair. Traffic that has a destination IP in subnets in VLANs associated with the VRA will be sent directly to these VRRP VIP's through a static route on the FCR/BCR.

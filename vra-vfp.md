@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# Configuring a VFP interface with IPsec and Zone Firewalls
+# Configuring a VFP interface with IPsec and zone firewalls
 {: #configuring-a-vfp-interface-with-ipsec-and-zone-firewalls}
 
 When an IPsec datagram arrives, it is processed through the firewall rules and then de-encapsulated. The new datagram that emerges is not associated with an interface at all. Normally, this is not a problem, and can go on to the destination interface, but zone firewalls will prevent the datagram from progressing. Any datagram that does not come from an interface in a zone policy is dropped. A VFP interface, however, informs the zone firewall that the datagram did come from an interface, which allows rules to be applied.

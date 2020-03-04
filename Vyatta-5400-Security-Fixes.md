@@ -17,7 +17,7 @@ keywords: vyatta, 5400, vrouter, security, fix, fixes
 {:note: .note}
 {:important: .important}
 
-# AT&T Vyatta 5400 vRouter Security Vulnerability Fixes
+# AT&T Vyatta 5400 vRouter security vulnerability fixes
 {: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
 **As of: August 30, 2018**

@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Getting Started with IBM Cloud Virtual Router Appliance
+# Getting started with IBM Cloud Virtual Router Appliance
 {: #getting-started}
 
 The {{site.data.keyword.vra_full}} (VRA) provides the latest Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or standalone configuration, and lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features.

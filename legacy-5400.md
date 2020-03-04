@@ -17,7 +17,7 @@ keywords: vyatta, 5400, support
 {:note: .note}
 {:important: .important}
 
-# Vyatta 5400 Support
+# Vyatta 5400 support
 {: #vyatta-5400-support}
 
 Legacy Vyatta 5400 customers should upgrade to {{site.data.keyword.vra_full}} (VRA) as soon as possible, as support for Vyatta 5400 will be removed as of March 31, 2019.

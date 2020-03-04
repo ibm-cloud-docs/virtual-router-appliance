@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# API Reference for IBM Cloud Virtual Router Appliance
+# API reference for IBM Cloud Virtual Router Appliance
 {: #api-reference-for-ibm-virtual-router-appliance}
 
 The SoftLayer® Application Programming Interface (SLAPI) is the development interface that gives developers and system administrators direct interaction with the IBM© Cloud backend system, and is used by the {{site.data.keyword.vra_full}}.

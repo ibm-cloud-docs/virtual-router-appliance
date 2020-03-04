@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Vyatta 5400 End of Support FAQs
+# Vyatta 5400 end of support FAQs
 {: #vyatta-5400-end-of-support-faqs}
 
 These frequently asked questions can help you when migrating from the Vyatta 5400 to the {{site.data.keyword.vra_full}}.

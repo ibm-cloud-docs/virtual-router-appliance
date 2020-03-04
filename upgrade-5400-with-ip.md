@@ -19,13 +19,13 @@ subcollection: virtual-router-appliance
 {:download: .download}
 {:note: .note}
 
-# Upgrading the Vyatta 5400 and Reusing its IP Addresses
+# Upgrading the Vyatta 5400 and reusing its IP Addresses
 {: #upgrading-the-vyatta-5400-and-reusing-its-ip-addresses}
 
 This option allows you to reuse your existing Vyatta 5400 device as an equivalent {{site.data.keyword.vra_full}} (VRA), and keep your associated IP addresses. The following procedures provide instructions for upgrading either a stand alone Vyatta 5400, or two Vyatta 5400 devices operating in a High Availability (HA) pair.
 {: shortdesc}
 
-## Upgrading a Stand Alone Vyatta 5400
+## Upgrading a stand alone Vyatta 5400
 {: #upgrading-a-stand-alone-vyatta-5400}
 
 To upgrade a single Vyatta 5400 to a {{site.data.keyword.vra_full}}, perform the following procedure:
@@ -39,7 +39,7 @@ To upgrade a single Vyatta 5400 to a {{site.data.keyword.vra_full}}, perform the
 4. Make a note of the new {{site.data.keyword.vra_full}} password.
 5. Configure the newly reloaded VRA with your desired settings using [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
 
-## Upgrading a Vyatta 5400 High Availability Pair
+## Upgrading a Vyatta 5400 high availability pair
 {: #upgrading-a-vyatta-5400-high-availability-pair}
 
 To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:

@@ -10,7 +10,7 @@ lastupdated: "2019-11-14"
 {:important: .important}
 {:tip: .tip}
 
-# Basic Configuration of Vyatta 5400
+# Basic configuration of Vyatta 5400
 {: #basic-configuration-of-vyatta-5400}
 
 You can configure your Vyatta 5400 using the procedure here.
@@ -23,7 +23,7 @@ The public virtual LAN (VLAN) 1224, which is now associated and routed, needs to
 
 Note that it is the public side VLAN where the compute option is located - not the Brocade 5400 vRouter appliance's public VLAN.
 
-## In the Softlayer Portal
+## In the Softlayer portal
 {: #in-the-softlayer-portal}
 
 1. Within the SoftLayer Web Portal, under **Devices**, locate the bond on the **Configuration** tab for the Brocade 5400 vRouter device. Assume that eth1=bond1 on your device.

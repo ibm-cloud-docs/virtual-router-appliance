@@ -22,7 +22,7 @@ subcollection: virtual-router-appliance
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
 
-# Synchronizing High Availability Configurations
+# Synchronizing High Availability (HA) configurations
 {: #synchronizing-high-availability-configurations}
 {: help}
 {: support}

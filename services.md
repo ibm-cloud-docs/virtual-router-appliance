@@ -22,7 +22,7 @@ subcollection: virtual-router-appliance
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
 
-# Configuring Services
+# Configuring services
 {: #configuring-your-services}
 {: help}
 {: support}

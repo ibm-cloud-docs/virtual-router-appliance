@@ -21,7 +21,7 @@ subcollection: virtual-router-appliance
 {:download: .download}
 
 
-# Vyatta Patch Notes
+# Vyatta patch notes
 {: #vyatta-patch-notes}
 
 This topic provides links to the security patch notes for the Vyatta 5400 and 5600.

@@ -22,7 +22,7 @@ subcollection: virtual-router-appliance
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
 
-# Backing Up a Configuration
+# Backing up a configuration
 {: #backing-up-a-configuration}
 {: help}
 {: support}

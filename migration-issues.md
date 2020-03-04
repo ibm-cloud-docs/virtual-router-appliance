@@ -20,13 +20,13 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Vyatta 5400 Common Migration Issues
+# Vyatta 5400 common migration issues
 {: #vyatta-5400-common-migration-issues}
 
 The following table illustrates common issues or behavior changes you may encounter after migrating from a Vyatta 5400 device to a {{site.data.keyword.vra_full}}. In some cases, it includes workarounds to address the issues.
 {: shortdesc}
 
-## Interface Based Global-State Policy for StateFul Firewall
+## Interface based global-state policy for stateFul firewall
 {: #interface-based-global-state-policy-for-stateful-firewall}
 
 ### Issues
@@ -40,7 +40,7 @@ In release 5.1 and later you must add an `Allow` rule setting on the {{site.data
 {: #workarounds}
 If the `firewall-in` rule is applied on an Ingress/Inside interface, then the `Firewall-out` rule must be applied on the Egress/Outside interface. Otherwise, return traffic will be dropped at the Egress/Outside interface.        
 
-## State-Enable in Firewall Rules
+## State-enable in firewall rules
 {: #state-enable-in-firewall-rules}
 
 ### Issues
@@ -106,7 +106,7 @@ For Vyatta 5400 devices, this operation was possible because firewalling was don
 A new routing scheme is required for the VRA:
 ![routing dns](./images/routing-dns.png)
 
-## Policy Based Routing Table
+## Policy based routing table
 {: #policy-based-routing-table}
 
 ### Issues
@@ -118,7 +118,7 @@ The word "Table" in the configs is optional in v5400 Policy Based Routing but fo
 {: #workarounds-5}
 "Table Main" is an available option in Vyatta 5400 Policy Base Routing. The equivalent in VRA is "routing-instance default".
 
-## Policy Based Routing on Tunnel Interface
+## Policy based routing on the tunnel interface
 {: #policy-based-routing-on-tunnel-interface}
 
 ### Issues
@@ -341,7 +341,7 @@ PPTP is no longer supported in the {{site.data.keyword.vra_full}}.
 
 Use the L2TP protocol instead.
 
-## Script for IPsec Restart
+## Script for IPsec restart
 {: #script-for-ipsec-restart}
 
 ### Issues
@@ -355,7 +355,7 @@ For a pair of VRAs with VRRP, the standby router may not have the VRRP virtual a
 interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
 
-## Recent count and Recent time
+## Recent count and recent time
 {: #recent-count-and-recent-time}
 
 ### Issues
@@ -461,7 +461,7 @@ set policy route change-mss rule 1 set tcp-mss '1436'
 set policy route change-mss rule 1 tcp flags 'SYN
 ```
 
-## Specific Application or port broken in S-S Ipsec VPN
+## Specific application or port broken in S-S Ipsec VPN
 {: #specific-application-or-port-broken-in-s-s-ipsec-vpn}
 
 ### Issues

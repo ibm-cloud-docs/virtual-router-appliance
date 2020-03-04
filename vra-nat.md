@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Using NAT with Prefix Based IPsec
+# Using NAT with prefix-based IPsec
 {: #using-nat-with-prefix-based-ipsec}
 
 In the topic [Configuring a VFP interface with IPsec and Zone Firewalls](/docs/virtual-router-appliance?topic=virtual-router-appliance-configuring-a-vfp-interface-with-ipsec-and-zone-firewalls), we created a VFP interface and set it to be used with an IPsec tunnel.

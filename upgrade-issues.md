@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Upgrade Issues
+# Upgrade issues
 {: #upgrade-issues}
 
 Occasionally, after a successful upgrade and reboot of a new version of the Vyatta OS, you may encounter an issue where you are unable to issue user commands.

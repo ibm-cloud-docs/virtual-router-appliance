@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# Routing Your VLANs
+# Routing your VLANs
 {: #routing-your-vlans}
 
 The {{site.data.keyword.vra_full}} is able to route multiple VLANs over the same network interface (for example, `dp0bond0` or `dp0bond1`). This is accomplished by setting the switch port into trunk mode and configuring virtual interfaces (VIFs) on the device.
@@ -35,7 +35,7 @@ set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 
 The commands above create two virtual interfaces on the `dp0bond0` interface for a stand-alone Virtual Router Appliances (VRA). The interface `dp0bond0.1432` processes traffic for VLAN 1432 while the interface `dp0bond0.1693` processes traffic for VLAN 1693. `10.0.10.1/24` and `10.0.20.1/24` are assumed to be the gateway IP addresses for `10.0.10.0/24` and `10.0.20.0/24` respectively, and are also assumed to be primary or secondary static/portable subnets from the [Subnet List](https://cloud.ibm.com/classic/network/subnets) in portal.
 
-## High Availability Commands
+## High availability commands
 {: #high-availability-commands}
 
 For a High Availability (HA) pair of VRAs, the commands are different, as shown in this section. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` or `172.16.0.0/12` private space and are only used for Layer 2 connectivity between the VRAs. More specifically, that connection is used for VRRP advertisements. In addition, the virtual-addresses in the following examples are the gateway IP addresses for each of a customer's primary or secondary subnets.
