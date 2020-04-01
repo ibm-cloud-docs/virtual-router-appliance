@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2020-04-01"
 
 keywords: 5600, security, fixes, patches, brocade, os
 
@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# AT&T Vyatta 5600 vRouter software patches
+# AT&T Vyatta 5600 vRouter software patches (Current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
 **Patch received: January 17, 2020**
@@ -31,6 +31,9 @@ This document lists the patches for the currently supported versions of the Vyat
 {: shortdesc}
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+
+For archived patch information for the Vyatta 5600 OS older than 17.2, refer to [this topic](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
+{: note}
 
 ## 1801ze
 {: #1801ze}

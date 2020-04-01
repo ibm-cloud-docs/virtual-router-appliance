@@ -69,6 +69,7 @@ IBM Cloud Virtual Router Appliance
 
     {: .navgroup id="reference"}
     vyatta-5600-security-fixes.md
+    vyatta-5600-security-fixes-52.md
 
     {: .topicgroup}
     VRA API Information
