@@ -32,7 +32,7 @@ This document lists the patches for the currently supported versions of the Vyat
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
-For archived patch information for the Vyatta 5600 OS older than 17.2, refer to [this topic](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
+For archived patch information for the Vyatta 5600 OS older than 17.2, refer to [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
 ## 1801ze
