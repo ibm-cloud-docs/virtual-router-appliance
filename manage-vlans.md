@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Managing your VLANs
 {: #managing-your-vlans}
 
-You can perform a variety of actions from the [Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) to maintain your {{site.data.keyword.vra_full}}.
+You can perform a variety of actions from the [Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details#view-vra-details) to maintain your {{site.data.keyword.vra_full}}.
 {: shortdesc}
 
 ## Associate a VLAN to a Gateway Appliance
@@ -33,7 +33,7 @@ A VLAN needs to be associated to a Gateway Appliance before it can be routed. VL
 
 VLANs may be associated to only one Gateway at a time and must not have a firewall. Perform the following procedure to associate a VLAN to a Network Gateway.
 
-1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) in the IBM Cloud console.
+1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details#view-vra-details) in the IBM Cloud console.
 2. Select the desired VLAN from the **Associate a VLAN** dropdown list.
 3. Click the **Associate** button to associate the VLAN.
 
@@ -46,7 +46,7 @@ Associated VLANs are linked to a Gateway Appliance, but traffic in and out of th
 
 Perform the following procedure to route an associated VLAN:
 
-1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) in the IBM Cloud console.
+1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details#view-vra-details) in the IBM Cloud console.
 2. Locate the desired VLAN in the Associated VLANs section.
 3. Select **Route VLAN** from the Actions dropdown menu.
 4. Click **Yes** to route the VLAN.
@@ -62,7 +62,7 @@ Bypassing a VLAN allows the VLAN to remain associated to the Network Gateway. If
 
 Perform the following procedure to bypass Gateway routing for a VLAN:
 
-1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) in the IBM Cloud console.
+1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details#view-vra-details) in the IBM Cloud console.
 2. Locate the desired VLAN in the Associated VLANs section.
 3. Select **Bypass VLAN** from the Actions dropdown menu.
 4. Click **Yes** to bypass the Gateway.
@@ -76,7 +76,7 @@ VLANs may be linked to one Gateway Appliance at a time through [association](#as
 
 Perform the following procedure to disassociate a VLAN from a Gateway Appliance:
 
-1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details) in the IBM Cloud console.
+1. [Access the Gateway Appliance Details screen](/docs/virtual-router-appliance?topic=virtual-router-appliance-view-vra-details#view-vra-details) in the IBM Cloud console.
 2. Locate the desired VLAN in the Associated VLANs section.
 3. Select **Disassociate** from the **Actions** dropdown menu.
 4. Click **Yes** to disassociate the VLAN.
