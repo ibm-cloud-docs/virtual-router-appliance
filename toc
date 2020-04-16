@@ -7,7 +7,6 @@ IBM Cloud Virtual Router Appliance
     {: .navgroup id="learn"}
     getting-started.md
     about.md
-    whats-new-vra.md
     vyatta-patch-notes.md
     [What is network security?](https://www.ibm.com/cloud/learn/networking-a-complete-guide)
 
@@ -91,6 +90,7 @@ IBM Cloud Virtual Router Appliance
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    whats-new-vra.md
     vra-docs-18.md
     vra-docs.md
     faqs.md
