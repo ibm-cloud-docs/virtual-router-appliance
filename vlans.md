@@ -38,7 +38,7 @@ The commands above create two virtual interfaces on the `dp0bond0` interface for
 ## High availability commands
 {: #high-availability-commands}
 
-For a High Availability (HA) pair of VRAs, the commands are different, as shown in this section. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` or `172.16.0.0/12` private space and are only used for Layer 2 connectivity between the VRAs. More specifically, that connection is used for VRRP advertisements. In addition, the virtual-addresses in the following examples are the gateway IP addresses for each of a customer's primary or secondary subnets.
+For a High Availability (HA) pair of VRAs, the commands are different, as shown in this section. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` or `172.16.0.0/12` private space and are only used for Layer 2 connectivity between the VRAs. More specifically, that connection is used for VRRP advertisements. In addition, the virtual-addresses in the following examples are the gateway IP addresses for each of a customer's primary or secondary subnets. The `vrrp-group` number should match the group number shown in your gateway details page, as well as match the `vrrp-group` set in the rest of the default configuration.
 
 The first command below can also be used on a single VRA that is not set up for High Availability.
 {: tip}
@@ -50,16 +50,16 @@ On the first (or only) VRA, run the following commands:
 
 ```
 set interfaces bonding dp0bond0 vif 1432 address 192.168.132.1/30
-set interfaces bonding dp0bond0 vif 1432 virtual-address 10.0.10.1/24
+set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 virtual-address 10.0.10.1/24
 set interfaces bonding dp0bond0 vif 1693 address 192.168.193.1/30
-set interfaces bonding dp0bond0 vif 1693 virtual-address 10.0.20.1/24
+set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 virtual-address 10.0.20.1/24
 ```
 
 Then, on the second VRA, run:
 
 ```
 set interfaces bonding dp0bond0 vif 1432 address 192.168.132.2/30
-set interfaces bonding dp0bond0 vif 1432 virtual-address 10.0.10.1/24
+set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 virtual-address 10.0.10.1/24
 set interfaces bonding dp0bond0 vif 1693 address 192.168.193.2/30
-set interfaces bonding dp0bond0 vif 1693 virtual-address 10.0.20.1/24
+set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 virtual-address 10.0.20.1/24
 ```
