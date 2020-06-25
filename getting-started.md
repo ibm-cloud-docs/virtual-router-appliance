@@ -29,7 +29,7 @@ The {{site.data.keyword.vra_full}} (VRA) provides the latest Vyatta 5600 operati
 
 VRA minimum server requirements call for 8 GB of RAM and one CPU core for every 10 Gbps of network capacity. For example, a system with dual 10 Gbps public and private uplinks requires at least four cores. Also, if your intent is to setup VPN services with encryption, you may want to add additional cores. Adding additional cores for VPN Services will ensure the VRA will not get bogged down by heavy load(s) when routing and simultaneously encrypting/decrypting data.
 
-## Ordering a {{site.data.keyword.vra_full}}
+## Ordering an IBM Cloud Virtual Router Appliance
 {: #order-vra}
 
 To order a VRA, perform the following procedure:
