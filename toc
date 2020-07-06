@@ -26,11 +26,11 @@ IBM Cloud Virtual Router Appliance
 
     {: .topicgroup}
     Tutorials
-        /tutorials/solution-tutorials-secure-network-enclosure
-        /tutorials/solution-tutorials-nat-config-private
-        /tutorials/solution-tutorials-configuring-IPSEC-VPN
-        /tutorials/solution-tutorials-linking-secure-network-enclosures
-        /tutorials/solution-tutorials-web-app-private-network
+        /solution-tutorials/solution-tutorials-secure-network-enclosure
+        /solution-tutorials/solution-tutorials-nat-config-private
+        /solution-tutorials/solution-tutorials-configuring-IPSEC-VPN
+        /solution-tutorials/solution-tutorials-linking-secure-network-enclosures
+        /solution-tutorials/solution-tutorials-web-app-private-network
 
     /fortigate-10g/fortigate-10g-exploring-firewalls
     {: .navgroup-end}
