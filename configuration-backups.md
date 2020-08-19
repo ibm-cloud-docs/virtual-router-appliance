@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017
-lastupdated: "2019-11-14"
+lastupdated: "2020-07-30"
 
-keywords: backup, configuration
+keywords: vra, backup, configuration
 
 subcollection: virtual-router-appliance
 
@@ -27,10 +27,31 @@ subcollection: virtual-router-appliance
 {: help}
 {: support}
 
-The configuration commands for your {{site.data.keyword.vra_full}} need to be backed up when there is a change to the system. This can be accomplished by running the operational mode command `show configuration commands` and then saving the output (for example by copying and pasting from the SSH session). This would be considered a minimum backup for the configuration.
+A Vyatta configuration can be a boot configuration file or a file with a list of configuration commands. The latest 20 completed commits are saved on the system by default in `/config/archive` as archived boot configuration files. 
 {: shortdesc}
 
-A more complete backup involves generating a technical support archive for the system:
+A backup can be taken of the current `config.boot` by switching to user `root` and copying the file to another location. The current configuration commands for your Virtual Router Appliance can also be backed up by running the operational mode command `show configuration commands` and then saving the output. Both of these methods are considered a minimum backup for the configuration.
+
+The following example generates the complete list of commands used to configure the system and then redirects the list of commands into a file in the Vyatta home directory:
+
+```
+vyatta@gateway02:~$ show configuration commands > /home/vyatta/configcomm.bak-07-30-2020
+vyatta@gateway02:~$ ls -alh | grep bak
+-rw-r----- 1 vyatta users  21K Jul 30 01:10 configcomm.bak
+-rw-r----- 1 vyatta users  21K Jul 30 01:12 configcomm.bak-07-30-2020
+```
+
+The following example creates a backup copy of the boot configuration file and places it into `/home/vyatta`:
+
+```
+vyatta@gateway02:~$ su
+Password:
+root@gateway02:/home/vyatta# cp /config/config.boot /home/vyatta/config.boot.bak-07-30-2020
+root@gateway02:/home/vyatta# ls -alh | grep config.boot
+-rw------- 1 root   root   12K Jul 30 01:36 config.boot.bak-07-30-2020
+```
+
+A more complete backup, including log data, involves generating a technical support archive for the system:
 
 ```
 $ generate tech-support archive
@@ -39,7 +60,7 @@ Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.te
 2013-08-27-155554.tgz
 ```
 
-The generated archive file can then be copied from the {{site.data.keyword.vra_full}} to the storage device of your choice. The archive contains backups of the configuration information, home directories and logging information. It is a much more complete backup of a system.
+The generated archive file can then be copied from the VRA to the storage device of your choice. The archive contains backups of the configuration information, home directories and logging information, and is a much more complete backup of a system.
 
 As an example:
 

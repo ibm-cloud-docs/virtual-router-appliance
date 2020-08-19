@@ -11,12 +11,12 @@ IBM Cloud Virtual Router Appliance
     [What is network security?](https://www.ibm.com/cloud/learn/networking-a-complete-guide)
 
     {: .topicgroup}
-    Upgrade Guide
+    Upgrading
         upgrade-os.md
         upgrade-issues.md
 
     {: .topicgroup}
-    Vyatta 5400 Migration Guide
+    Migrating Vyatta 5400
         migration-guide.md
         5400-announcement.md
         upgrade-5400-with-ip.md
@@ -43,7 +43,7 @@ IBM Cloud Virtual Router Appliance
     vra-basics.md
 
     {: .topicgroup}
-    Work with VLANs
+    Working with VLANs
         /gateway-appliance/gateway-appliance-managing-vlans-and-gateway-appliances
         vlans.md
 
@@ -51,12 +51,12 @@ IBM Cloud Virtual Router Appliance
     services.md
 
     {: .topicgroup}
-    Work with High Availability Configurations
+    Working with High Availability configurations
         vrrp.md
         configuration-synchronization.md
 
     {: .topicgroup}
-    Use IPsec and VFP Interfaces
+    Using IPsec and VFP interfaces
         vra-ipsec.md
         vra-vfp.md
         vra-nat.md
@@ -71,7 +71,7 @@ IBM Cloud Virtual Router Appliance
     vyatta-5600-security-fixes-52.md
 
     {: .topicgroup}
-    VRA API Information
+    VRA API reference
         apis.md
         [Vyatta Network OS Scripting Reference Guide](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
