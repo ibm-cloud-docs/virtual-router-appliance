@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2020-06-09"
+lastupdated: "2020-09-28"
 
 keywords: 5600, 1801, security, vyatta, fixes, patches, AT&T, brocade, os
 
@@ -23,9 +23,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (Current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Latest patch received: July 6, 2020**
+**Latest patch received: September 16, 2020**
 
-**Latest documentation published: July 9, 2020**
+**Latest documentation published: September 28, 2020**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lower case letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -34,6 +34,52 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For archived patch information for the Vyatta 5600 OS older than 17.2, refer to [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 1912f
+{: #1912f}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-52669 | Critical | Cannot display EEPROM info for FINISAR FCLF8522P2BTL Copper Port |
+| VRVDR-52643 | Blocker | "request hard qsfp/sfp_status present X" - performance degradation |
+| VRVDR-52568 | Blocker | Revert SIAD kernel panic defaults |
+| VRVDR-52546| Minor | GUI hangs/loading and finally timeout with an error message on browser |
+| VRVDR-52469 | Blocker | i2c MUX reset required on S9500 to mitigate bus lock due to malfunctioning SFP |
+| VRVDR-52447 | Blocker | PTP: switching between the same master on multiple ports do not work if chosen port is down |
+| VRVDR-52284 | Blocker | S9500 - 'request hardware-diag version' command missing product name, reporting eeprom error |
+| VRVDR-52278 | Blocker | S9500 - upgrade HW diags to v3.1.10 |
+| VRVDR-52248 | Blocker | vyatta-sfpd can start before platform init complete |
+| VRVDR-52228 | Minor | The command ‘show hardware sensors sel’ gives a traceback |
+| VRVDR-52190 | Critical | smartd attempting to send email |
+| VRVDR-52215 | Critical | Memory use after free when deleting storm control profile |
+| VRVDR-52104 | Blocker | S9500 integration of BSP 3.0.11, 3.0.12 and 3.0.13 |
+| VRVDR-51754 | Critical | Readonly account failed to stay in after log on |
+| VRVDR-51344 | Critical | S9500-30XS: 10G Interface LED sometimes lit when interface is disabled |
+| VRVDR-51135 | Critical | NTP client remains sync'd with server even though source interface has no address |
+| VRVDR-51114 | Minor | Change command not found error for users running in a sandbox |
+| VRVDR-50951 | Critical | OSPFv3 logs are not generated when OSPFv3 process is reset |
+| VRVDR-50928 | Minor | PTP: ufispace-bsp-utils 3.0.10 causing /dev/ttyACM0 to disappear |
+| VRVDR-50775 | Major | Dataplane "PANIC in bond_mode_8023ad_ext_periodic_cb" w/ locally sourced and terminated GRE traffic |
+| VRVDR-50549 | Trivial | PTP: Spelling error in log msg "Successfully configure DPLL 2 fast lcok" |
+| VRVDR-50359 | Critical | show int dataplane foo phy issues with vendor-rev |
+| VRVDR-49935 | Critical | Dataplane core dump generated following vyatta-dataplane restart in vlan_if_l3_disable |
+| VRVDR-49836 | Major | IPsec: Fails to be able to to ping from tunnel endpoint to tunnel endpoint with ping size 1419 using default MTU with site-2-site. Tunnel MTU discovery not working |
+| VRVDR-48315 | Critical | Malformed interface names in show ipv6 multicast interface with IPv6 GRE tunnels |
+| VRVDR-48090 | Major | Error: /transceiver-info/physical-channels/channel/0/laser-bias- current/: is not a decimal64 at /opt/vyatta/share/perl5/Vyatta/Configd.pm line 208 |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-53016 | 9.1 | DLA-2369-1 | CVE-2017-18258, CVE-2017-8872, CVE-2018- 14404, CVE-2018-14567, CVE-2019-19956, CVE- 2019-20388, CVE-2020-24977, CVE-2020-7595: Debian DLA-2369-1 : libxml2 security update |
+| VRVDR-52844 | 7.5 | DLA-2355-1 | CVE-2020-8622, CVE-2020-8623: Debian DLA-2355- 1 : bind9 security update |
+| VRVDR-52723 | 8.8 | DLA-2340-1 | CVE-2018-20346, CVE-2018-20506, CVE-2018- 8740, CVE-2019-16168, CVE-2019-20218, CVE- 2019-5827, CVE-2019-9936, CVE-2019-9937, CVE- 2020-11655, CVE-2020-13434, CVE-2020-13630, CVE-2020-13632, CVE-2020-13871:Debian DLA- 2340-1 : sqlite3 security update |
+| VRVDR-52722 | 9.8 | DLA-2337-1 | CVE-2018-20852, CVE-2019-10160, CVE-2019- 16056, CVE-2019-20907, CVE-2019-5010, CVE- 2019-9636, CVE-2019-9740, CVE-2019-9947, CVE- 2019-9948: Debian DLA-2337-1 : python2.7 security update |
+| VRVDR-52618 | 9.8 | DLA-2323-1 | CVE-2019-18814, CVE-2019-18885, CVE-2019- 20810, CVE-2020-10766, CVE-2020-10767, CVE- 2020-10768, CVE-2020-12655, CVE-2020-12771, CVE-2020-13974, CVE-2020-15393: Debian DLA- 2323-1 : linux-4.19 new package |
+| VRVDR-52476 | 5.9 | DLA-2303-1 | CVE-2020-16135: Debian DLA-2303-1 : libssh security update |
+| VRVDR-52197 | N/A | N/A | Privilege escalation in "reset ipv6 neighbors" / "reset ip arp" commands |
 
 ## 1912e
 {: #1912e}
