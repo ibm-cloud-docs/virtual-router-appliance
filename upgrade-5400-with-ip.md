@@ -57,3 +57,8 @@ To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 5. Verify that the new Master {{site.data.keyword.vra_full}} is functioning as desired.
 6. Perform the reload procedure above on the current Backup Vyatta 5400 to upgrade it to a VRA.
 7. After the second reload, configure the Backup {{site.data.keyword.vra_full}} as desired, using [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
+
+## Reverting back to Vyatta 5400
+{: #reverting-to-vyatta-5400}
+
+The reload action is not permitted by default. Start an [IBM Support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) to request that the ACS-Security team grant you access to your reloads. To revert back to a Vyatta 5400, run an [OS reload](/docs/virtual-router-appliance?topic=virtual-router-appliance-reloading-the-os) on the system you need to roll back, then apply a backup of the old configurations.

@@ -48,7 +48,13 @@ set system config-sync remote-router 192.168.1.22 sync-map TEST
 
 The first two lines create the actual sync-map itself. Here, the configuration stanza for `security firewall` will be set in the `sync-map`. As a result, any changes made inside the config node will be pushed to the remote device. However, changes made to `security user` would not be sent, as that does not match the rule. You can make the `sync-map` as specific or as general as you want.
 
-The next three lines designate the remote router's `config-sync` user and password, IP, and which sync-map to push. Any changes that match the rules for `TEST`, will go to the `remote-router 192.168.1.22`, using this login information. Note that a `REST` call is made to perform this using the VRA API, so the HTTPS server must be running (and unblocked) on the remote router.
+The next three lines designate the remote router's `config-sync` user and password, IP, and which sync-map to push. Any changes that match the rules for `TEST`, go to `remote-router 192.168.1.22`, using this login information. Note that for version 1801zf and earlier, a `REST` call is made to perform this using the VRA API. As a result, the HTTPS server must be running (and unblocked) on the remote router. Version 1908/1912 rewrites `config-sync` to use `netconf` instead of HTTPS in order to address performance issues in previous releases. The following lines are required, along with an `allow` in the firewall rules for each vyatta, to make connections to each other on port 830:
+
+```
+set service netconf
+set service ssh port 830
+set service ssh port 22
+```
 
 To synchronize the configuration of a password, such as a pre-shared-secret for an IPsec VPN, the standby system must have the `secrets` group configured and the config-sync user must be in that group.
 
