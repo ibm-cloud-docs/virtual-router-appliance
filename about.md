@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2018
 lastupdated: "2019-11-14"
 
-keywords: vra, about, firewall, VPN, NAT, Routing
+keywords: about, firewall, VPN, NAT, Routing
 
 subcollection: virtual-router-appliance
 

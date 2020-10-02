@@ -4,7 +4,7 @@ copyright:
   years: 2017
 lastupdated: "2019-11-14"
 
-keywords: basics, vra, access, configure, gui
+keywords: basics, access, configure, gui
 
 subcollection: virtual-router-appliance
 

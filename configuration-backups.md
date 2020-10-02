@@ -4,7 +4,7 @@ copyright:
   years: 2017
 lastupdated: "2020-07-30"
 
-keywords: vra, backup, configuration
+keywords: backup, configuration
 
 subcollection: virtual-router-appliance
 
@@ -27,7 +27,7 @@ subcollection: virtual-router-appliance
 {: help}
 {: support}
 
-A Vyatta configuration can be a boot configuration file or a file with a list of configuration commands. The latest 20 completed commits are saved on the system by default in `/config/archive` as archived boot configuration files. 
+A Vyatta configuration can be a boot configuration file or a file with a list of configuration commands. The latest 20 completed commits are saved on the system by default in `/config/archive` as archived boot configuration files.
 {: shortdesc}
 
 A backup can be taken of the current `config.boot` by switching to user `root` and copying the file to another location. The current configuration commands for your Virtual Router Appliance can also be backed up by running the operational mode command `show configuration commands` and then saving the output. Both of these methods are considered a minimum backup for the configuration.

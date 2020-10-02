@@ -4,7 +4,7 @@ copyright:
   years: 2017
 lastupdated: "2018-11-10"
 
-keywords: updates, changes, additions, vyatta, vra, virtual router appliance
+keywords: updates, changes, additions, vyatta
 
 subcollection: virtual-router-appliance
 
