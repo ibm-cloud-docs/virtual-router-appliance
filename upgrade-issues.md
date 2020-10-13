@@ -1,17 +1,17 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2019
 lastupdated: "2019-11-14"
 
-keywords: upgrade, issues, troubleshooting, vyatta
+keywords: 
 
 subcollection: virtual-router-appliance
 
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
+{:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -23,7 +23,7 @@ subcollection: virtual-router-appliance
 # Upgrade issues
 {: #upgrade-issues}
 
-Occasionally, after a successful upgrade and reboot of a new version of the Vyatta OS, you may encounter an issue where you are unable to issue user commands.
+Occasionally, after a successful upgrade and reboot of a new version of the Vyatta OS, you might encounter a problem where you are unable to issue user commands.
 {: shortdesc}
 
 For example:
@@ -39,8 +39,9 @@ Last login: Fri Feb  2 12:42:45 2018 from 10.0.80.100
 vyatta@acs-jmat-vyatta01:~$ show int
 -vbash: show: command not found
 ```
+{:screen}
 
-In this case, the problem is not with the upgrade itself. If there were errors in that process, you would see them when you issued the `add system image` command. Here the device has been rebooted, but it now has a new, and empty `/home` directory space, and any users that appear in the configuration will need their home directories regenerated. The error stems from the failure to properly copy the needed "dotfiles" to the `vyatta` user directory:
+In this case, the problem is not with the upgrade itself. If there were errors in that process, you would see them when you issued the `add system image` command. Here the device has been rebooted, but it now has a new, and empty `/home` directory space, and any users that appear in the configuration need their home directories regenerated. The error stems from the failure to properly copy the needed "dotfiles" to the `vyatta` user directory:
 
 ```
 vyatta@acs-jmat-vyatta01:~$ ls -la
@@ -53,10 +54,11 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 -rw-r--r-- 1 vyatta users    0 Feb  2 12:43 .profile
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
+{:screen}
 
 Note that three files are zero length, and thus have no configuration. Without the commands to initialize the environment for the VRA user on login, the current shell is unable to interpret the Vyatta commands you issue. As a result, you must obtain the old dotfiles from a different source.
 
-Fortunately, the previous `home` directory still exists as a persistence directory, allowing you to copy the files over. To do so, go to `/lib/live/mount/persistence/sda2/boot` and list out the directories there:
+Fortunately, the previous `home` directory still exists as a persistence directory, allowing you to copy the files over. To do so, go to `/lib/live/mount/persistence/sda2/boot` and list the directories there:
 
 ```
 vyatta@acs-jmat-vyatta01:/lib/live/mount/persistence/sda2/boot$ ls -la
@@ -67,10 +69,11 @@ drwxr-xr-x 4 root root 4096 Jan 23 11:30 5.2R5S3.06301309
 drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
+{:screen}
 
-The ISOs for the initial installation and your currently running OS are featured here.
+The ISOs for the initial installation and the OS you are currently running are featured here.
 
-If you made more than one upgrade, then those will display here as well.
+If you made more than one upgrade, then those display here as well.
 {: note}
 
 Next, change directories using the previously loaded OS as the next directory, and go into the VRA home directory:
@@ -89,8 +92,9 @@ drwxr-xr-x 3 root   root       4096 Nov 20 05:05 ..
 drwxr-x--- 3 vyatta users      4096 Jan  9 10:34 .ssh
 -rw-r----- 1 vyatta users 351272960 Jan 26 14:23 vyatta-vrouter-5.2_20180126T1706-amd64.iso
 ```
+{:screen}
 
-Once inside, you can see the dotfiles and copy them over:
+From inside this directory, you can see the dotfiles and copy them over:
 
 ```
 vyatta@acs-jmat-vyatta01:/lib/live/mount/persistence/sda2/boot/5.2R5S3.06301309/persistence/rw/home/vyatta$ cp .bashrc /home/vyatta
@@ -107,8 +111,9 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 -rw-r--r-- 1 vyatta users  675 Feb  2 12:56 .profile
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
+{:screen}
 
-Once copied, logout, then log back in:
+After the files are copied, log out, then log back in:
 
 ```
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
@@ -130,7 +135,9 @@ HW UUID:      00000000-0000-0000-0000-0CC47A07EF22
 Uptime:       12:57:47 up 59 min,  1 user,  load average: 0.35, 0.27, 0.26
 vyatta@acs-jmat-vyatta01:~$
 ```
-All your commands will work again, and you can proceed normally.
+{:screen}
 
-The HTTPS certificate `/etc/lighttpd/server.pem` may also fail to copy during the OS upgrade process, which can cause High Availability (HA) configurations to fail to synchronize. To fix this problem, copy over the old `server.pem` file in addition to the files listed above (issue `su -` to reach root level, then issue the `copy` command), then issue `restart https` to restart the HTTPS `demon.m` file (and the files listed above).
+All your commands work again, and you can proceed normally.
+
+The HTTPS certificate `/etc/lighttpd/server.pem` might also fail to copy during the OS upgrade process, which can cause High Availability (HA) configurations to fail to synchronize. To fix this problem, copy over the old `server.pem` file in addition to the files listed (issue `su -` to reach root level, then issue the `copy` command), then issue `restart https` to restart the HTTPS `demon.m` file (and the files listed previously).
 {: important}

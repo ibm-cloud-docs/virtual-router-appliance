@@ -1,7 +1,12 @@
 ---
 copyright:
-  years: 1994, 2017
+  years: 1994, 2019
 lastupdated: "2019-11-14"
+
+keywords: nat, setup, 5400
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -10,32 +15,35 @@ lastupdated: "2019-11-14"
 {:important: .important}
 {:tip: .tip}
 
-# Basic configuration of Vyatta 5400
+# Configuring Vyatta 5400
 {: #basic-configuration-of-vyatta-5400}
 
 You can configure your Vyatta 5400 using the procedure here.
 {: shortdesc}
 
-The public virtual LAN (VLAN) 1224, which is now associated and routed, needs to be configured before it can pass traffic. Two pieces of information are needed to complete the configuration:
+You must configure the public virtual LAN (VLAN) 1224, which is now associated and routed, before it can pass traffic. Two pieces of information are needed to complete the configuration:
 
   * The public-side bond of the Brocade 5400 vRouter appliance
   * The default gateway of 1224
 
-Note that it is the public side VLAN where the compute option is located - not the Brocade 5400 vRouter appliance's public VLAN.
+It is the public-side VLAN where the compute option is located, not the Brocade 5400 vRouter appliance's public VLAN.
+{: note}
 
-## In the Softlayer portal
+## In the SoftLayer portal
 {: #in-the-softlayer-portal}
 
-1. Within the SoftLayer Web Portal, under **Devices**, locate the bond on the **Configuration** tab for the Brocade 5400 vRouter device. Assume that eth1=bond1 on your device.
+Follow these steps:
 
-2. Select **Network > IP Management > VLANs** from the Web Portal to find the default gateway for VLAN 1224.
+1. Within the SoftLayer web portal, in **Devices**, locate the bond on the **Configuration** tab for the Brocade 5400 vRouter device. Assume that `eth1=bond1` on your device.
 
-3. Click your VLAN in the list, and click the **Subnet** where you see your Gateway. Make a note of the mask Classless Inter-Domain Routing (CIDR) details located after the slash.
+2. Select **Network > IP Management > VLANs** from the web portal to find the default gateway for VLAN 1224.
 
-## Configure the private VLAN using the CLI
+3. Click your VLAN in the list, then click the **Subnet** where you see your gateway. Make a note of the mask Classless Inter-Domain Routing (CIDR) details located after the slash.
+
+## Configuring the private VLAN using the CLI
 {: #configure-the-private-vlan-using-the-cli}
 
-There are two command modes in the CLI (Command Line Interface): operational and configuration.
+There are two command modes in the command-line interface (CLI): operational and configuration.
 
 Operational mode provides access to operational commands for:
 
@@ -52,22 +60,22 @@ Configuration provides access to commands for:
   * Deleting
   * Committing
   * Showing configuration information
-  * Navigating through the configuraiton heirarchy
+  * Navigating through the configuration hierarchy 
 
-When you log onto the system, the system is in operational mode; you will need to switch to configuration for the commands.
+When you log on to the system, the system is in operational mode. You must switch to configuration mode for the commands.
 
-You can tell which mode you are in, operational or configuration, based on the prompt. You are in operational mode if the prompt is #, and configuration mode if the prompt is $.
+You can tell which mode that you are in based on the prompt. You are in operational mode if the prompt is #, and configuration mode if the prompt is $.
 {: note}
 
-Use the following steps to configure the private VLAN using the CLI. Remember the values needed to configure the VLAN are:
+Follow these steps to configure the private VLAN by using the CLI. Remember the values needed to configure the VLAN are:
 
-  * VLAN name of the VLAN to be routed through Brocade 5400 vRouter device (2254)
-  * Gateway and mask (CIDR format) of the VLAN to be routed (10.52.69.201/29)
-  * Private bond name of the Brocade 5400 vRouter Device (bond0)
+  * VLAN name of the VLAN to be routed through Brocade 5400 vRouter device (`2254`)
+  * Gateway and mask (CIDR format) of the VLAN to be routed (`10.52.69.201/29`)
+  * Private bond name of the Brocade 5400 vRouter Device (**bond0**)
 
-1. SSH into your Brocade 5400 vRouter (public or private IP address) using **vyatta** as the **Username**; supply the password when prompted.
+1. SSH into your Brocade 5400 vRouter (public or private IP address) by using **vyatta** as the **Username**. Supply the password when prompted.
 
-   You should create a new user within Brocade 5400 vRouter and disable the default initial user `vyatta`.
+   You should create a new user within Brocade 5400 vRouter and disable the default initial user **vyatta**.
    {: note}
 
 2. Configure the vif:
@@ -78,6 +86,6 @@ Use the following steps to configure the private VLAN using the CLI. Remember th
   * Type *save* to save the settings.
   * Type *exit* to switch back to operation mode.
 
-3. Type *show interfaces* to check the settings you just committed.
+3. Type *show interfaces* to check the settings that you committed.
 
 4. Route any remaining VLANs through the Brocade 5400 vRouter device.

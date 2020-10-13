@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2019
 lastupdated: "2019-11-14"
 
 keywords: firewall, manage, stateless, stateful, alg, firewall, rules, CPP, Logging
@@ -20,14 +20,13 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Manage firewalls
+# Managing firewalls
 {: #manage-your-ibm-firewalls}
 
-The {{site.data.keyword.vra_full}} (VRA) has the ability to process firewall rules to protect the VLANs routed through the device.
+{{site.data.keyword.vra_full}} (VRA) has the ability to process firewall rules to protect the VLANs routed through the device.
 {: shortdesc}
 
 The firewalls in the VRA can be broken into two steps:
-
 
 1. Defining one or more sets of rules.
 2. Applying a set of rules to an interface or a zone. A zone consists of one or more network interfaces.

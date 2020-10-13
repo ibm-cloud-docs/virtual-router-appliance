@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "20189-11-14"
+  years: 2017, 2019
+lastupdated: "2019-11-14"
 
 keywords: configure, service, NAT
 
@@ -11,7 +11,7 @@ subcollection: virtual-router-appliance
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
+{:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -56,4 +56,4 @@ Possible completions include:
  > twamp           Two-Way Active Measurement Protocol
 ```
 
-`nat` is configured as part of the service, and `https` controls access to the Web GUI and the APIs. `connsync` defines how two VRAs can share connection tracking synchronization for things like stateful firewall failover.
+`nat` is configured as part of the service, and `https` controls access to the web GUI and the APIs. `connsync` defines how two VRAs can share connection tracking synchronization for things like stateful firewall failover.

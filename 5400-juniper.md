@@ -28,7 +28,7 @@ In addition to being able to upgrade your Vyatta 5400 device to an {{site.data.k
 The following procedures provide instructions for upgrading either a stand alone Vyatta 5400, or two Vyatta 5400 devices operating in a High Availability (HA) pair, to either a Juniper vSRX or FSA.
 
 ## Upgrading a stand alone Vyatta 5400
-{: #upgrading-a-stand-alone-vyatta-5400}
+{: #upgrading-a-stand-alone-vyatta-5400-migration}
 
 To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with the least amount of down-time, we recommend you perform the following procedure.
 
@@ -51,7 +51,7 @@ To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with th
 6. Open a support case to cancel your Vyatta 5400 device.
 
 ## Upgrading a Vyatta 5400 High Availability (HA) pair
-{: #upgrading-a-vyatta-5400-high-availability-pair}
+{: #upgrading-a-vyatta-5400-high-availability-pair-migration}
 
 To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 

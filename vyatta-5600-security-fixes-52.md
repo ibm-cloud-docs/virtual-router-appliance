@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2019
+  years: 2017, 2020
 lastupdated: "2020-04-01"
 
 keywords: 5600, security, fixes, patches, brocade, os
@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:important: .important}
 {:download: .download}
 
-# AT&T Vyatta 5600 vRouter software patches (Archived)
+# AT&T Vyatta 5600 vRouter software patches (archived)
 {: #at-t-vyatta-5600-vrouter-software-patches-52}
 
 **Patch received: January 17, 2020**

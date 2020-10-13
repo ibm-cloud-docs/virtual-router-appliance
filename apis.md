@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2019
 lastupdated: "2019-11-14"
 
 keywords: apis, api
@@ -11,7 +11,7 @@ subcollection: virtual-router-appliance
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
+{:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -20,13 +20,13 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# API reference for IBM Cloud Virtual Router Appliance
+# API reference for {{site.data.keyword.cloud_notm}} Virtual Router Appliance
 {: #api-reference-for-ibm-virtual-router-appliance}
 
-The SoftLayer® Application Programming Interface (SLAPI) is the development interface that gives developers and system administrators direct interaction with the IBM© Cloud backend system, and is used by the {{site.data.keyword.vra_full}}.
+The SoftLayer Application Programming Interface (SLAPI) is the development interface that gives developers and system administrators direct interaction with the {{site.data.keyword.cloud} backend system, and is used by the {{site.data.keyword.vra_full}}.
 {: shortdesc}
 
-The SLAPI powers many of the features in the IBM Cloud console, which typically means if an interaction is possible in the console, it can also be run in the API. Because you can programmatically interact with all portions of the IBM Cloud console within the API, you can use the API to automate tasks.
+The SLAPI powers many of the features in the {{site.data.keyword.cloud_notm}} console, which typically means if an interaction is possible in the console, it can also be run in the API. Because you can programmatically interact with all portions of the {{site.data.keyword.cloud_notm}} console within the API, you can use the API to automate tasks.
 
 The SLAPI is a Remote Procedure Call (RPC) system. Each call involves sending data towards an API endpoint and receiving structured data in return. The format used to send and receive data with the SLAPI depends on which implementation of the API you choose. The SLAPI currently uses SOAP, XML-RPC or REST for data transmission.
 
@@ -40,7 +40,7 @@ For more information about the SLAPI as they refer to the {{site.data.keyword.vr
 - [More SoftLayer API Examples with different languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://softlayer.github.io/python/){: new_window}
 
 
-### Example - Ordering a Gateway Appliance
+## Example - Ordering a gateway appliance
 {: #example-ordering-a-gateway-appliance}
 
 ```
@@ -98,7 +98,7 @@ if __name__ == '__main__':
 ```
 {: codeblock}
 
-### Example - Associating, routing, bypassing and disassociating VLANs to the Gateway Appliance
+## Example - Associating, routing, bypassing and disassociating VLANs to the gateway appliance
 {: #example-associating-routing-bypassing-and-disassociating-vlans-to-the-gateway-appliance}
 
 ```
@@ -184,7 +184,7 @@ class Gateway:
 ```
 {: codeblock}
 
-### Example of canceling a Gateway Appliance
+## Example - Canceling a gateway appliance
 
 ```
 import SoftLayer

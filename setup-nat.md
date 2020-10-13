@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2019
 lastupdated: "2019-11-14"
 
 keywords: nat, setup, 5400
@@ -11,7 +11,7 @@ subcollection: virtual-router-appliance
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
+{:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -20,16 +20,16 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Setting up NAT Rules on Vyatta 5400
+# Setting up NAT rules on Vyatta 5400
 {: #setting-up-nat-rules-on-vyatta-5400}
 
-This topic contains examples of the Network Address Translation (NAT) rules used on a Vyatta.
+Review examples of the Network Address Translation (NAT) rules that are used on a Vyatta.
 {: shortdesc}
 
 ## One-to-many NAT rule (masquerade)
 {: #one-to-many-nat-rule-masquerade-}
 
-Enter the following commands in the prompt:
+Enter the following commands:
 
 ~~~
 set nat source rule 1000 description 'pass traffic to the internet'
@@ -40,24 +40,24 @@ set nat source rule 1000 translation address 'masquerade'
 commit
 ~~~
 
-Connection request from machines in the `10.xxx.xxx.xxx` network are mapped to the IP on bond1 and receive an associated ephemeral port when going outbound. The intention is to assign one-to-many masquerade rule numbers higher so that they do not conflict with lower NAT rules that you may have.
+Connection request from machines in the `10.xxx.xxx.xxx` network are mapped to the IP on `bond1` and receive an associated ephemeral port when going outbound. The intention is to assign one-to-many masquerade rule numbers higher so that they do not conflict with lower NAT rules that you might have.
 
-You must configure the server to pass its internet traffic through the VRA so that its default gateway is the Private IP address of the managed virtual LAN (VLAN). For example, for `bond0.2254` the gateway is `10.52.69.201`. This should be the gateway address for the server passing Internet traffic.
+You must configure the server to pass its internet traffic through the VRA so that its default gateway is the private IP address of the managed virtual LAN (VLAN). For example, for `bond0.2254` the gateway is `10.52.69.201`. This should be the gateway address for the server passing internet traffic.
 {: note}
 
 Use the following command to help troubleshoot NAT:
 
-  '''
-  run show nat source translations detail
-  '''
-  {: tip}
+'''
+run show nat source translations detail
+'''
+{: pre}
 
 ## One-to-one NAT rule
 {: #one-to-one-nat-rule}
 
-The commands below show how to setup a one-to-one NAT rule. Notice the rule numbers are set up to be lower than the masquerade rule. This is so that the one-to-one rules will take precedence over the one-to-many rules.
+The following commands show how to set up a one-to-one NAT rule. Notice that the rule numbers are set up to be lower than the masquerade rule. This is so that the one-to-one rules take precedence over the one-to-many rules.
 
-IP addresses that are mapped one-to-one cannot be masqueraded. If you translate an IP inbound, you must translate that IP outbound in order for traffic to go both ways.
+IP addresses that are mapped one-to-one cannot be masqueraded. If you translate an IP inbound, you must translate that IP outbound for traffic to go both ways.
 {: tip}
 
 The following commands are for a source and destination rule. Type `show nat` in configuration mode to see the NAT rule type.
@@ -65,7 +65,7 @@ The following commands are for a source and destination rule. Type `show nat` in
   Use the following command to help troubleshoot NAT: `run show nat source translations detail`.
   {: tip}
 
-Enter the following commands in the prompt after ensuring you are in configuration mode:
+Enter the following commands after ensuring that you are in configuration mode:
 
 ~~~
 set nat source rule 9 outbound-interface 'bond1'
@@ -79,17 +79,17 @@ set nat destination rule 9 translation address '10.52.69.202'
 commit
 ~~~
 
-If traffic comes in on IP `50.97.203.227` on bond1, that IP will be mapped to IP `10.52.69.202` (on any interface defined). If traffic goes outbound with the IP of `10.52.69.202` (on any interface defined), it will get translated to IP `50.97.203.227` and proceed out bound on interface bond1.
+If traffic comes in on IP `50.97.203.227` on `bond1`, that IP is mapped to IP `10.52.69.202` on any interface defined. If traffic goes outbound with the IP of `10.52.69.202` (on any interface defined), it gets translated to IP `50.97.203.227` and proceed out bound on interface `bond1`.
 
-IP addresses that are mapped one-to-one cannot be masqueraded. If you translate an IP inbound, you must translate that same IP outbound in order for its traffic to go both ways.
+IP addresses that are mapped one-to-one cannot be masqueraded. If you translate an IP inbound, you must translate that same IP outbound for its traffic to go both ways.
 {: note}
 
 ## Adding IP ranges through your VRA
 {: #adding-ip-ranges-through-your-vra}
 
-Depending on your VRA configuration, you may want to accept specific IBM© Cloud IP addresses.
+Depending on your VRA configuration, you might want to accept specific IBM Cloud IP addresses.
 
-New vRouter deployments come with IBM Cloud's services network IP addresses defined in a firewall rule called `SERVICE-ALLOW`.
+New vRouter deployments come with IBM Cloud services network IP addresses defined in a firewall rule named `SERVICE-ALLOW`.
 
 The following is an example of `SERVICE-ALLOW`. This is not a complete private IP rule set.
 
@@ -104,7 +104,7 @@ set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
 ~~~
 ```
 
-Once you have defined the firewall rules, you can assign them as you see fit. Two examples are listed below.
+After you define the firewall rules, you can assign them as you see fit. Two examples are listed.
 
 Applying to a zone: `set zone-policy zone private from dmz firewall name SERVICE-ALLOW`
 

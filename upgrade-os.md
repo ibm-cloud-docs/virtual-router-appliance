@@ -4,14 +4,14 @@ copyright:
   years: 2017, 2020
 lastupdated: "2020-06-22"
 
-keywords: upgrade, os, vyatta
+keywords: upgrade vyatta
 
 subcollection: virtual-router-appliance
 
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
+{:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -27,26 +27,26 @@ subcollection: virtual-router-appliance
 {: help}
 {: support}
 
-Upgrading the VRA operating system can be performed with the command `add system image` on a local ISO file uploaded by our Support team. A list of available Vyatta upgrade versions can be obtained using the IBM© support case system.
+Upgrading the VRA operating system can be performed with the command `add system image` on a local ISO file uploaded by our {{site.data.keyword.IBM}} Support team. A list of available Vyatta upgrade versions can be obtained using the {{site.data.keyword.IBM_notm}} Support case system.
 {: shortdesc}
 
-To begin the upgrade process, open a support case with the IBM support case system requesting that the latest stable ISO image be uploaded to your system. You will receive a ticket update from IBM Support (ACS-Security) indicating where the ISO file was uploaded. In the example below, it is in the directory `tmp`, but it is commonly uploaded to `/home/vyatta`.
+To begin the upgrade process, open an {{site.data.keyword.IBM_notm}} Support case requesting an upload of the latest stable ISO image to your system. You receive a ticket update from IBM Support (ACS-Security) indicating where the ISO file was uploaded. In the following example, it is in the directory `tmp`, but it is commonly uploaded to `/home/vyatta`.
 
-The upgrade process illustrated below is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, it is recommended that you upgrade the `BACKUP` machine first, and verify that it is working properly. Then access the `MASTER` machine and fail it over using the `reset vrrp` command. Finally, upgrade the original `MASTER` once the `BACKUP` has taken control.
+The upgrade process illustrated in this example is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, it is recommended that you upgrade the `BACKUP` machine first, and verify that it is working properly. Then access the `MASTER` machine and fail it over using the `reset vrrp` command. Finally, upgrade the original `MASTER` after the `BACKUP` has taken control.
 {: important}
 
 To upgrade the VRA, perform the following procedure.
 
 1. Run the command `add system image <Local ISO File>`.
-2. Hit **Enter** to accept the default name of the ISO image, or enter your own.
+2. Press **Enter** to accept the default name of the ISO image, or enter your own.
 3. Choose whether to save the current configuration directory and configuration file.
 4. Choose whether to save the SSH host keys from your current configuration.
-5. Hit **Enter** to accept the default system console, or enter your own.
-6. Hit **Enter** to accept the default console speed, or enter your own.
+5. Press **Enter** to accept the default system console, or enter your own.
+6. Press **Enter** to accept the default console speed, or enter your own.
 7. Enter the command `reboot` and then enter `Yes` to reboot the machine.
 8. If you are using VRA in a high availability mode, run step 1 to step 7 again on the second machine.
 
-The below example illustrates the upgrade process.
+The following example illustrates the upgrade process.
 
 ```
 vyatta@vra01:~$ show version | grep Version
@@ -85,3 +85,4 @@ The system is going down for reboot NOW!
 vyatta@vra01:~$ show version | grep Version
 Version:      5.2R5S4
 ```
+{:screen}

@@ -1,14 +1,17 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2019
 lastupdated: "2019-11-14"
 
-keywords: vyatta, 5400, vrouter, security, fix, fixes
+keywords:  
+
+subcollection: virtual-router-appliance
+
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
+{:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -22,7 +25,7 @@ keywords: vyatta, 5400, vrouter, security, fix, fixes
 
 **As of: August 30, 2018**
 
-This document lists the security vulnerability fixes for the Vyatta 5400 vRouter. When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+This document lists the security vulnerability fixes for the Vyatta 5400 vRouter. When multiple Common Vulnerabilities and Exposures (CVE) numbers are addressed in a single update, the highest Common Vulnerability Scoring System (CVSS) score is listed.
 {: shortdesc}
 
 ## 6.7R14S10
@@ -97,7 +100,6 @@ Released May 14, 2018
 
 Security vulnerabilities resolved in 6.7R14S7
 
-
 ## 6.7R14S6
 {: #6-7R14S6}
 
@@ -129,8 +131,8 @@ Issues resolved in 6.7R14S6
 Security vulnerabilities resolved in 6.7R14S6
 
 
-## 6.7R14S6
-{: #6-7R14S6}
+## 6.7R14S5
+{: #6-7R14S5}
 
 Released February 2, 2018.
 
@@ -228,6 +230,7 @@ Issues resolved in 6.7R14S1
 
 Security vulnerabilities resolved in 6.7R14S1
 
-**Note:** The information contained herein is not an offer, commitment, representation or warranty by AT&T and is subject to change. It is not for use or disclosure outside of AT&T companies except under written agreement.
+The information contained herein is not an offer, commitment, representation or warranty by AT&T and is subject to change. It is not for use or disclosure outside of AT&T companies except under written agreement.
+{: note}
 
 © 2018 AT&T Intellectual Property. All rights reserved. AT&T and Globe logo are registered trademarks of AT&T Intellectual Property. All other marks are the property of their respective owners.

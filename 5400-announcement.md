@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 {:note: .note}
 {:important: .important}
 
-# Vyatta 5400 End of Support Announcement
+# Vyatta 5400 end of support announcement
 {: #vyatta-5400-end-of-support-announcement}
 
 Support for the legacy Vyatta 5400 offering will end on March 31, 2019. This date is largely driven by the fact that the underlying Debian 7 software kernel that the Vyatta 5400 code is built on will no longer have Debian community support.

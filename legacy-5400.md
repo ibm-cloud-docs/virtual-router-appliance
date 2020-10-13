@@ -1,14 +1,17 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2019
 lastupdated: "2019-11-14"
 
-keywords: vyatta, 5400, support
+keywords:  
+
+subcollection: virtual-router-appliance
+
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
+{:shortdesc: .shortdesc} 
+{:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -20,7 +23,7 @@ keywords: vyatta, 5400, support
 # Vyatta 5400 support
 {: #vyatta-5400-support}
 
-Legacy Vyatta 5400 customers should upgrade to {{site.data.keyword.vra_full}} (VRA) as soon as possible, as support for Vyatta 5400 will be removed as of March 31, 2019.
+Vyatta was removed from service on 31 March 2019. You should upgrade from Legacy Vyatta 5400 to {{site.data.keyword.vra_full}} (VRA). 
 {: shortdesc}
 
-For a detailed list of improvements that the VRA has over Vyatta 5400, refer to the [FAQs](/docs/virtual-router-appliance?topic=virtual-router-appliance-faqs-for-ibm-virtual-router-appliance#what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-).
+For a detailed list of improvements that the VRA has over Vyatta 5400, see the [FAQs](/docs/virtual-router-appliance?topic=virtual-router-appliance-faqs-for-ibm-virtual-router-appliance#what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-).
