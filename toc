@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="virtual-router-appliance" category="network_classic" audience="network" href="/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started" console-page="/provision/gateway" product-page="https://www.ibm.com/cloud/network-appliances" path="virtual-router-appliance"}
+{: .toc subcollection="virtual-router-appliance" category="network_classic" audience="network" href="/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started" console-page="https://cloud.ibm.com/gen1/infrastructure/provision/gateway?image=ATT" product-page="https://www.ibm.com/cloud/network-appliances" path="virtual-router-appliance"}
 Virtual Router Appliance
 
     {: .navgroup id="learn"}
