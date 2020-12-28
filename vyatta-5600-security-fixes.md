@@ -23,9 +23,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Latest patch received: September 16, 2020**
+**Latest patch received: November 10, 2020**
 
-**Latest documentation published: September 28, 2020**
+**Latest documentation published: December 16, 2020**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -34,6 +34,77 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 1912g
+{: #1912g}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-53517 | Critical | PTP de-referencing bad interface pointer | 
+| VRVDR-53459 | Critical | ATT-VROUTER-PTP-MIB::attVrouterPtpServoFailure no longer sent | 
+| VRVDR-53429 | Blocker | Up-rev Ufi hwdiag to 3.1.11 | 
+| VRVDR-53385 | Blocker | Repeat PTP servo failure messages | 
+| VRVDR-53372 | Critical | Dataplane crash in ptp_peer_resolver_cb | 
+| VRVDR-53317 | Critical | PTP: port packet counters ignore signalling messages | 
+| VRVDR-53305 | Blocker | Incoming PTP traffic is not being trapped to the PTP firmware | 
+| VRVDR-53302 | Critical | Boundary Clock lost sync and is unable to re-acquire lock | 
+| VRVDR-53014 | Critical | commit-confirm not working via vcli scripts | 
+| VRVDR-52995 | Critical | Grub update during image upgrade is broken | 
+| VRVDR-52879 | Blocker | PTP: Unable to peer with master when route to GM fails over to backup vlan | 
+| VRVDR-52877 | Blocker | ADI QoS Performance Issue with specific packet sizes | 
+| VRVDR-52825 | Minor | Configuring three sub-levels of time-zone is not possible, causing upgrade from earlier version to fail | 
+| VRVDR-52739 | Major | Port value in tunnel policy without specifying protocol causes error "protocol must be formatted as well-known string." for IPsec 'show' commands | 
+| VRVDR-52677 | Major | When multiple peers use the same local-address, no authentication ids, and unique pre-shared-keys IKEv2 based IPsec stuck in 'init' for all but one peer | 
+| VRVDR-52668 | Major | Configuration fails to load after upgrade from 1801ze to 1912e when firewall rule with port range 0-65535 statement is present | 
+| VRVDR-52611 | Major | i40e driver silently drops multicast packets causing VRRP dual master | 
+| VRVDR-52425 | Major | TACACS+ command authorization/accounting bypass via NETCONF | 
+| VRVDR-52424 | Major | NETCONF edit-config applies changes with "none" default-operation, and no specified operation | 
+| VRVDR-52410 | Critical | IPsec: SNMP trap no longer sent when IPsec tunnel goes up or down | 
+| VRVDR-52404 | Major | ICMP error returned with corrupted inner header causes seg-fault when passed through a FW/NAT44/PBR rule with logging enabled | 
+| VRVDR-52401 | Critical | Degradation of throughput by 10%-40% on v150 with 100M physical interface & QOS | 
+| VRVDR-52221 | Major | Disabled PMTUD on GRE tunnel causes outer packet to inherit inner packet TTL value | 
+| VRVDR-52179 | Critical | Overlayfs file corruption of user accounting files | 
+| VRVDR-52152 | Critical | PTP: Use monotonic time for semaphores and mutexes | 
+| VRVDR-51643 | Major | SNMP Trap not receiving when CHILD_SA deleting | 
+| VRVDR-51465 | Blocker | Restore (opt-out) collection of shell history in tech-support | 
+| VRVDR-51455 | Critical | Bad file descriptor (src/epoll.cpp:100) when applying config | 
+| VRVDR-51443 | Major | IPv6 router-advert CLI missing on switch VLAN interfaces | 
+| VRVDR-51332 | Major | PTP: Unable to cope with config change where master and slave swap ds-ports (slave does not come up) | 
+| VRVDR-50884 | Major | Grub passwd printed in plain-text in installer logs | 
+| VRVDR-50619 | Major | LACP with VIF - still seeing Slaves not selected in 'balanced' mode | 
+| VRVDR-50544 | Critical | Opd logging YANG files missing in Edinburgh (VNF), Fleetwood onwards (VR and VNF) | 
+| VRVDR-50313 | Major | PTP: SIAD does not send "Follow_Up" msgs to slaves when two-step- flag is enabled | 
+| VRVDR-50026 | Critical | Dataplane crash: npf_timeout_get() | 
+| VRVDR-49447 | Major | show tech-support still logs /var/log/messages | 
+| VRVDR-49409 | Major | Dataplane reports that the bonding drivers doesn't support vlan filtering | 
+| VRVDR-49209 | Minor | tech-support should not use any user gpg config when encrypting tech support archives | 
+| VRVDR-48480 | Blocker | PTP servo reports 0 pps after path switch during ECMP | 
+| VRVDR-48460 | Critical | Tshark permission errors and seg fault when executing monitor command | 
+| VRVDR-48055 | Critical | IPsec VPN dataplane crash deleting VRF | 
+| VRVDR-47858 | Critical | GRE: "RTNETLINK answers: No such file or directory" on trying to delete tunnel | 
+| VRVDR-46493 | Major | IPSec RA-VPN Server : IKE proposal not found on server when setting the local-address to "any" | 
+| VRVDR-43307 | Critical | vyatta-ike-sa-daemon: TypeError: 'IKEConfig' object does not support indexing | 
+| VRVDR-42123 | Major | opd adds node.tag values under the wrong location in tab completion | 
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-53323 | 7.5 | DLA-2391-1 | CVE-2020-25613: Debian DLA-2391-1 : ruby2.3 security update | 
+| VRVDR-53273 | 7.8 | DLA-2385-1 | CVE-2019-3874, CVE-2019-19448, CVE-2019-19813, CVE-2019-19816, CVE-2020-10781, CVE-2020-12888, CVE-2020-14314, CVE-2020-14331, CVE-2020-14356, CVE-2020-14385, CVE-2020-14386, CVE-2020-14390, CVE-2020-16166, CVE-2020-25212, CVE-2020-25284, CVE-2020-25285, CVE-2020-25641, CVE-2020-26088: Debian DLA-2385-1: linux-4.19 LTS security update | 
+| VRVDR-53272 | 9.8 | DLA-2388-1 | Debian DLA-2388-1 : nss security update | 
+| VRVDR-53231 | N/A | DLA-2382-1 | CVE-2020-8231: Debian DLA-2382-1 : curl security update | 
+| VRVDR-53230 | 3.7 | DLA-2378-1 | CVE-2020-1968: Debian DLA-2378-1 : openssl1.0 security update | 
+| VRVDR-52817 | 6.4 | N/A | CVE-2020-15705: GRUB2 fails to validate kernel signature when booted directly without shim, allowing secure boot to be bypassed | 
+| VRVDR-52457 | 7.8 | DLA-2301-1 | CVE-2020-12762: Debian DLA-2301-1 : json-c security update | 
+| VRVDR-52456 | 6.7 | DLA-2290-1 | CVE-2019-5188: Debian DLA-2290-1 : e2fsprogs security update | 
+| VRVDR-52454 | N/A | DLA-2295-1 | CVE-2020-8177: Debian DLA-2295-1 : curl security update | 
+| VRVDR-52357 | 5.6 | DSA-4733-1 | CVE-2020-8608: Debian DSA-4733-1: qemu security update | 
+| VRVDR-52273 | 6.7 | DSA-4728-1 | CVE-2020-10756, CVE-2020-13361, CVE-2020-13362, CVE-2020-13754, CVE-2020-13659: Debian DSA 4728-1: qemu security update | 
+| VRVDR-52265 | 9.8 | DLA-2280-1 | CVE-2018-20406, CVE-2018-20852, CVE-2019-5010, CVE-2019-9636, CVE-2019-9740, CVE-2019-9947, CVE-2019-9948, CVE-2019-10160, CVE-2019-16056, CVE-2019-16935, CVE-2019-18348, CVE-2020-8492, CVE-2020-14422: Debian DLA-2280-1 : python3.5 security update | 
+| VRVDR-51849 | 7.5 | N/A | CVE-2018-19044, CVE-2018-19045, CVE-2018-19046: Insecure temporary file usage in keepalived | 
 
 ## 1912f
 {: #1912f}
