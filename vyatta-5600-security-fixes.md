@@ -35,6 +35,46 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
+## 1912h
+{: #1912h}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-53699 | Blocker | PTP implementation noms all the PTP packets. Even though not destined for it. | 
+| VRVDR-53596 | Critical | config-sync is not operational when the configuration contains quotes |
+| VRVDR-53570 | Critical | Storm control policy may have non-zero packet counts on being applied |
+| VRVDR-53515 | Critical | PTP remains in acquiring state long enough to trigger an alarm |
+| VRVDR-53373 | Critical | When bond is disabled the link-state of member interfaces is u/D when configured but u/u after a reboot |
+| VRVDR-53367 | Minor | config-sync does not work if a modified candidate config exists on peer |
+| VRVDR-53324 | Blocker | ADI XS uCPE: InDiscards seen in the switch backplane at 1G |
+| VRVDR-53083 | Critical | Coredumpobserved at in.telnetd |
+| VRVDR-52877 | Blocker | ADI QoS Performance Issue with specific packet sizes |
+| VRVDR-52074 | Major | Mark maps using DSCP resource groups don't pick up resource group changes |
+| VRVDR-51940 | Blocker | Changing DSCP Values Causes BFD Instability Which Requires Reboot |
+| VRVDR-51529 | Critical | Config Sync fails displaying 'vyatta-interfaces-v1:interfaces' when firewall action configured |
+| VRVDR-43453 | Minor | show l2tpeth/ show l2tpeth <interface> returns "Use of uninitialized value in printf at /opt/vyatta/bin/vplane-l2tpeth-show.pl line 41" with the output |
+
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-53860 | 7.5 | DLA-2340-2 | CVE-2019-20218: Debian DLA-2340-2 : sqlite3 regression update |
+| VRVDR-53859 | 2.8 | DLA-2488-1 | CVE-2020-27351: Debian DLA-2488-1 : python-apt security update |
+| VRVDR-53858 | 5.7 | DLA-2487-1 | CVE-2020-27350: Debian DLA-2487-1 : apt security update |
+| VRVDR-53824 | N/A | DLA-2481-1 | CVE-2020-25709, CVE-2020-25710: Debian DLA-2481-1: openldap security update |
+| VRVDR-53769 | 6.1 | DLA-2467-1 | CVE-2018-19787, CVE-2020-27783: Debian DLA-2467-1 : lxml security update |
+| VRVDR-53688 | 7.5 | DLA-2456-1 | CVE-2019-20907, CVE-2020-26116: Debian DLA-2456-1 : python3.5 security update |
+| VRVDR-53626 | 6.5 | DLA-2445-1 | CVE-2020-28241: Debian DLA-2445-1 : libmaxminddb security update |
+| VRVDR-53625 | 7.5 | DLA-2444-1 | CVE-2020-8037: Debian DLA-2444-1 : tcpdump security update |
+| VRVDR-53624 | 7.5 | DLA-2443-1 | CVE-2020-15166: Debian DLA-2443-1 : zeromq3 security update |
+| VRVDR-53526 | 7.5 | DLA-2423-1 | CVE-2019-10894, CVE-2019-10895, CVE-2019-10896, CVE-2019-10899, CVE-2019-10901, CVE-2019-10903, CVE-2019-12295: Debian DLA-2423-1 : wireshark security update |
+| VRVDR-53525 | N/A | DLA-2425-1 | Debian DLA-2425-1 : openldap security update |
+| VRVDR-53524 | N/A | DLA-2424-1 | Debian DLA-2424-1 : tzdata new upstream version |
+| VRVDR-53448 | N/A | DLA-2409-1 | CVE-2020-15180: Debian DLA-2409-1 : mariadb-10.1 security update |
+
 ## 1912g
 {: #1912g}
 
