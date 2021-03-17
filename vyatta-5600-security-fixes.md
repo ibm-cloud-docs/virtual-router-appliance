@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2020
-lastupdated: "2020-09-28"
+lastupdated: "2021-03-17"
 
 keywords:  
 
@@ -23,9 +23,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Latest patch received: November 10, 2020**
+**Latest patch received: March 1, 2021**
 
-**Latest documentation published: December 16, 2020**
+**Latest documentation published: March 17, 2021**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -34,6 +34,68 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 1912k
+{: #1912k}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-54360 | Major| Operator level user cannot execute 'show firewall ...' commands |
+| VRVDR-54272 | Critical | tech-support archive generated uncompressed breaking user expectations | 
+| VRVDR-54238 | Major | Dataplane crash in map_rcu_freeon system shutdown | 
+| VRVDR-54225 | Minor | VFPinterface does not pick up IP Address from donor loopback interface | 
+| VRVDR-54160 | Major | LACP with VIF -Slaves not selected in 'lacp' & 'balanced' modes | 
+| VRVDR-54144 | Blocker | Marvell FALplugin should drop backplane packets with RX Errors | 
+| VRVDR-54119 | Critical | Repeated PTP tunnel failures due to busy state | 
+| VRVDR-54027 | Major | Migrating loopback to self GRE tun50 configuration to newer code versions | 
+| VRVDR-51846 | Critical | RIB table not updated correctly for OSPFv3 routes after flapping the primary path by making dataplane/switch interface link failure/recovery |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-54536 | 9.1 | DLA-2566-1 | CVE-2019-20367: Debian DLA-2566-1 : libbsd security update | 
+| VRVDR-54535 | N/A | DLA-2565-1 | CVE-2021-23840, CVE-2021-23841:Debian DLA-2565-1 : openssl1.0 security update | 
+| VRVDR-54534 | N/A | DLA-2563-1 | CVE-2021-23840, CVE-2021-23841: Debian DLA-2563-1 : openssl security update | 
+| VRVDR-54499 | 8.8 | DLA-2557-1 | CVE-2020-27815, CVE-2020-27825, CVE-2020-27830, CVE-2020-28374, CVE-2020-29568, CVE-2020-29569, CVE-2020-29660, CVE-2020-29661, CVE-2020-36158, CVE-2021-20177, CVE-2021-3347: Debian DLA-2557-1 : linux-4.19 security update | 
+| VRVDR-54445 | 7.8 | DLA-2549-1 | CVE-2020-0256, CVE-2021-0308: Debian DLA-2549-1 : gdisk security update | 
+| VRVDR-54436 | 7.5 | DLA-2547-1 | CVE-2019-13619, CVE-2019-16319, CVE-2019-19553, CVE-2020-7045, CVE-2020-9428, CVE-2020-9430, CVE-2020-9431, CVE-2020-11647, CVE-2020-13164, CVE-2020-15466, CVE-2020-25862, CVE-2020-25863, CVE-2020-26418, CVE-2020-26421, CVE-2020-26575, CVE-2020-28030: Debian DLA-2547-1: wireshark security update | 
+| VRVDR-54400 | 7.5 | DLA-2544-1 | CVE-2020-36221, CVE-2020-36222, CVE-2020-36223, CVE-2020-36224, CVE-2020-36225, CVE-2020-36226, CVE-2020-36227, CVE-2020-36228, CVE-2020-36229, CVE-2020-36230 :Debian DLA-2544-1 : openldapsecurity update | 
+| VRVDR-54399 | N/A | DLA-2543-1 | Debian DLA-2543-1 : libdatetime-timezone-perl new upstream version | 
+| VRVDR-54398 | N/A | DLA-2542-1 | Debian DLA-2542-1 : tzdata new upstream version | 
+| VRVDR-54337 | 6.5 | DLA-2538-1 | CVE-2020-14765, CVE-2020-14812: Debian DLA-2538-1 : mariadb-10.1 security update | 
+| VRVDR-54287 | 7.8 | DLA-2534-1 | CVE-2021-3156: Debian DLA-2534-1 : sudo security update | 
+
+## 1912j
+{: #1912j}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-54142 | Critical | Inconsistent VRRP interface status upon reboot | 
+| VRVDR-54047 | Critical | On i40e driver when bond is disabled the link-state of member interfaces is u/D when configured but u/u after a reboot | 
+| VRVDR-53964 | Major | User-isolation feature is not present in licensed 'B' images | 
+| VRVDR-53962 | Critical | Reboot D2MSN backup connection created systemd-coredump with BGP authentication enabled | 
+| VRVDR-53928 | Major | Jumbo Frame MTU setting on Intel IGB interface causes link to go down | 
+| VRVDR-53854 | Major | Interfaces went down / panic: runtime error: slice bounds out of range | 
+| VRVDR-53368 | Minor | Alpha-numeric common pattern with preceding '0' in 'resources group <name>' causes out of order list on config-sync slave | 
+  
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-54046 | 7.5 | DLA-2513-1 | CVE-2020-29361, CVE-2020-29362: Debian DLA-2513-1 : p11-kit security update | 
+| VRVDR-54039 | 7.5 | DLA-2116-1 | CVE-2015-9542: Debian DLA 2116-1:libpam-radius-auth security update | 
+| VRVDR-53970 | N/A | DLA-2510-1 | Debian DLA-2510-1 : libdatetime-timezone-perl new upstream release | 
+| VRVDR-53969 | N/A | DLA-2509-1 | Debian DLA-2509-1 : tzdata new upstream version| 
+| VRVDR-53968 | 7.5 | DLA-2500-1 | CVE-2020-8284, CVE-2020-8285, CVE-2020-8286: Debian DLA-2500-1 : curl security update | 
+| VRVDR-53967 | 8.1 | DLA-2498-1 | CVE-2018-1311: Debian DLA-2498-1 : xerces-c security update | 
+| VRVDR-53966 | N/A | DLA-2488-2 | Debian DLA-2488-2 : python-apt regression update | 
+| VRVDR-53965 | 6.1 | DLA-2467-2 | CVE-2020-27783: Debian DLA-2467-2 : lxml regression update | 
+| VRVDR-53861 | 8.2 | DLA-2483-1 | CVE-2019-19039, CVE-2019-19377, CVE-2019-19770, CVE-2019-19816, CVE-2020-0423, CVE-2020-8694, CVE-2020-14351, CVE-2020-25656, CVE-2020-25668, CVE-2020-25669, CVE-2020-25704, CVE-2020-25705, CVE-2020-27673, CVE-2020-27675, CVE-2020-28941, CVE-2020-28974: Debian DLA-2483-1: linux-4.19 security update | 
 
 ## 1912h
 {: #1912h}
@@ -55,7 +117,6 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-51940 | Blocker | Changing DSCP Values Causes BFD Instability Which Requires Reboot |
 | VRVDR-51529 | Critical | Config Sync fails displaying 'vyatta-interfaces-v1:interfaces' when firewall action configured |
 | VRVDR-43453 | Minor | show l2tpeth/ show l2tpeth <interface> returns "Use of uninitialized value in printf at /opt/vyatta/bin/vplane-l2tpeth-show.pl line 41" with the output |
-
 
 **Security Vulnerabilities Resolved**
 
