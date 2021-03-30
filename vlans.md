@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-11-14"
 
-keywords: 
+keywords:
 
 subcollection: virtual-router-appliance
 
@@ -39,7 +39,7 @@ The commands in the example create two virtual interfaces on the `dp0bond0` inte
 ## High availability commands
 {: #high-availability-commands}
 
-For a High Availability (HA) pair of VRAs, the commands are different. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` or `172.16.0.0/12` private space, and are only used for Layer-2 connectivity between the VRAs. More specifically, that connection is used for VRRP advertisements. In addition, the virtual-addresses in the following examples are the gateway IP addresses for each of a customer's primary or secondary subnets. The `vrrp-group` number should match the group number shown in your gateway details page, as well as match the `vrrp-group` set in the rest of the default configuration.
+For a High Availability (HA) pair of VRAs, the commands are different. The VIF addresses are chosen by the user or made up from the `192.168.0.0/16` or `172.16.0.0/12` private space, and are only used for layer 2 connectivity between the VRAs. More specifically, that connection is used for VRRP advertisements. In addition, the virtual-addresses in the following examples are the gateway IP addresses for each of a customer's primary or secondary subnets. The `vrrp-group` number should match the group number shown in your gateway details page, as well as match the `vrrp-group` set in the rest of the default configuration.
 
 The first command in this example can also be used on a single VRA that is not set up for HA.
 {: tip}
