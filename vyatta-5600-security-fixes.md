@@ -735,8 +735,8 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-49728 | N/A | DSA-4609-1 | CVE-2019-15795, CVE-2019-15796: Debian DSA-4609-1 : python-apt - security update |
 | VRVDR-49704 | 8.8 | DSA-4608-1 | CVE-2019-14973, CVE-2019-17546 : Debian DSA 4608-1 : tiff security update |
 | VRVDR-49642 | 9.8 | DSA-4602-1 | CVE-2019-17349, CVE-2019-17350, CVE-2019-18420, CVE-2019-18421, CVE-2019-18422, CVE-2019-18423, CVE-2019-18424, CVE-2019-18425, CVE-2019-19577, CVE-2019-19578, CVE-2019-19579, CVE-2019-19580, CVE-2019-19581, CVE-2019-19582, CVE-2019-19583, CVE-2018-12207, CVE-2018-12126, CVE-2018-12127, CVE-2018-12130, CVE-2019-11091, CVE-2019-11135, CVE-2019-17348, CVE-2019-17347, CVE-2019-17346, CVE-2019-17345, CVE-2019-17344, CVE-2019-17343, CVE-2019-17342, CVE-2019-17341, CVE-2019-17340: Debian DSA-4602-1 : xen -security update (MDSUM/RIDL) (MFBDS/RIDL/ZombieLoad)(MLPDS/RIDL) (MSBDS/Fallout) |
-VRVDR-49155 | 7.2 | N/A | CVE-2018-5265 : remote attackers able to execute arbitrary code with admin credentials |
-VRVDR-49132 | 7.8 | DSA-4564-1 | CVE-2018-12207, CVE-2019-0154, CVE-2019-0155, CVE-2019-11135: Debian DSA-4564-1: linux – security update |
+| VRVDR-49155 | 7.2 | N/A | CVE-2018-5265 : remote attackers able to execute arbitrary code with admin credentials |
+| VRVDR-49132 | 7.8 | DSA-4564-1 | CVE-2018-12207, CVE-2019-0154, CVE-2019-0155, CVE-2019-11135: Debian DSA-4564-1: linux – security update |
 
 ## 1801ze
 {: #1801ze}
@@ -1307,8 +1307,7 @@ Released March 8, 2018.
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR- 40327 | 9.8 | | DSA-4098-1
-CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security update |
+| VRVDR- 40327 | 9.8 | | DSA-4098-1 | CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security update |
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5715 / Spectre, aka variant #2 |
 
 ## 1801c
