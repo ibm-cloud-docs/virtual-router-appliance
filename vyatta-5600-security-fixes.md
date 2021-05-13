@@ -23,9 +23,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Latest patch received: March 1, 2021**
+**Latest patch received: May 12, 2021**
 
-**Latest documentation published: March 17, 2021**
+**Latest documentation published: May 12, 2021**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -34,6 +34,47 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 1912n
+{: #1912n}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-54900 | Major | Constant attempts to revive old duplicate CHILD_SA are causing rekey flood and occasional traffic drop. |
+| VRVDR-54765 | Major | ALG session may cause dataplane crash when cleared |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-54926 | 6.1 | DLA-2628-1 | CVE-2019-16935, CVE-2021-23336: Debian DLA-2628-1 : python2.7 security update | 
+| VRVDR-54858 | 9.8 | DLA-2619-1 | CVE-2021-23336, CVE-2021-3177, CVE-2021-3426:Debian DLA-2619-1 : python3.5 security update | 
+| VRVDR-54849 | 7.5 | DLA-2614-1 | CVE-2021-28831: Debian DLA-2614-1 : busybox security update | 
+| VRVDR-54848 | N/A | DLA-2611-1 | CVE-2020-27840, CVE-2021-20277: Debian DLA-2611-1 : ldb security update | 
+| VRVDR-54712 | 8.1 | DLA-2588-1 | CVE-2021-20234, CVE-2021-20235: Debian DLA-2588-1 : zeromq3 security update | 
+
+## 1912m
+{: #1912m}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-54586 | Major | Dataplane crash in connection sync on closing tcp session |
+| VRVDR-53889 | Major | BFD mbuf leak when deployed in a VNF using PCI-Passthrough on ixgbe |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-54801 | 7.2 | DLA-2605-1 | CVE-2021-27928: Debian DLA-2605-1 : mariadb-10.1 security update | 
+| VRVDR-54788 | 8.1 | DLA-2604-1 | CVE-2020-25681, CVE-2020-25682, CVE-2020-25683, CVE-2020-25684, CVE-2020-25687: Debian DLA-2604-1 : dnsmasq security update | 
+| VRVDR-54770 | 9.8 | DLA-2596-1 | CVE-2017-12424, CVE-2017-20002: Debian DLA-2596-1 : shadow security update | 
+| VRVDR-54563 | 7.5 | DLA-2574-1 | CVE-2021-27212: Debian DLA-2574-1 : openldap security update | 
+| VRVDR-54562 | 9.8 | DLA-2570-1 | CVE-2021-26937: Debian DLA-2570-1: screen security update | 
+| VRVDR-54531 | 8.1 | DLA-2568-1 | CVE-2020-8625: Debian DLA-2568-1 : bind9 security update | 
 
 ## 1912k
 {: #1912k}
