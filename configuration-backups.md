@@ -41,7 +41,7 @@ vyatta@gateway02:~$ ls -alh | grep bak
 -rw-r----- 1 vyatta users  21K Jul 30 01:12 configcomm.bak-07-30-2020
 ```
 
-The following example creates a backup copy of the boot configuration file and places it in `/home/vyatta`:
+The next example creates a backup copy of the boot configuration file and places it in `/home/vyatta`:
 
 ```
 vyatta@gateway02:~$ su
@@ -49,6 +49,18 @@ Password:
 root@gateway02:/home/vyatta# cp /config/config.boot /home/vyatta/config.boot.bak-07-30-2020
 root@gateway02:/home/vyatta# ls -alh | grep config.boot
 -rw------- 1 root   root   12K Jul 30 01:36 config.boot.bak-07-30-2020
+```
+
+The following example uses the configuration mode's save command to backup:
+
+```
+vyatta@asloma-vra-5218-ha1:~$ configure
+
+[edit]
+vyatta@asloma-vra-5218-ha1# save /home/vyatta/config-05-14-2021.bak
+Saving configuration to '/home/vyatta/config-05-14-2021.bak'...
+Done
+[edit]
 ```
 
 A more complete backup, including log data, involves generating a technical support archive for the system:
@@ -76,3 +88,29 @@ As an example:
 
 Consider backing up any notes that you create while configuring the device at a central location accessible to all of your administration staff.
 {: tip}
+
+# Restoring a configuration
+{: #restoring-a-configuration}
+{: help}
+{: support}
+
+To restore a backup configuration from a `config.boot` file, copy the file to `/config/config.boot` and reboot. For example:
+
+```
+root@asloma-vra-5218-ha1:/home/vyatta# cp config.boot.bak-05-14-2021 /config/config.boot
+root@asloma-vra-5218-ha1:/home/vyatta# reboot
+```
+
+Alternatively, to restore the configuration from a `save`, enter the configuration mode, load the backup configuration and commit:
+
+```
+vyatta@cicd-bm-vra2-sa0# save /home/vyatta/config.bak.05-14-2021
+Saving configuration to '/home/vyatta/config.bak.05-14-2021'...
+Done
+[edit]
+vyatta@cicd-bm-vra2-sa0# load /home/vyatta/config.bak.05-14-2021
+Loading configuration from '/home/vyatta/config.bak.05-14-2021'...
+Load complete.  Use 'commit' to make changes active.
+[edit]
+vyatta@cicd-bm-vra2-sa0# commit
+```
