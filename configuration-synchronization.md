@@ -27,7 +27,7 @@ subcollection: virtual-router-appliance
 {: help}
 {: support}
 
-Two {{site.data.keyword.vra_full}}s (VRAs) in a High Availability (HA) pair must have their configurations synchronized sufficiently so that both devices behave in a similar manner. This is done through `configuration sync-maps` and you can choose which portion of the configuration to synchronize. If you make a change on one machine, it pushs the marked config over to the other device.
+Two {{site.data.keyword.vra_full}}s (VRAs) in a High Availability (HA) pair must have their configurations synchronized sufficiently so that both devices behave in a similar manner. This is done through `configuration sync-maps` and you can choose which portion of the configuration to synchronize. If you make a change on one machine, it pushes the marked config over to the other device.
 {: shortdesc}
 
 This synchronizes and saves the running configuration of the local device on the remote device. However, as a step of the commit process, it does not save the configuration on the local device.

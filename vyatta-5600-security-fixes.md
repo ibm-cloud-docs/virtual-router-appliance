@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2020
-lastupdated: "2021-03-17"
+lastupdated: "2021-08-18"
 
 keywords:  
 
@@ -23,9 +23,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Latest patch received: May 12, 2021**
+**Latest patch received: July 22, 2021**
 
-**Latest documentation published: May 12, 2021**
+**Latest documentation published: August 18, 2021**
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -34,6 +34,34 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 1912p
+{: #1912p}
+
+**Issues Resolved**
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-55160 | Blocker | `dataplane: srvAdaptiveFrequencyReferenceTracker.c:91: getStraightenedLocalTimestampsAdaptiveFrequency: Assertion '((direction == E_srvUpLinkDirection) \|\| (direction == E_srvDownLinkDirection))' failed` |
+| VRVDR-54128 | Critical | PDV syslogs are observed in huge number |
+| VRVDR-53790 | Critical | Crash in mngPtpSessionStop |
+
+**Security Vulnerabilities Resolved**
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-55602 | 8.8 | DSL-2699-1 | CVE-2020-5208: Debian DLA-2699-1 : ipmitool - LTS security update |
+| VRVDR-55600 | 9.8 | DLA-2695-1 | CVE-2021-31870, CVE-2021-31871, CVE-2021-31872, CVE-2021-31873: Debian DLA-2695-1 : klibc - LTS security update | 
+| VRVDR-55556 | 7.8 | DLA-2694-1 | CVE-2020-35523, CVE-2020-35524: Debian DLA-2694-1 : tiff security update |
+| VRVDR-55555 | 5.7 | DLA-2692-1 | CVE-2020-26558, CVE-2021-0129: Debian DLA-2692-1 : bluez security update |
+| VRVDR-55537 | 7.5 | DLA-2691-1 | CVE-2021-33560: Debian DLA-2691-1 : libgcrypt |
+| VRVDR-55273 | 6.5 | DLA-2669-1 | CVE-2021-3541: Debian DLA-2669-1 : libxml2 security update |
+| VRVDR-55219 | 6.3 | DLA-2623-1 | CVE-2020-17380, CVE-2021-20203, CVE-2021-20255, CVE-2021-20257, CVE-2021-3392, CVE-2021-3409, CVE-2021-3416:Debian DLA-2623-1 : qemu security update |
+| VRVDR-55218 | 9.8 | DLA-2666-1 | CVE-2021-31535: Debian DLA-2666-1 : libx11 security update |
+| VRVDR-55127 | 5.3 | DLA-2664-1 | CVE-2021-22876: Debian DLA-2664-1 : curl security update |
+| VRVDR-55071 | 8.8 | DLA-2653-1 | CVE-2021-3516, CVE-2021-3517, CVE-2021-3518, CVE-2021-3537: Debian DLA-2653-1 : libxml2 security update |
+| VRVDR-55024 | 9.8 | DLA-2647-1 | CVE-2021-25214, CVE-2021-25215, CVE-2021-25216: Debian DLA-2647-1 : bind9 security update |
+| VRVDR-54850 | 7.8 | DLA-2610-1 | Debian DLA-2610-1 : linux-4.19 security update |
 
 ## 1912n
 {: #1912n}
