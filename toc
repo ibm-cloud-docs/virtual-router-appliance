@@ -75,7 +75,7 @@ Virtual Router Appliance
         apis.md
         [Vyatta Network OS Scripting Reference Guide](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf)
 
-    /hardware-firewall-dedicated/hardware-firewall-dedicated-ibm-cloud-ip-ranges
+    /hardware-firewall-shared/hardware-firewall-shared-ibm-cloud-ip-ranges
     /gateway-appliance/gateway-appliance-other-resources-for-ibm-gateway-appliances
 
     {: .topicgroup}
