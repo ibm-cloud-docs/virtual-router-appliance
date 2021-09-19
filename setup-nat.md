@@ -31,14 +31,15 @@ Review examples of the Network Address Translation (NAT) rules that are used on 
 
 Enter the following commands:
 
-~~~
+```
 set nat source rule 1000 description 'pass traffic to the internet'
 set nat source rule 1000 outbound-interface 'bond1'
 set nat source rule 1000 protocol 'tcp_udp'
 set nat source rule 1000 source address '10.125.49.128/26'
 set nat source rule 1000 translation address 'masquerade'
 commit
-~~~
+```
+{: codeblock}
 
 Connection request from machines in the `10.xxx.xxx.xxx` network are mapped to the IP on `bond1` and receive an associated ephemeral port when going outbound. The intention is to assign one-to-many masquerade rule numbers higher so that they do not conflict with lower NAT rules that you might have.
 
@@ -47,9 +48,9 @@ You must configure the server to pass its internet traffic through the VRA so th
 
 Use the following command to help troubleshoot NAT:
 
-'''
+```
 run show nat source translations detail
-'''
+```
 {: pre}
 
 ## One-to-one NAT rule
@@ -62,12 +63,12 @@ IP addresses that are mapped one-to-one cannot be masqueraded. If you translate 
 
 The following commands are for a source and destination rule. Type `show nat` in configuration mode to see the NAT rule type.
 
-  Use the following command to help troubleshoot NAT: `run show nat source translations detail`.
-  {: tip}
+   Use the following command to help troubleshoot NAT: `run show nat source translations detail`.
+   {: tip}
 
 Enter the following commands after ensuring that you are in configuration mode:
 
-~~~
+```
 set nat source rule 9 outbound-interface 'bond1'
 set nat source rule 9 protocol 'all'
 set nat source rule 9 source address '10.52.69.202'
@@ -77,7 +78,8 @@ set nat destination rule 9 inbound-interface 'bond1'
 set nat destination rule 9 protocol 'all'
 set nat destination rule 9 translation address '10.52.69.202'
 commit
-~~~
+```
+{: codeblock}
 
 If traffic comes in on IP `50.97.203.227` on `bond1`, that IP is mapped to IP `10.52.69.202` on any interface defined. If traffic goes outbound with the IP of `10.52.69.202` (on any interface defined), it gets translated to IP `50.97.203.227` and proceed out bound on interface `bond1`.
 
@@ -94,15 +96,14 @@ New vRouter deployments come with IBM Cloud services network IP addresses define
 The following is an example of `SERVICE-ALLOW`. This is not a complete private IP rule set.
 
 ```
-~~~
 set firewall name SERVICE-ALLOW rule 1 action 'accept'
 set firewall name SERVICE-ALLOW rule 1 destination address '10.0.64.0/19'
 set firewall name SERVICE-ALLOW rule 2 action 'accept'
 set firewall name SERVICE-ALLOW rule 2 destination address '10.1.128.0/19'
 set firewall name SERVICE-ALLOW rule 3 action 'accept'
 set firewall name SERVICE-ALLOW rule 3 destination address '10.0.86.0/24'
-~~~
 ```
+{: codeblock}
 
 After you define the firewall rules, you can assign them as you see fit. Two examples are listed.
 

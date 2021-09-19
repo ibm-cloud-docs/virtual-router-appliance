@@ -85,4 +85,4 @@ The system is going down for reboot NOW!
 vyatta@vra01:~$ show version | grep Version
 Version:      5.2R5S4
 ```
-{:screen}
+{: screen}

@@ -89,7 +89,7 @@ As an example:
 Consider backing up any notes that you create while configuring the device at a central location accessible to all of your administration staff.
 {: tip}
 
-# Restoring a configuration
+## Restoring a configuration
 {: #restoring-a-configuration}
 {: help}
 {: support}

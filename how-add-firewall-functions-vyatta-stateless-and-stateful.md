@@ -39,13 +39,13 @@ For any of the following firewall instances, **only one** can be applied.
 
 Follow these steps to set an example firewall rule to turn off Internet Control Message Protocol (ICMP) *(ping - IPv4 echo reply message)* to your Brocade 5400 vRouter's interfaces (this is a stateless action; a stateful action is reviewed later):
 
-1\. Type *show configuration* commands in the command prompt to see which configurations are set. You see a list of all the commands that you set on your device (which can be handy if you decide to migrate and want to see all your configurations). Notice the command *set firewall all-ping 'enable'*, which indicates that ICMP is still enabled for your device.
+1. Type *show configuration* commands in the command prompt to see which configurations are set. You see a list of all the commands that you set on your device (which can be handy if you decide to migrate and want to see all your configurations). Notice the command *set firewall all-ping 'enable'*, which indicates that ICMP is still enabled for your device.
 
-2\. Type *configure*.
+2. Type *configure*.
 
-3\. Type *set firewall all-ping 'disable'*.
+3. Type *set firewall all-ping 'disable'*.
 
-4\. Type *commit*.
+4. Type *commit*.
 
 If you now try to ping your Brocade 5400 vRouter device, no response is received.
 
@@ -77,42 +77,42 @@ The following commands:
 * Create a firewall rule named **dmz2private** with the default action to drop any packet.
 * Enable logging of accepted and denied traffic for the rule named **dmz2private**.
 
-1\. Type *configure* in the command prompt.
+1. Type *configure* in the command prompt.
 
-2\. Enter the following commands in the prompt:
+2. Enter the following commands in the prompt:
 
-  * *set firewall name dmz2private default-action drop*
-  * *set firewall name dmz2private enable-default-log*
+   * *set firewall name dmz2private default-action drop*
+   * *set firewall name dmz2private enable-default-log*
 
-The next set of commands is to enable **iptables** to allow traffic for an established session to return. By default, **iptables** does not allow this, which is why an explicit rule is required.
+   The next set of commands is to enable **iptables** to allow traffic for an established session to return. By default, **iptables** does not    allow this, which is why an explicit rule is required.
+   
+      * *set firewall name dmz2private rule 1 action accept*
+      * *set firewall name dmz2private rule 1 state established enable*
+      * *set firewall name dmz2private rule 1 state related enable*
+   
+   The third set of commands allows TCP/UDP to get through port 22, the default for SSH.
+   
+      * *set firewall name dmz2private rule 2 action accept*
+      * *set firewall name dmz2private rule 2 protocol tcp_udp*
+      * *set firewall name dmz2private rule 2 destination port 22*
+   
+   The final set of commands allows TCP/UDP to get through port 80, the default for HTTP.
+   
+      * *set firewall name dmz2private rule 3 action accept*
+      * *set firewall name dmz2private rule 3 protocol tcp_udp*
+      * *set firewall name dmz2private rule 3 destination port 80*
 
-  * *set firewall name dmz2private rule 1 action accept*
-  * *set firewall name dmz2private rule 1 state established enable*
-  * *set firewall name dmz2private rule 1 state related enable*
+3. Type *commit* to ensure that all rules are taken when finished.
 
-The third set of commands allows TCP/UDP to get through port 22, the default for SSH.
-
-  * *set firewall name dmz2private rule 2 action accept*
-  * *set firewall name dmz2private rule 2 protocol tcp_udp*
-  * *set firewall name dmz2private rule 2 destination port 22*
-
-The final set of commands allows TCP/UDP to get through port 80, the default for HTTP.
-
-  * *set firewall name dmz2private rule 3 action accept*
-  * *set firewall name dmz2private rule 3 protocol tcp_udp*
-  * *set firewall name dmz2private rule 3 destination port 80*
-
-3\. Type *commit* to ensure that all rules are taken when finished.
-
-4\. View your configuration by typing *show firewall name dmz2private* in the command prompt.
+4. View your configuration by typing *show firewall name dmz2private* in the command prompt.
 
 The next firewall rule is applied to our **dmz** zone. This rule is named **public**. Enter the following commands:
 
-  * *set firewall name public default-action drop*
-  * *set firewall name public enable-default-log*
-  * *set firewall name public rule 1 action accept*
-  * *set firewall name public rule 1 state established enable*
-  * *set firewall name public rule 1 state related enable*
+* *set firewall name public default-action drop*
+* *set firewall name public enable-default-log*
+* *set firewall name public rule 1 action accept*
+* *set firewall name public rule 1 state established enable*
+* *set firewall name public rule 1 state related enable*
 
 Firewall rules need to flow outbound through **prod** to **dmz**. Use the following command to help troubleshoot network flow: *sudo tcpdump -i any host 10.52.69.202*.
 {: note}
@@ -130,20 +130,20 @@ Zones are logical representation of an interface. The following commands:
 
 1. Enter the Following commands in the prompt:
 
-  * *configure*
-  * *set zone policy zone dmz default-action drop*
-  * *set zone-policy zone dmz interface bond1*
-  * *set zone-policy zone prod default-action drop*
-  * *set zone-policy zone prod interface bond1.2007*
-  * *set zone-policy zone private default-action drop*
-  * *set zone-policy zone private interface bond0.2254*
+   * *configure*
+   * *set zone policy zone dmz default-action drop*
+   * *set zone-policy zone dmz interface bond1*
+   * *set zone-policy zone prod default-action drop*
+   * *set zone-policy zone prod interface bond1.2007*
+   * *set zone-policy zone private default-action drop*
+   * *set zone-policy zone private interface bond0.2254*
 
-  2. Use the following commands to set the firewall policy for the zones:
+2. Use the following commands to set the firewall policy for the zones:
 
-  * *set zone-policy zone private from dmz firewall name dmz2private*
-  * *set zone-policy zone prod from dmz firewall name dmz2private*
-  * *set zone-policy zone dmz from prod firewall name public4*
-  * *commit*
+   * *set zone-policy zone private from dmz firewall name dmz2private*
+   * *set zone-policy zone prod from dmz firewall name dmz2private*
+   * *set zone-policy zone dmz from prod firewall name public4*
+   * *commit*
 
 Note that you can apply a firewall rule to a specific interface if you do not want to apply it to a zone policy. Use the following commands to apply a rule to an interface.
 

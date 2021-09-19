@@ -92,7 +92,7 @@ set security firewall name Local 'default-log'
 set security firewall name Local rule 10 action 'accept'
 set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp.conf" )
 ```
-{:screen}
+{: screen}
 
 ## Order of operation for firewalls, NAT, routing and DNS
 {: #order-of-operation-for-firewalls-nat-routing-and-dns}
@@ -198,7 +198,7 @@ Use IPsec (VTI BASED).
 With Vyatta 5400 devices, the following firewall rule is allowed:
 
 `set firewall name allow rule 10 ipsec`
-{:pre}
+{: pre}
 
 However, with {{site.data.keyword.vra_full}}, there is no IPsec.
 
@@ -211,7 +211,7 @@ Possible alternative rules for VRA devices:
    match-ipsec  Inbound IPsec packets
    match-none   Inbound non-IPsec packets                                                                                                                
 ```
-{:codeblock}
+{: codeblock}
 
 ## IPSEC 'match-ipsec"
 {: #ipsec-match-ipsec-}
@@ -225,7 +225,7 @@ With Vyatta 5400 devices, the following firewall rules are allowed:
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 ```
-{:codeblock}
+{: codeblock}
 
 However, with {{site.data.keyword.vra_full}}, there is no IPsec.
 
@@ -248,7 +248,7 @@ set security firewall name <name> rule <rule-no> protocol ah
 set security firewall name <name> rule <rule-no> action accept
 set security firewall name <name> rule <rule-no> protocol esp
 ```
-{:codeblock}
+{: codeblock}
 
 ## Site-to-site IPsec with DNAT
 {: #site-to-site-ipsec-with-dnat}
@@ -264,7 +264,7 @@ server (10.71.68.245) -- vyatta 1 (11.0.0.1)
 vyatta 2 -- client (10.103.0.1)
 Tun50 172.16.1.245
 ```
-{:codeblock}
+{: codeblock}
 
 The prior code snippet is a small setup example for DNAT translation after an IPsec packet is decrypted in a Vyatta 5400. In this example, there are two Vyattas, `vyatta1 (11.0.0.1)` and `vyatta2 (12.0.0.1)`. IPsec peering is established between `11.0.0.1` and `12.0.0.1`. In this case, the client is targeting `172.16.1.245` sourced from `10.103.0.1` end-to-end. The expected behavior of this scenario is that the destination address `172.16.1.245` translates to `10.71.68.245` in the packet header.
 
@@ -291,7 +291,7 @@ set interfaces tunnel tun50 encapsulation 'gre'
 set interfaces tunnel tun50 local-ip '169.254.1.1'
 set interfaces tunnel tun50 remote-ip '169.254.1.1'
 ```
-{:codeblock}
+{: codeblock}
 
 **VPN configuration commands**
 
@@ -310,7 +310,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 local-address '11.0.0.1'
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 local prefix '172.16.1.245/30'
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103.0.0/24'
 ```
-{:codeblock}
+{: codeblock}
 
 **NAT configuration commands**
 
@@ -325,7 +325,7 @@ set service nat source rule 10 outbound-interface 'tun50'
 set service nat source rule 10 source address '10.71.68.245'
 set service nat source rule 10 translation address '172.16.1.245'
 ```
-{:codeblock}
+{: codeblock}
 
 **Protocols configuration commands**
 
@@ -333,7 +333,7 @@ set service nat source rule 10 translation address '172.16.1.245'
 set protocols static interface-route 172.16.1.245/32 next-hop-interface 'tun50'
 set protocols static table 50 interface-route 0.0.0.0/0 next-hop-interface 'tun50'
 ```
-{:codeblock}
+{: codeblock}
 
 **PBR configuration commands**
 
@@ -345,7 +345,7 @@ set policy route pbr Backwards-DNAT rule 10 destination address '10.103.0.0/24'
 set policy route pbr Backwards-DNAT rule 10 source address '10.71.68.0/24'
 set policy route pbr Backwards-DNAT rule 10 table '50'
 ```
-{:codeblock}
+{: codeblock}
 
 ## PPTP
 {: #pptp}
@@ -373,7 +373,7 @@ For a pair of VRAs with VRRP, the standby router might not have the VRRP virtual
 ```
 interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
-{:pre}
+{: pre}
 
 ## Recent count and recent time
 {: #recent-count-and-recent-time}
@@ -392,7 +392,7 @@ set firewall name localGateway rule 300 recent count '3'
 set firewall name localGateway rule 300 recent time '30'
 set firewall name localGateway rule 300 state new 'enable'
 ```
-{:codeblock}
+{: codeblock}
 
 On the {{site.data.keyword.vra_full}}, this rule has the following issues:
 
@@ -423,7 +423,7 @@ set system conntrack modules sqlnet 'disable'
 set system conntrack modules tftp 'disable'
 set system conntrack table-size '3000000'
 ```
-{:codeblock}
+{: codeblock}
 
 ## Set system conntrack timeout
 {: #set-system-conntrack-timeout}
@@ -443,7 +443,7 @@ set system conntrack timeout tcp syn-recv '60'
 set system conntrack timeout tcp syn-sent '120'
 set system conntrack timeout tcp time-wait '60'
 ```
-{:codeblock}
+{: codeblock}
 
 ## Time based firewall
 {: #time-based-firewall}
@@ -461,7 +461,7 @@ set firewall name PRIV_SERVICE_IN rule 58 source address '10.150.156.104'
 set firewall name PRIV_SERVICE_IN rule 58 time startdate '2017-08-22'
 set firewall name PRIV_SERVICE_IN rule 58 time stopdate '2018-02-22'
 ```
-{:codeblock}
+{: codeblock}
 
 ## TCP-MSS
 {: #tcp-mss-2}
@@ -478,14 +478,14 @@ set interfaces tunnel tun3 multicast 'disable'
 set interfaces tunnel tun3 policy route 'change-mss'(in 18.x unable to apply tcp-mss using PBR only option is to set on interface directly which i believe is not equivalent to pbr .
 set interfaces tunnel tun3 remote-ip '104.129.200.34'
 ```
-{:codeblock}
+{: codeblock}
 
 ```
 set policy route change-mss rule 1 protocol 'tcp'
 set policy route change-mss rule 1 set tcp-mss '1436'
 set policy route change-mss rule 1 tcp flags 'SYN
 ```
-{:codeblock}
+{: codeblock}
 
 ## Specific application or port broken in S-S IPsec VPN
 {: #specific-application-or-port-broken-in-s-s-ipsec-vpn}
@@ -512,7 +512,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 local-address '11.0.0.1'
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 local prefix '172.16.1.245/30'
 set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103.0.0/24'                                          set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote port 21 (ftp)
 ```
-{:codeblock}
+{: codeblock}
 
 ## Significant change in logging behavior
 {: #significant-change-in-logging-behavior}

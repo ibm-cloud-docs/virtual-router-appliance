@@ -1,0 +1,117 @@
+toc:
+  properties:
+    subcollection: virtual-router-appliance
+    version: 2
+    category: network_classic
+    audience: service
+    href: /docs/virtual-router-appliance
+    console-page: https://cloud.ibm.com/catalog/infrastructure/gateway-appliance
+    product-page: https://www.ibm.com/cloud/network-appliances
+    path: virtual-router-appliance
+    label: Virtual Router Appliance
+
+#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation for more details on the toc design.
+  entries:
+    - navgroup:
+       id: learn
+       topics:
+       - getting-started.md
+       - about.md
+       - vyatta-patch-notes.md
+       - link:
+          label: What is network security?
+          href: https://www.ibm.com/cloud/learn/networking-a-complete-guide
+       - topicgroup:
+          label: Upgrading
+          topics:
+          - upgrade-os.md
+          - upgrade-issues.md
+       - topicgroup:
+          label: Migrating Vyatta 5400
+          topics:
+          - migration-guide.md
+          - 5400-announcement.md
+          - upgrade-5400-with-ip.md
+          - 5400-juniper.md
+          - migration-issues.md
+          -  migration-faqs.md
+    
+    - navgroup:
+       id: tutorial
+       topics:
+       - topicgroup:
+          label: Tutorials
+          topics:
+          - /solution-tutorials/solution-tutorials-secure-network-enclosure
+          - /solution-tutorials/solution-tutorials-nat-config-private
+          - /solution-tutorials/solution-tutorials-configuring-IPSEC-VPN
+          - /solution-tutorials/solution-tutorials-linking-secure-network-enclosures
+          - /solution-tutorials/solution-tutorials-web-app-private-network
+          - /fortigate-10g/fortigate-10g-exploring-firewalls
+    
+    - navgroup:
+       id: howto
+       topics:
+       - /gateway-appliance/gateway-appliance-viewing-all-gateway-appliances
+       - /gateway-appliance/gateway-appliance-viewing-gateway-appliance-details
+       - /gateway-appliance/gateway-appliance-renaming-a-gateway-appliance
+       - /gateway-appliance/gateway-appliance-cancel-gateway-appliance
+       - vra-basics.md
+       - topicgroup:
+          label: Working with VLANs
+          topics:
+          - /gateway-appliance/gateway-appliance-managing-vlans-and-gateway-appliances
+          - vlans.md
+       - firewall.md
+       - services.md
+       - topicgroup:
+          label: Working with High Availability configurations
+          topics:
+          - vrrp.md
+          - configuration-synchronization.md
+       - topicgroup:
+          label: Using IPsec and VFP interfaces
+          topics:
+          - vra-ipsec.md
+          - vra-vfp.md
+          - vra-nat.md
+          - vra-vfp-troubleshooting.md
+       - configuration-backups.md
+       - osreload-configuration.md
+
+#  Links to your REST API docs should be included in the Reference navigation group. For details on publishing API docs, see https://test.cloud.ibm.com/docs/api-docs.
+#  Links to your command line reference docs should be included in the Reference navigation group.
+    - navgroup:
+       id: reference
+       topics:
+       - vyatta-5600-security-fixes.md
+       - vyatta-5600-security-fixes-52.md
+       - topicgroup:
+          label: VRA API reference
+          topics:
+          - apis.md
+          - link:
+             label: Vyatta Network OS Scripting Reference Guide
+             href: https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf
+       - /hardware-firewall-shared/hardware-firewall-shared-ibm-cloud-ip-ranges
+       - /gateway-appliance/gateway-appliance-other-resources-for-ibm-gateway-appliances
+       - topicgroup:
+          label: Legacy Vyatta 5400
+          topics:
+          - legacy-5400.md
+          - Vyatta-5400-Security-Fixes.md
+          - basic-configuration-vyatta.md
+          - how-configure-ipsec-vyatta.md
+          - how-add-firewall-functions-vyatta-stateless-and-stateful.md
+          - setup-nat.md
+          - vyatta-high-availability-configuration.md
+          
+    - navgroup:
+       id: help
+       topics:
+       - whats-new-vra.md
+       - vra-docs-18.md
+       - vra-docs.md
+       - faqs.md
+       - technical-faqs.md
+       - /gateway-appliance/gateway-appliance-getting-help

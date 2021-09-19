@@ -39,7 +39,7 @@ Last login: Fri Feb  2 12:42:45 2018 from 10.0.80.100
 vyatta@acs-jmat-vyatta01:~$ show int
 -vbash: show: command not found
 ```
-{:screen}
+{: screen}
 
 In this case, the problem is not with the upgrade itself. If there were errors in that process, you would see them when you issued the `add system image` command. Here the device has been rebooted, but it now has a new, and empty `/home` directory space, and any users that appear in the configuration need their home directories regenerated. The error stems from the failure to properly copy the needed "dotfiles" to the `vyatta` user directory:
 
@@ -54,7 +54,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 -rw-r--r-- 1 vyatta users    0 Feb  2 12:43 .profile
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
-{:screen}
+{: screen}
 
 Note that three files are zero length, and thus have no configuration. Without the commands to initialize the environment for the VRA user on login, the current shell is unable to interpret the Vyatta commands you issue. As a result, you must obtain the old dotfiles from a different source.
 
@@ -69,7 +69,7 @@ drwxr-xr-x 4 root root 4096 Jan 23 11:30 5.2R5S3.06301309
 drwxr-xr-x 4 root root 4096 Feb  2 11:54 5.2R6S5.01261706
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 grub
 ```
-{:screen}
+{: screen}
 
 The ISOs for the initial installation and the OS you are currently running are featured here.
 
@@ -92,7 +92,7 @@ drwxr-xr-x 3 root   root       4096 Nov 20 05:05 ..
 drwxr-x--- 3 vyatta users      4096 Jan  9 10:34 .ssh
 -rw-r----- 1 vyatta users 351272960 Jan 26 14:23 vyatta-vrouter-5.2_20180126T1706-amd64.iso
 ```
-{:screen}
+{: screen}
 
 From inside this directory, you can see the dotfiles and copy them over:
 
@@ -111,7 +111,7 @@ drwxr-xr-x 1 root   root  4096 Feb  2 11:57 ..
 -rw-r--r-- 1 vyatta users  675 Feb  2 12:56 .profile
 drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 ```
-{:screen}
+{: screen}
 
 After the files are copied, log out, then log back in:
 
@@ -135,7 +135,7 @@ HW UUID:      00000000-0000-0000-0000-0CC47A07EF22
 Uptime:       12:57:47 up 59 min,  1 user,  load average: 0.35, 0.27, 0.26
 vyatta@acs-jmat-vyatta01:~$
 ```
-{:screen}
+{: screen}
 
 All your commands work again, and you can proceed normally.
 

@@ -63,8 +63,8 @@ Hardware replacements are supported, but if trouble-shooting indicates that your
 
 Customers who have a Vyatta 5400 should migrate to either VRA (Vyatta 5600), Juniper vSRX, or Fortigate Security Appliance (FSA) 10G. The VRA (Vyatta 5600) is still fully supported. There is no current or projected end of support date for the VRA from either IBM Cloud or AT&T. See [Migrating Vyatta 5400](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
 
-  VRAs and vSRXs are customer managed devices.
-  {: note}
+   VRAs and vSRXs are customer managed devices.
+   {: note}
 
 ## Is support available from IBM for migrating from the Vyatta 5400 to either the VRA, vSRX, or FSA 10G?
 {: faq}
@@ -73,12 +73,12 @@ The Vyatta 5400 to VRA (5600) Configuration Conversion Service is still availabl
 
 * For existing customers, IBM Cloud is providing a no-cost offering to assist with re-factoring your existing Vyatta 5400 configuration into {{site.data.keyword.vra_full}} (VRA), Juniper vSRX, or Fortigate Security Appliance (FSA) 10G formats. To submit a request for the Configuration Conversion service, send an email to `nwom@us.ibm.com` with the subject: `Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx. `.
 
-  Be sure to insert your application choice in place of `aaaaaaaa` ({{site.data.keyword.vra_full}}, Juniper vSRX, or Fortigate Security Appliance (FSA) 10G), and your specific account number in place of `xxxxxx` in your subject line.
-  {: note}
+   Be sure to insert your application choice in place of `aaaaaaaa` ({{site.data.keyword.vra_full}}, Juniper vSRX, or Fortigate Security Appliance (FSA) 10G), and your specific account number in place of `xxxxxx` in your subject line.
+   {: note}
 
 * Wanclouds, our partner in this conversion configuration process, has completed several hundred successful migration engagements. They transform your existing Vyatta 5400 to create similar functionality on the Vyatta 5600 Platform. They provide their services in two tiers:
 
-  ![Tiers](images/tiers.png "Tiers")
+   ![Tiers](images/tiers.png "Tiers")
 
 See [Migrating Vyatta 5400](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview) to get started.
 
@@ -97,6 +97,6 @@ Contact IBM Vyatta 5400 and VRA Network Offering Management with questions at `n
 
 Review the following {{site.data.keyword.vra_full}} documentation resources for more information:
 
-  * [Getting Started with {{site.data.keyword.vra_full}}](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
-  * [About the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
-  * [Vyatta 5400 Migration Overview](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)
+   * [Getting Started with {{site.data.keyword.vra_full}}](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
+   * [About the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
+   * [Vyatta 5400 Migration Overview](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)

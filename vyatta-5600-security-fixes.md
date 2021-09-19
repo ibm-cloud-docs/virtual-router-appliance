@@ -998,11 +998,11 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 **Security Vulnerabilities Resolved**
 
 The following commands have been deprecated from this patch and are no longer available:
-  • policy route pbr <name> rule <rule-number> application name <name>
-  • policy route pbr <name> rule <rule-number> application type <type>
-  • policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name>
-  • policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type>
-  • security application firewall name <name> rule <rule-number> name <app-name>
+   • policy route pbr <name> rule <rule-number> application name <name>
+   • policy route pbr <name> rule <rule-number> application type <type>
+   • policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name>
+   • policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type>
+   • security application firewall name <name> rule <rule-number> name <app-name>
 
 Running any of the above commands will result with the error message “This feature is disabled.”
 

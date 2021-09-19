@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2021-09-14"
 
 keywords: vra, virtual router appliance
 
@@ -41,45 +41,45 @@ To order a VRA, follow these steps:
 
 1. From your browser, open the Gateway Appliances page in the [IBM Cloud UI console](https://{DomainName}/gen1/infrastructure/provision/gateway){: external} and log in to your account.
 
-  You can also get to this page by selecting the navigation menu in the top left of the [IBM Cloud catalog](https://{DomainName}/){:external} and selecting **Classic Infrastructure > Network > Gateway appliance**.
-  {: tip}
+   You can also get to this page by selecting the navigation menu in the top left of the [IBM Cloud catalog](https://{DomainName}/){: external} and selecting **Classic Infrastructure > Network > Gateway appliance**.
+   {: tip}
 
 2. From the **Gateway Vendor** section, select the **AT&T** option (when it is selected, a blue check mark appears on the button). From the list menu on that same button, choose your bandwidth (either 20Gbps or 2Gbps).
 
-  	![Gateway vendor](images/ordering_vra.png "Gateway vendor")
+   ![Gateway vendor](images/ordering_vra.png "Gateway vendor")
 
 3. From the **Gateway appliance** section, enter your **Hostname** and **Domain** name information. These fields are already populated with default information, so ensure the values are correct. Check the **High Availability** option if desired, then select your data center **Location**, and the specific **Pod** you want from the list menu.
 
-  Only pods that already have an associated VLAN appear here. If you want to provision your gateway appliance in a pod that you don't see listed, first create a VLAN there.
-  {: note}
+   Only pods that already have an associated VLAN appear here. If you want to provision your gateway appliance in a pod that you don't see listed, first create a VLAN there.
+   {: note}
 
 4. From the **Configuration** section, choose your processor's RAM. You can also define an SSH key if you want to use it to authenticate access to your new gateway.
 
-  ![Configuration](images/ordering_vra_2.png "Configuration")
+   ![Configuration](images/ordering_vra_2.png "Configuration")
 
-  The appropriate processor is chosen for you based on the license version you selected in step 2. However, you can choose different RAM configurations.
-  {: note}
+   The appropriate processor is chosen for you based on the license version you selected in step 2. However, you can choose different RAM configurations.
+   {: note}
 
 5. From the **Storage disks** section, choose the options that meet your storage requirements.
 
-  RAID0 and RAID1 options are available for added protection against data loss, as are hot spares (backup components that can be placed into service immediately when a primary component fails).
-  {: note}
+   RAID0 and RAID1 options are available for added protection against data loss, as are hot spares (backup components that can be placed into service immediately when a primary component fails).
+   {: note}
 
-  You can have up to four disks per VRA. "Disk size" with a RAID configuration is the usable disk size, because RAID configurations are mirrored.
-  {: note}
+   You can have up to four disks per VRA. "Disk size" with a RAID configuration is the usable disk size, because RAID configurations are mirrored.
+   {: note}
 
-  Reserve more than the default disk setting if you plan to run network diagnostics that generate detailed logs.
-  {: tip}
+   Reserve more than the default disk setting if you plan to run network diagnostics that generate detailed logs.
+   {: tip}
 
 6. From the **Network interface** section, select your **Uplink port speeds**. The default selection is a single interface, but there are redundant and private only options as well. Choose the one that best fits your needs.
 
-  The Network Interface **Add Ons** section allows you to select an IPv6 address if required, and shows you any additional included default options.
+   The Network Interface **Add Ons** section allows you to select an IPv6 address if required, and shows you any additional included default options.
 
 8. Review your selections, check that you have read the Third Party Service Agreements, then click **Create**. The order is verified automatically.
 
 After your order is approved, the provisioning of your {{site.data.keyword.vra_full}} starts automatically. When the provisioning process is complete, the new VRA appears in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page, where you can find the IP addresses, login username, and password for the device.  
 
-  ![Gateway details](images/gateway_details.png "Gateway details")
+   ![Gateway details](images/gateway_details.png "Gateway details")
 
 Remember that after you order and configure your VRA from the IBM Cloud catalog, you must also configure the device itself with the same settings.
 {: tip}

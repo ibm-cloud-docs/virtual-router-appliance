@@ -36,15 +36,15 @@ To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with th
 
 2. Order the new device, following the instructions for either [Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started) or for [FSA -10G](/docs/fortigate-10g?topic=fortigate-10g-getting-started). 
 
-  It is a recommended best practice to order a High Availability solution.
-  {: tip}
+   It is a recommended best practice to order a High Availability solution.
+   {: tip}
 
 3. Load the applicable configuration you onto your newly ordered device.
 
-4. Schedule time to migrate your VLANs to your new device.
+4. Schedule time to migrate your VLANs to your new device.
 
-  This step requires a brief downtime.
-  {: note}
+   This step requires a brief downtime.
+   {: note}
 
 5. Test and confirm that your new device is functioning properly.
 
@@ -61,10 +61,10 @@ To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 
 3. Load the applicable configuration onto your newly ordered device.
 
-4. Schedule time to migrate your VLANs to your new device.
+4. Schedule time to migrate your VLANs to your new device.
 
-  This step requires a brief downtime.
-  {: note}
+   This step requires a brief downtime.
+   {: note}
 
 5. Test and confirm that your new device is functioning properly.
 

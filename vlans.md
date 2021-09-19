@@ -32,7 +32,7 @@ For example:
 set interfaces bonding dp0bond0 vif 1432 address 10.0.10.14/24
 set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
-{:codeblock}
+{: codeblock}
 
 The commands in the example create two virtual interfaces on the `dp0bond0` interface for a stand-alone Virtual Router Appliances (VRA). The interface `dp0bond0.1432` processes traffic for VLAN 1432 while the interface `dp0bond0.1693` processes traffic for VLAN 1693. `10.0.10.1/24` and `10.0.20.1/24` are assumed to be the gateway IP addresses for `10.0.10.0/24` and `10.0.20.0/24` respectively, and are also assumed to be primary or secondary static/portable subnets from the [Subnets page](https://cloud.ibm.com/classic/network/subnets) in the console.
 
@@ -55,7 +55,7 @@ set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 virtual-address 10.0.
 set interfaces bonding dp0bond0 vif 1693 address 192.168.193.1/30
 set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 virtual-address 10.0.20.1/24
 ```
-{:codeblock}
+{: codeblock}
 
 Then, on the second VRA, run:
 
@@ -65,4 +65,4 @@ set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 virtual-address 10.0.
 set interfaces bonding dp0bond0 vif 1693 address 192.168.193.2/30
 set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 virtual-address 10.0.20.1/24
 ```
-{:codeblock}
+{: codeblock}
