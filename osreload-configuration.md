@@ -37,11 +37,11 @@ To reload your OS, follow these steps:
 3. Choose **Network > Gateway Appliances**.
 4. Click the server you want to reload.
 5. Click the server name in the Hardware section.
-4. Select **OS Reload** from the **Actions** menu on the upper right of the page.
-5. On the OS Reload page, click **Edit** for the Category that requires an update. Select **AT&T** as the Vendor, and the OS version that you want to reload.
-6. Click the **Reload Above Configuration** button to proceed to the Review window. Click **Cancel** to cancel the changes to the device and exit the page.
-7. Verify that all details in the New Configuration section are correct. Click **Next** to advance to the Confirm window.
-8. Click the **Confirm OS Reload** button to confirm and initiate the OS Reload. Click **Cancel** to cancel the action.
+6. Select **OS Reload** from the **Actions** menu on the upper right of the page.
+7. On the OS Reload page, click **Edit** for the Category that requires an update. Select **AT&T** as the Vendor, and the OS version that you want to reload.
+8. Click the **Reload Above Configuration** button to proceed to the Review window. Click **Cancel** to cancel the changes to the device and exit the page.
+9. Verify that all details in the New Configuration section are correct. Click **Next** to advance to the Confirm window.
+10. Click the **Confirm OS Reload** button to confirm and initiate the OS Reload. Click **Cancel** to cancel the action.
 
 After initiating the OS Reload process, the device is taken offline and the OS Reload process begins. The time it takes an OS reload to complete varies based on the current and new configuration of the device. Throughout the configuration process, the minimum time for the OS Reload displays on each page. The timeframe is an estimate made by the system. If the reload takes longer than 24 hours, contact IBM Support. When the device returns online, it functions as specified in the New Configuration for the OS Reload.
 

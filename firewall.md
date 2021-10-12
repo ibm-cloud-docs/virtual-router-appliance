@@ -42,7 +42,7 @@ By default, the firewall is stateless, but it can be configured as stateful if n
 
 To enable 'stateful' tracking of `tcp`, `udp`, or `icmp` traffic, run the following commands:
 
-```
+```sh
 set security firewall global-state-policy icmp
 set security firewall global-state-policy tcp
 set security firewall global-state-policy udp
@@ -50,13 +50,13 @@ set security firewall global-state-policy udp
 
 Note that the `global-state-policy` commands will only track the state of traffic that has matched a firewall rule which explicitly sets the corresponding protocol. For example:
 
-```
+```sh
 set security firewall name GLOBAL_STATELESS rule 1 action accept
 ```
 
 As `GLOBAL_STATELESS` does not specify `protocol tcp`, the `global-state-policy tcp` command would not apply on this rule.
 
-```
+```sh
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 action accept
 set security firewall name GLOBAL_STATEFUL_TCP rule 1 protocol tcp
 ```
@@ -66,10 +66,11 @@ In this case `protocol tcp` is explicitly defined. The `global-state-policy tcp`
 
 To make individual firewall rules 'stateful':
 
-```
+```sh
 set security firewall name TEST rule 1 allow
 set security firewall name TEST rule 1 state enable
 ```
+
 This would enable stateful tracking of all traffic that can be tracked statefully and matches rule 1 of `TEST`, regardless of the existence of `global-state-policy` commands.
 
 ## ALG for assisted stateful tracking
@@ -80,7 +81,7 @@ There are preconfigured modules that enable these protocols to be statefully man
 
 It is suggested to disable these ALG modules, unless they are required for the successful use of the respective protocols.
 
-```
+```sh
 set system alg ftp 'disable'
 set system alg icmp 'disable'
 set system alg pptp 'disable'
@@ -94,7 +95,8 @@ set system alg tftp 'disable'
 {: #firewall-rule-sets}
 
 Firewall rules are grouped together into named sets to make applying rules to multiple interfaces easier. Each rule set has a default action associated with it. Consider the following example:
-```
+
+```sh
 set security firewall name ALLOW_LEGACY default-action accept
 set security firewall name ALLOW_LEGACY rule 1 action drop
 set security firewall name ALLOW_LEGACY rule 1 source address network-group1
@@ -131,7 +133,7 @@ An interface can have multiple rule sets applied in each direction. They are app
 
 As an example, to assign the `ALLOW_LEGACY` rule set to the `in` option for the `bp0s1` interface, you would use the configuration command:
 
-`set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY `
+`set interfaces dataplane dp0s1 firewall in ALLOW_LEGACY`
 
 ## Control Plane Policing (CPP)
 {: #control-plane-policing-cpp-}
@@ -161,8 +163,9 @@ Imagine the following office scenario with three departments, each department wi
 * Department B - VLANs 30 and 40 (interface dp0bond1.30 and dp0bond1.40)
 * Department C - VLAN 50 (interface dp0bond1.50)
 
-A zone can be created for each department and the interfaces for that department can be added to the zone. The following example illustrates this: 
-```
+A zone can be created for each department and the interfaces for that department can be added to the zone. The following example illustrates this:
+
+```sh
 set security zone-policy zone DEPARTMENTA interface dp0bond1.10
 set security zone-policy zone DEPARTMENTA interface dp0bond1.20
 set security zone-policy zone DEPARTMENTB interface dp0bond1.30
@@ -193,11 +196,11 @@ The VRA supports two types of logging:
 
 	For UDP, ICMP, and all non-TCP flows, your session will transition to four states over the lifetime of the flow. For each transition, you can configure the VRA to log a message. TCP has a larger number of state transitions, each of which can be configured to log.  The following is an example of setting up session-log for your firewall:
 
-```
-set security firewall session-log icmp established
-set security firewall session-log tcp established
-set security firewall session-log udp established
-```
+   ```sh
+   set security firewall session-log icmp established
+   set security firewall session-log tcp established
+   set security firewall session-log udp established
+   ```
 
 2. Per packet logging. Include keyword ``log`` in firewall or NAT rule to log every network packet that matches the rule.
 

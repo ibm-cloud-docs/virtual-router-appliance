@@ -31,7 +31,7 @@ Review examples of the Network Address Translation (NAT) rules that are used on 
 
 Enter the following commands:
 
-```
+```sh
 set nat source rule 1000 description 'pass traffic to the internet'
 set nat source rule 1000 outbound-interface 'bond1'
 set nat source rule 1000 protocol 'tcp_udp'
@@ -48,7 +48,7 @@ You must configure the server to pass its internet traffic through the VRA so th
 
 Use the following command to help troubleshoot NAT:
 
-```
+```sh
 run show nat source translations detail
 ```
 {: pre}
@@ -68,7 +68,7 @@ The following commands are for a source and destination rule. Type `show nat` in
 
 Enter the following commands after ensuring that you are in configuration mode:
 
-```
+```sh
 set nat source rule 9 outbound-interface 'bond1'
 set nat source rule 9 protocol 'all'
 set nat source rule 9 source address '10.52.69.202'
@@ -95,7 +95,7 @@ New vRouter deployments come with IBM Cloud services network IP addresses define
 
 The following is an example of `SERVICE-ALLOW`. This is not a complete private IP rule set.
 
-```
+```sh
 set firewall name SERVICE-ALLOW rule 1 action 'accept'
 set firewall name SERVICE-ALLOW rule 1 destination address '10.0.64.0/19'
 set firewall name SERVICE-ALLOW rule 2 action 'accept'

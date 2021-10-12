@@ -71,7 +71,7 @@ Customers who have a Vyatta 5400 should migrate to either VRA (Vyatta 5600), Jun
 
 The Vyatta 5400 to VRA (5600) Configuration Conversion Service is still available:
 
-* For existing customers, IBM Cloud is providing a no-cost offering to assist with re-factoring your existing Vyatta 5400 configuration into {{site.data.keyword.vra_full}} (VRA), Juniper vSRX, or Fortigate Security Appliance (FSA) 10G formats. To submit a request for the Configuration Conversion service, send an email to `nwom@us.ibm.com` with the subject: `Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx. `.
+* For existing customers, IBM Cloud is providing a no-cost offering to assist with re-factoring your existing Vyatta 5400 configuration into {{site.data.keyword.vra_full}} (VRA), Juniper vSRX, or Fortigate Security Appliance (FSA) 10G formats. To submit a request for the Configuration Conversion service, send an email to `nwom@us.ibm.com` with the subject: `Request for Configuration Conversion to aaaaaaaa: IBM Cloud Account ID xxxxxx.`.
 
    Be sure to insert your application choice in place of `aaaaaaaa` ({{site.data.keyword.vra_full}}, Juniper vSRX, or Fortigate Security Appliance (FSA) 10G), and your specific account number in place of `xxxxxx` in your subject line.
    {: note}
@@ -97,6 +97,6 @@ Contact IBM Vyatta 5400 and VRA Network Offering Management with questions at `n
 
 Review the following {{site.data.keyword.vra_full}} documentation resources for more information:
 
-   * [Getting Started with {{site.data.keyword.vra_full}}](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
-   * [About the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
-   * [Vyatta 5400 Migration Overview](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)
+* [Getting Started with {{site.data.keyword.vra_full}}](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
+* [About the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
+* [Vyatta 5400 Migration Overview](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)

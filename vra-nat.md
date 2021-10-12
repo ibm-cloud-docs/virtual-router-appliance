@@ -28,7 +28,7 @@ In [Configuring a VFP interface with IPsec and zone firewalls](/docs/virtual-rou
 
 Here are some example NAT rules:
 
-```
+```sh
 set service nat destination rule 10 destination address '172.16.200.2'
 set service nat destination rule 10 inbound-interface 'vfp0'
 set service nat destination rule 10 translation address '10.177.137.251'
@@ -39,19 +39,19 @@ set service nat source rule 10 translation address '172.16.200.2'
 
 This example is a standard bidirectional one-to-one source and destination NAT for the same IPs. But, to ensure that the NAT traffic goes through the tunnel properly, you need a static route for the other end:
 
-```
+```sh
 set protocols static interface-route 172.16.100.2/32 next-hop-interface 'vfp0'
 ```
 
 The reason for using a static route is because the IPsec daemon already created a kernel route for the remote prefix:
 
-```
+```sh
 K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 ```
 
 Pinging with a source of `10.177.137.251` to `172.16.100.2`, the traffic leaves through `dp0bond1`, fails to transit the tunnel, and never matches the NAT rules properly. The static route fixes this:
 
-```
+```sh
 K    *> 172.16.100.0/24 via 169.63.66.49, dp0bond1
 S    *> 172.16.100.2/32 [1/0] is directly connected, vfp0
 ```
@@ -65,7 +65,7 @@ NAT requires a route with a CIDR smaller than the IPsec remote prefix (it cannot
 
 After everything is in place, you can ping and verify:
 
-```
+```sh
 [root@acs-jmat-migserver ~]# ping 172.16.100.1
 PING 172.16.100.1 (172.16.100.1) 56(84) bytes of data.
 64 bytes from 172.16.100.1: icmp_seq=1 ttl=63 time=44.7 ms

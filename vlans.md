@@ -28,7 +28,7 @@ The {{site.data.keyword.vra_full}} is able to route multiple VLANs over the same
 
 For example:
 
-```
+```sh
 set interfaces bonding dp0bond0 vif 1432 address 10.0.10.14/24
 set interfaces bonding dp0bond0 vif 1693 address 10.0.20.1/24
 ```
@@ -49,7 +49,7 @@ For more information on a full HA configuration, including setting the sync-grou
 
 On the first (or only) VRA, run the following commands:
 
-```
+```sh
 set interfaces bonding dp0bond0 vif 1432 address 192.168.132.1/30
 set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 virtual-address 10.0.10.1/24
 set interfaces bonding dp0bond0 vif 1693 address 192.168.193.1/30
@@ -59,7 +59,7 @@ set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 virtual-address 10.0.
 
 Then, on the second VRA, run:
 
-```
+```sh
 set interfaces bonding dp0bond0 vif 1432 address 192.168.132.2/30
 set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 virtual-address 10.0.10.1/24
 set interfaces bonding dp0bond0 vif 1693 address 192.168.193.2/30

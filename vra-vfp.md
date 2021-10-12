@@ -28,25 +28,25 @@ When an IPsec datagram arrives, it is processed through the firewall rules and t
 
 To configure a VFP interface to work with IPsec traffic, first create a feature point by defining the VFP with a single IP:
 
-```
+```sh
 set interfaces virtual-feature-point vfp0 address '192.168.123.123/32'
 ```
 
 Then, add the VFP to the tunnel:
 
-```
+```sh
 set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 uses 'vfp0'
 ```
 
 Next, add the interface to a zone (in this case the `INTERNET` zone with `dp0bond1`):
 
-```
+```sh
 set security zone-policy zone INTERNET interface 'vfp0'
 ```
 
 Now, ping the server:
 
-```
+```sh
 [root@acs-jmat-migserver ~]# ping -c 5  172.16.100.1
 PING 172.16.100.1 (172.16.100.1) 56(84) bytes of data.
 64 bytes from 172.16.100.1: icmp_seq=1 ttl=63 time=44.9 ms
@@ -66,7 +66,7 @@ It is possible to either use the same VFP interface on multiple tunnels, or crea
 
 It is also possible to add VFPs to their own zone. For example:
 
-```
+```sh
 set security zone-policy zone SERVERS to TUNNEL firewall 'ALLOWALL'
 set security zone-policy zone TUNNEL interface 'vfp0'
 set security zone-policy zone TUNNEL to SERVERS firewall 'ALLOWALL'

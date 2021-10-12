@@ -41,7 +41,7 @@ These frequently asked questions address the configuration of the {{site.data.ke
 
 This traffic must obtain a public source IP; thus, a Source NAT must masquerade the private IP with the public one of the VRA.
 
-```
+```sh
 set service nat source rule 1000 description 'SNAT traffic from private VLANs to Internet'
 set service nat source rule 1000 outbound-interface 'dp0bond1'
 set service nat source rule 1000 source address '10.0.0.0/8'
@@ -65,7 +65,7 @@ In short, firewall rules are applied *after* SNAT.
 
 To block all outgoing traffic in a firewall, but allow specific SNAT flows, you must move the filtering logic onto your SNAT. For example, to only allow HTTPS internet-bound traffic for a host, the SNAT rule would be:
 
-```
+```sh
 set service nat source rule 10 description 'SNAT https traffic from server 10.1.2.3 to Internet'
 set service nat source rule 10 destination port 443
 set service nat source rule 10 outbound-interface 'dp0bond1'
@@ -80,7 +80,7 @@ It is recommended to use the VRRP public address of the VRA so that you can diff
 
 Assume that `150.1.2.3` is the VRRP VRA address, and `150.1.2.5` is the real dp0bond1 address. The stateful firewall applied on `dp0bond1 out` would be:
 
-```
+```sh
 set security firewall name TO_INTERNET default-action drop
 set security firewall name TO_INTERNET rule 10 action `accept`
 set security firewall name TO_INTERNET rule 10 description 'Accept host traffic to Internet - SNAT to VRRP'
@@ -116,7 +116,7 @@ It is considered a best practice to not allow SSH connections from the internet,
 
 By default, the VRA accepts SSH on all interfaces. To listen only for SSH connections on the private interface, you must set the following configuration:
 
-```
+```sh
 set service ssh listen-address '10.1.2.3'
 ```
 

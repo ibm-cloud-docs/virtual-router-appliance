@@ -48,7 +48,7 @@ To upgrade the VRA, perform the following procedure.
 
 The following example illustrates the upgrade process.
 
-```
+```sh
 vyatta@vra01:~$ show version | grep Version
 Version:      5.2R5S3
 

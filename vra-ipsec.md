@@ -31,7 +31,7 @@ An example configuration of two machines with IPsec between them follows:
 ## Machine A
 {: #machine-a}
 
-```
+```sh
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
 set security vpn ipsec esp-group ESP01 proposal 1 encryption 'aes256'
@@ -50,7 +50,7 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '17
 ## Machine B
 {: #machine-b}
 
-```
+```sh
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
 set security vpn ipsec esp-group ESP01 pfs 'enable'
 set security vpn ipsec esp-group ESP01 proposal 1 encryption 'aes256'
@@ -70,7 +70,7 @@ This sets up a generic tunnel that routes `172.16.x.x` traffic between the two m
 
 You can see the results here:
 
-```
+```sh
 [root@acs-jmat-migserver ~]# ping -c 5 172.16.100.1
 PING 172.16.100.1 (172.16.100.1) 56(84) bytes of data.
 64 bytes from 172.16.100.1: icmp_seq=1 ttl=63 time=44.5 ms
@@ -86,7 +86,7 @@ rtt min/avg/max/mdev = 44.578/44.750/44.993/0.244 ms
 
 This illustrates bidirectional traffic across this IPsec tunnel. Next, you can apply a simple "allow all" zone policy to all interfaces on Machine A:
 
-```
+```sh
 set security firewall name ALLOWALL default-action 'drop'
 set security firewall name ALLOWALL rule 10 action 'accept'
 set security firewall name ALLOWALL rule 10 protocol 'tcp'
@@ -101,7 +101,7 @@ set security firewall name ALLOWALL rule 30 state 'enable'
 
 Then, add policies between all three interfaces:
 
-```
+```sh
 set security zone-policy zone INTERNET interface 'dp0bond1'
 set security zone-policy zone INTERNET to PRIVATE firewall 'ALLOWALL'
 set security zone-policy zone INTERNET to SERVERS firewall 'ALLOWALL'

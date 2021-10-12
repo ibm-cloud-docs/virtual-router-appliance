@@ -36,8 +36,8 @@ To upgrade a single Vyatta 5400 to a {{site.data.keyword.vra_full}}, perform the
    An OS reload will generate a new password for the root and Vyatta user IDs.
    {: note}
 
-4. Make a note of the new {{site.data.keyword.vra_full}} password.
-5. Configure the newly reloaded VRA with your desired settings using [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
+3. Make a note of the new {{site.data.keyword.vra_full}} password.
+4. Configure the newly reloaded VRA with your desired settings using [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
 
 ## Upgrading a Vyatta 5400 high availability pair
 {: #upgrading-a-vyatta-5400-high-availability-pair}
@@ -48,15 +48,16 @@ To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 
    Ideally, a functional HA configuration shows all interfaces as either BACKUP or MASTER on a particular node. When in doubt, use the `show vrrp` command to confirm.
    {: note}
+   
 2. Configure the newly reloaded VRA with your desired settings using [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
 3. The Master Vyatta 5400 and the Backup {{site.data.keyword.vra_full}} will be in a VRRP pair. Change the current Backup {{site.data.keyword.vra_full}} to become the Master using the VRRP command `reset VRRP master`.
 
    This action will cause an outage in any existing sessions, and the sessions state will be listed as Lost. Any existing NAT session will also be reset.
    {: note}
 
-5. Verify that the new Master {{site.data.keyword.vra_full}} is functioning as desired.
-6. Perform the reload procedure above on the current Backup Vyatta 5400 to upgrade it to a VRA.
-7. After the second reload, configure the Backup {{site.data.keyword.vra_full}} as desired, using [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
+4. Verify that the new Master {{site.data.keyword.vra_full}} is functioning as desired.
+5. Perform the reload procedure above on the current Backup Vyatta 5400 to upgrade it to a VRA.
+6. After the second reload, configure the Backup {{site.data.keyword.vra_full}} as desired, using [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
 
 ## Reverting back to Vyatta 5400
 {: #reverting-to-vyatta-5400}

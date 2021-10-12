@@ -135,7 +135,7 @@ These variables aside, VRA is capable of forwarding 80 Gbps of unmodified traffi
 
 If you can access the system, set a new password by running the following command:
 
-```
+```sh
 set system login user [account] authentication plaintext-password [password]
 ```
 
@@ -156,14 +156,14 @@ If there is access using IPMI, follow these steps to recover access:
 
 1. Disable the offending rule by running:
 
-	```
+	```sh
 	set security firewall name [firewall name] rule [rule number] disable
 	commit
 	```
 
 2. Unhook the entire named rule set from the necessary interface by running:
 
-	```
+	```sh
 	delete interfaces dataplane [interface] firewall [type] [firewall name]
 	commit
 	```

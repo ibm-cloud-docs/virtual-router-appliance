@@ -54,6 +54,7 @@ If `global-state-policy` is not configured, this behavior change is not affected
 
 ### Issues
 {: #issues-3}
+
 There is no "local-zone" pseudo-interface to assign to the zone-policy.
 
 ### Workarounds
@@ -63,7 +64,7 @@ This behavior can be simulated by applying a zone-based firewall to physical int
 
 For example:
 
-```
+```sh
 set security zone-policy zone internal default-action 'drop'
 set security zone-policy zone internal description 'Private zone'
 set security zone-policy zone internal interface 'dp0bond0'
@@ -134,6 +135,7 @@ On the {{site.data.keyword.vra_full}} PBR (Policy-Based Routing), policies can b
 
 ### Workarounds
 {: #workarounds-6}
+
 There are currently no workarounds for this issue.
 
 ## TCP-MSS
@@ -207,7 +209,7 @@ However, with {{site.data.keyword.vra_full}}, there is no IPsec.
 
 Possible alternative rules for VRA devices:
 
-```
+```sh
    match-ipsec  Inbound IPsec packets
    match-none   Inbound non-IPsec packets                                                                                                                
 ```
@@ -221,7 +223,7 @@ Possible alternative rules for VRA devices:
 
 With Vyatta 5400 devices, the following firewall rules are allowed:
 
-```
+```sh
 set firewall name OUTSIDE_LOCAL rule 50 action 'accept'
 set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 ```
@@ -236,7 +238,7 @@ Add the protocols `ESP` and `AH` (IP protocols 50 and 51 respectively).
 
 The `action` rule can be either `accept` or `drop`, as shown in the following example:
 
-```
+```sh
 set security firewall name <name> rule <rule-no> action accept
 set security firewall name <name> rule <rule-no> destination port 500
 set security firewall name <name> rule <rule-no> protocol udp
@@ -258,7 +260,7 @@ set security firewall name <name> rule <rule-no> protocol esp
 
 IPsec (prefix-based) does not work with DNAT.                                                                                                             
 
-```
+```sh
 server (10.71.68.245) -- vyatta 1 (11.0.0.1)
 ===S-S-IPsec=== (12.0.0.1)
 vyatta 2 -- client (10.103.0.1)
@@ -279,9 +281,10 @@ To accommodate this networking scenario, IBM has created an RFE. 
 
 While that RFE is currently being assessed, the following workaround is recommended:
 
-**Interface configuration commands**
+### Interface configuration commands
+{: #interface-config-commands}
 
-```
+```sh
 set interfaces dataplane dp0p192p1 address '11.0.0.1/30'
 set interfaces dataplane dp0p224p1 address '10.0.0.2/30'
 set interfaces dataplane dp0p224p1 policy route pbr 'Backwards-DNAT'
@@ -293,9 +296,10 @@ set interfaces tunnel tun50 remote-ip '169.254.1.1'
 ```
 {: codeblock}
 
-**VPN configuration commands**
+### VPN configuration commands
+{: #vpn-config-commands}
 
-```
+```sh
 set security vpn ipsec esp-group ESP lifetime '30000'
 set security vpn ipsec esp-group ESP proposal 1 encryption 'aes128'
 set security vpn ipsec esp-group ESP proposal 1 hash 'sha1'
@@ -312,9 +316,10 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ```
 {: codeblock}
 
-**NAT configuration commands**
+### NAT configuration commands
+{: #nat-config-commands}
 
-```
+```sh
 set service nat destination rule 10 destination address '172.16.1.245'
 set service nat destination rule 10 inbound-interface 'tun50'
 set service nat destination rule 10 source address '10.103.0.1'
@@ -327,17 +332,19 @@ set service nat source rule 10 translation address '172.16.1.245'
 ```
 {: codeblock}
 
-**Protocols configuration commands**
+### Protocols configuration commands
+{: #protocols-config-commands}
 
-```
+```sh
 set protocols static interface-route 172.16.1.245/32 next-hop-interface 'tun50'
 set protocols static table 50 interface-route 0.0.0.0/0 next-hop-interface 'tun50'
 ```
 {: codeblock}
 
-**PBR configuration commands**
+### PBR configuration commands
+{: #pbr-config-commands}
 
-```
+```sh
 set policy route pbr Backwards-DNAT description 'Get return traffic back to tunnel for DNAT'
 set policy route pbr Backwards-DNAT rule 10 action 'accept'
 set policy route pbr Backwards-DNAT rule 10 address-family 'ipv4'
@@ -370,7 +377,7 @@ Whenever a VRRP virtual address is added to an {{site.data.keyword.vra_full}} on
 
 For a pair of VRAs with VRRP, the standby router might not have the VRRP virtual address that is present on the device during initialization if the master router does not have that address present. Therefore, to reinitialize the IPsec daemon when a VRRP state transition occurs, run the following command on the master and backup routers:
 
-```
+```sh
 interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
 {: pre}
@@ -383,7 +390,7 @@ interfaces dataplane interface-name vrrp vrrp-group group-id notify
 
 The intent of the following rule is to limit SSH connections to 3 every 30 seconds for SSH using any address:
 
-```
+```sh
 set firewall name localGateway rule 300 action 'drop'
 set firewall name localGateway rule 300 description 'Deter SSH brute force'
 set firewall name localGateway rule 300 destination port '22'
@@ -410,7 +417,7 @@ Use CPP instead.
 ### Issues
 {: #issues-16}
 
-```
+```sh
 set system conntrack expect-table-size '8192'
 set system conntrack hash-size '375000'
 set system conntrack modules ftp 'disable'
@@ -431,7 +438,7 @@ set system conntrack table-size '3000000'
 ### Issues
 {: #issues-17}
 
-```
+```sh
 set system conntrack timeout icmp '30'
 set system conntrack timeout other '600'
 set system conntrack timeout tcp close '10'
@@ -451,7 +458,7 @@ set system conntrack timeout tcp time-wait '60'
 ### Issues
 {: #issues-18}
 
-```
+```sh
 set firewall name PRIV_SERVICE_IN rule 58 action 'accept'
 set firewall name PRIV_SERVICE_IN rule 58 description '586427 Acesso a base de dados ate 22-2-18'
 set firewall name PRIV_SERVICE_IN rule 58 destination address '10.150.156.57'
@@ -469,7 +476,7 @@ set firewall name PRIV_SERVICE_IN rule 58 time stopdate '2018-02-22'
 ### Issues
 {: #issues-19}
 
-```
+```sh
 set interfaces tunnel tun3 address '172.17.175.45/30'
 set interfaces tunnel tun3 encapsulation 'gre'
 set interfaces tunnel tun3 local-ip '169.55.223.76'
@@ -480,7 +487,7 @@ set interfaces tunnel tun3 remote-ip '104.129.200.34'
 ```
 {: codeblock}
 
-```
+```sh
 set policy route change-mss rule 1 protocol 'tcp'
 set policy route change-mss rule 1 set tcp-mss '1436'
 set policy route change-mss rule 1 tcp flags 'SYN
@@ -493,7 +500,7 @@ set policy route change-mss rule 1 tcp flags 'SYN
 ### Issues
 {: #issues-19a}
 
-```
+```sh
 vyatta@v5600dallas09# set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote
 Possible Completions:
    <Enter> Execute the current command
@@ -528,22 +535,26 @@ There is a significant change in logging behavior between the Vyatta 5400 device
 
 The stateful firewall, which manages Firewall / NAT sessions, writes in "session units". It is recommended to use session logging. Each setting example is described.
 
-**Session / logging**
+#### Session / logging
+{: #sl}
 
 * `security firewall session-log <protocol>`
 * `system syslog file <filename> facility <facility> level <level>`
 
-**Packet logging firewall**
+#### Packet logging firewall
+{: #pack-log}
 
 * `security firewall name <name> default-log <action>`
 * `security firewall name <name> rule <rule-number> log`
 
-**NAT**
+#### NAT
+{: #nat-vra-issues}
 
 * `service nat destination rule <rule-number> log`
 * `service nat source rule <rule-number> log PBR`
 * `policy route pbr <name> rule <rule-number> log`
 
-**QoS**
+#### QoS
+{: #qos-issues}
 
 * `policy qos name <policy-name> shaper class <class-id> match <rule-name>`

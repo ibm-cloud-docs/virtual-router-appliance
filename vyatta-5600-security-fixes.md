@@ -23,9 +23,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Latest patch received: July 22, 2021**
+**Latest patch received:** July 22, 2021
 
-**Latest documentation published: August 18, 2021**
+**Latest documentation published:** August 18, 2021
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -38,7 +38,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912p
 {: #1912p}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-54128 | Critical | PDV syslogs are observed in huge number |
 | VRVDR-53790 | Critical | Crash in mngPtpSessionStop |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -66,14 +66,14 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912n
 {: #1912n}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-54900 | Major | Constant attempts to revive old duplicate CHILD_SA are causing rekey flood and occasional traffic drop. |
 | VRVDR-54765 | Major | ALG session may cause dataplane crash when cleared |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -86,14 +86,14 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912m
 {: #1912m}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-54586 | Major | Dataplane crash in connection sync on closing tcp session |
 | VRVDR-53889 | Major | BFD mbuf leak when deployed in a VNF using PCI-Passthrough on ixgbe |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -107,7 +107,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912k
 {: #1912k}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -121,7 +121,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-54027 | Major | Migrating loopback to self GRE tun50 configuration to newer code versions | 
 | VRVDR-51846 | Critical | RIB table not updated correctly for OSPFv3 routes after flapping the primary path by making dataplane/switch interface link failure/recovery |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -140,7 +140,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912j
 {: #1912j}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -150,9 +150,9 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-53962 | Critical | Reboot D2MSN backup connection created systemd-coredump with BGP authentication enabled | 
 | VRVDR-53928 | Major | Jumbo Frame MTU setting on Intel IGB interface causes link to go down | 
 | VRVDR-53854 | Major | Interfaces went down / panic: runtime error: slice bounds out of range | 
-| VRVDR-53368 | Minor | Alpha-numeric common pattern with preceding '0' in 'resources group <name>' causes out of order list on config-sync slave | 
+| VRVDR-53368 | Minor | Alpha-numeric common pattern with preceding '0' in `resources group <name>` causes out of order list on config-sync slave | 
   
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -169,7 +169,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912h
 {: #1912h}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -185,9 +185,9 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-52074 | Major | Mark maps using DSCP resource groups don't pick up resource group changes |
 | VRVDR-51940 | Blocker | Changing DSCP Values Causes BFD Instability Which Requires Reboot |
 | VRVDR-51529 | Critical | Config Sync fails displaying 'vyatta-interfaces-v1:interfaces' when firewall action configured |
-| VRVDR-43453 | Minor | show l2tpeth/ show l2tpeth <interface> returns "Use of uninitialized value in printf at /opt/vyatta/bin/vplane-l2tpeth-show.pl line 41" with the output |
+| VRVDR-43453 | Minor | `show l2tpeth/ show l2tpeth <interface>` returns "Use of uninitialized value in printf at /opt/vyatta/bin/vplane-l2tpeth-show.pl line 41" with the output |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -208,7 +208,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912g
 {: #1912g}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -258,7 +258,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-43307 | Critical | vyatta-ike-sa-daemon: TypeError: 'IKEConfig' object does not support indexing | 
 | VRVDR-42123 | Major | opd adds node.tag values under the wrong location in tab completion | 
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -279,7 +279,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912f
 {: #1912f}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -310,7 +310,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48315 | Critical | Malformed interface names in show ipv6 multicast interface with IPv6 GRE tunnels |
 | VRVDR-48090 | Major | Error: /transceiver-info/physical-channels/channel/0/laser-bias- current/: is not a decimal64 at /opt/vyatta/share/perl5/Vyatta/Configd.pm line 208 |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -325,13 +325,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912e
 {: #1912e}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-51957 | Blocker | Modelled copy command incorrectly enforcing ssh-known-host check in 1912e |  
 | VRVDR-51952 | Blocker | Group ownership for non ROOT files got changed to ssh @ 1912e |  
-| VRVDR-51937 | Blocker | "show interface dataplane dp0xe<x>" displays incorrect speed for copper ports when interface is down |  
+| VRVDR-51937 | Blocker | `show interface dataplane dp0xe<x>` displays incorrect speed for copper ports when interface is down |  
 | VRVDR-51828 | Major | SIAD ACL: BCM SDK error when deleting ACL configuration |  
 | VRVDR-51639 | Critical | Response for "request hardware-diag version" takes much longer with 1912b |  
 | VRVDR-51619 | Critical | SIAD ACL: Ensure that rulesets which would exceed the TCAM are rejected |  
@@ -358,7 +358,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-51052 | Blocker | Traffic dropped in SIAD when jumbo frames are > 1522 bytes but under defined MTU limit |  
 | VRVDR-51008 | Major | When the /var/log partition exists journal files from previous installs are retained but not rotated |  
 | VRVDR-50939 | Blocker | BFD session retained in admin down state when interface is disabled |  
-| VRVDR-50927 | Critical | 'show interface data <port> phy' not working correctly for Operator class users |  
+| VRVDR-50927 | Critical | `show interface data <port> phy` not working correctly for Operator class users |  
 | VRVDR-50920 | Blocker | SIAD - modelled copy with scp target is operationally unusable |  
 | VRVDR-50915 | Critical | Error generating /interfaces/backplane-state on SIAD |  
 | VRVDR-50874 | Critical | Storm control errors in 1912b |  
@@ -376,7 +376,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47530 | Critical | OSPF scaling: regression script fails bringing up many OSPF neighbors |  
 | VRVDR-45369 | Major | show interface dataplane X physical incorrectly reports speed when down |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -394,7 +394,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1912a
 {: #1912a}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -444,7 +444,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45066 | Critical | vyatta-security-vpn: check_file_in_config passed unsanitized user input / code injection |
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -455,10 +455,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-49450 | 9.8 | DSA-4587-1 | CVE-2019-15845, CVE-2019-16201, CVE-2019- 16254, CVE-2019-16255: Debian DSA-4587-1 : ruby2.3 - security update |
 | VRVDR-49132 | 7.8 | DSA-4564-1 | CVE-2018-12207, CVE-2019-0154, CVE-2019-0155, CVE-2019-11135: Debian DSA-4564-1: linux – security update |
 
-##1908h
+## 1908h
 {: #1908h}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -490,7 +490,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48337 | Critical | NCS fails to load `vyatta-*system-image YANG` |  
 | VRVDR-48203 | Minor | Split IDT servo into separate shared libraries |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -502,7 +502,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1908g
 {: #1908g}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -511,7 +511,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1908f
 {: #1908f}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -533,7 +533,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47761 | Minor | Spurious log: LLADDR: NEWNEIGH without link layer address? |  
 | VRVDR-45649 | Major | Route Leaking into VRF not working as expected - pings not resolving |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -543,7 +543,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1908e
 {: #1908e}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -566,7 +566,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45066 | Critical | vyatta-security-vpn: check_file_in_config passed unsanitized user input / code injection |  
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -579,7 +579,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1908d
 {: #1908d}
 
-**Issues Resolved**
+### Issues Resolved 
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -606,7 +606,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47002 | Minor | PTP: network information is not cleared from disabled (skipped) ports during reconfiguration |  
 | VRVDR-44104 | Blocker | Creating a switch interface doesn't work with QinQ |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -622,7 +622,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1908c
 {: #1908c}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -641,7 +641,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1908b
 {: #1908b}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -669,7 +669,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48338 | Critical | IDT servo fails to reliably negotiate an higher packets rates with GM |  
 | VRVDR-48332 | Major | TACACS+ AAA plugin should restart on DBus failures |  
 | VRVDR-48327 | Blocker | HW forwarding failure due to incorrect L2 Rewrite info |  
-| VRVDR-48273 | Major | Show sfp info in 'show interface dataplane <intf> physical' on Flexware |  
+| VRVDR-48273 | Major | Show sfp info in `show interface dataplane <intf> physical` on Flexware |  
 | VRVDR-48243 | Blocker | SIAD Boundary Clock not staying locked to GM when using ECMP paths |  
 | VRVDR-48224 | Major | "show cgnat session" with complex filter missing entry |  
 | VRVDR-48222 | Major | Isolate configd and opd from plugin panics |  
@@ -704,13 +704,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47472 | Critical | Mellanox-100G: Observing the traffic forwards even after disabling the dataplane interface |  
 | VRVDR-47397 | Blocker | PTP logging "STATE: Overall for path '[service ptp instance]'" every 75 seconds |  
 | VRVDR-47130 | Major | Send gratuitous ARP on MAC address change |  
-| VRVDR-47006 | Major | PTP "show ptp <command>" intermittent fails to return any output |  
+| VRVDR-47006 | Major | PTP `show ptp <command>` intermittent fails to return any output |  
 | VRVDR-46868 | Blocker | Log the port block allocation logs, subscriber logs and resource constraint logs to a different log other than syslog |  
 | VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |  
 | VRVDR-45781 | Major | 'reset dns forwarding cache routing-instance red' not finding VRF instance |  
 | VRVDR-42161 | Minor | tech-support should contain "CLI: coredumpctl info" prefix for COREDUMPS header |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -725,7 +725,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1908a
 {: 1908a}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -735,7 +735,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48040 | Major | Upgrade journalbeat to latest 6.x |  
 | VRVDR-47974 | Blocker | BFD packets incorrectly scheduled on egress |  
 | VRVDR-47947 | Major | Dataplane wrongly logging failure to delete hash table |  
-| VRVDR-47934 | Major | QoS: "show policy qos <if-name> class" can display no output |  
+| VRVDR-47934 | Major | QoS: `show policy qos <if-name> class` can display no output |  
 | VRVDR-46077 | Major | Build and sign Insyde phy_alloc module |  
 | VRVDR-47924 | Major | BGP 'show' output for default-vrf not captured in 'show tech-support' |  
 | VRVDR-47908 | Blocker | SIAD displays incorrect serial number in 'show version' |  
@@ -757,7 +757,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47244 | Critical | dataplane crash on restart - no code changes |  
 | VRVDR-41129 | Blocker | Journalbeat can't export logs to destination in routing instance |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -767,7 +767,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1801zf
 {: #1801zf}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -788,7 +788,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
 | VRVDR-40303 | Critical | fsck doesn't seem to be running on boot |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -810,7 +810,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1801ze
 {: #1801ze}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -823,7 +823,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48057 | Minor | Add additional IPsec debug support to tech-support |
 | VRVDR-47681 | Critical | Resetting a single VRRP group causes all VRRP groups to reset |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -839,7 +839,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1801zd
 {: #1801zd}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -848,7 +848,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47596 | Minor | NAT used count is showing count larger than total available |
 | VRVDR-41091 | Minor | Off-by-one error in lcore id in copying rule stats |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -860,7 +860,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1801zc
 {: #1801zc}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -871,7 +871,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |
 | VRVDR-36174  | Major | A-Time in the output of, 'show vpn ike sa' is always 0 |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -881,7 +881,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1801zb
 {: #1801zb}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -900,7 +900,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45396 | Critical | Shunt policy installation race |
 | VRVDR-42108 | Minor | After 25s ssh login delay 'systemctl --user status' fails with "Failed to connect to bus: No such file or directory" |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -910,7 +910,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1801za
 {: #1801za}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -927,7 +927,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVER-45230 | Blocker | Massive memory leak with SNMP polling |
 | VRVDR-39747 | Major | Incorrectly reported total available SNAT entries when configuring translation address/mask directly |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -946,20 +946,20 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1801z
 {: #1801z}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-46941 | Minor| Traffic that has SNAT session is filtered using stateless ZBF on return |
 | VRVDR-46659 | Major | I350 intfs with mtu 9000 remains stuck at u/D state on upgrade from 1808* to 1903a |
 | VRVDR-46623 | Minor | Firewall 'description' logs a perl error on commit when the description has more than one word |
-| VRVDR-46549 | Critical | Shell injection privilege escalation/sandbox escape in "show ip route routing-instance <name> variance" command |
+| VRVDR-46549 | Critical | Shell injection privilege escalation/sandbox escape in `show ip route routing-instance <name> variance` command |
 | VRVDR-46389 | Major | BGP configuration changes may not take effect if applied after (re)boot |
 | VRVDR-45949 | Minor | Netflow generates a NOTICE log for every sample sent when certain non-key fields are configured |
 | VRVDR-43169 | Minor | Logging everytime one calls a configd C based API but doesn't supply an error struct is no longer useful |
 | VRVDR-41225 | Minor | When configuring interface description, every white space is treated as a new line |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -971,7 +971,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 ## 1801y
 {: #1801y}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -984,7 +984,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45059 | Major | null deref in sip_expire_session_request |
 | VRVDR-41419 | Major | Static Analysis dataplane fixes |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -995,21 +995,21 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45549 | 6.5 | DSA-4397-1 | CVE-2019-3824: Debian DSA-4397-1 : ldb - security update |
 | VRVDR-45347 | 6.8  | DSA-4387-1 | CVE-2018-20685, CVE-2019-6109, CVE-2019-6111: Debian DSA-4387-1 : openssh - security update |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 The following commands have been deprecated from this patch and are no longer available:
-   • policy route pbr <name> rule <rule-number> application name <name>
-   • policy route pbr <name> rule <rule-number> application type <type>
-   • policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name>
-   • policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type>
-   • security application firewall name <name> rule <rule-number> name <app-name>
+   • `policy route pbr <name> rule <rule-number> application name <name>`
+   • `policy route pbr <name> rule <rule-number> application type <type>`
+   • `policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name>`
+   • `policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type>`
+   • `security application firewall name <name> rule <rule-number> name <app-name>`
 
 Running any of the above commands will result with the error message “This feature is disabled.”
 
 ## 1801w
 {: #1801w}
 
-**Issues Resolved**
+### Issues Resolved 
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1018,7 +1018,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-45466 | Minor | IPv6 address not abbreviated when config is loaded via PXE boot causing config-sync issues |
 | VRVDR-45414 | Minor | Vyatta-cpu-shield fails to start and throws `OSError:[Errno 22] Invalid argument` for various cores on a two socket system |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1029,7 +1029,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801v
 {: #1801v}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1054,7 +1054,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-42020 | Major | RIB stuck adding same route over and over again |
 | VRVDR-18095 | Minor | Flow monitoring stats is not captured as part of 'show tech-support' |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1073,14 +1073,14 @@ Running any of the above commands will result with the error message “This fea
 ## 1801u
 {: #1801u}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-44406 | Critical | With multiple subnet on same VIF low rate of transit traffic observed when compared to 5400 performance |
 | VRVDR-44253 | Minor | MSS clamping on bonding interface stops functioning after reboot |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1090,7 +1090,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801t
 {: #1801t}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1098,7 +1098,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-43969 | Minor | Vyatta 18.x GUI reports the wrong status check memory usage |
 | VRVDR-43847  | Major | Slow throughput for TCP conversations on bonding interface |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1107,13 +1107,13 @@ Running any of the above commands will result with the error message “This fea
 ## 1801s
 {: #1801s}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-44041 | Major | SNMP ifDescr oid slow response time |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1128,7 +1128,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801r
 {: #1801r}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1139,7 +1139,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-43477 | Major | Committing the IPsec VPN configuration returns the warning “Warning: unable to [VPN toggle net.ipv4.conf.intf.disable_policy], received error code 65280 |
 | VRVDR-43379 | Minor | NAT statistics incorrectly shown |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1155,7 +1155,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801q
 {: #1801q}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1176,7 +1176,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVR-41683 | Blocker | DNS name server address learned over VRF is not consistently recognized |
 | VRVDR-41628 | Minor | Route/prefix from router-advertisement active in kernel and data plane but ignored by RIB |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1186,7 +1186,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801n
 {: #1801n}
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1199,7 +1199,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-40283 | Major | Configuration changes generate lots of log messages |
 | VRVDR-39773 | Major | Using a route-map with BGP vrrp-failover command can cause all prefixes to be withdrawn |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1214,7 +1214,7 @@ Running any of the above commands will result with the error message “This fea
 
 Released June 15, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1223,7 +1223,7 @@ Released June 15, 2018.
 | VRVDR-42018 | Minor | When “restart vpn” is run, an “IKE SA daemon: org.freedesktop.DBus.Error.Service.Unknown” error is thrown |
 | VRVDR-42017 | Minor | When “show vpn ipsec sa” is running on VRRP backup, “ConnectionRefusedError” error is thrown related to vyatta-op-vpn- ipsec-vici line 563 |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1235,7 +1235,7 @@ Released June 15, 2018.
 
 Released June 8, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1247,7 +1247,7 @@ Released June 8, 2018.
 | VRVDR-41420 | Major | LACP bonding state/link “u/D” with mode change active-backup to LACP |
 | VRVDR-41313 | Critical | IPsec – VTI interface instability |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1262,7 +1262,7 @@ Released June 8, 2018.
 
 Released May 18, 2018
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1270,7 +1270,7 @@ Released May 18, 2018
 | VRVDR-39863 | Major | VRRP fails over when customer removes routing-instance with GRE associated and tunnel local-address is part of VRRP |
 | VRVDR-27018 | Critical | Running configuration file is globally readable |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1281,14 +1281,14 @@ Released May 18, 2018
 
 Released May 11, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41664 | Critical | Dataplane drops MTU sized ESP packets |
 | VRVDR-41536 | Minor | Dnsmasq service start-init limit hit when adding more than 4 static host entries if dns forwarding is enabled |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1299,7 +1299,7 @@ Released May 11, 2018.
 
 Released May 4, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1311,7 +1311,7 @@ Released May 4, 2018.
 
 Released April 23, 2018
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1327,7 +1327,7 @@ Released April 23, 2018
 | VRVDR-40803 | Minor | VIF interfaces are not present in “show vrrp” output after a reboot |
 | VRVDR-40644 | Major | IKEv1: QUICK_MODE re-transmits are not handled correctly |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1341,7 +1341,7 @@ Released April 23, 2018
 
 Released March 28, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1353,7 +1353,7 @@ Released March 28, 2018.
 | VRVDR-40920 | Critical | ARP doesn’t work over bonded SR-IOV interface |
 | VRVDR-40294 | Major | Dataplane doesn’t restore previous queues after slave is removed from bonding group |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1364,15 +1364,15 @@ Released March 28, 2018.
 
 Released March 8, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40940 | Major | Data plane crash related to NAT/firewall |
-| VRVDR-40886 | Major | Combining “icmp name <value>” with a number of other configuration for the rule will cause firewall to not load |
+| VRVDR-40886 | Major | Combining `icmp name <value>` with a number of other configuration for the rule will cause firewall to not load |
 | VRVDR-39879 | Major | Configuring bonding for jumbo frames fails |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1384,7 +1384,7 @@ Released March 8, 2018.
 
 Released March 7, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1395,7 +1395,7 @@ Released March 7, 2018.
 
 Released February 21, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1408,12 +1408,9 @@ Released February 21, 2018.
 
 Released February 7, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40324 | Major | Load averages exceed 1.0 with no load on router with bonding interface |
 
-The information contained herein is not an offer, commitment, representation or warranty by AT&T and is subject to change. It is not for use or disclosure outside of AT&T companies except under written agreement.
-
-© 2018 AT&T Intellectual Property. All rights reserved. AT&T and Globe logo are registered trademarks of AT&T Intellectual Property. All other marks are the property of their respective owners.

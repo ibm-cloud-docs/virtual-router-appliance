@@ -75,7 +75,7 @@ To order a VRA, follow these steps:
 
    The Network Interface **Add Ons** section allows you to select an IPv6 address if required, and shows you any additional included default options.
 
-8. Review your selections, check that you have read the Third Party Service Agreements, then click **Create**. The order is verified automatically.
+7. Review your selections, check that you have read the Third Party Service Agreements, then click **Create**. The order is verified automatically.
 
 After your order is approved, the provisioning of your {{site.data.keyword.vra_full}} starts automatically. When the provisioning process is complete, the new VRA appears in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page, where you can find the IP addresses, login username, and password for the device.  
 

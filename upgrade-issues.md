@@ -28,7 +28,7 @@ Occasionally, after a successful upgrade and reboot of a new version of the Vyat
 
 For example:
 
-```
+```sh
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
 Welcome to AT&T vRouter
 
@@ -43,7 +43,7 @@ vyatta@acs-jmat-vyatta01:~$ show int
 
 In this case, the problem is not with the upgrade itself. If there were errors in that process, you would see them when you issued the `add system image` command. Here the device has been rebooted, but it now has a new, and empty `/home` directory space, and any users that appear in the configuration need their home directories regenerated. The error stems from the failure to properly copy the needed "dotfiles" to the `vyatta` user directory:
 
-```
+```sh
 vyatta@acs-jmat-vyatta01:~$ ls -la
 total 16
 drwxr-x--- 3 vyatta users 4096 Feb  2 12:44 .
@@ -60,7 +60,7 @@ Note that three files are zero length, and thus have no configuration. Without t
 
 Fortunately, the previous `home` directory still exists as a persistence directory, allowing you to copy the files over. To do so, go to `/lib/live/mount/persistence/sda2/boot` and list the directories there:
 
-```
+```sh
 vyatta@acs-jmat-vyatta01:/lib/live/mount/persistence/sda2/boot$ ls -la
 total 20
 drwxr-xr-x 5 root root 4096 Feb  2 11:54 .
@@ -78,7 +78,7 @@ If you made more than one upgrade, then those display here as well.
 
 Next, change directories using the previously loaded OS as the next directory, and go into the VRA home directory:
 
-```
+```sh
 vyatta@acs-jmat-vyatta01:cd 5.2R5S3.06301309/persistence/rw/home/vyatta/
 vyatta@acs-jmat-vyatta01:/lib/live/mount/persistence/sda2/boot/5.2R5S3.06301309/persistence/rw/home/vyatta$ ls -la
 total 343084
@@ -96,7 +96,7 @@ drwxr-x--- 3 vyatta users      4096 Jan  9 10:34 .ssh
 
 From inside this directory, you can see the dotfiles and copy them over:
 
-```
+```sh
 vyatta@acs-jmat-vyatta01:/lib/live/mount/persistence/sda2/boot/5.2R5S3.06301309/persistence/rw/home/vyatta$ cp .bashrc /home/vyatta
 vyatta@acs-jmat-vyatta01:/lib/live/mount/persistence/sda2/boot/5.2R5S3.06301309/persistence/rw/home/vyatta$ cp .profile /home/vyatta
 vyatta@acs-jmat-vyatta01:/lib/live/mount/persistence/sda2/boot/5.2R5S3.06301309/persistence/rw/home/vyatta$ cp .bash_logout /home/vyatta
@@ -115,7 +115,7 @@ drwxr-x--- 2 vyatta users 4096 Feb  2 11:57 .ssh
 
 After the files are copied, log out, then log back in:
 
-```
+```sh
 [jmathews@shelladmindal0101 ~]$ ssh 10.115.174.6 -l vyatta
 Welcome to AT&T vRouter
 

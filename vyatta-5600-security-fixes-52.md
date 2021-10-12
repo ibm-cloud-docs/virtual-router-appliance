@@ -23,9 +23,8 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (archived)
 {: #at-t-vyatta-5600-vrouter-software-patches-52}
 
-**Patch received: January 17, 2020**
-
-**Published in documentation: January 27, 2020**
+* Patch received: January 17, 2020
+* Published in documentation: January 27, 2020
 
 This document lists the patches for previously supported versions of the Vyatta Network OS 5600. With versions 5.2 and older, patches are named using an S number.
 {: shortdesc}
@@ -40,13 +39,13 @@ For current patch information for the Vyatta 5600 OS newer than 17.2, refer to [
 
 Released June 21, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-42084 | Blocker | Vfp interface marked as “non-dataplane interface” in “show dataplane route” when nat/ipsec config is re-applied |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -60,7 +59,7 @@ Released June 21, 2018.
 
 Released June 11, 2018
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -69,7 +68,7 @@ Released June 11, 2018
 | VRVDR-42027 | Major | SFLOW using incorrect input ifIndex |
 | VRVDR-41558 | Major | The reported timestamps in packet traces are not consistent with the actual time and system clock |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -84,7 +83,7 @@ Released June 11, 2018
 
 Released May 17, 2018
 
-**Issues Resolved**
+### Issues Resolved
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41543 | Major | “update config-sync” is reporting errors when “\” backslash is used in configuration descriptions
@@ -95,13 +94,13 @@ Released May 17, 2018
 
 Released May 8, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40803 | Minor | VIF interfaces are not present in “show vrrp” output after a reboot |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -112,13 +111,13 @@ Released May 8, 2018.
 
 Released April 16, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41283 | Minor |Configd stops processing static routes during boot if the configuration has disabled static routes |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -129,7 +128,7 @@ Released April 16, 2018.
 
 Released March 15, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -140,7 +139,7 @@ Released March 15, 2018.
 
 Released March 12, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -149,7 +148,7 @@ Released March 12, 2018.
 | VRVDR-39991 | Major | Stateful firewall drops packets between two subnets on the same interface |
 | VRVDR-36481 | Major | Upgrade/downgrade from 5.2R4 to 17.1.0/5.2R3 shows /opt/vyatta/sbin/vyatta-install-image.functions: line 372: is_onie_boot: command not found |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -161,7 +160,7 @@ Released March 12, 2018.
 
 Released January 19, 2018.
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -173,7 +172,7 @@ Released January 19, 2018.
 
 Released December 15, 2017.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -191,7 +190,7 @@ Released December 15, 2017.
 
 Released December 4, 2017.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -203,7 +202,7 @@ Released December 4, 2017.
 
 Released November 2, 2017.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -215,12 +214,8 @@ Released November 2, 2017.
 
 Released October 12, 2017.
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 38819 | 9.8 | DSA-3989-1 | CVE-2017-14491, CVE-2017-14492, CVE-2017-14493, CVE- 2017-14494, CVE-2017-14495, CVE-2017-14496: DSA- 3989-1 dnsmasq -- security update |
-
-The information contained herein is not an offer, commitment, representation or warranty by AT&T and is subject to change. It is not for use or disclosure outside of AT&T companies except under written agreement.
-
-© 2018 AT&T Intellectual Property. All rights reserved. AT&T and Globe logo are registered trademarks of AT&T Intellectual Property. All other marks are the property of their respective owners.

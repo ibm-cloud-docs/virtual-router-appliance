@@ -36,7 +36,7 @@ They include:
 
 Possible completions include:
 
-```
+```sh
  > connsync        Connection tracking synchronization (conn-sync) service
  > dhcp-relay      Dynamic Host Configuration Protocol (DHCP) relay agent
  > dhcp-server     Dynamic Host Configuration Protocol (DHCP) for DHCP server

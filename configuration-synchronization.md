@@ -37,7 +37,7 @@ Configurations that are unique to one system should not be synced to the other. 
 
 The following example illustrates `config-sync`:
 
-```
+```sh
 set system config-sync sync-map TEST rule 2 action include
 set system config-sync sync-map TEST rule 2 location security firewall
 set system config-sync remote-router 192.168.1.22 username vyatta
@@ -49,7 +49,7 @@ The first two lines create the actual `sync-map` itself. Here, the configuration
 
 The next three lines designate the remote router's `config-sync` user and password, IP, and which `sync-map` to push. Any changes that match the rules for `TEST`, go to `remote-router 192.168.1.22`, using this login information. Note that for version 1801zf and earlier, a `REST` call is made to perform this using the VRA API. As a result, the HTTPS server must be running (and unblocked) on the remote router. Version 1908/1912 rewrites `config-sync` to use `netconf` instead of HTTPS to address performance issues in previous releases. The following lines are required, along with an `allow` in the firewall rules for each Vyatta, to make connections to each other on port 830:
 
-```
+```sh
 set service netconf
 set service ssh port 830
 set service ssh port 22
@@ -57,7 +57,7 @@ set service ssh port 22
 
 To synchronize the configuration of a password, such as a pre-shared-secret for an IPsec VPN, the standby system must have the `secrets` group configured and the `config-sync` user must be in that group.
 
-```
+```sh
 set system login group secrets
 set system login user vyatta authentication plaintext-password '****'
 set system login user vyatta group secrets

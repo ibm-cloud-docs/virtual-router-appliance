@@ -37,7 +37,7 @@ You should neither change VRRP virtual IP addresses for any gateway group nor sh
 
 The following is an example of the default configurations of the `dp0bond0` and `dp0bond1` VIPs for a specific VRA. Note that your IP addresses and `vrrp-groups` might be different than this example.
 
-```
+```sh
 set interfaces bonding dp0bond0 vrrp vrrp-group 2 virtual-address '10.127.170.1/26'
 set interfaces bonding dp0bond1 vrrp vrrp-group 2 virtual-address '159.8.98.209/29'
 ```
@@ -46,14 +46,14 @@ For more information, see [Associated VLAN subnets with VRRP](/docs/virtual-rout
 
 **By default, VRRP is set to disabled.** This ensures that new provisions and reloads do not cause outages on the Master device. For VLAN traffic to work, VRRP must be re-enabled after provisioning or a reload completes. The following example details the default configuration:
 
-```
+```sh
 set interfaces bonding dp0bond0 vrrp vrrp-group 2 'disable'
 set interfaces bonding dp0bond1 vrrp vrrp-group 2 'disable'
 ```
 
 To enable VRRP on these two interfaces after a provision or reload, **which is necessary for both stand-alone and HA pairs**, run the following commands. Then, commit the change:
 
-```
+```sh
 delete interfaces bonding dp0bond0 vrrp vrrp-group 2 'disable'
 delete interfaces bonding dp0bond1 vrrp vrrp-group 2 'disable'
 ```
@@ -135,7 +135,7 @@ For any VIF configuration with VRRP, you require a virtual IP address (the first
 
 Here is an example of a VRRP configuration with two private VLANs and three subnets:
 
-```
+```sh
 set interfaces bonding dp0bond0 address '10.100.11.39/26'
 set interfaces bonding dp0bond0 mode 'lacp'
 set interfaces bonding dp0bond0 vif 10 address '192.168.255.81/30'
@@ -191,7 +191,7 @@ This is called connection tracking synchronization.
 
 To configure it, you must declare what the failover method is, which interface you use to send the connection tracking information, and the IP of the remote peer:
 
-```
+```sh
 set service connsync failover-mechanism vrrp sync-group SYNC1
 set service connsync interface dp0bond0
 set service connsync remote-peer 10.124.10.4
@@ -233,7 +233,7 @@ To accommodate the issues associated with delay in convergence of the lower leve
 ### Command details
 {: #command-details}
 
-```
+```sh
 vrrp {
 start-delay <0-600>
 }
@@ -244,7 +244,7 @@ start-delay <0-600>
 ### Example configuration
 {: #example-configuration}
 
-```
+```sh
 interfaces {
   bonding dp0bond1 {
 address 161.202.101.206/29 mode balanced

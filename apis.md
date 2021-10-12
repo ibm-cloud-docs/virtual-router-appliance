@@ -43,7 +43,7 @@ For more information about the SLAPI as they refer to the {{site.data.keyword.vr
 ## Example - Ordering a gateway appliance
 {: #example-ordering-a-gateway-appliance}
 
-```
+```sh
 import SoftLayer
 from pprint import pprint
 
@@ -101,7 +101,7 @@ if __name__ == '__main__':
 ## Example - Associating, routing, bypassing and disassociating VLANs to the gateway appliance
 {: #example-associating-routing-bypassing-and-disassociating-vlans-to-the-gateway-appliance}
 
-```
+```sh
 import SoftLayer
 from pprint import pprint
 
@@ -186,7 +186,7 @@ class Gateway:
 
 ## Example - Canceling a gateway appliance
 
-```
+```sh
 import SoftLayer
 from pprint import pprint
 

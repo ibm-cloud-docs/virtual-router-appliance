@@ -23,9 +23,7 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5400 vRouter security vulnerability fixes
 {: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
 
-**As of: August 30, 2018**
-
-This document lists the security vulnerability fixes for the Vyatta 5400 vRouter. When multiple Common Vulnerabilities and Exposures (CVE) numbers are addressed in a single update, the highest Common Vulnerability Scoring System (CVSS) score is listed.
+**As of August 30, 2018**: This document lists the security vulnerability fixes for the Vyatta 5400 vRouter. When multiple Common Vulnerabilities and Exposures (CVE) numbers are addressed in a single update, the highest Common Vulnerability Scoring System (CVSS) score is listed.
 {: shortdesc}
 
 ## 6.7R14S10
@@ -33,7 +31,7 @@ This document lists the security vulnerability fixes for the Vyatta 5400 vRouter
 
 Released August 30, 2018
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -46,7 +44,7 @@ Issues resolved in 6.7R14S10
 
 Released July 16, 2018
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -61,7 +59,7 @@ Security vulnerabilities resolved in 6.7R14S8
 
 Released June 1, 2018
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -76,13 +74,13 @@ Security vulnerabilities resolved in 6.7R14S8
 
 Released May 14, 2018
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VSE-9525 | Minor | Show version gives “SMBIOS” error message |
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -105,7 +103,7 @@ Security vulnerabilities resolved in 6.7R14S7
 
 Released March 6, 2018.
 
-**Issues Resolved**
+### Issues Resolved 
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -113,7 +111,7 @@ Released March 6, 2018.
 
 Issues resolved in 6.7R14S6
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -136,7 +134,7 @@ Security vulnerabilities resolved in 6.7R14S6
 
 Released February 2, 2018.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -144,7 +142,7 @@ Released February 2, 2018.
 
 Issues resolved in 6.7R14S5
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -160,7 +158,7 @@ Security vulnerabilities resolved in 6.7R14S5
 
 Released December 19, 2017.
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -168,13 +166,12 @@ Released December 19, 2017.
 
 Security vulnerabilities resolved in 6.7R14S4
 
-
 ## 6.7R14S3
 {: #6-7R14S3}
 
 Released November 14, 2017.
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -189,7 +186,7 @@ Security vulnerabilities resolved in 6.7R14S3
 
 Released October 10, 2017.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -197,7 +194,7 @@ Released October 10, 2017.
 
 Issues resolved in 6.7R14S2
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -211,7 +208,7 @@ Security vulnerabilities resolved in 6.7R14S2
 
 Released September 22, 2017.
 
-**Issues Resolved**
+### Issues Resolved
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -219,7 +216,7 @@ Released September 22, 2017.
 
 Issues resolved in 6.7R14S1
 
-**Security Vulnerabilities Resolved**
+### Security Vulnerabilities Resolved
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -227,10 +224,3 @@ Issues resolved in 6.7R14S1
 | VSE-9840 | 6.5 | DLA-1062-1 | CVE-2017-1000100: Debian DLA-1062-1: curl security update |
 | VSE-9839 | 7.5 | DLA-1059-1 | CVE-2017-11185: Debian DLA-1059-1: strongswan security update |
 | VSE-9835 | 7.5 | DSA-3900-1 | CVE-2017-7522, CVE-2017-7521, CVE-2017-7520, CVE-2017-7508 OpenVPN security update |
-
-Security vulnerabilities resolved in 6.7R14S1
-
-The information contained herein is not an offer, commitment, representation or warranty by AT&T and is subject to change. It is not for use or disclosure outside of AT&T companies except under written agreement.
-{: note}
-
-© 2018 AT&T Intellectual Property. All rights reserved. AT&T and Globe logo are registered trademarks of AT&T Intellectual Property. All other marks are the property of their respective owners.

@@ -34,7 +34,7 @@ You can take a backup of the current `config.boot` by switching to user `root` a
 
 The following example generates the complete list of commands used to configure the system, and then redirects the list of commands into a file in the Vyatta home directory:
 
-```
+```sh
 vyatta@gateway02:~$ show configuration commands > /home/vyatta/configcomm.bak-07-30-2020
 vyatta@gateway02:~$ ls -alh | grep bak
 -rw-r----- 1 vyatta users  21K Jul 30 01:10 configcomm.bak
@@ -43,7 +43,7 @@ vyatta@gateway02:~$ ls -alh | grep bak
 
 The next example creates a backup copy of the boot configuration file and places it in `/home/vyatta`:
 
-```
+```sh
 vyatta@gateway02:~$ su
 Password:
 root@gateway02:/home/vyatta# cp /config/config.boot /home/vyatta/config.boot.bak-07-30-2020
@@ -53,7 +53,7 @@ root@gateway02:/home/vyatta# ls -alh | grep config.boot
 
 The following example uses the configuration mode's save command to backup:
 
-```
+```sh
 vyatta@asloma-vra-5218-ha1:~$ configure
 
 [edit]
@@ -65,7 +65,7 @@ Done
 
 A more complete backup, including log data, involves generating a technical support archive for the system:
 
-```
+```sh
 $ generate tech-support archive
 Saving the archivals...
 Saved tech-support archival at /opt/vyatta/etc/configsupport/mpatr-vyatta-one.tech-support-archive
@@ -76,7 +76,7 @@ You can then copy the generated archive file from the VRA to the storage device 
 
 As an example:
 
-```
+```sh
 -rw-r--r--  1 michael  michael    7863 Aug 22 12:46 config.tgz
 -rw-r--r--  1 michael  michael     112 Aug 22 12:46 core-dump.tgz
 -rw-r--r--  1 michael  michael  716033 Aug 22 12:46 etc.tgz
@@ -96,14 +96,14 @@ Consider backing up any notes that you create while configuring the device at a 
 
 To restore a backup configuration from a `config.boot` file, copy the file to `/config/config.boot` and reboot. For example:
 
-```
+```sh
 root@asloma-vra-5218-ha1:/home/vyatta# cp config.boot.bak-05-14-2021 /config/config.boot
 root@asloma-vra-5218-ha1:/home/vyatta# reboot
 ```
 
 Alternatively, to restore the configuration from a `save`, enter the configuration mode, load the backup configuration and commit:
 
-```
+```sh
 vyatta@cicd-bm-vra2-sa0# save /home/vyatta/config.bak.05-14-2021
 Saving configuration to '/home/vyatta/config.bak.05-14-2021'...
 Done

@@ -23,8 +23,8 @@ You can configure your Vyatta 5400 using the procedure here.
 
 You must configure the public virtual LAN (VLAN) 1224, which is now associated and routed, before it can pass traffic. Two pieces of information are needed to complete the configuration:
 
-   * The public-side bond of the Brocade 5400 vRouter appliance
-   * The default gateway of 1224
+* The public-side bond of the Brocade 5400 vRouter appliance
+* The default gateway of 1224
 
 It is the public-side VLAN where the compute option is located, not the Brocade 5400 vRouter appliance's public VLAN.
 {: note}
@@ -47,20 +47,20 @@ There are two command modes in the command-line interface (CLI): operational and
 
 Operational mode provides access to operational commands for:
 
-   * Displaying and clearing information
-   * Enabling and disabling debugging
-   * Configuring terminal settings
-   * Loading and saving configuration
-   * Restarting the system
+* Displaying and clearing information
+* Enabling and disabling debugging
+* Configuring terminal settings
+* Loading and saving configuration
+* Restarting the system
 
 Configuration provides access to commands for:
 
-   * Creating
-   * Modifying
-   * Deleting
-   * Committing
-   * Showing configuration information
-   * Navigating through the configuration hierarchy 
+* Creating
+* Modifying
+* Deleting
+* Committing
+* Showing configuration information
+* Navigating through the configuration hierarchy 
 
 When you log on to the system, the system is in operational mode. You must switch to configuration mode for the commands.
 
@@ -69,9 +69,9 @@ You can tell which mode that you are in based on the prompt. You are in operatio
 
 Follow these steps to configure the private VLAN by using the CLI. Remember the values needed to configure the VLAN are:
 
-   * VLAN name of the VLAN to be routed through Brocade 5400 vRouter device (`2254`)
-   * Gateway and mask (CIDR format) of the VLAN to be routed (`10.52.69.201/29`)
-   * Private bond name of the Brocade 5400 vRouter Device (**bond0**)
+* VLAN name of the VLAN to be routed through Brocade 5400 vRouter device (`2254`)
+* Gateway and mask (CIDR format) of the VLAN to be routed (`10.52.69.201/29`)
+* Private bond name of the Brocade 5400 vRouter Device (**bond0**)
 
 1. SSH into your Brocade 5400 vRouter (public or private IP address) by using **vyatta** as the **Username**. Supply the password when prompted.
 

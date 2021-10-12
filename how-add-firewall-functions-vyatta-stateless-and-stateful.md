@@ -53,8 +53,6 @@ To assign firewall rules to routed traffic, you must apply rules to the Brocade 
 
 For this example, zones are created for the VLANs that were used thus far.
 
-**VLAN = Zone**
-
 bond1 = dmz
 
 bond1.2007 = prod (for production)
