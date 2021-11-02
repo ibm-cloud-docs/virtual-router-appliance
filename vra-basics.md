@@ -39,7 +39,6 @@ It is recommended that SSH to the public IP be disabled and only SSH to the priv
 Use the Vyatta account from the Device Details page to log in through SSH. The root password is also provided, but root login is disabled by default for security reasons.
 
 `ssh vyatta@[IP address]`
-{: pre}
 
 It is recommended to keep root logins disabled. Log in using the Vyatta account and elevate to root only when needed.
 {: tip}

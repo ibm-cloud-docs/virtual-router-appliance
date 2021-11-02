@@ -51,7 +51,7 @@ Use the following command to help troubleshoot NAT:
 ```sh
 run show nat source translations detail
 ```
-{: pre}
+{: codeblock}
 
 ## One-to-one NAT rule
 {: #one-to-one-nat-rule}

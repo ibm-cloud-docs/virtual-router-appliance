@@ -200,7 +200,6 @@ Use IPsec (VTI BASED).
 With Vyatta 5400 devices, the following firewall rule is allowed:
 
 `set firewall name allow rule 10 ipsec`
-{: pre}
 
 However, with {{site.data.keyword.vra_full}}, there is no IPsec.
 
@@ -380,7 +379,7 @@ For a pair of VRAs with VRRP, the standby router might not have the VRRP virtual
 ```sh
 interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ```
-{: pre}
+{: codeblock}
 
 ## Recent count and recent time
 {: #recent-count-and-recent-time}
