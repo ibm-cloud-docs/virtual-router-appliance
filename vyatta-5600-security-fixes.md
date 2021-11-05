@@ -35,6 +35,52 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
+## 1912q
+{: #1912q}
+
+### Issues Resolved
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-55753 | Major | Multicast: eliminate or hide FAL counter logs |
+| VRVDR-55749 | Major | Swapped in SFP doesn't pick up configured MTU |
+| VRVDR-55569 | Major | MRIBv6 FIB: Peek error Resource temporarily unavailable |
+| VRVDR-55011 | Major | Can't log into a SIAD with read-only SSD |
+| VRVDR-54591 | Blocker | TACACS authentications fails when TACACS accounting has a large backlog |
+| VRVDR-53135 | Major | "protocols multicast ip log-warning" doesn't log any warnings |
+| VRVDR-53114 | Major | TACACS+ session accounting may still use hostname instead of IP address |
+| VRVDR-53099 | Major | TACACS+ starts only when service is restarted manually |
+| VRVDR-53085 | Major | Multicast IPv4 and IPv6 is mutually exclusive on SIAD |
+| VRVDR-52997 | Major | tacplusd get_tty_login_addr() may overflow buffer |
+| VRVDR-52912 | Critical | service-user creation fails due to moved SSSD databases |
+| VRVDR-52855 | Critical | Creating service users fails |
+| VRVDR-52842 | Major | sssd pipes should not be shared with user sandboxes |
+| VRVDR-52730 | Major | sssd should not run as root |
+| VRVDR-52671 | Critical | sssd_nss crashes on startup if filesystem containing in-memory cache backing files is full |
+| VRVDR-52241 | Major | TACACS: Sanity Test Command Authorisation fails due to Tacacs+ DBus Daemon restart |
+| VRVDR-52120 | Major | Hostname may be sent instead of IP address in TACACS+ accounting requests |
+| VRVDR-52091 | Major | tacplusd should not run as root |
+| VRVDR-51809 | Major | TACACS+ session accounting: task_id in stop record differs from task_id in start record |
+| VRVDR-51580 | Critical | Command Accounting: Start record support |
+| VRVDR-50803 | Major | tacplusd logs are very chatty by default |
+| VRVDR-50552 | Major | 'TACACS daemon is not running' even with all TACACS config |
+| VRVDR-50310 | Major | SIAD multicast traffic counted on output interface |
+| VRVDR-50036 | Major | Add TACACS+/SSSD information to tech support output |
+| VRVDR-42098 | Major | TACACS+ Server Connection Timeout |
+| VRVDR-42094 | Minor | TACACS+ Server Enable / Disable |
+
+### Security Vulnerabilities Resolved
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-55979 | N/A | DLA-2738-1 | CVE-2021-3672: Debian DLA-2738-1 : c-ares - LTS security update |
+| VRVDR-55951 | 6.5 | DLA-2735-1 | CVE-2018-14662, CVE-2018-16846, CVE-2020-1760, CVE-2020-10753, CVE-2021-3524: Debian DLA-2735-1: ceph – LTS security update |
+| VRVDR-55948 | 7.4 | DLA-2734-1 | CVE-2021-22898, CVE-2021-22924: Debian DLA-2734-1: curl – LTS security update |
+| VRVDR-55792 | 5.5 | DLA-2715-1 | CVE-2021-33910: Debian DLA-2715-1: systemd - LTS security update |
+| VRVDR-55761 | 7.8 | DSA-4941-1 | CVE-2020-36311, CVE-2021-3609, CVE-2021-33909, CVE-2021-34693: Debian DSA-4941-1: linux security update |
+| VRVDR-55648 | N/A | DLA-2703-1 | Debian DLA-2703-1 : ieee-data - LTS security update |
+| VRVDR-55538 | 7.8 | DLA-2690-1 | CVE-2020-24586, CVE-2020-24587, CVE-2020-24588, CVE-2020-25670, CVE-2020-25671, CVE-2020-25672, CVE-2020-26139, CVE-2020-26147, CVE-2020-26558, CVE-2020-29374, CVE-2021-0129, CVE-2021-3483, CVE-2021-3506, CVE-2021-3564, CVE-2021-3573, CVE-2021-3587, CVE-2021-23133, CVE-2021-23134, CVE-2021-28688, CVE-2021-28964, CVE-2021-28971, CVE-2021-29154,CVE-2021-29155, CVE-2021-29264, CVE-2021-29647, CVE-2021-29650, CVE-2021-31829, CVE-2021-31916, CVE-2021-32399, CVE-2021-33034:Debian DLA-2690-1: linux LTS security update |
+
 ## 1912p
 {: #1912p}
 
