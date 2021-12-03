@@ -10,17 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:download: .download}
-{:faq: data-hd-content-type='faq'}
-{:note: .note}
-{:important: .important}
-{:support: data-reuse='support'}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs for {{site.data.keyword.cloud_notm}} Virtual Router Appliance
 {: #faqs-for-ibm-virtual-router-appliance}
@@ -43,6 +33,7 @@ A {{site.data.keyword.vra_full}} (VRA) allows an {{site.data.keyword.cloud}} cus
 With a gateway appliance fixture, you can use the web portal or API to choose network segments (VLANs) to route through a VRA. You can change VLAN selections at any time. The gateway appliance also handles VRA High Availability (HA), configuring a second VRA to take over if the first one fails.
 
 ## I sometimes see references to terms like "Vyatta" and "vRouter." How do they relate to VRA?
+{: #vyatta-vrouter}
 {: faq}
 
 Vyatta was open source, PC-based router software that was acquired and transitioned to closed source. Today, "Vyatta" and "Vyatta OS" describe commercial software adaptations that are derived from that closed source project. IBM VRA incorporates elements of Vyatta OS, along with substantial feature and service enhancements available exclusively through {{site.data.keyword.cloud_notm}}.
@@ -67,26 +58,31 @@ Vyatta 5600 offers the following enhancements over the Vyatta 5400:
 - Updated standards support, including Layer 2 Tunneling Protocol, Version 3 (L2TPv3), Internet Key Exchange, Version 2 (IKEv2), Secure Hash Algorithm 2 (SHA-2), and 802.1Q tunneling (Q-in-Q) encapsulation
 
 ## What about the AT&T vRouter 5600 offering?
+{: #vrouter-5600}
 {: faq}
 
 AT&T (formerly Brocade) announced the End-of-Life and End-of-Support of their Brocade vRouter 5600 offering. While the Brocade vRouter 5600 provides the underlying technology capability for the {{site.data.keyword.vra_full}}, this announcement does not apply to IBM customers. IBM customers continue to have support by using this new offering.
 
 ## How is VRA delivered?
+{: #vra-delivered}
 {: faq}
 
 You obtain a VRA by ordering a network gateway. This streamlined process allows you to choose a data center and a suitable VRA server, as well specify whether you want to deploy an HA pair of VRAs. Servers, operating systems, and the gateway appliance fixture are all provisioned automatically. When the provisioning is complete, you can use the gateway appliance interface to route VLANs through the VRA. You can configure your VRA server directly by using SSH (Secure Shell) with the passwords that are provided in the Hardware Details section of the {{site.data.keyword.cloud_notm}} console.
 
 ## Is my password safe?
+{: #password-safe}
 {: faq}
 
 Yes. All VRAs are assigned random passwords visible only to the account holder. Passwords are easily changed, as are SSH public keys and admin IP access restrictions.
 
 ## Can I get VRA without a gateway appliance?
+{: #vra-without-ga}
 {: faq}
 
 Yes, but it can only manage traffic between the VRA's public and private interfaces. VLANs and HA require the gateway appliance fixture.
 
 ## Is all network traffic sent through the VRA?
+{: #all-traffic-vra}
 {: faq}
 
 No. The gateway appliance allows you to select the private and public network segments (VLANs) that you want to route through the VRA. You can change and bypass VLAN selections at any time. VRA also allows you to define IP-based rules that apply to subnets or IP ranges. Such rules function only if the VLANs containing those subnets are routed through the VRA.
@@ -105,11 +101,13 @@ It is the customer's responsibility to ensure that the VRA or firewall is config
 Likewise, if a VRA or firewall is bypassed after an order is placed, it's still likely that the order will fail. There might be a narrow window during which automation retries are attempted. It is best that the entire provision process proceed without network interference.
 
 ## What firewall products does IBM offer?
+{: #firewall-products}
 {: faq}
 
 To find a detailed comparison of all firewall products that are offered in {{site.data.keyword.cloud_notm}}, see [Exploring firewalls](/docs/fortigate-10g?topic=fortigate-10g-exploring-firewalls).
 
 ## Can a VRA confound customer support efforts?
+{: #vra-support-efforts}
 {: faq}
 
 Yes, for the preceding reasons. VRA is a black box: VLANs go in, VLANs come out, and IBM Support doesn't know what customers are doing with packets in-between.
@@ -122,6 +120,7 @@ IBM Support always does its best, but with VRA and dedicated firewall:
 As a first diagnostic step, IBM Support might require you to put your VRA or firewall VLANs in bypass mode. If, in this state, provisions that failed start going through, the issue is likely with your VRA or firewall configuration.
 
 ## What effect does VRA have on my network performance?
+{: #effect-network-performance}
 {: faq}
 
 Keep in mind that even though they can't see you, a public cloud shares networks with other customers. True, best-case VRA throughput is determined by available network capacity at a point in time, plus the distance the data must travel.

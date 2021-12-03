@@ -10,15 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
+{{site.data.keyword.attribute-definition-list}}
 
 # Setting up an IPsec tunnel that works with zone firewalls
 {: #setting-up-an-ipsec-tunnel-that-works-with-zone-firewalls}

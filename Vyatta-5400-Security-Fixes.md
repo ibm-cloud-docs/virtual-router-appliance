@@ -10,15 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:download: .download}
-{:note: .note}
-{:important: .important}
+{{{site.data.keyword.attribute-definition-list}}
 
 # AT&T Vyatta 5400 vRouter security vulnerability fixes
 {: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
@@ -32,12 +24,12 @@ subcollection: virtual-router-appliance
 Released August 30, 2018
 
 ### Issues Resolved
+{: #6.7R14S10-issues}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VSE-9911 | Major | 6.7R13S3 upgrade to 6.7R14S9 caused “rpc_scheddetected stalls on CPUs/tasks” and system crashed and frozen |
-
-Issues resolved in 6.7R14S10
+{: caption="Issues resolved in 6.7R14S10" caption-side="bottom"}
 
 ## 6.7R14S9
 {: #6-7R14S9}
@@ -45,14 +37,13 @@ Issues resolved in 6.7R14S10
 Released July 16, 2018
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S9-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VSE-9909 | 6.5 | DSA-4229-1 | CVE-2018-5388, CVE-2018-10811: Debian DSA-4229- 1: Strongswan security update |
 | VSE-9903  | 9.8 | DLA-1390-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018-1125, CVE-2018-1126: Debian DLA-1390-1: procps security update  |
-
-Security vulnerabilities resolved in 6.7R14S8
-
+{: caption="Security vulnerabilities resolved in 6.7R14S8" caption-side="bottom"}
 
 ## 6.7R14S8
 {: #6-7R14S8}
@@ -60,14 +51,14 @@ Security vulnerabilities resolved in 6.7R14S8
 Released June 1, 2018
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S8-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VSE-9905 | 7.5 | DLA-1388-1 | CVE-2018-11358, CVE-2018-11362, CVE-2018-9258, CVE-2018-9260, CVE-2018-9261, CVE-2018-9263, CVE-2018-9268, CVE-2018-9269, CVE-2018-9270: Debian DLA-1388-1: wireshark – security update |
 | VSE-9902 | 9.1 | DLA-1379-1 | CVE-2018-1000301: Debian DLA-1379-1: curl – security update |
 | VSE-9899 | 6/5 | DLA-1375-1 | CVE-2018-0494: Debian DLA-1375-1: wget – security update |
-
-Security vulnerabilities resolved in 6.7R14S8
+{: caption="Security vulnerabilities resolved in 6.7R14S8" caption-side="bottom"}
 
 ## 6.7R14S7
 {: #6-7R14S7}
@@ -75,12 +66,15 @@ Security vulnerabilities resolved in 6.7R14S8
 Released May 14, 2018
 
 ### Issues Resolved
+{: #6.7R14S7-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VSE-9525 | Minor | Show version gives “SMBIOS” error message |
+{: caption="Issues resolved in HERE" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S7-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -95,8 +89,7 @@ Released May 14, 2018
 | VSE-9886 | 8.8 | DSA-4071-1 | CVE-2017-17512: Debian DSA-4071-1: sensible-utils – security update |
 | VSE-9885 | 6.5 | DSA-4018-1 | CVE-2017-3735, CVE_2017-3736: DSA-4018-1 openssl – security update |
 | VSE-9832 | 7.5 | DLA-1059-1 | CVE-2017-11185: Debian DLA-1059-1: strongswan security update |
-
-Security vulnerabilities resolved in 6.7R14S7
+{: caption="Security vulnerabilities resolved in 6.7R14S7" caption-side="bottom"}
 
 ## 6.7R14S6
 {: #6-7R14S6}
@@ -104,14 +97,15 @@ Security vulnerabilities resolved in 6.7R14S7
 Released March 6, 2018.
 
 ### Issues Resolved 
+{: #6.7R14S6-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VSE-9880 | Minor |  Disabling RPF source-validation does not remove setting from all interfaces |
-
-Issues resolved in 6.7R14S6
+{: caption="Issues resolved in HERE" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S6sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -125,9 +119,7 @@ Issues resolved in 6.7R14S6
 | VSE-9851 | 9.1 | DLA-1143-1 | CVE-2017-1000257: Debian DLA-1143-1: curl security update |
 | VSE-9850 | 7.8 | DLA-1135-1 | CVE-2017-10140: Debian DLA-1135-1: db security update |
 | VSE-9817 | 7.8 | DLA-992-1 | CVE-2017-1000366 Plugin: 100875 Debian DLA-992-1: eglibc security update |
-
-Security vulnerabilities resolved in 6.7R14S6
-
+{: caption="Security vulnerabilties resolved in HERE" caption-side="bottom"}
 
 ## 6.7R14S5
 {: #6-7R14S5}
@@ -135,23 +127,22 @@ Security vulnerabilities resolved in 6.7R14S6
 Released February 2, 2018.
 
 ### Issues Resolved
+{: #6.7R14S5-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VSE-9866 | Minor | IPsec out of sequence inbound errors |
-
-Issues resolved in 6.7R14S5
+{: caption="Issues resolved in HERE" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S5-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VSE-9875 | 7.5 | DLA-1247-1 | CVE-2018-5764: Debian DLA-1247-1: rsync security update |
 | VSE-9864 | N/A | DLA-1211-1 | CVE-2017-15412: Debian DLA-1211-1: libxml2 security update |
 | VSE-9802 | 7.5 | DLA-973-1 | CVE-2017-9022, CVE-2017-9023: Debian DLA-973-1: strongswan security update |
-
-Security vulnerabilities resolved in 6.7R14S5
-
+{: caption="Security vulnerabilties resolved in 6.7R14S5" caption-side="bottom"}
 
 ## 6.7R14S4
 {: #6-7R14S4}
@@ -159,12 +150,12 @@ Security vulnerabilities resolved in 6.7R14S5
 Released December 19, 2017.
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S4-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VSE-9857 | 9.8 | DLA-1171-1 | CVE-2017-10672: DLA-1171-1 libxml-libxml-perl – security update |
-
-Security vulnerabilities resolved in 6.7R14S4
+{: caption="Security vulnerabilties resolved in 6.7R14S4" caption-side="bottom"}
 
 ## 6.7R14S3
 {: #6-7R14S3}
@@ -172,14 +163,13 @@ Security vulnerabilities resolved in 6.7R14S4
 Released November 14, 2017.
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S3-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VSE-9856 | N/A | DLA-1138-1 | CVE-2017-7805: Debian DLA-1138-1: nss security update |
 | VSE-9852 | 8.8 | DLA-1149-1 | CVE-2017-13089, CVE-2017-13090: Debian DLA-1149- 1: wget security update |
-
-Security vulnerabilities resolved in 6.7R14S3
-
+{: caption="Security vulnerabilties resolved in 6.7R14S3" caption-side="bottom"}
 
 ## 6.7R14S2
 {: #6-7R14S2}
@@ -187,21 +177,20 @@ Security vulnerabilities resolved in 6.7R14S3
 Released October 10, 2017.
 
 ### Issues Resolved
+{: #6.7R14S2-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VSE-9837 | Minor | “show system commit different” showing permission denied after upgrade from 6.7R11S9 to 6.7R13S3 |
-
-Issues resolved in 6.7R14S2
+{: caption="Issues resolved in 6.7R14S2" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S2-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VSE-9845 | 9.8 | DLA-1124-1 | CVE-2017-14491, CVE-2017-14492, CVE-2017-14494: Debian DLA-1124-1: dnsmasq security update |
-
-Security vulnerabilities resolved in 6.7R14S2
-
+{: caption="Security vulnerabilties resolved in 6.7R14S2" caption-side="bottom"}
 
 ## 6.7R14S1
 {: #6-7R14S1}
@@ -209,14 +198,15 @@ Security vulnerabilities resolved in 6.7R14S2
 Released September 22, 2017.
 
 ### Issues Resolved
+{: #6.7R14S1-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VSE-9831 | Major | MTU setting reverts back to default after reboot on a VIF interface |
-
-Issues resolved in 6.7R14S1
+{: caption="Issues resolved in 6.7R14S1" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #6.7R14S1-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -224,3 +214,4 @@ Issues resolved in 6.7R14S1
 | VSE-9840 | 6.5 | DLA-1062-1 | CVE-2017-1000100: Debian DLA-1062-1: curl security update |
 | VSE-9839 | 7.5 | DLA-1059-1 | CVE-2017-11185: Debian DLA-1059-1: strongswan security update |
 | VSE-9835 | 7.5 | DSA-3900-1 | CVE-2017-7522, CVE-2017-7521, CVE-2017-7520, CVE-2017-7508 OpenVPN security update |
+{: caption="Security vulnerabilties resolved in 6.7R14S1" caption-side="bottom"}

@@ -10,15 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:important: .important}
-{:download: .download}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Migration overview
 {: #migration-overview}
@@ -45,6 +37,7 @@ To help you migrate from your Vyatta 5400, see the following documentation and s
 | [Upgrading the Vyatta 5400 and reusing its IP address](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-vyatta-5400-and-reusing-its-ip-addresses) | Instructions on upgrading your Vyatta 5400 to an equivalent {{site.data.keyword.vra_full}}, while reusing your Vyatta 5400 IP Addresses. |
 | [Migrating a Vyatta 5400 to a Juniper vSRX or Fortigate Security Appliance (FSA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-migrating-a-vyatta-5400-to-a-juniper-vsrx-or-fortigate-security-appliance-fsa-10gbps) | Instructions on migrating to either a Juniper vSRX or the Fortigate Security Appliance. This option does not allow you to reuse your existing Vyatta 5400 device or keep your associated IP addresses. |
 | [Common migration issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)  | Information on the most frequently encountered issues or behavior changes you may encounter after migrating from a Vyatta 5400 device to an {{site.data.keyword.vra_full}}. In many cases, it includes workarounds to address these issues. |
+{: caption="Migration documentation and support" caption-side="bottom"}
 
 To order a new {{site.data.keyword.vra_full}}, see [Getting started with IBM Cloud Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started) for more details.
 {: note}

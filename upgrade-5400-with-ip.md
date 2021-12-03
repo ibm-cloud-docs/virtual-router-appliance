@@ -10,14 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:download: .download}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Upgrading the Vyatta 5400 and reusing its IP Addresses
 {: #upgrading-the-vyatta-5400-and-reusing-its-ip-addresses}

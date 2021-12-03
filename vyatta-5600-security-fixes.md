@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2020
+  years: 2017, 2021
 lastupdated: "2021-08-18"
 
 keywords:  
@@ -10,15 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
+{{site.data.keyword.attribute-definition-list}}
 
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
@@ -39,6 +31,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 {: #1912q}
 
 ### Issues Resolved
+{: #1912q-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -68,8 +61,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-50036 | Major | Add TACACS+/SSSD information to tech support output |
 | VRVDR-42098 | Major | TACACS+ Server Connection Timeout |
 | VRVDR-42094 | Minor | TACACS+ Server Enable / Disable |
+{: caption="Issues resolved for 1912q" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912q-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -80,19 +75,23 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-55761 | 7.8 | DSA-4941-1 | CVE-2020-36311, CVE-2021-3609, CVE-2021-33909, CVE-2021-34693: Debian DSA-4941-1: linux security update |
 | VRVDR-55648 | N/A | DLA-2703-1 | Debian DLA-2703-1 : ieee-data - LTS security update |
 | VRVDR-55538 | 7.8 | DLA-2690-1 | CVE-2020-24586, CVE-2020-24587, CVE-2020-24588, CVE-2020-25670, CVE-2020-25671, CVE-2020-25672, CVE-2020-26139, CVE-2020-26147, CVE-2020-26558, CVE-2020-29374, CVE-2021-0129, CVE-2021-3483, CVE-2021-3506, CVE-2021-3564, CVE-2021-3573, CVE-2021-3587, CVE-2021-23133, CVE-2021-23134, CVE-2021-28688, CVE-2021-28964, CVE-2021-28971, CVE-2021-29154,CVE-2021-29155, CVE-2021-29264, CVE-2021-29647, CVE-2021-29650, CVE-2021-31829, CVE-2021-31916, CVE-2021-32399, CVE-2021-33034:Debian DLA-2690-1: linux LTS security update |
+{: caption="Security vulnerabilities resolved for 1912q" caption-side="bottom"}
 
 ## 1912p
 {: #1912p}
 
 ### Issues Resolved
+{: #1912p-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-55160 | Blocker | `dataplane: srvAdaptiveFrequencyReferenceTracker.c:91: getStraightenedLocalTimestampsAdaptiveFrequency: Assertion '((direction == E_srvUpLinkDirection) \|\| (direction == E_srvDownLinkDirection))' failed` |
 | VRVDR-54128 | Critical | PDV syslogs are observed in huge number |
 | VRVDR-53790 | Critical | Crash in mngPtpSessionStop |
+{: caption="Issues resolved for 1912p" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912p-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -108,18 +107,22 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-55071 | 8.8 | DLA-2653-1 | CVE-2021-3516, CVE-2021-3517, CVE-2021-3518, CVE-2021-3537: Debian DLA-2653-1 : libxml2 security update |
 | VRVDR-55024 | 9.8 | DLA-2647-1 | CVE-2021-25214, CVE-2021-25215, CVE-2021-25216: Debian DLA-2647-1 : bind9 security update |
 | VRVDR-54850 | 7.8 | DLA-2610-1 | Debian DLA-2610-1 : linux-4.19 security update |
+{: caption="Security vulnerabilities resolved for 1912p" caption-side="bottom"}
 
 ## 1912n
 {: #1912n}
 
 ### Issues Resolved
+{: #1912n-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-54900 | Major | Constant attempts to revive old duplicate CHILD_SA are causing rekey flood and occasional traffic drop. |
 | VRVDR-54765 | Major | ALG session may cause dataplane crash when cleared |
+{: caption="Issues resolved for 1912n" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912n-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -128,18 +131,22 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-54849 | 7.5 | DLA-2614-1 | CVE-2021-28831: Debian DLA-2614-1 : busybox security update | 
 | VRVDR-54848 | N/A | DLA-2611-1 | CVE-2020-27840, CVE-2021-20277: Debian DLA-2611-1 : ldb security update | 
 | VRVDR-54712 | 8.1 | DLA-2588-1 | CVE-2021-20234, CVE-2021-20235: Debian DLA-2588-1 : zeromq3 security update | 
+{: caption="Security vulnerabilities resolved for 1912n" caption-side="bottom"}
 
 ## 1912m
 {: #1912m}
 
 ### Issues Resolved
+{: #1912m-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-54586 | Major | Dataplane crash in connection sync on closing tcp session |
 | VRVDR-53889 | Major | BFD mbuf leak when deployed in a VNF using PCI-Passthrough on ixgbe |
+{: caption="Issues resolved for 1912m" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912m-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -149,11 +156,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-54563 | 7.5 | DLA-2574-1 | CVE-2021-27212: Debian DLA-2574-1 : openldap security update | 
 | VRVDR-54562 | 9.8 | DLA-2570-1 | CVE-2021-26937: Debian DLA-2570-1: screen security update | 
 | VRVDR-54531 | 8.1 | DLA-2568-1 | CVE-2020-8625: Debian DLA-2568-1 : bind9 security update | 
+{: caption="Security vulnerabilities resolved for 1912m" caption-side="bottom"}
 
 ## 1912k
 {: #1912k}
 
 ### Issues Resolved
+{: #1912k-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -166,8 +175,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-54119 | Critical | Repeated PTP tunnel failures due to busy state | 
 | VRVDR-54027 | Major | Migrating loopback to self GRE tun50 configuration to newer code versions | 
 | VRVDR-51846 | Critical | RIB table not updated correctly for OSPFv3 routes after flapping the primary path by making dataplane/switch interface link failure/recovery |
+{: caption="Issues resolved for 1912k" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912k-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -182,11 +193,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-54398 | N/A | DLA-2542-1 | Debian DLA-2542-1 : tzdata new upstream version | 
 | VRVDR-54337 | 6.5 | DLA-2538-1 | CVE-2020-14765, CVE-2020-14812: Debian DLA-2538-1 : mariadb-10.1 security update | 
 | VRVDR-54287 | 7.8 | DLA-2534-1 | CVE-2021-3156: Debian DLA-2534-1 : sudo security update | 
+{: caption="Security vulnerabilities resolved for 1912k" caption-side="bottom"}
 
 ## 1912j
 {: #1912j}
 
 ### Issues Resolved
+{: #1912j-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -197,8 +210,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-53928 | Major | Jumbo Frame MTU setting on Intel IGB interface causes link to go down | 
 | VRVDR-53854 | Major | Interfaces went down / panic: runtime error: slice bounds out of range | 
 | VRVDR-53368 | Minor | Alpha-numeric common pattern with preceding '0' in `resources group <name>` causes out of order list on config-sync slave | 
+{: caption="Issues resolved for 1912j" caption-side="bottom"}
   
 ### Security Vulnerabilities Resolved
+{: #1912j-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -211,11 +226,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-53966 | N/A | DLA-2488-2 | Debian DLA-2488-2 : python-apt regression update | 
 | VRVDR-53965 | 6.1 | DLA-2467-2 | CVE-2020-27783: Debian DLA-2467-2 : lxml regression update | 
 | VRVDR-53861 | 8.2 | DLA-2483-1 | CVE-2019-19039, CVE-2019-19377, CVE-2019-19770, CVE-2019-19816, CVE-2020-0423, CVE-2020-8694, CVE-2020-14351, CVE-2020-25656, CVE-2020-25668, CVE-2020-25669, CVE-2020-25704, CVE-2020-25705, CVE-2020-27673, CVE-2020-27675, CVE-2020-28941, CVE-2020-28974: Debian DLA-2483-1: linux-4.19 security update | 
+{: caption="Security vulnerabilities resolved for 1912j" caption-side="bottom"}
 
 ## 1912h
 {: #1912h}
 
 ### Issues Resolved
+{: #1912h-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -232,8 +249,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-51940 | Blocker | Changing DSCP Values Causes BFD Instability Which Requires Reboot |
 | VRVDR-51529 | Critical | Config Sync fails displaying 'vyatta-interfaces-v1:interfaces' when firewall action configured |
 | VRVDR-43453 | Minor | `show l2tpeth/ show l2tpeth <interface>` returns "Use of uninitialized value in printf at /opt/vyatta/bin/vplane-l2tpeth-show.pl line 41" with the output |
+{: caption="Issues resolved for 1912h" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912h-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -250,11 +269,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-53525 | N/A | DLA-2425-1 | Debian DLA-2425-1 : openldap security update |
 | VRVDR-53524 | N/A | DLA-2424-1 | Debian DLA-2424-1 : tzdata new upstream version |
 | VRVDR-53448 | N/A | DLA-2409-1 | CVE-2020-15180: Debian DLA-2409-1 : mariadb-10.1 security update |
+{: caption="Security vulnerabilities resolved for 1912h" caption-side="bottom"}
 
 ## 1912g
 {: #1912g}
 
 ### Issues Resolved
+{: #1912g-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -303,8 +324,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-46493 | Major | IPSec RA-VPN Server : IKE proposal not found on server when setting the local-address to "any" | 
 | VRVDR-43307 | Critical | vyatta-ike-sa-daemon: TypeError: 'IKEConfig' object does not support indexing | 
 | VRVDR-42123 | Major | opd adds node.tag values under the wrong location in tab completion | 
+{: caption="Issues resolved for 1912g" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912g-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -321,11 +344,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-52273 | 6.7 | DSA-4728-1 | CVE-2020-10756, CVE-2020-13361, CVE-2020-13362, CVE-2020-13754, CVE-2020-13659: Debian DSA 4728-1: qemu security update | 
 | VRVDR-52265 | 9.8 | DLA-2280-1 | CVE-2018-20406, CVE-2018-20852, CVE-2019-5010, CVE-2019-9636, CVE-2019-9740, CVE-2019-9947, CVE-2019-9948, CVE-2019-10160, CVE-2019-16056, CVE-2019-16935, CVE-2019-18348, CVE-2020-8492, CVE-2020-14422: Debian DLA-2280-1 : python3.5 security update | 
 | VRVDR-51849 | 7.5 | N/A | CVE-2018-19044, CVE-2018-19045, CVE-2018-19046: Insecure temporary file usage in keepalived | 
+{: caption="Security vulnerabilities resolved for 1912g" caption-side="bottom"}
 
 ## 1912f
 {: #1912f}
 
 ### Issues Resolved
+{: #1912f-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -355,8 +380,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-49836 | Major | IPsec: Fails to be able to to ping from tunnel endpoint to tunnel endpoint with ping size 1419 using default MTU with site-2-site. Tunnel MTU discovery not working |
 | VRVDR-48315 | Critical | Malformed interface names in show ipv6 multicast interface with IPv6 GRE tunnels |
 | VRVDR-48090 | Major | Error: /transceiver-info/physical-channels/channel/0/laser-bias- current/: is not a decimal64 at /opt/vyatta/share/perl5/Vyatta/Configd.pm line 208 |
+{: caption="Issues resolved for 1912f" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912f-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -367,11 +394,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-52618 | 9.8 | DLA-2323-1 | CVE-2019-18814, CVE-2019-18885, CVE-2019- 20810, CVE-2020-10766, CVE-2020-10767, CVE- 2020-10768, CVE-2020-12655, CVE-2020-12771, CVE-2020-13974, CVE-2020-15393: Debian DLA- 2323-1 : linux-4.19 new package |
 | VRVDR-52476 | 5.9 | DLA-2303-1 | CVE-2020-16135: Debian DLA-2303-1 : libssh security update |
 | VRVDR-52197 | N/A | N/A | Privilege escalation in "reset ipv6 neighbors" / "reset ip arp" commands |
+{: caption="Security vulnerabilities resolved for 1912f" caption-side="bottom"}
 
 ## 1912e
 {: #1912e}
 
 ### Issues Resolved
+{: #1912e-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -421,8 +450,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48438 | Major | LACP causing interface to remain down |  
 | VRVDR-47530 | Critical | OSPF scaling: regression script fails bringing up many OSPF neighbors |  
 | VRVDR-45369 | Major | show interface dataplane X physical incorrectly reports speed when down |
+{: caption="Issues resolved for 1912e" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -436,11 +467,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-50530 | 7.1 | DSA-4647-1 |  CVE-2020-0556: Debian DSA-4647-1 : bluez - security update |  
 | VRVDR-50498 | 8.8 | DSA-4646-1 | CVE-2020-10531: Debian DSA-4646-1 : icu - security update |  
 | VRVDR-44891 | N/A | N/A | opd doesn't escape input properly when completing commands |
+{: caption="Security vulnerabilities resolved for 1912e" caption-side="bottom"}
 
 ## 1912a
 {: #1912a}
 
 ### Issues Resolved
+{: #1912a-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -489,8 +522,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45067 | Critical | vyatta-security-vpn: set security vpn ipsec site-to-site peer $CODE / code injection |
 | VRVDR-45066 | Critical | vyatta-security-vpn: check_file_in_config passed unsanitized user input / code injection |
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
+{: caption="Issues resolved for 1912a" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1912a-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -500,11 +535,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-49477 | 7.5 | DSA-4591-1 | CVE-2019-19906: Debian DSA-4591-1 : cyrus-sasl2 - security update |
 | VRVDR-49450 | 9.8 | DSA-4587-1 | CVE-2019-15845, CVE-2019-16201, CVE-2019- 16254, CVE-2019-16255: Debian DSA-4587-1 : ruby2.3 - security update |
 | VRVDR-49132 | 7.8 | DSA-4564-1 | CVE-2018-12207, CVE-2019-0154, CVE-2019-0155, CVE-2019-11135: Debian DSA-4564-1: linux – security update |
+{: caption="Security vulnerabilities resolved for 1912a" caption-side="bottom"}
 
 ## 1908h
 {: #1908h}
 
 ### Issues Resolved
+{: #1908h-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -535,29 +572,35 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48466 | Critical | DNS nslookup query within a routing instance vrf is broken |  
 | VRVDR-48337 | Critical | NCS fails to load `vyatta-*system-image YANG` |  
 | VRVDR-48203 | Minor | Split IDT servo into separate shared libraries |
+{: caption="Issues resolved for 1908h" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1908h-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-51236 | 8.6 | DSA-4689-1 | CVE-2019-6477, CVE-2020-8616, CVE-2020-8617: Debian DSA-4689-1 : bind9 - security update |  
 | VRVDR-51142 | 5.5 | DSA-4685-1 | CVE-2020-3810: Debian DSA-4685-1 : apt - security update |  
 | VRVDR-51054 | 6.7 | DSA-4688-1 | CVE-2020-10722, CVE-2020-10723, CVE-2020- 10724: Debian DSA-4688-1 : dpdk - security update |  
-| VRVDR-50530 | 7.1 | DSA-4647-1 | CVE-2020-0556: Debian DSA-4647-1 : bluez - security update
+| VRVDR-50530 | 7.1 | DSA-4647-1 | CVE-2020-0556: Debian DSA-4647-1 : bluez - security update |
+{: caption="Security vulnerabilities resolved for 1908h" caption-side="bottom"}
 
 ## 1908g
 {: #1908g}
 
 ### Issues Resolved
+{: #1908g-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-50563 | Critical | Transport-link / port peering no longer works on xsm, sm and md |
+{: caption="Issues resolved for 1908g" caption-side="bottom"}
 
 ## 1908f
 {: #1908f}
 
 ### Issues Resolved
+{: #1908f-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -578,18 +621,22 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48861 | Critical | Vyatta VNF creating extra RX queues |  
 | VRVDR-47761 | Minor | Spurious log: LLADDR: NEWNEIGH without link layer address? |  
 | VRVDR-45649 | Major | Route Leaking into VRF not working as expected - pings not resolving |
+{: caption="Issues resolved for 1908f" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1908f-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-50166 | 9.8 | DSA-4633-1 | CVE-2019-5436, CVE-2019-5481, CVE-2019-5482: Debian DSA-4633-1 : curl - security update |  
 | VRVDR-50161 | 9.8 | DSA-4632-1 | CVE-2020-8597: Debian DSA-4632-1 : ppp - security update |
+{: caption="Security vulnerabilities resolved for 1908f" caption-side="bottom"}
 
 ## 1908e
 {: #1908e}
 
 ### Issues Resolved
+{: #1908e-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -611,8 +658,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45067 | Critical | vyatta-security-vpn: set security vpn ipsec site-to-site peer $CODE / code injection |  
 | VRVDR-45066 | Critical | vyatta-security-vpn: check_file_in_config passed unsanitized user input / code injection |  
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
+{: caption="Issues resolved for 1908e" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1908e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -621,11 +670,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-49728 | N/A | DSA-4609-1 | CVE-2019-15795, CVE-2019-15796: Debian DSA- 4609-1 : python-apt - security update |  
 | VRVDR-49642 | 9.8 | DSA-4602-1 | CVE-2019-17349, CVE-2019-17350, CVE-2019- 18420, CVE-2019-18421, CVE-2019-18422, CVE- 2019-18423, CVE-2019-18424, CVE-2019-18425, CVE-2019-19577, CVE-2019-19578, CVE-2019- 19579, CVE-2019-19580, CVE-2019-19581, CVE- 2019-19582, CVE-2019-19583, CVE-2018-12207, CVE-2018-12126, CVE-2018-12127, CVE-2018- 12130, CVE-2019-11091, CVE-2019-11135, CVE- 2019-17348, CVE-2019-17347, CVE-2019-17346, CVE-2019-17345, CVE-2019-17344, CVE-2019- 17343, CVE-2019-17342, CVE-2019-17341, CVE- 2019-17340: Debian DSA-4602-1 : xen - security update (MDSUM/RIDL) (MFBDS/RIDL/ZombieLoad) (MLPDS/RIDL) (MSBDS/Fallout) |  
 | VRVDR-49132 | 7.8 | DSA-4564-1 | CVE-2018-12207, CVE-2019-0154, CVE-2019-0155, CVE-2019-11135: Debian DSA-4564-1: linux – security update |
+{: caption="Security vulnerabilities resolved for 1908e" caption-side="bottom"}
 
 ## 1908d
 {: #1908d}
 
 ### Issues Resolved 
+{: #1908d-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -651,8 +702,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47203 | Major | 1903d yang package fatal error |  
 | VRVDR-47002 | Minor | PTP: network information is not cleared from disabled (skipped) ports during reconfiguration |  
 | VRVDR-44104 | Blocker | Creating a switch interface doesn't work with QinQ |
+{: caption="Issues resolved for 1908d" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1908d-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -664,11 +717,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48133 | 8.8 | DSA-4512-1 | CVE-2019-13164, CVE-2019-14378: Debian DSA- 4512-1: qemu – security update |  
 | VRVDR-48132 | 7.5 | DSA-4511-1 | CVE-2019-9511, CVE-2019-9513: Debian DSA-4511- 1: nghttp2 – security update |  
 | VRVDR-47885 | 8.1 | DSA-4495-1 | CVE-2018-20836, CVE-2019-1125, CVE-2019-1999, CVE-2019-10207, CVE-2019-10638, CVE-2019- 12817, CVE-2019-12984, CVE-2019-13233, CVE- 2019-13631, CVE-2019-13648, CVE-2019-14283, CVE-2019-14284: Debian DSA-4495-1: linux – security update |
+{: caption="Security vulnerabilities resolved for 1908d" caption-side="bottom"}
 
 ## 1908c
 {: #1908c}
 
 ### Issues Resolved
+{: #1908c-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -683,11 +738,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48672 | Critical | SIAD stops forwarding traffic after 4-5 hours of long duration test |  
 | VRVDR-48057 | Minor | Add additional IPSec debug support to tech-support |  
 | VRVDR-47596 | Major | NAT used count is showing count larger than total available |
+{: caption="Issues resolved for 1908c" caption-side="bottom"}
 
 ## 1908b
 {: #1908b}
 
 ### Issues Resolved
+{: #1908b-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -755,8 +812,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |  
 | VRVDR-45781 | Major | 'reset dns forwarding cache routing-instance red' not finding VRF instance |  
 | VRVDR-42161 | Minor | tech-support should contain "CLI: coredumpctl info" prefix for COREDUMPS header |
+{: caption="Issues resolved for 1908b" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1908b-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -767,11 +826,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48446 | 6.7 | DSA-4535-1 | CVE-2019-5094: Debian DSA-4535-1 : e2fsprogs - security update |  
 | VRVDR-48412 | 9.8 | DSA-4531-1 | CVE-2019-14821, CVE-2019-14835, CVE-2019- 15117, CVE-2019-15118, CVE-2019-15902: Debian DSA-4531-1 : linux - security update  |
 | VRVDR-47897 | 8.1 | DSA-4497-1 | CVE-2015-8553, CVE-2018-5995, CVE-2018-20836 , CVE-2018-20856, CVE-2019-1125, CVE-2019-3882, CVE-2019-3900, CVE-2019-10207, CVE-2019- 10638, CVE-2019-10639, CVE-2019-13631, CVE- 2019-13648, CVE-2019-14283, CVE-2019-14284: DSA-4497-1: linux – security update |
+{: caption="Security vulnerabilities resolved for 1908b" caption-side="bottom"}
 
 ## 1908a
-{: 1908a}
+{: #1908a}
 
 ### Issues Resolved
+{: #1908a-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -802,18 +863,22 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47391 | Blocker | PTP fails to return to time-locked state after master clock stopped and re-started |  
 | VRVDR-47244 | Critical | dataplane crash on restart - no code changes |  
 | VRVDR-41129 | Blocker | Journalbeat can't export logs to destination in routing instance |
+{: caption="Issues resolved for 1908a" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1908a-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-48074 | 9.8 | DSA-4506-1 | CVE-2018-20815, CVE-2019-13164, CVE-2019- 14378: Debian DSA-4506-1 : qemu - security update |  
 | VRVDR-47707 | 7.8 | DSA-4484-1 | CVE-2019-13272: Debian DSA-4484-1: linux security update |
+{: caption="Security vulnerabilities resolved for 1908a" caption-side="bottom"}
 
 ## 1801zf
 {: #1801zf}
 
 ### Issues Resolved
+{: #1801zf-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -833,8 +898,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45066 | Critical | vyatta-security-vpn: check_file_in_config passed unsanitized user input / code injection |
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
 | VRVDR-40303 | Critical | fsck doesn't seem to be running on boot |
+{: caption="Issues resolved for 1801zf" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801zf-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -852,11 +919,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-49642 | 9.8 | DSA-4602-1 | CVE-2019-17349, CVE-2019-17350, CVE-2019-18420, CVE-2019-18421, CVE-2019-18422, CVE-2019-18423, CVE-2019-18424, CVE-2019-18425, CVE-2019-19577, CVE-2019-19578, CVE-2019-19579, CVE-2019-19580, CVE-2019-19581, CVE-2019-19582, CVE-2019-19583, CVE-2018-12207, CVE-2018-12126, CVE-2018-12127, CVE-2018-12130, CVE-2019-11091, CVE-2019-11135, CVE-2019-17348, CVE-2019-17347, CVE-2019-17346, CVE-2019-17345, CVE-2019-17344, CVE-2019-17343, CVE-2019-17342, CVE-2019-17341, CVE-2019-17340: Debian DSA-4602-1 : xen -security update (MDSUM/RIDL) (MFBDS/RIDL/ZombieLoad)(MLPDS/RIDL) (MSBDS/Fallout) |
 | VRVDR-49155 | 7.2 | N/A | CVE-2018-5265 : remote attackers able to execute arbitrary code with admin credentials |
 | VRVDR-49132 | 7.8 | DSA-4564-1 | CVE-2018-12207, CVE-2019-0154, CVE-2019-0155, CVE-2019-11135: Debian DSA-4564-1: linux – security update |
+{: caption="Security vulnerabilities resolved for 1801zf" caption-side="bottom"}
 
 ## 1801ze
 {: #1801ze}
 
 ### Issues Resolved
+{: #1801ze-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -868,8 +937,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48585 | Major | ICMP Unreachable not returned when decrypted IPsec packet is too large to pass tunnel interface MTU |
 | VRVDR-48057 | Minor | Add additional IPsec debug support to tech-support |
 | VRVDR-47681 | Critical | Resetting a single VRRP group causes all VRRP groups to reset |
+{: caption="Issues resolved for 1801ze" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801ze-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -881,11 +952,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48133 | 8.8 | DSA-4512-1 | CVE-2019-13164, CVE-2019-14378: Debian DSA4512-1: qemu – security update |
 | VRVDR-48132 | 7.5 | DSA-4511-1 | CVE-2019-9511, CVE-2019-9513: Debian DSA-45111: nghttp2 – security update |
 | VRVDR-47885 | 8.1 | DSA-4495-1 | CVE-2018-20836, CVE-2019-1125, CVE-2019-1999, CVE-2019-10207, CVE-2019-10638, CVE-201912817, CVE-2019-12984, CVE-2019-13233, CVE2019-13631, CVE-2019-13648, CVE-2019-14283, CVE-2019-14284: Debian DSA-4495-1: linux – security update |
+{: caption="Security vulnerabilities resolved for 1801ze" caption-side="bottom"}
 
 ## 1801zd
 {: #1801zd}
 
 ### Issues Resolved
+{: #1801zd-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -893,8 +966,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48473 | Minor | Error getting Login User Id |
 | VRVDR-47596 | Minor | NAT used count is showing count larger than total available |
 | VRVDR-41091 | Minor | Off-by-one error in lcore id in copying rule stats |
+{: caption="Issues resolved for 1801zd" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801zd-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -902,11 +977,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-48652 | N/A | DSA-4543-1 | CVE-2019-14287: Debian DSA-4543-1 : sudo - security update |
 | VRVDR-48502 | 5.3 | DSA-4539-1 | CVE-2019-1547, CVE-2019-1549, CVE-2019-1563: Debian DSA-4539-1 : openssl - security update |
 | VRVDR-48446 | 6.7 | DSA-4535-1 | CVE-2019-5094: Debian DSA-4535-1 : e2fsprogs - security update |
+{: caption="Security vulnerabilities resolved for 1801zd" caption-side="bottom"}
 
 ## 1801zc
 {: #1801zc}
 
 ### Issues Resolved
+{: #1801zc-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -916,18 +993,22 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47601 | Major | VRRP retains MASTER when device is disabled due to license invalid/expired |
 | VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |
 | VRVDR-36174  | Major | A-Time in the output of, 'show vpn ike sa' is always 0 |
+{: caption="Issues resolved for 1801zc" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801zc-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-48412 | 9.8 | DSA-4531-1 | CVE-2019-14821, CVE-2019-14835, CVE-201915117, CVE-2019-15118, CVE-2019-15902: Debian DSA-4531-1 : linux - security update |
 | VRVDR-47897 | 8.1 | DSA-4497-1 | CVE-2015-8553, CVE-2018-5995, CVE-2018-20836 , CVE-2018-20856, CVE-2019-1125, CVE-2019-3882, CVE-2019-3900, CVE-2019-10207, CVE-201910638, CVE-2019-10639, CVE-2019-13631, CVE-2019-13648, CVE-2019-14283, CVE-2019-14284: DSA-4497-1: Linux – security update |
+{: caption="Security vulnerabilities resolved for 1801zc" caption-side="bottom"}
 
 ## 1801zb
 {: #1801zb}
 
 ### Issues Resolved
+{: #1801zb-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -945,18 +1026,22 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-46417 | Major | Dataplane is sending GRE packets sourced from non-exist VRRP VIP when router is BACKUP |
 | VRVDR-45396 | Critical | Shunt policy installation race |
 | VRVDR-42108 | Minor | After 25s ssh login delay 'systemctl --user status' fails with "Failed to connect to bus: No such file or directory" |
+{: caption="Issues resolved for 1801zb" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801zb-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-47707 | 7.8 | DSA-4484-1 | CVE-2019-13272: Debian DSA-4484-1: linux security update |
 | VRVDR-37993 | 5.0 | N/A | CVE-2013-5211: Network Time Protocol (NTP) Mode 6 Scanner |
+{: caption="Security vulnerabilities resolved for 1801zb" caption-side="bottom"}
 
 ## 1801za
 {: #1801za}
 
 ### Issues Resolved
+{: #1801za-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -972,8 +1057,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-46775 | Major | Modifying the tunnel configuration of an IPsec peer that uses multiple VFP interfaces may cause an active tunnel to become stale |
 | VRVER-45230 | Blocker | Massive memory leak with SNMP polling |
 | VRVDR-39747 | Major | Incorrectly reported total available SNAT entries when configuring translation address/mask directly |
+{: caption="Issues resolved for 1801za" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801za-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -987,12 +1074,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-47358 | 9.8 | N/A | CVE-2016-10228, CVE-2017-12132, CVE-20181000001, CVE-2018-6485, CVE-2017-15670, CVE2017-15671, CVE-2017-15804, CVE-2017-12133, CVE-2017-16887, CVE-2017-1000366, CVE-20155180, CVE-2016-6323, CVE-2016-10228: glibc package update |
 | VRVDR-47293 | 7.1 | DSA-4462-1 | CVE-2019-12749: Debian DSA-4462-1 : dbus - security update |
 | VRVDR-47202 | N/A | DSA-4454-2 | Debian DSA-4454-2: qemu regression update |
-
+{: caption="Security vulnerabilities resolved for 1801za" caption-side="bottom"}
 
 ## 1801z
 {: #1801z}
 
 ### Issues Resolved
+{: #1801z-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1004,8 +1092,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45949 | Minor | Netflow generates a NOTICE log for every sample sent when certain non-key fields are configured |
 | VRVDR-43169 | Minor | Logging everytime one calls a configd C based API but doesn't supply an error struct is no longer useful |
 | VRVDR-41225 | Minor | When configuring interface description, every white space is treated as a new line |
+{: caption="Issues resolved for 1801z" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801z-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1013,11 +1103,13 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-46603 | 5.3 | DSA-4435-1 | CVE-2019-7317: Debian DSA-4435-1 : libpng1.6 - security update |
 | VRVDR-46425 | N/A | DSA-4433-1 | CVE-2019-8320, CVE-2019-8321, CVE-2019-8322, CVE-2019-8323, CVE-2019-8324, CVE-2019-8325: Debian DSA-4433-1 : ruby2.3 - security update |
 | VRVDR-46350 | 9.1 | DSA-4431-1 | CVE-2019-3855, CVE-2019-3856, CVE-2019-3857, CVE-2019-3858, CVE-2019-3859, CVE-2019-3860, CVE-2019-3861, CVE-2019-3862, CVE-2019-3863: Debian DSA-4431-1 : libssh2 - security update |
+{: caption="Security vulnerabilities resolved for 1801z" caption-side="bottom"}
 
 ## 1801y
 {: #1801y}
 
 ### Issues Resolved
+{: #1801y-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1029,8 +1121,10 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45655 | Critical | "PANIC in rte_mbuf_raw_alloc" when performing VRRP failover |
 | VRVDR-45059 | Major | null deref in sip_expire_session_request |
 | VRVDR-41419 | Major | Static Analysis dataplane fixes |
+{: caption="Issues resolved for 1801y" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801y-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1040,8 +1134,7 @@ For archived patch information for the Vyatta 5600 OS older than 17.2, see [this
 | VRVDR-45553 | 5.9 | DSA-4400-1 | CVE-2019-1559: Debian DSA-4400-1 : openssl1.0 - security update |
 | VRVDR-45549 | 6.5 | DSA-4397-1 | CVE-2019-3824: Debian DSA-4397-1 : ldb - security update |
 | VRVDR-45347 | 6.8  | DSA-4387-1 | CVE-2018-20685, CVE-2019-6109, CVE-2019-6111: Debian DSA-4387-1 : openssh - security update |
-
-### Security Vulnerabilities Resolved
+{: caption="Security vulnerabilities resolved for 1801y" caption-side="bottom"}
 
 The following commands have been deprecated from this patch and are no longer available:
    • `policy route pbr <name> rule <rule-number> application name <name>`
@@ -1056,6 +1149,7 @@ Running any of the above commands will result with the error message “This fea
 {: #1801w}
 
 ### Issues Resolved 
+{: #1801w-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1063,19 +1157,23 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-45591 | Critical | Interface IP MTU change not taking effect for Intel x710 NICs |
 | VRVDR-45466 | Minor | IPv6 address not abbreviated when config is loaded via PXE boot causing config-sync issues |
 | VRVDR-45414 | Minor | Vyatta-cpu-shield fails to start and throws `OSError:[Errno 22] Invalid argument` for various cores on a two socket system |
+{: caption="Issues resolved for 1801w" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801w-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-45253 | 7.5 | DSA-4375-1 | CVE-2019-3813: Debian DSA 4375-1: spice - security update |
 | VRVDR-44922 | 7.5 | DSA-4355-1 | CVE-2018-0732, CVE-2018-0734, CVE-2018-0737, CVE-2018-5407: Debian DSA-4355-1 : openssl1.0 - security update |
 | VRVDR-43936 | 7.5 | DSA-4309-1 | CVE-2018-17540: Debian DSA-4309-1 : strongswan - security update |
+{: caption="Security vulnerabilities resolved for 1801w" caption-side="bottom"}
 
 ## 1801v
 {: #1801v}
 
 ### Issues Resolved
+{: #1801v-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1099,8 +1197,10 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-42679 | Major | syslog - crash in zactor_is |
 | VRVDR-42020 | Major | RIB stuck adding same route over and over again |
 | VRVDR-18095 | Minor | Flow monitoring stats is not captured as part of 'show tech-support' |
+{: caption="Issues resolved for 1801v" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801v-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1115,51 +1215,63 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-44611 | 9.8 | DSA-4347-1| CVE-2018-18311, CVE-2018-18312, CVE-2018- 18313, CVE-2018-18314: Debian DSA-4347-1 : perl - security update |
 | VRVDR-44348| 9.8 | DSA-4338-1 | CVE-2018-10839, CVE-2018-17962, CVE-2018- 17963: Debian DSA-4338-1: qemu security update |
 | VRVDR-43264| 5.6 | DSA-4274-1 | CVE-2018-3620, CVE-2018-3646: Debian DSA-4274- 1: xen security update |
+{: caption="Security vulnerabilities resolved for 1801v" caption-side="bottom"}
 
 ## 1801u
 {: #1801u}
 
 ### Issues Resolved
+{: #1801u-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-44406 | Critical | With multiple subnet on same VIF low rate of transit traffic observed when compared to 5400 performance |
 | VRVDR-44253 | Minor | MSS clamping on bonding interface stops functioning after reboot |
+{: caption="Issues resolved for 1801u" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801u-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-44277 | N/A | DSA-4332-1 | CVE-2018-16395, CVE-2018-16396: Debian DSA-4332-1 : ruby2.3 - security update |
 | VRVDR-44276 | N/A | DSA-4331-1 | CVE-2018-16839, CVE-2018-16842: Debian DSA-4331-1 : curl - security update |
+{: caption="Security vulnerabilities resolved for 1801u" caption-side="bottom"}
 
 ## 1801t
 {: #1801t}
 
 ### Issues Resolved
+{: #1801t-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-44172 | Blocker | Error “interfaces [openvpn] is not valid” reported in mss-clamp tests |
 | VRVDR-43969 | Minor | Vyatta 18.x GUI reports the wrong status check memory usage |
 | VRVDR-43847  | Major | Slow throughput for TCP conversations on bonding interface |
+{: caption="Issues resolved for 1801t" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801t-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-43842 | N/A | DSA-4305-1 | CVE-2018-16151, CVE-2018-16152: Debian DSA4305-1: strongswan – security update |
+{: caption="Security vulnerabilities resolved for 1801t" caption-side="bottom"}
 
 ## 1801s
 {: #1801s}
 
 ### Issues Resolved
+{: #1801s-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-44041 | Major | SNMP ifDescr oid slow response time |
+{: caption="Issues resolved for 1801s" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801s-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1170,11 +1282,13 @@ Running any of the above commands will result with the error message “This fea
 |VRVDR-43922 | 7.8 | DSA-4308-1 | CVE-2018-6554, CVE-2018-6555, CVE-2018-7755, CVE-2018-9363, CVE-2018-9516, CVE-2018-10902, CVE-2018-10938, CVE-2018-13099, CVE-2018- 14609, CVE-2018-14617, CVE-2018-14633, CVE- 2018-14678, CVE-2018-14734, CVE-2018-15572, CVE-2018-15594, CVE-2018-16276, CVE-2018- 16658, CVE-2018-17182: Debian DSA-4308-1: linux – security update |
 | VRVDR-43908 | 9.8 | DSA-4307-1 | CVE-2017-1000158, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4307-1: python3.5 - security update |
 | VRVDR-43884 | 7.5 | DSA-4306-1 | CVE-2018-1000802, CVE-2018-1060, CVE-2018- 1061, CVE-2018-14647: Debian DSA-4306-1: python2.7 - security update |
+{: caption="Security vulnerabilities resolved for 1801s" caption-side="bottom"}
 
 ## 1801r
 {: #1801r}
 
 ### Issues Resolved
+{: #1801r-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1184,8 +1298,10 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-43517 | Major | Traffic fails when endpoint of VFP/Policy-based IPsec resides on the vRouter itself |
 | VRVDR-43477 | Major | Committing the IPsec VPN configuration returns the warning “Warning: unable to [VPN toggle net.ipv4.conf.intf.disable_policy], received error code 65280 |
 | VRVDR-43379 | Minor | NAT statistics incorrectly shown |
+{: caption="Issues resolved for 1801r" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801r-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1197,11 +1313,13 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-43110 | N/A | DSA-4265-1 | Debian DSA-4265-1 : xml-security-c -security update |
 | VRVDR-43057 | N/A | DSA-4260-1 | CVE-2018-14679, CVE-2018-14680, CVE-2018-14681, CVE-2018-14682: Debian DSA-4260-1 : libmspack -security update |
 | VRVDR-43026 | 9.8 | DSA-4259-1 | Debian DSA-4259-1 : ruby2.3 -security updateVRVDR-42994N/ADSA-4257-1CVE-2018-10906: Debian DSA-4257-1 :fuse -security update |
+{: caption="Security vulnerabilities resolved for 1801r" caption-side="bottom"}
 
 ## 1801q
 {: #1801q}
 
 ### Issues Resolved
+{: #1801q-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1221,18 +1339,22 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-41829 | Major | Dataplane core dumps until system becomes unresponsive with SIP ALG soak test |
 | VRVR-41683 | Blocker | DNS name server address learned over VRF is not consistently recognized |
 | VRVDR-41628 | Minor | Route/prefix from router-advertisement active in kernel and data plane but ignored by RIB |
+{: caption="Issues resolved for 1801q" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801q-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-43288 | 5.6 | DSA-4279-1 | CVE-2018-3620, CVE-2018-3646: Debian DSA-4279- 1 – Linux security update |
 | VRVDR-43111 | N/A | DSA-4266-1 | CVE-2018-5390, CVE-2018-13405: Debian DSA- 4266-1 – Linux security update |
+{: caption="Security vulnerabilities resolved for 1801q" caption-side="bottom"}
 
 ## 1801n
 {: #1801n}
 
 ### Issues Resolved
+{: #1801n-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1244,8 +1366,10 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-41957 | Minor | Bi-directional NAT’ed packets too large for GRE fail to return ICMP Type 3 Code 4 |
 | VRVDR-40283 | Major | Configuration changes generate lots of log messages |
 | VRVDR-39773 | Major | Using a route-map with BGP vrrp-failover command can cause all prefixes to be withdrawn |
+{: caption="Issues resolved for 1801n" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801n-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1254,6 +1378,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-42383 | N/A | DSA-4231-1 | CVE-2018-0495: Debian DSA-4231-1: libgcrypt20 - security update |
 | VRVDR-42088 | 5.5 | DSA-4210-1 | CVE-2018-3639: Debian DSA-4210-1: xen – security update |
 | VRVDR-41924 | 8.8 | DSA-4201-1 | CVE-2018-8897, CVE-2018-10471, CVE-2018-10472, CVE-2018-10981, CVE-2018-10982: Debian DSA-4201- 1: xen – security update |
+{: caption="Security vulnerabilities resolved for 1801n" caption-side="bottom"}
 
 ## 1801m
 {: #1801m}
@@ -1261,6 +1386,7 @@ Running any of the above commands will result with the error message “This fea
 Released June 15, 2018.
 
 ### Issues Resolved
+{: #1801m-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1268,13 +1394,16 @@ Released June 15, 2018.
 | VRVDR-42084 | Blocker | NAT sessions linked to VFP interfaces for PB IPsec tunnels are not being created for packets that arrive on the router even though the router is configured to do so |
 | VRVDR-42018 | Minor | When “restart vpn” is run, an “IKE SA daemon: org.freedesktop.DBus.Error.Service.Unknown” error is thrown |
 | VRVDR-42017 | Minor | When “show vpn ipsec sa” is running on VRRP backup, “ConnectionRefusedError” error is thrown related to vyatta-op-vpn- ipsec-vici line 563 |
+{: caption="Issues resolved for 1801m" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801m-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 42317 | 5.4 | DSA-4226-1 | CVE-2018-12015: Debian DSA-4226-1: perl – security update |
 | VRVDR- 42284 | 7.5 | DSA-4222-1 | CVE-2018-12020: Debian DSA-4222-1: gnupg2 – security update |
+{: caption="Security vulnerabilities resolved for 1801m" caption-side="bottom"}
 
 ## 1801k
 {: #1801k}
@@ -1282,6 +1411,7 @@ Released June 15, 2018.
 Released June 8, 2018.
 
 ### Issues Resolved
+{: #1801k-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1292,8 +1422,10 @@ Released June 8, 2018.
 | VRVDR-41469 | Major | One interface link down – bond is not carrying traffic |
 | VRVDR-41420 | Major | LACP bonding state/link “u/D” with mode change active-backup to LACP |
 | VRVDR-41313 | Critical | IPsec – VTI interface instability |
+{: caption="Issues resolved for 1801k" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801k-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1302,6 +1434,7 @@ Released June 8, 2018.
 | VRVDR- 42006 | 9.8 | DSA-4208-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018- 1125, CVE-2018-1126: Debian DSA-4208-1: procps – security update |
 | VRVDR- 41946 | N/A | DSA-4202-1 | CVE-2018-1000301: Debian DSA-4202-1: curl – security update |
 | VRVDR- 41795 | 6.5 | DSA-4195-1 | CVE-2018-0494: Debian DSA-4195-1: wget – security update |
+{: caption="Security vulnerabilities resolved for 1801k" caption-side="bottom"}
 
 ## 1801j
 {: #1801j}
@@ -1309,18 +1442,22 @@ Released June 8, 2018.
 Released May 18, 2018
 
 ### Issues Resolved
+{: #1801j-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41481 | Minor | VRRP on bond interface does not send VRRP advertisement |
 | VRVDR-39863 | Major | VRRP fails over when customer removes routing-instance with GRE associated and tunnel local-address is part of VRRP |
 | VRVDR-27018 | Critical | Running configuration file is globally readable |
+{: caption="Issues resolved for 1801j" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801j-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-41680 | 7.8 | DSA-4188-1 | Debian DSA-4188-1: linux – security update |
+{: caption="Security vulnerabilities resolved for 1801j" caption-side="bottom"}
 
 ## 1801h
 {: #1801h}
@@ -1328,17 +1465,21 @@ Released May 18, 2018
 Released May 11, 2018.
 
 ### Issues Resolved
+{: #1801h-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41664 | Critical | Dataplane drops MTU sized ESP packets |
 | VRVDR-41536 | Minor | Dnsmasq service start-init limit hit when adding more than 4 static host entries if dns forwarding is enabled |
+{: caption="Issues resolved for 1801h" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801h-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 41797 | 7.8 | DSA-4196-1 | CVE-2018-1087, CVE-2018-8897: Debian DSA-4196-1: linux security update |
+{: caption="Security vulnerabilities resolved for 1801h" caption-side="bottom"}
 
 ## 1801g
 {: #1801g}
@@ -1346,11 +1487,13 @@ Released May 11, 2018.
 Released May 4, 2018.
 
 ### Issues Resolved
+{: #1801g-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41620 | Major | vTI interface traffic stops sending traffic after new vIF is added |
 | VRVDR-40965 | Major | Bonding does not recover after a data plane crash |
+{: caption="Issues resolved for 1801g" caption-side="bottom"}
 
 ## 1801f
 {: #1801f}
@@ -1358,6 +1501,7 @@ Released May 4, 2018.
 Released April 23, 2018
 
 ### Issues Resolved
+{: #1801f-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1372,8 +1516,10 @@ Released April 23, 2018
 | VRVDR-40857 | Critical | Vhost-bridge does not come up for tagged VLAN with interface names of a certain length |
 | VRVDR-40803 | Minor | VIF interfaces are not present in “show vrrp” output after a reboot |
 | VRVDR-40644 | Major | IKEv1: QUICK_MODE re-transmits are not handled correctly |
+{: caption="Issues resolved for 1801f" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801f-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -1381,6 +1527,7 @@ Released April 23, 2018
 | VRVDR- 41331 | 6.5 | DSA-4158-1 |CVE-2018-0739: Debian DSA-4158-1: openssl1.0 – security update
 | VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – security update |
 | VRVDR- 41215 | 6.1 |CVE-2018-1059 | CVE-2018-1059 – DPDK vhost out of bound host memory access from VM guests |
+{: caption="Security vulnerabilities resolved for 1801f" caption-side="bottom"}
 
 ## 1801e
 {: #1801e}
@@ -1388,6 +1535,7 @@ Released April 23, 2018
 Released March 28, 2018.
 
 ### Issues Resolved
+{: #1801e-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -1398,12 +1546,15 @@ Released March 28, 2018.
 | VRVDR-40920 | Major | With 127.0.0.1 as listen-address snmpd does not start |
 | VRVDR-40920 | Critical | ARP doesn’t work over bonded SR-IOV interface |
 | VRVDR-40294 | Major | Dataplane doesn’t restore previous queues after slave is removed from bonding group |
+{: caption="Issues resolved for 1801e" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 41172 | N/A | DSA-4140-1 | DSA 4140-1: libvorbis security update |
+{: caption="Security vulnerabilities resolved for 1801e" caption-side="bottom"}
 
 ## 1801d
 {: #1801d}
@@ -1411,19 +1562,23 @@ Released March 28, 2018.
 Released March 8, 2018.
 
 ### Issues Resolved
+{: #1801d-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40940 | Major | Data plane crash related to NAT/firewall |
 | VRVDR-40886 | Major | Combining `icmp name <value>` with a number of other configuration for the rule will cause firewall to not load |
 | VRVDR-39879 | Major | Configuring bonding for jumbo frames fails |
+{: caption="Issues resolved for 1801d" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #1801d-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 40327 | 9.8 | | DSA-4098-1 | CVE-2018-1000005, CVE-20178-1000007: Debian DSA- 4098-1: curl – security update |
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5715 / Spectre, aka variant #2 |
+{: caption="Security vulnerabilities resolved for 1801d" caption-side="bottom"}
 
 ## 1801c
 {: #1801c}
@@ -1431,10 +1586,12 @@ Released March 8, 2018.
 Released March 7, 2018.
 
 ### Issues Resolved
+{: #1801c-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40281 | Major | After upgrading from 5.2 to more recent version error “-vbash: show: command not found” in operation mode |
+{: caption="Issues resolved for 1801c" caption-side="bottom"}
 
 ## 1801b
 {: #1801b}
@@ -1442,12 +1599,14 @@ Released March 7, 2018.
 Released February 21, 2018.
 
 ### Issues Resolved
+{: #1801b-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40622 | Major | Cloud-init images fail to detect correctly if IP address has been obtained from DHCP server |
 | VRVDR-40613 | Critical | Bond interface does not come up if one of the physical links are down |
 | VRVDR-40328 | Major | Cloud-init images take a long time to boot |
+{: caption="Issues resolved for 1801b" caption-side="bottom"}
 
 ## 1801a
 {: #1801a}
@@ -1455,8 +1614,9 @@ Released February 21, 2018.
 Released February 7, 2018.
 
 ### Issues Resolved
+{: #1801a-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40324 | Major | Load averages exceed 1.0 with no load on router with bonding interface |
-
+{: caption="Issues resolved for 1801a" caption-side="bottom"}

@@ -10,15 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
+{{site.data.keyword.attribute-definition-list}}
 
 # AT&T Vyatta 5600 vRouter software patches (archived)
 {: #at-t-vyatta-5600-vrouter-software-patches-52}
@@ -40,12 +32,15 @@ For current patch information for the Vyatta 5600 OS newer than 17.2, refer to [
 Released June 21, 2018.
 
 ### Issues Resolved
+{: #5.2R6S12i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-42084 | Blocker | Vfp interface marked as “non-dataplane interface” in “show dataplane route” when nat/ipsec config is re-applied |
+{: caption="Issues resolved in 5.2R6S12" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #5.2R6S12sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -53,6 +48,7 @@ Released June 21, 2018.
 | VRVDR-42284 | 7.5 | DSA-4222-1 | CVE-2018-12020: Debian DSA-4222-1: gnupg2 – security update |
 | VRVDR-41797 | 8 | DSA-4196-1 | CVE-2018-1087, CVE-2018-8897: Debian DSA-4196-1: linux – security update |
 | VRVDR-41680 | 7.8 | DSA-4188-1 | Debian DSA-4188-1: linux – security update (Spectre) |
+{: caption="Security vulnerabilities resolved in 5.2R6S12" caption-side="bottom"}
 
 ## 5.2R6S11
 {: #5-2R6S11}
@@ -60,6 +56,7 @@ Released June 21, 2018.
 Released June 11, 2018
 
 ### Issues Resolved
+{: #5.2R6S11i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -67,8 +64,10 @@ Released June 11, 2018
 | VRVDR-42084 | Blocker | NAT sessions linked to VFP interfaces for PB IPsec tunnels are not being created for packets that arrive on the router even though the router is configured to do so |
 | VRVDR-42027 | Major | SFLOW using incorrect input ifIndex |
 | VRVDR-41558 | Major | The reported timestamps in packet traces are not consistent with the actual time and system clock |
+{: caption="Issues resolved in 5.2R6S11" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #5.2R6S11sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -77,6 +76,7 @@ Released June 11, 2018
 | VRVDR- 42006 | 9.8 | DSA-4208-1 | CVE-2018-1122, CVE-2018-1123, CVE-2018-1124, CVE-2018- 1125, CVE-2018-1126: Debian DSA-4208-1: procps – security update |
 | VRVDR- 41946 | N/A | DSA-4202-1 | CVE-2018-1000301: Debian DSA-4202-1: curl – security update |
 | VRVDR- 41795 | 6.5 | DSA-4195-1 | CVE-2018-0494: Debian DSA-4195-1: wget – security update |
+{: caption="Security vulnerabilities resolved in 5.2R6S11" caption-side="bottom"}
 
 ## 5.2R6S10
 {: #5-2R6S10}
@@ -84,10 +84,13 @@ Released June 11, 2018
 Released May 17, 2018
 
 ### Issues Resolved
+{: #5.2R6S10i}
+
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41543 | Major | “update config-sync” is reporting errors when “\” backslash is used in configuration descriptions
 | VRVDR-27018 | Critical | Running configuration file is globally readable |
+{: caption="Issues resolved in 5.2R6S10" caption-side="bottom"}
 
 ## 5.2R6S
 {: #5-2R6S}
@@ -95,16 +98,20 @@ Released May 17, 2018
 Released May 8, 2018.
 
 ### Issues Resolved
+{: #5.2R6Si}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40803 | Minor | VIF interfaces are not present in “show vrrp” output after a reboot |
+{: caption="Issues resolved in 5.2R6S" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #5.2R6Ssv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 41512 | 9.8 | DSA-4172-1 | CVE-2018-6797, CVE-2018-6798, CVE-2018-6913: Debian DSA-4172-1: perl – security update |
+{: caption="Security vulnerabilities resolved in 5.2R6S" caption-side="bottom"}
 
 ## 5.2R6S8
 {: #5-2R6S8}
@@ -112,16 +119,20 @@ Released May 8, 2018.
 Released April 16, 2018.
 
 ### Issues Resolved
+{: #5.2R6S8i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-41283 | Minor |Configd stops processing static routes during boot if the configuration has disabled static routes |
+{: caption="Issues resolved in 5.2R6S8" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #5.2R6S8sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – security update
+| VRVDR- 41330 | 6.5 | DSA-4157-1 | CVE-2017-3738, CVE-2018-0739: Debian DSA-4157-1: openssl – security update |
+{: caption="Security vulnerabilities resolved in 5.2R6S8" caption-side="bottom"}
 
 ## 5.2R6S7
 {: #5-2R6S7}
@@ -129,10 +140,12 @@ Released April 16, 2018.
 Released March 15, 2018.
 
 ### Issues Resolved
+{: #5.2R6S7i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-38801 | Major | Multi-segment packet received via IPsec VTI causes bond interface to go down
+| VRVDR-38801 | Major | Multi-segment packet received via IPsec VTI causes bond interface to go down |
+{: caption="Issues resolved in 5.2R6S7" caption-side="bottom"}
 
 ## 5.2R6S6
 {: #5-2R6S6}
@@ -140,6 +153,7 @@ Released March 15, 2018.
 Released March 12, 2018.
 
 ### Issues Resolved
+{: #5.2R6S6i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -147,13 +161,16 @@ Released March 12, 2018.
 | VRVDR-40135 | Major | Spanning tree packets are not received on a VIF interface bridge port |
 | VRVDR-39991 | Major | Stateful firewall drops packets between two subnets on the same interface |
 | VRVDR-36481 | Major | Upgrade/downgrade from 5.2R4 to 17.1.0/5.2R3 shows /opt/vyatta/sbin/vyatta-install-image.functions: line 372: is_onie_boot: command not found |
+{: caption="Issues resolved in 5.2R6S6" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
+{: #5.2R6S6sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 40019 | 8.8 | DSA-4086-1 | CVE-2017-15412: Debian DSA-4086-1: libxml2 – security update |
 | VRVDR- 39907 | 7.8 | CVE-2017-5717 | Branch target injection / CVE-2017-5717 / Spectre, aka. Variant #2 |
+{: caption="Security vulnerabilities resolved in 5.2R6S6" caption-side="bottom"}
 
 ## 5.2R6S5
 {: #5-2R6S5}
@@ -161,18 +178,21 @@ Released March 12, 2018.
 Released January 19, 2018.
 
 ### Security Vulnerabilities Resolved
+{: #5.2R6S5sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 39891 | 5.6 | DSA-4078-1 | CVE-2017-5754: Debian DSA-4078-1: linux – security update (Meltdown) |
 | VRVDR- 38265 | 8.8 | DSA-3970-1 | CVE-2017-1 |
+{: caption="Security vulnerabilities resolved in 5.2R6S5" caption-side="bottom"}
 
 ## 5.2R6S4
-{; #5-2R6S4}
+{: #5-2R6S4}
 
 Released December 15, 2017.
 
 ### Issues Resolved
+{: #5.2R6S4i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -184,6 +204,7 @@ Released December 15, 2017.
 | VRVDR-37717 | Minor | Rename hard-enf “Description” and “License” fields in version output |
 | VRVDR-37689 | Major | High rate of NIC PF interrupts |
 | VRVDR-37633 | Critical | Keepalive hanging |
+{: caption="Issues resolved in 5.2R6S4" caption-side="bottom"}
 
 ## 5.2R6S3
 {: #5-2R6S3}
@@ -191,11 +212,12 @@ Released December 15, 2017.
 Released December 4, 2017.
 
 ### Issues Resolved
+{: #5.2R6S3i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-39207 | Critical | ARP failing on bond VIF interface |
-
+{: caption="Issues resolved in 5.2R6S3" caption-side="bottom"}
 
 ## 5.2R6S2
 {: #5-2R6S2}
@@ -203,11 +225,13 @@ Released December 4, 2017.
 Released November 2, 2017.
 
 ### Issues Resolved
+{: #5.2R6S2i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-39177 | Major | OpenVPN server domain-name option not being applied with –push dhcp-option |
 | VRVDR-39129 | Critical | OpenVPN server push-route parameter causes OpenVPN to fail to start |
+{: caption="Issues resolved in 5.2R6S2" caption-side="bottom"}
 
 ## 5.2R6S1
 {: #5.2R6S1}
@@ -215,7 +239,9 @@ Released November 2, 2017.
 Released October 12, 2017.
 
 ### Security Vulnerabilities Resolved
+{: #5.2R6S1sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR- 38819 | 9.8 | DSA-3989-1 | CVE-2017-14491, CVE-2017-14492, CVE-2017-14493, CVE- 2017-14494, CVE-2017-14495, CVE-2017-14496: DSA- 3989-1 dnsmasq -- security update |
+{: caption="Security vulnerabilities resolved in 5.2R6S1" caption-side="bottom"}

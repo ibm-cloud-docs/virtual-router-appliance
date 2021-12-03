@@ -10,15 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:download: .download}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Vyatta 5400 common migration issues
 {: #vyatta-5400-common-migration-issues}
@@ -44,7 +36,7 @@ If the `firewall-in` rule is applied on an ingress/inside interface, then you mu
 ## State-enable in firewall rules
 {: #state-enable-in-firewall-rules}
 
-### Issues
+### State-enable issues
 {: #issues-2}
 
 If `global-state-policy` is not configured, this behavior change is not affected. Also, if you are using the `state enable` option in each rule instead of `global-state-policy`, the behavior change is not affected.
@@ -52,12 +44,12 @@ If `global-state-policy` is not configured, this behavior change is not affected
 ## Zone-based policy: Local-zone handling
 {: #zone-based-policy-local-zone-handling}
 
-### Issues
+### Local-zone handling issues
 {: #issues-3}
 
 There is no "local-zone" pseudo-interface to assign to the zone-policy.
 
-### Workarounds
+### Local-zone handling workarounds
 {: #workarounds-3}
 
 This behavior can be simulated by applying a zone-based firewall to physical interfaces, and an interface-firewall to the loopback interface. The firewall in the loopback interface filters everything that ingress and egress from the router.
@@ -98,29 +90,29 @@ set security firewall name Local rule 10 description 'RIP' ("/opt/vyatta/etc/cpp
 ## Order of operation for firewalls, NAT, routing and DNS
 {: #order-of-operation-for-firewalls-nat-routing-and-dns}
 
-### Issues
+### Order of operation issues
 {: #issues-4}
 
 In a scenario where Masquerade Source NAT is deployed on an {{site.data.keyword.vra_full}}, you cannot use the firewall to determine access for hosts to the internet. This is because the post NAT address is the same.
 
 For Vyatta 5400 devices, this operation was possible because firewalling was done before NAT, allowing the restriction of hosts to access internet.
 
-### Workarounds
+### Order of operation workarounds
 {: #workarounds-4}
 
 A new routing scheme is required for the VRA:
 
-![routing dns](./images/routing-dns.png)
+![routing dns](./images/routing-dns.png){: caption="Routing scheme" caption-side="bottom"}
 
 ## Policy based routing table
 {: #policy-based-routing-table}
 
-### Issues
+### Policy based routing table issues
 {: #issues-5}
 
 The word "Table" in the configs is optional in v5400 policy-based routing. However, for the VRA, if the action is `accept`, then the **Table** field is mandatory. If the action is `drop` on the VRA config, then the Table field is optional.
 
-### Workarounds
+### Policy based routing table workarounds
 {: #workarounds-5}
 
 "Table Main" is an available option in Vyatta 5400 policy-based routing. The equivalent in VRA is "routing-instance default".
@@ -128,38 +120,25 @@ The word "Table" in the configs is optional in v5400 policy-based routing. Howev
 ## Policy based routing on the tunnel interface
 {: #policy-based-routing-on-tunnel-interface}
 
-### Issues
+### Policy based routing on the tunnel interface issues
 {: #issues-6}
 
 On the {{site.data.keyword.vra_full}} PBR (Policy-Based Routing), policies can be applied to data plane interfaces for inbound traffic, but not to loopback, tunnel, bridge, OpenVPN, VTI, and IP unnumbered interfaces.
 
-### Workarounds
+### Policy based routing on the tunnel interface workarounds
 {: #workarounds-6}
-
-There are currently no workarounds for this issue.
-
-## TCP-MSS
-{: #tcp-mss}
-
-### Issues
-{: #issues-7}
-
-{{site.data.keyword.vra_full}} uses nftables and does not support TCP-MSS.
-
-### Workarounds
-{: #workarounds-7}
 
 There are currently no workarounds for this issue.
 
 ## OpenVPN
 {: #openvpn}
 
-### Issues
+### OpenVPN issues
 {: #issues-8}
 
 OpenVPN does not start working when using the `push-route` parameter on the {{site.data.keyword.vra_full}}.
 
-### Workarounds
+### OpenVPN workarounds
 {: #workarounds-8}
 
 Use the `openvpn-option` parameter instead of `push-route`.
@@ -167,13 +146,13 @@ Use the `openvpn-option` parameter instead of `push-route`.
 ## GRE/VTI over IPSEC + OSPF
 {: #gre-vti-over-ipsec-ospf}
 
-### Issues
+### GRE/VTI over IPSEC + OSPF issues
 {: #issues-9}
 
 * When VIF has multiple subnets configured, traffic cannot go across those subnets in the VRA.                                             
 * InterVlan routing is not working on the VRA.
 
-### Workarounds
+### GRE/VTI over IPSEC + OSPF workarounds
 {: #workarounds-9}
 
 Use implicit allow rules to accept traffic across VIF interfaces.
@@ -181,12 +160,12 @@ Use implicit allow rules to accept traffic across VIF interfaces.
 ## IPsec
 {: #ipsec}
 
-### Issues
+### IPsec issues
 {: #issues-10}
 
 IPsec (prefix-based) does not work with IN Filter.
 
-### Workarounds
+### IPsec workarounds
 {: #workarounds-10}
 
 Use IPsec (VTI BASED).
@@ -194,7 +173,7 @@ Use IPsec (VTI BASED).
 ## IPSEC "match-none"
 {: #ipsec-match-none-}
 
-### Issues
+### IPSEC "match-none" issues
 {: #issues-11}
 
 With Vyatta 5400 devices, the following firewall rule is allowed:
@@ -203,7 +182,7 @@ With Vyatta 5400 devices, the following firewall rule is allowed:
 
 However, with {{site.data.keyword.vra_full}}, there is no IPsec.
 
-### Workarounds
+### IPSEC "match-none" workarounds
 {: #workarounds-11}
 
 Possible alternative rules for VRA devices:
@@ -217,7 +196,7 @@ Possible alternative rules for VRA devices:
 ## IPSEC 'match-ipsec"
 {: #ipsec-match-ipsec-}
 
-### Issues
+### IPSEC 'match-ipsec" issues
 {: #issues-12}
 
 With Vyatta 5400 devices, the following firewall rules are allowed:
@@ -230,7 +209,7 @@ set firewall name OUTSIDE_LOCAL rule 50 ipsec 'match-ipsec'
 
 However, with {{site.data.keyword.vra_full}}, there is no IPsec.
 
-### Workarounds
+### IPSEC 'match-ipsec" workarounds
 {: #workarounds-12}
 
 Add the protocols `ESP` and `AH` (IP protocols 50 and 51 respectively).
@@ -254,7 +233,7 @@ set security firewall name <name> rule <rule-no> protocol esp
 ## Site-to-site IPsec with DNAT
 {: #site-to-site-ipsec-with-dnat}
 
-### Issues
+### Site-to-site IPsec with DNAT issues
 {: #issues-13}
 
 IPsec (prefix-based) does not work with DNAT.                                                                                                             
@@ -273,7 +252,7 @@ Initially, the Vyatta 5400 device was performing DNAT on the inbound IPsec, term
 
 On a {{site.data.keyword.vra_full}}, the configuration does not function the same. The session is created, however the return traffic bypasses the IPsec tunnel after the conntrack table reverses the DNAT change. The VRA then sends the packet on the wire without IPsec encryption. The upstream device is not expecting this traffic and most likely drops it. While end-to-end connectivity is broken, this is intended behavior.   
 
-### Workarounds
+### Site-to-site IPsec with DNAT workarounds
 {: #workarounds-13}
 
 To accommodate this networking scenario, IBM has created an RFE. 
@@ -356,12 +335,12 @@ set policy route pbr Backwards-DNAT rule 10 table '50'
 ## PPTP
 {: #pptp}
 
-### Issues
+### PPTP issues
 {: #issues-13a}
 
 PPTP is no longer supported in the {{site.data.keyword.vra_full}}.                                                                                                                                                   
 
-### Workarounds
+### PPTP iorkarounds
 {: #workarounds-13a}
 
 Use the L2TP protocol instead.
@@ -369,7 +348,7 @@ Use the L2TP protocol instead.
 ## Script for IPsec restart
 {: #script-for-ipsec-restart}
 
-### Issues
+### Script for IPsec restart issues
 {: #issues-14}
 
 Whenever a VRRP virtual address is added to an {{site.data.keyword.vra_full}} on a High Availability VPN, you must reinitialize the IPsec daemon. This is because the IPsec service listens only for connections to the addresses that are present on the VRA when the IKE service daemon is initialized.
@@ -384,7 +363,7 @@ interfaces dataplane interface-name vrrp vrrp-group group-id notify
 ## Recent count and recent time
 {: #recent-count-and-recent-time}
 
-### Issues
+### Recent count and recent time issues
 {: #issues-15}
 
 The intent of the following rule is to limit SSH connections to 3 every 30 seconds for SSH using any address:
@@ -405,7 +384,7 @@ On the {{site.data.keyword.vra_full}}, this rule has the following issues:
 * The option for recent count and recent time has been deprecated.
 * Due to the previous issue, the rule cannot function as expected and blocks all SSH connections to the applied interface.
 
-### Workarounds
+### Recent count and recent time workarounds
 {: #workarounds-15}
 
 Use CPP instead.
@@ -413,7 +392,7 @@ Use CPP instead.
 ## Set system conntrack issues
 {: #set-system-conntrack-issues}
 
-### Issues
+### Set system conntrack issues issues
 {: #issues-16}
 
 ```sh
@@ -434,7 +413,7 @@ set system conntrack table-size '3000000'
 ## Set system conntrack timeout
 {: #set-system-conntrack-timeout}
 
-### Issues
+### Set system conntrack timeout issues
 {: #issues-17}
 
 ```sh
@@ -454,7 +433,7 @@ set system conntrack timeout tcp time-wait '60'
 ## Time based firewall
 {: #time-based-firewall}
 
-### Issues
+### Time based firewall issues
 {: #issues-18}
 
 ```sh
@@ -472,7 +451,7 @@ set firewall name PRIV_SERVICE_IN rule 58 time stopdate '2018-02-22'
 ## TCP-MSS
 {: #tcp-mss-2}
 
-### Issues
+### TCP-MSS issues
 {: #issues-19}
 
 ```sh
@@ -496,7 +475,7 @@ set policy route change-mss rule 1 tcp flags 'SYN
 ## Specific application or port broken in S-S IPsec VPN
 {: #specific-application-or-port-broken-in-s-s-ipsec-vpn}
 
-### Issues
+### Specific application or port broken in S-S IPsec VPN issues
 {: #issues-19a}
 
 ```sh
@@ -523,7 +502,7 @@ set security vpn ipsec site-to-site peer 12.0.0.1 tunnel 1 remote prefix '10.103
 ## Significant change in logging behavior
 {: #significant-change-in-logging-behavior}
 
-### Issues
+### Significant change in logging behavior issues
 {: #issues-20}
 
 There is a significant change in logging behavior between the Vyatta 5400 device and the {{site.data.keyword.vra_full}}, from per-session to per-packet logging.

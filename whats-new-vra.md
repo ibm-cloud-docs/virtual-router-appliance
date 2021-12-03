@@ -10,16 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Release notes for IBM Cloud Virtual Router Appliance
 {: #release-notes-for-ibm-virtual-router-appliance}

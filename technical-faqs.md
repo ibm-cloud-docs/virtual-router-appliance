@@ -10,23 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:download: .download}
-{:faq: data-hd-content-type='faq'} 
-{:support: data-reuse='support'}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"} 
-{:DomainName: data-hd-keyref="DomainName"}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Technical FAQs for {{site.data.keyword.cloud_notm}} Virtual Router Appliance
 {: #technical-faqs-for-ibm-virtual-router-appliance}

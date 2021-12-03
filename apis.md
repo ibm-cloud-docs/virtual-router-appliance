@@ -10,15 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:download: .download}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # API reference for {{site.data.keyword.cloud_notm}} Virtual Router Appliance
 {: #api-reference-for-ibm-virtual-router-appliance}
@@ -32,12 +24,12 @@ The SLAPI is a Remote Procedure Call (RPC) system. Each call involves sending da
 
 For more information about the SLAPI as they refer to the {{site.data.keyword.vra}} APIs, see the following resources in the SoftLayer Development Network (SLDN):
 
-- [SoftLayer_Network_Gateway API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: new_window}
-- [SoftLayer_Network_Gateway_Member API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: new_window}
-- [SoftLayer_Network_Gateway_Vlan API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: new_window}
-- [SoftLayer_Network_Gateway_Status API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: new_window}
-- [SoftLayer API Python Client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: new_window}
-- [More SoftLayer API Examples with different languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://softlayer.github.io/python/){: new_window}
+- [SoftLayer_Network_Gateway API](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway){: external}
+- [SoftLayer_Network_Gateway_Member API](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Member){: external}
+- [SoftLayer_Network_Gateway_Vlan API](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: external}
+- [SoftLayer_Network_Gateway_Status API](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: external}
+- [SoftLayer API Python Client](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: external}
+- [More SoftLayer API Examples with different languages](https://softlayer.github.io/python/){: external}
 
 
 ## Example - Ordering a gateway appliance
@@ -185,6 +177,7 @@ class Gateway:
 {: codeblock}
 
 ## Example - Canceling a gateway appliance
+{: #canceling-appliance}
 
 ```sh
 import SoftLayer

@@ -10,15 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:download: .download}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Vyatta 5400 end of support announcement
 {: #vyatta-5400-end-of-support-announcement}
@@ -42,5 +34,6 @@ The initial list of qualified IBM Business Partners for Vyatta 5400 migration as
 | SureSkills | Kevin Reid | kevin.reid@sureskills.com; +353 87 225 6401 |
 | Element Solutions | Sherry Thompson, Executive Director | sthompson@elementsolutions.com; +1-646-942-1996 |
 | BlueIT | Oreste Guerrini | oreste.guerrini@blueit.it |
+{: caption="List of qualified business partners" caption-side="bottom"}
 
 For more information, contact IBM Cloud Sales at 866.398.7638.

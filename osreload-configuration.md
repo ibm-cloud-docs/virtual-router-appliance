@@ -10,17 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:download: .download}
-{:note: .note}
-{:important: .important}
-{:help: data-hd-content-type='help'}
-{:support: data-reuse='support'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Reloading the OS
 {: #reloading-the-os}
@@ -32,7 +22,7 @@ The OS reload process, when initiated in the IBM Cloud catalog, wipes away all c
 
 To reload your OS, follow these steps:
 
-1. From your browser, open [https://cloud.ibm.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com){: new_window} and log in to your account.
+1. From your browser, open [https://cloud.ibm.com](https://cloud.ibm.com){: external} and log in to your account.
 2. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left of the page, then click **Classic Infrastructure**.
 3. Choose **Network > Gateway Appliances**.
 4. Click the server you want to reload.

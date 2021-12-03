@@ -10,21 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting started with IBM Cloud Virtual Router Appliance (VRA)
 {: #getting-started}
@@ -46,7 +32,7 @@ To order a VRA, follow these steps:
 
 2. From the **Gateway Vendor** section, select the **AT&T** option (when it is selected, a blue check mark appears on the button). From the list menu on that same button, choose your bandwidth (either 20Gbps or 2Gbps).
 
-   ![Gateway vendor](images/ordering_vra.png "Gateway vendor")
+   ![Gateway vendor](images/ordering_vra.png "Gateway vendor"){: caption="Gateway vendor" caption-side="bottom"}
 
 3. From the **Gateway appliance** section, enter your **Hostname** and **Domain** name information. These fields are already populated with default information, so ensure the values are correct. Check the **High Availability** option if desired, then select your data center **Location**, and the specific **Pod** you want from the list menu.
 
@@ -55,7 +41,7 @@ To order a VRA, follow these steps:
 
 4. From the **Configuration** section, choose your processor's RAM. You can also define an SSH key if you want to use it to authenticate access to your new gateway.
 
-   ![Configuration](images/ordering_vra_2.png "Configuration")
+   ![Configuration](images/ordering_vra_2.png "Configuration"){: caption="Configuration" caption-side="bottom"}
 
    The appropriate processor is chosen for you based on the license version you selected in step 2. However, you can choose different RAM configurations.
    {: note}
@@ -79,7 +65,7 @@ To order a VRA, follow these steps:
 
 After your order is approved, the provisioning of your {{site.data.keyword.vra_full}} starts automatically. When the provisioning process is complete, the new VRA appears in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page, where you can find the IP addresses, login username, and password for the device.  
 
-   ![Gateway details](images/gateway_details.png "Gateway details")
+   ![Gateway details](images/gateway_details.png "Gateway details"){: caption="Gateway details" caption-side="bottom"}
 
 Remember that after you order and configure your VRA from the IBM Cloud catalog, you must also configure the device itself with the same settings.
 {: tip}
