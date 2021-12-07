@@ -34,8 +34,9 @@ toc:
           - upgrade-5400-with-ip.md
           - 5400-juniper.md
           - migration-issues.md
-          -  migration-faqs.md
-    
+          - migration-faqs.md
+       - whats-new-vra.md
+
     - navgroup:
        id: tutorial
        topics:
@@ -48,7 +49,7 @@ toc:
           - /solution-tutorials/solution-tutorials-linking-secure-network-enclosures
           - /solution-tutorials/solution-tutorials-web-app-private-network
           - /fortigate-10g/fortigate-10g-exploring-firewalls
-    
+
     - navgroup:
        id: howto
        topics:
@@ -105,11 +106,10 @@ toc:
           - how-add-firewall-functions-vyatta-stateless-and-stateful.md
           - setup-nat.md
           - vyatta-high-availability-configuration.md
-          
+
     - navgroup:
        id: help
        topics:
-       - whats-new-vra.md
        - vra-docs-18.md
        - vra-docs.md
        - faqs.md
