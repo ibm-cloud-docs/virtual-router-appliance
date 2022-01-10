@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-12-30"
 
 keywords:  
 
@@ -15,9 +15,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Latest patch received:** July 22, 2021
+**Latest patch received:** October 21, 2021
 
-**Latest documentation published:** August 18, 2021
+**Latest documentation published:** December 30, 2021
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -26,6 +26,32 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 1912r
+{: #1912r}
+
+### Issues Resolved
+{: #1912r-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-56188 | Critical | bgpd dumps core in as_list_apply() |
+{: caption="Issues resolved for 1912r" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #1912r-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-56321 | 7.5 | DLA-2786-1 | CVE-2018-1000168, CVE-2020-11080: Debian DLA-2786-1 : nghttp2 - LTS security update |
+| VRVDR-56308 | 7.4 | DLA-2780-1 | CVE-2021-31799, CVE-2021-31810, CVE-2021-32066: Debian DLA-2780-1 : ruby2.3 - LTS security update |
+| VRVDR-56295 | 5.5 | DLA-2784-1 | CVE-2020-21913: Debian DLA-2784-1 : icu - LTS security update |
+| VRVDR-56230 | 7.5 | DLA-2777-1 | CVE-2020-19131, CVE-2020-19144: Debian DLA-2777-1 : tiff - LTS security update |
+| VRVDR-56229 | 7.4 | DLA-2774-1 | CVE-2021-3712: Debian DLA-2774-1 : openssl1.0 - LTS security update |
+| VRVDR-56228 | 7.5 | DLA-2773-1 | CVE-2021-22946, CVE-2021-22947: Debian DLA-2773-1 : curl - LTS security update |
+| VRVDR-56221 | 6.5 | DLA-2771-1 | CVE-2018-5729, CVE-2018-5730, CVE-2018-20217, CVE-2021-37750: Debian DLA-2771-1 : krb5 - LTS security update |
+| VRVDR-56210 | 7.4 | DLA-2766-1 | CVE-2021-3712: Debian DLA-2766-1 : openssl - LTS security update |
+{: caption="Security vulnerabilities resolved for 1912r" caption-side="bottom"}
 
 ## 1912q
 {: #1912q}
