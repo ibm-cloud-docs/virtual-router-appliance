@@ -15,9 +15,9 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-**Latest patch received:** October 21, 2021
+**Latest patch received:** January 31, 2022
 
-**Latest documentation published:** December 30, 2021
+**Latest documentation published:** January 31, 2022
 
 This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -26,6 +26,56 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 1912t
+{: #1912t}
+
+### Security Vulnerabilities Resolved
+{: #1912t-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-56909 | 7.8 | N/A | CVE-2021-4034: policykit-1 security update |
+{: caption="Security vulnerabilities resolved for 1912t" caption-side="bottom"}
+
+## 1912s
+{: #1912s}
+
+### Issues Resolved
+{: #1912s-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-56188 | Critical | bgpd dumps core in as_list_apply() |
+| VRVDR-56672 | Critical | SNAT SIP ALG misinterprets SDP part of packet payload header causing dataplane crash |
+| VRVDR-56576 | Critical | Dataplane crash while capturing traffic |
+| VRVDR-56131 | Blocker | ping/ssh from remote server to device connected to s9500 SIAD fails, but reachable locally |
+| VRVDR-47554 | Major | Validate GRE tunnel transport local-ip |
+{: caption="Issues resolved for 1912s" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #1912s-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-56769 | 8.1 | DLA-2848-1 | CVE-2019-13115, CVE-2019-17498 :Debian DLA-2848-1 : libssh2 - LTS security update |
+| VRVDR-56689 | 9.8 | DLA-2836-1 | CVE-2021-43527: Debian DLA-2836-1 : nss - LTS security update |
+| VRVDR-56680 | 7.5 | DLA-2837-1 | CVE-2021-43618: DLA-2837-1 : gmp - LTS security update |
+| VRVDR-56665 | 9.8 | DLA-2834-1 | CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
+| VRVDR-56664 | 7.5 | DLA-2833-1 | CVE-2018-5764: Debian DLA-2833-1 : rsync - LTS security update |
+| VRVDR-56647 | 8.8 | DLA-2827-1 | CVE-2019-8921, CVE-2019-8922, CVE-2021-41229: Debian DLA-2827-1 : bluez - LTS security update |
+| VRVDR-56645 | 8.8 | DLA-2828-1 | CVE-2017-14160, CVE-2018-10392, CVE-2018-10393: Debian DLA-2828-1 : libvorbis - LTS security update |
+| VRVDR-56644 | 4.7 | DLA-2830-1 | CVE-2018-20482: Debian DLA-2830-1 : tar - LTS security update |
+| VRVDR-56511 | N/A | DLA-2808-1 | CVE-2021-3733, CVE-2021-3737: Debian DLA-2808-1 : python3.5 - LTS security update |
+| VRVDR-56503 | 7.5 | DLA-2807-1 | CVE-2018-5740, CVE-2021-25219: Debian DLA-2807-1 : bind9 - LTS security update |
+| VRVDR-56497 | 5.5 | DLA-2805-1 | CVE-2019-1010305: Debian DLA-2805-1 : libmspack - LTS security update |
+| VRVDR-56496 | 8.8 | DLA-2804-1 | CVE-2019-7572, CVE-2019-7573, CVE-2019-7574, CVE-2019-7575, CVE-2019-7576, CVE-2019-7577, CVE-2019-7578, CVE-2019-7635, CVE-2019-7636, CVE-2019-7637, CVE-2019-7638, CVE-2019-13616:Debian DLA-2804-1 : libsdl1.2 - LTS security update |
+| VRVDR-56495 | 6.7 | DLA-2801-1 | CVE-2017-9525, CVE-2019-9704, CVE-2019-9705, CVE-2019-9706:Debian DLA-2801-1 : cron - LTS security update |
+| VRVDR-56493 | 9.8 | DLA-2802-1 | CVE-2018-16062, CVE-2018-16402, CVE-2018-18310, CVE-2018-18520, CVE-2018-18521, CVE-2019-7150, CVE-2019-7665:Debian DLA-2802-1 :elfutils - LTS security update |
+| VRVDR-56459 | N/A | DLA-2798-1 | Debian DLA-2798-1 : libdatetime-timezone-perl - LTS security update |
+| VRVDR-56458 | N/A | DLA-2797-1 | Debian DLA-2797-1 : tzdata - LTS security update |
+| VRVDR-56315 | 7.5 | DLA-2788-1 | CVE-2021-41991: Debian DLA-2788-1: A denial-ofservice vulnerability in the in-memory certificate |
+{: caption="Security vulnerabilities resolved for 1912s" caption-side="bottom"}
 
 ## 1912r
 {: #1912r}
