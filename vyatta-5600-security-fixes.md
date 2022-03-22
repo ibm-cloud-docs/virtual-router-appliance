@@ -24,8 +24,19 @@ This document lists the patches for the currently supported versions of the Vyat
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 
-For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
+For the latest full release notes, please open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 2012g
+{: #2012g}
+
+### Security Vulnerabilities Resolved
+{: #2012g-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-56909 | 7.8 | N/A | CVE-2021-4034: policykit-1 security update |
+{: caption="Security vulnerabilities resolved for 2012g" caption-side="bottom"}
 
 ## 1912t
 {: #1912t}
