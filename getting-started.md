@@ -15,6 +15,9 @@ subcollection: virtual-router-appliance
 # Getting started with IBM Cloud Virtual Router Appliance (VRA)
 {: #getting-started}
 
+On 30 June 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012 prior to 29 June 2022 by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+{: deprecated}
+
 The {{site.data.keyword.vra_full}} (VRA) provides the latest Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or standalone configuration, and lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features.
 {: shortdesc}
 
