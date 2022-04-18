@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-17"
 
 keywords:  
 
@@ -22,10 +22,11 @@ On 30 June 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be
 
 **Latest documentation published:** January 31, 2022
 
-This document lists the patches for the currently supported versions of the Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
+This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
 
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
+{: tip}
 
 For the latest full release notes, please open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}

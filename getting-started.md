@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-17"
 
 keywords: vra, virtual router appliance
 
@@ -30,10 +30,10 @@ To order a VRA, follow these steps:
 
 1. From your browser, open the Gateway Appliances page in the [IBM Cloud UI console](https://{DomainName}/gen1/infrastructure/provision/gateway){: external} and log in to your account.
 
-   You can also get to this page by selecting the navigation menu in the top left of the [IBM Cloud catalog](https://{DomainName}/){: external} and selecting **Classic Infrastructure > Network > Gateway appliance**.
+   You can also access this page by selecting the navigation menu in the top left of the [IBM Cloud catalog](https://{DomainName}/){: external} and selecting **Classic Infrastructure > Network > Gateway appliance**.
    {: tip}
 
-2. From the **Gateway Vendor** section, select the **AT&T** option (when it is selected, a blue check mark appears on the button). From the list menu on that same button, choose your bandwidth (either 20Gbps or 2Gbps).
+2. From the **Gateway Vendor** section, select the **AT&T** option (a blue check mark appears on the button). From the list menu on that same button, choose your bandwidth (either 20Gbps or 2Gbps).
 
    ![Gateway vendor](images/ordering_vra.png "Gateway vendor"){: caption="Gateway vendor" caption-side="bottom"}
 
@@ -70,7 +70,7 @@ After your order is approved, the provisioning of your {{site.data.keyword.vra_f
 
    ![Gateway details](images/gateway_details.png "Gateway details"){: caption="Gateway details" caption-side="bottom"}
 
-Remember that after you order and configure your VRA from the IBM Cloud catalog, you must also configure the device itself with the same settings.
+After you order and configure your VRA from the IBM Cloud catalog, you must also configure the device itself with the same settings.
 {: tip}
 
 ## VLANs and the gateway appliance's role
@@ -87,9 +87,7 @@ Servers in an associated VLAN can only be reached from other VLANs by going thro
 
 By default, a new gateway appliance is associated with two non-removable "transit" VLANs, one each for public and private. These are typically used for administration and can be separately secured by VRA commands.
 
-Transit VLANs are for network devices like firewalls or load balancers so that they can route traffic while keeping other devices, such as servers or containers, isolated from the internet.
-
-In comparison, "gateway" VLANs are where devices, such as servers and containers, are hosted.
+Transit VLANs are for network devices like firewalls or load balancers so that they can route traffic while keeping other devices, such as servers or containers, isolated from the internet. In comparison, "gateway" VLANs are where devices, such as servers and containers, are hosted.
 
 The VRA can manage only VLANs that are associated with it through the gateway appliance.
 
