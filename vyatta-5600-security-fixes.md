@@ -21,9 +21,9 @@ On 30 June 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be
 As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012 or later as soon as possible by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** January 31, 2022
+**Latest patch received:** April 25, 2022
 
-**Latest documentation published:** January 31, 2022
+**Latest documentation published:** May 3, 2022
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -33,6 +33,45 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 2012h
+{: #2012h}
+
+### Issues Resolved
+{: #2012h-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-57307 | Critical | Attempting NAT on an ICMP other than echo request/reply causes dataplane crash |
+| VRVDR-56672 | Critical | NAT SIP ALG misinterprets SDP part of packet payload header causing dataplane crash |
+| VRVDR-56576 | Critical | Dataplane crash while capturing traffic |
+| VRVDR-56560 | Minor | GNSS: use UBX-NAV-SAT to get visible satellites |
+| VRVDR-56533 | Major | VRRPv3 sync group o/p shows incorrect state |
+| VRVDR-56119 | Critical | PTP: Intermittently "show gnss" does not return |
+| VRVDR-47554 | Major | Validate GREtunnel transport local-ip |
+{: caption="Issues resolved for 2012h" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2012h-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-57353 | 7.5 | DLA-2935-1 | CVE-2018-25032: Debian DSA-5111-1 : zlib -security update |
+| VRVDR-57317 | 7.1 | DSA-5108-1 | CVE-2022-0561, CVE-2022-0562, CVE-2022-0865, CVE-2022-0891, CVE-2022-0907, CVE-2022-0908, CVE-2022-0909, CVE-2022-0924, CVE-2022-22844: Debian DSA-5108-1 : tiff -security update |
+| VRVDR-57273 | 7.5 | DSA-5105-1 | CVE-2021-25220, CVE-2022-0396: Debian DSA-5105-1 : bind9 -security update |
+| VRVDR-57243 | 7.5 | DSA-5103-1 | CVE-2021-4160, CVE-2022-0778: Debian DSA-5103-1: openssl security update |
+| VRVDR-57102 | 8.8 | DSA-5087-1 | CVE-2022-24407: Debian DSA-5087-1 :cyrus-sasl2 -security update |
+| VRVDR-57078 | 9.8 | DSA-5085-1 | CVE-2022-25235, CVE-2022-25236, CVE-2022-25313, CVE-2022-25314, CVE-2022-25315: Debian DSA-5085-1 : expat -security update |
+| VRVDR-56960 | 7.5 | DSA-5066-1 | CVE-2021-28965, CVE-2021-31799, CVE-2021-31810, CVE-2021-32066, CVE-2021-41817, CVE-2021-41819: Debian DSA-5066-1 : ruby2.5 -security update |
+| VRVDR-56918 | 5.5 | DSA-5063-1 | CVE-2021-46141, CVE-2021-46142: Debian DSA-5063-1 : uriparser -security update |
+| VRVDR-56917 | 7.5 | DSA-5062-1 | CVE-2022-22747: Debian DSA-5062-1 : nss -security update |
+| VRVDR-56903 | 9.1 | DSA-5056-1 | CVE-2021-45079: Debian DSA-5056-1: strongswan security update |
+| VRVDR-56843 | 7.1 | DSA-5043-1 | CVE-2021-43818: Debian DSA-5043-1 : lxml -security update |
+| VRVDR-56831 | 5.9 | DSA-5040-1 | CVE-2022-22707: Debian DSA-5040-1 : lighttpd -security update |
+| VRVDR-56706 | 7.5 | DSA-5019-1 | CVE-2021-22207, CVE-2021-22222, CVE-2021-22235, CVE-2021-39920, CVE-2021-39921, CVE-2021-39922, CVE-2021-39923, CVE-2021-39924, CVE-2021-39925, CVE-2021-39926, CVE-2021-39928, CVE-2021-39929: Debian DSA-5019-1: wireshark –security update |
+| VRVDR-56656 | 9.8 | DSA-5016-1 | CVE-2021-43527: Debian DSA-5016-1 : nss-security update |
+| VRVDR-56624 | 5.5 | DSA-5014-1 | CVE-2020-21913: Debian DSA-5014-1 : icu -security update |
+{: caption="Security vulnerabilities resolved for 2012h" caption-side="bottom"}
 
 ## 2012g
 {: #2012g}
@@ -44,6 +83,31 @@ For the latest full release notes, please open a [support case](/docs/virtual-ro
 | --- | --- | --- | --- |
 | VRVDR-56909 | 7.8 | N/A | CVE-2021-4034: policykit-1 security update |
 {: caption="Security vulnerabilities resolved for 2012g" caption-side="bottom"}
+
+## 1912u
+{: #1912u}
+
+### Issues Resolved
+{: #1912u-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-56932 | Critical | L2TPtunnels fail to establish after the upgrade from 1801zb to 1912r |
+{: caption="Issues resolved for 1912u" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #1912u-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-57185 | 9.8 | DLA-2935-1 | CVE-2022-23852, CVE-2022-25235, CVE-2022-25236, CVE-2022-25313, CVE-2022-25315: Debian DLA-2935-1 : expat -LTS security update |
+| VRVDR-57184 | 5.5 | DLA-2932-1 | CVE-2022-0561, CVE-2022-0562, CVE-2022-22844: Debian DLA-2932-1 : tiff -LTS security update | 
+| VRVDR-57183 | 8.8 | DLA-2931-1 | CVE-2022-24407: Debian DLA-2931-1 : cyrus-sasl2 -LTS security update | 
+| VRVDR-57003 | 9.8 | DLA-2919-1 | CVE-2021-3177, CVE-2021-4189: Debian DLA-2919-1 : python2.7 -LTS security update |
+| VRVDR-56955 | 7.5 | DLA-2898-1 | CVE-2022-22747: Debian DLA-2898-1 : nss-LTS security update |
+| VRVDR-56954 | 9.8 | DLA-2904-1 | CVE-2021-45960, CVE-2021-46143, CVE-2022-22822, CVE-2022-22823, CVE-2022-22824, CVE-2022-22825, CVE-2022-22826, CVE-2022-22827, CVE-2022-23852, CVE-2022-23990: Debian DLA-2904-1 : expat -LTS security update |
+| VRVDR-56903 | 9.1 | DSA-5056-1 | CVE-2021-45079: Debian DSA-5056-1: strongswan–security update |
+{: caption="Security vulnerabilities resolved for 1912u" caption-side="bottom"}
 
 ## 1912t
 {: #1912t}
