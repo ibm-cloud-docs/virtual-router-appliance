@@ -29,12 +29,16 @@ To upgrade the VRA, perform the following procedure.
 
 1. Run the command `add system image <Local ISO File>`.
 2. Press **Enter** to accept the default name of the ISO image, or enter your own.
-3. Choose whether to save the current configuration directory and configuration file.
-4. Choose whether to save the SSH host keys from your current configuration.
-5. Press **Enter** to accept the default system console, or enter your own.
-6. Press **Enter** to accept the default console speed, or enter your own.
-7. Enter the command `reboot` and then enter `Yes` to reboot the machine.
-8. If you are using VRA in a high availability mode, run step 1 to step 7 again on the second machine.
+3. Select **Yes** to save the current configuration directory and configuration file. 
+
+    Choosing **No** will erase your configuration.
+    {: important}
+    
+5. Choose whether to save the SSH host keys from your current configuration.
+6. Press **Enter** to accept the default system console, or enter your own.
+7. Press **Enter** to accept the default console speed, or enter your own.
+8. Enter the command `reboot` and then enter `Yes` to reboot the machine.
+9. If you are using VRA in a high availability mode, run step 1 to step 7 again on the second machine.
 
 The following example illustrates the upgrade process.
 
