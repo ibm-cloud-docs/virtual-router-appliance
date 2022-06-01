@@ -135,6 +135,30 @@ Port ranges starting with 0 instead of 1
 :    This issue, [VRVDR-52668](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches#1912g), was fixed in version 1912g.
 {: note}
 
+Failures with config-sync 
+:    Per the new features of VRA [version 1908](https://docs.vyatta.com/en/release-notes/earlier-releases/earlier-releases/vnos-release-notes-1908/new-features--general-purpose#topic-9767), by version 1912, `config-sync` was rewritten to use `netconf`. Without new configurations, you will see the following errors when you attempt to commit:
+
+    ```sh
+    syncing configuration to remote-router 10.127.225.204 ..
+    config-sync error 10.127.225.204:Sync[10.127.225.204]: Remote user vyatta not in secrets group
+    syncing configuration to remote-router 10.127.225.223 ..
+    config-sync error 10.127.225.223:Remote:10.127.225.223: Connect failed:Could not open socket to 10.127.225.223:830
+    ```
+    {: screen}
+    
+:    To fix this, make sure you add the following configuration so that `config-sync` continues to work:
+
+    ```sh
+    set service netconf
+    set service ssh port 830
+    set system login group secrets
+    set system login user vyatta group secrets
+    ```
+    {: pre}
+    
+:    If you use a different user than `vyatta` for `config-sync`, be sure to add that user into the secrets group.
+{: tip}
+
 ## Upgrading from 1912 to 2012
 {: #Common-Issues-1912-to-2012}
 
