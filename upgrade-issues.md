@@ -198,7 +198,14 @@ Failures with multiple IPsec tunnels
     ```
     {: screen}
     
-:    This issue was fixed in version 2012k. If you have more than 10 IPsec tunnels, wait for the release of 2012k. Currently, the exact number of tunnels that cause this issue is unknown.
+:    This issue was fixed in version 2012k. Update to version 2012k or later.
+{: note}
+
+After Vyatta failover, traffic through Netscaler VPX goes down
+:    When VRRP failover occurs on the Vyatta, the new VRRP primary sends GARP. As a specification, when NetScaler VPX receives GARP, it sends an ARP request to validate rather than updating the ARP table by using GARP. Manually clearing the ARP for the specific IP address on the Netscaler VPX is a temporary workaround.
+
+:    This issue will be fixed in version 2012m, which is currently unavailable. 
+{: note}
 
 ## Vbash issues in older 5.2 Upgrades
 {: #Vbash-Issue-5.2}
