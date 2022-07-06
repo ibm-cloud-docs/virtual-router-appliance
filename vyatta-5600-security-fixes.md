@@ -15,15 +15,15 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-On 30 June 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012 prior to 29 June 2022 by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+On 30 June 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 29 June 2022 by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012 or later as soon as possible by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** April 25, 2022
+**Latest patch received:** June 21, 2022
 
-**Latest documentation published:** May 3, 2022
+**Latest documentation published:** July 7, 2022
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -33,6 +33,61 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 2012k
+{: #2012k}
+
+### Issues Resolved
+{: #2012k-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-58161 | Blocker | QinQ: The cli prompt does not return after deleting the vif config from the dataplane interface |
+| VRVDR-57849 | Major | vyatta-vrrp crashes on boot if vrrp group is disabled |
+| VRVDR-57814 | Major | Crash of IKE control-plane during shutdown or VRRP backuptransition |
+| VRVDR-57797 | Major | IPsec: Crypto device limit causing tunnel setup failure |
+| VRVDR-57778 | Major | Vyatta configuration lost after reboot with ' vrrp vrrp-group <x> hellosource-address <x.x.x.x>' command |
+| VRVDR-57760 | Minor | SYN-SENT no longer displayed in journal/logs up on upgrade from 1801zf to 1912q |
+| VRVDR-57467 | Critical | Banner with newline prevents loading configuration after upgrade from 1903j to 1908n |
+| VRVDR-57146 | Critical | QinQ: The config prompt does not return after deleting the vif from the dataplane interface. Hence QinQ scripts are failing |
+| VRVDR-56916 | Critical | Installer errors and fails to install image on upgrade of Flexware box from 1903 |
+| VRVDR-56702 | Critical | add system image for Kington fails when base image is 1912p, works fine from 1903m base |
+| VRVDR-56336 | Blocker | Power-cycling or reboot hardware intermittently results in disk boot corruption so that SIAD is a grub prompt unable to boot |
+{: caption="Issues resolved for 2012k" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2012k-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-58044 | 9.1 | DSA-5147-1 | CVE-2022-1664: Debian DSA-5147-1 : dpkg - security update |
+| VRVDR-58014 | 6.5 | DSA-5142-1 | CVE-2022-29824: Debian DSA-5142-1 : libxml2 - security update |
+| VRVDR-57991 | 9.8 | DSA-5140-1 | CVE-2022-29155: Debian DSA-5140-1 : openldap - security update |
+| VRVDR-57926 | 9.8 | DSA-5139-1 | CVE-2022-1292: Debian DSA-5139-1 : openssl - security update |
+| VRVDR-57734 | 9.8 | DSA-5130-1 | CVE-2021-3839, CVE-2022-0669: Debian DSA-5130-1 : dpdk - security update |
+| VRVDR-57692 | 7.8 | DSA-5127-1 | CVE-2021-4197, CVE-2022-0168, CVE-2022-1016, CVE-2022-1048, CVE-2022-1158, CVE-2022-1195, CVE-2022-1198, CVE-2022-1199, CVE-2022-1204, CVE-2022-1205, CVE-2022-1353, CVE-2022-1516, CVE-2022-26490, CVE-2022-27666, CVE-2022-28356, CVE-2022-28388, CVE-2022-28389, CVE-2022-28390, CVE-2022-29582: Debian DSA-5127-1: linux – security update |
+| VRVDR-57189 | 7.8 | DSA-5095-1 | CVE-2020-36310, CVE-2022-0001, CVE-2022-0002, CVE-2022-0487, CVE-2022-0492, CVE-2022-0617, CVE-2022-25636: Debian DSA-5095-1: linux – security update |
+| VRVDR-57161 | 8.8 | DSA-5092-1 | CVE-2021-43976, CVE-2022-0330, CVE-2022-0435, CVE-2022-0516, CVE-2022-0847, CVE-2022-22942, CVE-2022-24448, CVE-2022-24959, CVE-2022-25258, CVE-2022-25375: Debian DSA-5092-1: linux – security update |
+
+## 2012j
+{: #2012j}
+
+### Issues Resolved
+{: #2012j-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-56337 | Major | DHCP assignment is not happening after reboot |
+| VRVDR-42512 | Major | When telnet is used to login remotely, login reports "Welcome to \S{NAME}" |
+{: caption="Issues resolved for 2012j" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2012j-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-57493 | 7.5 | DSA-5123-1 | CVE-2022-1271: Debian DSA-5123-1 : xz-utils - security update |
+{: caption="Security vulnerabilities resolved for 2012j" caption-side="bottom"}
 
 ## 2012h
 {: #2012h}
