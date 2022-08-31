@@ -207,6 +207,12 @@ After Vyatta failover, traffic through Netscaler VPX goes down
 :    This issue will be fixed in version 2012m, which is currently unavailable. 
 {: note}
 
+Out of memory (OOM) due to SNMP memory leak
+:    Crashing and outages can result from OOM issues due to memory leaks with SNMP. This issue has been reported in 8GB and 16GB hardware profiles.
+
+:    This issue will be fixed in version 2012m, which is currently unavailable. As a workaround until the availibilty of 2012m, you can either disable SNMP or reboot periodically.
+{: note}
+
 ## Vbash issues in older 5.2 Upgrades
 {: #Vbash-Issue-5.2}
 
