@@ -21,9 +21,9 @@ On 30 June 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be
 As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** June 21, 2022
+**Latest patch received:** September 1, 2022
 
-**Latest documentation published:** July 7, 2022
+**Latest documentation published:** September 7, 2022
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -33,6 +33,40 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+
+## 2012m
+{: #2012m}
+
+### Issues Resolved
+{: #2012m-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-58440 | Major | Memory leak and high cpu usage by vyatta-entity-mibs-subagent, memory leak by vyatta-snmp-subagent |
+| VRVDR-58228 | Major | Incorrect Session table-size after reboot |
+| VRVDR-58179 | Major | Error message 'npf_pack nat session restore failed' on VRRP backup |
+| VRVDR-58119 | Major | IPsec RAVPN: X509 authentication fails, presumably due to missing fragmentation support |
+| VRVDR-58113 | Major | VRRP Groups in a sync-group fail to send a second set of GARPs on transition to master state |
+| VRVDR-56721 | Blocker | Dataplane core on save on commit test |
+| VRVDR-55774 | Critical | Setup of IKE secrets failed: Decryption of private key file [key-path] failed: Unknown PEM block type: EC PRIVATE KEY |
+| VRVDR-55663 | Major | IPsec VCI: crash in internal/conn.SyncAllConns |
+| VRVDR-55624 | Critical | IPSec RA server and client not working after upgrade to 2009 or later |
+| VRVDR-55367 | Critical | BMC Health check is very noisy in the system logs, with 5 entries every minute, in a passing state |
+| VRVDR-55367 | Critical | BMC Health check is very noisy in the system logs, with 5 entries every minute, in a passing state |
+{: caption="Issues resolved for 2012m" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2012m-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-58293 | 7.8 | DSA-5173-1 | CVE-2021-4197, CVE-2022-0494, CVE-2022-0812, CVE-2022-0854, CVE-2022-1011, CVE-2022-1012, CVE-2022-1016, CVE-2022-1048, CVE-2022-1184,CVE-2022-1195, CVE-2022-1198, CVE-2022-1199, CVE-2022-1204, CVE-2022-1205, CVE-2022-1353, CVE-2022-1419, CVE-2022-1516, CVE-2022-1652, CVE-2022-1729, CVE-2022-1734, CVE-2022-1974, CVE-2022-1975, CVE-2022-2153, CVE-2022-21123, CVE-2022-21125, CVE-2022-21166, CVE-2022-23960, CVE-2022-26490, CVE-2022-27666, CVE-2022-28356, CVE-2022-28388, CVE-2022-28389, CVE-2022-28390, CVE-2022-29581, CVE-2022-30594, CVE-2022-32250, CVE-2022-32296, CVE-2022-33981: Debian DSA-5173-1: linux – security update |
+| VRVDR-58292 | 6.5 | DSA-5174-1 | CVE-2022-34903: Debian DSA-5174-1 : gnupg2 - security update |
+| VRVDR-58254 | 9.8 | DSA-5169-1 | CVE-2022-2068: Debian DSA-5169-1 : openssl - security update |
+| VRVDR-58185 | 7.8 | DSA-5161-1 | CVE-2022-0494, CVE-2022-0854, CVE-2022-1012, CVE-2022-1729, CVE-2022-1786, CVE-2022-1789, CVE-2022-1852, CVE-2022-32250, CVE-2022-1972, CVE-2022-1974, CVE-2022-1975, CVE-2022-21499, CVE-2022-28893: Debian DSA-5161-1: linux – security update |
+| VRVDR-58081 | 8.1 | DSA-5150-1 | CVE-2022-24903: Debian DSA-5150-1: rsyslog – security update |
+{: caption="Security vulnerabilities resolved for 2012m" caption-side="bottom"}
 
 ## 2012k
 {: #2012k}
@@ -68,6 +102,7 @@ For the latest full release notes, please open a [support case](/docs/virtual-ro
 | VRVDR-57692 | 7.8 | DSA-5127-1 | CVE-2021-4197, CVE-2022-0168, CVE-2022-1016, CVE-2022-1048, CVE-2022-1158, CVE-2022-1195, CVE-2022-1198, CVE-2022-1199, CVE-2022-1204, CVE-2022-1205, CVE-2022-1353, CVE-2022-1516, CVE-2022-26490, CVE-2022-27666, CVE-2022-28356, CVE-2022-28388, CVE-2022-28389, CVE-2022-28390, CVE-2022-29582: Debian DSA-5127-1: linux – security update |
 | VRVDR-57189 | 7.8 | DSA-5095-1 | CVE-2020-36310, CVE-2022-0001, CVE-2022-0002, CVE-2022-0487, CVE-2022-0492, CVE-2022-0617, CVE-2022-25636: Debian DSA-5095-1: linux – security update |
 | VRVDR-57161 | 8.8 | DSA-5092-1 | CVE-2021-43976, CVE-2022-0330, CVE-2022-0435, CVE-2022-0516, CVE-2022-0847, CVE-2022-22942, CVE-2022-24448, CVE-2022-24959, CVE-2022-25258, CVE-2022-25375: Debian DSA-5092-1: linux – security update |
+{: caption="Security vulnerabilities resolved for 2012k" caption-side="bottom"}
 
 ## 2012j
 {: #2012j}
