@@ -204,13 +204,13 @@ Failures with multiple IPsec tunnels
 After Vyatta failover, traffic through Netscaler VPX goes down
 :    When VRRP failover occurs on the Vyatta, the new VRRP primary sends GARP. As a specification, when NetScaler VPX receives GARP, it sends an ARP request to validate rather than updating the ARP table by using GARP. Manually clearing the ARP for the specific IP address on the Netscaler VPX is a temporary workaround.
 
-:    This issue will be fixed in version 2012m, which is currently unavailable. 
+:    This issue was fixed in version 2012m. 
 {: note}
 
 Out of memory (OOM) due to SNMP memory leak
 :    Crashing and outages can result from OOM issues due to memory leaks with SNMP. This issue has been reported in 8GB and 16GB hardware profiles.
 
-:    This issue will be fixed in version 2012m, which is currently unavailable. As a workaround until the availibilty of 2012m, you can either disable SNMP or reboot periodically.
+:    This issue will be fixed in version 2012n, which is currently unavailable. As a workaround until the availibilty of 2012n, you can either disable SNMP or reboot periodically.
 {: note}
 
 ## Vbash issues in older 5.2 Upgrades
