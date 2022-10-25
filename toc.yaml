@@ -65,6 +65,7 @@ toc:
           - vlans.md
        - firewall.md
        - services.md
+       - /gateway-appliance/gateway-appliance-managing-vlans-and-gateway-appliances
        - topicgroup:
           label: Working with High Availability configurations
           topics:
