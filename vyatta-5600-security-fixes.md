@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2022-09-08"
+lastupdated: "2022-11-16"
 
 keywords:  
 
@@ -15,15 +15,15 @@ subcollection: virtual-router-appliance
 # AT&T Vyatta 5600 vRouter software patches (current)
 {: #at-t-vyatta-5600-vrouter-software-patches}
 
-On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** September 1, 2022
+**Latest patch received:** October 31, 2022
 
-**Latest documentation published:** September 7, 2022
+**Latest documentation published:** November 16, 2022
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -34,6 +34,50 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For the latest full release notes, please open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
+## 2012n
+{: #2012n}
+
+### Issues Resolved
+{: #2012n-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-58944 | Major | Failed to change password for local service-user |
+| VRVDR-58761 | Critical | ixgbe: per queue statistical counters are broken |
+| VRVDR-58747 | Critical | Latency and packet drop issues with ixgbe (Intel x520 and x540) driver |
+| VRVDR-58689 | Major | Virtual address mismatch causes syslog flooding |
+| VRVDR-58668 | Major | mGRE doesn't work with NAT or Firewall binding at local interface of GRE tunnel |
+| VRVDR-58598 | Minor | Update linux-firmware |
+| VRVDR-58530 | Major | Incorrect checksum calculation during CGNAT+DNAT lookup for return traffic |
+| VRVDR-58459 | Major | System static-host-mapping command doesn't work until reboot Vyatta or reset dns |
+| VRVDR-58217 | Major | OSPF-hello packets don't reach to OSPF daemon without monitor/dumping traffic at ospf interface |
+{: caption="Issues resolved for 2012n" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2012n-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-58948 | 6.5 | DLA-3142-1 | CVE-2022-42010, CVE-2022-42011, CVE-2022-42012: Debian DLA-3142-1 : dbus - LTS security update |
+| VRVDR-58897 | 7.5 | DLA-3138-1 | CVE-2022-2795, CVE-2022-38177, CVE-2022-38178: Debian DLA-3138-1 : bind9 - LTS security update |
+| VRVDR-58895 | N/A | DLA-3135-1 | Debian DLA-3135-1 : libdatetime-timezone-perl - LTS security update |
+| VRVDR-58894 | N/A | DLA-3134-1 | Debian DLA-3134-1 : tzdata - LTS security update |
+| VRVDR-58893 | 7.5 | DLA-3133-1 | CVE-2022-37797: Debian DLA-3133-1 : lighttpd - LTS security update |
+| VRVDR-58892 | 6.5 | DLA-3127 | CVE-2022-31081: Debian DLA-3127-1 : libhttpdaemon- perl - LTS security update |
+| VRVDR-58845 | 9.8 | DLA-3119-1 | CVE-2022-40674: Debian DLA-3119-1 : expat - LTS security update |
+| VRVDR-58785 | 7.5 | DLA-3110-1 | CVE-2021-3800: Debian DLA-3110-1 : glib2.0 - LTS security update |
+| VRVDR-58767 | 7.5 | DLA-3114-1 | CVE-2018-25032, CVE-2021-46669, CVE-2022-21427, CVE-2022-27376, CVE-2022-27377, CVE-2022-27378, CVE-2022-27379, CVE-2022-27380, CVE-2022-27381, CVE-2022-27383, CVE-2022-27384, CVE-2022-27386, CVE-2022-27387, CVE-2022-27445, CVE-2022-27447, CVE-2022-27448, CVE-2022-27449, CVE-2022-27452, CVE-2022-27456, CVE-2022-27458, CVE-2022-32083, CVE-2022-32084, CVE-2022-32085, CVE-2022-32087, CVE-2022-32088, CVE-2022-32091: Debian DLA-3114-1: mariadb-10.3 – LTS security update |
+| VRVDR-58766 | N/A | DLA-3112-1 | Debian DLA-3112-1 : bzip2 - LTS security update |
+| VRVDR-58727 | 5.9 | DLA-3104-1 | CVE-2022-24302: Debian DLA-3104-1 : paramiko - LTS security update |
+| VRVDR-58726 | 9.8 | DLA-3103-1 | CVE-2022-37434: Debian DLA-3103-1 : zlib - LTS security update |
+| VRVDR-58694 | 8.8 | DLA-3101-1 | CVE-2019-5815, CVE-2021-30560: Debian DLA-3101-1 : libxslt - LTS security update |
+| VRVDR-58674 | 8.8 | DLA-3099-1 | CVE-2020-13253, CVE-2020-15469, CVE-2020-15859, CVE-2020-25084, CVE-2020-25085, CVE-2020-25624, CVE-2020-25625, CVE-2020-25723, CVE-2020-27617, CVE-2020-27821, CVE-2020-28916, CVE-2020-29129, CVE-2020-29443, CVE-2020-35504, CVE-2020-35505, CVE-2021-3392, CVE-2021-3416, CVE-2021-3507, CVE-2021-3527, CVE-2021-3582, CVE-2021-3607, CVE-2021-3608, CVE-2021-3682, CVE-2021-3713, CVE-2021-3748, CVE-2021-3930, CVE-2021-4206, CVE-2021-4207, CVE-2021-20181, CVE-2021-20196, CVE-2021-20203, CVE-2021-20221, CVE-2021-20257, CVE-2022-26354, CVE-2022-35414: Debian DLA-3099-1: qemu – LTS security update |
+| VRVDR-58643 | 7.8 | DLA-3081-1 | CVE-2022-31676: Debian DLA-3081-1 : open-vmtools - LTS security update |
+| VRVDR-58624 | 8.1 | DLA-3085-1 | CVE-2021-22898, CVE-2021-22924, CVE-2021-22946, CVE-2021-22947, CVE-2022-22576, CVE-2022-27776, CVE-2022-27781, CVE-2022-27782, CVE-2022-32206, CVE-2022-32208: Debian DLA-3085-1 : curl - LTS security update |
+| VRVDR-58604 | 6.5 | N/A | CVE-2022-2132, CVE-2022-28199: DPDK security update |
+| VRVDR-58536 | 7.5 | DLA-3071-1 | CVE-2021-46828: Debian DLA-3071-1 : libtirpc - LTS security update |
+| VRVDR-58535 | 7.5 | DLA-3070-1 | CVE-2021-4209, CVE-2022-2509: Debian DLA-3070-1 : gnutls28 - LTS security update |
+{: caption="Security vulnerabilities resolved for 2012n" caption-side="bottom"}
 
 ## 2012m
 {: #2012m}
