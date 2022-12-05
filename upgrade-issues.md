@@ -213,7 +213,7 @@ Out of memory (OOM) due to SNMP memory leak
 :    This issue was fixed in version 2012m. 
      {: note}
      
-GRE Tunnel interface on a secondary Vyatta in `u/u` status
+GRE tunnel interface on a secondary Vyatta in `u/u` status
 :    As of version 2012, the GRE tunnel status will perpetually be up for both `State` and `Link` statuses on a secondary Vyatta. If the local IP of a GRE tunnel is on an active interface, it will allow the transmission (`TX`) and reception (`RX`) of packets on that tunnel (`tun`) interface. If the `local-ip` of a GRE tunnel is on an inactive interface, such as the VRRP interface of the secondary Vyatta, then the Vyatta will not allow the transmission and reception of packets on that tunnel interface (and will keep that interface up).
 
 :    Before updating to 2012, if you have an active/passive BGP over a High Availability GRE setup, ensure that you confirm your GRE interfaces have `local-ip` set to a VRRP virtual address instead of the main address configured on the `dp0bond0` or `dp0bond1` interfaces. You should also validate that your routing does not rely on the tunnel (`tun`) interface changing status to `A/D` or `u/u` on failover, as that will no longer occur. In those instances, IBM may recommend setting up a path monitoring policy for the remote GRE endpoint. This utilizes a `ping` health check to validate the path over the tunnel before adding a route to that tunnel's routing table. Open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) if you have questions about your configuration or if you want more information on path monitoring policies.
