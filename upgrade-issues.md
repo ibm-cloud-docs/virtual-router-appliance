@@ -93,7 +93,7 @@ First, it is possible that you selected **No** instead of **Yes** when you were 
 
 The second possibility is that there is an old line in your configuration file that the version you are upgrading to does not support. This is generally a bug and should be reported by creating a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help).
 
-To fix this issue, log in as user `vyatta` with password `vyatta` from the IPMI, and find the latest `config.boot` file in your VRA file system by running the linux/bash `find` command. Then, run the `merge` command on that file to see what is causing the configuration problem during the upgrade process. 
+You can fix this issue by logging in as user `vyatta` with the password `vyatta` from the IPMI remote console. Finding the latest `config.boot` file in your VRA file system by running the linux/bash `find` command, then run the `merge` command on that file to find what is causing the configuration problem during the upgrade. If the default `vyatta` user and password does not work, use the process described above in "Reverting to a previous version" to select the password recovery option and reset the Vyatta user's password. Once you gain access, find and merge the latest `config.boot` file. If you can't find a `config.boot` file to use, you can manually configure an interface, static route and SSH port to gain network and SSH access to the system. This will allow you to copy and paste in (or `scp`) a backup configuration file to merge. If you can't run normal Vyatta commands, such as `configure`, to enter Configure mode, try running the `bash` command to access a usable shell.
 
 The following example illustrates problems when updating from 1801ze to 1912f. Notice that the `find` command pulled 4 `config.boot` files that were archived in the file system even after the upgrade. To use the `find` command, use the `su` command to change your user to the root user.
 
@@ -108,7 +108,7 @@ vyatta@gateway02# merge /lib/live/mount/persistence/sda2/boot/1801ze.01142008/pe
 ```
 {: screen}
 
-Using Configure mode, run the `merge` or `load` command, specifying one of the latest `config.boot` files from the preceding example, then commit. The errors show the cause of the problem. Repeat this process and resolve all the issues until the commit is successful.
+Using Configure mode, run the `merge` or `load` command, specifying one of the latest `config.boot` files from the preceding example, then commit. The errors will show the cause of the problem, so you should delete any invalid configurations and add valid ones as necessary. Repeat this process and resolve all issues until the commit succeeds and the Vyatta returns to its previously working state.
 
 You can upgrade your other VRAs without having to repeat this process by making the same changes on those devices before you attempt an update. Fixing these issues before running the upgrade allows subsequent updates to work. 
 
@@ -218,7 +218,15 @@ GRE tunnel interface on a secondary Vyatta in `u/u` status
 
 :    Before updating to 2012, if you have an active/passive BGP over a High Availability GRE setup, ensure that you confirm your GRE interfaces have `local-ip` set to a VRRP virtual address instead of the main address configured on the `dp0bond0` or `dp0bond1` interfaces. You should also validate that your routing does not rely on the tunnel (`tun`) interface changing status to `A/D` or `u/u` on failover, as that will no longer occur. In those instances, IBM may recommend setting up a path monitoring policy for the remote GRE endpoint. This utilizes a `ping` health check to validate the path over the tunnel before adding a route to that tunnel's routing table. Open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) if you have questions about your configuration or if you want more information on path monitoring policies.
     {: tip}
-    
+
+## Upgrading from 1801 to 2012
+{: #1801-to-2012}
+
+Along with all previously listed issues for 1801 to 1912 and 1912 to 2012, you might encounter this issue when upgrading from 1801 to 2012:
+
+After the update, the Vyatta boots, but the configuration is wiped.
+:    As a precautionary measure, before updating, set the time zone to 'UTC'. Some time zones from 1801 are not working in 2012 and may be causing this. For example, in 1801, time zones are listed as "Americas/Chicago" instead of "America/Chicago" in 2012.
+
 ## Vbash issues in older 5.2 Upgrades
 {: #Vbash-Issue-5.2}
 
