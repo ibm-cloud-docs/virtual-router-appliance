@@ -12,8 +12,8 @@ subcollection: virtual-router-appliance
 
 {{site.data.keyword.attribute-definition-list}}
 
-# AT&T Vyatta 5600 vRouter software patches (current)
-{: #at-t-vyatta-5600-vrouter-software-patches}
+# Ciena Vyatta 5600 vRouter software patches (current)
+{: #ciena-vyatta-5600-vrouter-software-patches}
 
 On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
