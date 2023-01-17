@@ -19,7 +19,7 @@ In the lifecycle of a product, end of support (EOS) is the last date that {{site
 {: shortdesc}
 
 | Operating system | Code name | Debian | DPDK | Maintenance Support | End of support | 
-|-----------------|----------------|----------------|----------------|----------------|
+| ----------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 2208 | Luton | 11 | 21.11 | 18 August 2024 | 18 February 2025 |
 | 2204 | Kington |10 | 20.11 | 04 April 2024 | 04 October 2024 |
 | 2110 | Jarrow | 10 | 20.11 | 19 October 2023 | 19 April 2024 |
@@ -27,6 +27,7 @@ In the lifecycle of a product, end of support (EOS) is the last date that {{site
 | 1912 | Edinburgh | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
 | 1908 | Dartmouth | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
 | 1801 | Yountville | 9 | 17.08 | 29 January 2020 | January 2022 |
+
 {: caption="Table 1. Lifecycle for Vyatta NOS on the Virtual Router Appliance" caption-side="bottom"}
 
 ## Ciena support terminology
@@ -41,4 +42,4 @@ Maintenance support
 ## Latest version availability
 {: #latest-version-availability}
 
-Ciena Vyatta NOS is updated regularly, sometimes more than one time per month, and newly released versions are run through a vetting process on {{site.data.keyword.cloud_notm}} hardware by {{site.data.keyword.cloud_notm}} Support before being released to you. When a new version is available to users, IBM posts the security and bug fixes in the topic [Vyatta NOS software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches). You can use the [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) process to update Vyatta NOS on the VRA. You can also use the information in [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) to find help when an upgrade fails.
+Ciena Vyatta NOS is updated regularly, sometimes more than one time per month, and newly released versions are run through a vetting process on {{site.data.keyword.cloud_notm}} hardware by {{site.data.keyword.cloud_notm}} Support before being released to you. The latest available is version 2012n with subreleases of 2204 and 2208 currently still being tested and not yet released. When a new version is available to users, IBM posts the security and bug fixes in the topic [Vyatta NOS software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches). You can use the [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) process to update Vyatta NOS on the VRA. You can also use the information in [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) to find help when an upgrade fails.
