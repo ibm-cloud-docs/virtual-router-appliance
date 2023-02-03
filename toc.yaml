@@ -36,6 +36,7 @@ toc:
           - migration-issues.md
           - migration-faqs.md
        - whats-new-vra.md
+       - include: /fortigate-10g/explore-firewalls.md
 
     - navgroup:
        id: tutorial
@@ -43,25 +44,24 @@ toc:
        - topicgroup:
           label: Tutorials
           topics:
-          - /solution-tutorials/solution-tutorials-secure-network-enclosure
-          - /solution-tutorials/solution-tutorials-nat-config-private
-          - /solution-tutorials/solution-tutorials-configuring-IPSEC-VPN
-          - /solution-tutorials/solution-tutorials-linking-secure-network-enclosures
-          - /solution-tutorials/solution-tutorials-web-app-private-network
-          - /fortigate-10g/fortigate-10g-exploring-firewalls
+          - include: ../cloud-docs-solutions/solution-tutorials/secure-network-enclosure.md
+          - include: ../cloud-docs-solutions/solution-tutorials/nat-config-private.md
+          - include: ../cloud-docs-solutions/solution-tutorials/configuring-IPSEC-VPN.md
+          - include: ../cloud-docs-solutions/solution-tutorials/linking-secure-network-enclosures.md
+          - include: ../cloud-docs-solutions/solution-tutorials/web-app-private-network.md
 
     - navgroup:
        id: howto
        topics:
-       - /gateway-appliance/gateway-appliance-viewing-all-gateway-appliances
-       - /gateway-appliance/gateway-appliance-viewing-gateway-appliance-details
-       - /gateway-appliance/gateway-appliance-renaming-a-gateway-appliance
-       - /gateway-appliance/gateway-appliance-cancel-gateway-appliance
+       - include: ../gateway-appliance/access-gateway-appliances.md
+       - include: ../gateway-appliance/access-gateway-details.md
+       - include: ../gateway-appliance/rename-gateway.md
+       - include: ../gateway-appliance/cancel-gateway.md
        - vra-basics.md
        - topicgroup:
           label: Working with VLANs
           topics:
-          - /gateway-appliance/gateway-appliance-managing-vlans-and-gateway-appliances
+          - include: ../gateway-appliance/manage-vlans.md
           - vlans.md
        - firewall.md
        - services.md
@@ -96,8 +96,7 @@ toc:
              label: Vyatta Network OS Scripting Reference Guide
              href: https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf
        - lifecycle.md
-       - /cloud-infrastructure/cloud-infrastructure-ibm-cloud-ip-ranges
-       - /gateway-appliance/gateway-appliance-other-resources-for-ibm-gateway-appliances
+       - include: ../cloud-infrastructure/ips.md
        - topicgroup:
           label: Legacy Vyatta 5400
           topics:
@@ -116,4 +115,4 @@ toc:
        - vra-docs.md
        - faqs.md
        - technical-faqs.md
-       - /gateway-appliance/gateway-appliance-getting-help
+       - include: ../gateway-appliance/getting-help.md

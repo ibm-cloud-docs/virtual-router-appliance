@@ -1,6 +1,8 @@
 includes:
-  - https://github.ibm.com/cloud-docs/acme-test
-  - https://github.ibm.com/cloud-docs/another-repo
+  - https://github.ibm.com/cloud-docs/gateway-appliance
+  - https://github.ibm.com/cloud-docs/fortigate-10g
+  - https://github.ibm.com/cloud-docs/cloud-infrastructure
+  - https://github.ibm.com/cloud-docs-solutions/solution-tutorials
 translation:
   exclude:
     byFilePath:
