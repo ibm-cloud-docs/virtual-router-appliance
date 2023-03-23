@@ -20,7 +20,7 @@ subcollection: virtual-router-appliance
 Upgrading the VRA operating system can be performed with the command `add system image` on a local ISO file uploaded by our {{site.data.keyword.IBM}} Support team. A list of available Vyatta upgrade versions can be obtained using the {{site.data.keyword.IBM_notm}} Support case system.
 {: shortdesc}
 
-To begin the upgrade process, open an {{site.data.keyword.IBM_notm}} Support case requesting an upload of the latest stable ISO image to your system. You receive a ticket update from IBM Support (ACS-Security) indicating where the ISO file was uploaded. In the following example, it is in the directory `tmp`, but it is commonly uploaded to `/home/vyatta`.
+To begin the upgrade process, open an {{site.data.keyword.IBM_notm}} Support case requesting an upload of the latest stable ISO image to your system. You receive a case update from IBM Support (ACS-Security) indicating where the ISO file was uploaded. In the following example, it is in the directory `tmp`, but it is commonly uploaded to `/home/vyatta`.
 
 The upgrade process illustrated in this example is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, it is recommended that you upgrade the `BACKUP` machine first, and verify that it is working properly. Then access the `MASTER` machine and fail it over using the `reset vrrp` command. Finally, upgrade the original `MASTER` after the `BACKUP` has taken control.
 {: important}

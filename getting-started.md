@@ -13,12 +13,12 @@ subcollection: virtual-router-appliance
 {{site.data.keyword.attribute-definition-list}}
 
 # Getting started with IBM Cloud Virtual Router Appliance (VRA)
-{: #getting-started}
+{: #getting-started-vra}
 
-On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012 or later as soon as possible by opening a [support ticket](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012 or later as soon as possible by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
 The {{site.data.keyword.vra_full}} (VRA) provides the latest Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or standalone configuration, and lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features.
@@ -38,16 +38,12 @@ To order a VRA, follow these steps:
 
 2. From the **Gateway Vendor** section, select the **AT&T** option (a blue check mark appears on the button). From the list menu on that same button, choose your bandwidth (either 20Gbps or 2Gbps).
 
-   ![Gateway vendor](images/ordering_vra.png "Gateway vendor"){: caption="Gateway vendor" caption-side="bottom"}
-
 3. From the **Gateway appliance** section, enter your **Hostname** and **Domain** name information. These fields are already populated with default information, so ensure the values are correct. Check the **High Availability** option if desired, then select your data center **Location**, and the specific **Pod** you want from the list menu.
 
    Only pods that already have an associated VLAN appear here. If you want to provision your gateway appliance in a pod that you don't see listed, first create a VLAN there.
    {: note}
 
 4. From the **Configuration** section, choose your processor's RAM. You can also define an SSH key if you want to use it to authenticate access to your new gateway.
-
-   ![Configuration](images/ordering_vra_2.png "Configuration"){: caption="Configuration" caption-side="bottom"}
 
    The appropriate processor is chosen for you based on the license version you selected in step 2. However, you can choose different RAM configurations.
    {: note}
@@ -70,8 +66,6 @@ To order a VRA, follow these steps:
 7. Review your selections, check that you have read the Third Party Service Agreements, then click **Create**. The order is verified automatically.
 
 After your order is approved, the provisioning of your {{site.data.keyword.vra_full}} starts automatically. When the provisioning process is complete, the new VRA appears in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page, where you can find the IP addresses, login username, and password for the device.  
-
-   ![Gateway details](images/gateway_details.png "Gateway details"){: caption="Gateway details" caption-side="bottom"}
 
 After you order and configure your VRA from the IBM Cloud catalog, you must also configure the device itself with the same settings.
 {: tip}

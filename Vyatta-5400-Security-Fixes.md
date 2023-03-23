@@ -10,7 +10,7 @@ subcollection: virtual-router-appliance
 
 ---
 
-{{{site.data.keyword.attribute-definition-list}}
+{{site.data.keyword.attribute-definition-list}}
 
 # AT&T Vyatta 5400 vRouter security vulnerability fixes
 {: #at-t-vyatta-5400-vrouter-security-vulnerability-fixes}
