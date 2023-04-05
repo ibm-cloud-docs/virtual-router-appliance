@@ -27,7 +27,6 @@ In the lifecycle of a product, end of support (EOS) is the last date that {{site
 | 1912 | Edinburgh | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
 | 1908 | Dartmouth | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
 | 1801 | Yountville | 9 | 17.08 | 29 January 2020 | January 2022 |
-
 {: caption="Table 1. Lifecycle for Vyatta NOS on the Virtual Router Appliance" caption-side="bottom"}
 
 ## Ciena support terminology
