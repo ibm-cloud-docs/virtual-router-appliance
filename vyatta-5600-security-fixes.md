@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2022-11-16"
+lastupdated: "2022-05-01"
 
 keywords:  
 
@@ -33,6 +33,73 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 2012p
+{: #2012p}
+
+### Issues Resolved
+{: #2012p-i}
+
+Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary Vyatta will cause a failover for all other interfaces in the same sync-group. In addition, disabling an interface on the primary Vyatta will cause all interfaces in the same sync-group as that interface to fault. To avoid this failover, you can change the sync-group of the interface to a non-default setting before disabling or deleting it. If you want to add the interface back into the configuration, or if you want to reenable the interface, commit that change before adding it back into the original sync-group. Otherwise, the same failover will occur again. You should also validate that your firewall policies allow VRRP and that your VRRP configurations -- such as `preempt false`, `priority` (253 on the default backup and 254 on the default primary) and `advertise-interval` (the default is 1) -- are all set to the same value for each VIF. This is required in order to have a stable VRRP cluster.
+{: important}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-60094 | Major | VRRP doesn't function properly if multiple vrrp-instances have same vrrp-sync-group configured |
+| VRVDR-60065 | Major | Memory leaks in DPDK and dataplane |
+| VRVDR-60041 | Major | Upgrading from 1912t to 2012n, segfault took place (dp/mastercsync) |
+| VRVDR-60008 | Major | PAM account management error: Permission denied |
+| VRVDR-59602 | Major | VRRP transitions from MASTER to BACKUP when new VIF interface is created |
+| VRVDR-59174 | Major | IPsec fails to start after upgrade to 2012m and VRRP failover |
+| VRVDR-59062 | Major | IPsec failing on reboot after upgrade from 1912 to 2012m |
+| VRVDR-55060 | Critical | ribd coredump in zv_exp_l_string |
+| VRVDR-54588 | Major | Values returned for vyatta-system-v1/system/cpu-history/cpu-data do not conform to YANG model |
+{: caption="Issues resolved for 2012p" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2012p-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-60496 | 5.5 | DSA-5378-1 | CVE-2022-23824, CVE-2022-42331, CVE-2022-42332, CVE-2022-42333, CVE-2022-42334: Debian DSA-5378-1 : xen - security update |
+| VRVDR-60489 | N/A | DLA-3367-1 | Debian DLA-3367-1 : libdatetime-timezone-perl - LTS security update |
+| VRVDR-60488 | N/A | DLA-3366-1 | Debian DLA-3366-1 : tzdata - LTS security update |
+| VRVDR-60448 | 9.1 | DLA-3363-1 | CVE-2019-20454, CVE-2022-1586, CVE-2022-1587: Debian DLA-3363-1 : pcre2 - LTS security update |
+| VRVDR-60447 | N/A | DLA-3355-1 | Debian DLA-3355-1 : xapian-core - LTS security update |
+| VRVDR-60407 | 8.8 | DLA-3362-1 | CVE-2020-14394, CVE-2020-17380, CVE-2020-29130, CVE-2021-3409, CVE-2021-3592, CVE-2021-3593, CVE-2021-3594, CVE-2021-3595, CVE-2022-0216, CVE-2022-1050: Debian DLA-3362-1 : qemu - LTS security update |
+| VRVDR-60264 | 5.5 | DLA-3333-1 | CVE-2023-0795, CVE-2023-0796, CVE-2023-0797, CVE-2023-0798, CVE-2023-0799, CVE-2023-0800, CVE-2023-0801, CVE-2023-0802, CVE-2023-0803, CVE-2023-0804 : Debian DLA-3333-1 : tiff - LTS security update |
+| VRVDR-60263 | 9.1 | DLA-3327-1 | CVE-2020-6829, CVE-2020-12400, CVE-2020-12401, CVE-2020-12403, CVE-2023-0767: Debian DLA-3327-1 : nss - LTS security update |
+| VRVDR-60237 | 6.5 | DLA-3331-1 | CVE-2023-23931: Debian DLA-3331-1 : pythoncryptography - LTS security update |
+| VRVDR-60234 | 7.4 | DLA-3325-1 | CVE-2022-2097, CVE-2022-4304, CVE-2022-4450, CVE-2023-0215, CVE-2023-0286: Debian DLA-3325-1 : openssl - LTS security update |
+| VRVDR-60210 | 7.5 | DLA-3323-1 | CVE-2022-4904: Debian DLA-3323-1 : c-ares - LTS security update |
+| VRVDR-60202 | 5.9 | DLA-3321-1 | CVE-2023-0361: Debian DLA-3321-1 : gnutls28 - LTS security update |
+| VRVDR-60171 | 7.1 | DLA-3313-1 | CVE-2022-4345, CVE-2023-0411, CVE-2023-0412, CVE-2023-0413, CVE-2023-0415, CVE-2023-0417: Debian DLA-3313-1 : wireshark - LTS security update |
+| VRVDR-60034 | 8.8 | DLA-3297-1 | CVE-2022-48281: Debian DLA-3297-1 : tiff - LTS security update |
+| VRVDR-60005 | 9.8 | DLA-3288-1 | CVE-2022-27774, CVE-2022-27782, CVE-2022-32221, CVE-2022-35252, CVE-2022-43552: Debian DLA-3288-1 : curl - LTS security update |
+| VRVDR-59923 | 7.8 | DLA-3272-1 | CVE-2023-22809: Debian DLA-3272-1 : sudo - LTS security update |
+| VRVDR-59922 | 8.8 | DLA-3278-1 | CVE-2022-1354, CVE-2022-1355, CVE-2022-2056, CVE-2022-2057, CVE-2022-2058, CVE-2022-2867, CVE-2022-2868, CVE-2022-2869, CVE-2022-3570, CVE-2022-3597, CVE-2022-3598, CVE-2022-3599, CVE-2022-3626, CVE-2022-3627, CVE-2022-3970, CVE-2022-34526: Debian DLA-3278-1 : tiff - LTS security update |
+| VRVDR-59809 | 9.1 | DLA-3263-1 | CVE-2021-46848: Debian DLA-3263-1 : libtasn1-6 - LTS security update |
+| VRVDR-59786 | 9.8 | DLA-3152-1 | CVE-2016-10228, CVE-2019-19126, CVE-2019-25013, CVE-2020-1752, CVE-2020-6096, CVE-2020-10029, CVE-2020-27618, CVE-2021-3326, CVE-2021-3999, CVE-2021-27645, CVE-2021-33574, CVE-2021-35942, CVE-2022-23218, CVE-2022-23219: Debian DLA-3152-1 : glibc security updates |
+| VRVDR-59695 | 9.8 | DLA-3248-1 | CVE-2022-47629: Debian DLA-3248-1 : libksba - LTS security update |
+| VRVDR-59552 | 7.8 | DLA-3232-1 | CVE-2019-18388, CVE-2019-18389, CVE-2019-18390, CVE-2019-18391, CVE-2020-8002, CVE-2020-8003, CVE-2022-0135: Debian DLA-3232-1 : virglrenderer - LTS security update |
+| VRVDR-59538 | 6.5 | DLA-3224-1 | CVE-2020-8287: Debian DLA-3224-1 : http-parser - LTS security update |
+| VRVDR-59492 | 6.4 | DLA-3213-1 | CVE-2022-42898: Debian DLA-3213-1 : krb5 - LTS security update |
+| VRVDR-59455 | 9.8 | DLA-3204-1 | CVE-2022-0318, CVE-2022-0392, CVE-2022-0629, CVE-2022-0696, CVE-2022-1619, CVE-2022-1621, CVE-2022-1785, CVE-2022-1897, CVE-2022-1942, CVE-2022-2000, CVE-2022-2129, CVE-2022-3235, CVE-2022-3256, CVE-2022-3352: Debian DLA-3204-1 : vim - LTS security update |
+| VRVDR-59408 | 6.4 | DSA-5280-1 | CVE-2022-2601, CVE-2022-3775: Debian DSA-5280-1 : grub2 - security update |
+| VRVDR-59407 | 6.4 | DLA-3190-1 | CVE-2022-2601, CVE-2022-3775: Debian DLA-3190-1 : grub2 - LTS security update |
+| VRVDR-59360 | 9.8 | DLA-3188-1 | CVE-2019-16167, CVE-2019-19725, CVE-2022-39377: Debian DLA-3188-1 : sysstat - LTS security update |
+| VRVDR-59310 | 8.8 | DLA-3182-1 | CVE-2021-3927, CVE-2021-3928, CVE-2021-3974, CVE-2021-3984, CVE-2021-4019, CVE-2021-4069, CVE-2021-4192, CVE-2021-4193, CVE-2022-0213, CVE-2022-0261, CVE-2022-0319, CVE-2022-0351, CVE-2022-0359, CVE-2022-0361, CVE-2022-0368, CVE-2022-0408, CVE-2022-0413, CVE-2022-0417, CVE-2022-0443, CVE-2022-0554, CVE-2022-0572, CVE-2022-0685, CVE-2022-0714, CVE-2022-0729, CVE-2022-0943, CVE-2022-1154, CVE-2022-1616, CVE-2022-1720, CVE-2022-1851, CVE-2022-1898, CVE-2022-1968, CVE-2022-2285, CVE-2022-2304, CVE-2022-2598, CVE-2022-2946, CVE-2022-3099, CVE-2022-3134, CVE-2022-3234, CVE-2022-3324, CVE-2022-3705: Debian DLA-3182-1 : vim - LTS security update |
+| VRVDR-59260 | 2.5 | DLA-3181-1 | CVE-2021-23239: Debian DLA-3181-1 : sudo - LTS security update |
+| VRVDR-59259 | 8.8 | DLA-3179-1 | CVE-2022-44638: Debian DLA-3179-1 : pixman - LTS security update |
+| VRVDR-59150 | 9.8 | DLA-3175-1 | CVE-2022-37454: Debian DLA-3175-1 : python3.7 - LTS security update |
+| VRVDR-59144 | 8.1 | DLA-3172-1 | CVE-2022-40303, CVE-2022-40304: Debian DLA-3172-1 : libxml2 - LTS security update |
+| VRVDR-59143 | N/A | DLA-3171-1 | Debian DLA-3171-1 : distro-info-data - LTS database update |
+| VRVDR-59132 | N/A | DLA-3162-1 | Debian DLA-3162-1 : libdatetime-timezone-perl - LTS security update |
+| VRVDR-59131 | N/A | DLA-3161-1 | Debian DLA-3161-1 : tzdata - LTS security update |
+| VRVDR-59130 | 7.1 | DLA-3167-1 | CVE-2022-29458: Debian DLA-3167-1 : ncurses - LTS security update |
+| VRVDR-59128 | 7.5 | DLA-3165-1 | CVE-2022-43680: Debian DLA-3165-1 : expat - LTS security update |
+| VRVDR-59070 | 9.1 | DLA-3157-1 | CVE-2019-8921, CVE-2019-8922, CVE-2021-41229, CVE-2021-43400, CVE-2022-0204, CVE-2022-39176, CVE-2022-39177:Debian DLA-3157-1 : bluez - LTS security update |
+{: caption="Security vulnerabilities resolved for 2012p" caption-side="bottom"}
 
 ## 2012n
 {: #2012n}
