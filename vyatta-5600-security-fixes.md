@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2022-05-01"
+  years: 2017, 2023
+lastupdated: "2023-05-01"
 
-keywords:  
+keywords:
 
 subcollection: virtual-router-appliance
 
@@ -302,8 +302,8 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-57185 | 9.8 | DLA-2935-1 | CVE-2022-23852, CVE-2022-25235, CVE-2022-25236, CVE-2022-25313, CVE-2022-25315: Debian DLA-2935-1 : expat -LTS security update |
-| VRVDR-57184 | 5.5 | DLA-2932-1 | CVE-2022-0561, CVE-2022-0562, CVE-2022-22844: Debian DLA-2932-1 : tiff -LTS security update | 
-| VRVDR-57183 | 8.8 | DLA-2931-1 | CVE-2022-24407: Debian DLA-2931-1 : cyrus-sasl2 -LTS security update | 
+| VRVDR-57184 | 5.5 | DLA-2932-1 | CVE-2022-0561, CVE-2022-0562, CVE-2022-22844: Debian DLA-2932-1 : tiff -LTS security update |
+| VRVDR-57183 | 8.8 | DLA-2931-1 | CVE-2022-24407: Debian DLA-2931-1 : cyrus-sasl2 -LTS security update |
 | VRVDR-57003 | 9.8 | DLA-2919-1 | CVE-2021-3177, CVE-2021-4189: Debian DLA-2919-1 : python2.7 -LTS security update |
 | VRVDR-56955 | 7.5 | DLA-2898-1 | CVE-2022-22747: Debian DLA-2898-1 : nss-LTS security update |
 | VRVDR-56954 | 9.8 | DLA-2904-1 | CVE-2021-45960, CVE-2021-46143, CVE-2022-22822, CVE-2022-22823, CVE-2022-22824, CVE-2022-22825, CVE-2022-22826, CVE-2022-22827, CVE-2022-23852, CVE-2022-23990: Debian DLA-2904-1 : expat -LTS security update |
@@ -455,7 +455,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-55602 | 8.8 | DSL-2699-1 | CVE-2020-5208: Debian DLA-2699-1 : ipmitool - LTS security update |
-| VRVDR-55600 | 9.8 | DLA-2695-1 | CVE-2021-31870, CVE-2021-31871, CVE-2021-31872, CVE-2021-31873: Debian DLA-2695-1 : klibc - LTS security update | 
+| VRVDR-55600 | 9.8 | DLA-2695-1 | CVE-2021-31870, CVE-2021-31871, CVE-2021-31872, CVE-2021-31873: Debian DLA-2695-1 : klibc - LTS security update |
 | VRVDR-55556 | 7.8 | DLA-2694-1 | CVE-2020-35523, CVE-2020-35524: Debian DLA-2694-1 : tiff security update |
 | VRVDR-55555 | 5.7 | DLA-2692-1 | CVE-2020-26558, CVE-2021-0129: Debian DLA-2692-1 : bluez security update |
 | VRVDR-55537 | 7.5 | DLA-2691-1 | CVE-2021-33560: Debian DLA-2691-1 : libgcrypt |
@@ -485,11 +485,11 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-54926 | 6.1 | DLA-2628-1 | CVE-2019-16935, CVE-2021-23336: Debian DLA-2628-1 : python2.7 security update | 
-| VRVDR-54858 | 9.8 | DLA-2619-1 | CVE-2021-23336, CVE-2021-3177, CVE-2021-3426:Debian DLA-2619-1 : python3.5 security update | 
-| VRVDR-54849 | 7.5 | DLA-2614-1 | CVE-2021-28831: Debian DLA-2614-1 : busybox security update | 
-| VRVDR-54848 | N/A | DLA-2611-1 | CVE-2020-27840, CVE-2021-20277: Debian DLA-2611-1 : ldb security update | 
-| VRVDR-54712 | 8.1 | DLA-2588-1 | CVE-2021-20234, CVE-2021-20235: Debian DLA-2588-1 : zeromq3 security update | 
+| VRVDR-54926 | 6.1 | DLA-2628-1 | CVE-2019-16935, CVE-2021-23336: Debian DLA-2628-1 : python2.7 security update |
+| VRVDR-54858 | 9.8 | DLA-2619-1 | CVE-2021-23336, CVE-2021-3177, CVE-2021-3426:Debian DLA-2619-1 : python3.5 security update |
+| VRVDR-54849 | 7.5 | DLA-2614-1 | CVE-2021-28831: Debian DLA-2614-1 : busybox security update |
+| VRVDR-54848 | N/A | DLA-2611-1 | CVE-2020-27840, CVE-2021-20277: Debian DLA-2611-1 : ldb security update |
+| VRVDR-54712 | 8.1 | DLA-2588-1 | CVE-2021-20234, CVE-2021-20235: Debian DLA-2588-1 : zeromq3 security update |
 {: caption="Security vulnerabilities resolved for 1912n" caption-side="bottom"}
 
 ## 1912m
@@ -509,12 +509,12 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-54801 | 7.2 | DLA-2605-1 | CVE-2021-27928: Debian DLA-2605-1 : mariadb-10.1 security update | 
-| VRVDR-54788 | 8.1 | DLA-2604-1 | CVE-2020-25681, CVE-2020-25682, CVE-2020-25683, CVE-2020-25684, CVE-2020-25687: Debian DLA-2604-1 : dnsmasq security update | 
-| VRVDR-54770 | 9.8 | DLA-2596-1 | CVE-2017-12424, CVE-2017-20002: Debian DLA-2596-1 : shadow security update | 
-| VRVDR-54563 | 7.5 | DLA-2574-1 | CVE-2021-27212: Debian DLA-2574-1 : openldap security update | 
-| VRVDR-54562 | 9.8 | DLA-2570-1 | CVE-2021-26937: Debian DLA-2570-1: screen security update | 
-| VRVDR-54531 | 8.1 | DLA-2568-1 | CVE-2020-8625: Debian DLA-2568-1 : bind9 security update | 
+| VRVDR-54801 | 7.2 | DLA-2605-1 | CVE-2021-27928: Debian DLA-2605-1 : mariadb-10.1 security update |
+| VRVDR-54788 | 8.1 | DLA-2604-1 | CVE-2020-25681, CVE-2020-25682, CVE-2020-25683, CVE-2020-25684, CVE-2020-25687: Debian DLA-2604-1 : dnsmasq security update |
+| VRVDR-54770 | 9.8 | DLA-2596-1 | CVE-2017-12424, CVE-2017-20002: Debian DLA-2596-1 : shadow security update |
+| VRVDR-54563 | 7.5 | DLA-2574-1 | CVE-2021-27212: Debian DLA-2574-1 : openldap security update |
+| VRVDR-54562 | 9.8 | DLA-2570-1 | CVE-2021-26937: Debian DLA-2570-1: screen security update |
+| VRVDR-54531 | 8.1 | DLA-2568-1 | CVE-2020-8625: Debian DLA-2568-1 : bind9 security update |
 {: caption="Security vulnerabilities resolved for 1912m" caption-side="bottom"}
 
 ## 1912k
@@ -526,13 +526,13 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-54360 | Major| Operator level user cannot execute 'show firewall ...' commands |
-| VRVDR-54272 | Critical | tech-support archive generated uncompressed breaking user expectations | 
-| VRVDR-54238 | Major | Dataplane crash in map_rcu_freeon system shutdown | 
-| VRVDR-54225 | Minor | VFPinterface does not pick up IP Address from donor loopback interface | 
-| VRVDR-54160 | Major | LACP with VIF -Slaves not selected in 'lacp' & 'balanced' modes | 
-| VRVDR-54144 | Blocker | Marvell FALplugin should drop backplane packets with RX Errors | 
-| VRVDR-54119 | Critical | Repeated PTP tunnel failures due to busy state | 
-| VRVDR-54027 | Major | Migrating loopback to self GRE tun50 configuration to newer code versions | 
+| VRVDR-54272 | Critical | tech-support archive generated uncompressed breaking user expectations |
+| VRVDR-54238 | Major | Dataplane crash in map_rcu_freeon system shutdown |
+| VRVDR-54225 | Minor | VFPinterface does not pick up IP Address from donor loopback interface |
+| VRVDR-54160 | Major | LACP with VIF -Slaves not selected in 'lacp' & 'balanced' modes |
+| VRVDR-54144 | Blocker | Marvell FALplugin should drop backplane packets with RX Errors |
+| VRVDR-54119 | Critical | Repeated PTP tunnel failures due to busy state |
+| VRVDR-54027 | Major | Migrating loopback to self GRE tun50 configuration to newer code versions |
 | VRVDR-51846 | Critical | RIB table not updated correctly for OSPFv3 routes after flapping the primary path by making dataplane/switch interface link failure/recovery |
 {: caption="Issues resolved for 1912k" caption-side="bottom"}
 
@@ -541,17 +541,17 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-54536 | 9.1 | DLA-2566-1 | CVE-2019-20367: Debian DLA-2566-1 : libbsd security update | 
-| VRVDR-54535 | N/A | DLA-2565-1 | CVE-2021-23840, CVE-2021-23841:Debian DLA-2565-1 : openssl1.0 security update | 
-| VRVDR-54534 | N/A | DLA-2563-1 | CVE-2021-23840, CVE-2021-23841: Debian DLA-2563-1 : openssl security update | 
-| VRVDR-54499 | 8.8 | DLA-2557-1 | CVE-2020-27815, CVE-2020-27825, CVE-2020-27830, CVE-2020-28374, CVE-2020-29568, CVE-2020-29569, CVE-2020-29660, CVE-2020-29661, CVE-2020-36158, CVE-2021-20177, CVE-2021-3347: Debian DLA-2557-1 : linux-4.19 security update | 
-| VRVDR-54445 | 7.8 | DLA-2549-1 | CVE-2020-0256, CVE-2021-0308: Debian DLA-2549-1 : gdisk security update | 
-| VRVDR-54436 | 7.5 | DLA-2547-1 | CVE-2019-13619, CVE-2019-16319, CVE-2019-19553, CVE-2020-7045, CVE-2020-9428, CVE-2020-9430, CVE-2020-9431, CVE-2020-11647, CVE-2020-13164, CVE-2020-15466, CVE-2020-25862, CVE-2020-25863, CVE-2020-26418, CVE-2020-26421, CVE-2020-26575, CVE-2020-28030: Debian DLA-2547-1: wireshark security update | 
-| VRVDR-54400 | 7.5 | DLA-2544-1 | CVE-2020-36221, CVE-2020-36222, CVE-2020-36223, CVE-2020-36224, CVE-2020-36225, CVE-2020-36226, CVE-2020-36227, CVE-2020-36228, CVE-2020-36229, CVE-2020-36230 :Debian DLA-2544-1 : openldapsecurity update | 
-| VRVDR-54399 | N/A | DLA-2543-1 | Debian DLA-2543-1 : libdatetime-timezone-perl new upstream version | 
-| VRVDR-54398 | N/A | DLA-2542-1 | Debian DLA-2542-1 : tzdata new upstream version | 
-| VRVDR-54337 | 6.5 | DLA-2538-1 | CVE-2020-14765, CVE-2020-14812: Debian DLA-2538-1 : mariadb-10.1 security update | 
-| VRVDR-54287 | 7.8 | DLA-2534-1 | CVE-2021-3156: Debian DLA-2534-1 : sudo security update | 
+| VRVDR-54536 | 9.1 | DLA-2566-1 | CVE-2019-20367: Debian DLA-2566-1 : libbsd security update |
+| VRVDR-54535 | N/A | DLA-2565-1 | CVE-2021-23840, CVE-2021-23841:Debian DLA-2565-1 : openssl1.0 security update |
+| VRVDR-54534 | N/A | DLA-2563-1 | CVE-2021-23840, CVE-2021-23841: Debian DLA-2563-1 : openssl security update |
+| VRVDR-54499 | 8.8 | DLA-2557-1 | CVE-2020-27815, CVE-2020-27825, CVE-2020-27830, CVE-2020-28374, CVE-2020-29568, CVE-2020-29569, CVE-2020-29660, CVE-2020-29661, CVE-2020-36158, CVE-2021-20177, CVE-2021-3347: Debian DLA-2557-1 : linux-4.19 security update |
+| VRVDR-54445 | 7.8 | DLA-2549-1 | CVE-2020-0256, CVE-2021-0308: Debian DLA-2549-1 : gdisk security update |
+| VRVDR-54436 | 7.5 | DLA-2547-1 | CVE-2019-13619, CVE-2019-16319, CVE-2019-19553, CVE-2020-7045, CVE-2020-9428, CVE-2020-9430, CVE-2020-9431, CVE-2020-11647, CVE-2020-13164, CVE-2020-15466, CVE-2020-25862, CVE-2020-25863, CVE-2020-26418, CVE-2020-26421, CVE-2020-26575, CVE-2020-28030: Debian DLA-2547-1: wireshark security update |
+| VRVDR-54400 | 7.5 | DLA-2544-1 | CVE-2020-36221, CVE-2020-36222, CVE-2020-36223, CVE-2020-36224, CVE-2020-36225, CVE-2020-36226, CVE-2020-36227, CVE-2020-36228, CVE-2020-36229, CVE-2020-36230 :Debian DLA-2544-1 : openldapsecurity update |
+| VRVDR-54399 | N/A | DLA-2543-1 | Debian DLA-2543-1 : libdatetime-timezone-perl new upstream version |
+| VRVDR-54398 | N/A | DLA-2542-1 | Debian DLA-2542-1 : tzdata new upstream version |
+| VRVDR-54337 | 6.5 | DLA-2538-1 | CVE-2020-14765, CVE-2020-14812: Debian DLA-2538-1 : mariadb-10.1 security update |
+| VRVDR-54287 | 7.8 | DLA-2534-1 | CVE-2021-3156: Debian DLA-2534-1 : sudo security update |
 {: caption="Security vulnerabilities resolved for 1912k" caption-side="bottom"}
 
 ## 1912j
@@ -562,29 +562,29 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-54142 | Critical | Inconsistent VRRP interface status upon reboot | 
-| VRVDR-54047 | Critical | On i40e driver when bond is disabled the link-state of member interfaces is u/D when configured but u/u after a reboot | 
-| VRVDR-53964 | Major | User-isolation feature is not present in licensed 'B' images | 
-| VRVDR-53962 | Critical | Reboot D2MSN backup connection created systemd-coredump with BGP authentication enabled | 
-| VRVDR-53928 | Major | Jumbo Frame MTU setting on Intel IGB interface causes link to go down | 
-| VRVDR-53854 | Major | Interfaces went down / panic: runtime error: slice bounds out of range | 
-| VRVDR-53368 | Minor | Alpha-numeric common pattern with preceding '0' in `resources group <name>` causes out of order list on config-sync slave | 
+| VRVDR-54142 | Critical | Inconsistent VRRP interface status upon reboot |
+| VRVDR-54047 | Critical | On i40e driver when bond is disabled the link-state of member interfaces is u/D when configured but u/u after a reboot |
+| VRVDR-53964 | Major | User-isolation feature is not present in licensed 'B' images |
+| VRVDR-53962 | Critical | Reboot D2MSN backup connection created systemd-coredump with BGP authentication enabled |
+| VRVDR-53928 | Major | Jumbo Frame MTU setting on Intel IGB interface causes link to go down |
+| VRVDR-53854 | Major | Interfaces went down / panic: runtime error: slice bounds out of range |
+| VRVDR-53368 | Minor | Alpha-numeric common pattern with preceding '0' in `resources group <name>` causes out of order list on config-sync slave |
 {: caption="Issues resolved for 1912j" caption-side="bottom"}
-  
+
 ### Security Vulnerabilities Resolved
 {: #1912j-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-54046 | 7.5 | DLA-2513-1 | CVE-2020-29361, CVE-2020-29362: Debian DLA-2513-1 : p11-kit security update | 
-| VRVDR-54039 | 7.5 | DLA-2116-1 | CVE-2015-9542: Debian DLA 2116-1:libpam-radius-auth security update | 
-| VRVDR-53970 | N/A | DLA-2510-1 | Debian DLA-2510-1 : libdatetime-timezone-perl new upstream release | 
-| VRVDR-53969 | N/A | DLA-2509-1 | Debian DLA-2509-1 : tzdata new upstream version| 
-| VRVDR-53968 | 7.5 | DLA-2500-1 | CVE-2020-8284, CVE-2020-8285, CVE-2020-8286: Debian DLA-2500-1 : curl security update | 
-| VRVDR-53967 | 8.1 | DLA-2498-1 | CVE-2018-1311: Debian DLA-2498-1 : xerces-c security update | 
-| VRVDR-53966 | N/A | DLA-2488-2 | Debian DLA-2488-2 : python-apt regression update | 
-| VRVDR-53965 | 6.1 | DLA-2467-2 | CVE-2020-27783: Debian DLA-2467-2 : lxml regression update | 
-| VRVDR-53861 | 8.2 | DLA-2483-1 | CVE-2019-19039, CVE-2019-19377, CVE-2019-19770, CVE-2019-19816, CVE-2020-0423, CVE-2020-8694, CVE-2020-14351, CVE-2020-25656, CVE-2020-25668, CVE-2020-25669, CVE-2020-25704, CVE-2020-25705, CVE-2020-27673, CVE-2020-27675, CVE-2020-28941, CVE-2020-28974: Debian DLA-2483-1: linux-4.19 security update | 
+| VRVDR-54046 | 7.5 | DLA-2513-1 | CVE-2020-29361, CVE-2020-29362: Debian DLA-2513-1 : p11-kit security update |
+| VRVDR-54039 | 7.5 | DLA-2116-1 | CVE-2015-9542: Debian DLA 2116-1:libpam-radius-auth security update |
+| VRVDR-53970 | N/A | DLA-2510-1 | Debian DLA-2510-1 : libdatetime-timezone-perl new upstream release |
+| VRVDR-53969 | N/A | DLA-2509-1 | Debian DLA-2509-1 : tzdata new upstream version|
+| VRVDR-53968 | 7.5 | DLA-2500-1 | CVE-2020-8284, CVE-2020-8285, CVE-2020-8286: Debian DLA-2500-1 : curl security update |
+| VRVDR-53967 | 8.1 | DLA-2498-1 | CVE-2018-1311: Debian DLA-2498-1 : xerces-c security update |
+| VRVDR-53966 | N/A | DLA-2488-2 | Debian DLA-2488-2 : python-apt regression update |
+| VRVDR-53965 | 6.1 | DLA-2467-2 | CVE-2020-27783: Debian DLA-2467-2 : lxml regression update |
+| VRVDR-53861 | 8.2 | DLA-2483-1 | CVE-2019-19039, CVE-2019-19377, CVE-2019-19770, CVE-2019-19816, CVE-2020-0423, CVE-2020-8694, CVE-2020-14351, CVE-2020-25656, CVE-2020-25668, CVE-2020-25669, CVE-2020-25704, CVE-2020-25705, CVE-2020-27673, CVE-2020-27675, CVE-2020-28941, CVE-2020-28974: Debian DLA-2483-1: linux-4.19 security update |
 {: caption="Security vulnerabilities resolved for 1912j" caption-side="bottom"}
 
 ## 1912h
@@ -595,7 +595,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-53699 | Blocker | PTP implementation noms all the PTP packets. Even though not destined for it. | 
+| VRVDR-53699 | Blocker | PTP implementation noms all the PTP packets. Even though not destined for it. |
 | VRVDR-53596 | Critical | config-sync is not operational when the configuration contains quotes |
 | VRVDR-53570 | Critical | Storm control policy may have non-zero packet counts on being applied |
 | VRVDR-53515 | Critical | PTP remains in acquiring state long enough to trigger an alarm |
@@ -638,51 +638,51 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-53517 | Critical | PTP de-referencing bad interface pointer | 
-| VRVDR-53459 | Critical | ATT-VROUTER-PTP-MIB::attVrouterPtpServoFailure no longer sent | 
-| VRVDR-53429 | Blocker | Up-rev Ufi hwdiag to 3.1.11 | 
-| VRVDR-53385 | Blocker | Repeat PTP servo failure messages | 
-| VRVDR-53372 | Critical | Dataplane crash in ptp_peer_resolver_cb | 
-| VRVDR-53317 | Critical | PTP: port packet counters ignore signalling messages | 
-| VRVDR-53305 | Blocker | Incoming PTP traffic is not being trapped to the PTP firmware | 
-| VRVDR-53302 | Critical | Boundary Clock lost sync and is unable to re-acquire lock | 
-| VRVDR-53014 | Critical | commit-confirm not working via vcli scripts | 
-| VRVDR-52995 | Critical | Grub update during image upgrade is broken | 
-| VRVDR-52879 | Blocker | PTP: Unable to peer with master when route to GM fails over to backup vlan | 
-| VRVDR-52877 | Blocker | ADI QoS Performance Issue with specific packet sizes | 
-| VRVDR-52825 | Minor | Configuring three sub-levels of time-zone is not possible, causing upgrade from earlier version to fail | 
-| VRVDR-52739 | Major | Port value in tunnel policy without specifying protocol causes error "protocol must be formatted as well-known string." for IPsec 'show' commands | 
-| VRVDR-52677 | Major | When multiple peers use the same local-address, no authentication ids, and unique pre-shared-keys IKEv2 based IPsec stuck in 'init' for all but one peer | 
-| VRVDR-52668 | Major | Configuration fails to load after upgrade from 1801ze to 1912e when firewall rule with port range 0-65535 statement is present | 
-| VRVDR-52611 | Major | i40e driver silently drops multicast packets causing VRRP dual master | 
-| VRVDR-52425 | Major | TACACS+ command authorization/accounting bypass via NETCONF | 
-| VRVDR-52424 | Major | NETCONF edit-config applies changes with "none" default-operation, and no specified operation | 
-| VRVDR-52410 | Critical | IPsec: SNMP trap no longer sent when IPsec tunnel goes up or down | 
-| VRVDR-52404 | Major | ICMP error returned with corrupted inner header causes seg-fault when passed through a FW/NAT44/PBR rule with logging enabled | 
-| VRVDR-52401 | Critical | Degradation of throughput by 10%-40% on v150 with 100M physical interface & QOS | 
-| VRVDR-52221 | Major | Disabled PMTUD on GRE tunnel causes outer packet to inherit inner packet TTL value | 
-| VRVDR-52179 | Critical | Overlayfs file corruption of user accounting files | 
-| VRVDR-52152 | Critical | PTP: Use monotonic time for semaphores and mutexes | 
-| VRVDR-51643 | Major | SNMP Trap not receiving when CHILD_SA deleting | 
-| VRVDR-51465 | Blocker | Restore (opt-out) collection of shell history in tech-support | 
-| VRVDR-51455 | Critical | Bad file descriptor (src/epoll.cpp:100) when applying config | 
-| VRVDR-51443 | Major | IPv6 router-advert CLI missing on switch VLAN interfaces | 
-| VRVDR-51332 | Major | PTP: Unable to cope with config change where master and slave swap ds-ports (slave does not come up) | 
-| VRVDR-50884 | Major | Grub passwd printed in plain-text in installer logs | 
-| VRVDR-50619 | Major | LACP with VIF - still seeing Slaves not selected in 'balanced' mode | 
-| VRVDR-50544 | Critical | Opd logging YANG files missing in Edinburgh (VNF), Fleetwood onwards (VR and VNF) | 
-| VRVDR-50313 | Major | PTP: SIAD does not send "Follow_Up" msgs to slaves when two-step- flag is enabled | 
-| VRVDR-50026 | Critical | Dataplane crash: npf_timeout_get() | 
-| VRVDR-49447 | Major | show tech-support still logs /var/log/messages | 
-| VRVDR-49409 | Major | Dataplane reports that the bonding drivers doesn't support vlan filtering | 
-| VRVDR-49209 | Minor | tech-support should not use any user gpg config when encrypting tech support archives | 
-| VRVDR-48480 | Blocker | PTP servo reports 0 pps after path switch during ECMP | 
-| VRVDR-48460 | Critical | Tshark permission errors and seg fault when executing monitor command | 
-| VRVDR-48055 | Critical | IPsec VPN dataplane crash deleting VRF | 
-| VRVDR-47858 | Critical | GRE: "RTNETLINK answers: No such file or directory" on trying to delete tunnel | 
-| VRVDR-46493 | Major | IPSec RA-VPN Server : IKE proposal not found on server when setting the local-address to "any" | 
-| VRVDR-43307 | Critical | vyatta-ike-sa-daemon: TypeError: 'IKEConfig' object does not support indexing | 
-| VRVDR-42123 | Major | opd adds node.tag values under the wrong location in tab completion | 
+| VRVDR-53517 | Critical | PTP de-referencing bad interface pointer |
+| VRVDR-53459 | Critical | ATT-VROUTER-PTP-MIB::attVrouterPtpServoFailure no longer sent |
+| VRVDR-53429 | Blocker | Up-rev Ufi hwdiag to 3.1.11 |
+| VRVDR-53385 | Blocker | Repeat PTP servo failure messages |
+| VRVDR-53372 | Critical | Dataplane crash in ptp_peer_resolver_cb |
+| VRVDR-53317 | Critical | PTP: port packet counters ignore signalling messages |
+| VRVDR-53305 | Blocker | Incoming PTP traffic is not being trapped to the PTP firmware |
+| VRVDR-53302 | Critical | Boundary Clock lost sync and is unable to re-acquire lock |
+| VRVDR-53014 | Critical | commit-confirm not working via vcli scripts |
+| VRVDR-52995 | Critical | Grub update during image upgrade is broken |
+| VRVDR-52879 | Blocker | PTP: Unable to peer with master when route to GM fails over to backup vlan |
+| VRVDR-52877 | Blocker | ADI QoS Performance Issue with specific packet sizes |
+| VRVDR-52825 | Minor | Configuring three sub-levels of time-zone is not possible, causing upgrade from earlier version to fail |
+| VRVDR-52739 | Major | Port value in tunnel policy without specifying protocol causes error "protocol must be formatted as well-known string." for IPsec 'show' commands |
+| VRVDR-52677 | Major | When multiple peers use the same local-address, no authentication ids, and unique pre-shared-keys IKEv2 based IPsec stuck in 'init' for all but one peer |
+| VRVDR-52668 | Major | Configuration fails to load after upgrade from 1801ze to 1912e when firewall rule with port range 0-65535 statement is present |
+| VRVDR-52611 | Major | i40e driver silently drops multicast packets causing VRRP dual master |
+| VRVDR-52425 | Major | TACACS+ command authorization/accounting bypass via NETCONF |
+| VRVDR-52424 | Major | NETCONF edit-config applies changes with "none" default-operation, and no specified operation |
+| VRVDR-52410 | Critical | IPsec: SNMP trap no longer sent when IPsec tunnel goes up or down |
+| VRVDR-52404 | Major | ICMP error returned with corrupted inner header causes seg-fault when passed through a FW/NAT44/PBR rule with logging enabled |
+| VRVDR-52401 | Critical | Degradation of throughput by 10%-40% on v150 with 100M physical interface & QOS |
+| VRVDR-52221 | Major | Disabled PMTUD on GRE tunnel causes outer packet to inherit inner packet TTL value |
+| VRVDR-52179 | Critical | Overlayfs file corruption of user accounting files |
+| VRVDR-52152 | Critical | PTP: Use monotonic time for semaphores and mutexes |
+| VRVDR-51643 | Major | SNMP Trap not receiving when CHILD_SA deleting |
+| VRVDR-51465 | Blocker | Restore (opt-out) collection of shell history in tech-support |
+| VRVDR-51455 | Critical | Bad file descriptor (src/epoll.cpp:100) when applying config |
+| VRVDR-51443 | Major | IPv6 router-advert CLI missing on switch VLAN interfaces |
+| VRVDR-51332 | Major | PTP: Unable to cope with config change where master and slave swap ds-ports (slave does not come up) |
+| VRVDR-50884 | Major | Grub passwd printed in plain-text in installer logs |
+| VRVDR-50619 | Major | LACP with VIF - still seeing Slaves not selected in 'balanced' mode |
+| VRVDR-50544 | Critical | Opd logging YANG files missing in Edinburgh (VNF), Fleetwood onwards (VR and VNF) |
+| VRVDR-50313 | Major | PTP: SIAD does not send "Follow_Up" msgs to slaves when two-step- flag is enabled |
+| VRVDR-50026 | Critical | Dataplane crash: npf_timeout_get() |
+| VRVDR-49447 | Major | show tech-support still logs /var/log/messages |
+| VRVDR-49409 | Major | Dataplane reports that the bonding drivers doesn't support vlan filtering |
+| VRVDR-49209 | Minor | tech-support should not use any user gpg config when encrypting tech support archives |
+| VRVDR-48480 | Blocker | PTP servo reports 0 pps after path switch during ECMP |
+| VRVDR-48460 | Critical | Tshark permission errors and seg fault when executing monitor command |
+| VRVDR-48055 | Critical | IPsec VPN dataplane crash deleting VRF |
+| VRVDR-47858 | Critical | GRE: "RTNETLINK answers: No such file or directory" on trying to delete tunnel |
+| VRVDR-46493 | Major | IPSec RA-VPN Server : IKE proposal not found on server when setting the local-address to "any" |
+| VRVDR-43307 | Critical | vyatta-ike-sa-daemon: TypeError: 'IKEConfig' object does not support indexing |
+| VRVDR-42123 | Major | opd adds node.tag values under the wrong location in tab completion |
 {: caption="Issues resolved for 1912g" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
@@ -690,19 +690,19 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-53323 | 7.5 | DLA-2391-1 | CVE-2020-25613: Debian DLA-2391-1 : ruby2.3 security update | 
-| VRVDR-53273 | 7.8 | DLA-2385-1 | CVE-2019-3874, CVE-2019-19448, CVE-2019-19813, CVE-2019-19816, CVE-2020-10781, CVE-2020-12888, CVE-2020-14314, CVE-2020-14331, CVE-2020-14356, CVE-2020-14385, CVE-2020-14386, CVE-2020-14390, CVE-2020-16166, CVE-2020-25212, CVE-2020-25284, CVE-2020-25285, CVE-2020-25641, CVE-2020-26088: Debian DLA-2385-1: linux-4.19 LTS security update | 
-| VRVDR-53272 | 9.8 | DLA-2388-1 | Debian DLA-2388-1 : nss security update | 
-| VRVDR-53231 | N/A | DLA-2382-1 | CVE-2020-8231: Debian DLA-2382-1 : curl security update | 
-| VRVDR-53230 | 3.7 | DLA-2378-1 | CVE-2020-1968: Debian DLA-2378-1 : openssl1.0 security update | 
-| VRVDR-52817 | 6.4 | N/A | CVE-2020-15705: GRUB2 fails to validate kernel signature when booted directly without shim, allowing secure boot to be bypassed | 
-| VRVDR-52457 | 7.8 | DLA-2301-1 | CVE-2020-12762: Debian DLA-2301-1 : json-c security update | 
-| VRVDR-52456 | 6.7 | DLA-2290-1 | CVE-2019-5188: Debian DLA-2290-1 : e2fsprogs security update | 
-| VRVDR-52454 | N/A | DLA-2295-1 | CVE-2020-8177: Debian DLA-2295-1 : curl security update | 
-| VRVDR-52357 | 5.6 | DSA-4733-1 | CVE-2020-8608: Debian DSA-4733-1: qemu security update | 
-| VRVDR-52273 | 6.7 | DSA-4728-1 | CVE-2020-10756, CVE-2020-13361, CVE-2020-13362, CVE-2020-13754, CVE-2020-13659: Debian DSA 4728-1: qemu security update | 
-| VRVDR-52265 | 9.8 | DLA-2280-1 | CVE-2018-20406, CVE-2018-20852, CVE-2019-5010, CVE-2019-9636, CVE-2019-9740, CVE-2019-9947, CVE-2019-9948, CVE-2019-10160, CVE-2019-16056, CVE-2019-16935, CVE-2019-18348, CVE-2020-8492, CVE-2020-14422: Debian DLA-2280-1 : python3.5 security update | 
-| VRVDR-51849 | 7.5 | N/A | CVE-2018-19044, CVE-2018-19045, CVE-2018-19046: Insecure temporary file usage in keepalived | 
+| VRVDR-53323 | 7.5 | DLA-2391-1 | CVE-2020-25613: Debian DLA-2391-1 : ruby2.3 security update |
+| VRVDR-53273 | 7.8 | DLA-2385-1 | CVE-2019-3874, CVE-2019-19448, CVE-2019-19813, CVE-2019-19816, CVE-2020-10781, CVE-2020-12888, CVE-2020-14314, CVE-2020-14331, CVE-2020-14356, CVE-2020-14385, CVE-2020-14386, CVE-2020-14390, CVE-2020-16166, CVE-2020-25212, CVE-2020-25284, CVE-2020-25285, CVE-2020-25641, CVE-2020-26088: Debian DLA-2385-1: linux-4.19 LTS security update |
+| VRVDR-53272 | 9.8 | DLA-2388-1 | Debian DLA-2388-1 : nss security update |
+| VRVDR-53231 | N/A | DLA-2382-1 | CVE-2020-8231: Debian DLA-2382-1 : curl security update |
+| VRVDR-53230 | 3.7 | DLA-2378-1 | CVE-2020-1968: Debian DLA-2378-1 : openssl1.0 security update |
+| VRVDR-52817 | 6.4 | N/A | CVE-2020-15705: GRUB2 fails to validate kernel signature when booted directly without shim, allowing secure boot to be bypassed |
+| VRVDR-52457 | 7.8 | DLA-2301-1 | CVE-2020-12762: Debian DLA-2301-1 : json-c security update |
+| VRVDR-52456 | 6.7 | DLA-2290-1 | CVE-2019-5188: Debian DLA-2290-1 : e2fsprogs security update |
+| VRVDR-52454 | N/A | DLA-2295-1 | CVE-2020-8177: Debian DLA-2295-1 : curl security update |
+| VRVDR-52357 | 5.6 | DSA-4733-1 | CVE-2020-8608: Debian DSA-4733-1: qemu security update |
+| VRVDR-52273 | 6.7 | DSA-4728-1 | CVE-2020-10756, CVE-2020-13361, CVE-2020-13362, CVE-2020-13754, CVE-2020-13659: Debian DSA 4728-1: qemu security update |
+| VRVDR-52265 | 9.8 | DLA-2280-1 | CVE-2018-20406, CVE-2018-20852, CVE-2019-5010, CVE-2019-9636, CVE-2019-9740, CVE-2019-9947, CVE-2019-9948, CVE-2019-10160, CVE-2019-16056, CVE-2019-16935, CVE-2019-18348, CVE-2020-8492, CVE-2020-14422: Debian DLA-2280-1 : python3.5 security update |
+| VRVDR-51849 | 7.5 | N/A | CVE-2018-19044, CVE-2018-19045, CVE-2018-19046: Insecure temporary file usage in keepalived |
 {: caption="Security vulnerabilities resolved for 1912g" caption-side="bottom"}
 
 ## 1912f
@@ -763,51 +763,51 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-51957 | Blocker | Modelled copy command incorrectly enforcing ssh-known-host check in 1912e |  
-| VRVDR-51952 | Blocker | Group ownership for non ROOT files got changed to ssh @ 1912e |  
-| VRVDR-51937 | Blocker | `show interface dataplane dp0xe<x>` displays incorrect speed for copper ports when interface is down |  
-| VRVDR-51828 | Major | SIAD ACL: BCM SDK error when deleting ACL configuration |  
-| VRVDR-51639 | Critical | Response for "request hardware-diag version" takes much longer with 1912b |  
-| VRVDR-51619 | Critical | SIAD ACL: Ensure that rulesets which would exceed the TCAM are rejected |  
-| VRVDR-51616 | Critical | Storm Control triggered snmpd warning messages in journal |  
-| VRVDR-51543 | Critical | IPsec peers stuck in 'init' state after upgrade from 1801q to 1912d |  
-| VRVDR-51539 | Critical | Repeated FAL BCM "L3 Interface" for VSI 0 Syslog |  
-| VRVDR-51521 | Critical | NAT64 opd yang file missing required type field in 1908 and 1912 |  
-| VRVDR-51518 | Critical | Dataplane performance fails for forward pkts when scatter mode driver is used |  
-| VRVDR-51483 | Major | Removing guest configuration fails with scripting error |  
-| VRVDR-51385 | Critical | Dataplane Crash in next_hop_list_find_path_using_ifp |  
+| VRVDR-51957 | Blocker | Modelled copy command incorrectly enforcing ssh-known-host check in 1912e |
+| VRVDR-51952 | Blocker | Group ownership for non ROOT files got changed to ssh @ 1912e |
+| VRVDR-51937 | Blocker | `show interface dataplane dp0xe<x>` displays incorrect speed for copper ports when interface is down |
+| VRVDR-51828 | Major | SIAD ACL: BCM SDK error when deleting ACL configuration |
+| VRVDR-51639 | Critical | Response for "request hardware-diag version" takes much longer with 1912b |
+| VRVDR-51619 | Critical | SIAD ACL: Ensure that rulesets which would exceed the TCAM are rejected |
+| VRVDR-51616 | Critical | Storm Control triggered snmpd warning messages in journal |
+| VRVDR-51543 | Critical | IPsec peers stuck in 'init' state after upgrade from 1801q to 1912d |
+| VRVDR-51539 | Critical | Repeated FAL BCM "L3 Interface" for VSI 0 Syslog |
+| VRVDR-51521 | Critical | NAT64 opd yang file missing required type field in 1908 and 1912 |
+| VRVDR-51518 | Critical | Dataplane performance fails for forward pkts when scatter mode driver is used |
+| VRVDR-51483 | Major | Removing guest configuration fails with scripting error |
+| VRVDR-51385 | Critical | Dataplane Crash in next_hop_list_find_path_using_ifp |
 | VRVDR-51348 | Major | libsnmp-dev built from DANOS/net-snmp is not API compatible with libsnmp-dev from upstream  |
-| VRVDR-51345 | Critical | S9500-30XS: 100G Interface LED lit even when disabled |  
-| VRVDR-51311 | Blocker | DAS Switch with 1912b seeing low rate of drops vs 1903m |  
-| VRVDR-51295 | Critical | Changing speed on interface resets configured MTU to default |  
-| VRVDR-51247 | Major | S9500 - missing hw_rev.cfg file |  
-| VRVDR-51238 | Major | After broadcast storm, TACACS doesn't recover |  
-| VRVDR-51185 | Blocker | Link doesn't come up after swapping 1000BASE-T SFP for 1000BASE-X SFP |  
-| VRVDR-51183 | Major | 'FAL neighbor del' log is generated by dataplane for each ARP received for an unknown address |  
-| VRVDR-51179 | Critical | live-cd installs should not install all unique state |  
-| VRVDR-51148 | Critical | S9500 interface flaps when MTU is modified |  
-| VRVDR-51072 | Critical | L3 SIAD router not fragmenting packet size above MTU |  
-| VRVDR-51067 | Critical | DPDK VIRTIO driver does not support multiple MAC addresses |  
-| VRVDR-51066 | Blocker | 1908g performance hit with vCSR VNF scenario in small, medium and large platforms |  
-| VRVDR-51052 | Blocker | Traffic dropped in SIAD when jumbo frames are > 1522 bytes but under defined MTU limit |  
-| VRVDR-51008 | Major | When the /var/log partition exists journal files from previous installs are retained but not rotated |  
-| VRVDR-50939 | Blocker | BFD session retained in admin down state when interface is disabled |  
-| VRVDR-50927 | Critical | `show interface data <port> phy` not working correctly for Operator class users |  
-| VRVDR-50920 | Blocker | SIAD - modelled copy with scp target is operationally unusable |  
-| VRVDR-50915 | Critical | Error generating /interfaces/backplane-state on SIAD |  
-| VRVDR-50874 | Critical | Storm control errors in 1912b |  
-| VRVDR-50559 | Critical | Error: /vyatta-cpu-history-client: GetState failure: Traceback |  
-| VRVDR-50256 | Blocker | Login fails with recent master images - Error in service module |  
-| VRVDR-50075 | Major | Sandbox cleanup fails for deleted TACACS+ user with open sessions |  
-| VRVDR-49985 | Major | L3ACL: CLI command and validation for IPv6 ACL rules with fragment option |  
-| VRVDR-49959 | Major | Change the yang accepted on SIAD to refuse ACLs specifying 'protocol final' |  
-| VRVDR-49808 | Critical | TACACS+ logins of users with "exotic" usernames fail when user isolation is enabled |  
-| VRVDR-49502 | Major | Login fails for isolated users whose name contains an underscore |  
-| VRVDR-49491 | Critical | User Isolation shared-storage not accessible in Master image after upgrade |  
-| VRVDR-49442 | Major | SNMP related syslog messages at wrong log level |  
-| VRVDR-49231 | Critical | PPPoE Client - Not re-establishing dropped connection automatically |  
-| VRVDR-48438 | Major | LACP causing interface to remain down |  
-| VRVDR-47530 | Critical | OSPF scaling: regression script fails bringing up many OSPF neighbors |  
+| VRVDR-51345 | Critical | S9500-30XS: 100G Interface LED lit even when disabled |
+| VRVDR-51311 | Blocker | DAS Switch with 1912b seeing low rate of drops vs 1903m |
+| VRVDR-51295 | Critical | Changing speed on interface resets configured MTU to default |
+| VRVDR-51247 | Major | S9500 - missing hw_rev.cfg file |
+| VRVDR-51238 | Major | After broadcast storm, TACACS doesn't recover |
+| VRVDR-51185 | Blocker | Link doesn't come up after swapping 1000BASE-T SFP for 1000BASE-X SFP |
+| VRVDR-51183 | Major | 'FAL neighbor del' log is generated by dataplane for each ARP received for an unknown address |
+| VRVDR-51179 | Critical | live-cd installs should not install all unique state |
+| VRVDR-51148 | Critical | S9500 interface flaps when MTU is modified |
+| VRVDR-51072 | Critical | L3 SIAD router not fragmenting packet size above MTU |
+| VRVDR-51067 | Critical | DPDK VIRTIO driver does not support multiple MAC addresses |
+| VRVDR-51066 | Blocker | 1908g performance hit with vCSR VNF scenario in small, medium and large platforms |
+| VRVDR-51052 | Blocker | Traffic dropped in SIAD when jumbo frames are > 1522 bytes but under defined MTU limit |
+| VRVDR-51008 | Major | When the /var/log partition exists journal files from previous installs are retained but not rotated |
+| VRVDR-50939 | Blocker | BFD session retained in admin down state when interface is disabled |
+| VRVDR-50927 | Critical | `show interface data <port> phy` not working correctly for Operator class users |
+| VRVDR-50920 | Blocker | SIAD - modelled copy with scp target is operationally unusable |
+| VRVDR-50915 | Critical | Error generating /interfaces/backplane-state on SIAD |
+| VRVDR-50874 | Critical | Storm control errors in 1912b |
+| VRVDR-50559 | Critical | Error: /vyatta-cpu-history-client: GetState failure: Traceback |
+| VRVDR-50256 | Blocker | Login fails with recent master images - Error in service module |
+| VRVDR-50075 | Major | Sandbox cleanup fails for deleted TACACS+ user with open sessions |
+| VRVDR-49985 | Major | L3ACL: CLI command and validation for IPv6 ACL rules with fragment option |
+| VRVDR-49959 | Major | Change the yang accepted on SIAD to refuse ACLs specifying 'protocol final' |
+| VRVDR-49808 | Critical | TACACS+ logins of users with "exotic" usernames fail when user isolation is enabled |
+| VRVDR-49502 | Major | Login fails for isolated users whose name contains an underscore |
+| VRVDR-49491 | Critical | User Isolation shared-storage not accessible in Master image after upgrade |
+| VRVDR-49442 | Major | SNMP related syslog messages at wrong log level |
+| VRVDR-49231 | Critical | PPPoE Client - Not re-establishing dropped connection automatically |
+| VRVDR-48438 | Major | LACP causing interface to remain down |
+| VRVDR-47530 | Critical | OSPF scaling: regression script fails bringing up many OSPF neighbors |
 | VRVDR-45369 | Major | show interface dataplane X physical incorrectly reports speed when down |
 {: caption="Issues resolved for 1912e" caption-side="bottom"}
 
@@ -816,15 +816,15 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-51526 | 7.8 | DSA-4699-1 | CVE-2019-19462, CVE-2019-3016, CVE-2020-0543, CVE-2020-10711, CVE-2020-10732, CVE-2020-10751, CVE-2020-10757, CVE-2020-12114, CVE-2020-12464, CVE-2020-12768, CVE-2020-12770, CVE-2020-13143: Debian DSA-4699-1 : linux - security update |  
-| VRVDR-51525 | 7.8 | DSA-4698-1 | CVE-2019-2182, CVE-2019-5108, CVE-2019-19319, CVE-2019-19462, CVE-2019-19768, CVE-2019-20806, CVE-2019-20811, CVE-2020-0543, CVE-2020-2732, CVE-2020-8428, CVE-2020-8647, CVE-2020-8648, CVE-2020-8649, CVE-2020-9383, CVE-2020-10711, CVE-2020-10732, CVE-2020-10751, CVE-2020-10757, CVE-2020-10942, CVE-2020-11494, CVE-2020-11565, CVE-2020-11608, CVE-2020-11609, CVE-2020-11668, CVE-2020-12114, CVE-2020-12464, CVE-2020-12652, CVE-2020-12653, CVE-2020-12654, CVE-2020-12770, CVE-2020-13143: Debian DSA-4698-1: linux – security update |  
-| VRVDR-51236 | 8.6 | DSA-4689-1 | CVE-2019-6477, CVE-2020-8616, CVE-2020-8617: Debian DSA-4689-1 : bind9 - security update |  
-| VRVDR-51142 | 5.5 | DSA-4685-1 | CVE-2020-3810: Debian DSA-4685-1 : apt - security update |  
-| VRVDR-51054 | 6.7 | DSA-4688-1 |  CVE-2020-10722, CVE-2020-10723, CVE-2020-10724: Debian DSA-4688-1 : dpdk - security update |  
-| VRVDR-50886 | 8.8 | DSA-4670-1 | CVE-2018-12900, CVE-2018-17000, CVE-2018-17100, CVE-2018-19210, CVE-2019-7663, CVE-2019-14973, CVE-2019-17546 : Debian DSA-4670-1 : tiff - security update |  
-| VRVDR-50851 | 7.5 | DSA-4666-1 | CVE-2020-12243: Debian DSA-4666-1 : openldap - security update |  
-| VRVDR-50530 | 7.1 | DSA-4647-1 |  CVE-2020-0556: Debian DSA-4647-1 : bluez - security update |  
-| VRVDR-50498 | 8.8 | DSA-4646-1 | CVE-2020-10531: Debian DSA-4646-1 : icu - security update |  
+| VRVDR-51526 | 7.8 | DSA-4699-1 | CVE-2019-19462, CVE-2019-3016, CVE-2020-0543, CVE-2020-10711, CVE-2020-10732, CVE-2020-10751, CVE-2020-10757, CVE-2020-12114, CVE-2020-12464, CVE-2020-12768, CVE-2020-12770, CVE-2020-13143: Debian DSA-4699-1 : linux - security update |
+| VRVDR-51525 | 7.8 | DSA-4698-1 | CVE-2019-2182, CVE-2019-5108, CVE-2019-19319, CVE-2019-19462, CVE-2019-19768, CVE-2019-20806, CVE-2019-20811, CVE-2020-0543, CVE-2020-2732, CVE-2020-8428, CVE-2020-8647, CVE-2020-8648, CVE-2020-8649, CVE-2020-9383, CVE-2020-10711, CVE-2020-10732, CVE-2020-10751, CVE-2020-10757, CVE-2020-10942, CVE-2020-11494, CVE-2020-11565, CVE-2020-11608, CVE-2020-11609, CVE-2020-11668, CVE-2020-12114, CVE-2020-12464, CVE-2020-12652, CVE-2020-12653, CVE-2020-12654, CVE-2020-12770, CVE-2020-13143: Debian DSA-4698-1: linux – security update |
+| VRVDR-51236 | 8.6 | DSA-4689-1 | CVE-2019-6477, CVE-2020-8616, CVE-2020-8617: Debian DSA-4689-1 : bind9 - security update |
+| VRVDR-51142 | 5.5 | DSA-4685-1 | CVE-2020-3810: Debian DSA-4685-1 : apt - security update |
+| VRVDR-51054 | 6.7 | DSA-4688-1 |  CVE-2020-10722, CVE-2020-10723, CVE-2020-10724: Debian DSA-4688-1 : dpdk - security update |
+| VRVDR-50886 | 8.8 | DSA-4670-1 | CVE-2018-12900, CVE-2018-17000, CVE-2018-17100, CVE-2018-19210, CVE-2019-7663, CVE-2019-14973, CVE-2019-17546 : Debian DSA-4670-1 : tiff - security update |
+| VRVDR-50851 | 7.5 | DSA-4666-1 | CVE-2020-12243: Debian DSA-4666-1 : openldap - security update |
+| VRVDR-50530 | 7.1 | DSA-4647-1 |  CVE-2020-0556: Debian DSA-4647-1 : bluez - security update |
+| VRVDR-50498 | 8.8 | DSA-4646-1 | CVE-2020-10531: Debian DSA-4646-1 : icu - security update |
 | VRVDR-44891 | N/A | N/A | opd doesn't escape input properly when completing commands |
 {: caption="Security vulnerabilities resolved for 1912e" caption-side="bottom"}
 
@@ -913,23 +913,23 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-51179 | Critical| live-cd installs should not install all unique state |
 | VRVDR-51066 | Blocker| 1908g performance hit with vCSR vnf scenario in Small, Medium and Large Platforms
 | VRVDR-51008 | Major | When the /var/log partition exists journal files from previous installs are retained but not rotated |
-| VRVDR-50939 | Blocker | BFD session retained in admin down state when interface is disabled |  
-| VRVDR-50754 | Critical | Cannot perform H2O Update Capsule update due to missing efivar tool |  
-| VRVDR-50705 | Critical | show history & tech support output incorrectly show order of CLI commands executed |  
-| VRVDR-50665 | Critical | Permit local user fallback following TACACS+ failure on read-only filesystem |  
-| VRVDR-50621 | Critical | Duplicate entries added to dp_event_register() |  
-| VRVDR-50614 | Critical | ADI V150 with 100M physical WAN port doesn't show drops with 100M QOS shaper applied |  
-| VRVDR-50569 | Blocker | SIAD BFD inter-op issue with Cisco 7609S |  
-| VRVDR-50560 | Critical | "show vpn ike secrets" allows operator and members outside the secrets group to display secrets |  
-| VRVDR-50306 | Critical | ADI Spirent probe RFC2544 test failure due to small packet loss w/ 100m speed and 50m QoS shaper |  
-| VRVDR-50279 | Major | RX error incrementing on the bond1 interface, but no errors on physical interface |  
-| VRVDR-50237 | Critical | QoS not working when applied in certain order |  
-| VRVDR-49656 | Minor | PTP: IDT servo is built without optimization |  
-| VRVDR-49442 | Major | SNMP related syslog messages at wrong log level |  
-| VRVDR-49326 | Major | At system login user level operator "show queuing" command does not work |  
-| VRVDR-49231 | Critical | PPPoE Client - Not re-establishing dropped connection automatically |  
-| VRVDR-48466 | Critical | DNS nslookup query within a routing instance vrf is broken |  
-| VRVDR-48337 | Critical | NCS fails to load `vyatta-*system-image YANG` |  
+| VRVDR-50939 | Blocker | BFD session retained in admin down state when interface is disabled |
+| VRVDR-50754 | Critical | Cannot perform H2O Update Capsule update due to missing efivar tool |
+| VRVDR-50705 | Critical | show history & tech support output incorrectly show order of CLI commands executed |
+| VRVDR-50665 | Critical | Permit local user fallback following TACACS+ failure on read-only filesystem |
+| VRVDR-50621 | Critical | Duplicate entries added to dp_event_register() |
+| VRVDR-50614 | Critical | ADI V150 with 100M physical WAN port doesn't show drops with 100M QOS shaper applied |
+| VRVDR-50569 | Blocker | SIAD BFD inter-op issue with Cisco 7609S |
+| VRVDR-50560 | Critical | "show vpn ike secrets" allows operator and members outside the secrets group to display secrets |
+| VRVDR-50306 | Critical | ADI Spirent probe RFC2544 test failure due to small packet loss w/ 100m speed and 50m QoS shaper |
+| VRVDR-50279 | Major | RX error incrementing on the bond1 interface, but no errors on physical interface |
+| VRVDR-50237 | Critical | QoS not working when applied in certain order |
+| VRVDR-49656 | Minor | PTP: IDT servo is built without optimization |
+| VRVDR-49442 | Major | SNMP related syslog messages at wrong log level |
+| VRVDR-49326 | Major | At system login user level operator "show queuing" command does not work |
+| VRVDR-49231 | Critical | PPPoE Client - Not re-establishing dropped connection automatically |
+| VRVDR-48466 | Critical | DNS nslookup query within a routing instance vrf is broken |
+| VRVDR-48337 | Critical | NCS fails to load `vyatta-*system-image YANG` |
 | VRVDR-48203 | Minor | Split IDT servo into separate shared libraries |
 {: caption="Issues resolved for 1908h" caption-side="bottom"}
 
@@ -938,9 +938,9 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-51236 | 8.6 | DSA-4689-1 | CVE-2019-6477, CVE-2020-8616, CVE-2020-8617: Debian DSA-4689-1 : bind9 - security update |  
-| VRVDR-51142 | 5.5 | DSA-4685-1 | CVE-2020-3810: Debian DSA-4685-1 : apt - security update |  
-| VRVDR-51054 | 6.7 | DSA-4688-1 | CVE-2020-10722, CVE-2020-10723, CVE-2020- 10724: Debian DSA-4688-1 : dpdk - security update |  
+| VRVDR-51236 | 8.6 | DSA-4689-1 | CVE-2019-6477, CVE-2020-8616, CVE-2020-8617: Debian DSA-4689-1 : bind9 - security update |
+| VRVDR-51142 | 5.5 | DSA-4685-1 | CVE-2020-3810: Debian DSA-4685-1 : apt - security update |
+| VRVDR-51054 | 6.7 | DSA-4688-1 | CVE-2020-10722, CVE-2020-10723, CVE-2020- 10724: Debian DSA-4688-1 : dpdk - security update |
 | VRVDR-50530 | 7.1 | DSA-4647-1 | CVE-2020-0556: Debian DSA-4647-1 : bluez - security update |
 {: caption="Security vulnerabilities resolved for 1908h" caption-side="bottom"}
 
@@ -963,22 +963,22 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-50467 | Critical | Marvell : Sometimes after dataplane crash front panel ports do not come up |  
-| VRVDR-50387 | Major | qemu-wrap.py script confusing libvirt/virsh |  
-| VRVDR-50376 | Major | Increase max number of clients of dp_events |  
-| VRVDR-50293 | Critical | Forwarded cross VRF traffic blackholed when SNAT is applied |  
-| VRVDR-50191 | Critical | Packet capture leaking mbufs under heavy load |  
-| VRVDR-49991 | Blocker | Enable hardware platform reboot on NMI panic |  
-| VRVDR-49951 | Major | SNMP errors during PTP configuration |  
-| VRVDR-49750 | Critical | TACACS+ authz sent for user `*` on Bash path completion |  
-| VRVDR-49739 | Major | SFlow not sending packets out |  
+| VRVDR-50467 | Critical | Marvell : Sometimes after dataplane crash front panel ports do not come up |
+| VRVDR-50387 | Major | qemu-wrap.py script confusing libvirt/virsh |
+| VRVDR-50376 | Major | Increase max number of clients of dp_events |
+| VRVDR-50293 | Critical | Forwarded cross VRF traffic blackholed when SNAT is applied |
+| VRVDR-50191 | Critical | Packet capture leaking mbufs under heavy load |
+| VRVDR-49991 | Blocker | Enable hardware platform reboot on NMI panic |
+| VRVDR-49951 | Major | SNMP errors during PTP configuration |
+| VRVDR-49750 | Critical | TACACS+ authz sent for user `*` on Bash path completion |
+| VRVDR-49739 | Major | SFlow not sending packets out |
 | VRVDR-49797 | Major | vyatta-openvpn: code injection due to scripts in tmplscripts
-| VRVDR-49683 | Critical | 1908d performance issue with QoS seeing significant reduction in performance |  
-| VRVDR-49472 | Major | ENTITY-SENSOR-MIB: Incorrect OID values |  
-| VRVDR-49470 | Critical | ENTITY-MIB: Missing entPhysicalDescr OID |  
-| VRVDR-49316 | Blocker | SNMP entity subagent failed to handle month 12 |  
-| VRVDR-48861 | Critical | Vyatta VNF creating extra RX queues |  
-| VRVDR-47761 | Minor | Spurious log: LLADDR: NEWNEIGH without link layer address? |  
+| VRVDR-49683 | Critical | 1908d performance issue with QoS seeing significant reduction in performance |
+| VRVDR-49472 | Major | ENTITY-SENSOR-MIB: Incorrect OID values |
+| VRVDR-49470 | Critical | ENTITY-MIB: Missing entPhysicalDescr OID |
+| VRVDR-49316 | Blocker | SNMP entity subagent failed to handle month 12 |
+| VRVDR-48861 | Critical | Vyatta VNF creating extra RX queues |
+| VRVDR-47761 | Minor | Spurious log: LLADDR: NEWNEIGH without link layer address? |
 | VRVDR-45649 | Major | Route Leaking into VRF not working as expected - pings not resolving |
 {: caption="Issues resolved for 1908f" caption-side="bottom"}
 
@@ -987,7 +987,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-50166 | 9.8 | DSA-4633-1 | CVE-2019-5436, CVE-2019-5481, CVE-2019-5482: Debian DSA-4633-1 : curl - security update |  
+| VRVDR-50166 | 9.8 | DSA-4633-1 | CVE-2019-5436, CVE-2019-5481, CVE-2019-5482: Debian DSA-4633-1 : curl - security update |
 | VRVDR-50161 | 9.8 | DSA-4632-1 | CVE-2020-8597: Debian DSA-4632-1 : ppp - security update |
 {: caption="Security vulnerabilities resolved for 1908f" caption-side="bottom"}
 
@@ -999,23 +999,23 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-49924 | Blocker | Commit failed in IPsec site-to-site configuration |  
-| VRVDR-49822 | Critical | Only shows peering with 16 nodes in "show ptp clock 0" |  
-| VRVDR-49684 | Blocker | DHCP services within VRF failed to start after enabling secure boot |  
-| VRVDR-49633 | Critical | tcp_auth_collapse NULL pointer dereference causes kernel panic during SYN flood |  
-| VRVDR-49631 | Blocker | PTP error message found on UFI06 |  
-| VRVDR-49584 | Minor | GRE over IPsec in transport mode (IKEv1) - responder intermittently replies "no acceptable traffic selectors found" |  
-| VRVDR-49568 | Critical | Flexware XS and S: kernel panics on start after update to 4.19.93 |  
-| VRVDR-49459 | Major | Ping monitor may send more packets than specified in "packets" |  
-| VRVDR-49439 | Major | Path Monitor does not handle fractional ping loss correctly |  
-| VRVDR-48944 | Critical | SIAD dataplane crash when removing tunnels interface config |  
-| VRVDR-47869 | Minor | L2TP/IPsec with x.509 authentication fails due to incorrect path to certificates |  
-| VRVDR-46719 | Critical | Poor TCP performance in iperf over IPSEC VTI (expect ~600Mbps but measuring ~2Mbps) |  
-| VRVDR-45071 | Critical | vyatta-security-vpn: vpn-config.pl: l2tp remote-access dhcp-interface "lo.tag;/tmp/bad.sh;echo " / code injection |  
-| VRVDR-45069 | Critical] | vyatta-security-vpn: set security vpn rsa-keys local-key file "/tmp/bad.sh;/tmp/bad.sh" / code injection |  
-| VRVDR-45068 | Critical | vyatta-security-vpn: s2s tunnel protocol syntax script / code injection |  
-| VRVDR-45067 | Critical | vyatta-security-vpn: set security vpn ipsec site-to-site peer $CODE / code injection |  
-| VRVDR-45066 | Critical | vyatta-security-vpn: check_file_in_config passed unsanitized user input / code injection |  
+| VRVDR-49924 | Blocker | Commit failed in IPsec site-to-site configuration |
+| VRVDR-49822 | Critical | Only shows peering with 16 nodes in "show ptp clock 0" |
+| VRVDR-49684 | Blocker | DHCP services within VRF failed to start after enabling secure boot |
+| VRVDR-49633 | Critical | tcp_auth_collapse NULL pointer dereference causes kernel panic during SYN flood |
+| VRVDR-49631 | Blocker | PTP error message found on UFI06 |
+| VRVDR-49584 | Minor | GRE over IPsec in transport mode (IKEv1) - responder intermittently replies "no acceptable traffic selectors found" |
+| VRVDR-49568 | Critical | Flexware XS and S: kernel panics on start after update to 4.19.93 |
+| VRVDR-49459 | Major | Ping monitor may send more packets than specified in "packets" |
+| VRVDR-49439 | Major | Path Monitor does not handle fractional ping loss correctly |
+| VRVDR-48944 | Critical | SIAD dataplane crash when removing tunnels interface config |
+| VRVDR-47869 | Minor | L2TP/IPsec with x.509 authentication fails due to incorrect path to certificates |
+| VRVDR-46719 | Critical | Poor TCP performance in iperf over IPSEC VTI (expect ~600Mbps but measuring ~2Mbps) |
+| VRVDR-45071 | Critical | vyatta-security-vpn: vpn-config.pl: l2tp remote-access dhcp-interface "lo.tag;/tmp/bad.sh;echo " / code injection |
+| VRVDR-45069 | Critical] | vyatta-security-vpn: set security vpn rsa-keys local-key file "/tmp/bad.sh;/tmp/bad.sh" / code injection |
+| VRVDR-45068 | Critical | vyatta-security-vpn: s2s tunnel protocol syntax script / code injection |
+| VRVDR-45067 | Critical | vyatta-security-vpn: set security vpn ipsec site-to-site peer $CODE / code injection |
+| VRVDR-45066 | Critical | vyatta-security-vpn: check_file_in_config passed unsanitized user input / code injection |
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
 {: caption="Issues resolved for 1908e" caption-side="bottom"}
 
@@ -1024,42 +1024,42 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-49834 | 7.8 | DSA-4614-1 | CVE-2019-18634: Debian DSA-4614-1 : sudo - security update |  
-| VRVDR-49832 | 9.8 | DSA-4616-1 | CVE-2019-15890, CVE-2020-7039, CVE-2020-1711: Debian DSA-4616-1: qemu – security update |  
-| VRVDR-49728 | N/A | DSA-4609-1 | CVE-2019-15795, CVE-2019-15796: Debian DSA- 4609-1 : python-apt - security update |  
-| VRVDR-49642 | 9.8 | DSA-4602-1 | CVE-2019-17349, CVE-2019-17350, CVE-2019- 18420, CVE-2019-18421, CVE-2019-18422, CVE- 2019-18423, CVE-2019-18424, CVE-2019-18425, CVE-2019-19577, CVE-2019-19578, CVE-2019- 19579, CVE-2019-19580, CVE-2019-19581, CVE- 2019-19582, CVE-2019-19583, CVE-2018-12207, CVE-2018-12126, CVE-2018-12127, CVE-2018- 12130, CVE-2019-11091, CVE-2019-11135, CVE- 2019-17348, CVE-2019-17347, CVE-2019-17346, CVE-2019-17345, CVE-2019-17344, CVE-2019- 17343, CVE-2019-17342, CVE-2019-17341, CVE- 2019-17340: Debian DSA-4602-1 : xen - security update (MDSUM/RIDL) (MFBDS/RIDL/ZombieLoad) (MLPDS/RIDL) (MSBDS/Fallout) |  
+| VRVDR-49834 | 7.8 | DSA-4614-1 | CVE-2019-18634: Debian DSA-4614-1 : sudo - security update |
+| VRVDR-49832 | 9.8 | DSA-4616-1 | CVE-2019-15890, CVE-2020-7039, CVE-2020-1711: Debian DSA-4616-1: qemu – security update |
+| VRVDR-49728 | N/A | DSA-4609-1 | CVE-2019-15795, CVE-2019-15796: Debian DSA- 4609-1 : python-apt - security update |
+| VRVDR-49642 | 9.8 | DSA-4602-1 | CVE-2019-17349, CVE-2019-17350, CVE-2019- 18420, CVE-2019-18421, CVE-2019-18422, CVE- 2019-18423, CVE-2019-18424, CVE-2019-18425, CVE-2019-19577, CVE-2019-19578, CVE-2019- 19579, CVE-2019-19580, CVE-2019-19581, CVE- 2019-19582, CVE-2019-19583, CVE-2018-12207, CVE-2018-12126, CVE-2018-12127, CVE-2018- 12130, CVE-2019-11091, CVE-2019-11135, CVE- 2019-17348, CVE-2019-17347, CVE-2019-17346, CVE-2019-17345, CVE-2019-17344, CVE-2019- 17343, CVE-2019-17342, CVE-2019-17341, CVE- 2019-17340: Debian DSA-4602-1 : xen - security update (MDSUM/RIDL) (MFBDS/RIDL/ZombieLoad) (MLPDS/RIDL) (MSBDS/Fallout) |
 | VRVDR-49132 | 7.8 | DSA-4564-1 | CVE-2018-12207, CVE-2019-0154, CVE-2019-0155, CVE-2019-11135: Debian DSA-4564-1: linux – security update |
 {: caption="Security vulnerabilities resolved for 1908e" caption-side="bottom"}
 
 ## 1908d
 {: #1908d}
 
-### Issues Resolved 
+### Issues Resolved
 {: #1908d-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-49618 | Critical | Servo notifications always using attVrouterPtpServoFailure |  
-| VRVDR-49426 | Major | Mellanox-100G: kernel interface shows up even when dataplane is stopped |  
-| VRVDR-49391 | Major | Disable (by default) logging of the time adjustments by the IDT server |  
-| VRVDR-49246 | Critical | Flexware stops forwarding pkts over hardware switch after flooding unknown unicasts |  
-| VRVDR-49223 | Major | Hardware CPP rate limiter feature accepted packet count not working |  
-| VRVDR-49185 | Blocker | IP Packet Filter not applied at bootup |  
-| VRVDR-49137 | Major | Syslog rate-limit not respected for above 65000 messages per interval |  
-| VRVDR-49020 | Major | RA VPN: Spoke not forwarding with "ESP: Replay check failed for SPI" logs |  
-| VRVDR-48992 | Minor | Syslog generates message "Child xxxxx has terminated, reaped by main-loop" at wrong priority |  
-| VRVDR-48960 | Critical | SIAD - audit logs with no priority default to syslog level NOTICE and are overly chatty |  
-| VRVDR-48892 | Blocker | Ping failure with storm-control & QoS |  
-| VRVDR-48891 | Blocker | Dataplane crashed while changing PTP configuration |  
-| VRVDR-48850 | Major | PTP: Frequently logging Slave Unavailable/Available msg in the console log |  
-| VRVDR-48820 | Critical | PTP: master not tracked correctly across port changes |  
-| VRVDR-48728 | Blocker | Network link down observed with VM built from vyatta-1908b- amd64-vrouter_20191010T1100-amd64-Build3.14.hybrid.iso |  
+| VRVDR-49618 | Critical | Servo notifications always using attVrouterPtpServoFailure |
+| VRVDR-49426 | Major | Mellanox-100G: kernel interface shows up even when dataplane is stopped |
+| VRVDR-49391 | Major | Disable (by default) logging of the time adjustments by the IDT server |
+| VRVDR-49246 | Critical | Flexware stops forwarding pkts over hardware switch after flooding unknown unicasts |
+| VRVDR-49223 | Major | Hardware CPP rate limiter feature accepted packet count not working |
+| VRVDR-49185 | Blocker | IP Packet Filter not applied at bootup |
+| VRVDR-49137 | Major | Syslog rate-limit not respected for above 65000 messages per interval |
+| VRVDR-49020 | Major | RA VPN: Spoke not forwarding with "ESP: Replay check failed for SPI" logs |
+| VRVDR-48992 | Minor | Syslog generates message "Child xxxxx has terminated, reaped by main-loop" at wrong priority |
+| VRVDR-48960 | Critical | SIAD - audit logs with no priority default to syslog level NOTICE and are overly chatty |
+| VRVDR-48892 | Blocker | Ping failure with storm-control & QoS |
+| VRVDR-48891 | Blocker | Dataplane crashed while changing PTP configuration |
+| VRVDR-48850 | Major | PTP: Frequently logging Slave Unavailable/Available msg in the console log |
+| VRVDR-48820 | Critical | PTP: master not tracked correctly across port changes |
+| VRVDR-48728 | Blocker | Network link down observed with VM built from vyatta-1908b- amd64-vrouter_20191010T1100-amd64-Build3.14.hybrid.iso |
 | VRVDR-48720 | Critical | PTP: assert in IDTStackAdaptor_UpdateBestMasterSelection |
-| VRVDR-48660 | Critical | No rotation occuring for /var/log/messages |  
-| VRVDR-48585 | Major | ICMP Unreachable not returned when decrypted IPsec packet is too large to pass tunnel interface MTU |  
-| VRVDR-48461 | Critical | SNMP Not working in 1908a |  
-| VRVDR-47203 | Major | 1903d yang package fatal error |  
-| VRVDR-47002 | Minor | PTP: network information is not cleared from disabled (skipped) ports during reconfiguration |  
+| VRVDR-48660 | Critical | No rotation occuring for /var/log/messages |
+| VRVDR-48585 | Major | ICMP Unreachable not returned when decrypted IPsec packet is too large to pass tunnel interface MTU |
+| VRVDR-48461 | Critical | SNMP Not working in 1908a |
+| VRVDR-47203 | Major | 1903d yang package fatal error |
+| VRVDR-47002 | Minor | PTP: network information is not cleared from disabled (skipped) ports during reconfiguration |
 | VRVDR-44104 | Blocker | Creating a switch interface doesn't work with QinQ |
 {: caption="Issues resolved for 1908d" caption-side="bottom"}
 
@@ -1068,13 +1068,13 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-49486 | 5.3 | DSA-4594-1 | CVE-2019-1551: Debian DSA-4594-1 : openssl1.0 - security update |  
-| VRVDR-49477 | 7.5 | DSA-4591-1 | CVE-2019-19906: Debian DSA-4591-1 : cyrus-sasl2 - security update |  
-| VRVDR-49450 | 9.8 | DSA-4587-1 | CVE-2019-15845, CVE-2019-16201, CVE-2019- 16254, CVE-2019-16255: Debian DSA-4587-1 : ruby2.3 - security update |  
-| VRVDR-49155 | 7.2 | N/A | CVE-2018-5265: Devices allow remote attackers to execute arbitrary code with admin credentials, because /opt/vyatta/share/vyatta- cfg/templates/system/static-host-mapping/host-name/node.def does not sanitize the 'alias' or 'ips' parameter for shell metacharacters. |  
-| VRVDR-48691 | 7.5 | DSA-4544-1 | CVE-2019-16866: Debian DSA-4544-1: unbound - security update |  
-| VRVDR-48133 | 8.8 | DSA-4512-1 | CVE-2019-13164, CVE-2019-14378: Debian DSA- 4512-1: qemu – security update |  
-| VRVDR-48132 | 7.5 | DSA-4511-1 | CVE-2019-9511, CVE-2019-9513: Debian DSA-4511- 1: nghttp2 – security update |  
+| VRVDR-49486 | 5.3 | DSA-4594-1 | CVE-2019-1551: Debian DSA-4594-1 : openssl1.0 - security update |
+| VRVDR-49477 | 7.5 | DSA-4591-1 | CVE-2019-19906: Debian DSA-4591-1 : cyrus-sasl2 - security update |
+| VRVDR-49450 | 9.8 | DSA-4587-1 | CVE-2019-15845, CVE-2019-16201, CVE-2019- 16254, CVE-2019-16255: Debian DSA-4587-1 : ruby2.3 - security update |
+| VRVDR-49155 | 7.2 | N/A | CVE-2018-5265: Devices allow remote attackers to execute arbitrary code with admin credentials, because /opt/vyatta/share/vyatta- cfg/templates/system/static-host-mapping/host-name/node.def does not sanitize the 'alias' or 'ips' parameter for shell metacharacters. |
+| VRVDR-48691 | 7.5 | DSA-4544-1 | CVE-2019-16866: Debian DSA-4544-1: unbound - security update |
+| VRVDR-48133 | 8.8 | DSA-4512-1 | CVE-2019-13164, CVE-2019-14378: Debian DSA- 4512-1: qemu – security update |
+| VRVDR-48132 | 7.5 | DSA-4511-1 | CVE-2019-9511, CVE-2019-9513: Debian DSA-4511- 1: nghttp2 – security update |
 | VRVDR-47885 | 8.1 | DSA-4495-1 | CVE-2018-20836, CVE-2019-1125, CVE-2019-1999, CVE-2019-10207, CVE-2019-10638, CVE-2019- 12817, CVE-2019-12984, CVE-2019-13233, CVE- 2019-13631, CVE-2019-13648, CVE-2019-14283, CVE-2019-14284: Debian DSA-4495-1: linux – security update |
 {: caption="Security vulnerabilities resolved for 1908d" caption-side="bottom"}
 
@@ -1086,16 +1086,16 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-49060 | Major | RA VPN: no ESP traffic from Hub to Spoke |  
-| VRVDR-49035 | Major | RA VPN: "show vpn ipsec sa" inbound/outbound bytes stats are swapped |  
-| VRVDR-48949 | Major | Add output for determining punt-path programming state to tech- support |  
-| VRVDR-48893 | Critical | RA VPN: intermittent ICMP loss through HUB due to misprogrammed punt path |  
-| VRVDR-48889 | Critical | RA VPN: client IPsec SAs are piling up when make-before-break (client) + reauth-time (server) is configured |  
-| VRVDR-48878 | Critical | VPN client log overflow in auth.log |  
-| VRVDR-48837 | Critical | Reduce "sending DPD request" loglevel temporarily to reduce logging load |  
-| VRVDR-48717 | Major | Resources group address-group address-range entries do not work together with address entries |  
-| VRVDR-48672 | Critical | SIAD stops forwarding traffic after 4-5 hours of long duration test |  
-| VRVDR-48057 | Minor | Add additional IPSec debug support to tech-support |  
+| VRVDR-49060 | Major | RA VPN: no ESP traffic from Hub to Spoke |
+| VRVDR-49035 | Major | RA VPN: "show vpn ipsec sa" inbound/outbound bytes stats are swapped |
+| VRVDR-48949 | Major | Add output for determining punt-path programming state to tech- support |
+| VRVDR-48893 | Critical | RA VPN: intermittent ICMP loss through HUB due to misprogrammed punt path |
+| VRVDR-48889 | Critical | RA VPN: client IPsec SAs are piling up when make-before-break (client) + reauth-time (server) is configured |
+| VRVDR-48878 | Critical | VPN client log overflow in auth.log |
+| VRVDR-48837 | Critical | Reduce "sending DPD request" loglevel temporarily to reduce logging load |
+| VRVDR-48717 | Major | Resources group address-group address-range entries do not work together with address entries |
+| VRVDR-48672 | Critical | SIAD stops forwarding traffic after 4-5 hours of long duration test |
+| VRVDR-48057 | Minor | Add additional IPSec debug support to tech-support |
 | VRVDR-47596 | Major | NAT used count is showing count larger than total available |
 {: caption="Issues resolved for 1908c" caption-side="bottom"}
 
@@ -1108,68 +1108,68 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-48774 | Minor | PTP: When changing port states the old and new states are backward
-| VRVDR-48644 | Minor | add logging for PTP slaves similar to PTP master |  
-| VRVDR-48623 | Critical | Assert in IDTStackAdaptor_AddDownlinkTimeStampDifferences |  
-| VRVDR-48600 | Critical | Upgrade to 3.0.8 version of UfiSpace's BSP utils |  
-| VRVDR-48588 | Critical | PTP fails to create ports when config is removed and reapplied |  
-| VRVDR-48567 | Blocker | DPLL3 is not in free-run by default |  
-| VRVDR-48560 | Major | Kernel neighbour updates may cause dataplane neighbour to transiently become invalid |  
-| VRVDR-48559 | Major | Static ARP entry not always noted in dataplane ARP table |  
-| VRVDR-48553 | Blocker | SIAD not updating L3 neighbour entry on MAC change |  
-| VRVDR-48542 | Critical | "ipsec sad" was not containing "virtual-feature-point" |  
-| VRVDR-48527 | Blocker | SIAD: 1G dataplane interfaces fail to start |  
-| VRVDR-48522 | Blocker | MACVLAN interface not receiving packets with programmed MAC address (VRRP with RFC-compatibility) |  
-| VRVDR-48519 | Major | Operator in secrets group cannot view redacted secret in "show config" but can in "show config command" |  
-| VRVDR-48484 | Blocker | QOS policy dropping all traffic by policer intermittently |  
-| VRVDR-48430 | Critical | Issue trap/notification when servo failure is resolved |  
-| VRVDR-48415 | Major | OSPF flap to INIT state when changing (add or delete) network statements in OSPF |  
-| VRVDR-48408 | Major | Upgrade Insyde phy_alloc module to version 6 |  
-| VRVDR-48390 | Minor | Enable some IDT log messages |  
-| VRVDR-48384 | Major | Change CGNAT to stop using the NPF interface structure |  
-| VRVDR-48372 | Major | Source NAT is using PPPoE Server (default GW) IP and not local PPPoE interface IP |  
-| VRVDR-48366 | Major | Some RFC 7951 data test are wrong causing build breakage 1% of the time |  
-| VRVDR-48338 | Critical | IDT servo fails to reliably negotiate an higher packets rates with GM |  
-| VRVDR-48332 | Major | TACACS+ AAA plugin should restart on DBus failures |  
-| VRVDR-48327 | Blocker | HW forwarding failure due to incorrect L2 Rewrite info |  
-| VRVDR-48273 | Major | Show sfp info in `show interface dataplane <intf> physical` on Flexware |  
-| VRVDR-48243 | Blocker | SIAD Boundary Clock not staying locked to GM when using ECMP paths |  
-| VRVDR-48224 | Major | "show cgnat session" with complex filter missing entry |  
-| VRVDR-48222 | Major | Isolate configd and opd from plugin panics |  
-| VRVDR-48201 | Blocker | Mellanox 100G: Needs improvement for performance of 128, 256 Byte pkts; 64Byte pkt has better performance |  
-| VRVDR-48169 | Critical | Mellanox 100G: improve traffic throughput performance |  
-| VRVDR-48167 | Critical | 'show tech-support' hangs 'WARNING: terminal is not fully functional' |  
-| VRVDR-48157 | Critical | Center LED status for S/M/L is not working as expected |  
-| VRVDR-48124 | Critical | Azure: System does not provision ssh key pair |  
-| VRVDR-48113 | Major | OSPF not on vtun interface |  
-| VRVDR-48108 | Minor | Debug level messages for VRRP seen in journal |  
-| VRVDR-48102 | Critical | Fails to operate when the number of interfaces with PTP enabled is scaled up |  
-| VRVDR-48098 | Critical | BroadPTP fails to re-mark SIGNALING messages with appropriate DSCP |  
-| VRVDR-48093 | Blocker | Missing SFP 'Measured values' on FTLF1518P1BTL optics |  
-| VRVDR-48077 | Critical | Update BIOS strings for the Flexware XSmall platform |  
-| VRVDR-48033 | Minor | Keepalived: Packet filter picked up an IPv4 advertisement from the local box - dropping it before processing |  
-| VRVDR-47990 | Critical | Vyatta vRouter for vNAT usecase(s) in Azure external cloud |  
-| VRVDR-47986 | Major | Change CGNAT policy match from a prefix to an address-group |  
-| VRVDR-47975 | Critical | TACACS: wall: /dev/pts/2: No such file or directory observed on system reboot |  
-| VRVDR-47927 | Major | DPDK - enable selected test apps |  
-| VRVDR-47882 | Major | CGNAT logs inconsistent with NAT |  
-| VRVDR-47863 | Critical | VRRPv3 VRF IPv6 IPAO: Reconfig of LL vip results in MASTER/MASTER scenario |  
-| VRVDR-47842 | Minor | mGRE tunnel is not coming up after making address change at the spoke |  
-| VRVDR-47828 | Critical | Crash of keepalived when reloading the daemon (accessing invalid memory) |  
-| VRVDR-47816 | Major | NAT statistics not displaying in 'show tech-support save' output |  
-| VRVDR-47792 | Major | "clear cgnat session" sometimes errors out after scale test |  
-| VRVDR-47747 | Blocker | Dataplane killed by OOM during CGNAT scale test |  
-| VRVDR-47710 | Major | NHRP overloads IPsec daemon communication |  
-| VRVDR-47701 | Major | CGNAT: Calculate and store RTT times in microseconds |  
-| VRVDR-47675 | Major | Sessions are not deleted after deleting CGNAT configurations - stays until original timeout expires in particular scenario |  
-| VRVDR-47611 | Major | CGNAT: RPC keyerror if non-existing interface name is used in get- session-information |  
-| VRVDR-47601 | Major | VRRP retains MASTER when device is disabled due to license invalid/expired |  
-| VRVDR-47472 | Critical | Mellanox-100G: Observing the traffic forwards even after disabling the dataplane interface |  
-| VRVDR-47397 | Blocker | PTP logging "STATE: Overall for path '[service ptp instance]'" every 75 seconds |  
-| VRVDR-47130 | Major | Send gratuitous ARP on MAC address change |  
-| VRVDR-47006 | Major | PTP `show ptp <command>` intermittent fails to return any output |  
-| VRVDR-46868 | Blocker | Log the port block allocation logs, subscriber logs and resource constraint logs to a different log other than syslog |  
-| VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |  
-| VRVDR-45781 | Major | 'reset dns forwarding cache routing-instance red' not finding VRF instance |  
+| VRVDR-48644 | Minor | add logging for PTP slaves similar to PTP master |
+| VRVDR-48623 | Critical | Assert in IDTStackAdaptor_AddDownlinkTimeStampDifferences |
+| VRVDR-48600 | Critical | Upgrade to 3.0.8 version of UfiSpace's BSP utils |
+| VRVDR-48588 | Critical | PTP fails to create ports when config is removed and reapplied |
+| VRVDR-48567 | Blocker | DPLL3 is not in free-run by default |
+| VRVDR-48560 | Major | Kernel neighbour updates may cause dataplane neighbour to transiently become invalid |
+| VRVDR-48559 | Major | Static ARP entry not always noted in dataplane ARP table |
+| VRVDR-48553 | Blocker | SIAD not updating L3 neighbour entry on MAC change |
+| VRVDR-48542 | Critical | "ipsec sad" was not containing "virtual-feature-point" |
+| VRVDR-48527 | Blocker | SIAD: 1G dataplane interfaces fail to start |
+| VRVDR-48522 | Blocker | MACVLAN interface not receiving packets with programmed MAC address (VRRP with RFC-compatibility) |
+| VRVDR-48519 | Major | Operator in secrets group cannot view redacted secret in "show config" but can in "show config command" |
+| VRVDR-48484 | Blocker | QOS policy dropping all traffic by policer intermittently |
+| VRVDR-48430 | Critical | Issue trap/notification when servo failure is resolved |
+| VRVDR-48415 | Major | OSPF flap to INIT state when changing (add or delete) network statements in OSPF |
+| VRVDR-48408 | Major | Upgrade Insyde phy_alloc module to version 6 |
+| VRVDR-48390 | Minor | Enable some IDT log messages |
+| VRVDR-48384 | Major | Change CGNAT to stop using the NPF interface structure |
+| VRVDR-48372 | Major | Source NAT is using PPPoE Server (default GW) IP and not local PPPoE interface IP |
+| VRVDR-48366 | Major | Some RFC 7951 data test are wrong causing build breakage 1% of the time |
+| VRVDR-48338 | Critical | IDT servo fails to reliably negotiate an higher packets rates with GM |
+| VRVDR-48332 | Major | TACACS+ AAA plugin should restart on DBus failures |
+| VRVDR-48327 | Blocker | HW forwarding failure due to incorrect L2 Rewrite info |
+| VRVDR-48273 | Major | Show sfp info in `show interface dataplane <intf> physical` on Flexware |
+| VRVDR-48243 | Blocker | SIAD Boundary Clock not staying locked to GM when using ECMP paths |
+| VRVDR-48224 | Major | "show cgnat session" with complex filter missing entry |
+| VRVDR-48222 | Major | Isolate configd and opd from plugin panics |
+| VRVDR-48201 | Blocker | Mellanox 100G: Needs improvement for performance of 128, 256 Byte pkts; 64Byte pkt has better performance |
+| VRVDR-48169 | Critical | Mellanox 100G: improve traffic throughput performance |
+| VRVDR-48167 | Critical | 'show tech-support' hangs 'WARNING: terminal is not fully functional' |
+| VRVDR-48157 | Critical | Center LED status for S/M/L is not working as expected |
+| VRVDR-48124 | Critical | Azure: System does not provision ssh key pair |
+| VRVDR-48113 | Major | OSPF not on vtun interface |
+| VRVDR-48108 | Minor | Debug level messages for VRRP seen in journal |
+| VRVDR-48102 | Critical | Fails to operate when the number of interfaces with PTP enabled is scaled up |
+| VRVDR-48098 | Critical | BroadPTP fails to re-mark SIGNALING messages with appropriate DSCP |
+| VRVDR-48093 | Blocker | Missing SFP 'Measured values' on FTLF1518P1BTL optics |
+| VRVDR-48077 | Critical | Update BIOS strings for the Flexware XSmall platform |
+| VRVDR-48033 | Minor | Keepalived: Packet filter picked up an IPv4 advertisement from the local box - dropping it before processing |
+| VRVDR-47990 | Critical | Vyatta vRouter for vNAT usecase(s) in Azure external cloud |
+| VRVDR-47986 | Major | Change CGNAT policy match from a prefix to an address-group |
+| VRVDR-47975 | Critical | TACACS: wall: /dev/pts/2: No such file or directory observed on system reboot |
+| VRVDR-47927 | Major | DPDK - enable selected test apps |
+| VRVDR-47882 | Major | CGNAT logs inconsistent with NAT |
+| VRVDR-47863 | Critical | VRRPv3 VRF IPv6 IPAO: Reconfig of LL vip results in MASTER/MASTER scenario |
+| VRVDR-47842 | Minor | mGRE tunnel is not coming up after making address change at the spoke |
+| VRVDR-47828 | Critical | Crash of keepalived when reloading the daemon (accessing invalid memory) |
+| VRVDR-47816 | Major | NAT statistics not displaying in 'show tech-support save' output |
+| VRVDR-47792 | Major | "clear cgnat session" sometimes errors out after scale test |
+| VRVDR-47747 | Blocker | Dataplane killed by OOM during CGNAT scale test |
+| VRVDR-47710 | Major | NHRP overloads IPsec daemon communication |
+| VRVDR-47701 | Major | CGNAT: Calculate and store RTT times in microseconds |
+| VRVDR-47675 | Major | Sessions are not deleted after deleting CGNAT configurations - stays until original timeout expires in particular scenario |
+| VRVDR-47611 | Major | CGNAT: RPC keyerror if non-existing interface name is used in get- session-information |
+| VRVDR-47601 | Major | VRRP retains MASTER when device is disabled due to license invalid/expired |
+| VRVDR-47472 | Critical | Mellanox-100G: Observing the traffic forwards even after disabling the dataplane interface |
+| VRVDR-47397 | Blocker | PTP logging "STATE: Overall for path '[service ptp instance]'" every 75 seconds |
+| VRVDR-47130 | Major | Send gratuitous ARP on MAC address change |
+| VRVDR-47006 | Major | PTP `show ptp <command>` intermittent fails to return any output |
+| VRVDR-46868 | Blocker | Log the port block allocation logs, subscriber logs and resource constraint logs to a different log other than syslog |
+| VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |
+| VRVDR-45781 | Major | 'reset dns forwarding cache routing-instance red' not finding VRF instance |
 | VRVDR-42161 | Minor | tech-support should contain "CLI: coredumpctl info" prefix for COREDUMPS header |
 {: caption="Issues resolved for 1908b" caption-side="bottom"}
 
@@ -1178,11 +1178,11 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-48841 | 9.8 | DSA-4550-1 | CVE-2019-18218: Debian DSA-4550-1 : file - security update |  
-| VRVDR-48746 | 9.8 | DSA-4547-1 | CVE-2018-10103, CVE-2018-10105, CVE-2018- 14461, CVE-2018-14462, CVE-2018-14463, CVE- 2018-14464, CVE-2018-14465, CVE-2018-14466, CVE-2018-14467,CVE-2018-14468, CVE-2018- 14469, CVE-2018-14470, CVE-2018-14879, CVE- 2018-14880, CVE-2018-14881, CVE-2018-14882, CVE-2018-16227, CVE-2018-16228, CVE-2018- 16229, CVE-2018-16230, CVE-2018-16300, CVE- 2018-16451, CVE-2018-16452, CVE-2019-15166: Debian DSA-4547-1: tcpdump – security update |  
-| VRVDR-48652 | N/A | DSA-4543-1 | CVE-2019-14287: Debian DSA-4543-1 : sudo - security update |  
-| VRVDR-48502 | 5.3 | DSA-4539-1 | CVE-2019-1547, CVE-2019-1549, CVE-2019-1563: Debian DSA-4539-1 : openssl - security update |  
-| VRVDR-48446 | 6.7 | DSA-4535-1 | CVE-2019-5094: Debian DSA-4535-1 : e2fsprogs - security update |  
+| VRVDR-48841 | 9.8 | DSA-4550-1 | CVE-2019-18218: Debian DSA-4550-1 : file - security update |
+| VRVDR-48746 | 9.8 | DSA-4547-1 | CVE-2018-10103, CVE-2018-10105, CVE-2018- 14461, CVE-2018-14462, CVE-2018-14463, CVE- 2018-14464, CVE-2018-14465, CVE-2018-14466, CVE-2018-14467,CVE-2018-14468, CVE-2018- 14469, CVE-2018-14470, CVE-2018-14879, CVE- 2018-14880, CVE-2018-14881, CVE-2018-14882, CVE-2018-16227, CVE-2018-16228, CVE-2018- 16229, CVE-2018-16230, CVE-2018-16300, CVE- 2018-16451, CVE-2018-16452, CVE-2019-15166: Debian DSA-4547-1: tcpdump – security update |
+| VRVDR-48652 | N/A | DSA-4543-1 | CVE-2019-14287: Debian DSA-4543-1 : sudo - security update |
+| VRVDR-48502 | 5.3 | DSA-4539-1 | CVE-2019-1547, CVE-2019-1549, CVE-2019-1563: Debian DSA-4539-1 : openssl - security update |
+| VRVDR-48446 | 6.7 | DSA-4535-1 | CVE-2019-5094: Debian DSA-4535-1 : e2fsprogs - security update |
 | VRVDR-48412 | 9.8 | DSA-4531-1 | CVE-2019-14821, CVE-2019-14835, CVE-2019- 15117, CVE-2019-15118, CVE-2019-15902: Debian DSA-4531-1 : linux - security update  |
 | VRVDR-47897 | 8.1 | DSA-4497-1 | CVE-2015-8553, CVE-2018-5995, CVE-2018-20836 , CVE-2018-20856, CVE-2019-1125, CVE-2019-3882, CVE-2019-3900, CVE-2019-10207, CVE-2019- 10638, CVE-2019-10639, CVE-2019-13631, CVE- 2019-13648, CVE-2019-14283, CVE-2019-14284: DSA-4497-1: linux – security update |
 {: caption="Security vulnerabilities resolved for 1908b" caption-side="bottom"}
@@ -1195,32 +1195,32 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-48082 | Blocker | IPSec RA VPN Client PATH MONITOR not functional |  
-| VRVDR-48048 | Critical | SHOW POE command not working for XS/SM Blinkboot |  
-| VRVDR-48041 | Major | ptp: support the maximum number of clock ports in BroadPTP |  
-| VRVDR-48040 | Major | Upgrade journalbeat to latest 6.x |  
-| VRVDR-47974 | Blocker | BFD packets incorrectly scheduled on egress |  
-| VRVDR-47947 | Major | Dataplane wrongly logging failure to delete hash table |  
-| VRVDR-47934 | Major | QoS: `show policy qos <if-name> class` can display no output |  
-| VRVDR-46077 | Major | Build and sign Insyde phy_alloc module |  
-| VRVDR-47924 | Major | BGP 'show' output for default-vrf not captured in 'show tech-support' |  
-| VRVDR-47908 | Blocker | SIAD displays incorrect serial number in 'show version' |  
-| VRVDR-47907 | Blocker | Mellanox-100G: UDP or TCP traffic with 10K flows only reaches 10% line rate |  
-| VRVDR-47893 | Critical | SIAD : up-rev Ufi diags to v3.1.7 |  
+| VRVDR-48082 | Blocker | IPSec RA VPN Client PATH MONITOR not functional |
+| VRVDR-48048 | Critical | SHOW POE command not working for XS/SM Blinkboot |
+| VRVDR-48041 | Major | ptp: support the maximum number of clock ports in BroadPTP |
+| VRVDR-48040 | Major | Upgrade journalbeat to latest 6.x |
+| VRVDR-47974 | Blocker | BFD packets incorrectly scheduled on egress |
+| VRVDR-47947 | Major | Dataplane wrongly logging failure to delete hash table |
+| VRVDR-47934 | Major | QoS: `show policy qos <if-name> class` can display no output |
+| VRVDR-46077 | Major | Build and sign Insyde phy_alloc module |
+| VRVDR-47924 | Major | BGP 'show' output for default-vrf not captured in 'show tech-support' |
+| VRVDR-47908 | Blocker | SIAD displays incorrect serial number in 'show version' |
+| VRVDR-47907 | Blocker | Mellanox-100G: UDP or TCP traffic with 10K flows only reaches 10% line rate |
+| VRVDR-47893 | Critical | SIAD : up-rev Ufi diags to v3.1.7 |
 | VRVDR-47888 | Blocker | IPsec v4 tunnel traffic not working after upgrade to 1908
-| VRVDR-47534 | Blocker | ptp: lower servo requirements for lock |  
-| VRVDR-47871 | Critical | Permission denied error when attempting to clear bridge interface counters |  
-| VRVDR-47870 | Major | Don't disable PTP when port is referenced twice in the configuration and removed |  
-| VRVDR-47851 | Minor | Increase the number of clock ports supported |  
-| VRVDR-47840 | Blocker | dp0xe1 u/D on Medium after upgrade to 1908 |  
-| VRVDR-47824 | Critical | Got bridge sw0 does not exist message with XS running in Blinkboot BIOS mode |  
-| VRVDR-47814 | Critical | system ip gratuitous-arp not setting policy |  
-| VRVDR-47809 | Major | Configd does not expand grouping defined under a nested augment |  
-| VRVDR-47807 | Major | SIAD loses OSPFv3 neighbours periodically for 180s |  
-| VRVDR-47624 | Blocker | PTP fails to start with PTP config present at bootup |  
-| VRVDR-47481 | Critical | PTP with 2 slaves dataplane crash in bcm_ptp_unicast_slave_subscribe |  
-| VRVDR-47391 | Blocker | PTP fails to return to time-locked state after master clock stopped and re-started |  
-| VRVDR-47244 | Critical | dataplane crash on restart - no code changes |  
+| VRVDR-47534 | Blocker | ptp: lower servo requirements for lock |
+| VRVDR-47871 | Critical | Permission denied error when attempting to clear bridge interface counters |
+| VRVDR-47870 | Major | Don't disable PTP when port is referenced twice in the configuration and removed |
+| VRVDR-47851 | Minor | Increase the number of clock ports supported |
+| VRVDR-47840 | Blocker | dp0xe1 u/D on Medium after upgrade to 1908 |
+| VRVDR-47824 | Critical | Got bridge sw0 does not exist message with XS running in Blinkboot BIOS mode |
+| VRVDR-47814 | Critical | system ip gratuitous-arp not setting policy |
+| VRVDR-47809 | Major | Configd does not expand grouping defined under a nested augment |
+| VRVDR-47807 | Major | SIAD loses OSPFv3 neighbours periodically for 180s |
+| VRVDR-47624 | Blocker | PTP fails to start with PTP config present at bootup |
+| VRVDR-47481 | Critical | PTP with 2 slaves dataplane crash in bcm_ptp_unicast_slave_subscribe |
+| VRVDR-47391 | Blocker | PTP fails to return to time-locked state after master clock stopped and re-started |
+| VRVDR-47244 | Critical | dataplane crash on restart - no code changes |
 | VRVDR-41129 | Blocker | Journalbeat can't export logs to destination in routing instance |
 {: caption="Issues resolved for 1908a" caption-side="bottom"}
 
@@ -1229,7 +1229,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-48074 | 9.8 | DSA-4506-1 | CVE-2018-20815, CVE-2019-13164, CVE-2019- 14378: Debian DSA-4506-1 : qemu - security update |  
+| VRVDR-48074 | 9.8 | DSA-4506-1 | CVE-2018-20815, CVE-2019-13164, CVE-2019- 14378: Debian DSA-4506-1 : qemu - security update |
 | VRVDR-47707 | 7.8 | DSA-4484-1 | CVE-2019-13272: Debian DSA-4484-1: linux security update |
 {: caption="Security vulnerabilities resolved for 1908a" caption-side="bottom"}
 
@@ -1507,7 +1507,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801w
 {: #1801w}
 
-### Issues Resolved 
+### Issues Resolved
 {: #1801w-i}
 
 | Issue Number | Priority | Summary |
