@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-13"
+lastupdated: "2023-05-15"
 
 keywords: operating system end of support (eos), add on end of support (eos), vyatta
 
@@ -15,10 +15,10 @@ subcollection: virtual-router-appliance
 # Lifecycle for Vyatta Network Operating System on the {{site.data.keyword.cloud_notm}} Virtual Router Appliance
 {: #product-lifecycle-vyatta}
 
-In the lifecycle of a product, end of support (EOS) is the last date that {{site.data.keyword.cloud}} delivers standard support for a version or release of a product. The {{site.data.keyword.cloud_notm}} end of support date for Ciena Vyatta Network Operating System (NOS) on {{site.data.keyword.cloud_notm}}'s Virtual Router Appliance (VRA) is aligned with Ciena's EOL date and community support dates. It's also the effective date that the version can no longer be ordered on a new VRA, or reloaded on an existing VRA. Ciena's full support ends on the maintenance support date; maintenance support ends on the EOS date. See the following information for Ciena Vyatta NOS EOS dates. 
+In the lifecycle of a product, end of support (EOS) is the last date that {{site.data.keyword.cloud}} delivers standard support for a version or release of a product. The {{site.data.keyword.cloud_notm}} end of support date for Ciena Vyatta Network Operating System (NOS) on {{site.data.keyword.cloud_notm}}'s Virtual Router Appliance (VRA) is aligned with Ciena's EOL date and community support dates. It's also the effective date that the version can no longer be ordered on a new VRA, or reloaded on an existing VRA. Ciena's full support ends on the maintenance support date; maintenance support ends on the EOS date. See the following information for Ciena Vyatta NOS EOS dates.
 {: shortdesc}
 
-| Operating system | Code name | Debian | DPDK | Maintenance Support | End of support | 
+| Operating system | Code name | Debian | DPDK | Maintenance Support | End of support |
 | ----------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 2208 | Luton | 11 | 21.11 | 18 August 2024 | 18 February 2025 |
 | 2204 | Kington |10 | 20.11 | 04 April 2024 | 04 October 2024 |
@@ -33,7 +33,7 @@ In the lifecycle of a product, end of support (EOS) is the last date that {{site
 {: #ciena-support-terms}
 
 Full support
-:    For the first two years after a release, or up to the Debian end of life (EOL) date, whichever comes first, Vyatta will be fully supported. Full support means that patches are made available that include fixes for security vulnerabilities and customer requested issues.  
+:    For the first two years after a release, or up to the Debian end of life (EOL) date, whichever comes first, Vyatta will be fully supported. Full support means that patches are made available that include fixes for security vulnerabilities and customer requested issues.
 
 Maintenance support
 :    After a Vyatta version (released by Ciena) is more than 2 years old, the Vyatta release enters the maintenance support phase. In this phase, patches are restricted to only blocker and critical security vulnerability fixes. This phase is often referred to as end of engineering (EOE). If a bug or non-blocker/critical CVE is found on a version in maintenance support, the path forward is to update to the latest available full support version.
