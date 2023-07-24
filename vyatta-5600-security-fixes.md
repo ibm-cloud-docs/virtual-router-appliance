@@ -31,8 +31,60 @@ This document lists the patches for the currently supported versions of Vyatta N
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 {: tip}
 
-For the latest full release notes, please open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
+For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help){: external}. For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 2204e
+{: #2204e}
+
+### Issues Resolved
+{: #2204e-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-61123 | Critical | VRRPv3 IPv6 RFC: disabling preemption causes failover |
+| VRVDR-60873 | Critical | BGP flaps when add/removing vfp or vip interfaces causing outage |
+| VRVDR-60797 | Blocker | eBGP neighbours are not getting established |
+| VRVDR-60699 | Minor | VIF removal causes VRRP to failover |
+| VRVDR-60644 | Major | Route-map action change doesn't propagate to Quagga level |
+| VRVDR-60580 | Critical | Dataplane fails to restart if random-detect is configured |
+| VRVDR-60386 | Major | Creating new VIF causes a VRRP failover (of interfaces in same sync-group) |
+| VRVDR-60065 | Major | Memory leaks in DPDK and dataplane |
+| VRVDR-60041 | Major | Upgrading from 1912t to 2012n, segfault took place (dp/master-csync) |
+| VRVDR-60008 | Major | PAM account management error: Permission denied |
+| VRVDR-59856 | Major | VRRP Holding msg missing from Minster |
+| VRVDR-59610 | Critical | Dataplane crash in cds_lfht_first on spoke2 |
+| VRVDR-59057 | Critical | Dataplane interface TX and RX queue allocation in 2204c less than expected when compared to 2110f |
+| VRVDR-58646 | Blocker | Increase description field lengths |
+| VRVDR-58593 | Critical | dataplane/bfd: rc/zsock.c:88: zsock_new_checked: Assertion `self->handle' failed |
+{: caption="Issues resolved for 2204ep" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2204e-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-60682 | 9.8 | DLA-3398-1 | CVE-2023-27533, CVE-2023-27535, CVE-2023-27536, CVE-2023-27538: Debian DLA-3398-1 : curl - LTS security update |
+| VRVDR-60648 | 7.5 | DLA-3393-1 | CVE-2021-22569, CVE-2021-22570, CVE-2022-1941:Debian DLA-3393-1 : protobuf - LTS security update |
+| VRVDR-60604 | 7.5 | DLA-3389-1 | CVE-2020-27827, CVE-2021-43612: Debian DLA-3389-1 : lldpd - LTS security update |
+| VRVDR-60559 | 5.9 | DLA-3374-1 | CVE-2023-27371: Debian DLA-3374-1 : libmicrohttpd - LTS security update |
+| VRVDR-60552 | 7.8 | DLA-3377-1 | CVE-2023-26604: Debian DLA-3377-1 : systemd - LTS security update |
+| VRVDR-60496 | 5.5 | DSA-5378-1 | CVE-2022-23824, CVE-2022-42331, CVE-2022-42332, CVE-2022-42333, CVE-2022-42334: Debian DSA-5378-1 : xen - security update |
+| VRVDR-60489 | 8.6 | DLA-3367-1 | Debian DLA-3367-1 : libdatetime-timezone-perl - LTS security update |
+| VRVDR-60488 | 8.6 | DLA-3366-1 | Debian DLA-3366-1 : tzdata - LTS security update |
+| VRVDR-60448 | 9.1 | DLA-3363-1 | CVE-2019-20454, CVE-2022-1586, CVE-2022-1587: Debian DLA-3363-1 : pcre2 - LTS security update |
+| VRVDR-60447 | 8.6 | DLA-3355-1 | Debian DLA-3355-1 : xapian-core - LTS security update |
+| VRVDR-60407 | 8.8 | DLA-3362-1 | CVE-2020-14394, CVE-2020-17380, CVE-2020-29130, CVE-2021-3409, CVE-2021-3592, CVE-2021-3593, CVE-2021-3594, CVE-2021-3595, CVE-2022-0216, CVE-2022-1050: Debian DLA-3362-1 : qemu - LTS security update |
+| VRVDR-60266 | 8.6 | DLA-3337-1 | Debian DLA-3337-1 : mariadb-10.3 - LTS security update |
+| VRVDR-60264 | 5.5 | DLA-3333-1 | CVE-2023-0795, CVE-2023-0796, CVE-2023-0797, CVE-2023-0798, CVE-2023-0799, CVE-2023-0800, CVE-2023-0801, CVE-2023-0802, CVE-2023-0803, CVE-2023-0804Debian DLA-3333-1 : tiff - LTS security update |
+| VRVDR-60263 | 9.1 | DLA-3327-1 | CVE-2020-6829, CVE-2020-12400, CVE-2020-12401, CVE-2020-12403, CVE-2023-0767: Debian DLA-3327-1 : nss - LTS security update |
+| VRVDR-60237 | 6.5 | DLA-3331-1 | Nessus Scan: CVE-2023-23931: Debian DLA-3331-1 : python-cryptography - LTS security update |
+| VRVDR-60234 | 7.4 | DLA-3325-1 | CVE-2022-2097, CVE-2022-4304, CVE-2022-4450, CVE-2023-0215, CVE-2023-0286: Debian DLA-3325-1 : openssl - LTS security update |
+| VRVDR-60210 | 7.5 | DLA-3323-1 | CVE-2022-4904: Debian DLA-3323-1 : c-ares - LTS security update |
+| VRVDR-60202 | 5.9 | DLA-3321-1 | CVE-2023-0361: Debian DLA-3321-1 : gnutls28 - LTS security update |
+| VRVDR-60171 | 6.5 | DLA-3313-1 | CVE-2022-4345, CVE-2023-0411, CVE-2023-0412, CVE-2023-0413, CVE-2023-0415, CVE-2023-0417:Debian DLA-3313-1 : wireshark - LTS security update |
+| VRVDR-60132 | 8.6 | DLA-3312-1 | Debian DLA-3312-1 : shim - LTS security update |
+{: caption="Security vulnerabilities resolved for 2204e" caption-side="bottom"}
 
 ## 2012p
 {: #2012p}

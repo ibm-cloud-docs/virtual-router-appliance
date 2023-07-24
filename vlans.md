@@ -12,7 +12,7 @@ subcollection: virtual-router-appliance
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Routing your VLANs
+# Configuring your VLANs
 {: #routing-your-vlans}
 
 The {{site.data.keyword.vra_full}} is able to route multiple VLANs over the same network interface (for example, `dp0bond0` or `dp0bond1`). This is accomplished by setting the switch port into trunk mode and configuring virtual interfaces (VIFs) on the device.
@@ -43,8 +43,14 @@ On the first (or only) VRA, run the following commands:
 
 ```sh
 set interfaces bonding dp0bond0 vif 1432 address 192.168.132.1/30
+set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 preempt false
+set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 priority 254
+set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 sync-group vgroup1
 set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 virtual-address 10.0.10.1/24
 set interfaces bonding dp0bond0 vif 1693 address 192.168.193.1/30
+set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 preempt false
+set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 priority 254
+set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 sync-group vgroup1
 set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 virtual-address 10.0.20.1/24
 ```
 {: codeblock}
@@ -53,8 +59,14 @@ Then, on the second VRA, run:
 
 ```sh
 set interfaces bonding dp0bond0 vif 1432 address 192.168.132.2/30
+set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 preempt false
+set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 priority 253
+set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 sync-group vgroup1
 set interfaces bonding dp0bond0 vif 1432 vrrp vrrp-group 1 virtual-address 10.0.10.1/24
 set interfaces bonding dp0bond0 vif 1693 address 192.168.193.2/30
+set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 preempt false
+set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 priority 253
+set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 sync-group vgroup1
 set interfaces bonding dp0bond0 vif 1693 vrrp vrrp-group 1 virtual-address 10.0.20.1/24
 ```
 {: codeblock}
