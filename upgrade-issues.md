@@ -222,10 +222,15 @@ GRE tunnel interface on a secondary Vyatta in `u/u` status
 ## Upgrading from 1801 to 2012
 {: #1801-to-2012}
 
-Along with all previously listed issues for 1801 to 1912 and 1912 to 2012, you might encounter this issue when upgrading from 1801 to 2012:
+Along with all previously listed issues for 1801 to 1912 and 1912 to 2012, you might encounter a specific issue when upgrading from 1801 to 2012. After the update, the Vyatta boots, but the configuration is wiped. To deal with this issue, as a precautionary measure (and before updating) set the time zone to 'UTC'. Some time zones from 1801 do not work in 2012, which may be causing the problem. For example, in 1801, time zones are listed as "Americas/Chicago" instead of "America/Chicago" in 2012.
 
-After the update, the Vyatta boots, but the configuration is wiped.
-:    As a precautionary measure, before updating, set the time zone to 'UTC'. Some time zones from 1801 are not working in 2012 and may be causing this. For example, in 1801, time zones are listed as "Americas/Chicago" instead of "America/Chicago" in 2012.
+## Upgrading from 2012 to 2204
+{: #2012-to-2204}
+
+Vyatta gateway appliances using the Intel X540 series NIC have been encountering VRRP issues on version 2204e. Only upgrade to 2204e if the gateway appliance uses the X710 series NIC. For gateways with X540's, you should use the latest 2012 version until these VRRP issues are fixed. 
+
+The `lspci | grep Eth` command shows the type of NIC on your Vyatta.
+{: tip}
 
 ## Vbash issues in older 5.2 Upgrades
 {: #Vbash-Issue-5.2}

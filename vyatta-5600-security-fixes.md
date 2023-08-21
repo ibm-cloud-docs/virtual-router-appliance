@@ -40,6 +40,9 @@ For the latest full release notes, please review the [release notes in Ciena's V
 ### Issues Resolved
 {: #2204e-i}
 
+Vyatta gateway appliances using the Intel X540 series NIC have been encountgering VRRP issues. Only upgrade to 2204e if your gateway appliance uses the X710 series NIC. For gateways with X540's, you should use the latest 2012 version until the VRRP issues are fixed in 2204. The `lspci | grep Eth` command shows the type of NIC on your Vyatta.
+{: important}
+
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-61123 | Critical | VRRPv3 IPv6 RFC: disabling preemption causes failover |
