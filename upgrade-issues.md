@@ -27,7 +27,7 @@ The following commands are available for checking your VRA's general status and 
 * `show interfaces`
 * `show vpn ike sa`
 * `show vpn ipsec sa`
-* `show log messages`
+* `show log all`
 * `journalctl -f -a`
 
 The `journalctl` commands are only available when `user-isolation` is disabled.
@@ -231,6 +231,11 @@ Vyatta gateway appliances using the Intel X540 series NIC have been encountering
 
 The `lspci | grep Eth` command shows the type of NIC on your Vyatta.
 {: tip}
+
+## Upgrading from 2012 to 2204
+{: #2012-to-2204}
+
+As of 2204e, there are no known issues when updating between these two major releases. If and when any common issues become known, they will be published here. Security fixes and fixed issues will continue to be published on the Ciena Vyatta docs website and the [Vyatta software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches) page.
 
 ## Vbash issues in older 5.2 Upgrades
 {: #Vbash-Issue-5.2}
