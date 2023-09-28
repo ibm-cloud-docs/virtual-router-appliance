@@ -20,8 +20,7 @@ In the lifecycle of a product, end of support (EOS) is the last date that {{site
 
 | Operating system | Code name | Debian | DPDK | Maintenance Support | End of support |
 | ----------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
-| 2208 | Luton | 11 | 21.11 | 18 August 2024 | 18 February 2025 |
-| 2204 | Kington |10 | 20.11 | 04 April 2024 | 04 October 2024 |
+| 2204 | Kington |10 | 20.11 | 04 April 2024 | 04 April 2025 |
 | 2110 | Jarrow | 10 | 20.11 | 19 October 2023 | 19 April 2024 |
 | 2012 | Halifax | 10 | 20.11 | 14 Dec 2023 | 14 June 2024 |
 | 1912 | Edinburgh | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
