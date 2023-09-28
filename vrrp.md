@@ -118,7 +118,7 @@ Run the following command on the master and backup routers, so that when failove
 ## High availability firewalls with VRRP
 {: #high-availability-firewalls-with-vrrp}
 
-When two devices are in an HA pair, care must be taken on your master device that you do not block access from the other device. Port 443 must be allowed between both devices for config-sync to work, and VRRP must be allowed to be sent and received, including the multicast range of `224.0.0.0/24`.
+When two devices are in an HA pair, care must be taken on your master device that you do not block access from the other device. TCP port 830 (netconf) must be allowed between both devices for config-sync to work, and VRRP must be allowed to be sent and received, including the multicast range of `224.0.0.0/24`.
 
 ## Associated VLAN subnets with VRRP
 {: #associated-vlan-subnets-with-vrrp}
