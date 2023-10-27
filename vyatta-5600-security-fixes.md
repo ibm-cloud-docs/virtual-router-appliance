@@ -37,7 +37,6 @@ For the latest full release notes, please review the [release notes in Ciena's V
 ## 2204f
 {: #2204f}
 
-
 ### Issues Resolved
 {: #2204f-i}
 
