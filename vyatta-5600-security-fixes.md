@@ -34,6 +34,45 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help){: external}. For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
+## 2204f
+{: #2204f}
+
+
+### Issues Resolved
+{: #2204f-i}
+
+This version contains fixes for previous issues regarding x540 NICs and VRRP.
+{: important}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-61825 | Major | QoS Shaper does not work for Mellanox ConnectX-5 |
+| VRVDR-61678 Major | VRRP state stays as Master-Master with net_ixgbe interface driver |
+| VRVDR-61556 Major | dataplane crash in MLX5 poll mode driver |
+| VRVDR-61510 Major | bonding interface is down after “ICR0: malicious programming detected” message for i40e pmd driver |
+| VRVDR-61276 | Critical | Dataplane/RIBd crash causes VRRP failover |
+| VRVDR-60872 | Major | opd.log file continuously increasing causing disk space consumption and issues |
+| VRVDR-60589 | Major | New VRRPv3 VIF within routing-instance shows FAULT state |
+| VRVDR-60453 | Major | Mellanox ConnectX-5 VF interfaces fail to initialize on 16 CPU systems |
+| VRVDR-46123 | Critical | Copy Command: SCP copy give curl: (67) Authentication failure when no password given |
+{: caption="Issues resolved for 2204f" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2204e-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-62201 | 9.8 | DLA-3575-1 CVE-2021-23336, CVE-2022-0391, CVE-2022-48560, CVE-2022-48565, CVE-2022-48566, CVE-2023-24329, CVE-2023-40217: Debian DLA-3575-1 : python2.7 - LTS security update | 
+| VRVDR-62185 | 9.8 | DLA-3567-1 CVE-2020-22217: Debian DLA-3567-1 : c-ares - LTS security update | 
+| VRVDR-61846 | 9.8 | DLA-3532-1 CVE-2023-38408: Debian DLA-3532-1 : openssh - LTS security update | 
+| VRVDR-62184 | 9.6 | DLA-35750-1 CVE-2023-4863: Debian DLA-3570-1 : libwebp - LTS security update | 
+| VRVDR-62107 | 8.1 | DLA-3559-1 CVE-2019-13115, CVE-2019-17498, CVE-2020-22218: Debian DLA-3559-1 : libssh2 - LTS security update | 
+| VRVDR-60642 | 5.4 | DLA-3388-1 CVE-2021-44225: Debian DLA-3388-1 : keepalived - LTS security update | 
+| VRVDR-61843 | 5.3 | DLA-3530-1 CVE-2023-3446, CVE-2023-3817: Debian DLA-3530-1 : openssl - LTS security update | 
+| VRVDR-61845 | 3.9 | DLA-3531-1 CVE-2023-20867: Debian DLA-3531-1 : open-vm-tools - LTS security update | 
+{: caption="Security vulnerabilities resolved for 2204f" caption-side="bottom"}
+
+
 ## 2204e
 {: #2204e}
 
