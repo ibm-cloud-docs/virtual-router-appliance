@@ -3,6 +3,7 @@ includes:
   - https://github.ibm.com/cloud-docs/fortigate-10g
   - https://github.ibm.com/cloud-docs/cloud-infrastructure
   - https://github.ibm.com/cloud-docs-solutions/solution-tutorials
+  - https://github.ibm.com/cloud-docs/icons
 translation:
   exclude:
     byFilePath:
