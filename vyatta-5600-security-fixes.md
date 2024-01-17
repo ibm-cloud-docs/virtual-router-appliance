@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-01"
+lastupdated: "2024-01-17"
 
 keywords:
 
@@ -23,7 +23,7 @@ As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA
 
 **Latest patch received:** October 31, 2022
 
-**Latest documentation published:** November 16, 2022
+**Latest documentation published:** January 17, 2024
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
