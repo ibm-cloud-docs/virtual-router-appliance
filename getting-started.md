@@ -15,10 +15,10 @@ subcollection: virtual-router-appliance
 # Getting started with IBM Cloud Virtual Router Appliance (VRA)
 {: #getting-started-vra}
 
-On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012 or later as soon as possible by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012 or later as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
 The {{site.data.keyword.vra_full}} (VRA) provides the latest Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or standalone configuration, and lets you route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features.
@@ -88,4 +88,4 @@ Transit VLANs are for network devices like firewalls or load balancers so that t
 
 The VRA can manage only VLANs that are associated with it through the gateway appliance.
 
-For more information, see [Managing VLANs with a gateway appliance](/docs/virtual-router-appliance?topic=gateway-appliance-managing-vlans-and-gateway-appliances).
+For more information, see [Managing VLANs with a gateway appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-managing-vlans-and-gateway-appliances).

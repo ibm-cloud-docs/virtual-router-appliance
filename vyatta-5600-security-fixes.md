@@ -15,10 +15,10 @@ subcollection: virtual-router-appliance
 # Ciena Vyatta 5600 vRouter software patches (current)
 {: #ciena-vyatta-5600-vrouter-software-patches}
 
-On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
 **Latest patch received:** October 31, 2022
@@ -31,7 +31,7 @@ This document lists the patches for the currently supported versions of Vyatta N
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 {: tip}
 
-For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help){: external}. For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
+For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
 ## 2308a
@@ -52,7 +52,6 @@ telnet, ssh and tacacs+ user |
 | VRVDR-61939 | Blocker | Telemetry Service rejects valid paths as invalid |
 | VRVDR-61856 | Major | BGP: graceful shutdown timer not inherited |
 | VRVDR-61372 | Critical | BGP: atomic agg route-map not applied for existing route |
-
 {: caption="Issues resolved for 2308a" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
@@ -63,24 +62,18 @@ telnet, ssh and tacacs+ user |
 | VRVDR-62998 | 7.5 | DSA-5543-1 CVE-2023-34058, CVE-2023-34059: Debian DSA-
 5543-1 : open-vm-tools - security update |
 | VRVDR-62671 | 9.1 | DSA-5533-1 [DSA 5533-1] gst-plugins-bad1.0 security update
-| VRVDR-62316 | 9.8 | DSA-5519-1 CVE-2023-4692, CVE-2023-4693: Debian DSA-5519-1
-: grub2 - security update |
+| VRVDR-62316 | 9.8 | DSA-5519-1 CVE-2023-4692, CVE-2023-4693: Debian DSA-5519-1: grub2 - security update |
 | VRVDR-62307 | 5.3 | DSA-5517-1 CVE-2023-43785 CVE-2023-43786 CVE-2023-43787:
-[DSA 5517-1] libx11 security update |
-| VRVDR-62273 | 6.5 | DSA-5517-1 CVE-2023-4527, CVE-2023-4806, CVE-2023-4911:
+[DSA 5517-1] libx11 security update | | VRVDR-62273 | 6.5 | DSA-5517-1 CVE-2023-4527, CVE-2023-4806, CVE-2023-4911:
 Debian DSA-5514-1 : glibc - security update |
-| VRVDR-62219 | 9.8 | DSA-5505-1 CVE-2023-41910: Debian DSA-5505-1 : lldpd -
-security update |
-|VRVDR-62211 | 7.5 | DSA-5504-1 CVE-2023-3341, CVE-2023-4236: Debian DSA-5504-1
-: bind9 - security update |
+| VRVDR-62219 | 9.8 | DSA-5505-1 CVE-2023-41910: Debian DSA-5505-1 : lldpd - security update |
+|VRVDR-62211 | 7.5 | DSA-5504-1 CVE-2023-3341, CVE-2023-4236: Debian DSA-5504-1: bind9 - security update |
 | VRVDR-62162 | 8.8 | DSA-5497-2 [DSA 5497-2] libwebp security update |
 | VRVDR-62152 | 8.8 | DSA-5497-1 [DSA 5497-1] libwebp security update |
-| VRVDR-61935 | 7.5 | DSA-5475-1 CVE-2022-40982, CVE-2023-20569: Debian DSA-
-5475-1 : linux - security update |
+| VRVDR-61935 | 7.5 | DSA-5475-1 CVE-2022-40982, CVE-2023-20569: Debian DSA-5475-1 : linux - security update |
 | VRVDR-61866 | 7.8 | DSA-5480-1 [DSA-5480-1] : linux - security update |
 | VRVDR-61790 | 7.8 | DSA-5476-1 [DSA 5476-1] gst-plugins-ugly1.0 security update |
 | VRVDR-61727 | 7.1 | DSA-5448-1 [DSA 5448-1] linux security update |
-
 {: caption="Security vulnerabilities resolved for 2308a" caption-side="bottom"}
 
 ## 2204f
@@ -333,7 +326,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-57849 | Major | vyatta-vrrp crashes on boot if vrrp group is disabled |
 | VRVDR-57814 | Major | Crash of IKE control-plane during shutdown or VRRP backuptransition |
 | VRVDR-57797 | Major | IPsec: Crypto device limit causing tunnel setup failure |
-| VRVDR-57778 | Major | Vyatta configuration lost after reboot with ' vrrp vrrp-group <x> hellosource-address <x.x.x.x>' command |
+| VRVDR-57778 | Major | Vyatta configuration lost after reboot with `'vrrp vrrp-group <x> hellosource-address <x.x.x.x>` command |
 | VRVDR-57760 | Minor | SYN-SENT no longer displayed in journal/logs up on upgrade from 1801zf to 1912q |
 | VRVDR-57467 | Critical | Banner with newline prevents loading configuration after upgrade from 1903j to 1908n |
 | VRVDR-57146 | Critical | QinQ: The config prompt does not return after deleting the vif from the dataplane interface. Hence QinQ scripts are failing |

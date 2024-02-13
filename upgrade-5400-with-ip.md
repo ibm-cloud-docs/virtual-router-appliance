@@ -55,4 +55,4 @@ To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 ## Reverting back to Vyatta 5400
 {: #reverting-to-vyatta-5400}
 
-The reload action is not permitted by default. Start an [IBM Support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) to request that the ACS-Security team grant you access to your reloads. To revert back to a Vyatta 5400, run an [OS reload](/docs/virtual-router-appliance?topic=virtual-router-appliance-reloading-the-os) on the system you need to roll back, then apply a backup of the old configurations.
+The reload action is not permitted by default. Start an [IBM Support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) to request that the ACS-Security team grant you access to your reloads. To revert back to a Vyatta 5400, run an [OS reload](/docs/virtual-router-appliance?topic=virtual-router-appliance-reloading-the-os) on the system you need to roll back, then apply a backup of the old configurations.

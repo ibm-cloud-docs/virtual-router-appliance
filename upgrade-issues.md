@@ -33,7 +33,7 @@ The following commands are available for checking your VRA's general status and 
 The `journalctl` commands are only available when `user-isolation` is disabled.
 {: note}
 
-When opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) for an upgrade issue, include the output of at least the first 3 previous commands along with the output of any other relevant commands and errors that show the issue. If your IPsec tunnels are down, then include the first 5 commands. You should also try to reset any down IPsec tunnels by using `reset vpn ipsec-peer <Peer IP> tunnel <tunnel number>`. You can also try restarting the entire IPsec daemon with `restart vpn`. 
+When opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) for an upgrade issue, include the output of at least the first 3 previous commands along with the output of any other relevant commands and errors that show the issue. If your IPsec tunnels are down, then include the first 5 commands. You should also try to reset any down IPsec tunnels by using `reset vpn ipsec-peer <Peer IP> tunnel <tunnel number>`. You can also try restarting the entire IPsec daemon with `restart vpn`. 
 
 To avoid prolonged downtime for stand-alone VRAs, try reverting to the previous working version by using the following instructions after you complete your basic troubleshooting and information gathering.
 
@@ -91,7 +91,7 @@ If your VRA becomes inaccessible after an update, and your password does not wor
 
 First, it is possible that you selected **No** instead of **Yes** when you were prompted to save the configuration during the upgrade process. To fix this issue, log in as the user that you would have previously, then reboot. After that, use one of the two methods outlined in the previous section to revert to a former version. You can then perform the upgrade procedure again, this time making sure to select **Yes** to save the configuration.
 
-The second possibility is that there is an old line in your configuration file that the version you are upgrading to does not support. This is generally a bug and should be reported by creating a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help).
+The second possibility is that there is an old line in your configuration file that the version you are upgrading to does not support. This is generally a bug and should be reported by creating a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help).
 
 You can fix this issue by logging in as user `vyatta` with the password `vyatta` from the IPMI remote console. Finding the latest `config.boot` file in your VRA file system by running the linux/bash `find` command, then run the `merge` command on that file to find what is causing the configuration problem during the upgrade. If the default `vyatta` user and password does not work, use the process described above in "Reverting to a previous version" to select the password recovery option and reset the Vyatta user's password. Once you gain access, find and merge the latest `config.boot` file. If you can't find a `config.boot` file to use, you can manually configure an interface, static route and SSH port to gain network and SSH access to the system. This will allow you to copy and paste in (or `scp`) a backup configuration file to merge. If you can't run normal Vyatta commands, such as `configure`, to enter Configure mode, try running the `bash` command to access a usable shell.
 
@@ -112,7 +112,7 @@ Using Configure mode, run the `merge` or `load` command, specifying one of the l
 
 You can upgrade your other VRAs without having to repeat this process by making the same changes on those devices before you attempt an update. Fixing these issues before running the upgrade allows subsequent updates to work. 
 
-Report all bugs that you find during this process by opening a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) so that the vendor can fix these issues in later releases.
+Report all bugs that you find during this process by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) so that the vendor can fix these issues in later releases.
 {: important}
 
 ## Upgrading from 1801 to 1912
@@ -121,22 +121,22 @@ Report all bugs that you find during this process by opening a [support case](/d
 You might encounter these common issues when upgrading from 1801 to 1912:
 
 Many Bash commands no longer work
-:    By version 1912, a security feature called [user-isolation](https://docs.vyatta.com/en/release-notes/earlier-releases/earlier-releases/vnos-release-notes-1903/new-features#topic-6481){: external} was enabled by default, which creates a shell session where commands for accessing the underlying Debian system are limited. To fix this, commit the line `set system login user-isolation disable` in your configuration and then log in again.
+:    By version 1912, a security feature called `user-isolation` was enabled by default, which creates a shell session where commands for accessing the underlying Debian system are limited. To fix this, commit the line `set system login user-isolation disable` in your configuration and then log in again.
 
 Problems with time zones that contain 3 locations 
 :    Time zones that contain 3 locations, such as America/Kentucky/Monticello, can cause a complete failure of your upgrade, which results in the VRA entering a factory reset condition. To fix this issue, set the time zone to one that has only 2 locations. 
 
-:    This issue, [VRVDR-52825](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches#1912g), was fixed in version 1912g.
+:    This issue, [VRVDR-52825](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches#1912g), was fixed in version 1912g.
 {: note}
 
 Port ranges starting with 0 instead of 1
 :    If you configure a port range to start with 0 instead of 1, it can cause a complete failure of your upgrade, which results in the VRA entering a factory reset condition. To fix this, change your port ranges to start with 1 instead of 0 and perform the upgrade process again. 
 
-:    This issue, [VRVDR-52668](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches#1912g), was fixed in version 1912g.
+:    This issue, [VRVDR-52668](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches#1912g), was fixed in version 1912g.
 {: note}
 
 Failures with config-sync 
-:    Per the new features of VRA [version 1908](https://docs.vyatta.com/en/release-notes/earlier-releases/earlier-releases/vnos-release-notes-1908/new-features--general-purpose#topic-9767), by version 1912, `config-sync` was rewritten to use `netconf`. Without new configurations, you will see the following errors when you attempt to commit:
+:    Per the new features of VRA version 1908, by version 1912, `config-sync` was rewritten to use `netconf`. Without new configurations, you will see the following errors when you attempt to commit:
 
     ```sh
     syncing configuration to remote-router 10.127.225.204 ..
@@ -168,7 +168,7 @@ AES-NI must be enabled before updating to 2012
 :    By default, some old BIOS versions from 2014 disable AES-NI. IPsec issues, as well as VRRP and config-sync issues, can be the result of AES-NI being disabled. To fix this, run a firmware update using a cloud portal for the VRA's system board BIOS before upgrading to 2012.
 
 IPsec tunnels either do not initiate after a reboot or failover
-:    The Vyatta 5400's `run-transition-scripts` command was deprecated as noted in 2012's [release notes](https://docs.vyatta.com/en/release-notes/earlier-releases/earlier-releases/vnos-release-notes-2012/features#topic-8059){: external}. Instead, use the `notify ipsec configuration` line in the VRA configuration file that replaced that command for the Vyatta 5600.
+:    The Vyatta 5400's `run-transition-scripts` command was deprecated as noted in 2012's release notes. Instead, use the `notify ipsec configuration` line in the VRA configuration file that replaced that command for the Vyatta 5600.
 
 :    This issue can also be caused by AES-NI not being enabled, per the previous issue. 
 {: tip}
@@ -216,7 +216,7 @@ Out of memory (OOM) due to SNMP memory leak
 GRE tunnel interface on a secondary Vyatta in `u/u` status
 :    As of version 2012, the GRE tunnel status will perpetually be up for both `State` and `Link` statuses on a secondary Vyatta. If the local IP of a GRE tunnel is on an active interface, it will allow the transmission (`TX`) and reception (`RX`) of packets on that tunnel (`tun`) interface. If the `local-ip` of a GRE tunnel is on an inactive interface, such as the VRRP interface of the secondary Vyatta, then the Vyatta will not allow the transmission and reception of packets on that tunnel interface (and will keep that interface up).
 
-:    Before updating to 2012, if you have an active/passive BGP over a High Availability GRE setup, ensure that you confirm your GRE interfaces have `local-ip` set to a VRRP virtual address instead of the main address configured on the `dp0bond0` or `dp0bond1` interfaces. You should also validate that your routing does not rely on the tunnel (`tun`) interface changing status to `A/D` or `u/u` on failover, as that will no longer occur. In those instances, IBM may recommend setting up a path monitoring policy for the remote GRE endpoint. This utilizes a `ping` health check to validate the path over the tunnel before adding a route to that tunnel's routing table. Open a [support case](/docs/virtual-router-appliance?topic=gateway-appliance-getting-help) if you have questions about your configuration or if you want more information on path monitoring policies.
+:    Before updating to 2012, if you have an active/passive BGP over a High Availability GRE setup, ensure that you confirm your GRE interfaces have `local-ip` set to a VRRP virtual address instead of the main address configured on the `dp0bond0` or `dp0bond1` interfaces. You should also validate that your routing does not rely on the tunnel (`tun`) interface changing status to `A/D` or `u/u` on failover, as that will no longer occur. In those instances, IBM may recommend setting up a path monitoring policy for the remote GRE endpoint. This utilizes a `ping` health check to validate the path over the tunnel before adding a route to that tunnel's routing table. Open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) if you have questions about your configuration or if you want more information on path monitoring policies.
     {: tip}
 
 ## Upgrading from 1801 to 2012
@@ -224,8 +224,8 @@ GRE tunnel interface on a secondary Vyatta in `u/u` status
 
 Along with all previously listed issues for 1801 to 1912 and 1912 to 2012, you might encounter a specific issue when upgrading from 1801 to 2012. After the update, the Vyatta boots, but the configuration is wiped. To deal with this issue, as a precautionary measure (and before updating) set the time zone to 'UTC'. Some time zones from 1801 do not work in 2012, which may be causing the problem. For example, in 1801, time zones are listed as "Americas/Chicago" instead of "America/Chicago" in 2012.
 
-## Upgrading from 2012 to 2204
-{: #2012-to-2204}
+## 2204 issues with Intel X540
+{: #intelX540}
 
 Vyatta gateway appliances using the Intel X540 series NIC have been encountering VRRP issues on version 2204e. Only upgrade to 2204e if the gateway appliance uses the X710 series NIC. For gateways with X540's, you should use the latest 2012 version until these VRRP issues are fixed. 
 

@@ -104,7 +104,7 @@ In the ruleset, `ALLOW_LEGACY`, there are two rules defined. The first rule drop
 ## Allowing data center access
 {: #allowing-data-center-access}
 
-IBM© offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the data centers in [this topic](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges).
+IBM© offers several IP subnets to provide services and support to systems running within the data center. For example, DNS resolver services are running on `10.0.80.11` and `10.0.80.12`. Other subnets are used during provisioning and support. You can find the IP ranges used in the data centers in [this topic](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges).
 
 You can allow data center access by placing the proper `SERVICE-ALLOW` rules at the beginning of the firewall rule sets with an action of `accept`. Where the rule set must be applied depends on the routing and firewall design being implemented.
 
