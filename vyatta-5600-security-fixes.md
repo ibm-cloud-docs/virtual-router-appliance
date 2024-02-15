@@ -103,14 +103,14 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-62201 | 9.8 | DLA-3575-1 CVE-2021-23336, CVE-2022-0391, CVE-2022-48560, CVE-2022-48565, CVE-2022-48566, CVE-2023-24329, CVE-2023-40217: Debian DLA-3575-1 : python2.7 - LTS security update | 
-| VRVDR-62185 | 9.8 | DLA-3567-1 CVE-2020-22217: Debian DLA-3567-1 : c-ares - LTS security update | 
-| VRVDR-61846 | 9.8 | DLA-3532-1 CVE-2023-38408: Debian DLA-3532-1 : openssh - LTS security update | 
-| VRVDR-62184 | 9.6 | DLA-35750-1 CVE-2023-4863: Debian DLA-3570-1 : libwebp - LTS security update | 
-| VRVDR-62107 | 8.1 | DLA-3559-1 CVE-2019-13115, CVE-2019-17498, CVE-2020-22218: Debian DLA-3559-1 : libssh2 - LTS security update | 
-| VRVDR-60642 | 5.4 | DLA-3388-1 CVE-2021-44225: Debian DLA-3388-1 : keepalived - LTS security update | 
-| VRVDR-61843 | 5.3 | DLA-3530-1 CVE-2023-3446, CVE-2023-3817: Debian DLA-3530-1 : openssl - LTS security update | 
-| VRVDR-61845 | 3.9 | DLA-3531-1 CVE-2023-20867: Debian DLA-3531-1 : open-vm-tools - LTS security update | 
+| VRVDR-62201 | 9.8 | DLA-3575-1 CVE-2021-23336, CVE-2022-0391, CVE-2022-48560, CVE-2022-48565, CVE-2022-48566, CVE-2023-24329, CVE-2023-40217: Debian DLA-3575-1 : python2.7 - LTS security update |
+| VRVDR-62185 | 9.8 | DLA-3567-1 CVE-2020-22217: Debian DLA-3567-1 : c-ares - LTS security update |
+| VRVDR-61846 | 9.8 | DLA-3532-1 CVE-2023-38408: Debian DLA-3532-1 : openssh - LTS security update |
+| VRVDR-62184 | 9.6 | DLA-35750-1 CVE-2023-4863: Debian DLA-3570-1 : libwebp - LTS security update |
+| VRVDR-62107 | 8.1 | DLA-3559-1 CVE-2019-13115, CVE-2019-17498, CVE-2020-22218: Debian DLA-3559-1 : libssh2 - LTS security update |
+| VRVDR-60642 | 5.4 | DLA-3388-1 CVE-2021-44225: Debian DLA-3388-1 : keepalived - LTS security update |
+| VRVDR-61843 | 5.3 | DLA-3530-1 CVE-2023-3446, CVE-2023-3817: Debian DLA-3530-1 : openssl - LTS security update |
+| VRVDR-61845 | 3.9 | DLA-3531-1 CVE-2023-20867: Debian DLA-3531-1 : open-vm-tools - LTS security update |
 {: caption="Security vulnerabilities resolved for 2204f" caption-side="bottom"}
 
 
@@ -143,7 +143,7 @@ Vyatta gateway appliances using the Intel X540 series NIC have been encountgerin
 {: caption="Issues resolved for 2204ep" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
-{: #2204e-sv}
+{: #2204e-sv1}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
