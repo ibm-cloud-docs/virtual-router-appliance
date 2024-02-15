@@ -6,7 +6,7 @@ toc:
     audience: service
     href: /docs/virtual-router-appliance
     console-page: https://cloud.ibm.com/catalog/infrastructure/gateway-appliance
-    product-page: https://www.ibm.com/cloud/network-appliances
+    product-page: https://www.ibm.com/products/network-appliances
     path: virtual-router-appliance
     label: Virtual Router Appliance
 
@@ -19,7 +19,7 @@ toc:
        - vyatta-patch-notes.md
        - link:
           label: What is network security?
-          href: https://www.ibm.com/cloud/learn/networking-a-complete-guide
+          href: https://www.ibm.com/topics/networking
        - topicgroup:
           label: Upgrading
           topics:
