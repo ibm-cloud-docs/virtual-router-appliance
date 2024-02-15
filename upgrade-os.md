@@ -25,15 +25,15 @@ To begin the upgrade process, open an {{site.data.keyword.IBM_notm}} Support cas
 The upgrade process illustrated in this example is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, it is recommended that you upgrade the `BACKUP` machine first, and verify that it is working properly. Then access the `MASTER` machine and fail it over using the `reset vrrp` command. Finally, upgrade the original `MASTER` after the `BACKUP` has taken control.
 {: important}
 
-To upgrade the VRA, perform the following procedure.
+To upgrade the VRA, follow these steps:
 
 1. Run the command `add system image <Local ISO File>`.
 2. Press **Enter** to accept the default name of the ISO image, or enter your own.
-3. Select **Yes** to save the current configuration directory and configuration file. 
+3. Select **Yes** to save the current configuration directory and configuration file.
 
     Choosing **No** will erase your configuration.
     {: important}
-    
+
 5. Choose whether to save the SSH host keys from your current configuration.
 6. Press **Enter** to accept the default system console, or enter your own.
 7. Press **Enter** to accept the default console speed, or enter your own.
