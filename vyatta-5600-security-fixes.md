@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2024-01-17"
+lastupdated: "2024-03-07"
 
 keywords:
 
@@ -21,9 +21,9 @@ On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance wil
 As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** October 31, 2022
+**Latest patch received:** March 1, 2024
 
-**Latest documentation published:** January 17, 2024
+**Latest documentation published:** March 7, 2024
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -33,6 +33,83 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 2204g
+{: #2204g}
+
+### Issues Resolved
+{: #2204g-i}
+
+This version contains mitigation for the Terrapin SSH attack. A properly patched client and server will not have this vulnerability, but the client must support a strict key exchange for this to be fully mitigated.
+{: important}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-63709 | Major | Upgrade from 2012g to 2204f cause error "querying policy failed: Invalid
+argument (22)"| 
+| VRVDR-63659 | Major | Mellanox MT28800 ConnectX-5 SR-IOV : interface is down with configured
+jumbo MTU| 
+| VRVDR-62364 | Critical |  Mellanox MT28800 ConnectX-5 SR-IOV : interface is down after configuring
+jumbo MTU| 
+| VRVDR-62355 | Major | Mellanox MT28800 ConnectX-5 : receiving jumbo frame on non-jumbo
+configured interface causes dataplane crash| 
+| VRVDR-61066 | Major | Community list configuration accepts alpha numeric community values| 
+| VRVDR-60048 | Critical | Flapping BGP Default route during IPv6 Failure| 
+
+
+{: caption="Issues resolved for 2204g" caption-side="bottom"}
+
+### Security Vulnerabilities Resolved
+{: #2204g-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-63878 | 8.8 | DLA-3732-1 | CVE-2023-7090, CVE-2023-28486, CVE-2023-28487:Debian dla-3732 : sudo - security update |
+| VRVDR-63866 | 7.5 | DLA-3726-1 | CVE-2023-3341: Debian dla-3726 : bind9 - security update |
+| VRVDR-63808 | 4.9 | DLA-3722-1 | CVE-2023-22084: Debian dla-3722 : libmariadb-dev -security update |
+| VRVDR-63807 | 6.1 | DLA-3715-1 | CVE-2024-22195: Debian dla-3715 : python-jinja2 -security update | 
+| VRVDR-63718 | 9.8 | DLA-3711-1 | Debian dla-3711 : linux-config-5.10 - security update| 
+| VRVDR-63601 | 6.5 | DLA-3692-1 | CVE-2023-28322, CVE-2023-46218: Debian DLA-3692-1 : curl - LTS security update | 
+| VRVDR-63600 | 7.1 | DLA-3689-1 | CVE-2020-0556, CVE-2023-45866: Debian DLA-3689-1 : bluez - LTS security update| 
+| VRVDR-63432 | 6.7 | DLA-3682-1 | CVE-2021-39537, CVE-2023-29491: Debian DLA-3682-1 : ncurses - LTS security update| 
+| VRVDR-63358 | 7.5 | DLA-3660-1 | CVE-2023-5981: Debian DLA-3660-1 : gnutls28 - LTSsecurity update| 
+| VRVDR-63175 | 7.1 | DLA-3649-1 | CVE-2023-43803: Debian DLA-3649-1 : python-urllib3- LTS security update| 
+| VRVDR-63133 | 7.5 | DLA-3646-1 | CVE-2023-34058, CVE-2023-34059: Debian DLA-3646-1 : open-vm-tools - LTS security update| 
+| VRVDR-63021 | 7.2 | DLA-3639-1 | Debian DLA-3639-1 : distro-info-data - LTS databaseupdate| 
+| VRVDR-62708 | 7.5 | DLA-3634-1 | CVE-2020-25648, CVE-2023-4421: Debian DLA-3634-1 : nss - LTS security update| 
+| VRVDR-62675 | 7.2 | DLA-3629-1 | CVE-2019-10222, CVE-2020-1700, CVE-2020-1760,CVE-2020-10753, CVE-2020-12059, CVE-2020-25678,CVE-2020-27781, CVE-2021-3524,CVE-2021-3531,CVE-2021-3979, CVE-2021-20288, CVE-2023-43040:Debian DLA-3629-1 : ceph - LTS security update| 
+| VRVDR-62674 | 6.5 | DLA-3628-1 | CVE-2023-34969: Debian DLA-3628-1 : dbus - LTS security update| 
+| VRVDR-62511 | 6.5 | DLA-3626-1 CVE-2023-36054: Debian DLA-3626-1 : krb5 - LTS security update| 
+| VRVDR-62466 | 7.5 | DLA-3621-1 | CVE-2020-11080, CVE-2023-44487: Debian DLA-3621-1 : nghttp2 - LTS security update| 
+| VRVDR-62378 | 9.8 | DLA-3614-1 | CVE-2022-48560, CVE-2022-48564, CVE-2022-48565,CVE-2022-48566, CVE-2023-40217: Debian DLA-3614-1 : python3.7 - LTS security update| 
+| VRVDR-62377 | 5.9 | DLA-3613-1 | CVE-2023-28321, CVE-2023-38546: Debian DLA 3613-1 : curl - LTS security update| 
+| VRVDR-62332 | 9.8 | DLA-3610-1 | CVE-2018-20060, CVE-2019-9740, CVE-2019-11236,CVE-2019-11324, CVE-2020-26116, CVE-2020-26137,CVE-2023-43804: Debian DLA-3610-1 : python-urllib3 - LTS security update| 
+| VRVDR-62321 | 8.1 | DLA-3604-1 | CVE-2020-24165, CVE-2023-0330, CVE-2023-3180:Debian DLA-3604-1 : qemu - LTS security update| 
+| VRVDR-62320 | 5.3 | DLA-3602-1 | CVE-2023-43785 CVE-2023-43786 CVE-2023-43787:Debian DLA-3602-1 : libx11 - LTS security update| 
+| VRVDR-62319 | 9.8 | DLA-3605-1 | CVE-2023-4692, CVE-2023-4693: Debian DLA-3605-1: grub2 - LTS security update| 
+| VRVDR-62290 | 7.5 | DLA-3597-1 | CVE-2023-20900: Debian DLA-3597-1 : open-vm tools - LTS security update| 
+| VRVDR-62282 | 7.8 | DLA-3588-1 | CVE-2023-4752, CVE-2023-4781: Debian DLA-3588-1: vim - LTS security update| 
+| VRVDR-62281 | 6.5 | DLA-3586-1 | CVE-2020-19189: Debian DLA-3586-1 : ncurses - LTS security update| 
+| VRVDR-58905 | 7.5 | CVE-2022 40617 | strongSwan: CVE-2022-40617 / Untrusted URIs for Revocation Checking might lead to DoS| 
+
+{: caption="Security vulnerabilities resolved for 2204g" caption-side="bottom"}
+
+### New Features
+
+VRVDR-62366 | Major | VRRP: Adding or Removing VRRP causes ALL virtual routers to change the
+state with "preempt true" |
+
+VRVDR-60048 | Flapping BGP Default route during IPv6 failure |
+
+Avoids resolving the BGP nexthop using the default route or through a unicast BGP route, as this can
+lead to constant BGP route installation churn in the rib, due to alternative BGP bestpath selection.
+
+VRVDR-62366 | VRRP: Adding or Removing VRRP causes ALL virtual routers to change the state with
+"preempt true" |
+
+VRRP now preserves the state of VRRP groups across configuration changes regardless of preempt
+setting. Previously, this preservation was only applied to VRRP groups configured with preempt set to
+false.
 
 ## 2308a
 {: #2308a}
@@ -103,14 +180,14 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-62201 | 9.8 | DLA-3575-1 CVE-2021-23336, CVE-2022-0391, CVE-2022-48560, CVE-2022-48565, CVE-2022-48566, CVE-2023-24329, CVE-2023-40217: Debian DLA-3575-1 : python2.7 - LTS security update |
-| VRVDR-62185 | 9.8 | DLA-3567-1 CVE-2020-22217: Debian DLA-3567-1 : c-ares - LTS security update |
-| VRVDR-61846 | 9.8 | DLA-3532-1 CVE-2023-38408: Debian DLA-3532-1 : openssh - LTS security update |
-| VRVDR-62184 | 9.6 | DLA-35750-1 CVE-2023-4863: Debian DLA-3570-1 : libwebp - LTS security update |
-| VRVDR-62107 | 8.1 | DLA-3559-1 CVE-2019-13115, CVE-2019-17498, CVE-2020-22218: Debian DLA-3559-1 : libssh2 - LTS security update |
-| VRVDR-60642 | 5.4 | DLA-3388-1 CVE-2021-44225: Debian DLA-3388-1 : keepalived - LTS security update |
-| VRVDR-61843 | 5.3 | DLA-3530-1 CVE-2023-3446, CVE-2023-3817: Debian DLA-3530-1 : openssl - LTS security update |
-| VRVDR-61845 | 3.9 | DLA-3531-1 CVE-2023-20867: Debian DLA-3531-1 : open-vm-tools - LTS security update |
+| VRVDR-62201 | 9.8 | DLA-3575-1 CVE-2021-23336, CVE-2022-0391, CVE-2022-48560, CVE-2022-48565, CVE-2022-48566, CVE-2023-24329, CVE-2023-40217: Debian DLA-3575-1 : python2.7 - LTS security update | 
+| VRVDR-62185 | 9.8 | DLA-3567-1 CVE-2020-22217: Debian DLA-3567-1 : c-ares - LTS security update | 
+| VRVDR-61846 | 9.8 | DLA-3532-1 CVE-2023-38408: Debian DLA-3532-1 : openssh - LTS security update | 
+| VRVDR-62184 | 9.6 | DLA-35750-1 CVE-2023-4863: Debian DLA-3570-1 : libwebp - LTS security update | 
+| VRVDR-62107 | 8.1 | DLA-3559-1 CVE-2019-13115, CVE-2019-17498, CVE-2020-22218: Debian DLA-3559-1 : libssh2 - LTS security update | 
+| VRVDR-60642 | 5.4 | DLA-3388-1 CVE-2021-44225: Debian DLA-3388-1 : keepalived - LTS security update | 
+| VRVDR-61843 | 5.3 | DLA-3530-1 CVE-2023-3446, CVE-2023-3817: Debian DLA-3530-1 : openssl - LTS security update | 
+| VRVDR-61845 | 3.9 | DLA-3531-1 CVE-2023-20867: Debian DLA-3531-1 : open-vm-tools - LTS security update | 
 {: caption="Security vulnerabilities resolved for 2204f" caption-side="bottom"}
 
 
@@ -143,7 +220,7 @@ Vyatta gateway appliances using the Intel X540 series NIC have been encountgerin
 {: caption="Issues resolved for 2204ep" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
-{: #2204e-sv1}
+{: #2204e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
