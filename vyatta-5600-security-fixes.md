@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2024-03-07"
+  years: 2017, 2024
+lastupdated: "2024-04-04"
 
 keywords:
 
@@ -21,7 +21,7 @@ On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance wil
 As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** March 1, 2024
+**Latest patch received:** April 4, 2024
 
 **Latest documentation published:** March 7, 2024
 
@@ -34,10 +34,50 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
+## 2308c
+{: #2308c}
+
+### Issues resolved
+{: #2308c-i}
+
+This version contains mitigation for the Terrapin SSH attack. A properly patched client and server will not have this vulnerability, but the client must support a strict key exchange for this to be fully mitigated.
+{: important}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-64312 | Major | Unable to add multiple path monitor/policy pairs under a single VRRP group |
+| VRVDR-64042 | Critical | LACP Bonding, comprised of Intel X540/X520, transmits untagged ARP packets on vlan (802.1q) interfaces |
+| VRVDR-63951 | Critical | LACP Bonding, comprised of Intel X710, transmits untagged ARP packets on vlan (802.1q) interfaces |
+| VRVDR-63861 | Critical |SSH fails to start after upgrade to 2308a |
+
+{: caption="Issues resolved for 2308c" caption-side="bottom"}
+
+### Security vulnerabilities resolved
+{: #2308c-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-64313 | 7.3 | DSA-5638-1 | CVE-2024-24806: Debian dsa-5638 : libuv1 - security update |
+| VRVDR-63936 | 7.5 | DSA-5621-1 | CVE-2023-4408, CVE-2023-5517, CVE-2023-5679, CVE-2023-6516, CVE-2023-50387, CVE-2023-50868:  Debian dsa-5621 : bind9 - security update |
+
+{: caption="Security vulnerabilities resolved for 2308c" caption-side="bottom"}
+
+### New features
+{: #new-features-vra}
+
+The 2308 branch is based on Debian 11. All the previous Vyatta releases are bsaed on Debian 10, so many of the underlying binaries and libraries on the OS have been upgraded to various different versions, from SSH to the IPsec daemon amongst others. 
+
+### Known issues
+{: #known-issues-vra}
+
+Removing a VIF that is participating in VRRP on the master device can prompt a failover. This isn't strictly a bug, but rather in how the keepalived process is managing the removal of the interface. The failover occurs because when the interface is removed from the VRRP configuration, the keepalived process sends out a final VRRP broadcast message from the VIF that you are removing with a priority of `0`. This is a special priority to indicate that the device is no longer participating in VRRP on this broadcast domain. The backup device receives this `0` priority packet and interprets this as the master is shutting down. After a few milliseconds, the backup assumes control of the pair and becomes master itself. (Simply adding or removing IPs from the interface does not appear to cause this problem, only deleting the interface entirely.)
+
+Workaround: If you are removing a VIF entirely from a device, remove the VIF from the backup first. This action does not prompt a failover. IBM is discussing this behavior with the vendor to see if this behavior can be altered since previously removing a VIF didn't cause this unexpected behavior.
+
 ## 2204g
 {: #2204g}
 
-### Issues Resolved
+### Issues resolved
 {: #2204g-i}
 
 This version contains mitigation for the Terrapin SSH attack. A properly patched client and server will not have this vulnerability, but the client must support a strict key exchange for this to be fully mitigated.
@@ -55,11 +95,9 @@ jumbo MTU|
 configured interface causes dataplane crash| 
 | VRVDR-61066 | Major | Community list configuration accepts alpha numeric community values| 
 | VRVDR-60048 | Critical | Flapping BGP Default route during IPv6 Failure| 
-
-
 {: caption="Issues resolved for 2204g" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2204g-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -91,10 +129,10 @@ configured interface causes dataplane crash|
 | VRVDR-62282 | 7.8 | DLA-3588-1 | CVE-2023-4752, CVE-2023-4781: Debian DLA-3588-1: vim - LTS security update| 
 | VRVDR-62281 | 6.5 | DLA-3586-1 | CVE-2020-19189: Debian DLA-3586-1 : ncurses - LTS security update| 
 | VRVDR-58905 | 7.5 | CVE-2022 40617 | strongSwan: CVE-2022-40617 / Untrusted URIs for Revocation Checking might lead to DoS| 
-
 {: caption="Security vulnerabilities resolved for 2204g" caption-side="bottom"}
 
-### New Features
+### New features
+{: #new-features-vra1}
 
 VRVDR-62366 | Major | VRRP: Adding or Removing VRRP causes ALL virtual routers to change the
 state with "preempt true" |
@@ -107,14 +145,12 @@ lead to constant BGP route installation churn in the rib, due to alternative BGP
 VRVDR-62366 | VRRP: Adding or Removing VRRP causes ALL virtual routers to change the state with
 "preempt true" |
 
-VRRP now preserves the state of VRRP groups across configuration changes regardless of preempt
-setting. Previously, this preservation was only applied to VRRP groups configured with preempt set to
-false.
+VRRP now preserves the state of VRRP groups across configuration changes regardless of preempt setting. Previously, this preservation was only applied to VRRP groups configured with preempt set to false.
 
 ## 2308a
 {: #2308a}
 
-### Issues Resolved
+### Issues resolved
 {: #2308a-i}
 
 This version contains fixes for previous issues regarding x540 NICs and VRRP.
@@ -131,7 +167,7 @@ telnet, ssh and tacacs+ user |
 | VRVDR-61372 | Critical | BGP: atomic agg route-map not applied for existing route |
 {: caption="Issues resolved for 2308a" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2308a-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -156,7 +192,7 @@ Debian DSA-5514-1 : glibc - security update |
 ## 2204f
 {: #2204f}
 
-### Issues Resolved
+### Issues resolved
 {: #2204f-i}
 
 This version contains fixes for previous issues regarding x540 NICs and VRRP.
@@ -175,7 +211,7 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 | VRVDR-46123 | Critical | Copy Command: SCP copy give curl: (67) Authentication failure when no password given |
 {: caption="Issues resolved for 2204f" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2204e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -190,21 +226,20 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 | VRVDR-61845 | 3.9 | DLA-3531-1 CVE-2023-20867: Debian DLA-3531-1 : open-vm-tools - LTS security update | 
 {: caption="Security vulnerabilities resolved for 2204f" caption-side="bottom"}
 
-
 ## 2204e
 {: #2204e}
 
-### Issues Resolved
+### Issues resolved
 {: #2204e-i}
 
-Vyatta gateway appliances using the Intel X540 series NIC have been encountgering VRRP issues. Only upgrade to 2204e if your gateway appliance uses the X710 series NIC. For gateways with X540's, you should use the latest 2012 version until the VRRP issues are fixed in 2204. The `lspci | grep Eth` command shows the type of NIC on your Vyatta.
+Vyatta gateway appliances using the Intel X540 series NIC have been encountering VRRP issues. Only upgrade to 2204e if your gateway appliance uses the X710 series NIC. For gateways with X540's, you should use the latest 2012 version until the VRRP issues are fixed in 2204. The `lspci | grep Eth` command shows the type of NIC on your Vyatta.
 {: important}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-61123 | Critical | VRRPv3 IPv6 RFC: disabling preemption causes failover |
 | VRVDR-60873 | Critical | BGP flaps when add/removing vfp or vip interfaces causing outage |
-| VRVDR-60797 | Blocker | eBGP neighbours are not getting established |
+| VRVDR-60797 | Blocker | eBGP neighbors are not getting established |
 | VRVDR-60699 | Minor | VIF removal causes VRRP to failover |
 | VRVDR-60644 | Major | Route-map action change doesn't propagate to Quagga level |
 | VRVDR-60580 | Critical | Dataplane fails to restart if random-detect is configured |
@@ -219,7 +254,7 @@ Vyatta gateway appliances using the Intel X540 series NIC have been encountgerin
 | VRVDR-58593 | Critical | dataplane/bfd: rc/zsock.c:88: zsock_new_checked: Assertion `self->handle' failed |
 {: caption="Issues resolved for 2204ep" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2204e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -268,7 +303,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-54588 | Major | Values returned for vyatta-system-v1/system/cpu-history/cpu-data do not conform to YANG model |
 {: caption="Issues resolved for 2012p" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2012p-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -332,7 +367,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-58217 | Major | OSPF-hello packets don't reach to OSPF daemon without monitor/dumping traffic at ospf interface |
 {: caption="Issues resolved for 2012n" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2012n-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -379,7 +414,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-55367 | Critical | BMC Health check is very noisy in the system logs, with 5 entries every minute, in a passing state |
 {: caption="Issues resolved for 2012m" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2012m-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -394,7 +429,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 2012k
 {: #2012k}
 
-### Issues Resolved
+### Issues resolved
 {: #2012k-i}
 
 | Issue Number | Priority | Summary |
@@ -412,7 +447,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-56336 | Blocker | Power-cycling or reboot hardware intermittently results in disk boot corruption so that SIAD is a grub prompt unable to boot |
 {: caption="Issues resolved for 2012k" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2012k-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -439,7 +474,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-42512 | Major | When telnet is used to login remotely, login reports "Welcome to \S{NAME}" |
 {: caption="Issues resolved for 2012j" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2012j-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -450,7 +485,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 2012h
 {: #2012h}
 
-### Issues Resolved
+### Issues resolved
 {: #2012h-i}
 
 | Issue Number | Priority | Summary |
@@ -464,10 +499,11 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-47554 | Major | Validate GREtunnel transport local-ip |
 {: caption="Issues resolved for 2012h" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2012h-sv}
 
-| Issue Number | CVSS score | Advisory | Summary |
+| Issue Number | CVSS score | Advisorejbdccuugndihrtnjfkfcjjinkvlitrgtbljjedtjbnv
+y | Summary |
 | --- | --- | --- | --- |
 | VRVDR-57353 | 7.5 | DLA-2935-1 | CVE-2018-25032: Debian DSA-5111-1 : zlib -security update |
 | VRVDR-57317 | 7.1 | DSA-5108-1 | CVE-2022-0561, CVE-2022-0562, CVE-2022-0865, CVE-2022-0891, CVE-2022-0907, CVE-2022-0908, CVE-2022-0909, CVE-2022-0924, CVE-2022-22844: Debian DSA-5108-1 : tiff -security update |
@@ -489,7 +525,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 2012g
 {: #2012g}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #2012g-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -500,7 +536,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912u
 {: #1912u}
 
-### Issues Resolved
+### Issues resolved
 {: #1912u-i}
 
 | Issue Number | Priority | Summary |
@@ -508,7 +544,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-56932 | Critical | L2TPtunnels fail to establish after the upgrade from 1801zb to 1912r |
 {: caption="Issues resolved for 1912u" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912u-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -525,7 +561,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912t
 {: #1912t}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912t-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -536,7 +572,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912s
 {: #1912s}
 
-### Issues Resolved
+### Issues resolved
 {: #1912s-i}
 
 | Issue Number | Priority | Summary |
@@ -548,15 +584,16 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-47554 | Major | Validate GRE tunnel transport local-ip |
 {: caption="Issues resolved for 1912s" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912s-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
-| --- | --- | --- | --- |
-| VRVDR-56769 | 8.1 | DLA-2848-1 | CVE-2019-13115, CVE-2019-17498 :Debian DLA-2848-1 : libssh2 - LTS security update |
-| VRVDR-56689 | 9.8 | DLA-2836-1 | CVE-2021-43527: Debian DLA-2836-1 : nss - LTS security update |
-| VRVDR-56680 | 7.5 | DLA-2837-1 | CVE-2021-43618: DLA-2837-1 : gmp - LTS security update |
-| VRVDR-56665 | 9.8 | DLA-2834-1 | CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
+| --- | --- | --- | --- |e
+| VRVDR-56769 | 8.1 | DLA-jb2848-1 | CVE-2019-13115, CVE-2019-17498 :Debian DLA-2848-1 : libssh2 - LTS security update |
+| VRVDR-56689 | 9.8 | DLA-28dc36-1 | CVE-2021-43527: Debian DLA-2836-1 : nss - LTS security update |
+| VRVDR-56680 | 7.5 | DLA-2837cuu-1 | CVE-2021-43618: DLA-2837-1 : gmp - LTS security update |
+| VRVDR-56665 | 9.8 | DLA-2834-1 gndifhkujkjhheihijtdcivubhignnkceniv
+| CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
 | VRVDR-56664 | 7.5 | DLA-2833-1 | CVE-2018-5764: Debian DLA-2833-1 : rsync - LTS security update |
 | VRVDR-56647 | 8.8 | DLA-2827-1 | CVE-2019-8921, CVE-2019-8922, CVE-2021-41229: Debian DLA-2827-1 : bluez - LTS security update |
 | VRVDR-56645 | 8.8 | DLA-2828-1 | CVE-2017-14160, CVE-2018-10392, CVE-2018-10393: Debian DLA-2828-1 : libvorbis - LTS security update |
@@ -575,7 +612,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912r
 {: #1912r}
 
-### Issues Resolved
+### Issues resolved
 {: #1912r-i}
 
 | Issue Number | Priority | Summary |
@@ -583,26 +620,26 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-56188 | Critical | bgpd dumps core in as_list_apply() |
 {: caption="Issues resolved for 1912r" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
-{: #1912r-sv}
+### Security vulnerabilities resolved
+{: #1912r-sve} 
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-56321 | 7.5 | DLA-2786-1 | CVE-2018-1000168, CVE-2020-11080: Debian DLA-2786-1 : nghttp2 - LTS security update |
-| VRVDR-56308 | 7.4 | DLA-2780-1 | CVE-2021-31799, CVE-2021-31810, CVE-2021-32066: Debian DLA-2780-1 : ruby2.3 - LTS security update |
-| VRVDR-56295 | 5.5 | DLA-2784-1 | CVE-2020-21913: Debian DLA-2784-1 : icu - LTS security update |
-| VRVDR-56230 | 7.5 | DLA-2777-1 | CVE-2020-19131, CVE-2020-19144: Debian DLA-2777-1 : tiff - LTS security update |
-| VRVDR-56229 | 7.4 | DLA-2774-1 | CVE-2021-3712: Debian DLA-2774-1 : openssl1.0 - LTS security update |
-| VRVDR-56228 | 7.5 | DLA-2773-1 | CVE-2021-22946, CVE-2021-22947: Debian DLA-2773-1 : curl - LTS security update |
-| VRVDR-56221 | 6.5 | DLA-2771-1 | CVE-2018-5729, CVE-2018-5730, CVE-2018-20217, CVE-2021-37750: Debian DLA-2771-1 : krb5 - LTS security update |
-| VRVDR-56210 | 7.4 | DLA-2766-1 | CVE-2021-3712: Debian DLA-2766-1 : openssl - LTS security update |
+| VRVDugnR-56321 | 7.5 | DLA-2786-1 | CVE-2018-1000168, CVE-2020-11080: Debian DLA-2786-1 : nghttp2 - LTS security update |
+| VRVDR-5di6308 | 7.4 | DLA-2780-1 | CVE-2021-31799, CVE-2021-31810, CVE-2021-32066: Debian DLA-2780-1 : ruby2.3 - LTS security update |
+| VRVDR-562bu95 | 5.5 | DLA-2784-1 | CVE-2020-21913: Debian DLA-2784-1 : icu - LTS security update |
+| VRVDR-56230bu | 7.5 | DLA-2777-1 | CVE-2020-19131, CVE-2020-19144: Debian DLA-2777-1 : tiff - LTS security update |
+| VRVDR-56229 |hl 7.4 | DLA-2774-1 | CVE-2021-3712: Debian DLA-2774-1 : openssl1.0 - LTS security update |
+| VRVDR-56228 | 7ir.5 | DLA-2773-1 | CVE-2021-22946, CVE-2021-22947: Debian DLA-2773-1 : curl - LTS security update |
+| VRVDR-56221 | 6.5vk | DLA-2771-1 | CVE-2018-5729, CVE-2018-5730, CVE-2018-20217, CVE-2021-37750: Debian DLA-2771-1 : krb5 - LTS security update |
+| VRVDR-56210 | 7.4 |hc DLA-2766-1 | CVE-2021-3712: Debian DLA-2766-1 : openssl - LTS security update |
 {: caption="Security vulnerabilities resolved for 1912r" caption-side="bottom"}
-
-## 1912q
-{: #1912q}
-
-### Issues Resolved
-{: #1912q-i}
+ 
+## bb1912q
+{: #1fg912q}
+ 
+### Issues resolved
+{: #ij1912q-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -634,7 +671,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-42094 | Minor | TACACS+ Server Enable / Disable |
 {: caption="Issues resolved for 1912q" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912q-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -651,7 +688,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912p
 {: #1912p}
 
-### Issues Resolved
+### Issues resolved
 {: #1912p-i}
 
 | Issue Number | Priority | Summary |
@@ -661,7 +698,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-53790 | Critical | Crash in mngPtpSessionStop |
 {: caption="Issues resolved for 1912p" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912p-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -683,7 +720,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912n
 {: #1912n}
 
-### Issues Resolved
+### Issues resolved
 {: #1912n-i}
 
 | Issue Number | Priority | Summary |
@@ -692,7 +729,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-54765 | Major | ALG session may cause dataplane crash when cleared |
 {: caption="Issues resolved for 1912n" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912n-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -707,7 +744,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912m
 {: #1912m}
 
-### Issues Resolved
+### Issues resolved
 {: #1912m-i}
 
 | Issue Number | Priority | Summary |
@@ -716,7 +753,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-53889 | Major | BFD mbuf leak when deployed in a VNF using PCI-Passthrough on ixgbe |
 {: caption="Issues resolved for 1912m" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912m-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -748,7 +785,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-51846 | Critical | RIB table not updated correctly for OSPFv3 routes after flapping the primary path by making dataplane/switch interface link failure/recovery |
 {: caption="Issues resolved for 1912k" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912k-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -783,7 +820,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-53368 | Minor | Alpha-numeric common pattern with preceding '0' in `resources group <name>` causes out of order list on config-sync slave |
 {: caption="Issues resolved for 1912j" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912j-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -802,7 +839,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912h
 {: #1912h}
 
-### Issues Resolved
+### Issues resolved
 {: #1912h-i}
 
 | Issue Number | Priority | Summary |
@@ -822,7 +859,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-43453 | Minor | `show l2tpeth/ show l2tpeth <interface>` returns "Use of uninitialized value in printf at /opt/vyatta/bin/vplane-l2tpeth-show.pl line 41" with the output |
 {: caption="Issues resolved for 1912h" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912h-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -845,7 +882,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912g
 {: #1912g}
 
-### Issues Resolved
+### Issues resolved
 {: #1912g-i}
 
 | Issue Number | Priority | Summary |
@@ -897,7 +934,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-42123 | Major | opd adds node.tag values under the wrong location in tab completion |
 {: caption="Issues resolved for 1912g" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912g-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -920,7 +957,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912f
 {: #1912f}
 
-### Issues Resolved
+### Issues resolved
 {: #1912f-i}
 
 | Issue Number | Priority | Summary |
@@ -953,7 +990,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-48090 | Major | Error: /transceiver-info/physical-channels/channel/0/laser-bias- current/: is not a decimal64 at /opt/vyatta/share/perl5/Vyatta/Configd.pm line 208 |
 {: caption="Issues resolved for 1912f" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912f-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -970,7 +1007,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912e
 {: #1912e}
 
-### Issues Resolved
+### Issues resolved
 {: #1912e-i}
 
 | Issue Number | Priority | Summary |
@@ -1023,7 +1060,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-45369 | Major | show interface dataplane X physical incorrectly reports speed when down |
 {: caption="Issues resolved for 1912e" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1043,7 +1080,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1912a
 {: #1912a}
 
-### Issues Resolved
+### Issues resolved
 {: #1912a-i}
 
 | Issue Number | Priority | Summary |
@@ -1095,7 +1132,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
 {: caption="Issues resolved for 1912a" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1912a-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1111,7 +1148,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1908h
 {: #1908h}
 
-### Issues Resolved
+### Issues resolved
 {: #1908h-i}
 
 | Issue Number | Priority | Summary |
@@ -1145,7 +1182,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-48203 | Minor | Split IDT servo into separate shared libraries |
 {: caption="Issues resolved for 1908h" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1908h-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1159,7 +1196,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1908g
 {: #1908g}
 
-### Issues Resolved
+### Issues resolved
 {: #1908g-i}
 
 | Issue Number | Priority | Summary |
@@ -1170,7 +1207,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1908f
 {: #1908f}
 
-### Issues Resolved
+### Issues resolved
 {: #1908f-i}
 
 | Issue Number | Priority | Summary |
@@ -1194,7 +1231,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-45649 | Major | Route Leaking into VRF not working as expected - pings not resolving |
 {: caption="Issues resolved for 1908f" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1908f-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1206,7 +1243,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1908e
 {: #1908e}
 
-### Issues Resolved
+### Issues resolved
 {: #1908e-i}
 
 | Issue Number | Priority | Summary |
@@ -1231,7 +1268,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-45065 | Critical | vyatta-security-vpn-secrets: code injection |
 {: caption="Issues resolved for 1908e" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1908e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1246,7 +1283,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1908d
 {: #1908d}
 
-### Issues Resolved
+### Issues resolved
 {: #1908d-i}
 
 | Issue Number | Priority | Summary |
@@ -1275,7 +1312,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-44104 | Blocker | Creating a switch interface doesn't work with QinQ |
 {: caption="Issues resolved for 1908d" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1908d-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1293,7 +1330,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1908c
 {: #1908c}
 
-### Issues Resolved
+### Issues resolved
 {: #1908c-i}
 
 | Issue Number | Priority | Summary |
@@ -1314,7 +1351,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1908b
 {: #1908b}
 
-### Issues Resolved
+### Issues resolved
 {: #1908b-i}
 
 | Issue Number | Priority | Summary |
@@ -1385,7 +1422,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-42161 | Minor | tech-support should contain "CLI: coredumpctl info" prefix for COREDUMPS header |
 {: caption="Issues resolved for 1908b" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1908b-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1402,7 +1439,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1908a
 {: #1908a}
 
-### Issues Resolved
+### Issues resolved
 {: #1908a-i}
 
 | Issue Number | Priority | Summary |
@@ -1436,7 +1473,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-41129 | Blocker | Journalbeat can't export logs to destination in routing instance |
 {: caption="Issues resolved for 1908a" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1908a-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1448,7 +1485,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1801zf
 {: #1801zf}
 
-### Issues Resolved
+### Issues resolved
 {: #1801zf-i}
 
 | Issue Number | Priority | Summary |
@@ -1471,7 +1508,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-40303 | Critical | fsck doesn't seem to be running on boot |
 {: caption="Issues resolved for 1801zf" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801zf-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1495,7 +1532,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1801ze
 {: #1801ze}
 
-### Issues Resolved
+### Issues resolved
 {: #1801ze-i}
 
 | Issue Number | Priority | Summary |
@@ -1510,7 +1547,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-47681 | Critical | Resetting a single VRRP group causes all VRRP groups to reset |
 {: caption="Issues resolved for 1801ze" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801ze-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1528,7 +1565,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1801zd
 {: #1801zd}
 
-### Issues Resolved
+### Issues resolved
 {: #1801zd-i}
 
 | Issue Number | Priority | Summary |
@@ -1539,7 +1576,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-41091 | Minor | Off-by-one error in lcore id in copying rule stats |
 {: caption="Issues resolved for 1801zd" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801zd-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1553,7 +1590,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1801zc
 {: #1801zc}
 
-### Issues Resolved
+### Issues resolved
 {: #1801zc-i}
 
 | Issue Number | Priority | Summary |
@@ -1566,7 +1603,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-36174  | Major | A-Time in the output of, 'show vpn ike sa' is always 0 |
 {: caption="Issues resolved for 1801zc" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801zc-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1578,7 +1615,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1801zb
 {: #1801zb}
 
-### Issues Resolved
+### Issues resolved
 {: #1801zb-i}
 
 | Issue Number | Priority | Summary |
@@ -1599,7 +1636,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-42108 | Minor | After 25s ssh login delay 'systemctl --user status' fails with "Failed to connect to bus: No such file or directory" |
 {: caption="Issues resolved for 1801zb" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801zb-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1611,7 +1648,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1801za
 {: #1801za}
 
-### Issues Resolved
+### Issues resolved
 {: #1801za-i}
 
 | Issue Number | Priority | Summary |
@@ -1630,7 +1667,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-39747 | Major | Incorrectly reported total available SNAT entries when configuring translation address/mask directly |
 {: caption="Issues resolved for 1801za" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801za-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1650,7 +1687,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1801z
 {: #1801z}
 
-### Issues Resolved
+### Issues resolved
 {: #1801z-i}
 
 | Issue Number | Priority | Summary |
@@ -1665,7 +1702,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-41225 | Minor | When configuring interface description, every white space is treated as a new line |
 {: caption="Issues resolved for 1801z" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801z-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1679,7 +1716,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 1801y
 {: #1801y}
 
-### Issues Resolved
+### Issues resolved
 {: #1801y-i}
 
 | Issue Number | Priority | Summary |
@@ -1694,7 +1731,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-41419 | Major | Static Analysis dataplane fixes |
 {: caption="Issues resolved for 1801y" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801y-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1714,12 +1751,12 @@ The following commands have been deprecated from this patch and are no longer av
    • `policy qos name <policy-name> shaper class <class-id> match <match-name> application type <type>`
    • `security application firewall name <name> rule <rule-number> name <app-name>`
 
-Running any of the above commands will result with the error message “This feature is disabled.”
+Running any of these commands will result with the error message “This feature is disabled.”
 
 ## 1801w
 {: #1801w}
 
-### Issues Resolved
+### Issues resolved
 {: #1801w-i}
 
 | Issue Number | Priority | Summary |
@@ -1730,7 +1767,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-45414 | Minor | Vyatta-cpu-shield fails to start and throws `OSError:[Errno 22] Invalid argument` for various cores on a two socket system |
 {: caption="Issues resolved for 1801w" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801w-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1743,7 +1780,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801v
 {: #1801v}
 
-### Issues Resolved
+### Issues resolved
 {: #1801v-i}
 
 | Issue Number | Priority | Summary |
@@ -1770,7 +1807,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-18095 | Minor | Flow monitoring stats is not captured as part of 'show tech-support' |
 {: caption="Issues resolved for 1801v" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801v-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1791,7 +1828,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801u
 {: #1801u}
 
-### Issues Resolved
+### Issues resolved
 {: #1801u-i}
 
 | Issue Number | Priority | Summary |
@@ -1800,7 +1837,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-44253 | Minor | MSS clamping on bonding interface stops functioning after reboot |
 {: caption="Issues resolved for 1801u" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801u-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1812,7 +1849,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801t
 {: #1801t}
 
-### Issues Resolved
+### Issues resolved
 {: #1801t-i}
 
 | Issue Number | Priority | Summary |
@@ -1822,7 +1859,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-43847  | Major | Slow throughput for TCP conversations on bonding interface |
 {: caption="Issues resolved for 1801t" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801t-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1833,7 +1870,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801s
 {: #1801s}
 
-### Issues Resolved
+### Issues resolved
 {: #1801s-i}
 
 | Issue Number | Priority | Summary |
@@ -1841,7 +1878,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-44041 | Major | SNMP ifDescr oid slow response time |
 {: caption="Issues resolved for 1801s" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801s-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1858,7 +1895,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801r
 {: #1801r}
 
-### Issues Resolved
+### Issues resolved
 {: #1801r-i}
 
 | Issue Number | Priority | Summary |
@@ -1889,7 +1926,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801q
 {: #1801q}
 
-### Issues Resolved
+### Issues resolved
 {: #1801q-i}
 
 | Issue Number | Priority | Summary |
@@ -1912,7 +1949,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-41628 | Minor | Route/prefix from router-advertisement active in kernel and data plane but ignored by RIB |
 {: caption="Issues resolved for 1801q" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801q-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1924,7 +1961,7 @@ Running any of the above commands will result with the error message “This fea
 ## 1801n
 {: #1801n}
 
-### Issues Resolved
+### Issues resolved
 {: #1801n-i}
 
 | Issue Number | Priority | Summary |
@@ -1939,7 +1976,7 @@ Running any of the above commands will result with the error message “This fea
 | VRVDR-39773 | Major | Using a route-map with BGP vrrp-failover command can cause all prefixes to be withdrawn |
 {: caption="Issues resolved for 1801n" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801n-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1956,7 +1993,7 @@ Running any of the above commands will result with the error message “This fea
 
 Released June 15, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801m-i}
 
 | Issue Number | Priority | Summary |
@@ -1967,7 +2004,7 @@ Released June 15, 2018.
 | VRVDR-42017 | Minor | When “show vpn ipsec sa” is running on VRRP backup, “ConnectionRefusedError” error is thrown related to vyatta-op-vpn- ipsec-vici line 563 |
 {: caption="Issues resolved for 1801m" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801m-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -1981,7 +2018,7 @@ Released June 15, 2018.
 
 Released June 8, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801k-i}
 
 | Issue Number | Priority | Summary |
@@ -1995,7 +2032,7 @@ Released June 8, 2018.
 | VRVDR-41313 | Critical | IPsec – VTI interface instability |
 {: caption="Issues resolved for 1801k" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801k-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -2012,7 +2049,7 @@ Released June 8, 2018.
 
 Released May 18, 2018
 
-### Issues Resolved
+### Issues resolved
 {: #1801j-i}
 
 | Issue Number | Priority | Summary |
@@ -2022,7 +2059,7 @@ Released May 18, 2018
 | VRVDR-27018 | Critical | Running configuration file is globally readable |
 {: caption="Issues resolved for 1801j" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801j-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -2035,7 +2072,7 @@ Released May 18, 2018
 
 Released May 11, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801h-i}
 
 | Issue Number | Priority | Summary |
@@ -2044,7 +2081,7 @@ Released May 11, 2018.
 | VRVDR-41536 | Minor | Dnsmasq service start-init limit hit when adding more than 4 static host entries if dns forwarding is enabled |
 {: caption="Issues resolved for 1801h" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801h-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -2057,7 +2094,7 @@ Released May 11, 2018.
 
 Released May 4, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801g-i}
 
 | Issue Number | Priority | Summary |
@@ -2071,7 +2108,7 @@ Released May 4, 2018.
 
 Released April 23, 2018
 
-### Issues Resolved
+### Issues resolved
 {: #1801f-i}
 
 | Issue Number | Priority | Summary |
@@ -2089,7 +2126,7 @@ Released April 23, 2018
 | VRVDR-40644 | Major | IKEv1: QUICK_MODE re-transmits are not handled correctly |
 {: caption="Issues resolved for 1801f" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801f-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -2105,7 +2142,7 @@ Released April 23, 2018
 
 Released March 28, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801e-i}
 
 | Issue Number | Priority | Summary |
@@ -2119,7 +2156,7 @@ Released March 28, 2018.
 | VRVDR-40294 | Major | Dataplane doesn’t restore previous queues after slave is removed from bonding group |
 {: caption="Issues resolved for 1801e" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+### Security vulnerabilities resolved
 {: #1801e-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -2132,17 +2169,17 @@ Released March 28, 2018.
 
 Released March 8, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801d-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40940 | Major | Data plane crash related to NAT/firewall |
-| VRVDR-40886 | Major | Combining `icmp name <value>` with a number of other configuration for the rule will cause firewall to not load |
+| VRVDR-40886 | Major | Combining `icmp name <value>` with a number of other configurations for the rule will cause firewall to not load |
 | VRVDR-39879 | Major | Configuring bonding for jumbo frames fails |
 {: caption="Issues resolved for 1801d" caption-side="bottom"}
 
-### Security Vulnerabilities Resolved
+###  Security vulnerabilities resolved
 {: #1801d-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
@@ -2156,7 +2193,7 @@ Released March 8, 2018.
 
 Released March 7, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801c-i}
 
 | Issue Number | Priority | Summary |
@@ -2169,13 +2206,13 @@ Released March 7, 2018.
 
 Released February 21, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801b-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-40622 | Major | Cloud-init images fail to detect correctly if IP address has been obtained from DHCP server |
-| VRVDR-40613 | Critical | Bond interface does not come up if one of the physical links are down |
+| VRVDR-40613 | Critical | Bond interface does not come up if one of the physical links is down |
 | VRVDR-40328 | Major | Cloud-init images take a long time to boot |
 {: caption="Issues resolved for 1801b" caption-side="bottom"}
 
@@ -2184,7 +2221,7 @@ Released February 21, 2018.
 
 Released February 7, 2018.
 
-### Issues Resolved
+### Issues resolved
 {: #1801a-i}
 
 | Issue Number | Priority | Summary |
