@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2024-03-25"
 
 keywords: 
 
@@ -227,7 +227,7 @@ Along with all previously listed issues for 1801 to 1912 and 1912 to 2012, you m
 ## 2204 issues with Intel X540
 {: #intelX540}
 
-Vyatta gateway appliances using the Intel X540 series NIC have been encountering VRRP issues on version 2204e. Only upgrade to 2204e if the gateway appliance uses the X710 series NIC. For gateways with X540's, you should use the latest 2012 version until these VRRP issues are fixed. 
+Vyatta gateway appliances using the Intel X540 series NIC were encountering VRRP issues at least through version 2204e and possibly on 2204f. As of 2204g, these issues should be fixed. As of this update, the 2204g image has been tested and run by support in the cloud testing environment for about a month. The only issue so far has been an edge case where a secondary device's VRRP interfaces eventually fault if both the cluster is running on different versions and connsync (different than config-sync) is enabled (disabled by default).
 
 The `lspci | grep Eth` command shows the type of NIC on your Vyatta.
 {: tip}

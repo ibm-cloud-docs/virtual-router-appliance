@@ -21,7 +21,7 @@ In the lifecycle of a product, end of support (EOS) is the last date that {{site
 | Operating system | Code name | Debian | DPDK | Maintenance Support | End of support |
 | ----------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 2308 | Nottingham | 11 | 21.11 | 31 Aug 2025 | 28 Feb 2026 |
-| 2204 | Kington | 10 | 20.11 | 04 April 2024 | 04 April 2025 |
+| 2204 | Kington | 10 | 20.11 | 04 October 2024 | 04 April 2025 |
 | 2110 | Jarrow | 10 | 20.11 | 19 October 2023 | 19 April 2024 |
 | 2012 | Halifax | 10 | 20.11 | 14 Dec 2023 | 14 June 2024 |
 | 1912 | Edinburgh | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
@@ -41,4 +41,4 @@ Maintenance support
 ## Latest version availability
 {: #latest-version-availability}
 
-Ciena Vyatta NOS is updated regularly, sometimes more than one time per month, and newly released versions are run through a vetting process on {{site.data.keyword.cloud_notm}} hardware by {{site.data.keyword.cloud_notm}} Support before being released to you. You can find information on the latest available versions in [Vyatta 5600 vRouter software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches), subreleases 2204 and 2208 are currently being tested for release. You can use the information in [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) process to update Vyatta NOS on the VRA. You can also use the information in [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) to find help when an upgrade fails.
+Ciena Vyatta NOS is updated regularly, sometimes more than one time per month, and newly released versions are run through a vetting process on {{site.data.keyword.cloud_notm}} hardware by {{site.data.keyword.cloud_notm}} Support before being released to you. You can find information on the latest available versions in [Vyatta 5600 vRouter software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches). Subreleases of 2204 and 2308 are currently being tested for release in provisioning. You can use the information in [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) process to update Vyatta NOS on the VRA. You can also use the information in [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) to find help when an upgrade fails.

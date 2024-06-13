@@ -17,23 +17,29 @@ subcollection: virtual-router-appliance
 {: help}
 {: support}
 
-Upgrading the VRA operating system can be performed with the command `add system image` on a local ISO file uploaded by our {{site.data.keyword.IBM}} Support team. A list of available Vyatta upgrade versions can be obtained using the {{site.data.keyword.IBM_notm}} Support case system.
+You can upgrade the VRA operating system with the command `add system image` on a local ISO file uploaded by our IBM Cloud Security Support team. The version that is provided upon provisioning is [2012g](https://docs.vyatta.com/en/release-notes/vnos-release-notes-2012/patch-release-notes-2012g) from January of 2022. You should update immediately after provisioning or a reload. A list of available Vyatta upgrade versions can be obtained by reviewing [Ciena Vyatta NOS software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches) and requesting the version's ISO file using the IBM Cloud Support case system. The latest version considered stable by IBM Cloud is 2012p, and the latest available version that has been vetted by support is 2204g. No 2308 versions are recommended at this time due to a VLAN breaking bug, as well as a bug that crashes SSH when a listen IP is set.
 {: shortdesc}
 
-To begin the upgrade process, open an {{site.data.keyword.IBM_notm}} Support case requesting an upload of the latest stable ISO image to your system. You receive a case update from IBM Support (ACS-Security) indicating where the ISO file was uploaded. In the following example, it is in the directory `tmp`, but it is commonly uploaded to `/home/vyatta`.
+To begin the upgrade process, open an IBM Cloud Support case requesting an upload of the latest stable ISO image to your system. You will receive a case update from IBM Cloud Security Support indicating the ISO file upload location on the Vyatta. In the following example, it is in the directory `tmp`, but it is commonly uploaded to `/home/vyatta`.
 
-The upgrade process illustrated in this example is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, it is recommended that you upgrade the `BACKUP` machine first, and verify that it is working properly. Then access the `MASTER` machine and fail it over using the `reset vrrp` command. Finally, upgrade the original `MASTER` after the `BACKUP` has taken control.
+The upgrade process illustrated in the example below is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, before updating in HA, it is recommended that you verify config-sync is synced and then issue a reboot on the `BACKUP` machine, to make sure that it can reboot without issue, and verify that it is working properly. Please also make sure that the `BACKUP` has all necessary VLANs, interfaces and configurations to be able to handle the production traffic when the failover is pushed. Then, perform the update on the `BACKUP` and validate it comes back up without issue. Then, access the `MASTER` machine and fail it over using the `reset vrrp master interface <interface name> group <group number>` command. If the `BACKUP` takes over as the `MASTER` while config-sync is out of sync, this can cause the old `BACKUP` to sync with the old `MASTER` and potentially delete large amounts of configurations off of the old `MASTER`. Outages can and do occur if the configurations as well as config-sync are not properly managed on both `MASTER` and `BACKUP`. Finally, upgrade the original `MASTER` after the `BACKUP` has taken control. Optionally, fail back over to the original `MASTER`.
 {: important}
 
-To upgrade the VRA, follow these steps:
+Review [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) for a list of common issues that can happen when updating between versions, and review the specific Vyatta NOS version's [release notes](https://docs.vyatta.com/en/release-notes/release-notes) for information on known issues and deprecated commands as published by Ciena.
+{: tip}
+
+## Upgrade procedure
+{: #upgrade-procedure}
+
+To upgrade the VRA, perform the following procedure:
 
 1. Run the command `add system image <Local ISO File>`.
 2. Press **Enter** to accept the default name of the ISO image, or enter your own.
-3. Select **Yes** to save the current configuration directory and configuration file.
+3. Select **Yes** to save the current configuration directory and configuration file. 
 
     Choosing **No** will erase your configuration.
     {: important}
-
+    
 5. Choose whether to save the SSH host keys from your current configuration.
 6. Press **Enter** to accept the default system console, or enter your own.
 7. Press **Enter** to accept the default console speed, or enter your own.
