@@ -6,10 +6,9 @@ toc:
     audience: service
     href: /docs/virtual-router-appliance
     console-page: https://cloud.ibm.com/catalog/infrastructure/gateway-appliance
-    product-page: https://www.ibm.com/products/network-appliances
+    product-page: https://www.ibm.com/cloud/network-appliances
     path: virtual-router-appliance
     label: Virtual Router Appliance
-
   entries:
     - navgroup:
        id: learn
@@ -19,7 +18,7 @@ toc:
        - vyatta-patch-notes.md
        - link:
           label: What is network security?
-          href: https://www.ibm.com/topics/networking
+          href: https://www.ibm.com/cloud/learn/networking-a-complete-guide
        - topicgroup:
           label: Upgrading
           topics:
@@ -35,8 +34,7 @@ toc:
           - migration-issues.md
           - migration-faqs.md
        - whats-new-vra.md
-       - include: ../fortigate-10g/explore-firewalls.md
-
+       - include: /fortigate-10g/explore-firewalls.md
     - navgroup:
        id: tutorial
        topics:
@@ -47,7 +45,6 @@ toc:
           - include: ../solution-tutorials/configuring-IPSEC-VPN.md
           - include: ../solution-tutorials/linking-secure-network-enclosures.md
           - include: ../solution-tutorials/web-app-private-network.md
-
     - navgroup:
        id: howto
        topics:
@@ -63,6 +60,7 @@ toc:
           - vlans.md
        - firewall.md
        - services.md
+       - include: ../gateway-appliance/manage-vlans.md
        - topicgroup:
           label: Working with High Availability configurations
           topics:
@@ -77,7 +75,6 @@ toc:
           - vra-vfp-troubleshooting.md
        - configuration-backups.md
        - osreload-configuration.md
-
     - navgroup:
        id: reference
        topics:
@@ -102,7 +99,6 @@ toc:
           - how-add-firewall-functions-vyatta-stateless-and-stateful.md
           - setup-nat.md
           - vyatta-high-availability-configuration.md
-
     - navgroup:
        id: help
        topics:

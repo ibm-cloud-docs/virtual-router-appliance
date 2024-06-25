@@ -17,7 +17,7 @@ subcollection: virtual-router-appliance
 You can configure your Vyatta 5400 using the procedure here.
 {: shortdesc}
 
-You must configure the public virtual LAN (VLAN) 1224, which is now associated and routed, before it can pass traffic. Two pieces of information are needed to complete the configuration: 
+You must configure the public virtual LAN (VLAN) 1224, which is now associated and routed, before it can pass traffic. Two pieces of information are needed to complete the configuration:
 
 * The public-side bond of the Brocade 5400 vRouter appliance
 * The default gateway of 1224

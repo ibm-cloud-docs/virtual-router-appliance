@@ -23,7 +23,7 @@ The following procedures provide instructions for upgrading either a stand alone
 ## Upgrading a stand alone Vyatta 5400
 {: #upgrading-a-stand-alone-vyatta-5400-migration}
 
-To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with the least amount of down-time, we recommend that you follow these steps:
+To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with the least amount of down-time, we recommend you perform the following procedure.
 
 1. Ensure that you have backed up your 5400 and stored the data in two different locations. This includes SSH keys, SSL certs, scripts and any other files necessary to recover your current Vyatta 5400 configuration, if necessary. To do so, follow [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-backing-up-a-configuration).
 
@@ -46,7 +46,7 @@ To upgrade a single Vyatta 5400 to a Juniper vSRX or FSA - 10G Appliance with th
 ## Upgrading a Vyatta 5400 High Availability (HA) pair
 {: #upgrading-a-vyatta-5400-high-availability-pair-migration}
 
-To upgrade two Vyatta 5400s in an HA pair, follow these steps:
+To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 
 1. Ensure that you have backed up your 5400 and stored the data in two different locations. This includes SSH keys, SSL certs, scripts and any other files necessary to recover your current Vyatta 5400 configuration, if necessary. To do so, follow [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-backing-up-a-configuration).
 

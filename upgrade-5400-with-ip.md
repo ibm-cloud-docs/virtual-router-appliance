@@ -21,7 +21,7 @@ This option allows you to reuse your existing Vyatta 5400 device as an equivalen
 ## Upgrading a stand alone Vyatta 5400
 {: #upgrading-a-stand-alone-vyatta-5400}
 
-To upgrade a single Vyatta 5400 to a {{site.data.keyword.vra_full}}, follow these steps:
+To upgrade a single Vyatta 5400 to a {{site.data.keyword.vra_full}}, perform the following procedure:
 
 1. Ensure that you have backed up your 5400 and stored the data in two different locations. This includes SSH keys, SSL certs, scripts and any other files necessary to recover your current Vyatta 5400 configuration, if necessary.
 2. Reload your Vyatta 5400 to a default {{site.data.keyword.vra_full}} using the instructions in [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-reloading-the-os).
@@ -35,13 +35,13 @@ To upgrade a single Vyatta 5400 to a {{site.data.keyword.vra_full}}, follow thes
 ## Upgrading a Vyatta 5400 high availability pair
 {: #upgrading-a-vyatta-5400-high-availability-pair}
 
-To upgrade two Vyatta 5400s in an HA pair, follow these steps:
+To upgrade two Vyatta 5400s in an HA pair, perform the following procedure:
 
 1. Identify the Backup Vyatta 5400 device and reload it first as a {{site.data.keyword.vra_full}}, using the procedure above.
 
    Ideally, a functional HA configuration shows all interfaces as either BACKUP or MASTER on a particular node. When in doubt, use the `show vrrp` command to confirm.
    {: note}
-
+   
 2. Configure the newly reloaded VRA with your desired settings using [these instructions](/docs/virtual-router-appliance?topic=virtual-router-appliance-accessing-and-configuring-the-ibm-virtual-router-appliance).
 3. The Master Vyatta 5400 and the Backup {{site.data.keyword.vra_full}} will be in a VRRP pair. Change the current Backup {{site.data.keyword.vra_full}} to become the Master using the VRRP command `reset VRRP master`.
 

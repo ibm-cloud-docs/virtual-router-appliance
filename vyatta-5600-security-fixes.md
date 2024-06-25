@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-06-17"
 
 keywords:
 
@@ -33,6 +33,51 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## 2204h
+{: #2204h}
+
+### Issues resolved
+{: #2204h-i}
+
+This version contains mitigation for the Terrapin SSH attack. A properly patched client and server will not have this vulnerability, but the client must support a strict key exchange for this to be fully mitigated.
+{: important}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-64818 | Critical | Dataplane crashing when upgrading to 2204g |
+| VRVDR-64788 | Critical | Coredumps observed after device upgrade to 2204g with sflow configuration |
+| VRVDR-64787 | Critical | Dataplane crash observed after upgrade to 2204g |
+| VRVDR-64747 | Critical | Dataplane crashes after upgrade to 2204g with sflow configuration |
+| VRVDR-64621 | Minor | IPsec phase 2 rekeying timer showing negative values |
+
+### Security vulnerabilities resolved
+{: #2204g-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-64843 | 6.5 | DLA-3811-1 | CVE-2024-3651: Debian dla-3811 : pypy-idna - security update |
+| VRVDR-64821 | 8.2 | DLA-3807-1 | CVE-2024-2961: Debian dla-3807 : glibc-doc - security update |
+| VRVDR-64784 | 7.2 | DLA-3806-1 | Debian dla-3806 : distro-info-data - security update |
+| VRVDR-64776 | 5.3 | DLA-3804-1 | CVE-2024-28182: Debian dla-3804 : libnghttp2-14 - security update |
+| VRVDR-64696 | 7.5 | DLA-3789-1 | Debian dla-3789 : libdatetime-timezone-perl - security update |
+| VRVDR-64695 | 7.3 | DLA-3788-1 | Debian dla-3788 : tzdata - security update |
+| VRVDR-64596 | 7.5 | DLA-3783-1 | CVE-2023-52425: Debian dla-3783 : expat - security update |
+| VRVDR-64586 | 5.5 | DLA-3782-1 | CVE-2021-37600, CVE-2024-28085: Debian dla-3782 : bsdutils - security update |
+| VRVDR-64478 | 7.8 | DLA-3772-1 | CVE-2023-6597, CVE-2024-0450: Debian dla-3772 : idle-python3.7 - security update |
+| VRVDR-64477 | 6.2 | DLA-3771-1 | CVE-2024-0450: Debian dla-3771 : idle-python2.7 security update |
+| VRVDR-64411 | 8.8 | DLA-3763-1 | CVE-2023-27534: Debian dla-3763 : curl - security update |
+| VRVDR-64367 | 7.1 | DLA-3759-1 | CVE-2023-2861, CVE-2023-3354, CVE-2023-5088: Debian dla-3759 : qemu - security update libtiff-dev - security update |
+| VRVDR-64365 | 7.5 | DLA-3757-1 | CVE-2023-5388, CVE-2024-0743: Debian dla-3757 : libnss3 - security update
+| VRVDR-64314 | 2.8 | DLA-3755-1 | Debian dla-3755 : tar - security update |
+| VRVDR-64179 | 7.5 | DLA-3746-1 | CVE-2023-4511, CVE-2023-4513, CVE-2023-6175, CVE-2024-0208:Debian dla-3746 : libwireshark-data -
+security update |
+| VRVDR-64106 | 7.5 | DLA-3740-1 | CVE-2023-5981, CVE-2024-0553: Debian dla-3740 : gnutls-bin |
+
+### New features
+{: #new-features-vra1}
+
+No new features or commands added in this version
 
 ## 2308c
 {: #2308c}
