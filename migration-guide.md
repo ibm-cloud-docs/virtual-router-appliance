@@ -39,5 +39,5 @@ To help you migrate from your Vyatta 5400, see the following documentation and s
 | [Common migration issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-vyatta-5400-common-migration-issues)  | Information on the most frequently encountered issues or behavior changes you may encounter after migrating from a Vyatta 5400 device to an {{site.data.keyword.vra_full}}. In many cases, it includes workarounds to address these issues. |
 {: caption="Migration documentation and support" caption-side="bottom"}
 
-To order a new {{site.data.keyword.vra_full}}, see [Getting started with IBM Cloud Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started) for more details.
+To order a new {{site.data.keyword.vra_full}}, see [Getting started with IBM Cloud Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started-vra) for more details.
 {: note}
