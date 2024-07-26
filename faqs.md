@@ -36,7 +36,7 @@ With a gateway appliance fixture, you can use the web portal or API to choose ne
 {: #vyatta-vrouter}
 {: faq}
 
-Vyatta was open source, PC-based router software that was acquired and transitioned to closed source. Today, "Vyatta" and "Vyatta OS" describe commercial software adaptations that are derived from that closed source project. IBM VRA incorporates elements of Vyatta OS, along with substantial feature and service enhancements available exclusively through {{site.data.keyword.cloud_notm}}.
+Vyatta was an open source, PC-based router software that became closed source. Today, "Vyatta" and "Vyatta OS" describe commercial software adaptations that are derived from that closed source project. IBM VRA incorporates elements of Vyatta OS, along with substantial feature and service enhancements available exclusively through {{site.data.keyword.cloud_notm}}.
 
 "vRouter" was a short-lived rebranding of Vyatta by its then-owner. When seen in documentation, it can be considered synonymous with Vyatta.
 
@@ -45,7 +45,7 @@ Vyatta was open source, PC-based router software that was acquired and transitio
 {: faq}
 {: support}
 
-IBM no longer supports Vyatta 5400 as of 31 March 2019.
+IBM no longer supports the Vyatta 5400 as of 31 March 2019.
 
 ## What improvements does the {{site.data.keyword.vra_full}} (Vyatta 5600) have over the Vyatta 5400?
 {: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
@@ -67,7 +67,7 @@ AT&T (formerly Brocade) announced the End-of-Life and End-of-Support of their Br
 {: #vra-delivered}
 {: faq}
 
-You obtain a VRA by ordering a network gateway. This streamlined process allows you to choose a data center and a suitable VRA server, as well specify whether you want to deploy an HA pair of VRAs. Servers, operating systems, and the gateway appliance fixture are all provisioned automatically. When the provisioning is complete, you can use the gateway appliance interface to route VLANs through the VRA. You can configure your VRA server directly by using SSH (Secure Shell) with the passwords that are provided in the Hardware Details section of the {{site.data.keyword.cloud_notm}} console.
+You can obtain a VRA by ordering a network gateway. You can choose a data center and a suitable VRA server, as well to specify whether you want to deploy an HA pair of VRAs. Servers, operating systems, and the gateway appliance fixture are all provisioned automatically. When the provisioning is complete, you can use the gateway appliance interface to route VLANs through the VRA. You can configure your VRA server directly by using SSH (Secure Shell) with the passwords that are provided in the Hardware Details section of the {{site.data.keyword.cloud_notm}} console.
 
 ## Is my password safe?
 {: #password-safe}
@@ -94,7 +94,7 @@ No. The gateway appliance allows you to select the private and public network se
 
 Yes. Whenever possible, you shouldn't lock down your network until you've populated it with the servers you plan to use.
 
-IBM support is forbidden by policy to examine or alter VRA or dedicated firewall configuration without a customer's explicit involvement, so in most cases support cannot know that a VRA is responsible for stalled or failed server provisions.
+IBM support is forbidden by policy to examine or alter VRA or dedicated firewall configuration without a customer's explicit involvement, so support cannot know that a VRA is responsible for stalled or failed server provisions.
 
 It is the customer's responsibility to ensure that the VRA or firewall is configured to permit automated server provisions before the server order is placed. Provisions that are blocked by a customer-managed VRA or firewall are the customer's responsibility to resolve. Such provisioning delays are not subject to SLAs or credits. Ordered systems can be returned to inventory (after customer data is expunged) if the customer does not respond quickly.
 
@@ -125,7 +125,7 @@ As a first diagnostic step, IBM Support might require you to put your VRA or fir
 
 Keep in mind that even though they can't see you, a public cloud shares networks with other customers. True, best-case VRA throughput is determined by available network capacity at a point in time, plus the distance the data must travel.
 
-These variables aside, VRA is capable of forwarding 80 Gbps of unmodified traffic across multiple interfaces, using the rough formula that every 10 Gbps of throughput requires one full processor core (not including hyperthread). Given that current servers max out at 40 Gbps (2 x 10 Gbps public + 2 x 10 Gb private), a server with 8 or more cores should have sufficient compute headroom to handle multiple common VRA features at near best-case network performance
+These variables aside, VRA can forward 80 Gbps of unmodified traffic across multiple interfaces by using the rough formula that every 10 Gbps of throughput requires one full processor core (not including hyperthread). Current servers max out at 40 Gbps (2 x 10 Gbps public + 2 x 10 Gb private). As a result, a server with 8 or more cores has sufficient compute headroom to handle multiple common VRA features at near best-case network performance
 
 ## What do I do if I lose my VRA password?
 {: #password}
@@ -138,7 +138,7 @@ If you can access the system, set a new password by running the following comman
 set system login user [account] authentication plaintext-password [password]
 ```
 
-If you cannot access the system, you can reboot the device and use the password recovery option on the GRUB menu for resetting the root user password.
+If you cannot access the system, you can restart the device and use the password recovery option on the GRUB menu to reset the root user password.
 
 ## What do I do if I am locked out of the firewall?
 {: #locked-out}
@@ -147,11 +147,11 @@ If you cannot access the system, you can reboot the device and use the password 
 
 The `reboot at [time]` construct can be useful when testing potentially dangerous firewall rules.
 
-If the rule works, then use the command `reboot cancel` to cancel the reboot. If the rule locks out your access, simply wait for the scheduled reboot to occur.
+If the rule works, then use the command `reboot cancel` to cancel the restart. If the rule locks out your access, simply wait for the scheduled restart to occur.
 
-If you cannot access the system, then you might reboot to recover access. Upon rebooting, the system reads the configuration file, which is unchanged by previous entries that were discarded.
+If you cannot access the system, then you might restart to recover access. Upon rebooting, the system reads the configuration file, which is unchanged by previous entries that were discarded.
 
-If there is access using IPMI, follow these steps to recover access:
+If there is access by using IPMI, follow these steps to recover access:
 
 1. Disable the offending rule by running:
 

@@ -97,6 +97,6 @@ Contact IBM Vyatta 5400 and VRA Network Offering Management with questions at `n
 
 Review the following {{site.data.keyword.vra_full}} documentation resources for more information:
 
-* [Getting Started with {{site.data.keyword.vra_full}}](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started)
+* [Getting Started with {{site.data.keyword.vra_full}}](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started-vra)
 * [About the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra)
 * [Vyatta 5400 Migration Overview](/docs/virtual-router-appliance?topic=virtual-router-appliance-migration-overview)

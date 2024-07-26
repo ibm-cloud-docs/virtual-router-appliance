@@ -29,7 +29,7 @@ For more information about the SLAPI as they refer to the {{site.data.keyword.vr
 - [SoftLayer_Network_Gateway_Vlan API](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Vlan){: external}
 - [SoftLayer_Network_Gateway_Status API](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway_Status){: external}
 - [SoftLayer API Python Client](http://softlayer-api-python-client.readthedocs.io/en/latest/api/client/){: external}
-- [More SoftLayer API Examples with different languages](https://softlayer.github.io/python/){: external}
+- [More SoftLayer API Examples with different languages](https://sldn.softlayer.com/python/){: external}
 
 
 ## Example - Ordering a gateway appliance
