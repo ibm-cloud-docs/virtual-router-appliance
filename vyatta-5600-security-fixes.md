@@ -52,7 +52,7 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 | VRVDR-64621 | Minor | IPsec phase 2 rekeying timer showing negative values |
 
 ### Security vulnerabilities resolved
-{: #2204g-sv}
+{: #2204h-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -75,7 +75,7 @@ security update |
 | VRVDR-64106 | 7.5 | DLA-3740-1 | CVE-2023-5981, CVE-2024-0553: Debian dla-3740 : gnutls-bin |
 
 ### New features
-{: #new-features-vra1}
+{: #new-features-2204h}
 
 No new features or commands added in this version
 
@@ -257,7 +257,7 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 {: caption="Issues resolved for 2204f" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
-{: #2204e-sv}
+{: #2204f-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |

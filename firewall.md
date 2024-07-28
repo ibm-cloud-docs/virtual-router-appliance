@@ -225,11 +225,6 @@ You can troubleshoot both interace-based and zone-based firewall configurations.
 ### Troubleshooting interface-based firewall configurations
 {: #Troubleshooting-interface-based-firewall-configurations}
 
-The following figure represents a flow through an interface-based firewall configuration. 
-
-![BasicFirewallFlowVyatta](https://media.github.ibm.com/user/84952/files/3e8e7250-a53d-4707-a376-74e48651db84)
-Figure 1.
-
 To begin checking and troubleshooting, run these commands to understand how the policies are configured:
 
 1. To gather which firewall rulesets are applied to each interface and in which direction, run `show configuration commands | grep firewall | grep interface`.
@@ -242,11 +237,6 @@ To begin checking and troubleshooting, run these commands to understand how the 
 
 ### Troubleshooting zone-based firewall configurations
 {: #Troubleshooting-zone-based-firewall-configurations}
-
-The following figure represents a zone-based firewall configuration.	
-	
-![ZonePolicyC (1)](https://media.github.ibm.com/user/84952/files/b73ec829-e282-4b37-bc3b-9caa3d7e7023)
-Figure 2.	
 	
 To begin checking and troubleshooting, run these commands to understand how the policies are configured:
 
