@@ -72,17 +72,6 @@ To revert your VRA to a previous version, perform one of the following actions, 
 
     You can also use the Grub boot menu for recovering a Vyatta user's password.
     {: tip}
-    
-    The following illustrations show the process on a Supermicro server by using the IPMI HTML5 console:
-    
-    Press Esc when the boot process shows this screen:
-    ![image](https://media.github.ibm.com/user/84952/files/5bf80b80-da89-11ec-8006-1d362a5b1044){: class="center"}
-    
-    Doing so triggers the Grub boot menu:
-    ![image](https://media.github.ibm.com/user/84952/files/6d411800-da89-11ec-9da7-10df1aeadda2){: class="center"}
-    
-    Select the desired version that you want to revert to:
-    ![image](https://media.github.ibm.com/user/84952/files/729e6280-da89-11ec-81ee-001a60c3e942){: class="center"}
 
 ## If your VRA is in a factory reset state
 {: #factory-reset}
