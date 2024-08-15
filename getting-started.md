@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-09-08"
+  years: 2017, 2024
+lastupdated: "2024-08-13"
 
 keywords: vra, virtual router appliance
 
@@ -69,6 +69,11 @@ After your order is approved, the provisioning of your {{site.data.keyword.vra_f
 
 After you order and configure your VRA from the IBM Cloud catalog, you must also configure the device itself with the same settings.
 {: tip}
+
+## Network access considerations
+{: #network-access-considerations}
+
+The VRA can be deployed with either public and private network access or private network access only. By default, SSH access to the public IP is disabled on new provisions of version 2012g and later. Access to the host can be achieved through the private IP address. Additionally, HTTPS access is disabled to both the public and private IPs.
 
 ## VLANs and the gateway appliance's role
 {: #vlans-and-the-gateway-appliance-s-role}
