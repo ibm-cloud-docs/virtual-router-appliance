@@ -35,6 +35,7 @@ toc:
           - migration-faqs.md
        - whats-new-vra.md
        - include: ../fortigate-10g/explore-firewalls.md
+       - include: ../gateway-appliance/ga-raci.md 
     - navgroup:
        id: tutorial
        topics:
