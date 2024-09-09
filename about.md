@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-14"
+  years: 2017, 2024
+lastupdated: "2024-09-09"
 
 keywords: 
 
@@ -15,7 +15,7 @@ subcollection: virtual-router-appliance
 # About the VRA
 {: #about-the-vra}
 
-The {{site.data.keyword.vra_full}} (VRA) provides the Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or stand-alone configuration.
+The {{site.data.keyword.vra_full}} (VRA) provides the Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or stand-alone configuration. 
 {: shortdesc}
 
 With the {{site.data.keyword.vra_full}} you can route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic oriented, policy-based routing, VPN, and other features. The VRA offers performance with ease of configuration. It has the maintenance advantages of running on a normal hardware server. The VRA hardware appliance is sized to handle the routing load for multiple VLANs, and it can be ordered with redundant network links and redundant RAID arrays. You manage all VRA features.
