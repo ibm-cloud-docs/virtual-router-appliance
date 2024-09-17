@@ -67,12 +67,13 @@ toc:
           - vrrp.md
           - configuration-synchronization.md
        - topicgroup:
-          label: Using IPsec and VFP interfaces
+          label: Working with IPSec tunnels
           topics:
           - vra-ipsec.md
           - vra-vfp.md
           - vra-nat.md
           - vra-vfp-troubleshooting.md
+          - vra-config-ipsec.md
        - configuration-backups.md
        - osreload-configuration.md
     - navgroup:
@@ -102,7 +103,6 @@ toc:
     - navgroup:
        id: help
        topics:
-       - vra-config-ipsec.md
        - vra-docs-18.md
        - vra-docs.md
        - faqs.md
