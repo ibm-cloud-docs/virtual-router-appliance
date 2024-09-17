@@ -21,7 +21,7 @@ In the IBM Cloud environment specifically, the Vyatta (or other classic gateway 
 
 The following figure shows a very basic visual representation of an IPSec tunnel, from IBM Cloud Classic to on-prem, over the internet. 
 
-![Vyatta basic IPSec tunnel configuration](images/vyattaipsecbasic.jpeg "Vyatta basic IPSec tunnel configuration"){: caption="Figure 1: Vyatta basic IPSec tunnel configuration" caption-side="bottom"}
+![Vyatta basic IPSec tunnel configuration](images/vyattaipsecbasic.jpg "Vyatta basic IPSec tunnel configuration"){: caption="Figure 1: Vyatta basic IPSec tunnel configuration" caption-side="bottom"}
 
 ## Route-based and policy-based IPSec
 {: #route-based-vs-policy-based}
