@@ -102,6 +102,7 @@ toc:
     - navgroup:
        id: help
        topics:
+       - vra-config-ipsec.md
        - vra-docs-18.md
        - vra-docs.md
        - faqs.md
