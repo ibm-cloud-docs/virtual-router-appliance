@@ -30,13 +30,6 @@
       "description": "Computer networking is the process of connecting two or more computing devices, such as desktop computers, mobile devices, routers or applications, to enable the transmission and exchange of information and resources.",
       "href": "https://www.ibm.com/topics/networking",
       "type": "blog"
-    },
-    {
-      "title": "Configure NAT for Internet access from a private network",
-      "description": "This tutorial presents the setup of Network Address Translation (NAT) masquerade on a Virtual Router Appliance (VRA) to connect to a secured subnet on the IBM Cloud private network.",
-      "href": "https://test.cloud.ibm.com/docs/virtual-router-appliance?topic=virtual-router-appliance-nat-config-private",
-      "type": "training",
-      "recommended": true
     }
   ],
   "section_devtools": {
