@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-11-05"
 
 keywords:
 
@@ -44,12 +44,12 @@ The following example is a route-based configuration running in the IBM Cloud cl
 #PHASE 1
 set security vpn ipsec ike-group IKE-Fergie ike-version 2
 set security vpn ipsec ike-group IKE-Fergie lifetime 28800
-set security vpn ipsec ike-group IKE-Fergie proposal 1 dh-group 14
+set security vpn ipsec ike-group IKE-Fergie proposal 1 dh-group 20
 set security vpn ipsec ike-group IKE-Fergie proposal 1 encryption aes256
 set security vpn ipsec ike-group IKE-Fergie proposal 1 hash sha2_256
  
 #PHASE 2
-set security vpn ipsec esp-group ESP-Fergie pfs dh-group14
+set security vpn ipsec esp-group ESP-Fergie pfs dh-group20
 set security vpn ipsec esp-group ESP-Fergie proposal 1 encryption aes128gcm128
 set security vpn ipsec esp-group ESP-Fergie proposal 1 hash null
 set security vpn ipsec esp-group ESP-Fergie lifetime 3600
@@ -85,12 +85,12 @@ set security vpn ike make-before-break
 #PHASE 1
 set security vpn ipsec ike-group IKE-Fergie ike-version 2
 set security vpn ipsec ike-group IKE-Fergie lifetime 28800
-set security vpn ipsec ike-group IKE-Fergie proposal 1 dh-group 14
+set security vpn ipsec ike-group IKE-Fergie proposal 1 dh-group 20
 set security vpn ipsec ike-group IKE-Fergie proposal 1 encryption aes256
 set security vpn ipsec ike-group IKE-Fergie proposal 1 hash sha2_256
 
 #PHASE 2
-set security vpn ipsec esp-group ESP-Fergie pfs dh-group15
+set security vpn ipsec esp-group ESP-Fergie pfs dh-group20
 set security vpn ipsec esp-group ESP-Fergie proposal 1 encryption aes128gcm128
 set security vpn ipsec esp-group ESP-Fergie proposal 1 hash null
 set security vpn ipsec esp-group ESP-Fergie lifetime 3600
