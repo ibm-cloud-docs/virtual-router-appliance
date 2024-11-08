@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-11-08"
 
 keywords: vra, virtual router appliance
 
@@ -33,7 +33,7 @@ To order a VRA, follow these steps:
 
 1. From your browser, open the Gateway Appliances page in the [IBM Cloud UI console](https://{DomainName}/gen1/infrastructure/provision/gateway){: external} and log in to your account.
 
-   You can also access the page by selecting the navigation menu in the upper left of the [IBM Cloud catalog](https://{DomainName}/){: external} and selecting **Classic Infrastructure > Network > Gateway appliance**.
+   You can also access the page by selecting the navigation menu in the upper left of the [IBM Cloud catalog](https://{DomainName}/){: external} and selecting **Infrastructure >  Classic Infrastructure**. Then choose **Network > Gateway appliance**.
    {: tip}
 
 2. From the **Gateway Vendor** section, select the **AT&T** option (a blue checkmark appears on the button). From the list menu on the same button choose your bandwidth (either 20 Gbps or 2 Gbps).

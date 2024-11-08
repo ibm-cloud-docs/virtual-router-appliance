@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-14"
+  years: 2017, 2024
+lastupdated: "2024-11-08"
 
 keywords: 
 
@@ -23,7 +23,7 @@ The OS reload process, when initiated in the IBM Cloud catalog, wipes away all c
 To reload your OS, follow these steps:
 
 1. From your browser, open [https://cloud.ibm.com](https://cloud.ibm.com){: external} and log in to your account.
-2. Select the menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left of the page, then click **Classic Infrastructure**.
+2. Select the menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left of the page, then click **Infrastructure > Classic Infrastructure**.
 3. Choose **Network > Gateway Appliances**.
 4. Click the server that you want to reload.
 5. Click the server name in the Hardware section.
