@@ -30,7 +30,6 @@ The initial list of qualified IBM Business Partners for Vyatta 5400 migration as
 
 | Business Partner | Contact Name | Contact Information |
 | ------------- | ------------- | ------------- |
-| IBM Technology Expert Labs - Cloud |  | [Contact an IBM sales representative](https://www.ibm.com/account/reg/us-en/subscribe?formid=MAIL-expertlabs){: external} |
 | Techwave | Chandra Rao - Vice President, Cloud Business | chandra.jampa@techwave.net |
 | SureSkills | Kevin Reid | kevin.reid@sureskills.com; +353 87 225 6401 |
 | Element Solutions | Sherry Thompson, Executive Director | sthompson@elementsolutions.com; +1-646-942-1996 |
