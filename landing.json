@@ -32,9 +32,6 @@
       "type": "blog"
     }
   ],
-  "section_devtools": {
-    "api": "/docs/virtual-router-appliance?topic=virtual-router-appliance-vra-api"
-  },
   "section_updates": {
     "view_more": "/docs/overview?topic=overview-whatsnew",
     "tiles": [
