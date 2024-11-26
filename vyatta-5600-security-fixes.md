@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-17"
+lastupdated: "2024-11-26"
 
 keywords:
 
@@ -21,7 +21,7 @@ On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance wil
 As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** April 4, 2024
+**Latest patch received:** November 12 2024
 
 **Latest documentation published:** March 7, 2024
 
@@ -32,6 +32,73 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 {: tip}
 
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
+{: note}
+
+## 2208d
+{: #2208d}
+
+### Issues resolved
+{: #2208d-i}
+
+| Issue Number | Priority | Summary |
+| --- | --- | --- |
+| VRVDR-65273 | Major | Unicast traffic on sw0 forwarded to all switch ports |
+| VRVDR-65254 | Major | Allow AS command stops working after device gets Reboot |
+| VRVDR-65051 | Major | BGP daemon crash in KA thread |
+| VRVDR-65040 | Critical | BGP does not advertise 0.0.0.0/x subnet |
+| VRVDR-65001 | Major | When using a resource group to block SSH port no:22 and protocol TCP, it is blocking all the TCP traffic. |
+| VRVDR-64978 | Major | Traceback Error: /system/hardware/frus/fru: Failed to run state fn causing ipsec outage |
+| VRVDR-64966 | Major | IPSec: SPI mismatch between dataplane and controlplane |
+| VRVDR-64858 | Major | Error Log: /interfaces/bonding/dp0bond2/vrrp: Node exists log message after upgrade to 2308C |
+| VRVDR-64834 | Major | Tacacs user not able to SSH directly connected device |
+| VRVDR-64818 | Critical | dataplane crashing even after removing sflow when upgraded to 2204g |
+| VRVDR-64788 | Critical | Coredumps observed after device upgrade to 2204g with sflow configuration |
+| VRVDR-64749 | Critical | LACP bonding interfaces are flapping after upgrade to 2308c |
+| VRVDR-64747 | Critical | Dataplane crashes after upgrade from 2012p to 2204g with sflow configuration |
+| VRVDR-64621 | Minor | IPsec phase 2 rekeying timer showing negative values |
+| VRVDR-64584 | Minor | CLI error message(Error: vici: malformed message: expected beginning of message element) coming when using show vpn commands |
+| VRVDR-64454 | Major | VRRP Route Tracking not working correctly |
+| VRVDR-64357 | Minor | Error Log: "vyatta-dataplane.service[dataplane[2719]:] DATAPLANE: Failed pack expired session xxx" |
+| VRVDR-64247 | Major | Support for Mellanox MT28850 ConnectX-6 |
+| VRVDR-64246 | Major | Configuring/Enabling virtio interface on Vyatta crashes virtual machine |
+| VRVDR-64242 | Major | 'show arp' operational command returns access errors for operator level user |
+
+### Security vulnerabilities resolved
+{: #2208d-sv}
+
+| Issue Number | CVSS score | Advisory | Summary |
+| --- | --- | --- | --- |
+| VRVDR-65540 | 7.5 | DLA-3935-1 | Debian dla-3935 : distro-info-data - security update |
+| VRVDR-65515 | 6.5 | DLA-3922-1 | CVE-2023-23931, CVE-2023-49083: Debian dla-3922 : python-cryptography-doc - security update |
+| VRVDR-65479 | 7.8 | DLA-3910-1 | CVE-2022-1304: Debian dla-3910 : comerr-dev - security update |
+| VRVDR-65471 | 7.3 | DLA-3907-1 | CVE-2021-36690, CVE-2023-7104: Debian dla-3907 : lemon - security update |
+| VRVDR-65470 | 9.8 | DLA-3906-1 | Debian dla-3906 : libwireshark-data - security update |
+| VRVDR-65457 | 5.3 | DLA-3898-1 | CVE-2024-28182: Debian dla-3898 : libnghttp2-14 - security update |
+| VRVDR-65432 | 4.9 | DLA-3891-1 | CVE-2024-21096: Debian dla-3891 : libmariadb-dev - security update |
+| VRVDR-65377 | 6.1 | DLA-3878-1 | CVE-2016-3709, CVE-2022-2309: Debian dla-3878 : libxml2 - security update |
+| VRVDR-65376 | 5.9 | DLA-3876-1 | CVE-2022-40897, CVE-2024-6345: Debian dla-3876 : python-setuptools-doc - security update |
+| VRVDR-65375 | 5.3 | DLA-3875-1 | Nessus Scan: CVE-2024-28834, CVE-2024-28835: Debian dla-3875 : gnutls-bin - security update |
+| VRVDR-65363 | 5.9 | DLA-3859-1 | CVE-2023-7008, CVE-2023-50387, CVE-2023-50868: Debian dla-3859 : libnss-myhostname - security update |
+| VRVDR-65153 | 7.5 | DSA-5734-1 | CVE-2024-0760 CVE-2024-1737 CVE-2024-1975 CVE-2024-4076: [DSA 5734-1] bind9 security update |
+| VRVDR-65092 | 7.8 | DSA-5730-1 | [DSA 5730-1] linux security update |
+| VRVDR-65071 | 9.1 | DSA-5726-1 | CVE-2024-37370, CVE-2024-37371: Debian dsa-5726 : krb5-admin-server - security update |
+| VRVDR-64980 | 7.8 | DSA-5702-1 | CVE-2024-4453: [DSA 5702-1] gst-plugins-base1.0 security update |
+| VRVDR-64836 | 8.1 | DSA-5682-2 | CVE-2024-34397: [DSA 5682-2] glib2.0 regression update | 
+| VRVDR-64820 | 8.6 | DSA-5679-1 | CVE-2022-48624, CVE-2024-32487: Debian dsa-5679 : less - security update |
+| VRVDR-64819 | 9.7 | DSA-5678-1 | CVE-2024-33599, CVE-2024-33600, CVE-2024-33601, CVE-2024-33602: Debian dsa-5678 : glibc-doc - security update |
+| VRVDR-64708 | 8.2 | DSA-5673-1 | CVE-2024-2961: Debian dsa-5673 : glibc-doc - security update |
+| VRVDR-63307 | 6.5 | DSA-5559-1 | [DSA 5559-1] wireshark security update |
+| VRVDR-61797 | 5.9 | DSA-5477-1 | CVE-2022-2127, CVE-2023-3347, CVE-2023-34966, CVE-2023-34967, CVE-2023-34968: Debian DSA-5477-1 : samba - security update |
+
+
+### New features
+{: #new-features-2208d}
+
+No new features or commands were added in this version. There is one potential known issue:
+
+For 2208d, when a Vyatta is provisioned, there are only two interfaces on the device, `dp0bond0` and `dp0bond1`. You must add a VIF for any associated VLANs the Vyatta will be routing for. The first time you add a VIF to `dp0bond0` or `dp0bond1` with VRRP configuration, the device will fail over. For example, if you add a VIF for VLAN 1000 to `dp0bond0`, and it is the first VIF you configure, then the Vyatta will execute a failover once it is provisioned. As a result, if it the Vyatta is set as master, it will become backup. However, if you add a second VIF to the same interface, it will not fail over unless you add a VIF to the other interface for the first time. Subsequent VIF configurations will not cause a failover, until you remove them all. Removing the last VIF from an interface also prompts a failover. As a result, removing all VIFs from `dp0bond0` will cause it to failover as a backup. This is the only known issue for this version.
+
+This version has not yet been completely tested against x540 NICs. Keep this in mind if you are upgrading.
 {: note}
 
 ## 2204h

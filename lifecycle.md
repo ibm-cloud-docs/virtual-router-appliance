@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-05-15"
+  years: 2017, 2024
+lastupdated: "2024-11-26"
 
 keywords: operating system end of support (eos), add on end of support (eos), vyatta
 
@@ -41,4 +41,4 @@ Maintenance support
 ## Latest version availability
 {: #latest-version-availability}
 
-Ciena Vyatta NOS is updated regularly, sometimes more than one time per month, and newly released versions are run through a vetting process on {{site.data.keyword.cloud_notm}} hardware by {{site.data.keyword.cloud_notm}} Support before being released to you. You can find information on the latest available versions in [Vyatta 5600 vRouter software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches). Subreleases of 2204 and 2308 are currently being tested for release in provisioning. You can use the information in [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) process to update Vyatta NOS on the VRA. You can also use the information in [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) to find help when an upgrade fails.
+Ciena Vyatta NOS is updated regularly, sometimes more than one time per month, and newly released versions are run through a vetting process on {{site.data.keyword.cloud_notm}} hardware by {{site.data.keyword.cloud_notm}} Support before being released to you. You can find information on the latest available versions in [Vyatta 5600 vRouter software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches). 2204h has been released and is available through OS reload and the provisioning process. You can also use the information in [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to update Vyatta NOS version on the VRA using the Vyatta command line interface. You can also use the information in [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) to find help when an upgrade fails.
