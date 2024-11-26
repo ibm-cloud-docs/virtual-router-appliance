@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-06-22"
+  years: 2017, 2024
+lastupdated: "2024-11-26"
 
 keywords: upgrade vyatta
 
@@ -17,7 +17,7 @@ subcollection: virtual-router-appliance
 {: help}
 {: support}
 
-You can upgrade the VRA operating system with the command `add system image` on a local ISO file uploaded by our IBM Cloud Security Support team. The version that is provided upon provisioning is 2012g from January of 2022. You should update immediately after provisioning or a reload. A list of available Vyatta upgrade versions can be obtained by reviewing [Ciena Vyatta NOS software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches) and requesting the version's ISO file using the IBM Cloud Support case system. The latest version considered stable by IBM Cloud is 2012p, and the latest available version that has been vetted by support is 2204g. No 2308 versions are recommended at this time due to a VLAN breaking bug, as well as a bug that crashes SSH when a listen IP is set.
+You can upgrade the VRA operating system with the command `add system image` on a local ISO file uploaded by our IBM Cloud Security Support team. The version that is provided upon provisioning is 2204h or 2012g. You should update immediately after provisioning or a reload and check periodically for updated releases. A list of available Vyatta upgrade versions can be obtained by reviewing [Ciena Vyatta NOS software patches](/docs/virtual-router-appliance?topic=virtual-router-appliance-ciena-vyatta-5600-vrouter-software-patches) and requesting the version's ISO file using the IBM Cloud Support case system. The latest version considered stable by IBM Cloud is 2204h. 2308d is also available.
 {: shortdesc}
 
 To begin the upgrade process, open an IBM Cloud Support case requesting an upload of the latest stable ISO image to your system. You will receive a case update from IBM Cloud Security Support indicating the ISO file upload location on the Vyatta. In the following example, it is in the directory `tmp`, but it is commonly uploaded to `/home/vyatta`.
