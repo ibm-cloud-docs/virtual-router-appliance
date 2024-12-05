@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-26"
+lastupdated: "2024-12-05"
 
 keywords:
 
@@ -34,11 +34,11 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
-## 2208d
-{: #2208d}
+## 2308d
+{: #2308d}
 
 ### Issues resolved
-{: #2208d-i}
+{: #2308d-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
@@ -64,7 +64,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 | VRVDR-64242 | Major | 'show arp' operational command returns access errors for operator level user |
 
 ### Security vulnerabilities resolved
-{: #2208d-sv}
+{: #2308d-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -92,11 +92,11 @@ For the latest full release notes, please review the [release notes in Ciena's V
 
 
 ### New features
-{: #new-features-2208d}
+{: #new-features-2308d}
 
 No new features or commands were added in this version. There is one potential known issue:
 
-For 2208d, when a Vyatta is provisioned, there are only two interfaces on the device, `dp0bond0` and `dp0bond1`. You must add a VIF for any associated VLANs the Vyatta will be routing for. The first time you add a VIF to `dp0bond0` or `dp0bond1` with VRRP configuration, the device will fail over. For example, if you add a VIF for VLAN 1000 to `dp0bond0`, and it is the first VIF you configure, then the Vyatta will execute a failover once it is provisioned. As a result, if it the Vyatta is set as master, it will become backup. However, if you add a second VIF to the same interface, it will not fail over unless you add a VIF to the other interface for the first time. Subsequent VIF configurations will not cause a failover, until you remove them all. Removing the last VIF from an interface also prompts a failover. As a result, removing all VIFs from `dp0bond0` will cause it to failover as a backup. This is the only known issue for this version.
+For 2308d, when a Vyatta is provisioned, there are only two interfaces on the device, `dp0bond0` and `dp0bond1`. You must add a VIF for any associated VLANs the Vyatta will be routing for. The first time you add a VIF to `dp0bond0` or `dp0bond1` with VRRP configuration, the device will fail over. For example, if you add a VIF for VLAN 1000 to `dp0bond0`, and it is the first VIF you configure, then the Vyatta will execute a failover once it is provisioned. As a result, if it the Vyatta is set as master, it will become backup. However, if you add a second VIF to the same interface, it will not fail over unless you add a VIF to the other interface for the first time. Subsequent VIF configurations will not cause a failover, until you remove them all. Removing the last VIF from an interface also prompts a failover. As a result, removing all VIFs from `dp0bond0` will cause it to failover as a backup. This is the only known issue for this version.
 
 This version has not yet been completely tested against x540 NICs. Keep this in mind if you are upgrading.
 {: note}
