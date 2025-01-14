@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-14"
+  years: 2017, 2025
+lastupdated: "2025-01-14"
 
 keywords: 
 
@@ -192,3 +192,23 @@ Allowing root access that uses SSH is considered unsafe.
 An alternative to accessing a root shell is to either log in as another user and elevate to root locally with `su -`, or allow sudo commands to superusers. For example, to configure the Vyatta as a superuser:
 
 `set system login vyatta level superuser`
+
+## How do I update the firmware?
+{: #firmware-update}
+{: faq}
+
+It's important to keep the firmware updated to make sure that your network gateway appliance has optimal device compatibility and stability. You have the [role and responsibility](/docs/gateway-appliance?topic=gateway-appliance-ga-raci) for ongoing maintenance and operation of your devices; IBM Cloud technical support does not perform updates on your behalf.  
+
+If a firmware version is out of date, you can update the firmware by selecting the appliance from the device list and clicking **Update firmware** from the action menu. You can also initialize a firmware update during the OS Reload process.  After you initiate the update, a transaction runs to auto update the BIOS firmware and any other firmware option that you selected.
+
+You can't initialize a firmware update when a gateway appliance is powered ON. Make sure that the appliance is powered OFF before you initialize a firmware update. {: important}
+
+If you need to update multiple nodes, it’s a good practice to act on one node at a time.  Updating a single node minimizes disruption when failover happens for the second firmware update.
+
+Firmware updates can take up to 4 hours to complete. If the update takes longer than 4 hours, check for an open support case. If a support case isn't open, you can contact support or open a case to get help.
+
+## Can I update the BIOS separately from other firmware updates?
+{: #firmware-bios}
+{: faq}
+
+Yes, it is possible to update only the BIOS without issues.  When that option is available, you see it as a choice on the device page in the IBM Cloud console, along with other update options such as the network card.  For optimal device compatibility, a good practice is to perform the recommended updates for BIOS and network card at the same time so that both use the latest version.
