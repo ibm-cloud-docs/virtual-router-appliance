@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2024-03-25"
+  years: 2017, 2025
+lastupdated: "2025-01-14"
 
 keywords: 
 
@@ -103,6 +103,11 @@ You can upgrade your other VRAs without having to repeat this process by making 
 
 Report all bugs that you find during this process by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) so that the vendor can fix these issues in later releases.
 {: important}
+
+## Addressing a disk issue
+{: #disk-issue}
+
+If a disk is corrupted, then the firmware upgrade might not complete successfully. Check for hardware error messages or check the health of the disk.  To correct the issue, run a file system check by using the `fsck` command. You can also reboot to resolve a disk issue, as a file system check runs during the boot process.
 
 ## Upgrading from 1801 to 1912
 {: #1801-to-1912}
