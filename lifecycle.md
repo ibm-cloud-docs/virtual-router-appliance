@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-11-26"
+  years: 2017, 2025
+lastupdated: "2025-01-31"
 
 keywords: operating system end of support (eos), add on end of support (eos), vyatta
 
@@ -21,9 +21,9 @@ In the lifecycle of a product, end of support (EOS) is the last date that {{site
 | Operating system | Code name | Debian | DPDK | Maintenance Support | End of support |
 | ----------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 2308 | Nottingham | 11 | 21.11 | 31 Aug 2025 | 28 Feb 2026 |
-| 2204 | Kington | 10 | 20.11 | 04 October 2024 | 04 April 2025 |
+| 2204 | Kington | 10 | 20.11 | 04 October 2024 | 30 November 2025 |
 | 2110 | Jarrow | 10 | 20.11 | 19 October 2023 | 19 April 2024 |
-| 2012 | Halifax | 10 | 20.11 | 14 Dec 2023 | TBD |
+| 2012 | Halifax | 10 | 20.11 | 14 Dec 2023 | 1 September 2024 |
 | 1912 | Edinburgh | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
 | 1908 | Dartmouth | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
 | 1801 | Yountville | 9 | 17.08 | 29 January 2020 | January 2022 |
