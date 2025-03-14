@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-03-14"
 
 keywords: operating system end of support (eos), add on end of support (eos), vyatta
 
@@ -27,7 +27,7 @@ In the lifecycle of a product, end of support (EOS) is the last date that {{site
 | 1912 | Edinburgh | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
 | 1908 | Dartmouth | 9 | 18.11 | 30 June 2022 | 31 December 2022 |
 | 1801 | Yountville | 9 | 17.08 | 29 January 2020 | January 2022 |
-{: caption "Table 1. Lifecycle for Vyatta NOS on the Virtual Router Appliance" caption-side="bottom"}
+{: caption="Lifecycle for Vyatta OS versions" caption-side="top"}
 
 ## Ciena support terminology
 {: #ciena-support-terms}
