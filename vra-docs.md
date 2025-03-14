@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2019-11-14"
+  years: 2017, 2025
+lastupdated: "2025-03-14"
 
 keywords: docs, supplemental, documentation, help, vyatta, brocade
 
@@ -58,3 +58,4 @@ Vyatta Documentation  | Description
 [Brocade Vyatta Network OS BFD Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-bfd.pdf){: external}  | This guide describes how to run BFD on Brocade products that run on the Brocade Vyatta Network OS (referred to as a virtual router, vRouter, or router in the guide).
 [Brocade Vyatta Network OS ALG Configuration Guide, 5.2R1](https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-alg.pdf){: external}  | This guide describes the ALGs available on Brocade products that run on the Brocade Vyatta Network OS (referred to as a virtual router, vRouter, or router in the guide).
 [Brocade Vyatta Network OS Release Notes, 5.2R5](https://public.dhe.ibm.com/cloud/bluemix/network/vra/Brocade_Vyatta_Network_OS_Release_Notes_5.2R5.pdf){: external}  | These release notes are for Brocade Vyatta Network OS Release 5.2R5.
+{: caption="Supplemental VRA documentation (archived)" caption-side="top"}
