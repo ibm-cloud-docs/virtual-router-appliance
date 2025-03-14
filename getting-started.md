@@ -1,30 +1,19 @@
----
 
-copyright:
-  years: 2017, 2024
-lastupdated: "2024-11-08"
-
-keywords: vra, virtual router appliance
-
-subcollection: virtual-router-appliance
-
----
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Getting started with IBM Cloud Virtual Router Appliance (VRA)
 {: #getting-started-vra}
 
-On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functions, be sure to update to version 2012, 2110 or 2204 before 31 December 2022 by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+On 30 November 2025, all 2204 versions of IBM Cloud Virtual Router Appliance will be considered End of Support by Ciena. To maintain official support, be sure to update to version 2308 by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting the latest subrelease ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version. Please ask the IBM Cloud Support Security team for available information on latest known issues before updating to the latest 2308 when you request the latest version.
 {: deprecated}
 
-As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012 or later as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
-{: deprecated}
-
-The {{site.data.keyword.vra_full}} (VRA) provides the latest Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or stand-alone configuration. This configuration enables you route private and public network traffic selectively. This prcoess is done through a full-featured enterprise router that has firewall, traffic shaping, policy-based routing, VPN, and other features.
+The {{site.data.keyword.vra_full}} (VRA) provides the Ciena Vyatta NOS, a debian-based network OS, installed directly onto specific {{site.data.keyword.cloud}} Classic Bare Metal Servers along with expanded abilities for managing Classic Infrastructure VLANs and subnets. 
 {: shortdesc}
 
-VRA minimum server requirements call for 8 GB of RAM and one CPU core for every 10 Gbps of network capacity. For example, a system with dual 10 Gbps public and private uplinks requires at least four cores. Also, if your intent is to setup VPN services with encryption, you can add extra cores. Adding extra cores for VPN Services means that the VRA does not get bogged down by heavy loads when routing and simultaneously encrypting and decrypting data.
+This offering acts as a user-managed router and firewall at the Classic pod level demarcation and enables you to route, filter, NAT and otherwise control private (rfc1918) and public network traffic selectively. This offering is commonly used to deploy VPNs, including IKE-based RA VPN and IPSec VPN tunnels, to help customize and secure access into the IBM Cloud environment. Because this is a router and firewall, the customizability and use cases are very broad and can include the protection of a single server but also include acting as a router that facilitates connections between on-prem, Classic, VPC, Power and other environments.
+
+The {{site.data.keyword.vra_full}} (VRA) is limited to specific Bare Metal server hardware profiles, However, the Bare Metal server can still be customized with varying amounts of RAM and local hard disk or solid state disk configurations. As with other Bare Metal servers, the VRA comes built with a 4 port Intel X710-based NIC that can be ordered in different combinations of 1 gigabit and 10 gigabit connections. It is offered as a High Availability (HA) deployment, which is a set of 2 separate appliances clustered with VRRP in an active-passive setup. It is also offered as a stand-alone deployment. When planning your VRA build, consider your overall environment in regards to standard traffic patterns, network capacity requirements, and encryption overhead for all of the services, servers, and connections that will traverse the VRA.
 
 ## Ordering an IBM Cloud Virtual Router Appliance
 {: #order-vra}
@@ -50,30 +39,26 @@ To order a VRA, follow these steps:
 
 5. From the **Storage disks** section, choose the options that meet your storage requirements.
 
-   RAID0 and RAID1 options are available for added protection against data loss, as are hot spares (backup components that can be placed into service immediately when a primary component fails).
+     RAID configurations are available for customizing storage performance, size and data protection. RAID1 or RAID10 are recommended for a combination of data protection and performance. RAID0 provides the highest read/write performance with the least data protection. If you choose RAID0, ensure that you have a data backup plan, as one disk failure needs the complete rebuild of the RAID with new disks and the rebuilding and reloading of the appliance.
+
+   You can have up to four disks per VRA. "Disk size" with a RAID configuration is the usable disk size, as RAID configurations for every type of RAID (other than RAID0) change the amount of storage available.
    {: note}
 
-   You can have up to four disks per VRA. "Disk size" with a RAID configuration is the usable disk size, because RAID configurations are mirrored.
-   {: note}
-
-   Reserve more than the default disk setting if you plan to run network diagnostics that generate detailed logs.
-   {: tip}
-
-6. From the **Network interface** section, select your **Uplink port speeds**. The default selection is a single interface, but there are redundant and private only options as well. Choose the one that best fits your needs.
+7. From the **Network interface** section, select your **Uplink port speeds**. The default selection is a single interface, but there are redundant and private only options as well. Choose the one that best fits your needs.
 
    With the Network Interface **Add-Ons** section you can select an IPv6 address, which shows you any additional included default options.
 
-7. Review your selections, read the Third-Party Service Agreements, then click **Create**. The order is verified automatically.
+8. Review your selections, read the Third-Party Service Agreements, then click **Create**. The order is verified automatically.
 
 After your order is approved, the provisioning of your {{site.data.keyword.vra_full}} starts automatically. When the provisioning process is complete, the new VRA appears in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page, where you can find the IP addresses, login username, and password for the device.  
 
-After you order and configure your VRA from the IBM Cloud catalog, you must also configure the device itself with the same settings.
+Upon the provisioning and delivery of the VRA, you should consider the configuration similar to factory settings and not representativ of the latest firmware. As a result, open a support ticket to request the latest recommended version (which comes as an ISO) along with a list of any known issues. Next, SSH to the VRA, update the VRA version, harden the OS/configuration to prevent compromise over public ports. Then you can configure the VRA for your intended workloads. For standardization, ease of management, security and scaling, you should automate this process.
 {: tip}
 
 ## Network access considerations
 {: #network-access-considerations}
 
-The VRA can be deployed with either public and private network access or private network access only. By default, SSH access to the public IP is disabled on new provisions of version 2012g and later. Access to the host can be achieved through the private IP address. Additionally, HTTPS access is disabled to both the public and private IPs.
+The VRA can be deployed with either public and private network access or private network access only. By default, SSH access to the public IP is disabled on provisions of version 2012g and later. Access to the host can be achieved through the private IP address. Additionally, HTTPS access is disabled to both the public and private IPs.
 
 ## VLANs and the gateway appliance's role
 {: #vlans-and-the-gateway-appliance-s-role}
@@ -81,16 +66,3 @@ The VRA can be deployed with either public and private network access or private
 A VLAN (virtual LAN) is a mechanism that segregates a physical network into many virtual segments. For convenience, traffic from multiple selected VLANs can be delivered through a single network cable, a process commonly called "trunking."
 
 {{site.data.keyword.vra_full}} is delivered in two parts: The VRA servers and the gateway appliance fixture. The gateway appliance provides you with an interface (GUI and API) for selecting the VLANs you want to associate with your VRA. Associating a VLAN with a gateway appliance reroutes (or "trunks") that VLAN and all of its subnets to your VRA, giving you control over filtering, forwarding, and protection. For every VLAN that is associated to the gateway appliance, that VLAN is allowed on the switch ports that the VRA is connected to, Any subnet on that VLAN is statically routed to your VRA's public VRRP IP (if the subnet is a public subnet) or statically routed to your VRA's private VRRP IP (if the subnet is a private subnet). This routing is done at the router that the VRA is behind, which is the Frontend Customer Router (FCR) or the Backend Customer Router (BCR) for public and private traffic respectively.
-
-VRRP is disabled by default, and it must be enabled for VLAN traffic to work, even on a stand-alone Vyatta. This process is a consequence of the subnets on the associated VLAN's being routed to the VRRP IP or virtual-address assigned to the VRA. For more information, see [VRRP virtual IP (VIP) addresses](/docs/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#vrrp-virtual-ip-vip-addresses).
-{: important}
-
-Servers in an associated VLAN can be reached only from other VLANs by going through your {{site.data.keyword.vra_full}}, You cannot circumvent the VRA unless you bypass or disassociate the VLAN.
-
-By default, a new gateway appliance is associated with two nonremovable "transit" VLANs, one each for public and private. These are typically used for administration and can be secured by VRA commands.
-
-Transit VLANs are for network devices like firewalls or load balancers so that they can route traffic while isolating other devices, such as servers or containers, from the internet. In comparison, "gateway" VLANs are where devices, such as servers and containers, are hosted.
-
-The VRA can manage only VLANs that are associated with it through the gateway appliance.
-
-For more information, see [Managing VLANs with a gateway appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-managing-vlans-and-gateway-appliances).
