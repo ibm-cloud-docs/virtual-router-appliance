@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-11-05"
+  years: 2017, 2025
+lastupdated: "2025-03-18"
 
 keywords:
 
@@ -144,7 +144,7 @@ May 25 05:34:07 gateway02 dataplane[4391]: Out:dp0bond1 PASS fw rule PubOut:1 pr
 {: screen}
 
 ## Zone-based firewalls with route-based IPSec
-{: zone-based-fw-ipsec}
+{: #zone-based-fw-ipsec}
 
 For zone-based firewalls, the policies that you define should assume that traffic flows between the VTI interface and the VRA's local private VLAN interace (VIF). You do not need to define a policy between the VTI and the `dp0bond1` zones.
 

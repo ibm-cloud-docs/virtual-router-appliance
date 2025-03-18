@@ -1,4 +1,14 @@
+---
 
+copyright:
+  years: 2017, 2025
+lastupdated: "2025-03-18"
+
+keywords: 
+
+subcollection: virtual-router-appliance
+
+---
 
 {{site.data.keyword.attribute-definition-list}}
 

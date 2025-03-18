@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-14"
+  years: 2017, 2025
+lastupdated: "2025-03-18"
 
 keywords: firewall, manage, stateless, stateful, alg, firewall, rules, CPP, Logging
 
@@ -232,7 +232,7 @@ To begin checking and troubleshooting, run these commands to understand how the 
 3. Examine the rules to make sure that the proper subnets, ports, and protocols are allowed:
    - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `in` to the VIFs (`dp0bond0.XXX`), then you must define the service networks as the destinations. This is because when traffic flows into the VIF, that is when the client server sends traffic outbound. 
    - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `out` of the VIFs (`dp0bond0.XXX`), then you must define the service networks as the sources. This is because when traffic flows out of the VIF it does so towards the client servers. 
-   - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `in' to the `dp0bond0` interface, then you must define the service networks as the sources. This is because traffic flowing into the `dp0bond0` interface is generally destined to the servers behind the Vyatta.
+   - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `in` to the `dp0bond0` interface, then you must define the service networks as the sources. This is because traffic flowing into the `dp0bond0` interface is generally destined to the servers behind the Vyatta.
    - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `out` of the `dp0bond0` interface, then you must define the service networks as the destinations. This is because traffic flowing out of `dp0bond0` is in the direction away from the client servers that are behind the Vyatta. 
 
 ### Troubleshooting zone-based firewall configurations
