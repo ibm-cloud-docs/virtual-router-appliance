@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-12-05"
+  years: 2017, 2025
+lastupdated: "2025-03-18"
 
 keywords:
 
@@ -21,9 +21,9 @@ On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance wil
 As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** November 12 2024
+**Latest patch received:** 15 March 2024
 
-**Latest documentation published:** March 7, 2024
+**Latest documentation published:** 18 March 2024
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -33,6 +33,49 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+# Vyatta NOS Software Patches - 2308e
+{: #vyatta-nos-software-patches}
+
+**Released:** 12 March 2025
+
+## Issues resolved
+{: #issues-resolved-vyatta}
+
+| Issue Number | Priority  | Summary |
+|-------------|----------|---------|
+| VRVDR-65777 | Major    | Vyatta with net_i40e and net_ixgbe drivers doesn't accept jumbo frame after upgrading to 2308 |
+| VRVDR-65707 | Critical | PXE boot with 2308d release not loading config file |
+| VRVDR-65685 | Minor    | Silicom ATTv450 Backplane interface bp0p1 unknown warning upon commit |
+| VRVDR-65677 | Minor    | BGP routes not populating routing table |
+| VRVDR-65675 | Major    | IPSec VPN tunnels went down with Traceback logs |
+| VRVDR-65603 | Minor    | Upgrade failed from 2110h to 2308c and 2308d |
+| VRVDR-65318 | Major    | VRRP automatic failback due to Keepalived_vrrp - A thread timer expired |
+| VRVDR-64527 | Major    | Upgrade checker failed on 2308c with Invalid URL and symbols not allowed messages |
+{: caption="Security vulnerabilities resolved for 2308e" caption-side="bottom"}
+
+## Security vulnerabilities resolved
+(: #security-vulnerabilities-resolved-vyatta}
+
+| Issue Number | CVSS Score | Advisory Summary |
+|-------------|------------|------------------|
+| VRVDR-65798 | 9.1        | DLA-4075-1 Debian dla-4075 : ata-modules-5.10.0-29-armmp-di - security update |
+| VRVDR-65797 | 4.9        | DLA-4074-1 CVE-2025-21490: Debian dla-4074 : libmariadb-dev - security update |
+| VRVDR-65776 | 6.5        | DSA-4065-1 CVE-2025-24528: Debian dla-4065 : krb5-admin-server - security update |
+| VRVDR-65773 | 7.5        | DLA-4064-1 CVE-2022-49043, CVE-2023-39615, CVE-2023-45322, CVE-2024-25062, CVE-2024-56171, CVE-2025-24928, CVE-2025-27113: Debian dla-4064 : libxml2 - security update |
+| VRVDR-65772 | 5.3        | DLA-4063-1 CVE-2024-12243: Debian dla-4063 : gnutls-bin - security update |
+| VRVDR-65771 | 5.3        | DLA-4061-1 CVE-2024-12133: Debian dla-4061 : libtasn1-6 - security update |
+| VRVDR-65755 | 6.8        | DLA-4057-1 CVE-2025-26465: Debian dla-4057 : openssh-client - security update |
+| VRVDR-65752 | 6.8        | DSA-5868-1 CVE-2025-26465: DSA 5868-1 openssh security update |
+| VRVDR-65750 | 5.3        | DSA-5867-1 CVE-2024-12243: [DSA 5867-1] gnutls28 security update |
+| VRVDR-65749 | 7.5        | DSA-5868-1 CVE-2024-11187: Debian dla-4050 : bind9 - security update |
+| VRVDR-65738 | 5.3        | DSA-5863-1 CVE-2024-12133: [DSA 5863-1] libtasn1-6 security update |
+| VRVDR-65737 | 8.8        | DLA-4047-1 CVE-2021-3621, CVE-2023-3758: Debian dla-4047 : libipa-hbac-dev - security update |
+| VRVDR-65716 | 5.9        | DLA-4032-1 CVE-2023-7250, CVE-2024-26306, CVE-2024-53580: Debian dla-4032 : iperf3 - security update |
+| VRVDR-65698 | 6.7        | DLA-4016-1 Debian dla-4016 : ucf - security update |
+| VRVDR-65696 | 7.5        | DLA-4026-1 CVE-2023-2908, CVE-2023-3316, CVE-2023-3618, CVE-2023-25433, CVE-2023-26965, CVE-2023-26966, CVE-2023-52356, CVE-2024-7006: Debian dla-4026 : libtiff-dev - security update |
+| VRVDR-65695 | 9.8        | DLA-4019-1 CVE-2021-28831, CVE-2021-42374, CVE-2021-42378, CVE-2021-42379, CVE-2021-42380, CVE-2021-42381, CVE-2021-42382, CVE-2021-42384, CVE-2021-42385, CVE-2021-42386, CVE-2022-48174, CVE-2023-42364, CVE-2023-42365: Debian dla-4019 : busybox - security update |
+{: caption="Security vulnerabilities resolved for 2308e" caption-side="bottom"}
 
 ## 2308d
 {: #2308d}
@@ -62,6 +105,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 | VRVDR-64247 | Major | Support for Mellanox MT28850 ConnectX-6 |
 | VRVDR-64246 | Major | Configuring/Enabling virtio interface on Vyatta crashes virtual machine |
 | VRVDR-64242 | Major | 'show arp' operational command returns access errors for operator level user |
+{: caption="Security issues resolved for 2308d" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
 {: #2308d-sv}
@@ -89,7 +133,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 | VRVDR-64708 | 8.2 | DSA-5673-1 | CVE-2024-2961: Debian dsa-5673 : glibc-doc - security update |
 | VRVDR-63307 | 6.5 | DSA-5559-1 | [DSA 5559-1] wireshark security update |
 | VRVDR-61797 | 5.9 | DSA-5477-1 | CVE-2022-2127, CVE-2023-3347, CVE-2023-34966, CVE-2023-34967, CVE-2023-34968: Debian DSA-5477-1 : samba - security update |
-
+{: caption="Security vulnerabilities resolved for 2308d" caption-side="bottom"}
 
 ### New features
 {: #new-features-2308d}
@@ -117,6 +161,7 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 | VRVDR-64787 | Critical | Dataplane crash observed after upgrade to 2204g |
 | VRVDR-64747 | Critical | Dataplane crashes after upgrade to 2204g with sflow configuration |
 | VRVDR-64621 | Minor | IPsec phase 2 rekeying timer showing negative values |
+{: caption="Issues resolved for 2204h" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
 {: #2204h-sv}
@@ -140,6 +185,7 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 | VRVDR-64179 | 7.5 | DLA-3746-1 | CVE-2023-4511, CVE-2023-4513, CVE-2023-6175, CVE-2024-0208:Debian dla-3746 : libwireshark-data -
 security update |
 | VRVDR-64106 | 7.5 | DLA-3740-1 | CVE-2023-5981, CVE-2024-0553: Debian dla-3740 : gnutls-bin |
+{: caption="Security vulnerabilities resolved for 2204h" caption-side="bottom"}
 
 ### New features
 {: #new-features-2204h}
@@ -161,7 +207,6 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 | VRVDR-64042 | Critical | LACP Bonding, comprised of Intel X540/X520, transmits untagged ARP packets on vlan (802.1q) interfaces |
 | VRVDR-63951 | Critical | LACP Bonding, comprised of Intel X710, transmits untagged ARP packets on vlan (802.1q) interfaces |
 | VRVDR-63861 | Critical |SSH fails to start after upgrade to 2308a |
-
 {: caption="Issues resolved for 2308c" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -171,7 +216,6 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 | --- | --- | --- | --- |
 | VRVDR-64313 | 7.3 | DSA-5638-1 | CVE-2024-24806: Debian dsa-5638 : libuv1 - security update |
 | VRVDR-63936 | 7.5 | DSA-5621-1 | CVE-2023-4408, CVE-2023-5517, CVE-2023-5679, CVE-2023-6516, CVE-2023-50387, CVE-2023-50868:  Debian dsa-5621 : bind9 - security update |
-
 {: caption="Security vulnerabilities resolved for 2308c" caption-side="bottom"}
 
 ### New features
@@ -197,14 +241,10 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-63709 | Major | Upgrade from 2012g to 2204f cause error "querying policy failed: Invalid
-argument (22)"| 
-| VRVDR-63659 | Major | Mellanox MT28800 ConnectX-5 SR-IOV : interface is down with configured
-jumbo MTU| 
-| VRVDR-62364 | Critical |  Mellanox MT28800 ConnectX-5 SR-IOV : interface is down after configuring
-jumbo MTU| 
-| VRVDR-62355 | Major | Mellanox MT28800 ConnectX-5 : receiving jumbo frame on non-jumbo
-configured interface causes dataplane crash| 
+| VRVDR-63709 | Major | Upgrade from 2012g to 2204f cause error "querying policy failed: Invalid argument (22)"| 
+| VRVDR-63659 | Major | Mellanox MT28800 ConnectX-5 SR-IOV : interface is down with configured jumbo MTU| 
+| VRVDR-62364 | Critical |  Mellanox MT28800 ConnectX-5 SR-IOV : interface is down after configuring jumbo MTU| 
+| VRVDR-62355 | Major | Mellanox MT28800 ConnectX-5 : receiving jumbo frame on non-jumbo configured interface causes dataplane crash| 
 | VRVDR-61066 | Major | Community list configuration accepts alpha numeric community values| 
 | VRVDR-60048 | Critical | Flapping BGP Default route during IPv6 Failure| 
 {: caption="Issues resolved for 2204g" caption-side="bottom"}
@@ -270,8 +310,7 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-62331 |Critical | Inconsistency in successful user authentication logs seen when login via
-telnet, ssh and tacacs+ user |
+| VRVDR-62331 |Critical | Inconsistency in successful user authentication logs seen when login via telnet, ssh and tacacs+ user |
 | VRVDR-62257 | Critical | HTTP(S) traffic not being categorised as "type web" |
 | VRVDR-62228 | Major | Fix puncher log message |
 | VRVDR-61939 | Blocker | Telemetry Service rejects valid paths as invalid |
@@ -396,7 +435,7 @@ Vyatta gateway appliances using the Intel X540 series NIC have been encountering
 ## 2012p
 {: #2012p}
 
-### Issues Resolved
+### Issues resolved
 {: #2012p-i}
 
 Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary Vyatta will cause a failover for all other interfaces in the same sync-group. In addition, disabling an interface on the primary Vyatta will cause all interfaces in the same sync-group as that interface to fault. To avoid this failover, you can change the sync-group of the interface to a non-default setting before disabling or deleting it. If you want to add the interface back into the configuration, or if you want to reenable the interface, commit that change before adding it back into the original sync-group. Otherwise, the same failover will occur again. You should also validate that your firewall policies allow VRRP and that your VRRP configurations -- such as `preempt false`, `priority` (253 on the default backup and 254 on the default primary) and `advertise-interval` (the default is 1) -- are all set to the same value for each VIF. This is required in order to have a stable VRRP cluster.
@@ -463,7 +502,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ## 2012n
 {: #2012n}
 
-### Issues Resolved
+### Issues resolved
 {: #2012n-i}
 
 | Issue Number | Priority | Summary |
@@ -614,8 +653,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 ### Security vulnerabilities resolved
 {: #2012h-sv}
 
-| Issue Number | CVSS score | Advisorejbdccuugndihrtnjfkfcjjinkvlitrgtbljjedtjbnv
-y | Summary |
+| Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
 | VRVDR-57353 | 7.5 | DLA-2935-1 | CVE-2018-25032: Debian DSA-5111-1 : zlib -security update |
 | VRVDR-57317 | 7.1 | DSA-5108-1 | CVE-2022-0561, CVE-2022-0562, CVE-2022-0865, CVE-2022-0891, CVE-2022-0907, CVE-2022-0908, CVE-2022-0909, CVE-2022-0924, CVE-2022-22844: Debian DSA-5108-1 : tiff -security update |
