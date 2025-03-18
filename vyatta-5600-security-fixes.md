@@ -55,7 +55,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 {: caption="Security vulnerabilities resolved for 2308e" caption-side="bottom"}
 
 ## Security vulnerabilities resolved
-(: #security-vulnerabilities-resolved-vyatta}
+{: #security-vulnerabilities-resolved-vyatta}
 
 | Issue Number | CVSS Score | Advisory Summary |
 |-------------|------------|------------------|
