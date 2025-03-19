@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-19"
 
 keywords:
 
@@ -21,9 +21,9 @@ On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance wil
 As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** 15 March 2024
+**Latest patch received:** 15 March 2025
 
-**Latest documentation published:** 18 March 2024
+**Latest documentation published:** 18 March 2025
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
