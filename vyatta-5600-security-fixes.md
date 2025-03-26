@@ -742,7 +742,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-56769 | 8.1 | DLA-jb2848-1 | CVE-2019-13115, CVE-2019-17498 :Debian DLA-2848-1 : libssh2 - LTS security update |
 | VRVDR-56689 | 9.8 | DLA-28dc36-1 | CVE-2021-43527: Debian DLA-2836-1 : nss - LTS security update |
 | VRVDR-56680 | 7.5 | DLA-2837cuu-1 | CVE-2021-43618: DLA-2837-1 : gmp - LTS security update |
-| VRVDR-56665 | 9.8 | DLA-2834-1 gndifhkujkjhheihijtdcivubhignnkceniv | CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
+| VRVDR-56665 | 9.8 | DLA-2834-1 | CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
 | VRVDR-56664 | 7.5 | DLA-2833-1 | CVE-2018-5764: Debian DLA-2833-1 : rsync - LTS security update |
 | VRVDR-56647 | 8.8 | DLA-2827-1 | CVE-2019-8921, CVE-2019-8922, CVE-2021-41229: Debian DLA-2827-1 : bluez - LTS security update |
 | VRVDR-56645 | 8.8 | DLA-2828-1 | CVE-2017-14160, CVE-2018-10392, CVE-2018-10393: Debian DLA-2828-1 : libvorbis - LTS security update |
