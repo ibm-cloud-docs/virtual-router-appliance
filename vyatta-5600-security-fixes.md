@@ -322,14 +322,11 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-62998 | 7.5 | DSA-5543-1 CVE-2023-34058, CVE-2023-34059: Debian DSA-
-5543-1 : open-vm-tools - security update |
+| VRVDR-62998 | 7.5 | DSA-5543-1 CVE-2023-34058, CVE-2023-34059: Debian DSA-5543-1 : open-vm-tools - security update |
 | VRVDR-62671 | 9.1 | DSA-5533-1 [DSA 5533-1] gst-plugins-bad1.0 security update |
 | VRVDR-62316 | 9.8 | DSA-5519-1 CVE-2023-4692, CVE-2023-4693: Debian DSA-5519-1: grub2 - security update |
-| VRVDR-62307 | 5.3 | DSA-5517-1 CVE-2023-43785 CVE-2023-43786 CVE-2023-43787:
-[DSA 5517-1] libx11 security update | 
-| VRVDR-62273 | 6.5 | DSA-5517-1 CVE-2023-4527, CVE-2023-4806, CVE-2023-4911:
-Debian DSA-5514-1 : glibc - security update |
+| VRVDR-62307 | 5.3 | DSA-5517-1 CVE-2023-43785 CVE-2023-43786 CVE-2023-43787: [DSA 5517-1] libx11 security update | 
+| VRVDR-62273 | 6.5 | DSA-5517-1 CVE-2023-4527, CVE-2023-4806, CVE-2023-4911: Debian DSA-5514-1 : glibc - security update |
 | VRVDR-62219 | 9.8 | DSA-5505-1 CVE-2023-41910: Debian DSA-5505-1 : lldpd - security update |
 |VRVDR-62211 | 7.5 | DSA-5504-1 CVE-2023-3341, CVE-2023-4236: Debian DSA-5504-1: bind9 - security update |
 | VRVDR-62162 | 8.8 | DSA-5497-2 [DSA 5497-2] libwebp security update |
