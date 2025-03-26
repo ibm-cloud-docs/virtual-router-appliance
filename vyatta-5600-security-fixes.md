@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-03-26"
 
 keywords:
 
@@ -34,12 +34,12 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
-# Vyatta NOS Software Patches - 2308e
+## Vyatta NOS Software Patches - 2308e
 {: #vyatta-nos-software-patches}
 
 **Released:** 12 March 2025
 
-## Issues resolved
+### Issues resolved
 {: #issues-resolved-vyatta}
 
 | Issue Number | Priority  | Summary |
@@ -54,7 +54,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 | VRVDR-64527 | Major    | Upgrade checker failed on 2308c with Invalid URL and symbols not allowed messages |
 {: caption="Security vulnerabilities resolved for 2308e" caption-side="bottom"}
 
-## Security vulnerabilities resolved
+### Security vulnerabilities resolved
 {: #security-vulnerabilities-resolved-vyatta}
 
 | Issue Number | CVSS Score | Advisory Summary |
@@ -738,12 +738,11 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 {: #1912s-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
-| --- | --- | --- | --- |e
+| --- | --- | --- | --- |
 | VRVDR-56769 | 8.1 | DLA-jb2848-1 | CVE-2019-13115, CVE-2019-17498 :Debian DLA-2848-1 : libssh2 - LTS security update |
 | VRVDR-56689 | 9.8 | DLA-28dc36-1 | CVE-2021-43527: Debian DLA-2836-1 : nss - LTS security update |
 | VRVDR-56680 | 7.5 | DLA-2837cuu-1 | CVE-2021-43618: DLA-2837-1 : gmp - LTS security update |
-| VRVDR-56665 | 9.8 | DLA-2834-1 gndifhkujkjhheihijtdcivubhignnkceniv
-| CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
+| VRVDR-56665 | 9.8 | DLA-2834-1 gndifhkujkjhheihijtdcivubhignnkceniv | CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
 | VRVDR-56664 | 7.5 | DLA-2833-1 | CVE-2018-5764: Debian DLA-2833-1 : rsync - LTS security update |
 | VRVDR-56647 | 8.8 | DLA-2827-1 | CVE-2019-8921, CVE-2019-8922, CVE-2021-41229: Debian DLA-2827-1 : bluez - LTS security update |
 | VRVDR-56645 | 8.8 | DLA-2828-1 | CVE-2017-14160, CVE-2018-10392, CVE-2018-10393: Debian DLA-2828-1 : libvorbis - LTS security update |
