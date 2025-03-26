@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-03-26"
 
 keywords:
 
@@ -34,12 +34,12 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
-# Vyatta NOS Software Patches - 2308e
+## Vyatta NOS Software Patches - 2308e
 {: #vyatta-nos-software-patches}
 
 **Released:** 12 March 2025
 
-## Issues resolved
+### Issues resolved
 {: #issues-resolved-vyatta}
 
 | Issue Number | Priority  | Summary |
@@ -54,7 +54,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 | VRVDR-64527 | Major    | Upgrade checker failed on 2308c with Invalid URL and symbols not allowed messages |
 {: caption="Security vulnerabilities resolved for 2308e" caption-side="bottom"}
 
-## Security vulnerabilities resolved
+### Security vulnerabilities resolved
 {: #security-vulnerabilities-resolved-vyatta}
 
 | Issue Number | CVSS Score | Advisory Summary |
@@ -322,14 +322,11 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-62998 | 7.5 | DSA-5543-1 CVE-2023-34058, CVE-2023-34059: Debian DSA-
-5543-1 : open-vm-tools - security update |
+| VRVDR-62998 | 7.5 | DSA-5543-1 CVE-2023-34058, CVE-2023-34059: Debian DSA-5543-1 : open-vm-tools - security update |
 | VRVDR-62671 | 9.1 | DSA-5533-1 [DSA 5533-1] gst-plugins-bad1.0 security update |
 | VRVDR-62316 | 9.8 | DSA-5519-1 CVE-2023-4692, CVE-2023-4693: Debian DSA-5519-1: grub2 - security update |
-| VRVDR-62307 | 5.3 | DSA-5517-1 CVE-2023-43785 CVE-2023-43786 CVE-2023-43787:
-[DSA 5517-1] libx11 security update | 
-| VRVDR-62273 | 6.5 | DSA-5517-1 CVE-2023-4527, CVE-2023-4806, CVE-2023-4911:
-Debian DSA-5514-1 : glibc - security update |
+| VRVDR-62307 | 5.3 | DSA-5517-1 CVE-2023-43785 CVE-2023-43786 CVE-2023-43787: [DSA 5517-1] libx11 security update | 
+| VRVDR-62273 | 6.5 | DSA-5517-1 CVE-2023-4527, CVE-2023-4806, CVE-2023-4911: Debian DSA-5514-1 : glibc - security update |
 | VRVDR-62219 | 9.8 | DSA-5505-1 CVE-2023-41910: Debian DSA-5505-1 : lldpd - security update |
 |VRVDR-62211 | 7.5 | DSA-5504-1 CVE-2023-3341, CVE-2023-4236: Debian DSA-5504-1: bind9 - security update |
 | VRVDR-62162 | 8.8 | DSA-5497-2 [DSA 5497-2] libwebp security update |
@@ -738,12 +735,11 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 {: #1912s-sv}
 
 | Issue Number | CVSS score | Advisory | Summary |
-| --- | --- | --- | --- |e
+| --- | --- | --- | --- |
 | VRVDR-56769 | 8.1 | DLA-jb2848-1 | CVE-2019-13115, CVE-2019-17498 :Debian DLA-2848-1 : libssh2 - LTS security update |
 | VRVDR-56689 | 9.8 | DLA-28dc36-1 | CVE-2021-43527: Debian DLA-2836-1 : nss - LTS security update |
 | VRVDR-56680 | 7.5 | DLA-2837cuu-1 | CVE-2021-43618: DLA-2837-1 : gmp - LTS security update |
-| VRVDR-56665 | 9.8 | DLA-2834-1 gndifhkujkjhheihijtdcivubhignnkceniv
-| CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
+| VRVDR-56665 | 9.8 | DLA-2834-1 | CVE-2018-20721: Debian DLA-2834-1 : uriparser - LTS security update |
 | VRVDR-56664 | 7.5 | DLA-2833-1 | CVE-2018-5764: Debian DLA-2833-1 : rsync - LTS security update |
 | VRVDR-56647 | 8.8 | DLA-2827-1 | CVE-2019-8921, CVE-2019-8922, CVE-2021-41229: Debian DLA-2827-1 : bluez - LTS security update |
 | VRVDR-56645 | 8.8 | DLA-2828-1 | CVE-2017-14160, CVE-2018-10392, CVE-2018-10393: Debian DLA-2828-1 : libvorbis - LTS security update |
