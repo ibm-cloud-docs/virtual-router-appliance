@@ -18,7 +18,7 @@ toc:
        - vyatta-patch-notes.md
        - link:
           label: What is network security?
-          href: https://www.ibm.com/topics/networking
+          href: https://www.ibm.com/think/topics/network-security
        - topicgroup:
           label: Upgrading
           topics:
