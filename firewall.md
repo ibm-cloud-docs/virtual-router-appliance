@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-04-07"
 
 keywords: firewall, manage, stateless, stateful, alg, firewall, rules, CPP, Logging
 
@@ -104,7 +104,7 @@ In the ruleset `ALLOW_LEGACY`, there are two rules defined. The first rule drops
 ## Allowing data center access
 {: #allowing-data-center-access}
 
-IBM Cloud hosts many subnets (private service networks) that provide services and support to client servers running within its datacenters. For example, DNS resolver services run on `10.0.80.11` and `10.0.80.12`, and the default NTP server runs on `10.0.77.54`. All three are within the `10.0.64.0/29` service network. Other subnets are used during provisioning and support. You can find the private service networks used in the data centers in [this topic](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network).
+IBM Cloud hosts many subnets (private service networks) that provide services and support to client servers running within its datacenters. For example, DNS resolver services run on `10.0.80.11` and `10.0.80.12`, and the default NTP server runs on `10.0.77.54`. All three are within the `10.0.64.0/29` service network. Other subnets are used during provisioning and support. You can find the private service networks used in the data centers in [this topic](/docs/infrastructure-hub?topic=infrastructure-hub-ibm-cloud-ip-ranges#service-network).
 
 You can allow data center access by placing the proper `SERVICE-ALLOW` rules at the beginning of the firewall rule sets with an action of `accept`. Where the rule set must be applied depends on the routing and firewall design being implemented.
 

@@ -90,7 +90,7 @@ toc:
              label: Vyatta Network OS Scripting Reference Guide
              href: https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf
        - lifecycle.md
-       - include: ../cloud-infrastructure/ips.md
+       - include: /..infrastructure-hub/ips.md
        - topicgroup:
           label: Legacy Vyatta 5400
           topics:
