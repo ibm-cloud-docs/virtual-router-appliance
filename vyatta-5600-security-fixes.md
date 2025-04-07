@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-26"
+lastupdated: "2025-04-07"
 
 keywords:
 
@@ -52,6 +52,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 | VRVDR-65603 | Minor    | Upgrade failed from 2110h to 2308c and 2308d |
 | VRVDR-65318 | Major    | VRRP automatic failback due to Keepalived_vrrp - A thread timer expired |
 | VRVDR-64527 | Major    | Upgrade checker failed on 2308c with Invalid URL and symbols not allowed messages |
+| VRVDR-58526 | Critical | IPsec does not send trap on tunnel down |
 {: caption="Security vulnerabilities resolved for 2308e" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -127,7 +128,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 | VRVDR-65092 | 7.8 | DSA-5730-1 | [DSA 5730-1] linux security update |
 | VRVDR-65071 | 9.1 | DSA-5726-1 | CVE-2024-37370, CVE-2024-37371: Debian dsa-5726 : krb5-admin-server - security update |
 | VRVDR-64980 | 7.8 | DSA-5702-1 | CVE-2024-4453: [DSA 5702-1] gst-plugins-base1.0 security update |
-| VRVDR-64836 | 8.1 | DSA-5682-2 | CVE-2024-34397: [DSA 5682-2] glib2.0 regression update | 
+| VRVDR-64836 | 8.1 | DSA-5682-2 | CVE-2024-34397: [DSA 5682-2] glib2.0 regression update |
 | VRVDR-64820 | 8.6 | DSA-5679-1 | CVE-2022-48624, CVE-2024-32487: Debian dsa-5679 : less - security update |
 | VRVDR-64819 | 9.7 | DSA-5678-1 | CVE-2024-33599, CVE-2024-33600, CVE-2024-33601, CVE-2024-33602: Debian dsa-5678 : glibc-doc - security update |
 | VRVDR-64708 | 8.2 | DSA-5673-1 | CVE-2024-2961: Debian dsa-5673 : glibc-doc - security update |
@@ -220,7 +221,7 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 ### New features
 {: #new-features-vra}
 
-The 2308 branch is based on Debian 11. All the previous Vyatta releases are bsaed on Debian 10, so many of the underlying binaries and libraries on the OS have been upgraded to various different versions, from SSH to the IPsec daemon amongst others. 
+The 2308 branch is based on Debian 11. All the previous Vyatta releases are bsaed on Debian 10, so many of the underlying binaries and libraries on the OS have been upgraded to various different versions, from SSH to the IPsec daemon amongst others.
 
 ### Known issues
 {: #known-issues-vra}
@@ -240,12 +241,12 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-63709 | Major | Upgrade from 2012g to 2204f cause error "querying policy failed: Invalid argument (22)"| 
-| VRVDR-63659 | Major | Mellanox MT28800 ConnectX-5 SR-IOV : interface is down with configured jumbo MTU| 
-| VRVDR-62364 | Critical |  Mellanox MT28800 ConnectX-5 SR-IOV : interface is down after configuring jumbo MTU| 
-| VRVDR-62355 | Major | Mellanox MT28800 ConnectX-5 : receiving jumbo frame on non-jumbo configured interface causes dataplane crash| 
-| VRVDR-61066 | Major | Community list configuration accepts alpha numeric community values| 
-| VRVDR-60048 | Critical | Flapping BGP Default route during IPv6 Failure| 
+| VRVDR-63709 | Major | Upgrade from 2012g to 2204f cause error "querying policy failed: Invalid argument (22)"|
+| VRVDR-63659 | Major | Mellanox MT28800 ConnectX-5 SR-IOV : interface is down with configured jumbo MTU|
+| VRVDR-62364 | Critical |  Mellanox MT28800 ConnectX-5 SR-IOV : interface is down after configuring jumbo MTU|
+| VRVDR-62355 | Major | Mellanox MT28800 ConnectX-5 : receiving jumbo frame on non-jumbo configured interface causes dataplane crash|
+| VRVDR-61066 | Major | Community list configuration accepts alpha numeric community values|
+| VRVDR-60048 | Critical | Flapping BGP Default route during IPv6 Failure|
 {: caption="Issues resolved for 2204g" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -256,30 +257,30 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 | VRVDR-63878 | 8.8 | DLA-3732-1 | CVE-2023-7090, CVE-2023-28486, CVE-2023-28487:Debian dla-3732 : sudo - security update |
 | VRVDR-63866 | 7.5 | DLA-3726-1 | CVE-2023-3341: Debian dla-3726 : bind9 - security update |
 | VRVDR-63808 | 4.9 | DLA-3722-1 | CVE-2023-22084: Debian dla-3722 : libmariadb-dev -security update |
-| VRVDR-63807 | 6.1 | DLA-3715-1 | CVE-2024-22195: Debian dla-3715 : python-jinja2 -security update | 
-| VRVDR-63718 | 9.8 | DLA-3711-1 | Debian dla-3711 : linux-config-5.10 - security update| 
-| VRVDR-63601 | 6.5 | DLA-3692-1 | CVE-2023-28322, CVE-2023-46218: Debian DLA-3692-1 : curl - LTS security update | 
-| VRVDR-63600 | 7.1 | DLA-3689-1 | CVE-2020-0556, CVE-2023-45866: Debian DLA-3689-1 : bluez - LTS security update| 
-| VRVDR-63432 | 6.7 | DLA-3682-1 | CVE-2021-39537, CVE-2023-29491: Debian DLA-3682-1 : ncurses - LTS security update| 
-| VRVDR-63358 | 7.5 | DLA-3660-1 | CVE-2023-5981: Debian DLA-3660-1 : gnutls28 - LTSsecurity update| 
-| VRVDR-63175 | 7.1 | DLA-3649-1 | CVE-2023-43803: Debian DLA-3649-1 : python-urllib3- LTS security update| 
-| VRVDR-63133 | 7.5 | DLA-3646-1 | CVE-2023-34058, CVE-2023-34059: Debian DLA-3646-1 : open-vm-tools - LTS security update| 
-| VRVDR-63021 | 7.2 | DLA-3639-1 | Debian DLA-3639-1 : distro-info-data - LTS databaseupdate| 
-| VRVDR-62708 | 7.5 | DLA-3634-1 | CVE-2020-25648, CVE-2023-4421: Debian DLA-3634-1 : nss - LTS security update| 
-| VRVDR-62675 | 7.2 | DLA-3629-1 | CVE-2019-10222, CVE-2020-1700, CVE-2020-1760,CVE-2020-10753, CVE-2020-12059, CVE-2020-25678,CVE-2020-27781, CVE-2021-3524,CVE-2021-3531,CVE-2021-3979, CVE-2021-20288, CVE-2023-43040:Debian DLA-3629-1 : ceph - LTS security update| 
-| VRVDR-62674 | 6.5 | DLA-3628-1 | CVE-2023-34969: Debian DLA-3628-1 : dbus - LTS security update| 
-| VRVDR-62511 | 6.5 | DLA-3626-1 CVE-2023-36054: Debian DLA-3626-1 : krb5 - LTS security update| 
-| VRVDR-62466 | 7.5 | DLA-3621-1 | CVE-2020-11080, CVE-2023-44487: Debian DLA-3621-1 : nghttp2 - LTS security update| 
-| VRVDR-62378 | 9.8 | DLA-3614-1 | CVE-2022-48560, CVE-2022-48564, CVE-2022-48565,CVE-2022-48566, CVE-2023-40217: Debian DLA-3614-1 : python3.7 - LTS security update| 
-| VRVDR-62377 | 5.9 | DLA-3613-1 | CVE-2023-28321, CVE-2023-38546: Debian DLA 3613-1 : curl - LTS security update| 
-| VRVDR-62332 | 9.8 | DLA-3610-1 | CVE-2018-20060, CVE-2019-9740, CVE-2019-11236,CVE-2019-11324, CVE-2020-26116, CVE-2020-26137,CVE-2023-43804: Debian DLA-3610-1 : python-urllib3 - LTS security update| 
-| VRVDR-62321 | 8.1 | DLA-3604-1 | CVE-2020-24165, CVE-2023-0330, CVE-2023-3180:Debian DLA-3604-1 : qemu - LTS security update| 
-| VRVDR-62320 | 5.3 | DLA-3602-1 | CVE-2023-43785 CVE-2023-43786 CVE-2023-43787:Debian DLA-3602-1 : libx11 - LTS security update| 
-| VRVDR-62319 | 9.8 | DLA-3605-1 | CVE-2023-4692, CVE-2023-4693: Debian DLA-3605-1: grub2 - LTS security update| 
-| VRVDR-62290 | 7.5 | DLA-3597-1 | CVE-2023-20900: Debian DLA-3597-1 : open-vm tools - LTS security update| 
-| VRVDR-62282 | 7.8 | DLA-3588-1 | CVE-2023-4752, CVE-2023-4781: Debian DLA-3588-1: vim - LTS security update| 
-| VRVDR-62281 | 6.5 | DLA-3586-1 | CVE-2020-19189: Debian DLA-3586-1 : ncurses - LTS security update| 
-| VRVDR-58905 | 7.5 | CVE-2022 40617 | strongSwan: CVE-2022-40617 / Untrusted URIs for Revocation Checking might lead to DoS| 
+| VRVDR-63807 | 6.1 | DLA-3715-1 | CVE-2024-22195: Debian dla-3715 : python-jinja2 -security update |
+| VRVDR-63718 | 9.8 | DLA-3711-1 | Debian dla-3711 : linux-config-5.10 - security update|
+| VRVDR-63601 | 6.5 | DLA-3692-1 | CVE-2023-28322, CVE-2023-46218: Debian DLA-3692-1 : curl - LTS security update |
+| VRVDR-63600 | 7.1 | DLA-3689-1 | CVE-2020-0556, CVE-2023-45866: Debian DLA-3689-1 : bluez - LTS security update|
+| VRVDR-63432 | 6.7 | DLA-3682-1 | CVE-2021-39537, CVE-2023-29491: Debian DLA-3682-1 : ncurses - LTS security update|
+| VRVDR-63358 | 7.5 | DLA-3660-1 | CVE-2023-5981: Debian DLA-3660-1 : gnutls28 - LTSsecurity update|
+| VRVDR-63175 | 7.1 | DLA-3649-1 | CVE-2023-43803: Debian DLA-3649-1 : python-urllib3- LTS security update|
+| VRVDR-63133 | 7.5 | DLA-3646-1 | CVE-2023-34058, CVE-2023-34059: Debian DLA-3646-1 : open-vm-tools - LTS security update|
+| VRVDR-63021 | 7.2 | DLA-3639-1 | Debian DLA-3639-1 : distro-info-data - LTS databaseupdate|
+| VRVDR-62708 | 7.5 | DLA-3634-1 | CVE-2020-25648, CVE-2023-4421: Debian DLA-3634-1 : nss - LTS security update|
+| VRVDR-62675 | 7.2 | DLA-3629-1 | CVE-2019-10222, CVE-2020-1700, CVE-2020-1760,CVE-2020-10753, CVE-2020-12059, CVE-2020-25678,CVE-2020-27781, CVE-2021-3524,CVE-2021-3531,CVE-2021-3979, CVE-2021-20288, CVE-2023-43040:Debian DLA-3629-1 : ceph - LTS security update|
+| VRVDR-62674 | 6.5 | DLA-3628-1 | CVE-2023-34969: Debian DLA-3628-1 : dbus - LTS security update|
+| VRVDR-62511 | 6.5 | DLA-3626-1 CVE-2023-36054: Debian DLA-3626-1 : krb5 - LTS security update|
+| VRVDR-62466 | 7.5 | DLA-3621-1 | CVE-2020-11080, CVE-2023-44487: Debian DLA-3621-1 : nghttp2 - LTS security update|
+| VRVDR-62378 | 9.8 | DLA-3614-1 | CVE-2022-48560, CVE-2022-48564, CVE-2022-48565,CVE-2022-48566, CVE-2023-40217: Debian DLA-3614-1 : python3.7 - LTS security update|
+| VRVDR-62377 | 5.9 | DLA-3613-1 | CVE-2023-28321, CVE-2023-38546: Debian DLA 3613-1 : curl - LTS security update|
+| VRVDR-62332 | 9.8 | DLA-3610-1 | CVE-2018-20060, CVE-2019-9740, CVE-2019-11236,CVE-2019-11324, CVE-2020-26116, CVE-2020-26137,CVE-2023-43804: Debian DLA-3610-1 : python-urllib3 - LTS security update|
+| VRVDR-62321 | 8.1 | DLA-3604-1 | CVE-2020-24165, CVE-2023-0330, CVE-2023-3180:Debian DLA-3604-1 : qemu - LTS security update|
+| VRVDR-62320 | 5.3 | DLA-3602-1 | CVE-2023-43785 CVE-2023-43786 CVE-2023-43787:Debian DLA-3602-1 : libx11 - LTS security update|
+| VRVDR-62319 | 9.8 | DLA-3605-1 | CVE-2023-4692, CVE-2023-4693: Debian DLA-3605-1: grub2 - LTS security update|
+| VRVDR-62290 | 7.5 | DLA-3597-1 | CVE-2023-20900: Debian DLA-3597-1 : open-vm tools - LTS security update|
+| VRVDR-62282 | 7.8 | DLA-3588-1 | CVE-2023-4752, CVE-2023-4781: Debian DLA-3588-1: vim - LTS security update|
+| VRVDR-62281 | 6.5 | DLA-3586-1 | CVE-2020-19189: Debian DLA-3586-1 : ncurses - LTS security update|
+| VRVDR-58905 | 7.5 | CVE-2022 40617 | strongSwan: CVE-2022-40617 / Untrusted URIs for Revocation Checking might lead to DoS|
 {: caption="Security vulnerabilities resolved for 2204g" caption-side="bottom"}
 
 ### New features
@@ -325,7 +326,7 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 | VRVDR-62998 | 7.5 | DSA-5543-1 CVE-2023-34058, CVE-2023-34059: Debian DSA-5543-1 : open-vm-tools - security update |
 | VRVDR-62671 | 9.1 | DSA-5533-1 [DSA 5533-1] gst-plugins-bad1.0 security update |
 | VRVDR-62316 | 9.8 | DSA-5519-1 CVE-2023-4692, CVE-2023-4693: Debian DSA-5519-1: grub2 - security update |
-| VRVDR-62307 | 5.3 | DSA-5517-1 CVE-2023-43785 CVE-2023-43786 CVE-2023-43787: [DSA 5517-1] libx11 security update | 
+| VRVDR-62307 | 5.3 | DSA-5517-1 CVE-2023-43785 CVE-2023-43786 CVE-2023-43787: [DSA 5517-1] libx11 security update |
 | VRVDR-62273 | 6.5 | DSA-5517-1 CVE-2023-4527, CVE-2023-4806, CVE-2023-4911: Debian DSA-5514-1 : glibc - security update |
 | VRVDR-62219 | 9.8 | DSA-5505-1 CVE-2023-41910: Debian DSA-5505-1 : lldpd - security update |
 |VRVDR-62211 | 7.5 | DSA-5504-1 CVE-2023-3341, CVE-2023-4236: Debian DSA-5504-1: bind9 - security update |
@@ -364,14 +365,14 @@ This version contains fixes for previous issues regarding x540 NICs and VRRP.
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
-| VRVDR-62201 | 9.8 | DLA-3575-1 CVE-2021-23336, CVE-2022-0391, CVE-2022-48560, CVE-2022-48565, CVE-2022-48566, CVE-2023-24329, CVE-2023-40217: Debian DLA-3575-1 : python2.7 - LTS security update | 
-| VRVDR-62185 | 9.8 | DLA-3567-1 CVE-2020-22217: Debian DLA-3567-1 : c-ares - LTS security update | 
-| VRVDR-61846 | 9.8 | DLA-3532-1 CVE-2023-38408: Debian DLA-3532-1 : openssh - LTS security update | 
-| VRVDR-62184 | 9.6 | DLA-35750-1 CVE-2023-4863: Debian DLA-3570-1 : libwebp - LTS security update | 
-| VRVDR-62107 | 8.1 | DLA-3559-1 CVE-2019-13115, CVE-2019-17498, CVE-2020-22218: Debian DLA-3559-1 : libssh2 - LTS security update | 
-| VRVDR-60642 | 5.4 | DLA-3388-1 CVE-2021-44225: Debian DLA-3388-1 : keepalived - LTS security update | 
-| VRVDR-61843 | 5.3 | DLA-3530-1 CVE-2023-3446, CVE-2023-3817: Debian DLA-3530-1 : openssl - LTS security update | 
-| VRVDR-61845 | 3.9 | DLA-3531-1 CVE-2023-20867: Debian DLA-3531-1 : open-vm-tools - LTS security update | 
+| VRVDR-62201 | 9.8 | DLA-3575-1 CVE-2021-23336, CVE-2022-0391, CVE-2022-48560, CVE-2022-48565, CVE-2022-48566, CVE-2023-24329, CVE-2023-40217: Debian DLA-3575-1 : python2.7 - LTS security update |
+| VRVDR-62185 | 9.8 | DLA-3567-1 CVE-2020-22217: Debian DLA-3567-1 : c-ares - LTS security update |
+| VRVDR-61846 | 9.8 | DLA-3532-1 CVE-2023-38408: Debian DLA-3532-1 : openssh - LTS security update |
+| VRVDR-62184 | 9.6 | DLA-35750-1 CVE-2023-4863: Debian DLA-3570-1 : libwebp - LTS security update |
+| VRVDR-62107 | 8.1 | DLA-3559-1 CVE-2019-13115, CVE-2019-17498, CVE-2020-22218: Debian DLA-3559-1 : libssh2 - LTS security update |
+| VRVDR-60642 | 5.4 | DLA-3388-1 CVE-2021-44225: Debian DLA-3388-1 : keepalived - LTS security update |
+| VRVDR-61843 | 5.3 | DLA-3530-1 CVE-2023-3446, CVE-2023-3817: Debian DLA-3530-1 : openssl - LTS security update |
+| VRVDR-61845 | 3.9 | DLA-3531-1 CVE-2023-20867: Debian DLA-3531-1 : open-vm-tools - LTS security update |
 {: caption="Security vulnerabilities resolved for 2204f" caption-side="bottom"}
 
 ## 2204e
@@ -767,7 +768,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 {: caption="Issues resolved for 1912r" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
-{: #1912r-sve} 
+{: #1912r-sve}
 
 | Issue Number | CVSS score | Advisory | Summary |
 | --- | --- | --- | --- |
@@ -780,10 +781,10 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-56221 | 6.5vk | DLA-2771-1 | CVE-2018-5729, CVE-2018-5730, CVE-2018-20217, CVE-2021-37750: Debian DLA-2771-1 : krb5 - LTS security update |
 | VRVDR-56210 | 7.4 |hc DLA-2766-1 | CVE-2021-3712: Debian DLA-2766-1 : openssl - LTS security update |
 {: caption="Security vulnerabilities resolved for 1912r" caption-side="bottom"}
- 
+
 ## bb1912q
 {: #1fg912q}
- 
+
 ### Issues resolved
 {: #ij1912q-i}
 
