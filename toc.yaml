@@ -35,7 +35,7 @@ toc:
           - migration-faqs.md
        - whats-new-vra.md
        - include: ../fortigate-10g/explore-firewalls.md
-       - include: ../gateway-appliance/ga-raci.md 
+       - include: ../gateway-appliance/ga-raci.md
        - include: ../gateway-appliance/managing-permissions-and-device-access.md
     - navgroup:
        id: tutorial
@@ -90,7 +90,7 @@ toc:
              label: Vyatta Network OS Scripting Reference Guide
              href: https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf
        - lifecycle.md
-       - include: ../docs/infrastructure-hub/ips.md
+       - include: ../infrastructure-hub/ips.md
        - topicgroup:
           label: Legacy Vyatta 5400
           topics:
