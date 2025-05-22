@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-14"
+  years: 2017, 2025
+lastupdated: "2025-05-22"
 
-keywords: 
+keywords:
 
 subcollection: virtual-router-appliance
 
@@ -15,20 +15,20 @@ subcollection: virtual-router-appliance
 # Accessing and configuring the IBM Cloud Virtual Router Appliance
 {: #accessing-and-configuring-the-ibm-virtual-router-appliance}
 
-The {{site.data.keyword.vra_full}} (VRA) can be configured using a remote console session through SSH or by logging into the web GUI. By default, the web GUI is not available from the public internet. To enable the web GUI, log in through SSH first.
+The {{site.data.keyword.vra_full}} (VRA) can be configured by using a remote console session through SSH or by logging in to the web GUI. By default, the web GUI is not available from the public internet. To enable the web GUI, log in through SSH first.
 {: shortdesc}
 
 Configuring the VRA outside of its shell and interface can produce unexpected results and is not recommended.
 {: note}
 
-## Accessing the device using SSH
+## Accessing the device by using SSH
 {: #accessing-the-device-using-ssh}
 
-Most UNIX-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients included with their default installations. Windows users can download an SSH client, such as PuTTy.
+Most UNIX-based operating systems, such as Linux, BSD, and Mac OSX, have OpenSSH clients that are included with their default installations. Windows users can download an SSH client, such as PuTTY.
 
-It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs require your client to be connected to a private network. You can log in using one of the default VPN options (SSL-VPN and IPsec) offered in the IBM Cloud console, or using a custom VPN solution configured on the VRA.
+It is recommended that SSH to the public IP be disabled and only SSH to the private IP be allowed. Connections to private IPs require your client to be connected to a private network. You can log in by using one of the default VPN options (SSL-VPN and IPsec) offered in the IBM Cloud console, or by using a custom VPN solution configured on the VRA.
 
-Use the Vyatta account from the Device Details page to log in through SSH. The root password is also provided, but root login is disabled by default for security reasons.
+Use the Vyatta account from the Device Details page to log in through SSH. The root password is also provided, but the root login is disabled by default for security reasons.
 
 `ssh vyatta@[IP address]`
 
@@ -44,47 +44,32 @@ $ configure
 ```
 {: codeblock}
 
-## Accessing the device using the web GUI
-{: #accessing-the-device-using-the-web-gui}
-
-Log in to the VRA using the SSH instructions, then run the following commands to enable the HTTPS service:
-
-```sh
-$ configure
-# set service https listen-address 169.45.21.2
-# commit
-```
-{: codeblock}
-
-After these commands complete, enter `https://<ip.address>` in your browser's address bar, replacing `ip.address` with your VRA IP address. You might be prompted to accept the VRA's self-issued certificate. Do so, then log into the web interface with your Vyatta credentials when prompted.
-
 ## Modes
 {: #modes-1}
 
-There are two modes:
+The following are the two modes:
 
-* Configuration mode: Invoked with the use of the `configure` command, this mode is where configuration of the VRA system is performed.
-* Operational mode: The initial mode upon logging into a VRA system. In this mode, run `show` commands to query information on the state of the system. You can also restart the system from this mode.
+* Configuration mode: Invoked with the use of the `configure` command. In this mode, the VRA system is configured.
 
-The VRA's shell is a modal interface, with several modes of operation. The primary/default mode is **Operational**, and this is the mode presented upon login. In **Operational** mode, you can view information and issue commands that impact the current run of the system, such as setting the date/time or restarting the device.
+* Operational mode: The initial mode upon logging in to a VRA system. In this mode, run `show` commands to query information on the state of the system. You can also restart the system from this mode.
 
-The command `configure` places you into **Configuration** mode where you can make edits to the configuration. Note that configuration changes do not take place immediately; they must be committed. As you enter commands, they go into a configuration buffer. After all the necessary commands are entered, run the `commit` command to make the changes take effect.
+The VRA's shell is a modal interface, with several modes of operation. The primary/default mode is **Operational**, and this is the mode that is presented upon login. In **Operational** mode, you can view information and issue commands that impact the current run of the system, such as setting the date and time or restarting the device.
 
-Operational mode commands can be run from configuration mode by starting the command with `run`. For example:
+The command `configure` places you into **Configuration** mode where you can make edits to the configuration. Note that the configuration changes do not take place immediately; they must be committed. As you enter commands, they go into a configuration buffer. After all the necessary commands are entered, run the `commit` command to make the changes take effect.
+
+Operational mode commands (show commands) can be run from configuration mode by starting the command with `run`. For example:
 
 ```sh
 # run show configuration commands | grep name-server
-set system name-server '10.0.80.11'
-set system name-server '10.0.80.12'
 ```
 {: codeblock}
 
-The hash mark (`#`) indicates configuration mode. Beginning a command with `run` indicates to the VRA shell that an operational command is being presented. The previous example also illustrates the ability to "grep" against the output of commands.
+The number sign (`#`) indicates configuration mode. The preceding example illustrates the ability to run a show or operational command from configure mode. The example also shows the use of pipe (|) and "grep" to filter the output of commands.
 
 ## Command exploration
 {: #command-exploration}
 
-The VRA command shell includes tab completion capabilities. If you are curious about which commands are available, press the Tab key for a list and a short explanation. This works both at the shell prompt and while typing a command. For instance:
+The VRA command shell includes tab completion capabilities. If you are curious about which commands are available, press the Tab key for a list and a short explanation. This works both at the shell prompt and while you type a command. For instance:
 
 ```sh
 $show log dns [Press tab]
@@ -127,7 +112,7 @@ set protocols static route 192.168.1.0/24 next-hop 10.0.0.1
 
 This example illustrates that it is possible for a node (static) to have multiple child nodes. To remove the route for `192.168.1.0/24` the command `delete protocols static route 192.168.1.0/24` is used. If `192.168.1.0/24` was left off the command, then both route nodes are marked for deletion.
 
-Remember that the configuration is not actually changed until the `commit` command is issued. To compare the current running configuration to any changes that are present in the configuration buffer, use the `compare` command. To flush the configuration buffer, use `discard`.
+Remember that the configuration is not changed until the `commit` command is issued. To compare the current running configuration to any changes that are present in the configuration buffer, use the `compare` command. To flush the configuration buffer, use `discard`.
 
 ## Users and Role-based Access Control (RBAC)
 {: #users-and-role-based-access-control-rbac-}
@@ -140,7 +125,7 @@ User accounts can be configured with three levels of access:
 
 Operator level users can run `show` commands to view the running status of the system and issue `reset` commands to restart services on the device. Operator level permissions do not imply read-only access.
 
-Admin level users have full access to all configurations and operations for the device. Admin users can view running configurations, change configuration settings for the device, restart the device, and shutdown the device.
+Admin level users have full access to all configurations and operations for the device. Admin users can view running configurations, change configuration settings for the device, restart the device, and shut down the device.
 
 Superuser level users are able to run commands with root privileges through the `sudo` command, in addition to having admin level privileges.
 
@@ -153,14 +138,14 @@ commit
 ```
 {: codeblock}
 
-When no level is specified, a user is considered admin level. The user passwords in this case display as encrypted in the configuration file.
+When no level is specified, a user is considered admin level. The user passwords in this case are displayed as encrypted in the configuration file.
 {: note}
 
 RBAC is a method of restricting access to part of the configuration to authorized users. RBAC allows admins to define rules for a user group that restrict the commands they can run.
 
-RBAC is performed by creating a group assigned to the Access Control Management (ACM) rule set, adding a user to the group, creating a rule set to match the group to the paths in the system, then configuring the system to allow or deny those paths that are applied to the group.
+RBAC is enforced by creating a group that is assigned to the Access Control Management (ACM) rule set, adding a user to the group, creating a rule set to match the group to the paths in the system, then configuring the system to allow or deny those paths that are applied to the group.
 
-By default, there is no ACM rule set defined in {{site.data.keyword.vra_full}}, and ACM is disabled. If you want use RBAC to provide granular access control, you must enable the ACM and add following default ACM rules in addition to your own defined rules:
+By default, there is no ACM rule set defined in {{site.data.keyword.vra_full}}, and ACM is disabled. If you want to use RBAC to provide granular access control, you must enable the ACM and add the following default ACM rules in addition to your own defined rules:
 
 ```sh
 set system acm 'enable'
@@ -240,4 +225,4 @@ set system acm ruleset rule 9999 path '*'
 ```
 {: codeblock}
 
-For more information, see [Supplemental VRA documentation](/docs/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation) before attempting to enable ACM rules. Inaccurate ACM rule settings can cause device access denials or system inoperability errors.
+For more information, see the [Supplemental VRA documentation](/docs/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation) before you enable ACM rules. Inaccurate ACM rule settings can cause device access denials or system inoperability errors.
