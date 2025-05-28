@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-28"
 
 keywords: 
 
@@ -15,7 +15,7 @@ subcollection: virtual-router-appliance
 # Getting started with IBM Cloud Virtual Router Appliance (VRA)
 {: #getting-started-vra}
 
-On 30 November 2025, all 2204 versions of IBM Cloud Virtual Router Appliance will be considered End of Support by Ciena. To maintain official support, be sure to update to version 2308 by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting the latest subrelease ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version. Please ask the IBM Cloud Support Security team for available information on latest known issues before updating to the latest 2308 when you request the latest version.
+On 31 March 2026, all 2204 versions of IBM Cloud Virtual Router Appliance will be considered End of Support by Ciena. To maintain official support, be sure to update to version 2308 by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting the latest subrelease ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version. Please ask the IBM Cloud Support Security team for available information on latest known issues before updating to the latest 2308 when you request the latest version.
 {: deprecated}
 
 The {{site.data.keyword.vra_full}} (VRA) provides the Ciena Vyatta NOS, a debian-based network OS, installed directly onto specific {{site.data.keyword.cloud}} Classic Bare Metal Servers along with expanded abilities for managing Classic Infrastructure VLANs and subnets. 
