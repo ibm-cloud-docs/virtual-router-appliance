@@ -18,7 +18,7 @@ subcollection: virtual-router-appliance
 In previous versions of {{site.data.keyword.vra_full}}, IPsec tunnels that used policy-based routing did not work well with zone firewalls. With version 18.01, a new set of commands addresses this issue, by using "virtual feature points" to enable the traffic from designated tunnels. The feature point acts as an interface that provides an endpoint to include in a zone policy configuration.
 {: shortdesc}
 
-An example configuration of two machines with IPsec between them follows:
+The following example provides the configuration of two machines with IPsec between them:
 
 ## Machine A
 {: #machine-a}
