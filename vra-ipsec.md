@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-27"
+lastupdated: "2025-06-30"
 
 keywords:
 
@@ -106,3 +106,44 @@ set security zone-policy zone SERVERS to PRIVATE firewall 'ALLOWALL'
 ```
 
 After the policies are applied, traffic no longer flows, despite being set to `allow all`.
+
+## Policy-based configuration with different peers
+{: #peer-based-config-different-peer}
+
+Peer 1: 10.10.10.1
+
+```sh
+set security vpn ipsec site-to-site peer 10.10.10.1 authentication pre-shared-secret '********'
+set security vpn ipsec site-to-site peer 10.10.10.1 default-esp-group ESP01
+set security vpn ipsec site-to-site peer 10.10.10.1 ike-group IKE01
+set security vpn ipsec site-to-site peer 10.10.10.1 local-address 10.10.9.1
+
+```
+
+Tunnel 2 configuration
+```sh
+set security vpn ipsec site-to-site peer 10.10.10.1 tunnel 2 local prefix 192.168.3.1/32
+set security vpn ipsec site-to-site peer 10.10.10.1 tunnel 2 remote prefix 192.168.4.1/32
+set security vpn ipsec site-to-site peer 10.10.10.1 tunnel 2 uses vfp2
+
+```
+
+Peer 2: 192.168.1.1
+
+```sh
+set security vpn ipsec site-to-site peer 192.168.1.1 authentication pre-shared-secret '********'
+set security vpn ipsec site-to-site peer 192.168.1.1 default-esp-group ESP01
+set security vpn ipsec site-to-site peer 192.168.1.1 ike-group IKE01
+set security vpn ipsec site-to-site peer 192.168.1.1 local-address 10.10.9.1
+
+```
+
+Tunnel 1 configuration
+```sh
+set security vpn ipsec site-to-site peer 192.168.1.1 tunnel 1 local prefix 192.168.3.1/32
+set security vpn ipsec site-to-site peer 192.168.1.1 tunnel 1 remote prefix 192.168.4.1/32
+set security vpn ipsec site-to-site peer 192.168.1.1 tunnel 1 uses vfp1
+
+```
+When you configure policy-based IPsec VPN tunnels in Vyatta with multiple peers (for example, primary and secondary) that share a common local and remote prefix, only one tunnel remains active at a time. This behavior is expected because Vyatta can't differentiate between traffic flows for multiple tunnels that use identical prefix pairs in a policy-based setup. To enable multiple tunnels with the same prefix configuration, such as primary and secondary failover paths, use a route-based VPN. Route-based VPNs offer greater flexibility and allow concurrent operation of multiple tunnels, even when the local and remote prefixes are identical.
+{: note}
