@@ -18,10 +18,10 @@ subcollection: virtual-router-appliance
 In previous versions of {{site.data.keyword.vra_full}}, IPsec tunnels that used policy-based routing did not work well with zone firewalls. With version 18.01, a new set of commands addresses this issue, by using "virtual feature points" to enable the traffic from designated tunnels. The feature point acts as an interface that provides an endpoint to include in a zone policy configuration.
 {: shortdesc}
 
-The following example provides the configuration of two machines with IPsec between them:
+The following example provides the configuration of two systems with IPsec between them:
 
-## Machine A
-{: #machine-a}
+## System A
+{: #system-a}
 
 ```sh
 vyatta@acs-jmat-migsim01:~$ show configuration commands | grep ipsec
@@ -39,8 +39,8 @@ set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 local prefix '172
 set security vpn ipsec site-to-site peer 50.23.177.59 tunnel 1 remote prefix '172.16.100.1/30'
 ```
 
-## Machine B
-{: #machine-b}
+## System B
+{: #system-b}
 
 ```sh
 vyatta@acs-jmat-1801-1a:~$ show configuration commands | grep ipsec
@@ -58,7 +58,7 @@ set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 local prefix '17
 set security vpn ipsec site-to-site peer 169.47.243.43 tunnel 1 remote prefix '172.16.200.1/30'
 ```
 
-This configuration sets up a generic tunnel that routes `172.16.x.x` traffic between the two machines. Machine B has `172.16.100.1` as a loopback address to provide an endpoint to test with, while Machine A has a virtual machine on a routed VLAN to provide source traffic across the tunnel.
+This configuration sets up a generic tunnel that routes `172.16.x.x` traffic between the two systems. System B has `172.16.100.1` as a loopback address to provide an endpoint to test with, while System A has a virtual machine on a routed VLAN to provide source traffic across the tunnel.
 
 You can see the results here:
 
@@ -76,7 +76,7 @@ rtt min/avg/max/mdev = 44.578/44.750/44.993/0.244 ms
 ```
 {: screen}
 
-This example illustrates bidirectional traffic across this IPsec tunnel. Next, you can apply a simple "allow all" zone policy to all interfaces on Machine A:
+This example illustrates bidirectional traffic across this IPsec tunnel. Next, you can apply a simple "allow all" zone policy to all interfaces on System A:
 
 ```sh
 set security firewall name ALLOWALL default-action 'drop'
@@ -110,7 +110,9 @@ After the policies are applied, traffic no longer flows, despite being set to `a
 ## Policy-based configuration with different peers
 {: #peer-based-config-different-peer}
 
-Peer 1: 10.10.10.1
+This section outlines the configuration of IPsec VPN tunnels in a policy-based setup, which involves multiple remote peers.
+
+Peer 1 has an IP address of `10.10.10.1`
 
 ```sh
 set security vpn ipsec site-to-site peer 10.10.10.1 authentication pre-shared-secret '********'
@@ -120,7 +122,8 @@ set security vpn ipsec site-to-site peer 10.10.10.1 local-address 10.10.9.1
 
 ```
 
-Tunnel 2 configuration
+This configuration sets up Tunnel 2 to the Peer 1 at `10.10.10.1`
+
 ```sh
 set security vpn ipsec site-to-site peer 10.10.10.1 tunnel 2 local prefix 192.168.3.1/32
 set security vpn ipsec site-to-site peer 10.10.10.1 tunnel 2 remote prefix 192.168.4.1/32
@@ -128,7 +131,7 @@ set security vpn ipsec site-to-site peer 10.10.10.1 tunnel 2 uses vfp2
 
 ```
 
-Peer 2: 192.168.1.1
+Peer 2 has an IP address of `192.168.1.1`
 
 ```sh
 set security vpn ipsec site-to-site peer 192.168.1.1 authentication pre-shared-secret '********'
@@ -138,7 +141,8 @@ set security vpn ipsec site-to-site peer 192.168.1.1 local-address 10.10.9.1
 
 ```
 
-Tunnel 1 configuration
+This configuration sets up Tunnel 1 to the Peer 2 at `192.168.1.1`
+
 ```sh
 set security vpn ipsec site-to-site peer 192.168.1.1 tunnel 1 local prefix 192.168.3.1/32
 set security vpn ipsec site-to-site peer 192.168.1.1 tunnel 1 remote prefix 192.168.4.1/32
