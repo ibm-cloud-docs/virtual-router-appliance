@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-07-14"
 
-keywords: 
+keywords:
 
 subcollection: virtual-router-appliance
 
@@ -12,7 +12,7 @@ subcollection: virtual-router-appliance
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs for {{site.data.keyword.cloud_notm}} Virtual Router Appliance
+# FAQ for {{site.data.keyword.cloud_notm}} Virtual Router Appliance
 {: #faqs-for-ibm-virtual-router-appliance}
 
 These frequently asked questions can help you when working with the {{site.data.keyword.vra_full}} (VRA).
@@ -112,7 +112,7 @@ To find a detailed comparison of all firewall products that are offered in {{sit
 
 Yes, for the preceding reasons. VRA is a black box: VLANs go in, VLANs come out, and IBM Support doesn't know what customers are doing with packets in-between.
 
-IBM Support always does its best, but with VRA and dedicated firewall: 
+IBM Support always does its best, but with VRA and dedicated firewall:
 
 1. Customer privacy trumps connectivity.
 2. Our standard support staff is not equipped to analyze poorly formed or highly complex VRA or firewall configurations.
@@ -186,7 +186,7 @@ To enable root access through SSH, run the following command:
 
 `set service ssh allow-root`
 
-Allowing root access that uses SSH is considered unsafe. 
+Allowing root access that uses SSH is considered unsafe.
 {: note}
 
 An alternative to accessing a root shell is to either log in as another user and elevate to root locally with `su -`, or allow sudo commands to superusers. For example, to configure the Vyatta as a superuser:
@@ -197,7 +197,7 @@ An alternative to accessing a root shell is to either log in as another user and
 {: #firmware-update}
 {: faq}
 
-It's important to keep the firmware updated to make sure that your network gateway appliance has optimal device compatibility and stability. You have the [role and responsibility](/docs/gateway-appliance?topic=gateway-appliance-ga-raci) for ongoing maintenance and operation of your devices; IBM Cloud technical support does not perform updates on your behalf.  
+It's important to keep the firmware updated to make sure that your network gateway appliance has optimal device compatibility and stability. You have the [role and responsibility](/docs/gateway-appliance?topic=gateway-appliance-ga-raci) for ongoing maintenance and operation of your devices; IBM Cloud technical support does not perform updates on your behalf.
 
 If a firmware version is out of date, you can update the firmware by selecting the appliance from the device list and clicking **Update firmware** from the action menu. You can also initialize a firmware update during the OS Reload process.  After you initiate the update, a transaction runs to auto update the BIOS firmware and any other firmware option that you selected.
 
