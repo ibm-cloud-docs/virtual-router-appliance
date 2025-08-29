@@ -468,7 +468,7 @@ Vyatta gateway appliances using the Intel X540 series NIC have been encountering
 | VRVDR-59610 | Critical | Dataplane crash in cds_lfht_first on spoke2 |
 | VRVDR-59057 | Critical | Dataplane interface TX and RX queue allocation in 2204c less than expected when compared to 2110f |
 | VRVDR-58646 | Blocker | Increase description field lengths |
-| VRVDR-58593 | Critical | dataplane/bfd: rc/zsock.c:88: zsock_new_checked: Assertion `self->handle' failed |
+| VRVDR-58593 | Critical | dataplane/bfd: rc/zsock.c:88: zsock_new_checked: Assertion 'self->handle' failed |
 {: caption="Issues resolved for 2204ep" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
