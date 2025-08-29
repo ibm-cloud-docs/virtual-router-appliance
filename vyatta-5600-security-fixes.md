@@ -56,7 +56,7 @@ To enable this functionality, the following configuration is added:
    ```sh
     set protocols bgp <AS> parameters enable-bgp-nexthop-resolution
    ```
-    {: pre}
+   {: pre}
 
    Where:
 
