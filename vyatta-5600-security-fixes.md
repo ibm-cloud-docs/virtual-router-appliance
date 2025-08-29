@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-08-29"
 
 keywords:
 
@@ -15,15 +15,15 @@ subcollection: virtual-router-appliance
 # Ciena Vyatta 5600 vRouter software patches (current)
 {: #ciena-vyatta-5600-vrouter-software-patches}
 
-On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance will be deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 prior to 31 December 2022 by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance are deprecated and no longer supported. To maintain your current functionality, be sure to update to version 2012, 2110 or 2204 before 31 December 2022 by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. After you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. Once you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
+As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. After you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** 15 March 2025
+**Latest patch received:** 26 August 2025
 
-**Latest documentation published:** 18 March 2025
+**Latest documentation published:** 26 August 2025
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -34,13 +34,81 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
-## Vyatta NOS Software Patches - 2308e
+## Vyatta NOS Software Patches - 2308f
 {: #vyatta-nos-software-patches}
 
-**Released:** 12 March 2025
+**Released:** 25 August 2025.
+
+## Limitations, restrictions, and behavior changes
+{: #limitations-vyatta}
+
+### BGP
+{: #bgp-vyatta}
+
+VRVDR-65961: BGP routes are inactive with inaccessible Next-Hop
+
+In standard BGP configurations, next-hop resolution typically depends on Interior Gateway Protocol (IGP), MPLS Forwarding Table (FTN), or a directly connected route. However, when the next-hop is reachable only from a BGP-installed route, such as a default route, this can lead to route instability due to recursive resolution within the BGP routing table.
+
+This feature introduces support for BGP next-hop resolution over BGP unicast routes in specific scenarios. It is beneficial in environments where no other routing protocols such as Open Shortest Path First (OSPF) and Multiprotocol Label Switching (MPLS) are available. For instance, it enables dual-homed customers who receive a BGP default route from a third-party provider over GRE to dynamically select egress paths based on route policies that are tied to internal networks.
+
+To enable this functionality, the following configuration is added:
+
+   ```sh
+    set protocols bgp <AS> parameters enable-bgp-nexthop-resolution
+   ```
+    {: pre}
+
+    Where:
+
+   `AS`
+      : Indicates the Autonomous System Number
 
 ### Issues resolved
 {: #issues-resolved-vyatta}
+
+| Issue Number | Priority  | Summary |
+|-------------|------------|---------|
+| VRVDR-66031 | Major | Dataplane crashing repeatedly on Vyatta image 2204h |
+| VRVDR-66021 | Major | Vyatta doesn't send 'ICMP fragmentation needed' packet with zone-based firewall |
+| VRVDR-65978 | Major | SNMP-OID for VRRP Effective Priority |
+| VRVDR-65961 | Major | BGP routes are inactive with next-hop inaccessible |
+| VRVDR-65928 | Major | Dataplane crash causes VRRP failover with version 2308d |
+| VRVDR-65897 | Major | Device auto failover due to dataplane crash |
+| VRVDR-65894 | Major | Image upgrade fails - "ERROR: vyatta-2308e-vnf-amd64.iso: Not a valid ISO image file. Exiting..." |
+| VRVDR-65777 | Major | Vyatta with net_i40e drivers doesn't accept jumbo frame after upgrading to 2308 |
+| VRVDR-65707 | Major | PXE boot with 2308d release not loading config file |
+| VRVDR-65580 | Major | CPE locks up with tx_dropped_hwq packet drops |
+{: caption="Security vulnerabilities resolved for 2308f" caption-side="bottom"}
+
+### Security vulnerabilities resolved
+{: #security-vulnerabilities-resolved-vyatta}
+
+| Issue Number | CVSS Score | Advisory Summary |
+|-------------|-------------|------------------|
+| VRVDR-66057 | 7.8 | DLA-4097-1 / DLA-4104-1 / DLA-4126-1 / DLA-4128-1 / DLA-4133-1 (aggregate: DLA-40974104/4126/4128/4133) |
+| VRVDR-66009 | 6.1 | DLA-4217-1 Debian dla-4217 : icu-devtools - security update |
+| VRVDR-66008 | 8.8 | DLA-4213-1 Debian dla-4213 : curl - security update (CVE-2023-27534) |
+| VRVDR-65992 | 5.9 | DLA-4195-1 Debian dla-4195 : krb5-admin-server - security update (CVE-2025-3576) |
+| VRVDR-65984 | 7.8 | DLA-4181-1 Debian dla-4181 : glibc-doc - security update (CVE-2025-4802) |
+| VRVDR-65983 | 4.1 | DLA-4176-1 Debian dla-4176 : libcrypto1.1-udeb - security update (CVE-2024-13176) |
+| VRVDR-65958 | 4.3 | DLA-4156-1 Debian dla-4156 : openssh-client - security update (CVE-2025-32728) |
+| VRVDR-65953 | 7.5 | DLA-4146-1 Debian dla-4146 : libxml2 - security update (CVE-2025-32414, CVE-2025-32415) |
+| VRVDR-65952 | 5.9 | DLA-4145-1 Debian dla-4145 : expat - security update (CVE-2024-50602) |
+| VRVDR-65943 | 7.5 | DLA-4143-1 Debian dla-4143 : glibc-doc - security update (CVE-2025-0395) |
+| VRVDR-65927 | 5.5 | DLA-4130-1 Debian dla-4130 : login - security update (CVE-2023-4641, CVE-2023-29383) |
+| VRVDR-65899 | 6.8 | DLA-4085-1 Debian dla-4085 : tzdata - security update |
+| VRVDR-65893 | 7.8 | DLA-4092-1 Debian dla-4092 : libcap-dev - security update |
+| VRVDR-65887 | 7.8 | DLA-4089-1 Debian dla-4089 : libxslt1-dev - security update (CVE-2024-55549, CVE-2025-24855) |
+| VRVDR-65886 | 7.5 | DLA-4087-1 Debian dla-4087 : idle-python3.9 - security update (CVE-2022-0391, CVE-2025-0938, CVE-2025-1795) |
+| VRVDR-65885 | 6.8 | DLA-4085-1 Debian dla-4085 : tzdata - security update |
+| VRVDR-65854 | 7.4 | DLA-4079-1 Debian dla-4079 : openvpn - security update (CVE-2022-0547, CVE-2024-5594) |
+{: caption="Security vulnerabilities resolved for 2308f" caption-side="bottom"}
+
+## 2308e
+{: #2308e}
+
+### Issues resolved
+{: #2308e-i}
 
 | Issue Number | Priority  | Summary |
 |-------------|----------|---------|
@@ -52,11 +120,11 @@ For the latest full release notes, please review the [release notes in Ciena's V
 | VRVDR-65603 | Minor    | Upgrade failed from 2110h to 2308c and 2308d |
 | VRVDR-65318 | Major    | VRRP automatic failback due to Keepalived_vrrp - A thread timer expired |
 | VRVDR-64527 | Major    | Upgrade checker failed on 2308c with Invalid URL and symbols not allowed messages |
-| VRVDR-58526 | Critical | IPsec does not send trap on tunnel down |
+| VRVDR-58526 | Critical | IPsec does not send a trap on tunnel down |
 {: caption="Security vulnerabilities resolved for 2308e" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
-{: #security-vulnerabilities-resolved-vyatta}
+{: #2308e-sv}
 
 | Issue Number | CVSS Score | Advisory Summary |
 |-------------|------------|------------------|
@@ -139,11 +207,11 @@ For the latest full release notes, please review the [release notes in Ciena's V
 ### New features
 {: #new-features-2308d}
 
-No new features or commands were added in this version. There is one potential known issue:
+No new features or commands were added in this version. However, one potential known issue exists:
 
-For 2308d, when a Vyatta is provisioned, there are only two interfaces on the device, `dp0bond0` and `dp0bond1`. You must add a VIF for any associated VLANs the Vyatta will be routing for. The first time you add a VIF to `dp0bond0` or `dp0bond1` with VRRP configuration, the device will fail over. For example, if you add a VIF for VLAN 1000 to `dp0bond0`, and it is the first VIF you configure, then the Vyatta will execute a failover once it is provisioned. As a result, if it the Vyatta is set as master, it will become backup. However, if you add a second VIF to the same interface, it will not fail over unless you add a VIF to the other interface for the first time. Subsequent VIF configurations will not cause a failover, until you remove them all. Removing the last VIF from an interface also prompts a failover. As a result, removing all VIFs from `dp0bond0` will cause it to failover as a backup. This is the only known issue for this version.
+For 2308d, when a Vyatta is provisioned, there are only two interfaces on the device, `dp0bond0` and `dp0bond1`. You must add a VIF for any associated VLANs the Vyatta will be routing for. The first time that you add a VIF to `dp0bond0` or `dp0bond1` with VRRP configuration, the device will fail over. For example, if you add a VIF for VLAN 1000 to `dp0bond0`, and it is the first VIF you configure, then the Vyatta will execute a failover once it is provisioned. As a result, if the Vyatta is set as master, it becomes a backup. However, if you add a second VIF to the same interface, it will not fail over unless you add a VIF to the other interface for the first time. Subsequent VIF configurations will not cause a failover until you remove them all. Removing the last VIF from an interface also prompts a failover. As a result, removing all VIFs from `dp0bond0` causes it to failover as a backup. This is the only known issue for this version.
 
-This version has not yet been completely tested against x540 NICs. Keep this in mind if you are upgrading.
+This version is not yet tested against x540 NICs. Keep this in mind if you are upgrading.
 {: note}
 
 ## 2204h
@@ -291,7 +359,7 @@ state with "preempt true" |
 
 VRVDR-60048 | Flapping BGP Default route during IPv6 failure |
 
-Avoids resolving the BGP nexthop using the default route or through a unicast BGP route, as this can
+Avoids resolving the BGP nexthop by using the default route or through a unicast BGP route, as this can
 lead to constant BGP route installation churn in the rib, due to alternative BGP bestpath selection.
 
 VRVDR-62366 | VRRP: Adding or Removing VRRP causes ALL virtual routers to change the state with
@@ -1891,7 +1959,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-45347 | 6.8  | DSA-4387-1 | CVE-2018-20685, CVE-2019-6109, CVE-2019-6111: Debian DSA-4387-1 : openssh - security update |
 {: caption="Security vulnerabilities resolved for 1801y" caption-side="bottom"}
 
-The following commands have been deprecated from this patch and are no longer available:
+The following commands are deprecated from this patch and are no longer available:
    • `policy route pbr <name> rule <rule-number> application name <name>`
    • `policy route pbr <name> rule <rule-number> application type <type>`
    • `policy qos name <policy-name> shaper class <class-id> match <match-name> application name <name>`
@@ -2047,7 +2115,7 @@ Running any of these commands will result with the error message “This feature
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-43738 | Major | ICMP Unreachable packets returned through SNAT session are not delivered |
+| VRVDR-43738 | Major | ICMP Unreachable packets that are returned through SNAT session are not delivered |
 | VRVDR-43538 | Major | Receive oversize errors on bondinginterface |
 | VRVDR-43519 | Major | Vyatta-keepalived is running with no config present |
 | VRVDR-43517 | Major | Traffic fails when endpoint of VFP/Policy-based IPsec resides on the vRouter itself |
@@ -2092,7 +2160,7 @@ Running any of these commands will result with the error message “This feature
 | VRVDR-42244 | Minor | Flow-monitoring only exports 1000 samples to collector |
 | VRVDR-42114 | Critical | HTTPS service MUST NOT expose TLSv1 |
 | VRVDR-41829 | Major | Dataplane core dumps until system becomes unresponsive with SIP ALG soak test |
-| VRVR-41683 | Blocker | DNS name server address learned over VRF is not consistently recognized |
+| VRVR-41683 | Blocker | DNS name server address that is learned over VRF is not consistently recognized |
 | VRVDR-41628 | Minor | Route/prefix from router-advertisement active in kernel and data plane but ignored by RIB |
 {: caption="Issues resolved for 1801q" caption-side="bottom"}
 
@@ -2116,7 +2184,7 @@ Running any of these commands will result with the error message “This feature
 | VRVDR-42588 | Minor | Sensitive routing protocol configuration inadvertently leaked in system log |
 | VRVDR-42566 | Critical | After upgrading from 17.2.0h to 1801m, a day later multiple reboots occurred on both HA members |
 | VRVDR-42490 | Major | VTI-IPSEC IKE SAs fail around a minute after VRRP transition |
-| VRVDR-42335 | Major | IPSEC: remote-id “hostname” behavior changes from 5400 to 5600 |
+| VRVDR-42335 | Major | IPSec: remote-id “hostname” behavior changes from 5400 to 5600 |
 | VRVDR-42264 | Critical | No connectivity over SIT tunnel – “kernel: sit: non-ECT from 0.0.0.0 with TOS=0xd” |
 | VRVDR-41957 | Minor | Bi-directional NAT’ed packets too large for GRE fail to return ICMP Type 3 Code 4 |
 | VRVDR-40283 | Major | Configuration changes generate lots of log messages |
@@ -2138,7 +2206,7 @@ Running any of these commands will result with the error message “This feature
 ## 1801m
 {: #1801m}
 
-Released June 15, 2018.
+Released 15 June 2018.
 
 ### Issues resolved
 {: #1801m-i}
@@ -2163,7 +2231,7 @@ Released June 15, 2018.
 ## 1801k
 {: #1801k}
 
-Released June 8, 2018.
+Released 8 June 2018.
 
 ### Issues resolved
 {: #1801k-i}
@@ -2194,7 +2262,7 @@ Released June 8, 2018.
 ## 1801j
 {: #1801j}
 
-Released May 18, 2018
+Released 18 May 2018.
 
 ### Issues resolved
 {: #1801j-i}
@@ -2217,7 +2285,7 @@ Released May 18, 2018
 ## 1801h
 {: #1801h}
 
-Released May 11, 2018.
+Released 11 May 2018.
 
 ### Issues resolved
 {: #1801h-i}
@@ -2239,7 +2307,7 @@ Released May 11, 2018.
 ## 1801g
 {: #1801g}
 
-Released May 4, 2018.
+Released 4 May 2018.
 
 ### Issues resolved
 {: #1801g-i}
@@ -2253,7 +2321,7 @@ Released May 4, 2018.
 ## 1801f
 {: #1801f}
 
-Released April 23, 2018
+Released 23 April 2018.
 
 ### Issues resolved
 {: #1801f-i}
@@ -2287,7 +2355,7 @@ Released April 23, 2018
 ## 1801e
 {: #1801e}
 
-Released March 28, 2018.
+Released 28 March 2018.
 
 ### Issues resolved
 {: #1801e-i}
@@ -2298,9 +2366,9 @@ Released March 28, 2018.
 | VRVDR-41088 | Critical | Extended (4 byte) ASN not represented internally as unsigned type |
 | VRVDR-40988 | Critical | Vhost not starting when used with certain number of interfaces |
 | VRVDR-40927 | Critical | DNAT: SDP in SIP 200 OK not translated when it follows a 183 response |
-| VRVDR-40920 | Major | With 127.0.0.1 as listen-address snmpd does not start |
+| VRVDR-40920 | Major | With 127.0.0.1 as the listen-address snmpd does not start |
 | VRVDR-40920 | Critical | ARP doesn’t work over bonded SR-IOV interface |
-| VRVDR-40294 | Major | Dataplane doesn’t restore previous queues after slave is removed from bonding group |
+| VRVDR-40294 | Major | Dataplane doesn’t restore previous queues after a slave is removed from bonding group |
 {: caption="Issues resolved for 1801e" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -2314,7 +2382,7 @@ Released March 28, 2018.
 ## 1801d
 {: #1801d}
 
-Released March 8, 2018.
+Released 8 March 2018.
 
 ### Issues resolved
 {: #1801d-i}
@@ -2338,27 +2406,27 @@ Released March 8, 2018.
 ## 1801c
 {: #1801c}
 
-Released March 7, 2018.
+Released 7 March 2018.
 
 ### Issues resolved
 {: #1801c-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-40281 | Major | After upgrading from 5.2 to more recent version error “-vbash: show: command not found” in operation mode |
+| VRVDR-40281 | Major | After upgrading from 5.2 to a more recent version error “-vbash: show: command not found” in operation mode |
 {: caption="Issues resolved for 1801c" caption-side="bottom"}
 
 ## 1801b
 {: #1801b}
 
-Released February 21, 2018.
+Released 21 February 2018.
 
 ### Issues resolved
 {: #1801b-i}
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-40622 | Major | Cloud-init images fail to detect correctly if IP address has been obtained from DHCP server |
+| VRVDR-40622 | Major | Cloud-init images fail to detect correctly if IP address is obtained from DHCP server |
 | VRVDR-40613 | Critical | Bond interface does not come up if one of the physical links is down |
 | VRVDR-40328 | Major | Cloud-init images take a long time to boot |
 {: caption="Issues resolved for 1801b" caption-side="bottom"}
@@ -2366,7 +2434,7 @@ Released February 21, 2018.
 ## 1801a
 {: #1801a}
 
-Released February 7, 2018.
+Released 7 February 2018.
 
 ### Issues resolved
 {: #1801a-i}
