@@ -39,7 +39,7 @@ For the latest full release notes, please review the [release notes in Ciena's V
 
 **Released:** 25 August 2025.
 
-## Limitations, restrictions, and behavior changes
+## Limitations, restrictions, or behavior changes
 {: #limitations-vyatta}
 
 ### BGP
