@@ -34,6 +34,961 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
+<h1>2308g</h1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='mso-bidi-font-size:
+10.5pt;font-family:"ATT Aleck Sans",sans-serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi'>Released December 12<sup>th</sup>, 2025<o:p></o:p></span></p>
+
+<h2>Issues Resolved</h2>
+
+<table class=2016ATTTable border=1 cellspacing=0 cellpadding=0
+ summary="Example of ATT 2016 table style showing text and colors used"
+ style='border-collapse:collapse;border:none;mso-border-alt:solid #4BACC6 .5pt;
+ mso-border-themecolor:accent5;mso-yfti-tbllook:1056;mso-padding-alt:3.6pt 5.75pt 3.6pt 5.75pt'>
+ <thead>
+  <tr style='mso-yfti-irow:-1;mso-yfti-firstrow:yes;mso-yfti-lastfirstrow:yes;
+   height:19.75pt'>
+   <td width=96 valign=top style='width:71.75pt;border:solid #4BACC6 1.0pt;
+   mso-border-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:
+   accent5;background:#1F497D;mso-background-themecolor:text2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+   height:19.75pt'>
+   <p class=MsoNormal style='mso-yfti-cnfc:1'><span style='mso-bidi-font-size:
+   10.5pt;font-family:"ATT Aleck Sans",sans-serif;mso-fareast-font-family:"Times New Roman";
+   mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:"Times New Roman";
+   mso-bidi-theme-font:minor-bidi;color:white;mso-themecolor:background1;
+   mso-bidi-font-weight:bold'>Issue number<o:p></o:p></span></p>
+   </td>
+   <td width=58 valign=top style='width:43.35pt;border:solid #4BACC6 1.0pt;
+   mso-border-themecolor:accent5;border-left:none;mso-border-left-alt:solid #4BACC6 .5pt;
+   mso-border-left-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+   mso-border-themecolor:accent5;background:#1F497D;mso-background-themecolor:
+   text2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:19.75pt'>
+   <p class=MsoNormal style='mso-yfti-cnfc:1'><span style='mso-bidi-font-size:
+   10.5pt;font-family:"ATT Aleck Sans",sans-serif;mso-fareast-font-family:"Times New Roman";
+   mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:"Times New Roman";
+   mso-bidi-theme-font:minor-bidi;color:white;mso-themecolor:background1;
+   mso-bidi-font-weight:bold'>Priority<o:p></o:p></span></p>
+   </td>
+   <td width=438 valign=top style='width:328.25pt;border:solid #4BACC6 1.0pt;
+   mso-border-themecolor:accent5;border-left:none;mso-border-left-alt:solid #4BACC6 .5pt;
+   mso-border-left-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+   mso-border-themecolor:accent5;background:#1F497D;mso-background-themecolor:
+   text2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:19.75pt'>
+   <p class=MsoNormal style='mso-yfti-cnfc:1'><span style='mso-bidi-font-size:
+   10.5pt;font-family:"ATT Aleck Sans",sans-serif;mso-fareast-font-family:"Times New Roman";
+   mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:"Times New Roman";
+   mso-bidi-theme-font:minor-bidi;color:white;mso-themecolor:background1;
+   mso-bidi-font-weight:bold'>Summary<o:p></o:p></span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='mso-yfti-irow:0;height:17.95pt'>
+  <td width=96 valign=top style='width:71.75pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66134</span></p>
+  </td>
+  <td width=58 valign=top style='width:43.35pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #FFC000;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Major</span><span
+  lang=EN-US style='color:white;mso-themecolor:background1'><o:p></o:p></span></p>
+  </td>
+  <td width=438 valign=top style='width:328.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span class=SpellE><span
+  lang=EN-US>Vrrp</span></span><span lang=EN-US> VIP doesn't create the route
+  for the /xx subnet and is treated as /32 network.</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:17.95pt'>
+  <td width=96 valign=top style='width:71.75pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66091</span></p>
+  </td>
+  <td width=58 valign=top style='width:43.35pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #FFC000;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Major</span><span
+  lang=EN-US style='color:white;mso-themecolor:background1'><o:p></o:p></span></p>
+  </td>
+  <td width=438 valign=top style='width:328.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>Tunnel State
+  Reporting Problem in 2308e </span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:17.95pt'>
+  <td width=96 valign=top style='width:71.75pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66025</span></p>
+  </td>
+  <td width=58 valign=top style='width:43.35pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #FFC000;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Major</span><span
+  lang=EN-US style='color:white;mso-themecolor:background1'><o:p></o:p></span></p>
+  </td>
+  <td width=438 valign=top style='width:328.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>Traffic
+  interrupts due to same <span class=SpellE>reqid</span> with ikev1
+  policy-based and ikev2 route-based <span class=SpellE>vpn</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoCaption><span lang=EN-US>Issues resolved in 2308g</span></p>
+
+<h2>Security Vulnerabilities Resolved</h2>
+
+<table class=2016ATTTable5 border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid #4BACC6 .5pt;
+ mso-border-themecolor:accent5;mso-yfti-tbllook:1056;mso-padding-alt:3.6pt 5.75pt 3.6pt 5.75pt'>
+ <thead>
+  <tr style='mso-yfti-irow:-1;mso-yfti-firstrow:yes;mso-yfti-lastfirstrow:yes;
+   height:19.75pt'>
+   <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+   mso-border-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:
+   accent5;background:#1F497D;mso-background-themecolor:text2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+   height:19.75pt'>
+   <p class=MsoNormal style='mso-yfti-cnfc:1'><span style='mso-bidi-font-size:
+   10.5pt;color:white;mso-themecolor:background1;mso-bidi-font-weight:bold'>Issue
+   number<o:p></o:p></span></p>
+   </td>
+   <td width=61 valign=top style='width:45.45pt;border:solid #4BACC6 1.0pt;
+   mso-border-themecolor:accent5;border-left:none;mso-border-left-alt:solid #4BACC6 .5pt;
+   mso-border-left-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+   mso-border-themecolor:accent5;background:#1F497D;mso-background-themecolor:
+   text2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:19.75pt'>
+   <p class=MsoNormal style='mso-yfti-cnfc:1'><span style='mso-bidi-font-size:
+   10.5pt;color:white;mso-themecolor:background1;mso-bidi-font-weight:bold'>CVSS
+   score<o:p></o:p></span></p>
+   </td>
+   <td width=90 valign=top style='width:67.25pt;border:solid #4BACC6 1.0pt;
+   mso-border-themecolor:accent5;border-left:none;mso-border-left-alt:solid #4BACC6 .5pt;
+   mso-border-left-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+   mso-border-themecolor:accent5;background:#1F497D;mso-background-themecolor:
+   text2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:19.75pt'>
+   <p class=MsoNormal style='mso-yfti-cnfc:1'><span style='mso-bidi-font-size:
+   10.5pt;color:white;mso-themecolor:background1;mso-bidi-font-weight:bold'>Advisory<o:p></o:p></span></p>
+   </td>
+   <td width=306 valign=top style='width:229.3pt;border:solid #4BACC6 1.0pt;
+   mso-border-themecolor:accent5;border-left:none;mso-border-left-alt:solid #4BACC6 .5pt;
+   mso-border-left-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+   mso-border-themecolor:accent5;background:#1F497D;mso-background-themecolor:
+   text2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:19.75pt'>
+   <p class=MsoNormal style='mso-yfti-cnfc:1'><span style='mso-bidi-font-size:
+   10.5pt;color:white;mso-themecolor:background1;mso-bidi-font-weight:bold'>Summary<o:p></o:p></span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='mso-yfti-irow:0;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66234</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7.8</span><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4336-1">DLA-4336-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>CVE-2022-39377,
+  CVE-2023-33204: Debian dla-<span class=GramE>4336 :</span> <span
+  class=SpellE>isag</span> - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66228</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7.8<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4296-1">DLA-4296-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>CVE-2024-<span
+  class=GramE>7409:Debian</span> dla-<span class=GramE>4296 :</span> <span
+  class=SpellE>qemu</span> - security update.</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66227</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7.8<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4327-1">DLA-4327-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>Debian dla-<span
+  class=GramE>4327 :</span> ata-modules-5.10.0-35-armmp-di - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66226</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7.8<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4178-1">DLA-4178-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>Debian dla-<span
+  class=GramE>4178 :</span> ata-modules-5.10.0-34-armmp-di - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66225</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #7030A0;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>9.3<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4329-1">DLA-4329-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>CVE-2025-<span
+  class=GramE>23016:Debian</span> dla-<span class=GramE>4329 :</span> <span
+  class=SpellE>libfcgi</span>-bin - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66222</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #FFC000;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>5.5</span><span
+  lang=EN-US style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'><o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4306-1">DLA-4306-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>CVE-2024-22365
+  CVE-2025-<span class=GramE>6020:Debian</span> dla-<span class=GramE>4306 :</span>
+  <span class=SpellE>libpam-cracklib</span> - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66221</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #FFC000;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>5.5</span><span
+  lang=EN-US style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'><o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4319-1">DLA-4319-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>CVE-2025-9714
+  CVE-2025-<span class=GramE>7425:Debian</span> dla-<span class=GramE>4319 :</span>
+  libxml2 - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66220</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #FFC000;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>6.5</span><span
+  lang=EN-US style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'><o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4309-1">DLA-4309-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>CVE-2023-40403
+  CVE-2025-<span class=GramE>7424:Debian</span> dla-<span class=GramE>4309 :</span>
+  libxslt1-dev - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66219</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7.5<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4317-1">DLA-4317-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>CVE-2025-<span
+  class=GramE>40928:Debian</span> dla-<span class=GramE>4317 :</span> <span
+  class=SpellE>libjson-xs-perl</span> - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66217</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7.5<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4321-1">DLA-4321-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>CVE-2025-<span
+  class=GramE>9230:Debian</span> dla-<span class=GramE>4321 :</span>
+  libcrypto1.1-udeb - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66216</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7.8<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4316-1">DLA-4316-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>CVE-2025-<span
+  class=GramE>41244:Debian</span> dla-<span class=GramE>4316 :</span> open-<span
+  class=SpellE>vm</span>-tools - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66215</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>8.8<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4315-1">DLA-4315-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>CVE-2024-13978
+  CVE-2025-<span class=GramE>9900:Debian</span> dla-<span class=GramE>4315 :</span>
+  <span class=SpellE>libtiff</span>-dev - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66214</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>8.8<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4304-1">DLA-4304-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>CVE-2025-<span
+  class=GramE>57052:Debian</span> dla-<span class=GramE>4304 :</span> <span
+  class=SpellE>libcjson</span>-dev - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66213</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #7030A0;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>9.8<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4310-1">DLA-4310-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>CVE-2021-3979
+  CVE-2022-3650 CVE-2023-43040 CVE-2025-<span class=GramE>52555:Debian</span>
+  dla-<span class=GramE>4310 :</span> <span class=SpellE>ceph</span> - security
+  update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66111</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #7030A0;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>10<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4281-1">DLA-4281-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>CVE-2025-54349,
+  CVE-2025-54350: Debian dla-<span class=GramE>4281 :</span> iperf3 - security
+  update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66086</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #FFC000;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>6.5</span><span
+  lang=EN-US style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'><o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4267-1">DLA-4267-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>CVE-2025-6395,
+  CVE-2025-32988, CVE-2025-32990: Debian dla-<span class=GramE>4267 :</span> <span
+  class=SpellE>gnutls</span>-bin - security update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:white;mso-background-themecolor:
+  background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>VRVDR-66066</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4144-1">DLA-4144-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  white;mso-background-themecolor:background1;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:64'><span lang=EN-US>CVE-2023-1544,
+  CVE-2023-3019, CVE-2023-5088, CVE-2023-6693, CVE-2024-<span class=GramE>3447:Debian</span>
+  dla-<span class=GramE>4144 :</span> <span class=SpellE>qemu</span> - security
+  update</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17;mso-yfti-lastrow:yes;height:17.95pt'>
+  <td width=95 valign=top style='width:71.5pt;border:solid #4BACC6 1.0pt;
+  mso-border-themecolor:accent5;border-top:none;mso-border-top-alt:solid #4BACC6 .5pt;
+  mso-border-top-themecolor:accent5;mso-border-alt:solid #4BACC6 .5pt;
+  mso-border-themecolor:accent5;background:#F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;
+  height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>VRVDR-66065</span></p>
+  </td>
+  <td width=61 valign=top style='width:45.45pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  red;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US
+  style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
+  color:white;mso-themecolor:background1'>7.8<o:p></o:p></span></p>
+  </td>
+  <td width=90 valign=top style='width:67.25pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US><a
+  href="https://security-tracker.debian.org/tracker/DLA-4178-1">DLA-4178-1</a></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:none;border-left:
+  none;border-bottom:solid #4BACC6 1.0pt;mso-border-bottom-themecolor:accent5;
+  border-right:solid #4BACC6 1.0pt;mso-border-right-themecolor:accent5;
+  mso-border-top-alt:solid #4BACC6 .5pt;mso-border-top-themecolor:accent5;
+  mso-border-left-alt:solid #4BACC6 .5pt;mso-border-left-themecolor:accent5;
+  mso-border-alt:solid #4BACC6 .5pt;mso-border-themecolor:accent5;background:
+  #F2F2F2;padding:3.6pt 5.75pt 3.6pt 5.75pt;height:17.95pt'>
+  <p class=TableText style='mso-yfti-cnfc:128'><span lang=EN-US>Debian dla-<span
+  class=GramE>4178 :</span> ata-modules-5.10.0-34-armmp-di - security update</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoCaption><span lang=EN-US>Security vulnerabilities resolved in 2308g</span></p>
+
 ## Vyatta NOS Software Patches - 2308f
 {: #vyatta-nos-software-patches}
 
