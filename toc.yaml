@@ -10,21 +10,21 @@ toc:
     path: virtual-router-appliance
     label: Virtual Router Appliance
   entries:
-    - navgroup:
-       id: learn
-       topics:
-       - getting-started.md
-       - about.md
-       - vyatta-patch-notes.md
-       - link:
+  - navgroup:
+      id: learn
+      topics:
+      - getting-started.md
+      - about.md
+      - vyatta-patch-notes.md
+      - link:
           label: What is network security?
           href: https://www.ibm.com/think/topics/network-security
-       - topicgroup:
+      - topicgroup:
           label: Upgrading
           topics:
           - upgrade-os.md
           - upgrade-issues.md
-       - topicgroup:
+      - topicgroup:
           label: Migrating Vyatta 5400
           topics:
           - migration-guide.md
@@ -33,40 +33,40 @@ toc:
           - 5400-juniper.md
           - migration-issues.md
           - migration-faqs.md
-       - include: ../fortigate-10g/explore-firewalls.md
-       - include: ../gateway-appliance/ga-raci.md
-       - include: ../gateway-appliance/managing-permissions-and-device-access.md
-    - navgroup:
-       id: tutorial
-       topics:
-       - topicgroup:
+      - include: ../fortigate-10g/explore-firewalls.md
+      - include: ../gateway-appliance/ga-raci.md
+      - include: ../gateway-appliance/managing-permissions-and-device-access.md
+  - navgroup:
+      id: tutorial
+      topics:
+      - topicgroup:
           label: Tutorials
           topics:
           - include: ../solution-tutorials/nat-config-private.md
           - include: ../solution-tutorials/configuring-IPSEC-VPN.md
           - include: ../solution-tutorials/linking-secure-network-enclosures.md
-    - navgroup:
-       id: howto
-       topics:
-       - include: ../gateway-appliance/access-gateway-appliances.md
-       - include: ../gateway-appliance/access-gateway-details.md
-       - include: ../gateway-appliance/rename-gateway.md
-       - include: ../gateway-appliance/cancel-gateway.md
-       - vra-basics.md
-       - topicgroup:
+  - navgroup:
+      id: howto
+      topics:
+      - include: ../gateway-appliance/access-gateway-appliances.md
+      - include: ../gateway-appliance/access-gateway-details.md
+      - include: ../gateway-appliance/rename-gateway.md
+      - include: ../gateway-appliance/cancel-gateway.md
+      - vra-basics.md
+      - topicgroup:
           label: Working with VLANs
           topics:
           - include: ../gateway-appliance/manage-vlans.md
           - vlans.md
-       - firewall.md
-       - services.md
-       - include: ../gateway-appliance/manage-vlans.md
-       - topicgroup:
+      - firewall.md
+      - services.md
+      - include: ../gateway-appliance/manage-vlans.md
+      - topicgroup:
           label: Working with High Availability configurations
           topics:
           - vrrp.md
           - configuration-synchronization.md
-       - topicgroup:
+      - topicgroup:
           label: Working with IPSec tunnels
           topics:
           - vra-ipsec.md
@@ -74,23 +74,23 @@ toc:
           - vra-nat.md
           - vra-vfp-troubleshooting.md
           - vra-config-ipsec.md
-       - configuration-backups.md
-       - osreload-configuration.md
-    - navgroup:
-       id: reference
-       topics:
-       - vyatta-5600-security-fixes.md
-       - vyatta-5600-security-fixes-52.md
-       - topicgroup:
+      - configuration-backups.md
+      - osreload-configuration.md
+  - navgroup:
+      id: reference
+      topics:
+      - vyatta-5600-security-fixes.md
+      - vyatta-5600-security-fixes-52.md
+      - topicgroup:
           label: VRA API reference
           topics:
           - apis.md
           - link:
-             label: Vyatta Network OS Scripting Reference Guide
-             href: https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf
-       - lifecycle.md
-       - include: ../infrastructure-hub/ips.md
-       - topicgroup:
+              label: Vyatta Network OS Scripting Reference Guide
+              href: https://public.dhe.ibm.com/cloud/bluemix/network/vra/vyatta-network-os-5.2r1-scripting.pdf
+      - lifecycle.md
+      - include: ../infrastructure-hub/ips.md
+      - topicgroup:
           label: Legacy Vyatta 5400
           topics:
           - legacy-5400.md
@@ -100,11 +100,11 @@ toc:
           - how-add-firewall-functions-vyatta-stateless-and-stateful.md
           - setup-nat.md
           - vyatta-high-availability-configuration.md
-    - navgroup:
-       id: help
-       topics:
-       - vra-docs-18.md
-       - vra-docs.md
-       - faqs.md
-       - technical-faqs.md
-       - include: ../gateway-appliance/getting-help.md
+  - navgroup:
+      id: help
+      topics:
+      - vra-docs-18.md
+      - vra-docs.md
+      - faqs.md
+      - technical-faqs.md
+      - include: ../gateway-appliance/getting-help.md

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-08-29"
+  years: 2017, 2026
+lastupdated: "2026-01-19"
 
 keywords:
 
@@ -21,9 +21,9 @@ On 31 December 2022, all 1912 versions of IBM Cloud Virtual Router Appliance are
 As of January 2022, all 1801 versions of IBM Cloud Virtual Router Appliance (VRA) are deprecated and no longer supported. To maintain support for your VRA, be sure to update to version 2012, 2110, or 2204 as soon as possible by opening a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help) and requesting an updated ISO. After you receive your ISO, you can then follow the instructions for [Upgrading the OS](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrading-the-os) to finish updating your version.
 {: deprecated}
 
-**Latest patch received:** 26 August 2025
+**Latest patch received:** 15 January 2026
 
-**Latest documentation published:** 26 August 2025
+**Latest documentation published:** 15 January 2026
 
 This document lists the patches for the currently supported versions of Vyatta Network OS 5600. Patches are named with a lowercase letter, excluding “i”, “o”, “l”, and “x”.
 {: shortdesc}
@@ -33,6 +33,53 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## Vyatta NOS Software Patches - 2308g
+{: #vyatta-nos-software-patches}
+
+**Released:** 15 January 2026.
+
+## Limitations, restrictions, or behavior changes
+{: #limitations-vyatta}
+This release is mostly for security updates and three major faults. No changes in command behavior are noted.
+
+### Issues resolved
+{: #issues-resolved-vyatta}
+
+| Issue Number | Priority  | Summary |
+|-------------|------------|---------|
+| VRVDR-66134 | Major | Vrrp VIP doesn't create the route for the /xx subnet and is treated as /32 network. |
+| VRVDR-66091 | Major | Tunnel State Reporting Problem in 2308e |
+| VRVDR-66025 | Major | Traffic interrupts due to same reqid with ikev1 policy-based and ikev2 route-based vpn |
+
+{: caption="Security vulnerabilities resolved for 2308g" caption-side="bottom"}
+
+### Security vulnerabilities resolved
+{: #security-vulnerabilities-resolved-vyatta}
+
+| Issue Number | CVSS Score | Advisory Summary |
+|-------------|-------------|------------------|
+| VRVDR-66234 | 7.8 | DLA-4336-1 CVE-2022-39377, CVE-2023-33204: Debian dla-4336 : isag - security update | 
+| VRVDR-66228 | 7.8 | DLA-4296-1 CVE-2024-7409:Debian dla-4296 : qemu - security update.
+| VRVDR-66227 | 7.8 | DLA-4327-1 Debian dla-4327 : ata-modules-5.10.0-35-armmp-di - security update
+| VRVDR-66226 | 7.8 | DLA-4178-1 Debian dla-4178 : ata-modules-5.10.0-34-armmp-di - security update
+| VRVDR-66225 | 9.3 | DLA-4329-1 CVE-2025-23016:Debian dla-4329 : libfcgi-bin - security update
+| VRVDR-66222 | 5.5 | DLA-4306-1 CVE-2024-22365 CVE-2025-6020:Debian dla-4306 : libpam-cracklib - security update
+| VRVDR-66221 | 5.5 | DLA-4319-1 CVE-2025-9714 CVE-2025-7425:Debian dla-4319 : libxml2 - security update
+| VRVDR-66220 | 6.5 | DLA-4309-1 CVE-2023-40403 CVE-2025-7424:Debian dla-4309 : libxslt1-dev - security update
+| VRVDR-66219 | 7.5 | DLA-4317-1 CVE-2025-40928:Debian dla-4317 : libjson-xs-perl - security update
+| VRVDR-66217 | 7.5 | DLA-4321-1 CVE-2025-9230:Debian dla-4321 : libcrypto1.1-udeb - security update
+| VRVDR-66216 | 7.8 | DLA-4316-1 CVE-2025-41244:Debian dla-4316 : open-vm-tools - security update
+| VRVDR-66215 | 8.8 | DLA-4315-1 CVE-2024-13978 CVE-2025-9900:Debian dla-4315 : libtiff-dev - security update
+| VRVDR-66214 | 8.8 | DLA-4304-1 CVE-2025-57052:Debian dla-4304 : libcjson-dev - security update
+| VRVDR-66213 | 9.8 | DLA-4310-1 CVE-2021-3979 CVE-2022-3650 CVE-2023-43040 CVE-2025-52555:Debian dla-4310 : ceph - security update
+| VRVDR-66111 | 10  | DLA-4281-1 CVE-2025-54349, CVE-2025-54350: Debian dla-4281 : iperf3 - security update
+| VRVDR-66086 | 6.5 | DLA-4267-1 CVE-2025-6395, CVE-2025-32988, CVE-2025-32990: Debian dla-4267 : gnutls-bin - security update
+| VRVDR-66066 | 7 | DLA-4144-1 CVE-2023-1544, CVE-2023-3019, CVE-2023-5088,CVE-2023-6693, CVE-2024-3447:Debian dla-4144 : qemu - security update
+| VRVDR-66065 | 7.8 | DLA-4178-1 Debian dla-4178 : ata-modules-5.10.0-34-armmp-di-security update
+
+{: caption="Security vulnerabilities resolved for 2308g" caption-side="bottom"}
+
 
 ## Vyatta NOS Software Patches - 2308f
 {: #vyatta-nos-software-patches}
