@@ -47,23 +47,26 @@ Vyatta was an open source, PC-based router software that became closed source. T
 
 IBM no longer supports the Vyatta 5400 as of 31 March 2019.
 
-## Why don't I see see the license server in the configuration anymore?
+## Why don't I see the license server in the configuration anymore?
 {: #license}
 {: faq}
 {: support}
 
-In old deployments of VRA devices this row in the configuration was present:
+In old deployments of VRA devices, the following row in the configuration was present:
 
-set license server-url 'http://<IP>/brocade'
+   ```sh
+   set license server-url 'http://<IP>/brocade'
+   ```
 
-for instance:
+For instance:
 
-set license server-url 'http://10.3.64.55/brocade'
+   ```sh
+   set license server-url 'http://10.3.64.55/brocade'
+   ```
 
-or
-
-set license server-url 'http://10.0.68.141/brocade'
-
+   ```sh
+   set license server-url 'http://10.0.68.141/brocade'
+   ```
 
 In newer deployments this setting is no longer required.
 
