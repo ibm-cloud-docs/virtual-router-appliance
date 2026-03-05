@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-04"
+lastupdated: "2026-03-05"
 
 keywords:
 
@@ -68,7 +68,7 @@ For instance:
    set license server-url 'http://10.0.68.141/brocade'
    ```
 
-In newer deployments this setting is no longer required.
+In newer deployments, this setting is no longer required.
 
 ## What improvements does the {{site.data.keyword.vra_full}} (Vyatta 5600) have over the Vyatta 5400?
 {: #what-improvements-does-the-virtual-router-appliance-vyatta-5600-have-over-the-vyatta-5400-}
