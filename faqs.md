@@ -241,4 +241,4 @@ Yes, it is possible to update only the BIOS without issues. When that option is 
 {: faq}
 {: support}
 
-No. Upgrading from 1G to 10G or downgrading from 10G to 1G is not supported.
+No. Upgrading from 1 Gbps to 10 Gbps or downgrading from 10 Gbps to 1 Gbps isn't supported.
