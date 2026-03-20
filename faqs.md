@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-05"
+lastupdated: "2026-03-20"
 
 keywords:
 
@@ -115,13 +115,13 @@ No. The gateway appliance allows you to select the private and public network se
 {: faq}
 {: support}
 
-Yes. Whenever possible, you shouldn't lock down your network until you've populated it with the servers you plan to use.
+Yes. Whenever possible, you shouldn't lock down your network until you populate it with the servers you plan to use.
 
 IBM support is forbidden by policy to examine or alter VRA or dedicated firewall configuration without a customer's explicit involvement, so support cannot know that a VRA is responsible for stalled or failed server provisions.
 
 It is the customer's responsibility to ensure that the VRA or firewall is configured to permit automated server provisions before the server order is placed. Provisions that are blocked by a customer-managed VRA or firewall are the customer's responsibility to resolve. Such provisioning delays are not subject to SLAs or credits. Ordered systems can be returned to inventory (after customer data is expunged) if the customer does not respond quickly.
 
-Likewise, if a VRA or firewall is bypassed after an order is placed, it's still likely that the order will fail. There might be a narrow window during which automation retries are attempted. It is best that the entire provision process proceed without network interference.
+Likewise, if a VRA or firewall is bypassed after an order is placed, it's still likely that the order will fail. There might be a narrow window during which automation retries are attempted. It is best that the entire provision process proceeds without network interference.
 
 ## What firewall products does IBM offer?
 {: #firewall-products}
@@ -148,7 +148,7 @@ As a first diagnostic step, IBM Support might require you to put your VRA or fir
 
 Keep in mind that even though they can't see you, a public cloud shares networks with other customers. True, best-case VRA throughput is determined by available network capacity at a point in time, plus the distance the data must travel.
 
-These variables aside, VRA can forward 80 Gbps of unmodified traffic across multiple interfaces by using the rough formula that every 10 Gbps of throughput requires one full processor core (not including hyperthread). Current servers max out at 40 Gbps (2 x 10 Gbps public + 2 x 10 Gb private). As a result, a server with 8 or more cores has sufficient compute headroom to handle multiple common VRA features at near best-case network performance
+These variables aside, VRA can forward 80 Gbps of unmodified traffic across multiple interfaces by using the rough formula that every 10 Gbps of throughput requires one full processor core (not including hyperthread). Current servers max out at 40 Gbps (2 x 10 Gbps public + 2 x 10 Gb private). As a result, a server with 8 or more cores has sufficient compute headroom to handle multiple common VRA features at near best-case network performance.
 
 ## What do I do if I lose my VRA password?
 {: #password}
@@ -222,11 +222,11 @@ An alternative to accessing a root shell is to either log in as another user and
 
 It's important to keep the firmware updated to make sure that your network gateway appliance has optimal device compatibility and stability. You have the [role and responsibility](/docs/gateway-appliance?topic=gateway-appliance-ga-raci) for ongoing maintenance and operation of your devices; IBM Cloud technical support does not perform updates on your behalf.
 
-If a firmware version is out of date, you can update the firmware by selecting the appliance from the device list and clicking **Update firmware** from the action menu. You can also initialize a firmware update during the OS Reload process.  After you initiate the update, a transaction runs to auto update the BIOS firmware and any other firmware option that you selected.
+If a firmware version is out of date, you can update the firmware by selecting the appliance from the device list and clicking **Update firmware** from the action menu. You can also initialize a firmware update during the OS Reload process. After you initiate the update, a transaction runs to auto update the BIOS firmware and any other firmware option that you selected.
 
 You can't initialize a firmware update when a gateway appliance is powered ON. Make sure that the appliance is powered OFF before you initialize a firmware update. {: important}
 
-If you need to update multiple nodes, it’s a good practice to act on one node at a time.  Updating a single node minimizes disruption when failover happens for the second firmware update.
+If you need to update multiple nodes, it’s a good practice to act on one node at a time. Updating a single node minimizes disruption when failover happens for the second firmware update.
 
 Firmware updates can take up to 4 hours to complete. If the update takes longer than 4 hours, check for an open support case. If a support case isn't open, you can contact support or open a case to get help.
 
@@ -234,4 +234,11 @@ Firmware updates can take up to 4 hours to complete. If the update takes longer 
 {: #firmware-bios}
 {: faq}
 
-Yes, it is possible to update only the BIOS without issues.  When that option is available, you see it as a choice on the device page in the IBM Cloud console, along with other update options such as the network card.  For optimal device compatibility, a good practice is to perform the recommended updates for BIOS and network card at the same time so that both use the latest version.
+Yes, it is possible to update only the BIOS without issues. When that option is available, you see it as a choice on the device page in the IBM Cloud console, along with other update options such as the network card. For optimal device compatibility, a good practice is to perform the recommended updates for BIOS and network card at the same time so that both use the latest version.
+
+## Can I upgrade or downgrade the network port speed?
+{: #port-speed}
+{: faq}
+{: support}
+
+No. Upgrading from 1G to 10G or downgrading from 10G to 1G is not supported.
