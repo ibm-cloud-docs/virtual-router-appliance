@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-08-02"
+  years: 2017, 2026
+lastupdated: "2026-04-22"
 
 keywords: nat, setup, 5400
 
@@ -31,7 +31,7 @@ It is the public-side VLAN where the compute option is located, not the Brocade 
 
 Follow these steps:
 
-1. Within the SoftLayer web portal, in the **Devices** view, locate the bond on the **Configuration** tab for the Brocade 5400 vRouter device. Assume that `eth1=bond1` on your device.
+1. Within the SoftLayer web portal, in the **Devices** view, locate the bond on the **Configuration** tab for the Brocade 5400 vRouter device. Assume `eth1=bond1` on your device.
 
 2. Select **Network > IP Management > VLANs** from the web portal to find the default gateway for VLAN 1224.
 
@@ -40,7 +40,7 @@ Follow these steps:
 ## Configuring the private VLAN with the CLI
 {: #configure-the-private-vlan-using-the-cli}
 
-Two command modes exist in the command-line interface (CLI): operational and configuration.
+Two command modes exist in the CLI: operational and configuration.
 
 Operational mode provides access to operational commands for:
 

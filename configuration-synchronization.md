@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-14"
+  years: 2017, 2026
+lastupdated: "2026-04-22"
 
 keywords: ha, high availability, sync, synchronize, config-sync
 
@@ -17,7 +17,7 @@ subcollection: virtual-router-appliance
 {: help}
 {: support}
 
-Two {{site.data.keyword.vra_full}}s (VRAs) in a High Availability (HA) pair must have their configurations that are synchronized sufficiently so that both devices behave in a similar manner. This process is done through `configuration sync-maps` and you can choose which portion of the configuration to synchronize. If you change one machine, it pushes the marked config over to the other device.
+Two {{site.data.keyword.vra_full}}s (VRAs) in a High Availability (HA) pair must have their configurations that are synchronized sufficiently so that both devices behave in a similar manner. This process is done through `configuration sync-maps` and you can choose which portion of the configuration to synchronize. If you change one device, it pushes the marked config over to the other device.
 {: shortdesc}
 
 This process synchronizes and saves the running configuration of the local device on the remote device. However, as a step of the commit process, it does not save the configuration on the local device.
@@ -37,7 +37,7 @@ set system config-sync remote-router 192.168.1.22 sync-map TEST
 
 The first two lines create the actual `sync-map` itself. Here, the configuration stanza for `security firewall` is set in the `sync-map`. As a result, any changes that are made inside the config node are pushed to the remote device. However, changes made to `security user` cannot be sent because that does not match the rule. You can make the `sync-map` as specific, or as general as you want.
 
-The next three lines designate the remote router's `config-sync` user and password, IP, and which `sync-map` to push. Any changes that match the rules for `TEST`, go to `remote-router 192.168.1.22` and use the login information. For version 1801zf and earlier, a `REST` call is made to perform this using the VRA API. As a result, the HTTPS server must be running (and unblocked) on the remote router. Version 1908/1912 rewrites `config-sync` to use `netconf` instead of HTTPS to address performance issues in previous releases. The following lines are required, along with an `allow` in the firewall rules for each Vyatta, to make connections to each other on port 830:
+The next three lines designate the remote router's `config-sync` user and password, IP, and which `sync-map` to push. Any changes that match the rules for `TEST`, go to `remote-router 192.168.1.22`, and use the login information. For version 1801zf and earlier, a `REST` call is made to perform this using the VRA API. As a result, the HTTPS server must be running (and unblocked) on the remote router. Version 1908/1912 rewrites `config-sync` to use `netconf` instead of HTTPS to address performance issues in previous releases. The following lines are required, along with an `allow` in the firewall rules for each Vyatta, to make connections to each other on port 830:
 
 ```sh
 set service netconf

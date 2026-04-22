@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-04-07"
+  years: 2017, 2026
+lastupdated: "2026-04-22"
 
 keywords: firewall, manage, stateless, stateful, alg, firewall, rules, CPP, Logging
 
@@ -108,46 +108,47 @@ IBM Cloud hosts many subnets (private service networks) that provide services an
 
 You can allow data center access by placing the proper `SERVICE-ALLOW` rules at the beginning of the firewall rule sets with an action of `accept`. Where the rule set must be applied depends on the routing and firewall design being implemented.
 
-It is recommended that you place the firewall rules in the location which causes the least duplication of work. For example, allowing backend subnets inbound on `dp0bond0` would be less work than allowing backend subnets outbound toward each VLAN virtual interface.
+It is recommended that you place the firewall rules in the location, which causes the least duplication of work. For example, allowing backend subnets inbound on `dp0bond0` is less work than allowing back-end subnets outbound toward each VLAN virtual interface.
 
 ### Per-interface firewall configuration
 {: #per-interface-firewall-rules}
 
 One method for configuring the firewall on a VRA is to apply firewall rule sets to each interface. In this case, an interface can be an inside VLAN interface (VIF) (such, as `dp0bond0.1303`), one of the outside interfaces (`dp0bond0` (private) or `dp0bond1` (public)), or tunnel interfaces (such as `tun0` or `vti0`). Each interface has three possible firewall assignments:
 
-`in` - The firewall filters packets entering the interface. These packets can either travel through or be destined for the VRA.
+`in` - The firewall filters packets that enter the interface. These packets can either travel through or be destined for the VRA.
 
-`out` - The firewall filters packets leaving the interface. These packets can either travel through or be destined for the VRA.
+`out` - The firewall filters packets that leave the interface. These packets can either travel through or be destined for the VRA.
 
-`local` - The firewall is checked against packets which are destined for the VRA. The loopback interface, `lo`, can be used for filtering local inbound traffic on any interface. Firewall filters and rulesets applied to `local` are processed after any firewall rulesets that are applied as `in` to any interface.
+`local` - The firewall is checked against packets, which are destined for the VRA. The loopback interface, `lo`, can be used for filtering local inbound traffic on any interface. Firewall filters and rulesets applied to `local` are processed after any firewall rulesets that are applied as `in` to any interface.
 
-An interface can have multiple rule sets applied in each direction. They are applied in the order of configuration. Note that it is not possible to firewall traffic originating from the VRA device using per-interface firewalls.
+An interface can have multiple rule sets applied in each direction. They are applied in the order of configuration. It is not possible to firewall traffic originating from the VRA device that uses per-interface firewalls.
 
-As an example, to assign the `ALLOW_LEGACY` rule set to the `in` option for the `dp0bond1` interface, you would use the configuration command:
+As an example to assign the `ALLOW_LEGACY` rule set to the `in` option for the `dp0bond1` interface, you would use the configuration command:
 
 `set interfaces bonding dp0bond1 firewall in ALLOW_LEGACY`
 
 ## Control Plane Policing (CPP)
 {: #control-plane-policing-cpp-}
 
-Control plane policing (CPP) provides protection against attacks on the {{site.data.keyword.vra_full}} by allowing you to configure firewall policies that are assigned to desired interfaces and applying these policies to packets entering the VRA.
+Control plane policing (CPP) provides protection against attacks on the {{site.data.keyword.vra_full}} by allowing you to configure firewall policies that are assigned to wanted interfaces and applying these policies to packets entering the VRA.
 
-CPP is implemented when the `local` keyword is used in firewall policies that are assigned to any type of VRA interface, such as data plane interfaces or loopback. Unlike the firewall rules applied for packets traversing through the VRA, the default action of firewall rules for traffic entering or leaving the control plane is `Allow`. Users must add explicit drop rules if the default behavior is not desired.
+CPP is implemented when the `local` keyword is used in firewall policies that are assigned to any type of VRA interface, such as data plane interfaces or loopback. Unlike the firewall rules that are applied for packets traversing through the VRA, the default action of firewall rules for traffic entering or leaving the control plane is `Allow`. Users must add explicit drop rules if the default behavior is not wanted.
 
-The VRA provides a basic CPP rule set as template. You can merge it into your configuration by running:
+The VRA provides a basic CPP rule set as a template. You can merge it into your configuration by running:
 
 `vyatta@vrouter# merge /opt/vyatta/etc/cpp.conf`
 
 After this rule set is merged, a new firewall rule set named `CPP` is added and applied to the loopback interface. It is recommend that you modify this rule set to suit your environment.
 
-Please note that CPP rules cannot be stateful, and will only apply on ingress traffic.
+CPP rules cannot be stateful, and only apply on ingress traffic.
+{: note}
 
 ## Zone-based firewall configuration
 {: #zone-based-firewall}
 
-In zone-based firewall configurations, one or more interfaces are assigned to a zone (although, one interface cannot be assigned to multiple zones) and firewall rule sets are applied from one zone to another. For a single zone-policy, traffic is filtered when it is passing from the first zone to the second, and the filtering only occurs on the outbound/egress interface. Zones drop any traffic coming into them which is not explicitly allowed.
+In zone-based firewall configurations, one or more interfaces are assigned to a zone (although one interface cannot be assigned to multiple zones) and firewall rule sets are applied from one zone to another. For a single-zone policy, traffic is filtered when it is passing from the first zone to the second, and the filtering occurs only on the outbound/egress interface. Zones drop any traffic coming into them, which is not explicitly allowed.
 
-An interface can either belong to a zone or have a per-interface firewall configuration; it cannot do both.
+An interface can either belong to a zone or have a per-interface firewall configuration: it cannot do both.
 
 Consider the following office scenario with three departments, each department with its own VLAN:
 
@@ -185,7 +186,7 @@ It is important to understand that this assignment from zone `DEPARTMENTC` going
 
 The following example details a firewall environment that monitors and debugs all traffic eggressing and ingressing a VRA. 
 
-Adding "log" to rule 1 will severly impact performance and should only be used for debugging. 
+Adding "log" to rule 1 severely impacts performance and should be used only for debugging. 
 {: note}
 
 Never leave your public interfaces wide open, as in this example.
@@ -228,11 +229,11 @@ You can troubleshoot both interace-based and zone-based firewall configurations.
 To begin checking and troubleshooting, run these commands to understand how the policies are configured:
 
 1. To gather which firewall rulesets are applied to each interface and in which direction, run `show configuration commands | grep firewall | grep interface`.
-2. Using the output of step 1 you can find all of the rules applied to the interfaces in the flow that you are trying to check by running `show configuration commands | grep -iE '<name of firewall ruleset>'.`
+2. Using the output of step 1 you can find all of the rules that are applied to the interfaces in the flow that you are trying to check by running `show configuration commands | grep -iE '<name of firewall ruleset>'.`
 3. Examine the rules to make sure that the proper subnets, ports, and protocols are allowed:
-   - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `in` to the VIFs (`dp0bond0.XXX`), then you must define the service networks as the destinations. This is because when traffic flows into the VIF, that is when the client server sends traffic outbound. 
-   - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `out` of the VIFs (`dp0bond0.XXX`), then you must define the service networks as the sources. This is because when traffic flows out of the VIF it does so towards the client servers. 
-   - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `in` to the `dp0bond0` interface, then you must define the service networks as the sources. This is because traffic flowing into the `dp0bond0` interface is generally destined to the servers behind the Vyatta.
+   - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `in` to the VIFs (`dp0bond0.XXX`), then you must define the service networks as the destinations. This is because when traffic flows into the VIF that is when the client server sends traffic outbound. 
+   - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `out` of the VIFs (`dp0bond0.XXX`), then you must define the service networks as the sources. This is because when traffic flows out of the VIF it does so toward the client servers. 
+   - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `in` to the `dp0bond0` interface, then you must define the service networks as the sources. This is because traffic flowing into the `dp0bond0` interface is destined to the servers behind the Vyatta.
    - If you're troubleshooting service network to private server connectivity, and the ruleset is applied `out` of the `dp0bond0` interface, then you must define the service networks as the destinations. This is because traffic flowing out of `dp0bond0` is in the direction away from the client servers that are behind the Vyatta. 
 
 ### Troubleshooting zone-based firewall configurations
@@ -241,13 +242,13 @@ To begin checking and troubleshooting, run these commands to understand how the 
 To begin checking and troubleshooting, run these commands to understand how the policies are configured:
 
 1. To show which interfaces are in which zones, run `show configuration commands | grep zone | grep interface`.
-2. Using the output from step 1, you can find the firewall ruleset applied in each zone-policy by running `show configuration commands | grep <name of zone> | grep <name of other zone>`.
-3. Using the output of step 2 you can find all of the rules applied to the interfaces in the flow that you are trying to check by running `show configuration commands | grep -iE '<name of firewall ruleset>|<name of other firewall ruleset>'`.
+2. Using the output from step 1, you can find the firewall ruleset that is applied in each zone-policy by running `show configuration commands | grep <name of zone> | grep <name of other zone>`.
+3. Using the output of step 2 you can find all of the rules that are applied to the interfaces in the flow that you are trying to check by running `show configuration commands | grep -iE '<name of firewall ruleset>|<name of other firewall ruleset>'`.
 4. Examine the rules to make sure that the proper subnets, ports, and protocols are allowed:
    - If you're troubleshooting service network to private server connectivity, and the policy is from the VIFs (`dp0bond0.XXX`) to `dp0bond0`, you must define the service networks as the destination.
    - For policies that are from `dp0bond0` to the VIFs (`dp0bond0.XXX`), you must define the service networks as the sources. 
    
-The following example details the commands you can use to pull the information needed to determine if the firewall should allow the service networks.
+The following example details the commands that you can use to pull the information that is needed to determine whether the firewall should allow the service networks.
 
 ```sh
 vyatta@gateway02:~$ show configuration commands | grep zone | grep interface
@@ -320,15 +321,15 @@ For UDP, ICMP, and all non-TCP flows, your session will transition to four state
 ## Per packet logging
 {: #per-packet-logging}
 
-For per packet logging, ensure that you include the keyword `log` in the firewall or NAT rule. This will log every network packet that matches the rule.
+For per packet logging, ensure that you include the keyword `log` in the firewall or NAT rule. This logs every network packet that matches the rule.
 
-Per-packet logging occurs in the packet forwarding paths and generates large amounts of output. Per packet logging can greatly reduce the throughput of the VRA, cause performance issues, and dramatically increase the disk space used for the log files. It is recommended that you use per packet logging only for debugging purposes. For all operational purposes, stateful session logging should be used instead.
+Per-packet logging occurs in the packet forwarding paths and generates large amounts of output. Per-packet logging can greatly reduce the throughput of the VRA, cause performance issues, and dramatically increase the disk space that is used for the log files. It is recommended that you use per packet logging only for debugging purposes. For all operational purposes, stateful session logging should be used instead.
 {: important}
 	
 ## Troubleshooting using firewall logs
 {: #Troubleshooting-using-firewall-logs}
 	
-For debugging purposes, you can set up default log and per packet logging. Per packet logging can be added to each individual rule to show in the logs when packets are dropped or accepted (depending on the action set for the rule). The default log records an "implicit" drop when it happens. For the following zone-policy based firewall configuration, the default-log setting will log every time that traffic does not match rule 1. This is the only rule configured.
+For debugging purposes, you can set up default log and per packet logging. Per packet logging can be added to each individual rule to show in the logs when packets are dropped or accepted (depending on the action set for the rule). The default log records an "implicit" drop when it happens. For the following zone-policy based firewall configuration, the default-log setting logs every time that traffic does not match rule 1. This is the only rule configured.
 
 ```sh
 set security firewall name To-Private-Servers rule 1 action drop
