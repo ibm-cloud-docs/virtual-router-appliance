@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-08-02"
+  years: 2017, 2026
+lastupdated: "2026-04-22"
 
 keywords:  
 
@@ -15,14 +15,14 @@ subcollection: virtual-router-appliance
 # Adding firewall functions to Vyatta 5400 (stateless and stateful)
 {: #adding-firewall-functions-to-vyatta-5400-stateless-and-stateful-}
 
-Applying firewall rulesets to each interface is one firewall method when you use Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall instances - In, Out, and Local - and each instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. As soon as a match is made, the firewall applies the specific action of the matching rule.
+Applying firewall rulesets to each interface is one firewall method when you use Brocade 5400 vRouter (Vyatta) devices. Each interface has three possible firewall instances - In, Out, and Local - and each instance has rules that can be applied to it. The default action is Drop, with rules that allow specific traffic being applied in a fashion from rule 1 to N. When a match is made, the firewall applies the specific action of the matching rule.
 {: shortdesc}
 
-For any of the following firewall instances, **only one** can be applied.
+For any of the following firewall instances, only one can be applied.
 
-* **IN** - The firewall filters packets that enter the interface and traverse the Brocade system. You must permit certain SoftLayer IP ranges to have access to the front-end and back-end for management (ping, monitoring, and so on).
-* **OUT** - The firewall filters packets leaving the interface. These packets can be traversing the Brocade system or originating on the system.
-* **LOCAL** - The firewall filters packets that are destined for the Brocade vRouter system through the system interface. You should establish restrictions on access ports coming into the Brocade vRouter device from external IP addresses that are not restricted.
+* **IN** - The firewall filters packets that enter the interface and traverse the Brocade system. Permit certain SoftLayer IP ranges to have access to the front end and backend for management (ping, monitoring, and so on).
+* **OUT** - The firewall filters packets that leave the interface. These packets can be traversing the Brocade system or originating on the system.
+* **LOCAL** - The firewall filters packets that are destined for the Brocade vRouter system through the system interface. Establish restrictions on access ports coming into the Brocade vRouter device from external IP addresses that are not restricted.
 
 Follow these steps to set an example firewall rule to turn off Internet Control Message Protocol (ICMP) *(ping - IPv4 echo reply message)* to your Brocade 5400 vRouter's interfaces (this is a stateless action; a stateful action is reviewed later):
 
@@ -40,7 +40,7 @@ To assign firewall rules to routed traffic, you must apply rules to the Brocade 
 
 For this example, zones are created for the VLANs that were used thus far.
 
-bond1 = dmz
+bond1 = DMZ
 
 bond1.2007 = prod (for production)
 
@@ -55,7 +55,7 @@ bond1.1894 = reserved for future use
 
 Before the zones are created, it is a good idea to create the firewall rules that are to be applied to the zones. Creating the rules before the zones allows you to apply them immediately, versus creating the zone, then creating the rules, and having to go back to the zone for rule application.
 
-**NOTE:** Zones and rulesets both have a default action statement. When using Zone-Policies, the default action is set by the zone-policy statement and is represented by rule 10,000. It is also important to remember that the default action of a firewall ruleset is to **drop** all traffic.
+**NOTE:** Zones and rulesets both have a default action statement. When you use Zone-Policies, the default action is set by the zone-policy statement and is represented by rule 10,000. The default action of a firewall ruleset is to **drop** all traffic.
 
 The following commands:
 
@@ -87,11 +87,11 @@ The following commands:
       * *set firewall name dmz2private rule 3 protocol tcp_udp*
       * *set firewall name dmz2private rule 3 destination port 80*
 
-3. Type *commit* to ensure that all rules are taken when finished.
+3. Type *commit* to help ensure that all rules are taken when finished.
 
 4. View your configuration by typing *show firewall name dmz2private* in the command prompt.
 
-The next firewall rule is applied to our **dmz** zone. This rule is named **public**. Enter the following commands:
+The next firewall rule is applied to our **DMZ** zone. This rule is named **public**. Enter the following commands:
 
 * *set firewall name public default-action drop*
 * *set firewall name public enable-default-log*
@@ -107,8 +107,8 @@ Firewall rules need to flow outbound through **prod** to **dmz**. Use the follow
 
 Zones are logical representation of an interface. The following commands:
 
-* Create a zone and a policy named **dmz** with a default action to drop packets that are destined for this zone.
-* Set the **dmz** policy to use the **bond1** interface.
+* Create a zone and a policy that is named **DMZ** with a default action to drop packets that are destined for this zone.
+* Set the **DMZ** policy to use the **bond1** interface.
 * Set the **prod** policy to use the **bond1.2007** interface.
 * Create a zone policy named **private** with a default action to drop packets that are destined for this zone.
 * Set the policy named **private** to use the **bond0.2254** interface.
@@ -116,8 +116,8 @@ Zones are logical representation of an interface. The following commands:
 1. Enter the Following commands in the prompt:
 
    * *configure*
-   * *set zone policy zone dmz default-action drop*
-   * *set zone-policy zone dmz interface bond1*
+   * *set zone policy zone DMZ default-action drop*
+   * *set zone-policy zone DMZ interface bond1*
    * *set zone-policy zone prod default-action drop*
    * *set zone-policy zone prod interface bond1.2007*
    * *set zone-policy zone private default-action drop*
@@ -126,11 +126,11 @@ Zones are logical representation of an interface. The following commands:
 2. Use the following commands to set the firewall policy for the zones:
 
    * *set zone-policy zone private from dmz firewall name dmz2private*
-   * *set zone-policy zone prod from dmz firewall name dmz2private*
-   * *set zone-policy zone dmz from prod firewall name public4*
+   * *set zone-policy zone prod from DMZ firewall name dmz2private*
+   * *set zone-policy zone DMZ from prod firewall name public4*
    * *commit*
 
-Note that you can apply a firewall rule to a specific interface if you do not want to apply it to a zone policy. Use the following commands to apply a rule to an interface.
+You can apply a firewall rule to a specific interface if you do not want to apply it to a zone policy. Use the following commands to apply a rule to an interface.
 
 * *set interfaces bonding bond1 firewall local name public*
 * *commit*

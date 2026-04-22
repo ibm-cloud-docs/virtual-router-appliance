@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-09-09"
+  years: 2017, 2026
+lastupdated: "2026-04-22"
 
 keywords: 
 
@@ -18,7 +18,7 @@ subcollection: virtual-router-appliance
 The {{site.data.keyword.vra_full}} (VRA) provides the Vyatta 5600 operating system for x86 bare metal servers. It is offered as a High Availability (HA) or stand-alone configuration. 
 {: shortdesc}
 
-With the {{site.data.keyword.vra_full}} you can route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic oriented, policy-based routing, VPN, and other features. The VRA offers performance with ease of configuration. It has the maintenance advantages of running on a normal hardware server. The VRA hardware appliance is sized to handle the routing load for multiple VLANs, and it can be ordered with redundant network links and redundant RAID arrays. You manage all VRA features.
+With the {{site.data.keyword.vra_full}} you can route private and public network traffic selectively, through a full-featured enterprise router that has firewall, traffic that is oriented, policy-based routing, VPN, and other features. The VRA offers performance with ease of configuration. It has the maintenance advantages of running on a normal hardware server. The VRA hardware appliance is sized to handle the routing load for multiple VLANs, and it can be ordered with redundant network links and redundant RAID arrays. You manage all VRA features.
 
 **Alternatives:** The FortiGate Security Appliance (FSA) 10 Gbps is a single-tenant (dedicated), high-throughput (10 Gbps) hardware firewall with next-generation features, such as AntiVirus (AV), Intrusion Prevention (IBM Prerequisite Scanner), and web filtering. It might be an alternative to VRA for achieving similar goals. For more information, see the [FSA documentation](/docs/fortigate-10g?topic=fortigate-10g-getting-started).
 
@@ -42,6 +42,6 @@ With the {{site.data.keyword.vra_full}}, you can provision application and datab
 ## Enterprise-grade routing
 {: #enterprise-grade-routing}
 
-For multi-tiered applications on different isolated networks, the {{site.data.keyword.vra_full}} gives you flexible ways to build connectivity between these networks. You can set up dynamic routing by using BGP to announce your own public IP space on the {{site.data.keyword.cloud_notm}} routers. BGP also offers more flexibility for custom private network configurations when using various tunnels and Direct Link solutions.
+For multi-tiered applications on different isolated networks, the {{site.data.keyword.vra_full}} gives you flexible ways to build connectivity between these networks. You can set up dynamic routing by using BGP to announce your own public IP space on the {{site.data.keyword.cloud_notm}} routers. BGP also offers more flexibility for custom private network configurations when you use various tunnels and Direct Link solutions.
 
 Have a look at the Brocade BGP configurations guides in the [Supplemental VRA documentation section](/docs/virtual-router-appliance?topic=virtual-router-appliance-supplemental-vra-documentation).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-07-30"
+  years: 2017, 2026
+lastupdated: "2026-04-22"
 
 keywords: 
 
@@ -20,9 +20,9 @@ subcollection: virtual-router-appliance
 A Vyatta configuration can be a boot configuration file, or a file with a list of configuration commands. By default, the latest 20 completed commits are saved on the system in `/config/archive` as archived boot configuration files.
 {: shortdesc}
 
-You can take a backup of the current `config.boot` by switching to user `root` and copying the file to another location. You can also back up the current configuration commands for your Virtual Router Appliance by running the operational mode command `show configuration commands` and then saving the output. Both of these methods are considered a minimum backup for the configuration.
+You can take a backup of the current `config.boot` by switching to user `root` and copying the file to another location. You can also back up the current configuration commands for your Virtual Router Appliance by running the operational mode command `show configuration commands` and then saving the output. Both of these methods are considered as a minimum backup for the configuration.
 
-The following example generates the complete list of commands used to configure the system, and then redirects the list of commands into a file in the Vyatta home directory:
+The following example generates the complete list of commands that are used to configure the system, and then redirects the list of commands into a file in the Vyatta home directory:
 
 ```sh
 vyatta@gateway02:~$ show configuration commands > /home/vyatta/configcomm.bak-07-30-2020
@@ -53,7 +53,7 @@ Done
 [edit]
 ```
 
-A more complete backup, including log data, involves generating a technical support archive for the system:
+For a complete backup, including log data, involves generating a technical support archive for the system:
 
 ```sh
 $ generate tech-support archive
@@ -76,7 +76,7 @@ As an example:
 -rw-r--r--  1 michael  michael   82976 Aug 22 12:46 var-log.tgz
 ```
 
-Consider backing up any notes that you create while configuring the device at a central location accessible to all of your administration staff.
+Consider backing up any notes that you create while you configure the device at a central location accessible to all of your administration staff.
 {: tip}
 
 ## Restoring a configuration
@@ -84,14 +84,14 @@ Consider backing up any notes that you create while configuring the device at a 
 {: help}
 {: support}
 
-To restore a backup configuration from a `config.boot` file, copy the file to `/config/config.boot` and reboot. For example:
+To restore a backup configuration from a `config.boot` file, copy the file to `/config/config.boot` and restart. For example:
 
 ```sh
 root@asloma-vra-5218-ha1:/home/vyatta# cp config.boot.bak-05-14-2021 /config/config.boot
 root@asloma-vra-5218-ha1:/home/vyatta# reboot
 ```
 
-Alternatively, to restore the configuration from a `save`, enter the configuration mode, load the backup configuration and commit:
+Alternatively, to restore the configuration from a `save`, enter the configuration mode, load the backup configuration, and commit:
 
 ```sh
 vyatta@cicd-bm-vra2-sa0# save /home/vyatta/config.bak.05-14-2021

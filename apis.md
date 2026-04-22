@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-11-19"
+  years: 2017, 2026
+lastupdated: "2026-04-22"
 
 keywords: apis, api
 
@@ -20,7 +20,7 @@ The SoftLayer Application Programming Interface (SLAPI) is the development inter
 
 The SLAPI powers many of the features in the {{site.data.keyword.cloud_notm}} console, which typically means if an interaction is possible in the console, it can also be run in the API. Because you can programmatically interact with all portions of the {{site.data.keyword.cloud_notm}} console within the API, you can use the API to automate tasks.
 
-The SLAPI is a Remote Procedure Call (RPC) system. Each call involves sending data towards an API endpoint and receiving structured data in return. The format used to send and receive data with the SLAPI depends on which implementation of the API you choose. The SLAPI currently uses SOAP, XML-RPC or REST for data transmission.
+The SLAPI is a Remote Procedure Call (RPC) system. Each call involves sending data toward an API endpoint and receiving structured data in return. The format used to send and receive data with the SLAPI depends on which implementation of the API you choose. The SLAPI currently uses SOAP, XML-RPC, or REST for data transmission.
 
 For more information about the SLAPI as they refer to the {{site.data.keyword.vra}} APIs, see the following resources in the SoftLayer Development Network (SLDN):
 
@@ -90,7 +90,7 @@ if __name__ == '__main__':
 ```
 {: codeblock}
 
-## Example - Associating, routing, bypassing and disassociating VLANs to the gateway appliance
+## Example - Associating, routing, bypassing, and disassociating VLANs to the gateway appliance
 {: #example-associating-routing-bypassing-and-disassociating-vlans-to-the-gateway-appliance}
 
 ```sh

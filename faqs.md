@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-04-22"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: virtual-router-appliance
 # FAQ for {{site.data.keyword.cloud_notm}} Virtual Router Appliance
 {: #faqs-for-ibm-virtual-router-appliance}
 
-These frequently asked questions can help you when working with the {{site.data.keyword.vra_full}} (VRA).
+These frequently asked questions can help you when you work with the {{site.data.keyword.vra_full}} (VRA).
 {: shortdesc}
 
 ## What is a VRA?
@@ -102,7 +102,7 @@ Yes. All VRAs are assigned random passwords visible only to the account holder. 
 {: #vra-without-ga}
 {: faq}
 
-Yes, but it can only manage traffic between the VRA's public and private interfaces. VLANs and HA require the gateway appliance fixture.
+Yes, but it can manage only traffic between the VRA's public and private interfaces. VLANs and HA require the gateway appliance fixture.
 
 ## Is all network traffic sent through the VRA?
 {: #all-traffic-vra}
@@ -119,7 +119,7 @@ Yes. Whenever possible, you shouldn't lock down your network until you populate 
 
 IBM support is forbidden by policy to examine or alter VRA or dedicated firewall configuration without a customer's explicit involvement, so support cannot know that a VRA is responsible for stalled or failed server provisions.
 
-It is the customer's responsibility to ensure that the VRA or firewall is configured to permit automated server provisions before the server order is placed. Provisions that are blocked by a customer-managed VRA or firewall are the customer's responsibility to resolve. Such provisioning delays are not subject to SLAs or credits. Ordered systems can be returned to inventory (after customer data is expunged) if the customer does not respond quickly.
+It is the customer's responsibility to help ensure that the VRA or firewall is configured to permit automated server provisions before the server order is placed. Provisions that are blocked by a customer-managed VRA or firewall are the customer's responsibility to resolve. Such provisioning delays are not subject to SLAs or credits. Ordered systems can be returned to inventory (after customer data is expunged) if the customer does not respond quickly.
 
 Likewise, if a VRA or firewall is bypassed after an order is placed, it's still likely that the order will fail. There might be a narrow window during which automation retries are attempted. It is best that the entire provision process proceeds without network interference.
 
@@ -168,9 +168,9 @@ If you cannot access the system, you can restart the device and use the password
 {: faq}
 {: support}
 
-The `reboot at [time]` construct can be useful when testing potentially dangerous firewall rules.
+The `reboot at [time]` construct can be useful when you test potentially dangerous firewall rules.
 
-If the rule works, then use the command `reboot cancel` to cancel the restart. If the rule locks out your access, simply wait for the scheduled restart to occur.
+If the rule works, then use the command `reboot cancel` to cancel the restart. If the rule locks out your access, wait for the scheduled restart to occur.
 
 If you cannot access the system, then you might restart to recover access. Upon rebooting, the system reads the configuration file, which is unchanged by previous entries that were discarded.
 
@@ -193,12 +193,12 @@ If there is access by using IPMI, follow these steps to recover access:
 Incorrect use of these commands can wipe out your interface configuration.
 {: important}
 
-## Why would I want to run two Vyatta devices in a High Availability (HA) pair?
+## Why do I want to run two Vyatta devices in a High Availability (HA) pair?
 {: #HA}
 {: faq}
 {: support}
 
-Most cloud customers want HA services. This is so that your workload is hosted on at least two separate (hardware) machines, or even better, in two separate availability zones (think data centers), so that if one fails, the other is able to continue the service. If one machine fails, there is a failover to the other machine, which means that the service can keep running. This is what is referred to as an HA service — it’s almost always available.
+Most cloud customers want HA services. This is so that your workload is hosted on at least two separate (hardware) machines, or even better, in two separate availability zones (think data centers), so that if one fails, the other is able to continue the service. If one device fails, there is a failover to the other device, which means that the service can keep running. This is what is referred to as an HA service — it’s almost always available.
 
 ## How can I enable root logins to the VRA?
 {: #root-login}
