@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-04-01"
+  years: 2017, 2026
+lastupdated: "2026-04-24"
 
 keywords: 5600, security, fixes, patches, brocade, os
 
@@ -123,7 +123,7 @@ Released April 16, 2018.
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-41283 | Minor |Configd stops processing static routes during boot if the configuration has disabled static routes |
+| VRVDR-41283 | Minor | Configd stops processing static routes during boot if the configuration has disabled static routes |
 {: caption="Issues resolved in 5.2R6S8" caption-side="bottom"}
 
 ### Security Vulnerabilities Resolved
