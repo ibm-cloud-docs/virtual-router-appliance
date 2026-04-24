@@ -52,7 +52,7 @@ This release is mostly for security updates and three major faults. No changes i
 | VRVDR-66134 | Major | Vrrp VIP doesn't create the route for the /xx subnet and is treated as /32 network. |
 | VRVDR-66091 | Major | Tunnel State Reporting Problem in 2308e |
 | VRVDR-66025 | Major | Traffic interrupts due to same reqid with ikev1 policy-based and ikev2 route-based vpn |
-{: caption="Security vulnerabilities resolved for 2308g" caption-side="bottom"}
+{: caption="Issues resolved for 2308g" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
 {: #security-vulnerabilities-resolved-vyatta}
