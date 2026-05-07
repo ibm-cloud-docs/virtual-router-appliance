@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-24"
+lastupdated: "2026-05-07"
 
 keywords:
 
@@ -33,6 +33,94 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+## Vyatta NOS Software Patches - 2308h
+{: #vyatta-nos-software-patches}
+
+**Released:** 23 April 2026.
+
+## Limitations, restrictions, or behavior changes
+{: #limitations-vyatta}
+
+This release addresses critical security vulnerabilities and resolves major operational issues affecting config-sync, GRE tunnels, BGP, and interface stability.
+
+### Issues resolved
+{: #issues-resolved-vyatta}
+
+| Issue Number | Priority | Summary |
+| ------------- | ------------ | --------- |
+| VRVDR-66502 | Major | Config-sync is not working |
+| VRVDR-66500 | Major | GRE tunnels connecting with Transit Gateway are not up after upgrading Vyatta from 2204h to 2308g |
+| VRVDR-66430 | Major | Vulnerability for Debian dla-4430 and dla-4404 for Vyatta version 2308g |
+| VRVDR-66349 | Major | BGP not working properly after an upgrade from 2110h to 2308f |
+| VRVDR-66320 | Major | ssh key generated with space in comment can't be loaded into config |
+| VRVDR-66264 | Critical | Connection to public network locking out. Fixed with a reboot |
+| VRVDR-66259 | Critical | Interfaces were going down with Mellanox ConnectX-5 |
+| VRVDR-65879 | Major | Adding or Removing config relate to VIF, BGP,VRRP causes BGP to flap and sometimes vrrp |
+{: caption="Issues resolved for 2308h" caption-side="bottom"}
+
+### Security vulnerabilities resolved
+{: #security-vulnerabilities-resolved-vyatta}
+
+| Issue Number | CVSS Score | Advisory Summary |
+| ------------- | ------------- | ------------------ |
+| VRVDR-66572 | 9.8 | DLA-4522-1 Debian dla-4522 : libxml-parser-perl - security update |
+| VRVDR-66562 | 6.8 | DLA-4521-1 Debian dla-4521 : libpng-dev - security update |
+| VRVDR-66559 | 7.8 | DLA-4514-1 Debian dla-4514 : gir1.2-gst-plugins-base-1.0 - security update |
+| VRVDR-66558 | N/A | DSA-6189-1 [DSA 6189-1] libpng1.6 security update |
+| VRVDR-66550 | N/A | DSA-6182-1 [DSA 6182-1] libxml-parser-perl security update |
+| VRVDR-66547 | 9.8 | DLA-4508-1 CVE-2026-2781:Debian dla-4508 : libnss3 - security update |
+| VRVDR-66532 | 7.5 | DSA-6176-1 [DSA 6176-1] strongswan security update |
+| VRVDR-66526 | N/A | DLA-4504-1 Debian dla-4504 : libnss-libvirt - security update |
+| VRVDR-66525 | 7.8 | DLA-4498-1 Debian dla-4498 : ata-modules-5.10.0-38-armmp-di - security update |
+| VRVDR-66509 | 7.8 | DLA-4498-1 Debian dla-4498 : ata-modules-5.10.0-38-armmp-di - security update |
+| VRVDR-66471 | 5.3 | DLA-4492-1 CVE-2025-9820 CVE-2025-14831:Debian dla-4492 : gnutls-bin - security update |
+| VRVDR-66467 | 7.5 | DLA-4490-1 CVE-2025-68160 CVE-2025-69418 CVE-2025-69419 CVE-2025-69420 CVE-2025-69421 CVE-2026-22795 CVE-2026-22796:Debian dla-4490 : libcrypto1.1-udeb - security update |
+| VRVDR-66461 | 9.8 | DLA-4412-1 CVE-2025-4373 CVE-2025-7039 CVE-2025-13601 CVE-2025-14087 CVE-2025-14512:Debian dla-4412 : libglib2.0-0 - security update |
+| VRVDR-66459 | 2.8 | DLA-4491-1 CVE-2026-0988 CVE-2026-1484 CVE-2026-1485 CVE-2026-1489:Debian dla-4491 : libglib2.0-0 - security update |
+| VRVDR-66458 | N/A | DLA-4485-1 Debian dla-4485 : ca-certificates - security update |
+| VRVDR-66454 | 6.5 | DLA-4482-1 CVE-2024-31884:Debian dla-4482 : ceph - security update |
+| VRVDR-66453 | 8.1 | DLA-4481-1 CVE-2026-22695 CVE-2026-22801 CVE-2026-25646:Debian dla-4481 : libpng-dev - security update |
+| VRVDR-66446 | 7.5 | DLA-4479-1 CVE-2024-9781 CVE-2024-11596 CVE-2025-5601 CVE-2025-11626 CVE-2025-13499 CVE-2025-13945 CVE-2025-13946 CVE-2026-0960:Debian dla-4479 : libwireshark-data - security update |
+| VRVDR-66438 | 7.8 | DLA-4475-1 Debian dla-4475 : ata-modules-5.10.0-35-armmp-di - security update |
+| VRVDR-66424 | 7.8 | DLA-4469-1 CVE-2026-25068:Debian dla-4469 : libasound2 - security update |
+| VRVDR-66423 | 5.3 | DLA-4472-1 CVE-2023-28486 CVE-2023-28487:Debian dla-4472 : sudo - security update |
+| VRVDR-66410 | 7.5 | DLA-4463-1 CVE-2026-23490:Debian dla-4463 : pypy-pyasn1 - security update |
+| VRVDR-66409 | 9.1 | DLA-4460-1 CVE-2022-0670 CVE-2024-47866:Debian dla-4460 : ceph - security update |
+| VRVDR-66395 | 5.3 | DLA-4455-1 CVE-2025-11468 CVE-2025-12084 CVE-2025-15282 CVE-2025-15366 CVE-2025-15367 CVE-2026-0672 CVE-2026-0865 CVE-2026-1299:Debian dla-4455 : idle-python3.9 - security update |
+| VRVDR-66392 | 8.9 | DLA-4446-1 CVE-2026-21441:Debian dla-4446 : python3-urllib3 - security update |
+| VRVDR-66388 | 9.8 | DLA-4445-1 CVE-2022-37454 CVE-2025-4516 CVE-2025-6069 CVE-2025-6075 CVE-2025-8194 CVE-2025-8291 CVE-2025-12084 CVE-2025-13836 CVE-2025-13837:Debian dla-4445 : idle-python3.9 - security update |
+| VRVDR-66378 | 7.5 | DLA-4437-1 CVE-2025-68973:Debian dla-4437 : dirmngr - security update |
+| VRVDR-66355 | 4.5 | DLA-4435-1 CVE-2025-69277:Debian dla-4435 : libsodium-dev - security update |
+| VRVDR-66351 | 7.5 | DLA-4432-1 CVE-2025-9086:Debian dla-4432 : curl - security update |
+| VRVDR-66348 | 9.8 | DLA-4430-1 CVE-2025-68615:Debian dla-4430 : libnetsnmptrapd40 - security update |
+| VRVDR-66346 | 6.1 | DLA-4421-1 CVE-2025-50181 CVE-2025-66418:Debian dla-4421 : python3-urllib3 - security update |
+| VRVDR-66332 | 9.8 | DLA-4412-1 Debian dla-4412 : libglib2.0-0 - security update |
+| VRVDR-66331 | 6.8 | DLA-4409-1 Debian dla-4409 : paramiko-doc - security update |
+| VRVDR-66329 | 7.8 | DLA-4404-1 Debian dla-4404 : ata-modules-5.10.0-35-armmp-di - security update |
+| VRVDR-66250 | 8.1 | DSA-6041-1 [DSA 6041-1] strongswan security update |
+| VRVDR-66400 | 5.5 | 1.1.1ze CVE-2025-11187 CVE-2025-15467 CVE-2025-15468 CVE-2025-15469 CVE-2025-66199 CVE-2025-68160 CVE-2025-69418 CVE-2025-69419 CVE-2025-69420 CVE-2025-69421 CVE-2026-22795 CVE-2026-22796:OpenSSL 1.1.1 < 1.1.1ze Multiple Vulnerabilities |
+| VRVDR-66492 | 4.3 | 1.1.1zb OpenSSL 1.1.1 < 1.1.1zb Vulnerability |
+| VRVDR-66487 | 9.1 | 1.1.1za OpenSSL 1.1.1 < 1.1.1za Vulnerability |
+| VRVDR-66490 | 7.5 | 1.1.1zd OpenSSL 1.1.1 < 1.1.1zd Vulnerability |
+| VRVDR-66491 | 5.5 | 1.1.1x OpenSSL 1.1.1 < 1.1.1x Multiple Vulnerabilities |
+| VRVDR-66489 | 7.5 | 1.1.1y OpenSSL 1.1.1 < 1.1.1y Multiple Vulnerabilities |
+| VRVDR-66486 | 10.0 | 1.1.1x OpenSSL SEoL (1.1.1.x) |
+| VRVDR-66496 | 3.7 | N/A libcurl 7.9.1 < 8.4.0 Cookie Injection |
+| VRVDR-66494 | 6.5 | N/A libcurl 7.32.0 < 8.9.1 DoS (CVE-2024-7264) |
+| VRVDR-66493 | 9.8 | N/A libcurl 7.69 < 8.4.0 Heap Buffer Overflow |
+{: caption="Security vulnerabilities resolved for 2308h" caption-side="bottom"}
+
+### Known issues
+{: #known-issues-vyatta}
+
+| Issue Number | Priority | Summary |
+| ------------- | ------------ | --------- |
+| VRVDR-66587 | Major | Connection to public network locking out. Restored by vrrp failover. |
+| VRVDR-66589 | Major | Bonding interface goes down with "i40e_dev_alarm_handler(): ICR0: malicious programming detected" |
+| VRVDR-66556 | Major | Config-sync failing due to "Capability exchange timed out" |
+| VRVDR-66612 | Major | Vyatta is not sending Syslogs |
+| VRVDR-66613 | Major | Lost SSH capabilities to Vyatta with error "Out of memory: Killed process 2404 (dataplane)" |
+{: caption="Known issues for 2308h" caption-side="bottom"}
 
 ## Vyatta NOS Software Patches - 2308g
 {: #vyatta-nos-software-patches}
