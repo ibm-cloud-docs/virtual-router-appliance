@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-07"
+lastupdated: "2026-08-11"
 
 keywords:
 
@@ -33,6 +33,123 @@ When multiple CVE numbers are addressed in a single update, the highest CVSS sco
 
 For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
+
+## Vyatta NOS Software Patches - 2308j
+{: #vyatta-nos-software-patches-2308j}
+
+**Released:** 24 July 2026.
+
+## Limitations, restrictions, or behavior changes
+{: #limitations-vyatta-2308j}
+
+This release includes security updates and functional fault fixes. No changes in command behavior are noted.
+
+### Issues resolved
+{: #issues-resolved-vyatta-2308j}
+
+| Issue Number | Priority | Summary |
+| ------------- | ------------ | --------- |
+| VRVDR-66803 | Major | VPN connections experiencing instability. |
+| VRVDR-66731 | Critical | "Commit already in progress" immediately after entering any config command and no output showing for any show commands. |
+| VRVDR-67020 | Major | Dataplane crash causes VRRP failover with version 2308e. |
+| VRVDR-66995 | Major | After software upgrade, VRRP became Fault state and automatic failover triggered. |
+| VRVDR-66587 | Major | Connection to public network locking out. Restored by vrrp failover. |
+| VRVDR-66697 | Major | Customer is getting interface-related errors and unexpected interface dp0x3a68dd2c3d1. |
+| VRVDR-66589 | Major | Bonding interface goes down with "i40e_dev_alarm_handler(): ICR0: malicious programming detected". |
+| VRVDR-66613 | Major | Lost SSH capabilities to Vyatta with error "Out of memory: Killed process 2404 (dataplane)". |
+| VRVDR-66556 | Major | Config-sync failing due to "Capability exchange timed out". |
+{: caption="Issues resolved for 2308j" caption-side="bottom"}
+
+### Security vulnerabilities resolved
+{: #security-vulnerabilities-resolved-vyatta-2308j}
+
+| Issue Number | CVSS Score | Advisory Summary |
+| ------------- | ------------- | ------------------ |
+| VRVDR-66797 | 9.1 | DSA-6305-1 [DSA 6305-1] linux security update. |
+| VRVDR-66977 | 7.8 | DLA-4614-1 Nessus Scan: Debian dla-4614 : sudo - security update. CVE ID: CVE-2026-35535. Debian Bug: 1130593. |
+| VRVDR-67014 | 8.4 | DLA-4625-1 Nessus Scan: Debian dla-4625 : dnsmasq - security update. CVE ID: CVE-2026-2291 CVE-2026-4890 CVE-2026-4891 CVE-2026-4892 CVE-2026-4893. |
+| VRVDR-67024 | 8.8 | DLA-4630-1 Nessus Scan: Debian dla-4630 : libcrypto1.1-udeb - security update. CVE ID: CVE-2026-7383 CVE-2026-9076 CVE-2026-34180 CVE-2026-42766 CVE-2026-45447. |
+| VRVDR-67111 | 8.2 | DLA-4673-1 Nessus Scan: Debian dla-4673 : dpkg - security update. CVE ID: CVE-2025-6297. Debian Bug: 1061404 1065575 1107971 1108192. |
+| VRVDR-66992 | 9.1 | DSA-6335-1 [DSA 6335-1] openssl security update. |
+| VRVDR-66994 | 7.5 | DSA-6330-1 [DSA 6330-1] strongswan security update. |
+| VRVDR-67084 | 6.4 | DLA-4653-1 Nessus Scan: Debian dla-4653 : openvpn - security update. CVE ID: CVE-2026-35058 CVE-2026-40215. |
+| VRVDR-67095 | 7.8 | DLA-4664-1 Nessus Scan: Debian dla-4664 : ata-modules-5.10.0-43-armmp-di - security update. |
+| VRVDR-66720 | 7.1 | DSA-6275-1 [DSA 6275-1] linux security update. |
+| VRVDR-66781 | 7.8 | DLA-6295-1 [DSA 6295-1] linux security update. |
+| VRVDR-66798 | 8.8 | DSA-6306-1 [DSA 6306-1] linux security update. |
+| VRVDR-66974 | 9.8 | DLA-4606-1 Nessus Scan: Debian dla-4606 : ata-modules-5.10.0-43-armmp-di - security update. |
+| VRVDR-67049 | 5.3 | DSA-6363-1 [DSA 6363-1] python-urllib3 security update. |
+| VRVDR-67091 | 7.5 | DLA-4655-1 Nessus Scan: Debian dla-4655 : libhtml-parser-perl - security update. CVE ID: CVE-2026-8829. |
+| VRVDR-67085 | 5.3 | DLA-4651-1 Nessus Scan: Debian dla-4651 : python3-urllib3 - security update. CVE ID: CVE-2026-44431. Debian Bug: 1136653. |
+| VRVDR-66696 | 8.4 | DSA-6264-1 [DSA 6264-1] dnsmasq security update. |
+| VRVDR-67040 | 8.6 | DSA-6354-1 [DSA 6354-1] libconfig-inifiles-perl security update. |
+| VRVDR-67044 | 9.1 | DSA-6358-1 [DSA 6358-1] libhttp-daemon-perl security update. |
+| VRVDR-66689 | 7.8 | DSA-6258-1 [DSA 6258-1] linux security update. |
+| VRVDR-66576 | 9.8 | DSA-6201-1 [DSA 6201-1] openssl security update. |
+| VRVDR-66577 | 9.8 | 1.1.1zg Nessus Scan: CVE-2026-28387, CVE-2026-28388, CVE-2026-28389, CVE-2026-28390: OpenSSL 1.1.1 < 1.1.1zg Multiple Vulnerabilities. |
+| VRVDR-67038 | 9.1 | DLA-4639-1 Nessus Scan: Debian dla-4639 : libhttp-daemon-perl - security update. CVE ID: CVE-2026-8450. Debian Bug: 1138050. |
+| VRVDR-67034 | 8.6 | DLA-4637-1 Nessus Scan: Debian dla-4637 : libconfig-inifiles-perl - security update. CVE ID: CVE-2026-11527. |
+| VRVDR-66987 | 8.4 | DLA-4621-1 Nessus Scan: Debian dla-4621 : glibc-doc - security update. CVE ID: CVE-2025-8058 CVE-2025-15281 CVE-2026-0861 CVE-2026-0915 CVE-2026-4046. Debian Bug: 1109803 1125678 1125748 1126266 1132499. |
+| VRVDR-66998 | 9.8 | 1.1.1zh Nessus Scan: OpenSSL 1.1.1 < 1.1.1zh Multiple Vulnerabilities. |
+| VRVDR-67011 | 9.8 | DLA-4583-1 Nessus Scan: Debian dla-4583 : idle-python3.9 - security update. CVE ID: CVE-2025-13462 CVE-2026-0672 CVE-2026-2297 CVE-2026-3644 CVE-2026-4224 CVE-2026-4519. |
+| VRVDR-66999 | 8.1 | DLA-4624-1 Nessus Scan: Debian dla-4624 : libcrypto1.1-udeb - security update. CVE ID: CVE-2026-28387 CVE-2026-28388 CVE-2026-28389 CVE-2026-28390. |
+| VRVDR-66969 | 6.5 | DSA-6321-1 [DSA 6321-1] ceph security update. |
+| VRVDR-66988 | 6.2 | DLA-4622-1 Nessus Scan: Debian dla-4622 : libxml2 - security update. CVE ID: CVE-2025-8732 CVE-2026-0989 CVE-2026-0990 CVE-2026-0992 CVE-2026-1757. Debian Bug: 1125691 1125695 1125696. |
+| VRVDR-66812 | 5.9 | DLA-4603-1 Nessus Scan: Debian dla-4603 : krb5-admin-server - security update. CVE ID: CVE-2026-40355 CVE-2026-40356. Debian Bug: 1135317. |
+| VRVDR-66655 | 7.8 | DLA-4560-1 Nessus Scan: Debian dla-4560 : ata-modules-5.10.0-39-armmp-di - security update. CVE ID: CVE-2026-31431 CVE-2026-43033. |
+| VRVDR-66715 | 7.8 | DLA-4587-1 Nessus Scan: Debian dla-4587 : ata-modules-5.10.0-39-armmp-di - security update. CVE ID: CVE-2026-46333. |
+| VRVDR-66680 | 7.8 | DLA-4572-1 Nessus Scan: Debian dla-4572 : ata-modules-5.10.0-39-armmp-di - security update. CVE ID: CVE-2026-43284 CVE-2026-43500. |
+| VRVDR-66779 | 5.9 | DSA-6293-1 [DSA 6293-1] krb5 security update. |
+| VRVDR-66784 | 9.8 | DLA-4595-1 Nessus Scan: Debian dla-4595 : gnutls-bin - security update. |
+| VRVDR-66229 | 7.0 | DLA-4144-1 Nessus Scan: CVE-2023-1544 CVE-2023-3019 CVE-2023-5088 CVE-2023-6693 CVE-2024-3447: Debian dla-4144 : qemu - security update. |
+| VRVDR-66780 | 6.7 | DSA-6294-1 [DSA 6294-1] libgcrypt20 security update. |
+| VRVDR-66730 | 9.8 | DSA-6281-1 [DSA 6281-1] gnutls28 security update. |
+| VRVDR-66737 | 8.1 | DLA-4591-1 Nessus Scan: Debian dla-4591 : rsync - security update. CVE ID: CVE-2026-29518 CVE-2026-43617 CVE-2026-43618 CVE-2026-43619 CVE-2026-43620. |
+| VRVDR-65565 | 8.8 | DSA-5807-1 [DSA 5807-1] nss security update. |
+| VRVDR-66700 | 7.5 | DSA-6266-1 [DSA 6266-1] nghttp2 security update. |
+| VRVDR-66628 | 7.5 | DLA-4532-1 Nessus Scan: Debian dla-4532 : idle-python3.9 - security update. CVE ID: CVE-2025-15366 CVE-2025-15367 CVE-2026-6100. |
+| VRVDR-66716 | 3.3 | DLA-4583-1 Nessus Scan: Debian dla-4583 : idle-python3.9 - security update. CVE ID: CVE-2025-13462 CVE-2026-0672 CVE-2026-2297 CVE-2026-3644 CVE-2026-4224 CVE-2026-4519. |
+| VRVDR-66714 | 8.1 | DLA-4584-1 Nessus Scan: Debian dla-4584 : openssh-client - security update. CVE ID: CVE-2025-61984 CVE-2025-61985 CVE-2026-35385 CVE-2026-35386 CVE-2026-35387 CVE-2026-35388 CVE-2026-35414. Debian Bug: 1117529 1117530 1132572 1132573 1132574 1132575 1132576. |
+| VRVDR-66580 | 8.1 | DSA-6204-1 [DSA 6204-1] openssh security update. |
+| VRVDR-66699 | 7.5 | DLA-4581-1 Nessus Scan: Debian dla-4581 : libnghttp2-14 - security update. CVE ID: CVE-2026-27135. Debian Bug: 1131369. |
+| VRVDR-66146 | 9.8 | DSA-5999-1 [DSA 5999-1] libjson-xs-perl security update. |
+| VRVDR-66625 | 8.2 | DLA-4535-1 Nessus Scan: Debian dla-4535 : openssh-client - security update. CVE ID: CVE-2026-3497. Debian Bug: 1130595. |
+| VRVDR-66630 | 5.9 | DLA-4538-1 Nessus Scan: Debian dla-4538 : libperl-dev - security update. CVE ID: CVE-2025-40909. Debian Bug: 1098226. |
+| VRVDR-66656 | 7.5 | DLA-4557-1 Nessus Scan: Debian dla-4557 : pypy-pyasn1 - security update. CVE ID: CVE-2026-30922. Debian Bug: 1131371. |
+| VRVDR-66657 | 5.5 | DLA-4553-1 Debian dla-4553 : gir1.2-polkit-1.0 - security update. CVE ID: CVE-2021-4115 CVE-2026-4897. Debian Bug: 1005784 1132234. |
+| VRVDR-66683 | 5.1 | DLA-4573-1 Nessus Scan: Debian dla-4573 : libpng-dev - security update. CVE ID: CVE-2026-34757. Debian Bug: 1133051. |
+| VRVDR-66682 | N/A | DLA-4570-1 Nessus Scan: Debian dla-4570 : libdatetime-timezone-perl - security update. |
+| VRVDR-66681 | N/A | DLA-4569-1 Nessus Scan: Debian dla-4569 : tzdata - security update. |
+| VRVDR-65989 | 4.7 | DSA-5931-1 [DSA 5931-1] systemd security update. |
+| VRVDR-66694 | 7.8 | DSA-6263-1 [DSA 6263-1] libpng1.6 security update. |
+| VRVDR-66674 | 7.5 | DLA-4564-1 Nessus Scan: Debian dla-4564 : python3-jwt - security update. CVE ID: CVE-2026-32597. |
+| VRVDR-66565 | 7.5 | DSA-6194-1 [DSA 6194-1] pyasn1 security update. |
+| VRVDR-66620 | N/A | DSA-6227-1 [DSA 6227-1] strongswan security update. |
+| VRVDR-66147 | 9.8 | DSA-6001-1 [DSA 6001-1] cjson security update. |
+| VRVDR-66104 | 7.5 | DSA-5979-1 [DSA 5979-1] libxslt security update. |
+| VRVDR-66579 | 7.8 | DSA-6303-1 [DSA 6303-1] tiff security update. |
+| VRVDR-66635 | N/A | DLA-4548-1 Nessus Scan: Debian dla-4548 : distro-info-data - security update. |
+| VRVDR-66626 | 7.8 | DLA-4536-1 Nessus Scan: Debian dla-4536 : libtiff-dev - security update. CVE ID: CVE-2026-4775. |
+| VRVDR-66629 | 6.4 | DLA-4533-1 Debian dla-4533 : libnss-myhostname - security update. CVE ID: CVE-2026-4105 CVE-2026-29111 CVE-2026-40225 CVE-2026-40226. |
+| VRVDR-66627 | 7.5 | DLA-4529-1 Nessus Scan: Debian dla-4529 : bind9 - security update. CVE ID: CVE-2026-1519. |
+| VRVDR-66549 | 7.5 | DSA-6181-1 [DSA 6181-1] bind9 security update. |
+| VRVDR-67131 | 9.8 | DLA-4679-1 Debian dla-4679 : libd3dadapter9-mesa - security update. |
+| VRVDR-67136 | 7.8 | DLA-4685-1 Debian dla-4685 : grub-common - security update. |
+{: caption="Security vulnerabilities resolved for 2308j" caption-side="bottom"}
+
+### Known issues
+{: #known-issues-vyatta-2308j}
+
+| Issue Number | Priority | Summary |
+| ------------- | ------------ | --------- |
+| VRVDR-67103 | Major | BGP Neighborship down after Path Monitor fail triggered VRRP Failover. |
+| VRVDR-67104 | Major | Vyatta crashed and stopped responding. |
+| VRVDR-67128 | Major | OOM ribd. |
+| VRVDR-67129 | Major | IPsec tunnel with SRX stops passing outbound traffic during reauthentication. |
+| VRVDR-67130 | Major | Vyatta node was unresponsive and required a physical reboot. |
+| VRVDR-67135 | Major | Interface goes down by connsync manager state "waiting". |
+{: caption="Known issues for 2308j" caption-side="bottom"}
+
 ## Vyatta NOS Software Patches - 2308h
 {: #vyatta-nos-software-patches}
 
