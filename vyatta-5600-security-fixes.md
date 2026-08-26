@@ -156,12 +156,12 @@ This release includes security updates and functional fault fixes. No changes in
 **Released:** 23 April 2026.
 
 ## Limitations, restrictions, or behavior changes
-{: #limitations-vyatta}
+{: #limitations-vyatta-2308h}
 
 This release addresses critical security vulnerabilities and resolves major operational issues affecting config-sync, GRE tunnels, BGP, and interface stability.
 
 ### Issues resolved
-{: #issues-resolved-vyatta}
+{: #issues-resolved-vyatta-2308h}
 
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
@@ -245,12 +245,12 @@ This release addresses critical security vulnerabilities and resolves major oper
 **Released:** 15 January 2026.
 
 ## Limitations, restrictions, or behavior changes
-{: #limitations-vyatta}
+{: #limitations-vyatta-2308g}
 
 This release is mostly for security updates and three major faults. No changes in command behavior are noted.
 
 ### Issues resolved
-{: #issues-resolved-vyatta}
+{: #issues-resolved-vyatta-2308g}
 
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
@@ -291,7 +291,7 @@ This release is mostly for security updates and three major faults. No changes i
 **Released:** 25 August 2025.
 
 ## Limitations, restrictions, or behavior changes
-{: #limitations-vyatta}
+{: #limitations-vyatta-2308f}
 
 ### BGP
 {: #bgp-vyatta}
@@ -315,7 +315,7 @@ To enable this functionality, the following configuration is added:
       : Indicates the Autonomous System Number
 
 ### Issues resolved
-{: #issues-resolved-vyatta}
+{: #issues-resolved-vyatta-2308f}
 
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
