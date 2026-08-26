@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-03-18"
+  years: 2017, 2026
+lastupdated: "2026-08-26"
 
 keywords:
 
@@ -30,7 +30,7 @@ With route-based IPSec, you do not configure traffic selectors (also called loca
 
 For policy-based IPSec on the Vyatta, you configure local and remote prefixes and do not configure a routeable interface for the tunnel. The VFP interface was added as a feature in order to add a routeable interface to policy-based IPSec configurations. This eliminates the need to migrate to a route-based configuration in order to utilize NAT and more granular firewall rules with policy-based tunnels.
 
-To learn more about the differences between route-based and policy based IPSec, refer to [IPsec site-to-site VPN configuration options](https://docs.vyatta.com/en/supported-platforms/vrouter/configuration-vrouter/security-and-vpn/ipsec-site-to-site-vpn/ipsec-site-to-site-vpn-configuration/ipsec-site-to-site-vpn-configuration-options){: external} article. 
+To learn more about the differences between route-based and policy based IPSec, refer to the IPsec site-to-site VPN configuration options article in the Ciena Vyatta documentation.
 
 ### Route-based IPSec configuration example
 {: #route-based-example}
@@ -289,7 +289,7 @@ The following list provides some common issues you may encounter with IPSec tunn
 
 The following list provides some additional resources when configuring and troubleshooting IPSec tunnels:
 
-* [IPSec site-to-site VPN configuration options](https://docs.vyatta.com/en/supported-platforms/vrouter/configuration-vrouter/security-and-vpn/ipsec-site-to-site-vpn/ipsec-site-to-site-vpn-configuration/ipsec-site-to-site-vpn-configuration-options){: external}
+* IPSec site-to-site VPN configuration options (Ciena Vyatta documentation)
 * [IPsec Site-to-Site VPN Configuration Guide, 17.2.0](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipsec_site-to-site_vpn_configuration_5600.pdf){: external}
 * [IPsec Site-to-Site VPN configuration guide, addendum 1801](https://public.dhe.ibm.com/cloud/bluemix/network/vra/18_ipsec_site-to-site-configuration_5600_addendum.pdf){: external}
 * [Internet Key Exchange Protocol Version 2 (IKEv2)](https://datatracker.ietf.org/doc/html/rfc5996){: external}

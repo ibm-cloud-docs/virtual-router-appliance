@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-26"
 
 keywords:
 
@@ -31,7 +31,7 @@ This document lists the patches for the currently supported versions of Vyatta N
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 {: tip}
 
-For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
+For the latest full release notes, contact Ciena for their Vyatta NOS release notes, or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
 ## Vyatta NOS Software Patches - 2308j
@@ -156,12 +156,12 @@ This release includes security updates and functional fault fixes. No changes in
 **Released:** 23 April 2026.
 
 ## Limitations, restrictions, or behavior changes
-{: #limitations-vyatta}
+{: #limitations-vyatta-2308h}
 
 This release addresses critical security vulnerabilities and resolves major operational issues affecting config-sync, GRE tunnels, BGP, and interface stability.
 
 ### Issues resolved
-{: #issues-resolved-vyatta}
+{: #issues-resolved-vyatta-2308h}
 
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
@@ -245,12 +245,12 @@ This release addresses critical security vulnerabilities and resolves major oper
 **Released:** 15 January 2026.
 
 ## Limitations, restrictions, or behavior changes
-{: #limitations-vyatta}
+{: #limitations-vyatta-2308g}
 
 This release is mostly for security updates and three major faults. No changes in command behavior are noted.
 
 ### Issues resolved
-{: #issues-resolved-vyatta}
+{: #issues-resolved-vyatta-2308g}
 
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
@@ -291,7 +291,7 @@ This release is mostly for security updates and three major faults. No changes i
 **Released:** 25 August 2025.
 
 ## Limitations, restrictions, or behavior changes
-{: #limitations-vyatta}
+{: #limitations-vyatta-2308f}
 
 ### BGP
 {: #bgp-vyatta}
@@ -315,7 +315,7 @@ To enable this functionality, the following configuration is added:
       : Indicates the Autonomous System Number
 
 ### Issues resolved
-{: #issues-resolved-vyatta}
+{: #issues-resolved-vyatta-2308f}
 
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |

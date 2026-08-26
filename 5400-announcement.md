@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-22"
+lastupdated: "2026-08-26"
 
 keywords: 5400, migrate, migration, 5600, support
 
@@ -24,7 +24,7 @@ Customers that use the Vyatta 5400 need to migrate to an alternative solution (s
 
 For existing customers, the Configuration conversion service is no longer subsidized by IBM. Customers can submit a pricing request by sending an email to Wan clouds at services@wanclouds.net with the subject: "Request for Vyatta 5400 Configuration Conversion."
 
-Customers requiring assistance with “hands-on” migration tasks can contact [IBM Technology Expert Labs - Cloud](https://www.ibm.com/cloud/expert-labs){: external} or contact IBM Cloud Migration Professional Services by e-mailing ibmcte@us.ibm.com. In addition, IBM Cloud has qualified IBM Business Partners who can assist. These engagements are on a fee-based model, through a direct contract between the customer and the Business Partner.
+Customers requiring assistance with "hands-on" migration tasks can contact [IBM Technology Expert Labs - Cloud](https://www.ibm.com/products/expertlabs){: external} or contact IBM Cloud Migration Professional Services by e-mailing ibmcte@us.ibm.com. In addition, IBM Cloud has qualified IBM Business Partners who can assist. These engagements are on a fee-based model, through a direct contract between the customer and the Business Partner.
 
 The initial list of qualified IBM Business Partners for Vyatta 5400 migration assistance is:
 
