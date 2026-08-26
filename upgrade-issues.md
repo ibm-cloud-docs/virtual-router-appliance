@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-01-14"
+  years: 2017, 2026
+lastupdated: "2026-08-26"
 
 keywords: 
 
@@ -82,7 +82,7 @@ First, it is possible that you selected **No** instead of **Yes** when you were 
 
 The second possibility is that there is an old line in your configuration file that the version you are upgrading to does not support. This is generally a bug and should be reported by creating a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help).
 
-You can fix this issue by logging in as user `vyatta` with the password `vyatta` from the IPMI remote console. Finding the latest `config.boot` file in your VRA file system by running the linux/bash `find` command, then run the `merge` command on that file to find what is causing the configuration problem during the upgrade. If the default `vyatta` user and password does not work, use the process described above in "Reverting to a previous version" to select the password recovery option and reset the Vyatta user's password. Once you gain access, find and merge the latest `config.boot` file. If you can't find a `config.boot` file to use, you can manually configure an interface, static route and SSH port to gain network and SSH access to the system. This will allow you to copy and paste in (or `scp`) a backup configuration file to merge. If you can't run normal Vyatta commands, such as `configure`, to enter Configure mode, try running the `bash` command to access a usable shell.
+You can fix this issue by logging in as user `vyatta` with the password `vyatta` from the IPMI remote console. Finding the latest `config.boot` file in your VRA file system by running the linux/bash `find` command, then run the `merge` command on that file to find what is causing the configuration problem during the upgrade. If the default `vyatta` user and password does not work, use the process described in the [Reverting to a previous version](#reverting-to-a-previous-version) section to select the password recovery option and reset the Vyatta user's password. Once you gain access, find and merge the latest `config.boot` file. If you can't find a `config.boot` file to use, you can manually configure an interface, static route and SSH port to gain network and SSH access to the system. This will allow you to copy and paste in (or `scp`) a backup configuration file to merge. If you can't run normal Vyatta commands, such as `configure`, to enter Configure mode, try running the `bash` command to access a usable shell.
 
 The following example illustrates problems when updating from 1801ze to 1912f. Notice that the `find` command pulled 4 `config.boot` files that were archived in the file system even after the upgrade. To use the `find` command, use the `su` command to change your user to the root user.
 

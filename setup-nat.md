@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-14"
+  years: 2017, 2026
+lastupdated: "2026-08-26"
 
 keywords: nat, setup, 5400
 
@@ -33,7 +33,7 @@ commit
 ```
 {: codeblock}
 
-Connection request from machines in the `10.xxx.xxx.xxx` network are mapped to the IP on `bond1` and receive an associated ephemeral port when going outbound. The intention is to assign one-to-many masquerade rule numbers higher so that they do not conflict with lower NAT rules that you might have.
+Connection request from machines in the `10.xxx.xxx.xxx` network are mapped to the IP on `bond1` and receive an associated ephemeral port when going outbound. The intention is to assign one-to-many masquerade rule numbers higher so that they do not conflict with numerically lower-numbered NAT rules that you might have.
 
 You must configure the server to pass its internet traffic through the VRA so that its default gateway is the private IP address of the managed virtual LAN (VLAN). For example, for `bond0.2254` the gateway is `10.52.69.201`. This should be the gateway address for the server passing internet traffic.
 {: note}
@@ -48,7 +48,7 @@ run show nat source translations detail
 ## One-to-one NAT rule
 {: #one-to-one-nat-rule}
 
-The following commands show how to set up a one-to-one NAT rule. Notice that the rule numbers are set up to be lower than the masquerade rule. This is so that the one-to-one rules take precedence over the one-to-many rules.
+The following commands show how to set up a one-to-one NAT rule. Notice that the rule numbers are set up to be numerically lower than the masquerade rule. This is so that the one-to-one rules take precedence over the one-to-many rules.
 
 IP addresses that are mapped one-to-one cannot be masqueraded. If you translate an IP inbound, you must translate that IP outbound for traffic to go both ways.
 {: tip}
