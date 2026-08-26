@@ -143,10 +143,6 @@ This release includes security updates and functional fault fixes. No changes in
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
 | VRVDR-67103 | Major | BGP Neighborship down after Path Monitor fail triggered VRRP Failover. |
-| VRVDR-67104 | Major | Vyatta crashed and stopped responding. |
-| VRVDR-67128 | Major | OOM ribd. |
-| VRVDR-67129 | Major | IPsec tunnel with SRX stops passing outbound traffic during reauthentication. |
-| VRVDR-67130 | Major | Vyatta node was unresponsive and required a physical reboot. |
 | VRVDR-67135 | Major | Interface goes down by connsync manager state "waiting". |
 {: caption="Known issues for 2308j" caption-side="bottom"}
 
