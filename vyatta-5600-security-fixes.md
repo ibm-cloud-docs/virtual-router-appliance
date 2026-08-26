@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-26"
 
 keywords:
 
@@ -31,7 +31,7 @@ This document lists the patches for the currently supported versions of Vyatta N
 When multiple CVE numbers are addressed in a single update, the highest CVSS score is listed.
 {: tip}
 
-For the latest full release notes, please review the [release notes in Ciena's Vyatta documentation](https://docs.vyatta.com/en/release-notes/release-notes) or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
+For the latest full release notes, contact Ciena for their Vyatta NOS release notes, or open a [support case](/docs/gateway-appliance?topic=gateway-appliance-getting-help). For archived patch information for the Vyatta 5600 OS older than 17.2, see [this topic](/docs/virtual-router-appliance?topic=virtual-router-appliance-at-t-vyatta-5600-vrouter-software-patches-52).
 {: note}
 
 ## Vyatta NOS Software Patches - 2308j

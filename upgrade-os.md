@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-11-26"
+  years: 2017, 2026
+lastupdated: "2026-08-26"
 
 keywords: upgrade vyatta
 
@@ -25,7 +25,7 @@ To begin the upgrade process, open an IBM Cloud Support case requesting an uploa
 The upgrade process illustrated in the example below is for a single VRA. If you are using VRA in high availability mode, you must run the same upgrade command on both systems. Furthermore, before updating in HA, it is recommended that you verify config-sync is synced and then issue a reboot on the `BACKUP` machine, to make sure that it can reboot without issue, and verify that it is working properly. Please also make sure that the `BACKUP` has all necessary VLANs, interfaces and configurations to be able to handle the production traffic when the failover is pushed. Then, perform the update on the `BACKUP` and validate it comes back up without issue. Then, access the `MASTER` machine and fail it over using the `reset vrrp master interface <interface name> group <group number>` command. If the `BACKUP` takes over as the `MASTER` while config-sync is out of sync, this can cause the old `BACKUP` to sync with the old `MASTER` and potentially delete large amounts of configurations off of the old `MASTER`. Outages can and do occur if the configurations as well as config-sync are not properly managed on both `MASTER` and `BACKUP`. Finally, upgrade the original `MASTER` after the `BACKUP` has taken control. Optionally, fail back over to the original `MASTER`.
 {: important}
 
-Review [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) for a list of common issues that can happen when updating between versions, and review the specific Vyatta NOS version's [release notes](https://docs.vyatta.com/en/release-notes/release-notes) for information on known issues and deprecated commands as published by Ciena.
+Review [Resolving upgrade issues](/docs/virtual-router-appliance?topic=virtual-router-appliance-upgrade-issues) for a list of common issues that can happen when updating between versions, and review the specific Vyatta NOS version's release notes for information on known issues and deprecated commands as published by Ciena.
 {: tip}
 
 ## Upgrade procedure
