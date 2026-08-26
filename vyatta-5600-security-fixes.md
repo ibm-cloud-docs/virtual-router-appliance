@@ -50,14 +50,14 @@ This release includes security updates and functional fault fixes. No changes in
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
 | VRVDR-66803 | Major | VPN connections experiencing instability. |
-| VRVDR-66731 | Critical | "Commit already in progress" immediately after entering any config command and no output showing for any show commands. |
+| VRVDR-66731 | Critical | `Commit already in progress` immediately after entering any config command and no output showing for any show commands. |
 | VRVDR-67020 | Major | Dataplane crash causes VRRP failover with version 2308e. |
 | VRVDR-66995 | Major | After software upgrade, VRRP became Fault state and automatic failover triggered. |
 | VRVDR-66587 | Major | Connection to public network locking out. Restored by vrrp failover. |
 | VRVDR-66697 | Major | Customer is getting interface-related errors and unexpected interface dp0x3a68dd2c3d1. |
-| VRVDR-66589 | Major | Bonding interface goes down with "i40e_dev_alarm_handler(): ICR0: malicious programming detected". |
-| VRVDR-66613 | Major | Lost SSH capabilities to Vyatta with error "Out of memory: Killed process 2404 (dataplane)". |
-| VRVDR-66556 | Major | Config-sync failing due to "Capability exchange timed out". |
+| VRVDR-66589 | Major | Bonding interface goes down with `i40e_dev_alarm_handler(): ICR0: malicious programming detected`. |
+| VRVDR-66613 | Major | Lost SSH capabilities to Vyatta with error `Out of memory: Killed process 2404 (dataplane)`. |
+| VRVDR-66556 | Major | Config-sync failing due to `Capability exchange timed out`. |
 {: caption="Issues resolved for 2308j" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -143,15 +143,11 @@ This release includes security updates and functional fault fixes. No changes in
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
 | VRVDR-67103 | Major | BGP Neighborship down after Path Monitor fail triggered VRRP Failover. |
-| VRVDR-67104 | Major | Vyatta crashed and stopped responding. |
-| VRVDR-67128 | Major | OOM ribd. |
-| VRVDR-67129 | Major | IPsec tunnel with SRX stops passing outbound traffic during reauthentication. |
-| VRVDR-67130 | Major | Vyatta node was unresponsive and required a physical reboot. |
 | VRVDR-67135 | Major | Interface goes down by connsync manager state "waiting". |
 {: caption="Known issues for 2308j" caption-side="bottom"}
 
 ## Vyatta NOS Software Patches - 2308h
-{: #vyatta-nos-software-patches}
+{: #vyatta-nos-software-patches-2308h}
 
 **Released:** 23 April 2026.
 
@@ -176,7 +172,7 @@ This release addresses critical security vulnerabilities and resolves major oper
 {: caption="Issues resolved for 2308h" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
-{: #security-vulnerabilities-resolved-vyatta}
+{: #security-vulnerabilities-resolved-vyatta-2308h}
 
 | Issue Number | CVSS Score | Advisory Summary |
 | ------------- | ------------- | ------------------ |
@@ -233,14 +229,14 @@ This release addresses critical security vulnerabilities and resolves major oper
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
 | VRVDR-66587 | Major | Connection to public network locking out. Restored by vrrp failover. |
-| VRVDR-66589 | Major | Bonding interface goes down with "i40e_dev_alarm_handler(): ICR0: malicious programming detected" |
-| VRVDR-66556 | Major | Config-sync failing due to "Capability exchange timed out" |
+| VRVDR-66589 | Major | Bonding interface goes down with `i40e_dev_alarm_handler(): ICR0: malicious programming detected` |
+| VRVDR-66556 | Major | Config-sync failing due to `Capability exchange timed out` |
 | VRVDR-66612 | Major | Vyatta is not sending Syslogs |
-| VRVDR-66613 | Major | Lost SSH capabilities to Vyatta with error "Out of memory: Killed process 2404 (dataplane)" |
+| VRVDR-66613 | Major | Lost SSH capabilities to Vyatta with error `Out of memory: Killed process 2404 (dataplane)` |
 {: caption="Known issues for 2308h" caption-side="bottom"}
 
 ## Vyatta NOS Software Patches - 2308g
-{: #vyatta-nos-software-patches}
+{: #vyatta-nos-software-patches-2308g}
 
 **Released:** 15 January 2026.
 
@@ -260,7 +256,7 @@ This release is mostly for security updates and three major faults. No changes i
 {: caption="Issues resolved for 2308g" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
-{: #security-vulnerabilities-resolved-vyatta}
+{: #security-vulnerabilities-resolved-vyatta-2308g}
 
 | Issue Number | CVSS Score | Advisory Summary |
 | ------------- | ------------- | ------------------ |
@@ -286,7 +282,7 @@ This release is mostly for security updates and three major faults. No changes i
 
 
 ## Vyatta NOS Software Patches - 2308f
-{: #vyatta-nos-software-patches}
+{: #vyatta-nos-software-patches-2308f}
 
 **Released:** 25 August 2025.
 
@@ -320,19 +316,19 @@ To enable this functionality, the following configuration is added:
 | Issue Number | Priority | Summary |
 | ------------- | ------------ | --------- |
 | VRVDR-66031 | Major | Dataplane crashing repeatedly on Vyatta image 2204h |
-| VRVDR-66021 | Major | Vyatta doesn't send 'ICMP fragmentation needed' packet with zone-based firewall |
+| VRVDR-66021 | Major | Vyatta doesn't send `ICMP fragmentation needed` packet with zone-based firewall |
 | VRVDR-65978 | Major | SNMP-OID for VRRP Effective Priority |
 | VRVDR-65961 | Major | BGP routes are inactive with next-hop inaccessible |
 | VRVDR-65928 | Major | Dataplane crash causes VRRP failover with version 2308d |
 | VRVDR-65897 | Major | Device auto failover due to dataplane crash |
-| VRVDR-65894 | Major | Image upgrade fails - "ERROR: vyatta-2308e-vnf-amd64.iso: Not a valid ISO image file. Exiting..." |
+| VRVDR-65894 | Major | Image upgrade fails - `ERROR: vyatta-2308e-vnf-amd64.iso: Not a valid ISO image file. Exiting...` |
 | VRVDR-65777 | Major | Vyatta with net_i40e drivers doesn't accept jumbo frame after upgrading to 2308 |
 | VRVDR-65707 | Major | PXE boot with 2308d release not loading config file |
 | VRVDR-65580 | Major | CPE locks up with tx_dropped_hwq packet drops |
 {: caption="Security vulnerabilities resolved for 2308f" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
-{: #security-vulnerabilities-resolved-vyatta}
+{: #security-vulnerabilities-resolved-vyatta-2308f}
 
 | Issue Number | CVSS Score | Advisory Summary |
 | ------------- | ------------- | ------------------ |
@@ -421,7 +417,7 @@ To enable this functionality, the following configuration is added:
 | VRVDR-64621 | Minor | IPsec phase 2 rekeying timer showing negative values |
 | VRVDR-64584 | Minor | CLI error message(Error: vici: malformed message: expected beginning of message element) coming when using show vpn commands |
 | VRVDR-64454 | Major | VRRP Route Tracking not working correctly |
-| VRVDR-64357 | Minor | Error Log: "vyatta-dataplane.service[dataplane[2719]:] DATAPLANE: Failed pack expired session xxx" |
+| VRVDR-64357 | Minor | Error Log: `vyatta-dataplane.service[dataplane[2719]:] DATAPLANE: Failed pack expired session xxx` |
 | VRVDR-64247 | Major | Support for Mellanox MT28850 ConnectX-6 |
 | VRVDR-64246 | Major | Configuring/Enabling virtio interface on Vyatta crashes virtual machine |
 | VRVDR-64242 | Major | 'show arp' operational command returns access errors for operator level user |
@@ -560,7 +556,7 @@ This version contains mitigation for the Terrapin SSH attack. A properly patched
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-63709 | Major | Upgrade from 2012g to 2204f cause error "querying policy failed: Invalid argument (22)" |
+| VRVDR-63709 | Major | Upgrade from 2012g to 2204f cause error `querying policy failed: Invalid argument (22)` |
 | VRVDR-63659 | Major | Mellanox MT28800 ConnectX-5 SR-IOV : interface is down with configured jumbo MTU |
 | VRVDR-62364 | Critical | Mellanox MT28800 ConnectX-5 SR-IOV : interface is down after configuring jumbo MTU |
 | VRVDR-62355 | Major | Mellanox MT28800 ConnectX-5 : receiving jumbo frame on non-jumbo configured interface causes dataplane crash |
@@ -871,7 +867,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | --- | --- | --- |
 | VRVDR-58440 | Major | Memory leak and high cpu usage by vyatta-entity-mibs-subagent, memory leak by vyatta-snmp-subagent |
 | VRVDR-58228 | Major | Incorrect Session table-size after reboot |
-| VRVDR-58179 | Major | Error message 'npf_pack nat session restore failed' on VRRP backup |
+| VRVDR-58179 | Major | Error message `npf_pack nat session restore failed` on VRRP backup |
 | VRVDR-58119 | Major | IPsec RAVPN: X509 authentication fails, presumably due to missing fragmentation support |
 | VRVDR-58113 | Major | VRRP Groups in a sync-group fail to send a second set of GARPs on transition to master state |
 | VRVDR-56721 | Blocker | Dataplane core on save on commit test |
@@ -939,7 +935,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-56337 | Major | DHCP assignment is not happening after reboot |
-| VRVDR-42512 | Major | When telnet is used to login remotely, login reports "Welcome to \S{NAME}" |
+| VRVDR-42512 | Major | When telnet is used to login remotely, login reports `Welcome to \S{NAME}` |
 {: caption="Issues resolved for 2012j" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -1114,7 +1110,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-55569 | Major | MRIBv6 FIB: Peek error Resource temporarily unavailable |
 | VRVDR-55011 | Major | Can't log into a SIAD with read-only SSD |
 | VRVDR-54591 | Blocker | TACACS authentications fails when TACACS accounting has a large backlog |
-| VRVDR-53135 | Major | "protocols multicast ip log-warning" doesn't log any warnings |
+| VRVDR-53135 | Major | `protocols multicast ip log-warning` doesn't log any warnings |
 | VRVDR-53114 | Major | TACACS+ session accounting may still use hostname instead of IP address |
 | VRVDR-53099 | Major | TACACS+ starts only when service is restarted manually |
 | VRVDR-53085 | Major | Multicast IPv4 and IPv6 is mutually exclusive on SIAD |
@@ -1130,7 +1126,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-51809 | Major | TACACS+ session accounting: task_id in stop record differs from task_id in start record |
 | VRVDR-51580 | Critical | Command Accounting: Start record support |
 | VRVDR-50803 | Major | tacplusd logs are very chatty by default |
-| VRVDR-50552 | Major | 'TACACS daemon is not running' even with all TACACS config |
+| VRVDR-50552 | Major | `TACACS daemon is not running` even with all TACACS config |
 | VRVDR-50310 | Major | SIAD multicast traffic counted on output interface |
 | VRVDR-50036 | Major | Add TACACS+/SSSD information to tech support output |
 | VRVDR-42098 | Major | TACACS+ Server Connection Timeout |
@@ -1240,7 +1236,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-54360 | Major | Operator level user cannot execute 'show firewall ...' commands |
+| VRVDR-54360 | Major | Operator level user cannot execute `show firewall ...` commands |
 | VRVDR-54272 | Critical | tech-support archive generated uncompressed breaking user expectations |
 | VRVDR-54238 | Major | Dataplane crash in map_rcu_freeon system shutdown |
 | VRVDR-54225 | Minor | VFPinterface does not pick up IP Address from donor loopback interface |
@@ -1322,7 +1318,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-52074 | Major | Mark maps using DSCP resource groups don't pick up resource group changes |
 | VRVDR-51940 | Blocker | Changing DSCP Values Causes BFD Instability Which Requires Reboot |
 | VRVDR-51529 | Critical | Config Sync fails displaying 'vyatta-interfaces-v1:interfaces' when firewall action configured |
-| VRVDR-43453 | Minor | `show l2tpeth/ show l2tpeth <interface>` returns "Use of uninitialized value in printf at /opt/vyatta/bin/vplane-l2tpeth-show.pl line 41" with the output |
+| VRVDR-43453 | Minor | `show l2tpeth/ show l2tpeth <interface>` returns `Use of uninitialized value in printf at /opt/vyatta/bin/vplane-l2tpeth-show.pl line 41` with the output |
 {: caption="Issues resolved for 1912h" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -1366,7 +1362,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-52879 | Blocker | PTP: Unable to peer with master when route to GM fails over to backup vlan |
 | VRVDR-52877 | Blocker | ADI QoS Performance Issue with specific packet sizes |
 | VRVDR-52825 | Minor | Configuring three sub-levels of time-zone is not possible, causing upgrade from earlier version to fail |
-| VRVDR-52739 | Major | Port value in tunnel policy without specifying protocol causes error "protocol must be formatted as well-known string." for IPsec 'show' commands |
+| VRVDR-52739 | Major | Port value in tunnel policy without specifying protocol causes error `protocol must be formatted as well-known string.` for IPsec `show` commands |
 | VRVDR-52677 | Major | When multiple peers use the same local-address, no authentication ids, and unique pre-shared-keys IKEv2 based IPsec stuck in 'init' for all but one peer |
 | VRVDR-52668 | Major | Configuration fails to load after upgrade from 1801ze to 1912e when firewall rule with port range 0-65535 statement is present |
 | VRVDR-52611 | Major | i40e driver silently drops multicast packets causing VRRP dual master |
@@ -1394,7 +1390,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-48480 | Blocker | PTP servo reports 0 pps after path switch during ECMP |
 | VRVDR-48460 | Critical | Tshark permission errors and seg fault when executing monitor command |
 | VRVDR-48055 | Critical | IPsec VPN dataplane crash deleting VRF |
-| VRVDR-47858 | Critical | GRE: "RTNETLINK answers: No such file or directory" on trying to delete tunnel |
+| VRVDR-47858 | Critical | GRE: `RTNETLINK answers: No such file or directory` on trying to delete tunnel |
 | VRVDR-46493 | Major | IPSec RA-VPN Server : IKE proposal not found on server when setting the local-address to "any" |
 | VRVDR-43307 | Critical | vyatta-ike-sa-daemon: TypeError: 'IKEConfig' object does not support indexing |
 | VRVDR-42123 | Major | opd adds node.tag values under the wrong location in tab completion |
@@ -1429,12 +1425,12 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-52669 | Critical | Cannot display EEPROM info for FINISAR FCLF8522P2BTL Copper Port |
-| VRVDR-52643 | Blocker | "request hard qsfp/sfp_status present X" - performance degradation |
+| VRVDR-52643 | Blocker | `request hard qsfp/sfp_status present X` - performance degradation |
 | VRVDR-52568 | Blocker | Revert SIAD kernel panic defaults |
 | VRVDR-52546 | Minor | GUI hangs/loading and finally timeout with an error message on browser |
 | VRVDR-52469 | Blocker | i2c MUX reset required on S9500 to mitigate bus lock due to malfunctioning SFP |
 | VRVDR-52447 | Blocker | PTP: switching between the same master on multiple ports do not work if chosen port is down |
-| VRVDR-52284 | Blocker | S9500 - 'request hardware-diag version' command missing product name, reporting eeprom error |
+| VRVDR-52284 | Blocker | S9500 - `request hardware-diag version` command missing product name, reporting eeprom error |
 | VRVDR-52278 | Blocker | S9500 - upgrade HW diags to v3.1.10 |
 | VRVDR-52248 | Blocker | vyatta-sfpd can start before platform init complete |
 | VRVDR-52228 | Minor | The command ‘show hardware sensors sel’ gives a traceback |
@@ -1447,8 +1443,8 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-51114 | Minor | Change command not found error for users running in a sandbox |
 | VRVDR-50951 | Critical | OSPFv3 logs are not generated when OSPFv3 process is reset |
 | VRVDR-50928 | Minor | PTP: ufispace-bsp-utils 3.0.10 causing /dev/ttyACM0 to disappear |
-| VRVDR-50775 | Major | Dataplane "PANIC in bond_mode_8023ad_ext_periodic_cb" w/ locally sourced and terminated GRE traffic |
-| VRVDR-50549 | Trivial | PTP: Spelling error in log msg "Successfully configure DPLL 2 fast lcok" |
+| VRVDR-50775 | Major | Dataplane `PANIC in bond_mode_8023ad_ext_periodic_cb` w/ locally sourced and terminated GRE traffic |
+| VRVDR-50549 | Trivial | PTP: Spelling error in log msg `Successfully configure DPLL 2 fast lcok` |
 | VRVDR-50359 | Critical | show int dataplane foo phy issues with vendor-rev |
 | VRVDR-49935 | Critical | Dataplane core dump generated following vyatta-dataplane restart in vlan_if_l3_disable |
 | VRVDR-49836 | Major | IPsec: Fails to be able to to ping from tunnel endpoint to tunnel endpoint with ping size 1419 using default MTU with site-2-site. Tunnel MTU discovery not working |
@@ -1467,7 +1463,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-52722 | 9.8 | DLA-2337-1 | CVE-2018-20852, CVE-2019-10160, CVE-2019- 16056, CVE-2019-20907, CVE-2019-5010, CVE- 2019-9636, CVE-2019-9740, CVE-2019-9947, CVE- 2019-9948: Debian DLA-2337-1 : python2.7 security update |
 | VRVDR-52618 | 9.8 | DLA-2323-1 | CVE-2019-18814, CVE-2019-18885, CVE-2019- 20810, CVE-2020-10766, CVE-2020-10767, CVE- 2020-10768, CVE-2020-12655, CVE-2020-12771, CVE-2020-13974, CVE-2020-15393: Debian DLA- 2323-1 : linux-4.19 new package |
 | VRVDR-52476 | 5.9 | DLA-2303-1 | CVE-2020-16135: Debian DLA-2303-1 : libssh security update |
-| VRVDR-52197 | N/A | N/A | Privilege escalation in "reset ipv6 neighbors" / "reset ip arp" commands |
+| VRVDR-52197 | N/A | N/A | Privilege escalation in `reset ipv6 neighbors` / `reset ip arp` commands |
 {: caption="Security vulnerabilities resolved for 1912f" caption-side="bottom"}
 
 ## 1912e
@@ -1482,7 +1478,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-51952 | Blocker | Group ownership for non ROOT files got changed to ssh @ 1912e |
 | VRVDR-51937 | Blocker | `show interface dataplane dp0xe<x>` displays incorrect speed for copper ports when interface is down |
 | VRVDR-51828 | Major | SIAD ACL: BCM SDK error when deleting ACL configuration |
-| VRVDR-51639 | Critical | Response for "request hardware-diag version" takes much longer with 1912b |
+| VRVDR-51639 | Critical | Response for `request hardware-diag version` takes much longer with 1912b |
 | VRVDR-51619 | Critical | SIAD ACL: Ensure that rulesets which would exceed the TCAM are rejected |
 | VRVDR-51616 | Critical | Storm Control triggered snmpd warning messages in journal |
 | VRVDR-51543 | Critical | IPsec peers stuck in 'init' state after upgrade from 1801q to 1912d |
@@ -1498,7 +1494,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-51247 | Major | S9500 - missing hw_rev.cfg file |
 | VRVDR-51238 | Major | After broadcast storm, TACACS doesn't recover |
 | VRVDR-51185 | Blocker | Link doesn't come up after swapping 1000BASE-T SFP for 1000BASE-X SFP |
-| VRVDR-51183 | Major | 'FAL neighbor del' log is generated by dataplane for each ARP received for an unknown address |
+| VRVDR-51183 | Major | `FAL neighbor del` log is generated by dataplane for each ARP received for an unknown address |
 | VRVDR-51179 | Critical | live-cd installs should not install all unique state |
 | VRVDR-51148 | Critical | S9500 interface flaps when MTU is modified |
 | VRVDR-51072 | Critical | L3 SIAD router not fragmenting packet size above MTU |
@@ -1551,23 +1547,23 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-49822 | Critical | Only shows peering with 16 nodes in "show ptp clock 0" |
+| VRVDR-49822 | Critical | Only shows peering with 16 nodes in `show ptp clock 0` |
 | VRVDR-49735 | Critical | IPsec RA VPN: default VRF + VFP is blocking traffic which is supposed to be forwarded |
 | VRVDR-49734 | Critical | Strongswan VRRP startup check breaks RAVPN server |
 | VRVDR-49684 | Blocker | DHCP services within VRF failed to start after enabling secure boot |
 | VRVDR-49656 | Minor | IDT servo is built without optimization |
 | VRVDR-49633 | Critical | tcp_auth_collapse NULL pointer dereference causes kernel panic during SYN flood |
 | VRVDR-49631 | Blocker | PTP error message found on UFI06 |
-| VRVDR-49630 | Major | IPsec got warning on committing site-2-site tunnel config "Warning: unable to [VPN toggle net.ipv6.conf.intf.disable_xfrm], received error code 65280" |
+| VRVDR-49630 | Major | IPsec got warning on committing site-2-site tunnel config `Warning: unable to [VPN toggle net.ipv6.conf.intf.disable_xfrm], received error code 65280` |
 | VRVDR-49618 | Critical | Servo notifications always using attVrouterPtpServoFailure |
-| VRVDR-49584 | Minor | GRE over IPsec in transport mode (IKEv1) - responder intermittently replies "no acceptable traffic selectors found" |
+| VRVDR-49584 | Minor | GRE over IPsec in transport mode (IKEv1) - responder intermittently replies `no acceptable traffic selectors found` |
 | VRVDR-49568 | Critical | Flexware XS and S: kernel panics on start after update to 4.19.93 |
-| VRVDR-49513 | Major | "Failed to connect to system bus" error messages |
+| VRVDR-49513 | Major | `Failed to connect to system bus` error messages |
 | VRVDR-49431 | Minor | Use upstream fix for correcting link speed when link is down |
 | VRVDR-49427 | Critical | Bridge commit failure when changing both max-age and forwarding-delay |
 | VRVDR-49426 | Major | Mellanox-100G: kernel interface shows up even when dataplane is stopped. |
 | VRVDR-49417 | Critical | Wrong counts for pkts matching 3-tuple but not 5-tuple |
-| VRVDR-49415 | Critical | Python traceback with "show cgnat session detail exclude-inner" |
+| VRVDR-49415 | Critical | Python traceback with `show cgnat session detail exclude-inner` |
 | VRVDR-49403 | Critical | LACP - vmxnet3 PMD unable to support additional MAC addresses |
 | VRVDR-49391 | Major | PTP: disable (by default) logging of the time adjustments by the IDT servo |
 | VRVDR-49376 | Critical | PTP: fails to issue clock servo recovery traps |
@@ -1578,7 +1574,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-49185 | Blocker | IP Packet Filter not applied at bootup |
 | VRVDR-49119 | Major | DUT stops responding following anomolous DHCP-DISCOVER packet |
 | VRVDR-49031 | Blocker | RA-VPN Server +VFP+default VRF : IPsec encryption failing on RA-VPN server for traffic destined or originated between end hosts connected behind the RA-VPN server/client |
-| VRVDR-49020 | Major | RA VPN: Spoke not forwarding with "ESP: Replay check failed for SPI" logs |
+| VRVDR-49020 | Major | RA VPN: Spoke not forwarding with `ESP: Replay check failed for SPI` logs |
 | VRVDR-48944 | Critical | SIAD Dataplane crash when removing Tunnels interface config |
 | VRVDR-48761 | Major | J2: packets with too small IP length value forwarded rather than dropped |
 | VRVDR-48728 | Blocker | Network link down observed with VM built from vyatta-1908b- amd64-vrouter_20191010T1100-amd64-Build3.14.hybrid.iso |
@@ -1624,7 +1620,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-51385 | Critical | Dataplane crash in next_hop_list_find_path_using_ifp |
 | VRVDR-51295 | Critical | Changing speed on interface resets configured MTU to default |
 | VRVDR-51185 | Blocker | Link doesn't come up after swapping 1000BASE-T SFP for 1000BASE-X SFP |
-| VRVDR-51183 | Major | 'FAL neighbour del' log is generated by dataplane for each ARP recieved for an unknown address |
+| VRVDR-51183 | Major | `FAL neighbour del` log is generated by dataplane for each ARP recieved for an unknown address |
 | VRVDR-51179 | Critical | live-cd installs should not install all unique state |
 | VRVDR-51066 | Blocker | 1908g performance hit with vCSR vnf scenario in Small, Medium and Large Platforms
 | VRVDR-51008 | Major | When the /var/log partition exists journal files from previous installs are retained but not rotated |
@@ -1635,7 +1631,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-50621 | Critical | Duplicate entries added to dp_event_register() |
 | VRVDR-50614 | Critical | ADI V150 with 100M physical WAN port doesn't show drops with 100M QOS shaper applied |
 | VRVDR-50569 | Blocker | SIAD BFD inter-op issue with Cisco 7609S |
-| VRVDR-50560 | Critical | "show vpn ike secrets" allows operator and members outside the secrets group to display secrets |
+| VRVDR-50560 | Critical | `show vpn ike secrets` allows operator and members outside the secrets group to display secrets |
 | VRVDR-50306 | Critical | ADI Spirent probe RFC2544 test failure due to small packet loss w/ 100m speed and 50m QoS shaper |
 | VRVDR-50279 | Major | RX error incrementing on the bond1 interface, but no errors on physical interface |
 | VRVDR-50237 | Critical | QoS not working when applied in certain order |
@@ -1715,11 +1711,11 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-49924 | Blocker | Commit failed in IPsec site-to-site configuration |
-| VRVDR-49822 | Critical | Only shows peering with 16 nodes in "show ptp clock 0" |
+| VRVDR-49822 | Critical | Only shows peering with 16 nodes in `show ptp clock 0` |
 | VRVDR-49684 | Blocker | DHCP services within VRF failed to start after enabling secure boot |
 | VRVDR-49633 | Critical | tcp_auth_collapse NULL pointer dereference causes kernel panic during SYN flood |
 | VRVDR-49631 | Blocker | PTP error message found on UFI06 |
-| VRVDR-49584 | Minor | GRE over IPsec in transport mode (IKEv1) - responder intermittently replies "no acceptable traffic selectors found" |
+| VRVDR-49584 | Minor | GRE over IPsec in transport mode (IKEv1) - responder intermittently replies `no acceptable traffic selectors found` |
 | VRVDR-49568 | Critical | Flexware XS and S: kernel panics on start after update to 4.19.93 |
 | VRVDR-49459 | Major | Ping monitor may send more packets than specified in "packets" |
 | VRVDR-49439 | Major | Path Monitor does not handle fractional ping loss correctly |
@@ -1761,8 +1757,8 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-49223 | Major | Hardware CPP rate limiter feature accepted packet count not working |
 | VRVDR-49185 | Blocker | IP Packet Filter not applied at bootup |
 | VRVDR-49137 | Major | Syslog rate-limit not respected for above 65000 messages per interval |
-| VRVDR-49020 | Major | RA VPN: Spoke not forwarding with "ESP: Replay check failed for SPI" logs |
-| VRVDR-48992 | Minor | Syslog generates message "Child xxxxx has terminated, reaped by main-loop" at wrong priority |
+| VRVDR-49020 | Major | RA VPN: Spoke not forwarding with `ESP: Replay check failed for SPI` logs |
+| VRVDR-48992 | Minor | Syslog generates message `Child xxxxx has terminated, reaped by main-loop` at wrong priority |
 | VRVDR-48960 | Critical | SIAD - audit logs with no priority default to syslog level NOTICE and are overly chatty |
 | VRVDR-48892 | Blocker | Ping failure with storm-control & QoS |
 | VRVDR-48891 | Blocker | Dataplane crashed while changing PTP configuration |
@@ -1802,12 +1798,12 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
 | VRVDR-49060 | Major | RA VPN: no ESP traffic from Hub to Spoke |
-| VRVDR-49035 | Major | RA VPN: "show vpn ipsec sa" inbound/outbound bytes stats are swapped |
+| VRVDR-49035 | Major | RA VPN: `show vpn ipsec sa` inbound/outbound bytes stats are swapped |
 | VRVDR-48949 | Major | Add output for determining punt-path programming state to tech- support |
 | VRVDR-48893 | Critical | RA VPN: intermittent ICMP loss through HUB due to misprogrammed punt path |
 | VRVDR-48889 | Critical | RA VPN: client IPsec SAs are piling up when make-before-break (client) + reauth-time (server) is configured |
 | VRVDR-48878 | Critical | VPN client log overflow in auth.log |
-| VRVDR-48837 | Critical | Reduce "sending DPD request" loglevel temporarily to reduce logging load |
+| VRVDR-48837 | Critical | Reduce `sending DPD request` loglevel temporarily to reduce logging load |
 | VRVDR-48717 | Major | Resources group address-group address-range entries do not work together with address entries |
 | VRVDR-48672 | Critical | SIAD stops forwarding traffic after 4-5 hours of long duration test |
 | VRVDR-48057 | Minor | Add additional IPSec debug support to tech-support |
@@ -1834,7 +1830,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-48542 | Critical | "ipsec sad" was not containing "virtual-feature-point" |
 | VRVDR-48527 | Blocker | SIAD: 1G dataplane interfaces fail to start |
 | VRVDR-48522 | Blocker | MACVLAN interface not receiving packets with programmed MAC address (VRRP with RFC-compatibility) |
-| VRVDR-48519 | Major | Operator in secrets group cannot view redacted secret in "show config" but can in "show config command" |
+| VRVDR-48519 | Major | Operator in secrets group cannot view redacted secret in `show config` but can in `show config command` |
 | VRVDR-48484 | Blocker | QOS policy dropping all traffic by policer intermittently |
 | VRVDR-48430 | Critical | Issue trap/notification when servo failure is resolved |
 | VRVDR-48415 | Major | OSPF flap to INIT state when changing (add or delete) network statements in OSPF |
@@ -1848,11 +1844,11 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-48327 | Blocker | HW forwarding failure due to incorrect L2 Rewrite info |
 | VRVDR-48273 | Major | Show sfp info in `show interface dataplane <intf> physical` on Flexware |
 | VRVDR-48243 | Blocker | SIAD Boundary Clock not staying locked to GM when using ECMP paths |
-| VRVDR-48224 | Major | "show cgnat session" with complex filter missing entry |
+| VRVDR-48224 | Major | `show cgnat session` with complex filter missing entry |
 | VRVDR-48222 | Major | Isolate configd and opd from plugin panics |
 | VRVDR-48201 | Blocker | Mellanox 100G: Needs improvement for performance of 128, 256 Byte pkts; 64Byte pkt has better performance |
 | VRVDR-48169 | Critical | Mellanox 100G: improve traffic throughput performance |
-| VRVDR-48167 | Critical | 'show tech-support' hangs 'WARNING: terminal is not fully functional' |
+| VRVDR-48167 | Critical | `show tech-support` hangs `WARNING: terminal is not fully functional` |
 | VRVDR-48157 | Critical | Center LED status for S/M/L is not working as expected |
 | VRVDR-48124 | Critical | Azure: System does not provision ssh key pair |
 | VRVDR-48113 | Major | OSPF not on vtun interface |
@@ -1870,8 +1866,8 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-47863 | Critical | VRRPv3 VRF IPv6 IPAO: Reconfig of LL vip results in MASTER/MASTER scenario |
 | VRVDR-47842 | Minor | mGRE tunnel is not coming up after making address change at the spoke |
 | VRVDR-47828 | Critical | Crash of keepalived when reloading the daemon (accessing invalid memory) |
-| VRVDR-47816 | Major | NAT statistics not displaying in 'show tech-support save' output |
-| VRVDR-47792 | Major | "clear cgnat session" sometimes errors out after scale test |
+| VRVDR-47816 | Major | NAT statistics not displaying in `show tech-support save` output |
+| VRVDR-47792 | Major | `clear cgnat session` sometimes errors out after scale test |
 | VRVDR-47747 | Blocker | Dataplane killed by OOM during CGNAT scale test |
 | VRVDR-47710 | Major | NHRP overloads IPsec daemon communication |
 | VRVDR-47701 | Major | CGNAT: Calculate and store RTT times in microseconds |
@@ -1879,13 +1875,13 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-47611 | Major | CGNAT: RPC keyerror if non-existing interface name is used in get- session-information |
 | VRVDR-47601 | Major | VRRP retains MASTER when device is disabled due to license invalid/expired |
 | VRVDR-47472 | Critical | Mellanox-100G: Observing the traffic forwards even after disabling the dataplane interface |
-| VRVDR-47397 | Blocker | PTP logging "STATE: Overall for path '[service ptp instance]'" every 75 seconds |
+| VRVDR-47397 | Blocker | PTP logging `STATE: Overall for path '[service ptp instance]'` every 75 seconds |
 | VRVDR-47130 | Major | Send gratuitous ARP on MAC address change |
 | VRVDR-47006 | Major | PTP `show ptp <command>` intermittent fails to return any output |
 | VRVDR-46868 | Blocker | Log the port block allocation logs, subscriber logs and resource constraint logs to a different log other than syslog |
 | VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |
-| VRVDR-45781 | Major | 'reset dns forwarding cache routing-instance red' not finding VRF instance |
-| VRVDR-42161 | Minor | tech-support should contain "CLI: coredumpctl info" prefix for COREDUMPS header |
+| VRVDR-45781 | Major | `reset dns forwarding cache routing-instance red` not finding VRF instance |
+| VRVDR-42161 | Minor | tech-support should contain `CLI: coredumpctl info` prefix for COREDUMPS header |
 {: caption="Issues resolved for 1908b" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -1918,7 +1914,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-47947 | Major | Dataplane wrongly logging failure to delete hash table |
 | VRVDR-47934 | Major | QoS: `show policy qos <if-name> class` can display no output |
 | VRVDR-46077 | Major | Build and sign Insyde phy_alloc module |
-| VRVDR-47924 | Major | BGP 'show' output for default-vrf not captured in 'show tech-support' |
+| VRVDR-47924 | Major | BGP `show` output for default-vrf not captured in `show tech-support` |
 | VRVDR-47908 | Blocker | SIAD displays incorrect serial number in 'show version' |
 | VRVDR-47907 | Blocker | Mellanox-100G: UDP or TCP traffic with 10K flows only reaches 10% line rate |
 | VRVDR-47893 | Critical | SIAD : up-rev Ufi diags to v3.1.7 |
@@ -1961,10 +1957,10 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-49760 | Major | VRRP Failover happens when one of the interfaces in bonding group is physically UP |
 | VRVDR-49737 | Major | GUI displays wrong/different information than CLI |
 | VRVDR-49707 | Major | vyatta-openvpn: code injection due to scripts in tmplscripts |
-| VRVDR-49584 | Minor | GRE over IPsec in transport mode (IKEv1) - responder intermittently replies "no acceptable traffic selectors found" |
+| VRVDR-49584 | Minor | GRE over IPsec in transport mode (IKEv1) - responder intermittently replies `no acceptable traffic selectors found` |
 | VRVDR-49439 | Major | Path Monitor does not handle fractional ping loss correctly |
 | VRVDR-48145 | Critical | VRRP - Cores Generated by keepalived |
-| VRVDR-48067 | Minor | VPN commit returns "Warning: unable to [VPN toggle net.ipv4.conf.intf.disable_policy], received error code 65280" |
+| VRVDR-48067 | Minor | VPN commit returns `Warning: unable to [VPN toggle net.ipv4.conf.intf.disable_policy], received error code 65280` |
 | VRVDR-45071 | Critical | vyatta-security-vpn: vpn-config.pl: l2tp remote-access dhcp-interface "lo.tag;/tmp/bad.sh;echo " / code injection |
 | VRVDR-45069 | Critical | vyatta-security-vpn: set security vpn rsa-keys local-key file "/tmp/bad.sh;/tmp/bad.sh" / code injection |
 | VRVDR-45068 | Critical | vyatta-security-vpn: s2s tunnel protocol syntax script / code injection |
@@ -2005,7 +2001,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | --- | --- | --- |
 | VRVDR-49402 | Blocker | Non-GRE Tunnel intfs fail to come back to up state after toggling state |
 | VRVDR-49137 | Major | Syslog rate-limit not respected for above 65000 messages per interval |
-| VRVDR-48992 | Minor | Syslog generates message "Child xxxxx has terminated, reaped by main-loop" at wrong priority |
+| VRVDR-48992 | Minor | Syslog generates message `Child xxxxx has terminated, reaped by main-loop` at wrong priority |
 | VRVDR-48719 | Minor | Perl traceback when deleting resources group address-group addressrange |
 | VRVDR-48705 | Major | High volume of csync logs causing firewall logs to be suppressed |
 | VRVDR-48585 | Major | ICMP Unreachable not returned when decrypted IPsec packet is too large to pass tunnel interface MTU |
@@ -2063,10 +2059,10 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | --- | --- | --- |
 | VRVDR-48148 | Major | Can't stat /var/run/gre" error seen on deleting erspan tunnel |
 | VRVDR-47842 | Minor | mGRE tunnel is not coming up after making address change at the spoke |
-| VRVDR-47816 | Major | NAT statistics not displaying in 'show tech-support save' output |
+| VRVDR-47816 | Major | NAT statistics not displaying in `show tech-support save` output |
 | VRVDR-47601 | Major | VRRP retains MASTER when device is disabled due to license invalid/expired |
 | VRVDR-46829 | Minor | The reported timestamps in packet traces are not consistent with the actual time and system clock |
-| VRVDR-36174 | Major | A-Time in the output of, 'show vpn ike sa' is always 0 |
+| VRVDR-36174 | Major | A-Time in the output of, `show vpn ike sa` is always 0 |
 {: caption="Issues resolved for 1801zc" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -2086,12 +2082,12 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 
 | Issue Number | Priority | Summary |
 | --- | --- | --- |
-| VRVDR-47924 | Major | BGP 'show' output for default-vrf not captured in 'show tech-support' |
+| VRVDR-47924 | Major | BGP `show` output for default-vrf not captured in `show tech-support` |
 | VRVDR-47869 | Minor | L2TP/IPsec with x.509 authentication fails due to incorrect path to certificates |
-| VRVDR-47711 | Minor | changing 'syslog global facility all level' overwrites individual 'facility <> level' settings |
+| VRVDR-47711 | Minor | changing `syslog global facility all level` overwrites individual `facility <> level` settings |
 | VRVDR-47710 | Major | nhrp overloads IPsec daemon communication |
 | VRVDR-47661 | Minor | L2TP in high availability pair will not allow connections after VRRP failover |
-| VRVDR-47606 | Major | Configuring "service https listen-address" bypasses the TLSv1.2 enforcement |
+| VRVDR-47606 | Major | Configuring `service https listen-address` bypasses the TLSv1.2 enforcement |
 | VRVDR-47543 | Blocker | Long Login Delay due to pam_systemd failed to create session |
 | VRVDR-47506 | Minor | ntpq segfault in ld-2.24.so |
 | VRVDR-47485 | Major | VRRP snmp MIB stops working when any configuration changes made to SNMP |
@@ -2099,7 +2095,7 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-47229 | Blocker | netplugd crash on configuration change |
 | VRVDR-46417 | Major | Dataplane is sending GRE packets sourced from non-exist VRRP VIP when router is BACKUP |
 | VRVDR-45396 | Critical | Shunt policy installation race |
-| VRVDR-42108 | Minor | After 25s ssh login delay 'systemctl --user status' fails with "Failed to connect to bus: No such file or directory" |
+| VRVDR-42108 | Minor | After 25s ssh login delay `systemctl --user status` fails with `Failed to connect to bus: No such file or directory` |
 {: caption="Issues resolved for 1801zb" caption-side="bottom"}
 
 ### Security vulnerabilities resolved
@@ -2190,9 +2186,9 @@ Because of VRRP issues and bugs in version 2012, deleting a VIF on the primary V
 | VRVDR-46029 | Major | VRRP authentication either with simple text password or AH type does not work properly |
 | VRVDR-45864 | Critical | Shell injection privilege escalation/sandbox escape in vyatta-techsupport remote copy |
 | VRVDR-45748 | Major | Missing checks for zmsg_popstr returning a NULL pointer causing connsync to crash dataplane |
-| VRVDR-45740 | Minor | 'generate tech-support archive' should not aggregate all existing archives |
+| VRVDR-45740 | Minor | `generate tech-support archive` should not aggregate all existing archives |
 | VRVDR-45720 | Major | vrrp gets stuck waiting for a packet when start_delay used with only a single router |
-| VRVDR-45655 | Critical | "PANIC in rte_mbuf_raw_alloc" when performing VRRP failover |
+| VRVDR-45655 | Critical | `PANIC in rte_mbuf_raw_alloc` when performing VRRP failover |
 | VRVDR-45059 | Major | null deref in sip_expire_session_request |
 | VRVDR-41419 | Major | Static Analysis dataplane fixes |
 {: caption="Issues resolved for 1801y" caption-side="bottom"}
@@ -2263,7 +2259,7 @@ Running any of these commands will result with the error message “This feature
 | VRVDR-44560 | Major | Multiple rcu_sched CPU stalls pointing to ip_gre driver |
 | VRVDR-44517 | Minor | Dataplane crashes with panic in rte_ipv6_fragment_packet |
 | VRVDR-44282 | Major | Issue deleting /32 mask when both address with /32 mask and without are present together in address group |
-| VRVDR-44278 | Minor | "show address-group all ipv4 optimal" not producing any output |
+| VRVDR-44278 | Minor | `show address-group all ipv4 optimal` not producing any output |
 | VRVDR-44239 | Major | Request to enhance Web GUI verbiage for protocol drop-down when 'all' protocols are required |
 | VRVDR-44076 | Major | memory-leak in flow-monitoring leading to dataplane seg-fault and outage |
 | VRVDR-44007 | Critical | Dataplane segmentation fault at npf_dataplane_session_establish |
@@ -2370,7 +2366,7 @@ Running any of these commands will result with the error message “This feature
 | VRVDR-43538 | Major | Receive oversize errors on bondinginterface |
 | VRVDR-43519 | Major | Vyatta-keepalived is running with no config present |
 | VRVDR-43517 | Major | Traffic fails when endpoint of VFP/Policy-based IPsec resides on the vRouter itself |
-| VRVDR-43477 | Major | Committing the IPsec VPN configuration returns the warning “Warning: unable to [VPN toggle net.ipv4.conf.intf.disable_policy], received error code 65280 |
+| VRVDR-43477 | Major | Committing the IPsec VPN configuration returns the warning `Warning: unable to [VPN toggle net.ipv4.conf.intf.disable_policy], received error code 65280` |
 | VRVDR-43379 | Minor | NAT statistics incorrectly shown |
 {: caption="Issues resolved for 1801r" caption-side="bottom"}
 

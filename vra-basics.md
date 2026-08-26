@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-05-22"
+  years: 2017, 2026
+lastupdated: "2026-08-26"
 
 keywords:
 
@@ -110,7 +110,7 @@ set protocols static route 192.168.1.0/24 next-hop 10.0.0.1
 ```
 {: codeblock}
 
-This example illustrates that it is possible for a node (static) to have multiple child nodes. To remove the route for `192.168.1.0/24` the command `delete protocols static route 192.168.1.0/24` is used. If `192.168.1.0/24` was left off the command, then both route nodes are marked for deletion.
+This example illustrates that it is possible for a node (static) to have multiple child nodes. To remove the route for `192.168.1.0/24` the command `delete protocols static route 192.168.1.0/24` is used. If `192.168.1.0/24` was omitted from the command, then both route nodes are marked for deletion.
 
 Remember that the configuration is not changed until the `commit` command is issued. To compare the current running configuration to any changes that are present in the configuration buffer, use the `compare` command. To flush the configuration buffer, use `discard`.
 

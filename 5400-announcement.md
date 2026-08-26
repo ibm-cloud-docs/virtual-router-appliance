@@ -22,7 +22,7 @@ After 31 March 2019, the vendor for Vyatta 5400 (AT&T, who acquired the Vyatta p
 
 Customers that use the Vyatta 5400 need to migrate to an alternative solution (such as the {{site.data.keyword.vra_full}} (“VRA”, based on the Vyatta 5600) or the IBM Juniper vSRX offering) before 31 March 2019.   
 
-For existing customers, the Configuration conversion service is no longer subsidized by IBM. Customers can submit a pricing request by sending an email to Wan clouds at services@wanclouds.net with the subject: "Request for Vyatta 5400 Configuration Conversion."
+For existing customers, the Configuration conversion service is no longer subsidized by IBM. Customers can submit a pricing request by sending an email to Wan clouds at services@wanclouds.net with the subject: `Request for Vyatta 5400 Configuration Conversion`.
 
 Customers requiring assistance with "hands-on" migration tasks can contact [IBM Technology Expert Labs - Cloud](https://www.ibm.com/products/expertlabs){: external} or contact IBM Cloud Migration Professional Services by e-mailing ibmcte@us.ibm.com. In addition, IBM Cloud has qualified IBM Business Partners who can assist. These engagements are on a fee-based model, through a direct contract between the customer and the Business Partner.
 
