@@ -39,7 +39,7 @@ For the latest full release notes, contact Ciena for their Vyatta NOS release no
 
 **Released:** 24 July 2026.
 
-## Limitations, restrictions, or behavior changes
+## Limitations, restrictions, or behavior changes - 2308j
 {: #limitations-vyatta-2308j}
 
 This release includes security updates and functional fault fixes. No changes in command behavior are noted.
@@ -151,7 +151,7 @@ This release includes security updates and functional fault fixes. No changes in
 
 **Released:** 23 April 2026.
 
-## Limitations, restrictions, or behavior changes
+## Limitations, restrictions, or behavior changes - 2308h
 {: #limitations-vyatta-2308h}
 
 This release addresses critical security vulnerabilities and resolves major operational issues affecting config-sync, GRE tunnels, BGP, and interface stability.
@@ -240,7 +240,7 @@ This release addresses critical security vulnerabilities and resolves major oper
 
 **Released:** 15 January 2026.
 
-## Limitations, restrictions, or behavior changes
+## Limitations, restrictions, or behavior changes - 2308g
 {: #limitations-vyatta-2308g}
 
 This release is mostly for security updates and three major faults. No changes in command behavior are noted.
@@ -286,7 +286,7 @@ This release is mostly for security updates and three major faults. No changes i
 
 **Released:** 25 August 2025.
 
-## Limitations, restrictions, or behavior changes
+## Limitations, restrictions, or behavior changes - 2308f
 {: #limitations-vyatta-2308f}
 
 ### BGP
